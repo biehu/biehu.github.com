@@ -1,4 +1,4 @@
-docallback([{
+setData([{
     "adid": "74",
     "adsrc": 5,
     "adtype": 5,
