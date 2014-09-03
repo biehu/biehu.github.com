@@ -81,7 +81,6 @@ header .left_model.show,
         
         body {
             overflow:hidden;
-            font-size: 10px;
             font-family: "微软雅黑";
         }
 
@@ -766,22 +765,17 @@ position:absolute;
            
             
             $(window).load(function () {
-				if (isWeiXin()) {
+				var isAndroid = /Android/i.test(window.navigator.userAgent);
+				if (isAndroid || isWeiXin()) {
 					$('html').css('font-size', '5px');
 				}
                 resizeBody();
 				$('.load').hide();
 				setTimeout(function () {
-					
 					indexShow();
 					bindPageUp();
 					touchPageUp();
-
-					}, 500);
-
-
-			   
-                
+				}, 500);
             });
         </script>
 	</body>
