@@ -766,6 +766,9 @@ position:absolute;
            
             
             $(window).load(function () {
+				if (isWeiXin()) {
+					$('html').css('font-size', '7px');
+				}
                 resizeBody();
 				$('.load').hide();
 				setTimeout(function () {
