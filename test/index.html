@@ -319,6 +319,7 @@ position:absolute;
         
         .diary .diary_content .show {
             -webkit-transform:translate(0, 0); 
+			-webkit-transition-duration: .5s;
         }
         
         .diary_header {
@@ -335,7 +336,6 @@ position:absolute;
         
         .person {
             position:absolute;
-            -webkit-transition-duration: .5s;
         }
         
         .person_say {
@@ -344,7 +344,6 @@ position:absolute;
             line-height:30px;
             width:430px;
             height:301px;
-            -webkit-transition-duration: .5s;
         }
         
         .person_1 .person {
@@ -357,23 +356,32 @@ position:absolute;
             top:225px;
             right:20px;
             -webkit-transform:translate(-800px, 0);
-            -webkit-transition-delay: 1s;
         }
+
+		.person_2 .person.show {
+			-webkit-transition-delay: 1s;
+		}
         
         .person_3 .person {
             top:538px;
             left:20px;
             -webkit-transform:translate(800px, 0);
-            -webkit-transition-delay: 2s;
         }
+
+		.person_3 .person.show {
+			-webkit-transition-delay: 2s;
+		}
         
         .person_1 .person_say {
             left:147px;
             padding: 84px 46px 0 88px;
             background:url(images/person_say_1.png) no-repeat;
             -webkit-transform:translate(-800px, 0);
-            -webkit-transition-delay: .5s;
         }
+
+		.person_1 .person_say.show {
+			-webkit-transition-delay: .5s;
+		}
         
         .person_2 .person_say {
             top:306px;
@@ -381,8 +389,11 @@ position:absolute;
             padding: 96px 46px 0 88px;
             background:url(images/person_say_2.png) no-repeat;
             -webkit-transform:translate(800px, 0);
-            -webkit-transition-delay: 1.5s;
         }
+
+		.person_2 .person_say.show {
+			-webkit-transition-delay: 1.5s;
+		}
         
         .person_3 .person_say {
             top:630px;
@@ -390,8 +401,11 @@ position:absolute;
             padding: 84px 46px 0 103px;
             background:url(images/person_say_3.png) no-repeat;
             -webkit-transform:translate(-800px, 0);
-            -webkit-transition-delay: 2.5s;
         }
+
+		.person_3 .person_say.show {
+			-webkit-transition-delay: 2.5s;
+		}
 
 		
 		.person_1,
@@ -746,7 +760,9 @@ position:absolute;
                        $('#page_3').replaceWith($('#page_7').clone().
                                                 attr('id', 'page_7_2').
                                                 show());
-                       setTimeout(diaryShow, 800);                     
+					   if (index === 6) {
+							setTimeout(diaryShow, 800);
+					   }
                    }
                    else {
                        $('#page_7_2').replaceWith(page3);
