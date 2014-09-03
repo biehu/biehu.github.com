@@ -501,38 +501,41 @@ position:absolute;
 	/*
 		适配
 	*/
-	.iphone4 h1 {
+
+
+	@media all and (max-height: 500px) {
+	h1 {
 		height:140px;
 	}
 
-	.iphone4 header {
+	header {
 		height:400px;
 	}
 
-	.iphone4 .header_title {
+	.header_title {
 		bottom: -36px;
 		-webkit-transform: scale(0.8);
 		z-index:5;
 	}
 
-	.iphone4 nav a {
+	nav a {
 		height:150px;
 		line-height:150px;
 	}
 
-	.iphone4 .person_1 {
+	.person_1 {
 		top:-20px;
 	}
 
-	.iphone4 .person_2 {
+	.person_2 {
 		top:-50px;
 	}
 
-	.iphone4 .person_3 {
+	.person_3 {
 		top:-80px;
 	}
 
-
+}
  
         </style>
 	</head>
@@ -827,11 +830,6 @@ position:absolute;
 				var isAndroid = /Android/i.test(window.navigator.userAgent);
 				if (isAndroid || isWeiXin()) {
 					$('html').css('font-size', '5px');
-				}
-				else {
-					if (window.screen.height === 480) {
-						$('body').addClass('iphone4');
-					}
 				}
                 resizeBody();
 				$('.load').hide();
