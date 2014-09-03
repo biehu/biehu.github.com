@@ -476,6 +476,16 @@ position:absolute;
       -webkit-transform: rotateX(540deg) translateZ(568px);
     }
 
+	.iphone4 header {
+		height:410px;
+	}
+
+	.iphone4 .header_title {
+		bottom: -36px;
+		-webkit-transform: scale(0.8);
+		z-index:5;
+	}
+
 
  
         </style>
@@ -765,9 +775,15 @@ position:absolute;
            
             
             $(window).load(function () {
+				
 				var isAndroid = /Android/i.test(window.navigator.userAgent);
 				if (isAndroid || isWeiXin()) {
 					$('html').css('font-size', '5px');
+				}
+				else {
+					if (window.screen.height === 480) {
+						$('body').addClass('iphone4');
+					}
 				}
                 resizeBody();
 				$('.load').hide();
