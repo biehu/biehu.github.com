@@ -546,11 +546,56 @@ position:absolute;
 	}
 
 }
+
+/*
+	小喇叭
+*/
+
+#music {
+	position: fixed;
+	left: 3%;
+	top: 3%;
+	width: 143px;
+	height: 73px;
+	pointer-events: auto;
+	border-radius: 38px;
+	z-index: 99;
+}
+
+#music::before {
+	content: ' ';
+	visibility: hidden;
+	opacity: 0;
+	display: none;
+	width: 100%;
+	height: 100%;
+	background: url(images/music.png) no-repeat 0 0;
+	background-size: 90px 90px;
+	-webkit-transition: all 1s;
+}
+
+#music::after {
+	content: ' ';
+	opacity: 0.8;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 50%;
+	height: 100%;
+	background: url(images/music.png) no-repeat left bottom;
+	-webkit-transition: opacity 1s;
+}
+
+#music.on::after {
+	background-position: right bottom;
+}
  
         </style>
 	</head>
 	<body>
 <div class="load">正在加载中...</div>
+
+<div id="music" class="on"></div>
 	<div class="global">
 <div class="container">
 		<div class="wrap">
@@ -697,7 +742,7 @@ position:absolute;
    <span></span>
 </div>
 
-<audio src="images/music.mp3" autoplay loop>
+<audio id="audio_music" src="images/music.mp3" autoplay loop>
 </audio>
         <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script>
@@ -844,6 +889,26 @@ position:absolute;
 				}
 			};
 
+
+			var music = function () {
+				var isPlay = true;
+				$("#music").on("click",function(){
+					var audio = $('#audio_music')[0];
+					var that = $(this);
+					if (isPlay) {
+						audio.pause();
+						isPlay = false;
+						that.removeClass('on');
+					}
+					else {
+						audio.play();
+						isPlay = true;
+						that.addClass('on');
+					}
+				});
+
+			};
+
             $(window).load(function () {
 				
 				var isAndroid = /Android/i.test(window.navigator.userAgent);
@@ -852,9 +917,10 @@ position:absolute;
 				}
                 resizeBody();
 				$('.load').hide();
+				page();
+				music();
 				setTimeout(function () {
 					indexShow();
-					page();
 				}, 500);
             });
         </script>
