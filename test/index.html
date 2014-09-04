@@ -847,7 +847,7 @@ position:absolute;
 
             
            var bindPageUp = function () {
-               $('nav').on('click', 'a',  function () {
+               $(document.body).on('click', 'nav a',  function () {
                    index = Number($(this).find('.btn').attr('data-num'));
                    goPage();
 				   return false;
