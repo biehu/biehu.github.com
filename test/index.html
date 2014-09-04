@@ -446,6 +446,7 @@ position:absolute;
             width: 640px;
             height: 86px;
             z-index: 999;
+			opacity:0;
         }
         
         @-webkit-keyframes arrowUpDown {
@@ -558,6 +559,7 @@ position:absolute;
 	height: 73px;
 	background: url(images/music.png) no-repeat -5px bottom;
 	z-index: 99;
+	opacity:0;
 }
 
 #music.on {
@@ -723,6 +725,8 @@ position:absolute;
         <script>
             var indexShow = function () {
                 $('.left_model, .right_model, .header_text').addClass('show');
+				$('#j_page_up').css('opacity', 1);
+				$('#music').css('opacity', 1);
             };
             
             var diaryShow = function () {
