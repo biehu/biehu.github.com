@@ -725,8 +725,10 @@ position:absolute;
         <script>
             var indexShow = function () {
                 $('.left_model, .right_model, .header_text').addClass('show');
-				$('#j_page_up').css('opacity', 1);
-				$('#music').css('opacity', 1);
+				setTimeout(function () {
+					$('#j_page_up').css('opacity', 1);
+					$('#music').css('opacity', 1);
+				}, 500);
             };
             
             var diaryShow = function () {
