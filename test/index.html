@@ -122,6 +122,10 @@ overflow: hidden;
             line-height: 42px;
         }
 
+		h1 img {
+			width:180px;
+		}
+
 		nav {
 			width:650px;
 		}
@@ -155,7 +159,6 @@ overflow: hidden;
             -webkit-transform:translate(0, 0);
 			-webkit-transition-duration: .5s;
 			z-index:2;
-			-webkit-transform: scale(0.8);
         }
         
         header .header_text.show {
@@ -815,14 +818,21 @@ position:absolute;
 
             
            var bindPageUp = function () {
-               $('nav').on('click', '.btn',  function () {
-                   index = Number($(this).attr('data-num'));
+               $('nav').on('click', 'a',  function () {
+                   index = Number($(this).find('.btn').attr('data-num'));
                    goPage();
+				   return false;
                });
               
            };
 
-		   function isWeiXin(){
+		   var page = function () {
+				bindPageUp();
+				touchPageUp();
+		   
+		   };
+
+		   var isWeiXin = function () {
 				var ua = window.navigator.userAgent.toLowerCase();
 				if(ua.match(/MicroMessenger/i) == 'micromessenger'){
 					return true;
@@ -842,8 +852,7 @@ position:absolute;
 				$('.load').hide();
 				setTimeout(function () {
 					indexShow();
-					bindPageUp();
-					touchPageUp();
+					page();
 				}, 500);
             });
         </script>
