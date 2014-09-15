@@ -1,0 +1,367 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul, li {
+    list-style:none;
+}
+
+a img {
+    border:none;
+}
+
+.page_container {
+    position:relative;
+    font-family:"微软雅黑";
+}
+
+.section_wrap {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.page_header {
+    background: url(../images/header.jpg) no-repeat center top fixed;
+}
+
+.page_header .section_wrap {
+    position:relative;
+}
+
+.header_link {
+    position:relative;
+    height:345px;
+}
+
+.header_link p {
+    position:absolute;
+    top:37px;
+    left:120px;
+    width:220px;
+    height:86px;
+}
+
+.header_link a {
+    float:right;
+    margin-left:5px;
+    vertical-align:middle;
+}
+
+.header_link_show {
+    display:none;
+    width:20px;
+    height:86px;
+    background:url(../images/header_06.png) no-repeat left center;
+}
+
+.header_link .header_link_newyork {
+    display:none;
+    position:relative;
+    left:172px;
+    margin-left:-172px;
+    opacity:0;
+}
+
+.header_link_newyork,
+.header_link_london {
+    width:85px;
+    height:86px;
+    background:url(../images/header_03.png) no-repeat;
+}
+
+.header_link_newyork {
+    background:url(../images/newyork.png) no-repeat;
+}
+
+.header_link_newyork:hover {
+    background:url(../images/newyork_hover.png) no-repeat;
+}
+
+.header_bottom {
+    background:url(../images/header_bottom_inner.jpg) no-repeat center top;
+}
+
+.header_bottom {
+    background:url(../images/header_bottom.png) no-repeat center top;
+}
+
+.menu {
+    position:absolute;
+    top: 0;
+    left: 282px;
+}
+
+.menu li {
+    float:left;
+    margin-right:60px;
+}
+
+.menu li a {
+    display:block;
+    width:65px;
+    height:66px;
+}
+
+.menu li .menu_60 {
+    background:url(../images/menu_60.png) no-repeat;
+}
+
+.menu li .menu_60.menu_on,
+.menu li .menu_60:hover {
+    background:url(../images/menu_hover_60.png) no-repeat;
+}
+
+.menu li .menu_70 {
+    background:url(../images/menu_70.png) no-repeat;
+}
+
+.menu li .menu_70.menu_on,
+.menu li .menu_70:hover {
+    background:url(../images/menu_hover_70.png) no-repeat;
+}
+
+.menu li .menu_80 {
+    background:url(../images/menu_80.png) no-repeat;
+}
+
+.menu li .menu_80.menu_on,
+.menu li .menu_80:hover {
+    background:url(../images/menu_hover_80.png) no-repeat;
+}
+
+.menu li .menu_90 {
+    background:url(../images/menu_90.png) no-repeat;
+}
+
+.menu li .menu_90.menu_on,
+.menu li .menu_90:hover {
+    background:url(../images/menu_hover_90.png) no-repeat;
+}
+
+.city_mark {
+    display:none;
+    overflow:hidden;
+    padding:100px 0 30px 50px;
+    font-size:13px;
+}
+
+.city_mark_on {
+    display:block;
+}
+
+.city_mark li {
+    float:left;
+    width:240px;
+    margin-right:110px;
+}
+
+.city_mark li.city_mark_last {
+    margin-right:0;
+}
+
+.mark_person {
+    height:236px;
+}
+
+.mark_person a {
+    display:block;
+    width:222px;
+}
+
+
+.mark_person .flip_hover {
+    display:none;
+}
+
+.mark_title {
+    height:45px;
+    line-height:45px;
+    text-align:center;
+    color:#FFF;
+    font-size:16px;
+}
+
+.mark_info {
+    line-height:22px;
+    margin-top:10px;
+}
+
+.section_container {
+    height:994px;
+    background:url(../images/section_bg.jpg) no-repeat center top fixed;
+}
+
+.section_title {
+    height:43px;
+}
+
+.section_content {
+    margin-top:25px;
+}
+
+.section_content:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+
+
+.city_view li {
+    float:left;
+    overflow:hidden;
+    width:302px;
+    height:362px;
+    margin-right:47px;
+    background:#FFF;
+}
+
+.city_view li.city_view_last {
+    margin-right:0;
+}
+
+.city_view  {
+    padding-top:40px;
+}
+
+.city_view_1 .section_title {
+    background:url(../images/section_menu_03.png) no-repeat center top;
+}
+
+.city_view_2 .section_title {
+    background:url(../images/section_menu_06.png) no-repeat center top;
+}
+
+.city_view_3 .section_title {
+    background:url(../images/section_menu_08.png) no-repeat center top;
+}
+
+.city_view_title{
+    line-height:25px;
+    padding:5px 10px;
+    font-size:20px;
+}
+
+.city_view_pic {
+    height:362px;
+}
+
+.city_view_text {
+    height:322px;
+    line-height:22px;
+    padding:20px;
+    background:#ff3636;
+    color:#FFF;
+    font-size:13px;
+}
+
+.city_view_text a {
+    text-decoration:none;
+    color:#FFF;
+}
+
+
+.city_view_text .city_view_title {
+    margin-bottom:30px;
+    padding:0;
+}
+
+.page_footer {
+    line-height:86px;
+    margin-top:65px;
+    background:#000;
+    text-align:center;
+    color:#FFF;
+    font-size:12px;
+    font-family:Arial;
+} 
+
+.fx_wrap {
+    position: absolute;left:50%;top:323px;z-index:999;width:1000px;margin-left:-500px;
+}
+.fx{position: absolute;right:0;width:58px;height: 58px; cursor: pointer;background: url(../images/fx.jpg);}
+.fx .slayer {
+    background: url(../images/shareLayer.jpg) no-repeat #fff;
+    width: 198px;
+    height: 254px;
+    overflow: hidden;
+    position: absolute;
+    right:0px;
+    top:0px;
+    z-index: 10;
+    border: 1px solid #eee;
+    display: none;
+}
+.fx .slayer .weixinshare {
+    background: url(../images/shareweixin.png) no-repeat;
+    position: absolute;
+    width: 168px;
+    height: 214px;
+    padding: 40px 0 0 30px;
+}
+.fx .slayer a{display: block;height: 50%;}
+.fx:hover .slayer{
+    display: block;
+}
+
+.flip_3d {
+    position: relative;
+    transform-style: preserve-3d;
+    -webkit-transition: 0.6s;
+    transition: 0.6s;
+}
+
+.flip_3d .flip_hover, .flip_3d:hover {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+.flip_3d a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.flip_3d .flip_hover {
+    display: block;
+}
+
+.focus {
+    overflow: hidden;
+    width: 1000px;
+}
+
+.focus ul {
+    width: 20000px;
+}
+
+.focus_btn a {
+    position: absolute;
+    top:50%;
+    margin-top:-18px;
+    width: 39px;
+    height: 64px;
+}
+
+.focus_btn_left {
+    left:-18px;
+    background: url(../images/scroll_left.png) no-repeat;
+}
+
+.focus_btn_left:hover {
+    background: url(../images/scroll_left_hover.png) no-repeat;
+}
+
+.focus_btn_right {
+    right:-18px;
+    background: url(../images/scroll_right.png) no-repeat;
+}
+
+.focus_btn_right:hover {
+    background: url(../images/scroll_right_hover.png) no-repeat;
+}
+
+
+.focus_wrap {
+    position: relative;
+}
+
+
