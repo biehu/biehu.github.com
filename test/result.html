@@ -549,12 +549,15 @@ overflow: hidden;
 .result h1 {
     overflow:hidden;
     height:50px;
+    line-height:normal;
     padding:20px 0;
     background: #000;
     color: #FFF;
 }
 
 .intro {
+    overflow:hidden;
+    height:240px;
     line-height:45px;
     background: url(images/intro_bg.png) no-repeat;
     font-size:3rem;
@@ -566,17 +569,24 @@ overflow: hidden;
     color:#000;
 }
 
+.other_person {
+    overflow:hidden;
+    margin-bottom:30px;
+}
+
 .other_person strong {
-    display:block;
-    float:left;
-    padding: 15px 25px;
-    background:#A9A8A8;
-    color:#FFF;
+    display: block;
+    float: left;
+    padding: 15px 22px;
+    background: #A9A8A8;
+    color: #FFF;
+    font-size: 3rem;
+    letter-spacing: 6px;
 }
 
 .other_person_content {
     float: left;
-    width: 522px;
+    width: 511px;
     background: url(images/result_icon.png) no-repeat;
     line-height: 35px;
     font-size: 2rem;
@@ -587,6 +597,7 @@ overflow: hidden;
 }
 
 .other_person_content b {
+    margin-right:25px;
     color:#000;
     font-weight:normal;
 }
