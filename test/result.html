@@ -8,37 +8,25 @@
         <title>【纽约·"梦"游记 Day1】蒋梦婕完美首秀 活力东方美点亮Tadashi头排_嘉人网</title>
         <style>
 
-@media all and (min-width: 550px) { 
-header .left_model.show,
-        header .right_model.show {
+        @media all and (min-width: 550px) { 
+            header .left_model.show, header .right_model.show {
+                -webkit-transform: scale(1);
+            }
+            
+            header .header_text.show {
+                -webkit-transform: scale(1);
+            }
+            
+            .lou_1 {
+                -webkit-transform: scale(1);
+            }
+            
+            .lou_2 {
+                -webkit-transform: scale(1);
+            }
+        	
         
-			-webkit-transform: scale(1);
-			
         }
-
-
-		header .header_text.show {
-            -webkit-transform: scale(1);
-        }
-
-
-		.lou_1 {
- -webkit-transform: scale(1);
-
-
-}
-
-.lou_2 { 
--webkit-transform: scale(1);
-
-
-
-}
-	
-
-}
-
-
 
         article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
             display: block;
@@ -133,7 +121,7 @@ overflow: hidden;
             position: relative;
             float: left;
             width: 214px;
-            height: 183px;
+            height: 186px;
 			line-height:183px;
 			overflow:hidden;
 			text-decoration:none;
@@ -171,8 +159,7 @@ overflow: hidden;
             position:absolute;
             top:0;
             left:0;
-            -webkit-transform:translate(-220px, 0);
-
+            z-index:5;
         }
 
         
@@ -180,8 +167,7 @@ overflow: hidden;
             position:absolute;
             top:0;
             right:0;
-            -webkit-transform:translate(250px, 0);
-            
+            z-index:5;
         }
 
 		.right_model.show {
@@ -192,7 +178,8 @@ overflow: hidden;
             position:absolute;
             top:-18px;
             left:126px;
-            -webkit-transform: scale(0);
+            z-index: 5;
+            -webkit-transform: scale(0.8);
             
         }
         
@@ -200,32 +187,30 @@ overflow: hidden;
             position:absolute;
             bottom:0;
             left:0;
-			z-index:3;
+			z-index:6;
         }
 
 
-			.load {
-				padding:20px;
-				text-align:center;
-			}
-		.global {
-			display:none;
-		}
-
-.lou_1 {
- -webkit-transform: scale(0.8);
-	position:absolute;
-	right: 55px;
-top: 10px;
-
-}
-
-.lou_2 { 
--webkit-transform: scale(0.8);
-position:absolute;
-
-
-}
+        .load {
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .global {
+            display: none;
+        }
+        
+        .lou_1 {
+            -webkit-transform: scale(0.8);
+            position: absolute;
+            right: 55px;
+            top: 10px;
+        }
+        
+        .lou_2 {
+            -webkit-transform: scale(0.8);
+            position: absolute;
+        }
 
 	
         
@@ -547,31 +532,71 @@ position:absolute;
 }
 
 /*
-	小喇叭
-*/
-
+ 小喇叭
+ */
 #music {
-	position: fixed;
-	right: 3%;
-	top:3%;
-	width: 56px;
-	height: 56px;
-	background: url(images/music_control_1.png) no-repeat 1px 1px;
-	z-index: 99;
-	opacity:0;
+    position: fixed;
+    right: 3%;
+    top: 3%;
+    width: 56px;
+    height: 56px;
+    background: url(images/music_control_1.png) no-repeat 1px 1px;
+    z-index: 99;
+    opacity: 0;
 }
 
 #music.on {
-	background: url(images/music_control_2.png) no-repeat 1px 1px;
+    background: url(images/music_control_2.png) no-repeat 1px 1px;
 }
 
 /*
  * 结果
  */
 .result h1 {
-    line-height:100px;
-    background:#000;
+    line-height: 100px;
+    background: #000;
+    color: #FFF;
+}
+
+nav {
+    display:none;
+}
+
+.intro {
+    line-height:45px;
+    background: url(images/intro_bg.png) no-repeat;
+    font-size:3rem;
+}
+
+.intro p {
+    padding: 45px 20px 30px;
+    background: url(images/icon_mark_gray.png) no-repeat 22px 14px;
+    color:#000;
+}
+
+.other_person strong {
+    display:block;
+    float:left;
+    padding: 15px 25px;
+    background:#A9A8A8;
     color:#FFF;
+}
+
+.other_person_content {
+    float: left;
+    width: 522px;
+    background: url(images/result_icon.png) no-repeat;
+    line-height: 35px;
+    font-size: 2rem;
+    padding-left: 28px;
+    margin: 20px 0 0 12px;
+    box-sizing: border-box;
+    color:#4e4c4c;
+}
+
+.other_person_content b {
+    color:#000;
+    font-weight:normal;
 }
  
         </style>
@@ -630,6 +655,24 @@ position:absolute;
                         </a>
                         
     				</nav>	
+                    <div class="intro">
+                        <p>2014巴黎时装周,提供2014年巴黎秋冬及秋冬时装周的相关详细介绍,精美的模特走秀及明星时装秀图片,引你走进2014秋冬时装周高端时尚盛宴。</p>
+                    </div>
+                    <div class="other_person">
+                        <strong>幕后<br/>人员</strong>
+                        <div class="other_person_content">
+                            <p>
+                                                                                            出品人  <b>Ethan</b>      监制  <b>蔡璐 </b><br />
+                                                                                            策划 /统筹  <b>Cici Wang、Eddi Liu </b> <br />     
+                                                                                            艺人统筹/Stylist  <b>Eddi Liu </b>  <br /> 
+                                                                                            专题  <b>Teresa、佩妮、Faith </b>        移动产品 <b>刘悦 </b>   <br />    
+                                                                                            视觉  <b>庾健  张幸 </b>       插画  <b>海嘉 </b>        制作  <b>马帅 </b>  <br />  
+                                                                                            造型师  <b>朱红 </b>        摄影/摄像  <b>朴天一（LPARKIMAGE） </b>  <br />  
+                                                                                            视频<b> 纽约nonnegativearts、翟英华   </b>   <br />   
+                                                                                            特别鸣谢 <b>北京荣信达影视艺术有限公司  </b>  
+                            </p>
+                        </div>
+                    </div>
     			</section> 
     
                 
@@ -648,18 +691,7 @@ position:absolute;
 </audio>
         <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script>
-            var indexShow = function () {
-                $('.left_model, .right_model, .header_text').addClass('show');
-				setTimeout(function () {
-					$('#j_page_up').css('opacity', 1);
-					$('#music').css('opacity', 1);
-				}, 500);
-            };
-            
-            var diaryShow = function () {
-                $('.person, .person_say').addClass('show');
-            };
-            
+            var indexShow = function () {};
             
             var resizeBody = function () {
                var sildeWidth = 640;
@@ -672,149 +704,16 @@ position:absolute;
            };
            
            
-           /*
-            * 翻页
-            */
-           var index = 0;
-           var isAnimate = false;
-           var isModal = false;
-           var yStart;
-           var yEnd;
-		   var page1 = $('#page_1').clone();
-           var page2 = $('#page_2').clone();
-           var page3 = $('#page_3').clone();
-           
-          
-           var setPage = function (dir,page) {
-                isAnimate = true;
-                goPage();
-
-                setTimeout(function(){
-                    if (isAnimate) {
-                        isAnimate = false;
-                    }
-                },500);
-            };
-            
-            var touchPageUp = function(){
-            
-                $(document).bind("touchstart", function(e){
-                    var touch = e.originalEvent.touches[0];
-                    yStart = touch.pageY;
-                });
-                $(document).bind("touchmove", function(e){
-                    event.preventDefault();
-                    var touch = e.originalEvent.touches[0];
-                    yEnd = touch.pageY;
-                    if (isAnimate || isModal) 
-                        return false;
-                    if (yEnd - 100 > yStart & yEnd > yStart) { //down
-                        if (index === 0)
-                            return false;
-                        setPage(1, --index);
-                    }
-                    else 
-                        if (yEnd + 100 < yStart & yEnd < yStart) { //up
-                            if (index === 6) {
-								index = -1;
-							}
-                              
-                            setPage(0, ++index);
-                        }
-                });
-                
-            };
-            
-            var goPage = function () {
-
-			$('.wrap').css('-webkit-transform', 
-										  'rotateY(0deg) rotateX(' + 90 * index + 'deg)');
-					   $('#page_' + index).css('z-index', 1);
-                   
-                   if (index === 3 || index === 4 || index === 5) {
-                       $('#page_1').replaceWith($('#page_5').clone().
-                                                attr('id', 'page_5_2').
-                                                show());
-                   }
-                   else {
-                        $('#page_5_2').replaceWith(page1);
-						indexShow();
-
-                   }
-                   if (index === 4  || index === 5 || index === 6) {
-                       $('#page_2').replaceWith($('#page_6').clone().
-                                                attr('id', 'page_6_2').
-                                                show());
-                   }
-                   else {
-                       $('#page_6_2').replaceWith(page2);
-                   }
-                   if (index === 5 || index === 6) {
-                       $('#page_3').replaceWith($('#page_7').clone().
-                                                attr('id', 'page_7_2').
-                                                show());
-					   if (index === 6) {
-							setTimeout(diaryShow, 800);
-					   }
-                   }
-                   else {
-                       $('#page_7_2').replaceWith(page3);
-                   }
-                   
-				   if (index === 0) {
-						$("#j_page_up").animate({opacity:0});
-				   }
-				   else {
-						$("#j_page_up").animate({opacity:1});
-				   }
-                   
+           var isWeiXin = function () {
+                var ua = window.navigator.userAgent.toLowerCase();
+                if(ua.match(/MicroMessenger/i) == 'micromessenger'){
+                    return true;
+                }else{
+                    return false;
+                }
             };
 
-            
-           var bindPageUp = function () {
-               $(document.body).on('click', 'nav a',  function () {
-                   index = Number($(this).find('.btn').attr('data-num'));
-                   goPage();
-				   return false;
-               });
-              
-           };
-
-		   var page = function () {
-				bindPageUp();
-				touchPageUp();
-		   
-		   };
-
-		   var isWeiXin = function () {
-				var ua = window.navigator.userAgent.toLowerCase();
-				if(ua.match(/MicroMessenger/i) == 'micromessenger'){
-					return true;
-				}else{
-					return false;
-				}
-			};
-
-
-			var music = function () {
-				var isPlay = true;
-				$("#music").on("click",function(){
-					var audio = $('#audio_music')[0];
-					var that = $(this);
-					if (isPlay) {
-						audio.pause();
-						isPlay = false;
-						that.removeClass('on');
-					}
-					else {
-						audio.play();
-						isPlay = true;
-						that.addClass('on');
-					}
-				});
-
-			};
-
+ 
             $(window).load(function () {
 				
 				var isAndroid = /Android/i.test(window.navigator.userAgent);
@@ -823,64 +722,12 @@ position:absolute;
 				}
                 resizeBody();
 				$('.load').hide();
-				page();
-				music();
 				setTimeout(function () {
 					indexShow();
 				}, 500);
             });
 
-			/*
-				微信分享
 			
-			*/
-
-
-			document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
-        
-    WeixinJSBridge.on('menu:share:appmessage', function(argv) {
-        WeixinJSBridge.invoke('sendAppMessage', {
-            "img_url": window.shareData.imgUrl,
-            "link": window.shareData.timeLineLink,
-            "desc": window.shareData.tContent,
-            "title": window.shareData.tTitle
-        }, function(res) {
-            dp_share(); 
-    });
-});
-
-WeixinJSBridge.on('menu:share:timeline', function(argv) {
-    WeixinJSBridge.invoke('shareTimeline', {
-        "img_url": window.shareData.imgUrl,
-        "img_width": "640",
-        "img_height": "640",
-        "link": window.shareData.timeLineLink,
-        "desc": window.shareData.tContent,
-        "title": window.shareData.tTitle
-    }, function(res) {
-        dp_share(); 
-    });
-});
-WeixinJSBridge.on('menu:share:weibo', function(argv) {
-            WeixinJSBridge.invoke('shareWeibo', {
-                "content": window.shareData.tContent,
-                "url": window.shareData.timeLineLink
-            }, function(res) {
-                dp_share();
-            });
-        });
-
-        }, false)
-
-
-
-
-		window.shareData = {
-    "imgUrl": "http://upload.mcchina.com/2014/0905/1409920120699.jpg", 
-    "timeLineLink": "http://www.mcchina.com/mini/2015ssfashionweekNY01/",
-    "tTitle": "【纽约·梦游记 Day1】蒋梦婕完美首秀 活力东方美点亮Tadashi头排_嘉人网",
-    "tContent": "蒋梦婕亮相2015春夏纽约时装周Tadashi Shoji秀场。一袭宝蓝色抹胸A字裙搭配浅黄色尖头高跟鞋，再加上侧放在一边的麻花辫，彰显了蒋梦婕的青春与活力，成为了Tadashi Shoji 秀场上的亮点之一。"
-};
         </script>
 	</body>
 </html>
