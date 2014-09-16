@@ -114,7 +114,7 @@ overflow: hidden;
 		nav {
 			width:650px;
             overflow:hidden;
-            background:#000;
+            background:#ECECEC;
 		}
         
         nav a {
@@ -141,16 +141,16 @@ overflow: hidden;
             font-family: Arial;
         }
         
-        header .left_model.show,
+       header .left_model.show,
         header .right_model.show {
             -webkit-transform:translate(0, 0);
-			-webkit-transition-duration: .5s;
-			z-index:2;
+            -webkit-transition-duration: .5s;
+            z-index:2;
         }
         
         header .header_text.show {
-			-webkit-transition-duration: .5s;
-			-webkit-transition-delay: 1s;
+            -webkit-transition-duration: .5s;
+            -webkit-transition-delay: 1s;
             -webkit-transform: scale(0.8);
 
         }
@@ -159,7 +159,8 @@ overflow: hidden;
             position:absolute;
             top:0;
             left:0;
-            z-index:5;
+            -webkit-transform:translate(-220px, 0);
+
         }
 
         
@@ -167,19 +168,19 @@ overflow: hidden;
             position:absolute;
             top:0;
             right:0;
-            z-index:5;
+            -webkit-transform:translate(250px, 0);
+            
         }
 
-		.right_model.show {
-			-webkit-transition-delay: .5s;
-		}
+        .right_model.show {
+            -webkit-transition-delay: .5s;
+        }
         
         .header_text {
             position:absolute;
             top:-18px;
             left:126px;
-            z-index: 5;
-            -webkit-transform: scale(0.8);
+            -webkit-transform: scale(0);
             
         }
         
@@ -187,7 +188,7 @@ overflow: hidden;
             position:absolute;
             bottom:0;
             left:0;
-			z-index:6;
+            z-index:3;
         }
 
 
@@ -529,7 +530,7 @@ overflow: hidden;
  小喇叭
  */
 #music {
-    position: fixed;
+    position:absolute;
     right: 3%;
     top: 3%;
     width: 56px;
@@ -606,6 +607,7 @@ overflow: hidden;
 	</head>
 	<body>
 <div class="load">正在加载中...</div>
+<div id="music" class="on"></div>
 
 	<div class="global">
 <div class="container">
@@ -691,11 +693,21 @@ overflow: hidden;
  
 </div>
 
+<div id="j_page_up" class="page_up">
+   <span></span>
+</div>
 
+<audio id="audio_music" src="images/music.mp3" autoplay loop>
 </audio>
         <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script>
-            var indexShow = function () {};
+            var indexShow = function () {
+                $('.left_model, .right_model, .header_text').addClass('show');
+                setTimeout(function () {
+                    $('#j_page_up').css('opacity', 1);
+                    $('#music').css('opacity', 1);
+                }, 500);
+            };
             
             var resizeBody = function () {
                var sildeWidth = 640;
@@ -716,6 +728,25 @@ overflow: hidden;
                     return false;
                 }
             };
+            
+            var music = function () {
+                var isPlay = true;
+                $("#music").on("click",function(){
+                    var audio = $('#audio_music')[0];
+                    var that = $(this);
+                    if (isPlay) {
+                        audio.pause();
+                        isPlay = false;
+                        that.removeClass('on');
+                    }
+                    else {
+                        audio.play();
+                        isPlay = true;
+                        that.addClass('on');
+                    }
+                });
+
+            };
 
  
             $(window).load(function () {
@@ -726,6 +757,7 @@ overflow: hidden;
 //				}
                 resizeBody();
 				$('.load').hide();
+                music();
 				setTimeout(function () {
 					indexShow();
 				}, 500);
