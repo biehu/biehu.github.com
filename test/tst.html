@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html >
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+		<meta name="description" content="蒋梦婕亮相2015春夏纽约时装周Tadashi Shoji秀场。一袭宝蓝色抹胸A字裙搭配浅黄色尖头高跟鞋，再加上侧放在一边的麻花辫，彰显了蒋梦婕的青春与活力，成为了Tadashi Shoji 秀场上的亮点之一。" />
+        <meta name="keywords" content="嘉人网 纽约·梦游记 蒋梦婕 时装周 纽约时装周 Tadashi  " />
+        <title>【纽约·"梦"游记 Day1】蒋梦婕完美首秀 活力东方美点亮Tadashi头排_嘉人网</title>
+      </head>
+
+	  <body>
+<div id="inp"></div>  
+
+<script>
+
+function load (){  
+  
+    document.addEventListener('touchstart',touch, false);  
+    document.addEventListener('touchmove',touch, false);  
+    document.addEventListener('touchend',touch, false);  
+      
+    function touch (event){  
+        var event = event || window.event;  
+          
+        var oInp = document.getElementById("inp");  
+  
+        switch(event.type){  
+            case "touchstart":  
+                oInp.innerHTML = "Touch started (" + event.touches[0].clientX + "," + event.touches[0].clientY + ")";  
+                break;  
+            case "touchend":  
+                oInp.innerHTML = "<br/>Touch end (" + event.changedTouches[0].clientX + "," + event.changedTouches[0].clientY + ")";  
+                break;  
+            case "touchmove":  
+                event.preventDefault();  
+                oInp.innerHTML = "<br/>Touch moved (" + event.touches[0].clientX + "," + event.touches[0].clientY + ")";  
+                break;  
+        }  
+          
+    }  
+}  
+window.addEventListener('load',load, false);  
+</script>
+
+	  </body>
+
+	  </html>
