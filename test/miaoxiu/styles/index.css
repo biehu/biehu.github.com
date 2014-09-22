@@ -7,6 +7,10 @@ ul {
     list-style:none;
 }
 
+img {
+    vertical-align:bottom;
+}
+
 a img {
     border:none;
 }
@@ -15,13 +19,21 @@ a {
     text-decoration:none;
 }
 
+.clear {
+    clear:both;
+}
+
+.section {
+    overflow:hidden;
+}
+
 .page_container {
     background:#e8e8e8;
 }
 
 .header_text {
     height:477px;
-    background:url(../images/miaoxiu_01.jpg) no-repeat center top;
+    background:url(../images/miaoxiu_01.jpg) no-repeat center top fixed;
 }
 
 .header_banner {
@@ -55,7 +67,7 @@ a {
 
 .media {
     overflow:hidden;
-    margin-top:20px;
+    margin:20px 0  40px 0;
 }
 
 .inner {
@@ -129,7 +141,6 @@ a {
 .scroll_pic {
     position:relative;
     width:1100px;
-    overflow:hidden;
     margin:0 auto;
     
 }
@@ -137,7 +148,7 @@ a {
 .scroll_pic ul {
     width:1027px;
     height:77px;
-    margin:0 auto;
+    margin-left:50px;
     padding:16px 0 0 25px;
     background:url(../images/scroll_pic_text.png) no-repeat;
 }
@@ -157,13 +168,14 @@ a {
 
 .scroll_pic_btn a {
     position:absolute;
-    top:70px;
+    top:50%;
     width:102px;
     height:102px;
+    margin-top:-51px;
 }
 
 .scroll_pic_left {
-    left:0;
+    left:-50px;
     background:url(../images/scroll_left.png) no-repeat;
 }
 
@@ -172,13 +184,16 @@ a {
 }
 
 .scroll_pic_right {
-    right:0;
+    right:-50px;
     background:url(../images/scroll_right.png) no-repeat;
 }
 
 .scroll_pic_right:hover {
-    right:0;
     background:url(../images/scroll_right_hover.png) no-repeat;
+}
+
+.aftertime {
+    margin-bottom:20px;
 }
 
 .aftertime ul {
@@ -198,7 +213,7 @@ a {
 
 .afterstory  {
 	height:598px;
-	background:url(../images/afterstory.jpg) no-repeat center -1px;
+	background:url(../images/afterstory.jpg) no-repeat center -1px fixed;
     font-size:13px;
     font-family:"微软雅黑";
     
@@ -211,10 +226,9 @@ a {
 
 .afterstory .section_title {
 	position:relative;
-	top:20px;
 	width:499px;
 	height:53px;
-	margin:0 auto 20px;
+	margin:0 auto 30px;
 	background:url(../images/afterstory_title.png) no-repeat;
 }
 
@@ -238,7 +252,7 @@ a {
 .fashion .section_title {
     width:602px;
     height:59px;
-    margin:0 auto;
+    margin:30px auto 0;
     background:url(../images/fashion_title.png) no-repeat;
 }
 
@@ -262,7 +276,8 @@ a {
 }
 
 .across_scroll {
-    height:490px;
+    height:488px;
+    overflow:hidden;
     background:url(../images/across_scroll.jpg) no-repeat;
 }
 
@@ -275,14 +290,9 @@ a {
     padding:0;
 }
 
-.scroll_pic_btn a {
-    top:160px;
-}
-
 .scroll_pic_list {
     width:100000px;
 }
-
 
 .zhezhao1 {
     position: absolute;
@@ -332,7 +342,86 @@ a {
     float:left;
 }
 
+.aftertime .scroll_pic {
+    overflow:hidden;
+}
+
 .aftertime .scroll_pic ul,
 .fashion .scroll_pic ul {
     width:auto;
+}
+
+.across_scroll .scroll_pic,
+.across_scroll .scroll_pic_con {
+    width:1000px;
+}
+
+
+
+.scroll_pic_con {
+    width:1100px;
+    overflow:hidden;
+}
+
+.afterstory_flip_pic {
+    width:980px;
+    overflow:hidden;
+    margin:30px auto;
+}
+
+.flip_3d {
+    float:left;
+    width: 195px;
+    height:200px;
+    position: relative;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transition: 0.6s;
+    transition: 0.6s;
+}
+
+.flip_3d .flip_hover, .flip_3d:hover {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+.flip_3d a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.flip_3d .flip_hover {
+    display: block;
+}
+
+.flip_pic_item {
+    float:left;
+    width:195px;
+}
+
+.surport {
+    padding:10px 0 50px 0;
+    background:#D7D7D7;
+}
+
+.surport strong {
+    display:block;
+    padding-top:20px;
+    color:#928983;
+    font-weight:normal;
+    font-size:13px;
+    font-family:"微软雅黑";
+}
+
+.surport p {
+    overflow:hidden;
+    margin-top:8px;
+}
+
+.surport p a {
+    float:left;
+    margin:0 2px 2px 0;
 }

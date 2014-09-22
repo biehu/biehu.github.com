@@ -29,12 +29,12 @@ var changePlayBtn = function (elem) {
 };
 
 var bindPlayMusic = function () {
-    $('#j_music_control').click(function () {
+    $('#j_music_control').click(function (e) {
+        e.preventDefault();
         var self = $(this);
         changePlayBtn(self);
         musicRotate(self);
         playMusic(self);
-        return false;
     });
 };
 
@@ -76,26 +76,35 @@ var scrllShow = function () {
 };
 
 
-var activeIndex = 0;
+var root, innerWrap, pageNum, wrap;
 var time = 2000;
-var defaultNumClass = 'focus_num_on';
-var root = $('#j_scroll');
-var innerWrap = root.find('.scroll_pic_list');
-var pageNum = Math.ceil(innerWrap.find('.scroll_pic_item').length / 3);
+
+var setElem = function (elem) {
+    wrap = elem.parents('.scroll_pic');
+    root = wrap.find('.scroll_pic_con');
+    innerWrap = wrap.find('.scroll_pic_list');
+    pageNum = innerWrap.find('.scroll_pic_item').length;
+    
+    wrap.data('activeIndex', 0);
+    
+};
 
 var setShowPic = function (type) {
+    var activeIndex = wrap.data('activeIndex');
     if (type === 1) {
         innerWrap.animate({'margin-left': activeIndex === 0 ?
-            0 : -Math.abs(innerWrap.find('.scroll_pic_item')[activeIndex * 3].offsetLeft) * activeIndex + 'px'});
+            0 : -Math.abs(innerWrap.find('.scroll_pic_item')[activeIndex].offsetLeft) * activeIndex + 'px'});
     }
     else {
         innerWrap.animate({'margin-left': activeIndex === 0 ?
-            0 : -Math.abs(innerWrap.find('.scroll_pic_item')[activeIndex * 3].offsetLeft)+ 'px'});
+            0 : -Math.abs(innerWrap.find('.scroll_pic_item')[activeIndex].offsetLeft)+ 'px'});
     }
 };
 
 var scrollLeft = function (e) {
     e.preventDefault();
+    setElem($(this));
+    var activeIndex = wrap.data('activeIndex');
     if (activeIndex > 0) {
        activeIndex -= 1;
    }
@@ -103,11 +112,14 @@ var scrollLeft = function (e) {
        activeIndex = pageNum - 1;
    }
    
+   wrap.data('activeIndex', activeIndex);
    setShowPic(0);
 };
 
 var scrollRight = function (e) {
     e.preventDefault();
+    setElem($(this));
+    var activeIndex = wrap.data('activeIndex');
     if (activeIndex < pageNum - 1) {
        activeIndex += 1;
    }
@@ -115,12 +127,13 @@ var scrollRight = function (e) {
        activeIndex = 0;
    }
    
+   wrap.data('activeIndex', activeIndex);
    setShowPic(1);
 };
 
 var imgPlay = function () {
-    $('#j_l').on('click', scrollLeft)
-    $('#j_r').on('click', scrollRight)
+    $('.j_left').on('click', scrollLeft)
+    $('.j_right').on('click', scrollRight)
 };
 
 $(function () {
