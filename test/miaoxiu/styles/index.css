@@ -216,7 +216,7 @@ a {
 
 .aftertime ul {
     height:312px;
-    background-position:10px bottom;
+    background-position:-14px bottom;
 }
 
 .aftertime ul li {
@@ -310,6 +310,7 @@ a {
 
 .scroll_pic_list {
     width:100000px;
+	overflow:hidden;
 }
 
 .zhezhao1 {
@@ -362,7 +363,22 @@ a {
 }
 
 .aftertime .scroll_pic {
-    overflow:hidden;
+	width:999px;
+	margin-left:-500px;
+}
+
+.aftertime .scroll_pic ul {
+	margin-left:0;
+    padding-left:0;
+}
+
+.aftertime .scroll_pic_btn a {
+	margin-top:-74px;
+}
+
+.aftertime .scroll_pic_con {
+	width:999px;
+	margin:0 auto;
 }
 
 .aftertime .scroll_pic ul,
