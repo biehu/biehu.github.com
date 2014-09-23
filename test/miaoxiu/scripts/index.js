@@ -29,6 +29,7 @@ var changePlayBtn = function (elem) {
 };
 
 var bindPlayMusic = function () {
+	musicRotate($('#j_music_control'));
     $('#j_music_control').click(function (e) {
         e.preventDefault();
         var self = $(this);
