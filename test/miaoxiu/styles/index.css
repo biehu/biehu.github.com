@@ -188,6 +188,10 @@ a {
     margin-top:-51px;
 }
 
+.scroll_show .scroll_pic_btn a {
+	margin-top:-99px;
+}
+
 .scroll_pic_left {
     left:-50px;
     background:url(../images/scroll_left.png) no-repeat;
