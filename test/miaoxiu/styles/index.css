@@ -60,9 +60,20 @@ a {
 }
 
 .music {
+   position:relative;
    width:332px;
    height:332px;
    background:url(../images/disk_bg.jpg) no-repeat; 
+}
+
+.music p {
+	position:absolute;
+	top: 230px;
+	left: 114px;
+	z-index:1;
+	color:#FFF;
+	font-size:25px;
+	font-family:"微软雅黑";
 }
 
 .media {

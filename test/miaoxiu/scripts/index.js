@@ -69,9 +69,9 @@ var scrllShow = function () {
 
     $(window).scroll(function(){
         var sct = $(this).scrollTop();
-        f(sct,topShow.eq(0),wrap.eq(0),bottomShow.height(),topShow.height());
-        f(sct,topShow.eq(1),wrap.eq(1),bottomShow.height(),topShow.height());
-        f(sct,topShow.eq(2),wrap.eq(2),bottomShow.height(),topShow.height());
+        f(sct,topShow.eq(0),wrap.eq(0),bottomShow.height(),topShow.height() + 30);
+        f(sct,topShow.eq(1),wrap.eq(1),bottomShow.height(),topShow.height() + 30);
+        f(sct,topShow.eq(2),wrap.eq(2),bottomShow.height(),topShow.height() + 30);
     });
 };
 
@@ -84,9 +84,6 @@ var setElem = function (elem) {
     root = wrap.find('.scroll_pic_con');
     innerWrap = wrap.find('.scroll_pic_list');
     pageNum = innerWrap.find('.scroll_pic_item').length;
-    
-    wrap.data('activeIndex', 0);
-    
 };
 
 var setShowPic = function (type) {
@@ -104,7 +101,7 @@ var setShowPic = function (type) {
 var scrollLeft = function (e) {
     e.preventDefault();
     setElem($(this));
-    var activeIndex = wrap.data('activeIndex');
+    var activeIndex = wrap.data('activeIndex') ? wrap.data('activeIndex') : 0;
     if (activeIndex > 0) {
        activeIndex -= 1;
    }
@@ -119,7 +116,7 @@ var scrollLeft = function (e) {
 var scrollRight = function (e) {
     e.preventDefault();
     setElem($(this));
-    var activeIndex = wrap.data('activeIndex');
+    var activeIndex = wrap.data('activeIndex') ? wrap.data('activeIndex') : 0;
     if (activeIndex < pageNum - 1) {
        activeIndex += 1;
    }
