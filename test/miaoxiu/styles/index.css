@@ -28,6 +28,9 @@ a {
 }
 
 .page_container {
+	max-width:1580px;
+	overflow:hidden;
+	margin:0 auto;
     background:#e8e8e8;
 }
 
@@ -435,4 +438,10 @@ a {
 .surport p a {
     float:left;
     margin:0 2px 2px 0;
+}
+
+.weibo_live {
+	height:334px;
+	overflow:hidden;
+	background:#FFF;
 }
