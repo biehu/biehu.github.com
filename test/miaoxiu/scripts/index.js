@@ -69,8 +69,8 @@ var scrllShow = function () {
 
     $(window).scroll(function(){
         var sct = $(this).scrollTop();
-        f(sct,topShow.eq(0),wrap.eq(0),bottomShow.height(),topShow.height() + 30);
-        f(sct,topShow.eq(1),wrap.eq(1),bottomShow.height(),topShow.height() + 30);
+        f(sct,topShow.eq(0),wrap.eq(0),bottomShow.height() + 80,topShow.height());
+        f(sct,topShow.eq(1),wrap.eq(1),bottomShow.height() + 80,topShow.height());
         f(sct,topShow.eq(2),wrap.eq(2),bottomShow.height(),topShow.height() + 30);
     });
 };
