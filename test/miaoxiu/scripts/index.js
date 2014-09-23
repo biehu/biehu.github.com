@@ -43,15 +43,14 @@ var playVideo = function () {
     var widths=$(window).width();
     $(".zhezhao1").css({width:widths,left:-widths,display:"none"});
     $("#j_play").click(function(){
-        $(".zhezhao1").stop().animate({left:"0px",zIndex:"999"},500).css({display:"block"});
-        window.scrollTo(0, 0);
+        $(".zhezhao1").stop().animate({top: document.body.scrollTop + 'px', 
+			left:"0px",zIndex:"999"},500).css({display:"block"});
         return false;
     });
     $(".closes").click(function(){
         $(".zhezhao1").css({zIndex:"9"}).stop().animate({left:-widths},500,function(){
             $(".zhezhao1").css({display:"none"});
-            });
-
+        });
     });
 };
 
