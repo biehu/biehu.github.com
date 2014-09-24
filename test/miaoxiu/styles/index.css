@@ -410,6 +410,7 @@ a {
     height:200px;
     position: relative;
     -webkit-transform-style: preserve-3d;
+	-mz-transform-style: preserve-3d;
     transform-style: preserve-3d;
     -webkit-transition: 0.6s;
     transition: 0.6s;
@@ -417,6 +418,7 @@ a {
 
 .flip_3d .flip_hover, .flip_3d:hover {
     -webkit-transform: rotateY(180deg);
+    -mz-transform: rotateY(180deg);
     transform: rotateY(180deg);
 }
 
@@ -424,7 +426,10 @@ a {
     position: absolute;
     top: 0;
     left: 0;
+	width:195px;
+	height:200px;
     -webkit-backface-visibility: hidden;
+	-mz-backface-visibility: hidden;
     backface-visibility: hidden;
 }
 
@@ -435,6 +440,17 @@ a {
 .flip_pic_item {
     float:left;
     width:195px;
+}
+
+.flip_3d_2 .flip_hover,
+.flip_3d_3 .flip_hover,
+.flip_3d_4 .flip_hover,
+.flip_3d_5 .flip_hover {
+	left: 4px;
+}
+
+.flip_3d_5 .flip_hover {
+	top: -4px;
 }
 
 .surport {
@@ -518,7 +534,7 @@ a {
 .surport_top {
 	display:none;
 	height:200px;
-	background:#b50108 url(../images/surport_top.jpg) no-repeat;
+	background:#b50108 url(../images/surport_top.jpg) no-repeat center top;
 }
 
 .surport {

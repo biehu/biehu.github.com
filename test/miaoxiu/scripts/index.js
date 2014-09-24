@@ -43,7 +43,8 @@ var playVideo = function () {
     var widths=$(window).width();
     $(".zhezhao1").css({width:widths,left:-widths,display:"none"});
     $("#j_play").click(function(){
-        $(".zhezhao1").stop().animate({top: document.body.scrollTop + 'px', 
+        $(".zhezhao1").stop().animate({
+			top: document.body.scrollTop ? document.body.scrollTop : document.documentElement.scrollTop + 'px', 
 			left:"0px",zIndex:"999"},500).css({display:"block"});
         return false;
     });
