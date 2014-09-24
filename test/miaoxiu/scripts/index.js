@@ -133,11 +133,37 @@ var imgPlay = function () {
     $('.j_right').on('click', scrollRight)
 };
 
+var showWeixin = function () {
+    $('.slayer a:eq(1)').hover(function(){
+        $('.weixinshare').stop().animate({
+            top:0
+        },300)
+    })
+    
+    $('.weixinshare').mouseleave(function(){
+        $('.weixinshare').stop().animate({
+            top:254
+        },300)
+    })
+
+};
+
+var showSurportTop = function () {
+	$(window).scroll(function(){
+        var sct = $(this).scrollTop();
+		if (sct > ($('.across_scroll')[0].offsetTop + 100)) {
+			$('.surport_top').slideDown();
+		}
+    });
+};
+
 $(function () {
     playVideo();
     bindPlayMusic();
     scrllShow();
     imgPlay();
+	showWeixin();
+	showSurportTop();
 });
 
 

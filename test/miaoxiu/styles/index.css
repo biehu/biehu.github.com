@@ -438,8 +438,8 @@ a {
 }
 
 .surport {
-    padding:10px 0 50px 0;
-    background:#D7D7D7;
+    padding:20px 0 50px 0;
+    background:#FFF;
 }
 
 .surport strong {
@@ -465,4 +465,62 @@ a {
 	height:334px;
 	overflow:hidden;
 	background:#FFF;
+}
+
+.fx_wrap {
+    position: absolute;
+    left: 50%;
+    top: 45px;
+    z-index: 999;
+    width: 1000px;
+    margin-left: -500px;
+}
+
+.fx {
+    position: absolute;
+    right: 0;
+    width: 58px;
+    height: 58px;
+    cursor: pointer;
+    background: url(../images/fx.jpg);
+}
+
+.fx .slayer {
+    background: url(../images/shareLayer.jpg) no-repeat #fff;
+    width: 198px;
+    height: 254px;
+    overflow: hidden;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    z-index: 10;
+    border: 1px solid #eee;
+    display: none;
+}
+
+.fx .slayer .weixinshare {
+    background: url(../images/shareweixin.png) no-repeat;
+    position: absolute;
+    width: 168px;
+    height: 214px;
+    padding: 40px 0 0 30px;
+}
+
+.fx .slayer a {
+    display: block;
+    height: 50%;
+}
+
+.fx:hover .slayer {
+    display: block;
+}
+
+.surport_top {
+	display:none;
+	height:200px;
+	background:#b50108 url(../images/surport_top.jpg) no-repeat;
+}
+
+.surport {
+	text-align:center;
 }
