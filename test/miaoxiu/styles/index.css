@@ -540,3 +540,12 @@ a {
 .surport {
 	text-align:center;
 }
+
+.ad {
+	position: absolute;
+	top: 660px;
+	left: 50%;
+	width: 88px;
+	height: 168px;
+	margin-left: 500px;
+}
