@@ -36,7 +36,7 @@ a {
 
 .header_text {
     height:477px;
-    background:url(../images/miaoxiu_01.jpg) no-repeat center top fixed;
+    background:#910106 url(../images/miaoxiu_01.jpg) no-repeat center top fixed;
 }
 
 .header_banner {
@@ -542,9 +542,10 @@ a {
 }
 
 .ad {
-	position: absolute;
+	position: fixed;
 	top: 660px;
 	left: 50%;
+	z-index: 100;
 	width: 88px;
 	height: 168px;
 	margin-left: 500px;
