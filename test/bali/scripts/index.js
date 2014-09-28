@@ -107,6 +107,52 @@ var showWeixin = function () {
 
 };
 
+$(function () {
+   var activeIndex = 0;
+   var time = 2000;
+   var defaultNumClass = 'focus_num_on';
+   var wrap = $('#j_focus');
+   var innerWrap = $('#j_pic');
+   var items = innerWrap.find('a');
+   
+   var setShowPic = function () {
+	   innerWrap.animate({'left': -items.eq(activeIndex)[0].offsetLeft + 'px'});
+	   $('#j_num').find('a').removeClass(defaultNumClass).
+		   eq(activeIndex).addClass(defaultNumClass);
+   };
+   
+   var imgPlayChange = function () {
+	   if (activeIndex < items.length - 1) {
+		   activeIndex += 1;
+	   }
+	   else {
+		   activeIndex = 0;
+	   }
+	   
+	   setShowPic();
+	   
+   };
+   
+   var imgPlay = function () {
+	   setInterval(imgPlayChange, time);
+	   
+   };
+   
+   imgPlay();
+});
+
+var showCurrentTab = function () {
+    var defaultClass = 'tab_on';
+    var self = $(this);
+    var conent = $('.tab_content').find('p').eq(self.attr('data-num') - 1);
+    
+    self.parents('ul').find('a').removeClass(defaultClass);
+    self.addClass(defaultClass);
+        
+    conent.siblings().removeClass(defaultClass);
+    conent.addClass(defaultClass);
+};
+
 
 $(function () {
     showHeader_1();
@@ -115,4 +161,6 @@ $(function () {
         
     editerTimeShow();
     showWeixin();
+    
+    $('.tab_title a').on('mouseenter', showCurrentTab);
 });

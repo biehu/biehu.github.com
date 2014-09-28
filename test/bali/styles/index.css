@@ -513,3 +513,221 @@ div.page_nav li a:hover {
     z-index:2;
     width:100%;
 }
+
+/*
+ * 公益展预告
+ */
+.foreshow {
+    height:642px;
+    background:url(../images/foreshow.jpg) no-repeat center top fixed;
+}
+
+.foreshow h2 {
+    height:31px;
+    background:url(../images/foreshow_title.png) no-repeat center top;
+}
+
+.foreshow_header {
+    padding-top:43px;
+    text-align:center;
+    font-family:"微软雅黑";
+}
+
+.foreshow_header h3 {
+    font-size:24px;
+    font-weight:normal;
+}
+
+.foreshow_header p {
+    line-height:25px;
+    font-size:15px;
+}
+
+.foreshow_content {
+    overflow:hidden;
+    width:1002px;
+    margin:30px auto 0;
+}
+
+.foreshow_content > div {
+    float:left;
+    width:333px;
+    height:333px;
+    margin-right:1px;
+    overflow:hidden;
+}
+
+.focus {
+    position:relative;
+}
+
+.focus .focus_pic {
+    position: absolute;
+    width: 20000px;
+}
+
+.focus a {
+    float: left;
+}
+
+.focus .focus_on {
+    display: block;
+}
+
+.focus_num {
+    position: absolute;
+    bottom: 7px;
+    left:133px;
+    width:333px;
+    text-align:center;
+}
+
+.focus_num a {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-right: 5px;
+    background:url(../images/focus_point.png) no-repeat -20px 0;
+}
+
+.focus_num .focus_num_on {
+    background-position:0 0;
+}
+
+/*
+ * 公益展
+ */
+.show {
+    height:636px;
+    padding-top:40px;
+    background:url(../images/show.jpg) no-repeat center top fixed;
+}
+
+.show_scene {
+    height: 390px;
+    overflow: hidden;
+}
+
+.show_scene h2 {
+    height:28px;
+    background:url(../images/show_title.png) no-repeat center top;
+}
+
+.show_scene h3 {
+    line-height:30px;
+    margin-top:5px;
+    text-align:center;
+    color:#FFF;
+    font-size:24px;
+    font-weight:normal;
+    font-family:"微软雅黑";
+}
+
+.show_scene_content .section {
+    padding-top:20px;
+    background:none;
+}
+
+.show_star h2 {
+    height:28px;
+    background:url(../images/show_title_2.png) no-repeat center top;
+}
+
+.tab {
+    margin-top:30px;
+}
+
+.tab_title li {
+    float:left;
+}
+
+.tab_title li a {
+    display:block;
+    width:200px;
+    height:88px;
+    background:url(../images/guest.png) no-repeat;
+}
+
+.tab_title li a.tab_on,
+.tab_title li a:hover {
+    margin-top:-10px;
+    height:99px;
+}
+
+.tab_title li a.tab_1 {
+    background-position:0 0;
+}
+
+.tab_title li a.tab_1.tab_on,
+.tab_title li a.tab_1:hover {
+    background-position:0 -140px;
+}
+
+.tab_title li a.tab_2 {
+    background-position:-200px 0;
+}
+
+.tab_title li a.tab_2.tab_on,
+.tab_title li a.tab_2:hover {
+    background-position:-200px -140px;
+}
+
+.tab_title li a.tab_3 {
+    background-position:-400px 0;
+}
+
+.tab_title li a.tab_3.tab_on,
+.tab_title li a.tab_3:hover {
+    background-position:-400px -140px;
+}
+
+.tab_title li a.tab_4 {
+    background-position:-600px 0;
+}
+
+.tab_title li a.tab_4.tab_on,
+.tab_title li a.tab_4:hover {
+    background-position:-600px -140px;
+}
+
+
+.tab_title li a.tab_5 {
+    background-position:-800px 0;
+}
+
+.tab_title li a.tab_5.tab_on,
+.tab_title li a.tab_5:hover {
+    background-position:-800px -140px;
+}
+
+.tab_content {
+    clear:both;
+    padding-top:20px;
+}
+
+.tab_content p {
+    display:none;
+    line-height:22px;
+    color:#FFF;
+    font-size:13px;
+    font-family:"微软雅黑";
+}
+
+.tab_content p.tab_on {
+    display:block;
+}
+
+.tab_content p i {
+    display:inline-block;
+    width:17px;
+    height:15px;
+}
+
+.tab_content p .mark_start {
+    margin-right:5px;
+    background:url(../images/mark_start.png) no-repeat;
+}
+
+.tab_content p .mark_end {
+    background:url(../images/mark_end.png) no-repeat;
+}
