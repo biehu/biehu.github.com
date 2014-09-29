@@ -114,6 +114,7 @@ $(function () {
    var wrap = $('#j_focus');
    var innerWrap = $('#j_pic');
    var items = innerWrap.find('a');
+   var interval;
    
    var setShowPic = function () {
 	   innerWrap.animate({'left': -items.eq(activeIndex)[0].offsetLeft + 'px'});
@@ -132,10 +133,21 @@ $(function () {
 	   setShowPic();
 	   
    };
+
+   var linkChangeImg = function (e) {
+	   e.preventDefault();
+		var num = $(this).attr('data-num');
+
+		activeIndex = num - 1;
+		setShowPic();
+
+		clearInterval(interval);
+		interval = setInterval(imgPlayChange, time);
+   };
    
    var imgPlay = function () {
-	   setInterval(imgPlayChange, time);
-	   
+	   interval = setInterval(imgPlayChange, time);
+	   $('#j_num').find('a').click(linkChangeImg);
    };
    
    imgPlay();
