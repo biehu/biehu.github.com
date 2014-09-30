@@ -21,7 +21,7 @@
        
        @-webkit-keyframes go {
            100% {
-               background-position:0 0;
+               -webkit-transform:translate(0, 0);
            }
        } 
        
@@ -56,8 +56,8 @@
            .map {
                width:1883px;
                height:1100px;
-               background:#f4f4f4 url(images/map.png) no-repeat;
-               background-position:-1266px -266px;
+               background:#f4f4f4 url(images/map.png) no-repeat 0 0;
+			   -webkit-transform:translate(-1266px, -266px);
            }
            
            .plane {
