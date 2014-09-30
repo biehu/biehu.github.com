@@ -38,6 +38,7 @@
        }     
            
            .page {
+               display:none;
                width:640px;
                height:1100px;
            }
@@ -78,6 +79,7 @@
    </head>
    <body>
        <div class="container">
+           <div id="j_load">加载中...</div>
            <div class="page page_1">
                <div class="map"></div>
                <div class="plane"></div>
@@ -86,5 +88,23 @@
        </div>
        
        <script src="scripts/jquery.js"></script>
+       <script>
+           var loadPage = function (url, callback) {
+               var img = new Image(); 
+                img.onload = function(){
+                    callback();
+                }
+                img.src = url; 
+           },
+           
+           showPage = function () {
+               $('#j_load').hide();
+               $('.page_1').show();
+           };
+           
+          $(function () {
+              loadPage('images/map.png', showPage);
+          });
+       </script>
    </body>
 </html>
