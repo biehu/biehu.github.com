@@ -55,8 +55,7 @@
                height:1100px;
                background:#f4f4f4 url(images/map.png) no-repeat;
                background-position:0 -266px;
-               -webkit-transform:translateX(-1266px);
-               -webkit-animation: go 5s ease forwards;
+			   -webkit-transform:translateX(-1266px);
            }
            
            .plane {
@@ -66,8 +65,15 @@
                width:269px;
                height:216px;
                background:url(images/plane.png) no-repeat;
-               -webkit-animation: go_plane 5s ease forwards;
            }
+
+		   .map.startFly {
+                -webkit-animation: go 5s ease forwards;
+		   }
+
+		   .plane.startFly {
+				-webkit-animation: go_plane 5s ease forwards;
+		   }
            
            .hand {
                position:absolute;
@@ -116,15 +122,31 @@
                    for (i = 0, len = indexImgs.length; i < len; i += 1) {
                        loadImg(indexImgs[i]);
                    }
-               };
+               },
                
                showPage = function () {
                    $('#j_load').hide();
                    $('.page_1').show();
-               };
+               },
+
+			   handleFly = function () {
+					var startClass = 'startFly';
+					$('.hand').fadeOut();
+					$(this).addClass(startClass);
+					$('.map').addClass(startClass);
+			   },
+
+			   startFly = function () {
+					$('.plane').click(handleFly);
+			   }
+			   
+			   
+			   
+			   ;
            
           $(function () {
               loadIndex();
+			  startFly();
           });
        </script>
    </body>
