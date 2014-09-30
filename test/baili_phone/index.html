@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
    <head>
+        <meta name="viewport" content="width=640,target-densitydpi=device-dpi,minimal-ui"/>
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
        <meta charset="utf-8" />
        <title>Untitled Document</title>
        <style>
@@ -75,11 +78,15 @@
                background:url(images/hand.png) no-repeat;
                -webkit-animation: float 1s ease both infinite;
            }
+           
+           .load {
+               text-align:center;
+           }
        </style>
    </head>
    <body>
        <div class="container">
-           <div id="j_load">加载中...</div>
+           <div id="j_load" class="load">加载中...</div>
            <div class="page page_1">
                <div class="map"></div>
                <div class="plane"></div>
