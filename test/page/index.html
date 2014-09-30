@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+   <head>
+       <meta charset="utf-8" />
+       <title>Untitled Document</title>
+       <style>
+           @-webkit-keyframes arrowUpDown {
+                0% {bottom: 85px;}
+                100% {bottom: 95px;}
+            }
+           
+            .page {
+                width: 640px;
+                height: 1100px;
+                overflow: hidden;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background: white;
+                -webkit-transform: translate(0px, 0px) scale(1);
+                -webkit-transition: -webkit-transform 0.4s;
+            }
+            
+            .page_1 {
+                background: #F4F4F4;
+            }
+            
+            .page_2 {
+                background: #000;
+            }
+            
+            .page_3 {
+                background: #CCC;
+            }
+            
+            .next {
+                position: absolute;
+                text-align: center;
+                bottom: 85px;
+                width: 100%;
+                height: 51px;
+                z-index: 999;
+                -webkit-animation-name: arrowUpDown;
+                -webkit-animation-duration: .4s;
+                -webkit-animation-iteration-count: infinite;
+                -webkit-animation-direction: alternate;
+                -webkit-animation-timing-function: linear;
+            }
+            
+            .down {
+                -webkit-transform: translate(0px, 100%) scale(0);
+            }
+            
+            .up {
+                -webkit-transform: translate(0px, -100%) scale(0);
+            }
+       </style>
+   </head>
+   <body>
+       <div class="page page_1"></div>
+       <div class="page page_2 down"></div>
+       <div class="page page_3 down"></div>
+       
+       <a class="next" href="#">下一页</a>
+       
+       <script src="scripts/jquery.js"></script>
+       <script>
+            /*
+            * 翻页
+            */
+           var index = 0;
+           var allNum = 3;
+           var isAnimate = false;
+           var isModal = false;
+           var yStart;
+           var yEnd;
+           
+           var slide = function (el, num) {
+                el.css('WebkitTransitionDuration', '.5s');
+                el.css('webkitTransform', 'translateY(' + num +　')');
+           };
+           
+           var setPage = function (dir,page) {
+               
+                isAnimate = true;
+                
+                if(dir === 1){
+                    $(".page_"+(page+1)).removeClass('up');
+                    $(".page_"+(page+2)).addClass('down');
+                    
+                }
+                else{
+                    $(".page_"+page).addClass('up');
+                    $(".page_"+(page+1)).removeClass('down');
+                }
+               
+                // 翻页
+                setTimeout(function(){
+                    if (isAnimate) {
+                        isAnimate = false;
+                    }
+                },750);
+            };
+            
+            var touchPageUp = function(){
+            
+                $(document).bind("touchstart", function(e){
+                    var touch = e.originalEvent.touches[0];
+                    yStart = touch.pageY;
+                });
+                $(document).bind("touchmove", function(e){
+                    event.preventDefault();
+                    var touch = e.originalEvent.touches[0];
+                    yEnd = touch.pageY;
+                    if (isAnimate || isModal) 
+                        return false;
+                    if (yEnd - 100 > yStart & yEnd > yStart) { //down
+                        if (index === 0)
+                            return false;
+                        setPage(1, --index);
+                    }
+                    else 
+                        if (yEnd + 100 < yStart & yEnd < yStart) { //up
+                            if (index === (allNum - 1)) 
+                                return false;
+                            setPage(0, ++index);
+                        }
+                });
+                
+            };
+
+            
+           var bindPageUp = function () {
+               $(".next").bind('click', function(e){
+                   e.preventDefault();
+                   if (index == (allNum - 1)) {
+                       return;
+                   }
+                   
+                   if (isAnimate) {
+                       isAnimate = false;
+                   }
+                   
+                   setPage(0, ++index);
+               });
+           };
+           
+           touchPageUp();
+           bindPageUp();
+       </script>
+   </body>
+</html>
