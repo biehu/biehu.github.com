@@ -21,8 +21,7 @@
        
        @-webkit-keyframes go {
            100% {
-               -webkit-transform:translateX(0px);
-               background-position-y:0;
+               background-position:0 0;
            }
        } 
        
@@ -58,8 +57,7 @@
                width:1883px;
                height:1100px;
                background:#f4f4f4 url(images/map.png) no-repeat;
-               background-position:0 -266px;
-			   -webkit-transform:translateX(-1266px);
+               background-position:-1266px -266px;
            }
            
            .plane {
@@ -69,6 +67,7 @@
                width:269px;
                height:216px;
                background:url(images/plane.png) no-repeat;
+               outline:none;
            }
 
 		   .map.startFly {
