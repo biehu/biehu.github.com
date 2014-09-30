@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+   <head>
+       <meta charset="utf-8" />
+       <title>Untitled Document</title>
+       <style>
+       @-webkit-keyframes float {
+           0% {-webkit-transform:
+               translateY(8px);
+           }
+           50% {-webkit-transform:
+                   translateY(0px);
+           }
+           100% {-webkit-transform:
+                   translateY(8px);
+           }
+       }    
+       
+       @-webkit-keyframes go {
+           100% {
+               -webkit-transform:translateX(0px);
+               background-position-y:0;
+           }
+       } 
+       
+        @-webkit-keyframes go_plane {
+           30% {
+               -webkit-transform:scale(0.5, 0.5) translateX(-100px);
+           }
+           
+           50% {
+               -webkit-transform:scale(0.5, 0.5) translateX(-80px);
+           }
+           
+           100% {
+               -webkit-transform:scale(1, 1) translateX(0);
+           }
+       }     
+           
+           .page {
+               width:640px;
+               height:1100px;
+           }
+           
+           .page_1 {
+               position:relative;
+           }
+           
+           .map {
+               width:1883px;
+               height:1100px;
+               background:#f4f4f4 url(images/map.png) no-repeat;
+               background-position:0 -266px;
+               -webkit-transform:translateX(-1266px);
+               -webkit-animation: go 5s ease forwards;
+           }
+           
+           .plane {
+               position:absolute;
+               top: 310px;
+               left: 280px;
+               width:269px;
+               height:216px;
+               background:url(images/plane.png) no-repeat;
+               -webkit-animation: go_plane 5s ease forwards;
+           }
+           
+           .hand {
+               position:absolute;
+               top: 470px;
+               left: 440px;
+               width:34px;
+               height:44px;
+               background:url(images/hand.png) no-repeat;
+               -webkit-animation: float 1s ease both infinite;
+           }
+       </style>
+   </head>
+   <body>
+       <div class="container">
+           <div class="page page_1">
+               <div class="map"></div>
+               <div class="plane"></div>
+               <div class="hand"></div>
+           </div>
+       </div>
+       
+       <script src="scripts/jquery.js"></script>
+   </body>
+</html>
