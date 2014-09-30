@@ -89,21 +89,35 @@
        
        <script src="scripts/jquery.js"></script>
        <script>
-           var loadPage = function (url, callback) {
-               var img = new Image(); 
-                img.onload = function(){
-                    callback();
-                }
-                img.src = url; 
-           },
            
-           showPage = function () {
-               $('#j_load').hide();
-               $('.page_1').show();
-           };
+           var indexImgs = ['images/map.png', 'images/plane.png', 'images/hand.png'],
+               loadedImgNum = 0,
+           
+               loadImg = function (url) {
+                    var img = new Image(); 
+                    img.onload = function(){
+                        loadedImgNum += 1;
+                        if (loadedImgNum === indexImgs.length) {
+                            showPage();
+                        }
+                    }
+                    img.src = url; 
+               },
+               
+               loadIndex = function () {
+                   var i, len;
+                   for (i = 0, len = indexImgs.length; i < len; i += 1) {
+                       loadImg(indexImgs[i]);
+                   }
+               };
+               
+               showPage = function () {
+                   $('#j_load').hide();
+                   $('.page_1').show();
+               };
            
           $(function () {
-              loadPage('images/map.png', showPage);
+              loadIndex();
           });
        </script>
    </body>
