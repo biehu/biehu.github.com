@@ -333,7 +333,6 @@ background: #F4F4F4;
                top:10px;
                width:640px;
                height:1091px;
-               background:url(images/product_1.png) no-repeat;
            }
            
            .paris {
@@ -365,7 +364,7 @@ background: #F4F4F4;
                top:0;
                width:568px;
                height:717px;
-               background:url(images/product_2.png) no-repeat;
+               
            }
            
            .page_7 .product_a {
@@ -374,8 +373,25 @@ background: #F4F4F4;
                left:70px;
                width:568px;
                height:717px;
-               background:url(images/product_3.png) no-repeat;
            }
+
+		   .win_close {
+		   width: 86px;
+position: absolute;
+height: 95px;
+top: 50%;
+right: 0;
+margin-top: -45px;
+background: url(images/close.png) no-repeat;
+		   
+		   }
+
+		   .text {
+			font-family: "微软雅黑";
+font-size: 27px;
+color: #FFF;
+text-align: center;
+		   }
            
            .page_7 .next {
                background:url(images/next_5.png) no-repeat;
@@ -418,8 +434,104 @@ background: #F4F4F4;
                top:0;
                width:483px;
                height:578px;
-               background:url(images/product_5.png) no-repeat;
            }
+
+		   .page_6 .product li ,
+		   .page_7 .product_a li ,
+		   .page_7 .product li {
+			position:absolute;
+               width:190px;
+               height: 353px;
+		   }
+
+		   .page_6 .product li:nth-child(1) {
+                          top: 67px;
+left: 434px;
+                          
+            }
+            
+            .page_6 .product li:nth-child(2) {
+                         top: 348px;
+left: 232px;
+                          
+            }
+
+			.page_6 .product li:nth-child(3) {
+                          top: 631px;
+left: 25px;
+}
+
+
+ .page_7 .product li:nth-child(1) {
+                          top: 67px;
+left: 284px;
+                          
+            }
+            
+            .page_7 .product li:nth-child(2) {
+                          top: 291px;
+left: 85px;
+                          
+            }
+            
+            .page_7 .product_a li:nth-child(1) {
+                          top: 67px;
+left: 290px;
+                          
+            }
+            
+            .page_7 .product_a li:nth-child(2) {
+                       top: 306px;
+left: 75px;
+                          
+            }
+                          
+          
+           
+           .page_9 .product li,
+           .page_9 .product_b li,
+           .page_9 .product_a li {
+               position:absolute;
+               width:163px;
+               height:234px;
+           }
+           
+           .page_9 .product li:nth-child(1) {
+                          top: 67px;
+                            left: 245px;
+                          
+            }
+            
+            .page_9 .product li:nth-child(2) {
+                          top: 241px;
+left: 85px;
+                          
+            }
+            
+            .page_9 .product_a li:nth-child(1) {
+                          top: 67px;
+                            left: 245px;
+                          
+            }
+            
+            .page_9 .product_a li:nth-child(2) {
+                         top: 257px;
+left: 75px;
+                          
+            }
+            
+            
+            .page_9 .product_b li:nth-child(1) {
+                         top: 67px;
+left: 85px;
+                          
+            }
+            
+            .page_9 .product_b li:nth-child(2) {
+                          top: 257px;
+left: 245px;
+                          
+            }
            
            .page_9 .product_a {
                position:absolute;
@@ -427,7 +539,6 @@ background: #F4F4F4;
                left:176px;
                width:483px;
                height:578px;
-               background:url(images/product_6.png) no-repeat;
            }
            
            .page_9 .product_b {
@@ -436,7 +547,7 @@ background: #F4F4F4;
                left: -2px;
                width: 479px;
                height: 567px;
-               background: url(images/product_4.png) no-repeat;
+               
            }
            
            .tab_content_pic {
@@ -559,6 +670,9 @@ background: #F4F4F4;
             .up {
                 -webkit-transform: translate(0px, -100%) scale(0);
             }
+            
+            /*遮罩*/
+.mask_cloth{display:none;position:absolute;top:0;left:0;background:#000;opacity:0.5;filter:alpha(opacity=50)}
        </style>
    </head>
    <body>
@@ -603,11 +717,11 @@ background: #F4F4F4;
                </div>
                <div class="scene_4 page page_6 hide">
                    <div class="go_shopping"></div>
-                   <div class="product">
+                   <div class="product"  style="background:url(images/product_1.png) no-repeat;">
                        <ul>
-                           <li class="product_1"></li>
-                           <li class="product_2"></li>
-                           <li class="product_3"></li>
+                           <li class="product_1" data-src="images/too_big.png" data-title="描述描述"></li>
+                           <li class="product_2" data-src="images/too_big.png" data-title="描述描述"></li>
+                           <li class="product_3" data-src="images/too_big.png" data-title="描述描述"></li>
                        </ul>
                    </div>
                    <div class="paris"></div>
@@ -615,16 +729,16 @@ background: #F4F4F4;
                </div>
                <div class="scene_5 page page_7 hide">
                    <div class="chaoliu"></div>
-                   <div class="product">
+                   <div class="product" style="background:url(images/product_2.png) no-repeat;">
                        <ul>
-                           <li class="product_1"></li>
-                           <li class="product_2"></li>
+                           <li class="product_1" data-src="images/too_big.png" data-title="描述描述"></li>
+                           <li class="product_2" data-src="images/too_big.png" data-title="描述描述"></li>
                        </ul>
                    </div>
-                   <div class="product_a">
+                   <div class="product_a"  style="background:url(images/product_3.png) no-repeat;">
                        <ul>
-                           <li class="product_1"></li>
-                           <li class="product_2"></li>
+                           <li class="product_1" data-src="images/too_big.png" data-title="描述描述"></li>
+                           <li class="product_2" data-src="images/too_big.png" data-title="描述描述"></li>
                        </ul>
                    </div>
                    <a class="next"></a>
@@ -639,25 +753,22 @@ background: #F4F4F4;
                <div class="scene_7 page page_9 hide">
                    <div class="page_title">
                    </div>
-                   <div class="product">
+                   <div class="product" style="background:url(images/product_5.png) no-repeat;">
                        <ul>
-                           <li class="product_1"></li>
-                           <li class="product_2"></li>
-                           <li class="product_3"></li>
+                           <li class="product_1" data-src="images/too_big.png" data-title="描述描述"></li>
+                           <li class="product_2" data-src="images/too_big.png" data-title="描述描述"></li>
                        </ul>
                    </div>
-                   <div class="product_a">
+                   <div class="product_a" style="background:url(images/product_6.png) no-repeat;">
                        <ul>
-                           <li class="product_1"></li>
-                           <li class="product_2"></li>
-                           <li class="product_3"></li>
+                           <li class="product_1" data-src="images/too_big.png" data-title="描述描述"></li>
+                           <li class="product_2" data-src="images/too_big.png" data-title="描述描述"></li>
                        </ul>
                    </div>
-                   <div class="product_b">
+                   <div class="product_b" style="background:url(images/product_4.png) no-repeat;">
                        <ul>
-                           <li class="product_1"></li>
-                           <li class="product_2"></li>
-                           <li class="product_3"></li>
+                           <li class="product_1" data-src="images/too_big.png" data-title="描述描述"></li>
+                           <li class="product_2" data-src="images/too_big.png" data-title="描述描述"></li>
                        </ul>
                    </div>
                    <a class="next"></a>
@@ -688,6 +799,21 @@ background: #F4F4F4;
                    <a class="share">分享至朋友圈</a>
                </div>
            </div>
+       </div>
+       
+       <style>
+           .win {
+               position:absolute;
+               width:100%;
+           }
+       </style>
+       <div id="mask_cloth" class="mask_cloth"></div>
+       <div id="win" class="win" style="display:none;">
+           <div class="pic">
+               <img src="" />
+           <a class="win_close" href="#"></a>
+           </div>
+           <div class="text"></div>
        </div>
        
        <script src="scripts/jquery.js"></script>
@@ -839,6 +965,72 @@ background: #F4F4F4;
                loadSecond = function () {
                    $('.plane').click(showSecondPage);
                };
+               
+               
+               var mask=(function(){
+    var maskCloth=document.getElementById("mask_cloth");
+    //弹出框居中
+    function resizeMask(obj){
+        var windowWidth=Math.max(document.documentElement.clientWidth,document.body.clientWidth);
+        var windowHeight=getWinWH()['h'];
+        var bodyHeight=Math.max(document.documentElement.clientHeight,document.body.scrollHeight);
+        var bodyScrollTop=Math.max(document.documentElement.scrollTop,document.body.scrollTop);
+        var openw =obj.offsetWidth; 
+        var openh =obj.offsetHeight; 
+
+        var isIE6=!!window.ActiveXObject && !window.XMLHttpRequest;
+        var frame;
+
+        if(isIE6){
+            frame='<iframe style="width:100%;height:100%;filter:Alpha(opacity=0);" border="0" frameborder="0"></iframe>';
+            maskCloth.innerHTML=frame;
+        }
+
+        //遮罩宽高
+        maskCloth.style.width=windowWidth+"px";
+        maskCloth.style.height=bodyHeight+"px";
+        //弹出框位置
+        obj.style.left = (windowWidth - openw) / 2 + "px";
+        obj.style.top=0;
+        obj.style.zIndex = "1001";
+    }
+
+    //视窗尺寸
+    function getWinWH(){
+        var winWidth,winHeight;
+        if (self.innerHeight) { // all except Explorer
+            winWidth = self.innerWidth;
+            winHeight = self.innerHeight;
+        } else if (document.documentElement && document.documentElement.clientHeight) { // Explorer 6 Strict Mode
+            winWidth = document.documentElement.clientWidth;
+            winHeight = document.documentElement.clientHeight;
+        } else if (document.body) { // other Explorers
+            winWidth = document.body.clientWidth;
+            winHeight = document.body.clientHeight;
+        }
+
+        return {'w':winWidth,'h':winHeight};
+    }
+    
+    return{
+        open:function(objId, btn){
+               maskCloth.style.display="block";
+               var obj=document.getElementById(objId);
+               obj.style.display="block";
+
+			   var imgSrc = btn.attr('data-src');
+			   var imgTitle = btn.attr('data-title');
+
+			   $(obj).find('img')[0].src=imgSrc;
+			   $(obj).find('.text').html(imgTitle);
+               resizeMask(obj);
+        },
+        close:function(objId){
+                document.getElementById(objId).style.display="none";
+                maskCloth.style.display="none";
+        }
+    }
+})()
            
           $(function () {
               loadIndex();
@@ -847,6 +1039,14 @@ background: #F4F4F4;
               
               touchPageUp();
                     bindPageUp();
+                    
+                    $(document.body).on('click', '.product li, .product_a li, .product_b li ', function () {
+                        mask.open('win', $(this));
+                    });
+
+					 $(document.body).on('click', '.win_close', function () {
+                        mask.close('win');
+                    });
           });
           
           
