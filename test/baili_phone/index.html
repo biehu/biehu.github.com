@@ -121,6 +121,7 @@
        }
        
        .hand_1 {
+           display: none;
            position: absolute;
            top: 420px;
            left: 405px;
@@ -1106,6 +1107,9 @@
 					self.addClass(startClass);
 					$('.map').addClass(startClass);
                     $('.hand_1').addClass(startClass);
+                    setTimeout(function () {
+                       $('.hand_1').show();
+                   }, 5000);
                     self.off('click');
                     setTimeout(loadSecond, 5000);
 			   },
