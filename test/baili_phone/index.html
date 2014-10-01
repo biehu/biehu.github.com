@@ -756,6 +756,13 @@
                    #music.on {
                        background: url(images/music_control_2.png) no-repeat 1px 1px;
                    }
+                   
+                   .page_8 .focus {
+                       width: 443px;
+                       height: 798px;
+                       top: 30px;
+                       left: -2px;
+                   }
  
                    
        </style>
@@ -808,9 +815,7 @@
                </div>
                <div class="scene_3 page page_5 hide">
                    <div class="two_editer"></div>
-                   <div class="video">
-                       
-                       <embed id="obembed" src="http://static.video.qq.com/TPout.swf?vid=o0138siuns9&amp;auto=0" allowfullscreen="true" quality="high" width="640" height="360" align="middle" allowscriptaccess="always" type="application/x-shockwave-flash">
+                   <div id="video" class="video">
                    </div>
                    <div class="editer_say">2015巴黎春夏时装周终于迎来了“重头戏”，其2015春夏成衣秀系列正式在巴黎罗浮宫发布。明星阵容也可谓是异常强大，现场，中国著名女星李冰冰小姐2015巴黎春夏时装周终于迎来了“重头戏”——Dior，其2015春夏成衣秀系列正式在巴黎罗浮宫发布。明星阵容也可谓是异常强大，现场，中国著名女星李冰冰小姐身着Dior 2015 早春系列水蓝色外套。</div>
                    <div class="editer_photo"><img src="images/editer.jpg" /></div>
@@ -846,8 +851,21 @@
                </div>
                <div class="scene_6 page page_8 hide">
                    <div class="page_title"></div>
-                   <div class="img_play">
-                       
+                   <div id="focus_1" class="focus">
+                       <div class="focus_inner">
+                           <div class="focus_item">
+                               <div class="focus_img"><img src="images/m.jpg" /></div>
+                               <div class="focus_content"><i class="mark_start"></i>今年秋季的流行趋势都很“低调”，精彩全部体现在细节处，所以对那些喜爱“基本款”的女生来说。<i class="mark_end"></i></div>
+                           </div>
+                           <div class="focus_item">
+                               <div class="focus_img"><img src="images/m.jpg" /></div>
+                               <div class="focus_content"><i class="mark_start"></i>今年秋季的流行趋势都很“低调”，精彩全部体现在细节处，所以对那些喜爱“基本款”的女生来说。<i class="mark_end"></i></div>
+                           </div>
+                           <div class="focus_item">
+                               <div class="focus_img"><img src="images/m.jpg" /></div>
+                               <div class="focus_content"><i class="mark_start"></i>今年秋季的流行趋势都很“低调”，精彩全部体现在细节处，所以对那些喜爱“基本款”的女生来说。<i class="mark_end"></i></div>
+                           </div>
+                       </div>
                    </div>
                    <a class="next"></a>
                </div>
@@ -947,6 +965,7 @@
        
        <script src="scripts/jquery.js"></script>
        <script src="scripts/swipe.js"></script>
+       <script language="javascript" src="http://imgcache.gtimg.cn/tencentvideo_v1/tvp/js/tvp.player_v2.js" charset="utf-8"></script>
        <script>
            
            
@@ -1100,9 +1119,6 @@
                scroll = function(){
                
                    var elem = document.getElementById('focus');
-                   
-                 
-                   
                    window.mySwipe = Swipe(elem, {
                        startSlide: 0,
                        auto: false,
@@ -1115,11 +1131,19 @@
                        }
                    });
                    
-                     mySwipe.stop = function(){
-                       //delay = 0;
-                       delay = options.auto > 0 ? options.auto : 0;
-                       clearTimeout(interval);
-                   }
+                   var elem_1 = document.getElementById('focus_1');
+                   window.mySwipe_1 = Swipe(elem_1, {
+                       startSlide: 0,
+                       auto: false,
+                       continuous: true,
+                       disableScroll: false,
+                       // stopPropagation: true,
+                       callback: function(index, element){
+                       },
+                       transitionEnd: function(index, element){
+                       }
+                   });
+                  
                    
                    
                };
@@ -1246,6 +1270,44 @@ $(function(){
         $('.weixin_layout').show();
         return false;
     });
+    
+    
+        var video = new tvp.VideoInfo();
+        video.setVid("o0138siuns9");
+        video.setTitle("邓立&李艾两位女神的巴黎对话");
+        var player = new tvp.Player();
+        player.create({
+            width:640,
+            height:360,
+            video:video,
+            pic:"http://daokek.com/test/baili_phone/images/video.jpg",
+            vodFlashSkin:"http://imgcache.qq.com/minivideo_v1/vd/res/skins/TencentPlayerMiniSkin.swf",
+            modId:"video"
+        });
+    
+    var myVideo=document.getElementById("video1");
+    
+ $("#mod_player").bind("click",function(){
+    $(".songBox .close").hide();
+    $(".songBox .open").show();
+    myVideo.pause();
+})
+
+var adplay = {
+    init : function(){
+        $(".songBox .open").bind("click",function(){
+            $(".songBox .open").hide();
+            $(".songBox .close").show();
+            myVideo.play();
+        })
+        $(".songBox .close").bind("click",function(){
+            $(".songBox .close").hide();
+            $(".songBox .open").show();
+            myVideo.pause();
+        })
+    }
+}
+adplay.init();
     
    
 
