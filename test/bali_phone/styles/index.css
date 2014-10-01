@@ -1,0 +1,53 @@
+* {
+    margin:0;
+    padding:0;
+}
+
+img {
+    vertical-align:bottom;
+}
+
+a img {
+    border:none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.clear {
+    clear:both;
+}
+
+ul {
+    list-style:none;
+}
+
+.page {
+    position: relative;
+    width: 320px;
+    height: 568px;
+    overflow: hidden;
+    background: url(../images/map.png) no-repeat right 0;
+    background-size: 1094px auto;
+}
+
+.plane {
+    position: absolute;
+    top: 194px;
+    left: 74px;
+    width: 162px;
+    height:132px;
+}
+
+.fulled img {
+    width: 100%;
+}
+
+.push_plane {
+    position: absolute;
+    top: 294px;
+    left: 120px;
+    width:148px;
+    height:23px;
+}

@@ -21,7 +21,7 @@
        
        @-webkit-keyframes go {
            100% {
-               -webkit-transform:translate(0, 0);
+               -webkit-transform:scale(1, 1) translate(0, 0);
            }
        } 
        
@@ -35,44 +35,65 @@
            }
            
            100% {
-               -webkit-transform:scale(1, 1) translateX(0);
+               -webkit-transform:scale(1, 1) translateX(20px);
            }
        }     
            * {
 			  margin:0;
 			  padding:0;
 		   }
+           
+           ul {
+               list-style:none;
+           }
+           
+           .pages {
+               display:none;
+           }
 
            .page {
-               display:none;
+               position:absolute;
+               top:0;
+               left:0;
                width:640px;
                height:1100px;
            }
            
+           .page.fadeShow {
+               opacity:1;
+               -webkit-transition:1s;
+           }
+           
            .page_1 {
-               position:relative;
+               z-index:11;
            }
            
            .map {
                width:1883px;
                height:1100px;
                background:#f4f4f4 url(images/map.png) no-repeat 0 0;
-			   -webkit-transform:translate(-1266px, -266px);
+			   -webkit-transform:translate(-1256px, -266px);
            }
            
            .plane {
-               position:absolute;
-               top: 310px;
-               left: 280px;
-               width:269px;
-               height:216px;
-               background:url(images/plane.png) no-repeat;
-               outline:none;
+               position: absolute;
+               top: 279px;
+               left: 214px;
+               width: 323px;
+               height: 265px;
+               background: url(images/plane.png) no-repeat;
+               outline: none;
            }
 
 		   .map.startFly {
                 -webkit-animation: go 5s ease forwards;
 		   }
+           
+           .page_1.startFly_2 {
+                -webkit-transform:scale(10);
+                opacity:0;
+                -webkit-transition:1s;
+           }
 
 		   .plane.startFly {
 				-webkit-animation: go_plane 5s ease forwards;
@@ -81,30 +102,672 @@
            .hand {
                position:absolute;
                top: 470px;
-               left: 440px;
-               width:34px;
-               height:44px;
-               background:url(images/hand.png) no-repeat;
+               left: 310px;
+               width:296px;
+               height:127px;
+               background:url(images/push_plane.png) no-repeat;
                -webkit-animation: float 1s ease both infinite;
+           }
+           
+           .clothes{
+               position:relative;
+               z-index:1333;
+           }
+           
+           .hand_1 {
+               position:absolute;
+               top: 420px;
+               left: 405px;
+               width:78px;
+               height:105px;
+               opacity:0;
+               background:url(images/hand_1.png) no-repeat;
+               -webkit-animation: float 1s ease both infinite;
+           }
+           
+           .hand_1.startFly {
+               opacity:1;
+               -webkit-transition:1s 5s;
+           }
+           
+           .hand_1.startFly_2 {
+               opacity:1;
+               -webkit-transition:1s 1s;
+           }
+           
+           .page_2 .hand_1 {
+               top: 380px;
+                left: 315px;
            }
            
            .load {
                text-align:center;
            }
+           
+           .page_2 {
+               z-index:10;
+               background:url(images/city_map.jpg) no-repeat;
+           }
+           
+           .clothes {
+               position:absolute;
+               top:206px;
+               left:148px;
+               width:240px;
+               height:368px;
+               background:url(images/clothes.png) no-repeat;
+                -webkit-transform:scale(0);
+           }
+           
+           .zoom {
+                -webkit-transform:scale(1);
+                -webkit-transition:1s;
+           }
+           
+           .mask {
+               z-index:2;
+               background:url(images/mask.png) no-repeat;
+           }
+           
+           .page_3 {
+               background:url(images/scene_1.png) no-repeat;
+           }
+           
+           .meet_bali {
+               width:471px;
+               height:367px;
+               margin:30px auto 0;
+               background:url(images/meet_bali.png) no-repeat;
+           }
+           
+           .person{
+               position:absolute;
+           }
+           
+           .person_1 {
+              width:88px;
+              height:255px;
+              background:url(images/person_1.png) no-repeat;
+           }
+           
+           .person_2 {
+               top:501px;
+               left:30px;
+              width:215px;
+              height:628px;
+              background:url(images/person_2.png) no-repeat;
+           }
+           
+           .person_3 {
+               top:674px;
+               left:193px;
+              width:215px;
+              height:306px;
+              background:url(images/person_3.png) no-repeat;
+           }
+           
+           .person_4 {
+               top:477px;
+               left:496px;
+              width:144px;
+              height:508px;
+              background:url(images/person_5.png) no-repeat;
+           }
+           
+           .next {
+               position:absolute;
+               width:141px;
+               height:141px;
+               bottom:10px;
+               right:10px;
+           }
+           
+           .page_3 .next {
+               background:url(images/next_1.png) no-repeat;
+           }
+           
+           .page_4 {
+               background:url(images/page_4.png) no-repeat;
+           }
+           
+           .intro {
+               widht:352px;
+               height:238px;
+               margin-top:186px;
+               background:url(images/intro.png) no-repeat;
+           }
+           
+           .page_4 .next {
+               background:url(images/next_2.png) no-repeat;
+           }
+           
+           .focus {
+               width:586px;
+               margin:0 auto;
+               color:#FFF;
+               font-size:25px;
+               font-family:"微软雅黑";
+           }
+           
+           .focus_title {
+               margin-top:-15px;
+               text-align:center;
+               font-size:34px;
+           }
+           
+           .focus_content {
+               margin-top:10px;
+               line-height:40px;
+           }
+           
+           .focus_content i {
+               display:inline-block;
+               width:24px;
+               height:22px;
+           }
+           
+           .mark_start {
+               margin-right:5px;
+               vertical-align:top;
+               background:url(images/mark_start.png) no-repeat;
+           }
+           
+           .mark_end {
+               background:url(images/mark_end.png) no-repeat;
+           }
+           
+           .page_5 {
+               background:#8d0f0d url(images/page_header_5.jpg) no-repeat;
+           }
+           
+           .video {
+               margin-top:10px;
+           }
+           
+           .two_editer {
+               width:640px;
+               height:148px;
+               margin-top:95px;
+               background:url(images/two_editer.png) no-repeat;
+           }
+           
+           .editer_say {
+               float:left;
+               margin:20px 30px 0 20px;
+               width:334px;
+               line-height:35px;
+               color:#FFF;
+               font-size:25px;
+               font-family:"微软雅黑";
+           }
+           
+           .editer_photo {
+               margin-top:20px;
+               right:20px;
+           }
+           
+           .page_5 .next {
+               background:url(images/next_3.png) no-repeat;
+           }
+
+		   .page_6 {
+		       background:url(images/bali.png) no-repeat;
+		   }
+           
+           .go_shopping {
+               position:absolute;
+               top:50px;
+               left:119px;
+               width:353px;
+               height:413px;
+               background:url(images/go_shopping.png) no-repeat;
+           }
+           
+           .page_6 .product {
+               position:absolute;
+               top:10px;
+               width:640px;
+               height:1091px;
+               background:url(images/product_1.png) no-repeat;
+           }
+           
+           .paris {
+               position:absolute;
+               top:534px;
+               left:171px;
+               width:470px;
+               height:602px;
+               background:url(images/paris.png) no-repeat;
+               opacity:0.5;
+           }
+           
+           .page_6 .next {
+               background:url(images/next_4.png) no-repeat;
+           }
+           
+           .page_7 {
+               background:url(images/page_header_7.png) no-repeat;
+           }
+           
+           .chaoliu {
+               width:240px;
+               height:220px;
+               background:url(images/chaoliu.png) no-repeat;
+           }
+           
+           .page_7 .product {
+               position:absolute;
+               top:0;
+               width:568px;
+               height:717px;
+               background:url(images/product_2.png) no-repeat;
+           }
+           
+           .page_7 .product_a {
+               position:absolute;
+               top:390px;
+               left:70px;
+               width:568px;
+               height:717px;
+               background:url(images/product_3.png) no-repeat;
+           }
+           
+           .page_7 .next {
+               background:url(images/next_5.png) no-repeat;
+           }
+           
+           .page_8 {
+               background:url(images/page_9.jpg) no-repeat;
+           }
+           
+           .page_8 .page_title {
+               width:332px;
+               height:145px;
+               margin:20px auto 0;
+               background:url(images/page_title_9.png) no-repeat;
+           }
+           
+           .page_8 .next {
+               background:url(images/next_6.png) no-repeat;
+           }
+           
+           .page_9 {
+               background:url(images/page_10.jpg) no-repeat;
+           }
+           
+           .page_9 .page_title {
+               position:absolute;
+               top:632px;
+               right:10px;
+               width:302px;
+               height:241px;
+               background:url(images/page_title_10.png) no-repeat;
+           }
+           
+           .page_9 .next {
+               background:url(images/next_7.png) no-repeat;
+           }
+           
+           .page_9 .product {
+               position:absolute;
+               top:0;
+               width:483px;
+               height:578px;
+               background:url(images/product_5.png) no-repeat;
+           }
+           
+           .page_9 .product_a {
+               position:absolute;
+               top:189px;
+               left:176px;
+               width:483px;
+               height:578px;
+               background:url(images/product_6.png) no-repeat;
+           }
+           
+           .page_9 .product_b {
+               position: absolute;
+               top: 569px;
+               left: -2px;
+               width: 479px;
+               height: 567px;
+               background: url(images/product_4.png) no-repeat;
+           }
+           
+           .tab_content_pic {
+               position:absolute;
+               top:0;
+               left:0;
+           }
+           
+           .tab_content_title {
+               position:absolute;
+               z-index:2;
+               width:640px;
+               height:136px;
+               line-height:80px;
+               background:url(images/big_pic_title_bg.png) no-repeat;
+               text-align:center;
+               color:#FFF;
+               font-size:30px;
+               font-family:"微软雅黑";
+           }
+           
+           .tab_title {
+               position:absolute;
+               top:803px;
+               width:100%;
+               height:274px;
+           } 
+           
+           .tab_title ul {
+               width:584px;
+               overflow:hidden;
+               margin:0 auto;
+           }
+           
+           .tab_title li {
+               float:left;
+               width:106px;
+               height:106px;
+               margin:20px 20px 0;
+               background:url(images/big_pic_tab.png) no-repeat;
+           }
+           
+           .tab_title li.tab_1 {
+               background-position:-64px -26px;
+           }
+           
+           .tab_title li.tab_1.tab_on {
+               background-position:-64px -294px;
+           }
+           
+           .tab_title li.tab_2 {
+               background-position:-209px -26px;
+           }
+           
+           .tab_title li.tab_3 {
+               background-position:-352px -26px;
+           }
+           
+           .tab_title li.tab_4 {
+               background-position:-498px -26px;
+           }
+           
+           .tab_title li.tab_5 {
+               background-position:-64px -162px;
+           }
+           
+           .tab_title li.tab_6 {
+               background-position:-209px -162px;
+           }
+           
+           .tab_title li.tab_7 {
+               background-position:-352px -162px;
+           }
+           
+           .page_10 .next {
+               background:url(images/next_8.png) no-repeat;
+           }
+           
+           .page_11 {
+               background:url(images/page_12.png) no-repeat;
+           }
+           
+           .liai {
+               position:absolute;
+               top:116px;
+               left:60px;
+               width:307px;
+               height:159px;
+               background:url(images/liai.png) no-repeat;
+           }
+           
+           .liai_say {
+               position:absolute;
+               top:275px;
+               left:80px;
+               width:512px;
+               height:544px;
+               background:url(images/liai_say.png) no-repeat;
+           }
+           
+           .page_11 .share {
+               position:absolute;
+               top:940px;
+               left:50%;
+               width:570px;
+               height:90px;
+               line-height:90px;
+               margin-left:-285px;
+               background:#d60505;
+               text-align:center;
+               color:#FFF;
+               font-size:28px;
+               font-family:"微软雅黑";
+           }
+           
+             .hide {
+                -webkit-transform: translate(0px, 100%) scale(0);
+            }
+            
+            .up {
+                -webkit-transform: translate(0px, -100%) scale(0);
+            }
        </style>
    </head>
    <body>
        <div class="container">
            <div id="j_load" class="load">加载中...</div>
-           <div class="page page_1">
-               <div class="map"></div>
-               <div class="plane"></div>
-               <div class="hand"></div>
+           <div clss="pages">
+               <div class="page page_1">
+                   <div class="map"></div>
+                   <div class="plane"></div>
+                   <div class="hand"></div>
+                   <div class="hand_1"></div>
+               </div>
+               <div class="page page_2 ">
+                   <div class="clothes"></div>
+                   <div class="hand_1"></div>
+               </div>
+               <div class="scene_1 page page_3 ">
+                   <div class="meet_bali"></div>
+                   <div class="person person_1"></div>
+                   <div class="person person_2"></div>
+                   <div class="person person_3"></div>
+                   <div class="person person_4"></div>
+                   <a class="next" href="#"></a>
+               </div>
+               <div class="scene_2 page page_4 hide">
+                   <div class="intro"></div>
+                   <div class="focus">
+                       <div class="focus_item">
+                           <div class="focus_img"><img src="images/focus_img.png" /></div>
+                           <div class="focus_title">lady gaga</div>
+                           <div class="focus_content"><i class="mark_start"></i>今年秋季的流行趋势都很“低调”，精彩全部体现在细节处，所以对那些喜爱“基本款”的女生来说。<i class="mark_end"></i></div>
+                       </div>
+                   </div>
+                   <a class="next"></a>
+               </div>
+               <div class="scene_3 page page_5 hide">
+                   <div class="two_editer"></div>
+                   <div class="video"><img src="images/video.jpg" /></div>
+                   <div class="editer_say">2015巴黎春夏时装周终于迎来了“重头戏”，其2015春夏成衣秀系列正式在巴黎罗浮宫发布。明星阵容也可谓是异常强大，现场，中国著名女星李冰冰小姐2015巴黎春夏时装周终于迎来了“重头戏”——Dior，其2015春夏成衣秀系列正式在巴黎罗浮宫发布。明星阵容也可谓是异常强大，现场，中国著名女星李冰冰小姐身着Dior 2015 早春系列水蓝色外套。</div>
+                   <div class="editer_photo"><img src="images/editer.jpg" /></div>
+                   <a class="next"></a>
+               </div>
+               <div class="scene_4 page page_6 hide">
+                   <div class="go_shopping"></div>
+                   <div class="product">
+                       <ul>
+                           <li class="product_1"></li>
+                           <li class="product_2"></li>
+                           <li class="product_3"></li>
+                       </ul>
+                   </div>
+                   <div class="paris"></div>
+                   <a class="next" href="#"></a>
+               </div>
+               <div class="scene_5 page page_7 hide">
+                   <div class="chaoliu"></div>
+                   <div class="product">
+                       <ul>
+                           <li class="product_1"></li>
+                           <li class="product_2"></li>
+                       </ul>
+                   </div>
+                   <div class="product_a">
+                       <ul>
+                           <li class="product_1"></li>
+                           <li class="product_2"></li>
+                       </ul>
+                   </div>
+                   <a class="next"></a>
+               </div>
+               <div class="scene_6 page page_8 hide">
+                   <div class="page_title"></div>
+                   <div class="img_play">
+                       
+                   </div>
+                   <a class="next"></a>
+               </div>
+               <div class="scene_7 page page_9 hide">
+                   <div class="page_title">
+                   </div>
+                   <div class="product">
+                       <ul>
+                           <li class="product_1"></li>
+                           <li class="product_2"></li>
+                           <li class="product_3"></li>
+                       </ul>
+                   </div>
+                   <div class="product_a">
+                       <ul>
+                           <li class="product_1"></li>
+                           <li class="product_2"></li>
+                           <li class="product_3"></li>
+                       </ul>
+                   </div>
+                   <div class="product_b">
+                       <ul>
+                           <li class="product_1"></li>
+                           <li class="product_2"></li>
+                           <li class="product_3"></li>
+                       </ul>
+                   </div>
+                   <a class="next"></a>
+               </div>
+               <div class="scene_8 page page_10 hide">
+                   <div class="tab">
+                       <div class="tab_content">
+                           <div class="tab_content_title">肯达尔·詹娜：时髦就是这么简单</div>
+                           <div class="tab_content_pic"><img src="images/big_pic.png" /></div>
+                       </div>
+                       <div class="tab_title">
+                           <ul>
+                               <li class="tab_1 tab_on"></li>
+                               <li class="tab_2"></li>
+                               <li class="tab_3"></li>
+                               <li class="tab_4"></li>
+                               <li class="tab_5"></li>
+                               <li class="tab_6"></li>
+                               <li class="tab_7"></li>
+                           </ul>
+                       </div>
+                   </div>
+                   <a class="next"></a>
+               </div>
+               <div class="scene_9 page page_11 hide">
+                   <div class="liai"></div>
+                   <div class="liai_say"></div>
+                   <a class="share">分享至朋友圈</a>
+               </div>
            </div>
        </div>
        
        <script src="scripts/jquery.js"></script>
        <script>
+           
+           
+            /*
+            * 翻页
+            */
+           var index = 0;
+           var allNum = 9;
+           var isAnimate = false;
+           var isModal = false;
+           var yStart;
+           var yEnd;
+           
+           var slide = function (el, num) {
+                el.css('WebkitTransitionDuration', '.5s');
+                el.css('webkitTransform', 'translateY(' + num +　')');
+           };
+           
+           var setPage = function (dir,page) {
+               
+                isAnimate = true;
+                
+                if(dir === 1){
+                    $(".scene_"+(page+1)).removeClass('up');
+                    $(".scene_"+(page+2)).addClass('hide');
+                    
+                }
+                else{
+                    $(".scene_"+page).addClass('up');
+                    $(".scene_"+(page+1)).removeClass('hide');
+                }
+               
+                // 翻页
+                setTimeout(function(){
+                    if (isAnimate) {
+                        isAnimate = false;
+                    }
+                },750);
+            };
+            
+            var touchPageUp = function(){
+                $(document).bind("touchstart", function(e){
+                    var touch = e.originalEvent.touches[0];
+                    yStart = touch.pageY;
+                });
+                $(document).bind("touchmove", function(e){
+                    event.preventDefault();
+                    var touch = e.originalEvent.touches[0];
+                    yEnd = touch.pageY;
+                    if (isAnimate || isModal) 
+                        return false;
+                    if (yEnd - 100 > yStart & yEnd > yStart) { //down
+                        if (index === 0)
+                            return false;
+                        setPage(1, --index);
+                    }
+                    else 
+                        if (yEnd + 100 < yStart & yEnd < yStart) { //up
+                            if (index === (allNum - 1)) 
+                                return false;
+                            setPage(0, ++index);
+                        }
+                });
+                
+            };
+
+            
+           var bindPageUp = function () {
+               $(".next").bind('click', function(e){
+                   e.preventDefault();
+                   if (index == (allNum - 1)) {
+                       return;
+                   }
+                   
+                   if (isAnimate) {
+                       isAnimate = false;
+                   }
+                   
+                   setPage(0, ++index);
+               });
+           };
+           
            
            var indexImgs = ['images/map.png', 'images/plane.png', 'images/hand.png'],
                loadedImgNum = 0,
@@ -129,28 +792,62 @@
                
                showPage = function () {
                    $('#j_load').hide();
-                   $('.page_1').show();
+                   $('.pages').show();
+                   
+                   
+               },
+               
+               showSecondPage = function () {
+                   $(this).fadeOut();
+                   $('.page_1').addClass('startFly_2')
+                    showSecondPageStyle();
+               },
+               
+               showNext = function () {
+                   $(this).fadeOut();
+                   $('.page_2').fadeOut();
+                   $('.hand_1').fadeOut();
+               },
+               
+               showSecondPageStyle = function () {
+                    $('.page_1').hide();
+                   $('.page_2').addClass('fadeShow');
+                   $('.clothes').addClass('zoom');
+                   $('.hand_1').addClass('startFly_2').show();
                },
 
 			   handleFly = function () {
 					var startClass = 'startFly';
+                    var self = $(this);
 					$('.hand').fadeOut();
-					$(this).addClass(startClass);
+					self.addClass(startClass);
 					$('.map').addClass(startClass);
+                    $('.hand_1').addClass(startClass);
+                    self.off('click');
+                    setTimeout(loadSecond, 5000);
 			   },
 
 			   startFly = function () {
 					$('.plane').click(handleFly);
-			   }
-			   
-			   
-			   
-			   ;
+			   },
+               
+               loadSecond = function () {
+                   $('.plane').click(showSecondPage);
+               };
            
           $(function () {
               loadIndex();
 			  startFly();
+              $('.clothes').click(showNext);
+              
+              touchPageUp();
+                    bindPageUp();
           });
+          
+          
+        
+           
+           
        </script>
    </body>
 </html>
