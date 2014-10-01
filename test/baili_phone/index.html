@@ -1118,6 +1118,15 @@
 			   startFly = function () {
 //					$('.plane').click(handleFly);
                     
+                    
+                    touch.on('.plane', 'touchstart', function(ev){
+                        ev.preventDefault();
+                    });
+                    
+                    touch.on('.plane', 'touchend', function(ev){
+                        ev.preventDefault();
+                    });
+
                      touch.on('.plane', 'swipeleft swipeup', handleFly);
 			   },
                
