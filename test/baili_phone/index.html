@@ -1086,9 +1086,6 @@
                showPage = function () {
                    $('#j_load').hide();
                    $('.pages').show();
-                   
-                   scroll();
-                   
                },
                
                showSecondPage = function () {
@@ -1104,6 +1101,7 @@
                showMain = function () {
                    $(this).fadeOut();
                    $('.hide').show();
+                     scroll();
                    $('.page_2').addClass('zoomClear');
                    setTimeout(function () {
                        $('.page_2').hide();
