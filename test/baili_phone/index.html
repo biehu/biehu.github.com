@@ -95,7 +95,7 @@
            -webkit-animation: go 5s ease forwards;
        }
        
-       .page_1.startFly_2 {
+       .zoomClear {
            -webkit-transform: scale(10);
            opacity: 0;
            -webkit-transition: 1s;
@@ -144,6 +144,7 @@
        .page_2 .hand_1 {
            top: 380px;
            left: 315px;
+           z-index: 10000;
        }
        
        .load {
@@ -240,7 +241,7 @@
            widht: 352px;
            height: 238px;
            margin-top: 186px;
-           background: url(images/intro.png) no-repeat;
+           background: url(images/intro.gif) no-repeat;
        }
        
        .page_4 .next {
@@ -548,6 +549,14 @@
                       
                   }
                   
+                  .tab_content {
+                      display:none;
+                  }
+                  
+                  .tab_content.tab_on {
+                      display:block;
+                  }
+                  
                   .tab_content_pic {
                       position:absolute;
                       top:0;
@@ -600,24 +609,48 @@
                       background-position:-209px -26px;
                   }
                   
+                  .tab_title li.tab_2.tab_on {
+                      background-position:-209px -294px;
+                  }
+                  
                   .tab_title li.tab_3 {
                       background-position:-352px -26px;
+                  }
+                  
+                  .tab_title li.tab_3.tab_on {
+                      background-position:-352px -294px;
                   }
                   
                   .tab_title li.tab_4 {
                       background-position:-498px -26px;
                   }
                   
+                  .tab_title li.tab_4.tab_on {
+                      background-position:-498px -294px;
+                  }
+                  
                   .tab_title li.tab_5 {
                       background-position:-64px -162px;
+                  }
+                  
+                  .tab_title li.tab_5.tab_on {
+                      background-position:-64px -432px;
                   }
                   
                   .tab_title li.tab_6 {
                       background-position:-209px -162px;
                   }
                   
+                  .tab_title li.tab_6.tab_on {
+                      background-position:-209px -432px;
+                  }
+                  
                   .tab_title li.tab_7 {
                       background-position:-352px -162px;
+                  }
+                  
+                  .tab_title li.tab_7.tab_on {
+                      background-position:-352px -432px;
                   }
                   
                   .page_10 .next {
@@ -696,11 +729,41 @@
                        width: 100%;
                        position: relative;
                    }
+                   
+                   .weixin_layout {
+                       display:none;
+                       position: absolute;
+                        top: 0;
+                        left: 0;
+                        bottom: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: url(images/shareBg.png) no-repeat right top rgba(0, 0, 0, 0.6);
+                        background-size: 160px 350px;
+                        z-index: 999999;
+                   }
+                   
+                   #music {
+                       position: fixed;
+                       right: 3%;
+                       top: 3%;
+                       width: 56px;
+                       height: 56px;
+                       background: url(images/music_control_1.png) no-repeat 1px 1px;
+                       z-index: 99;
+                   }
+                   
+                   #music.on {
+                       background: url(images/music_control_2.png) no-repeat 1px 1px;
+                   }
+ 
+                   
        </style>
    </head>
    <body>
        <div class="container">
            <div id="j_load" class="load">加载中...</div>
+           <div id="music" class="on"></div>
            <div class="pages">
                <div class="page page_1">
                    <div class="map"></div>
@@ -745,7 +808,10 @@
                </div>
                <div class="scene_3 page page_5 hide">
                    <div class="two_editer"></div>
-                   <div class="video"><img src="images/video.jpg" /></div>
+                   <div class="video">
+                       
+                       <embed id="obembed" src="http://static.video.qq.com/TPout.swf?vid=o0138siuns9&amp;auto=0" allowfullscreen="true" quality="high" width="640" height="360" align="middle" allowscriptaccess="always" type="application/x-shockwave-flash">
+                   </div>
                    <div class="editer_say">2015巴黎春夏时装周终于迎来了“重头戏”，其2015春夏成衣秀系列正式在巴黎罗浮宫发布。明星阵容也可谓是异常强大，现场，中国著名女星李冰冰小姐2015巴黎春夏时装周终于迎来了“重头戏”——Dior，其2015春夏成衣秀系列正式在巴黎罗浮宫发布。明星阵容也可谓是异常强大，现场，中国著名女星李冰冰小姐身着Dior 2015 早春系列水蓝色外套。</div>
                    <div class="editer_photo"><img src="images/editer.jpg" /></div>
                    <a class="next"></a>
@@ -810,19 +876,43 @@
                </div>
                <div class="scene_8 page page_10 hide">
                    <div class="tab">
+                       <div class="tab_content tab_on">
+                           <div class="tab_content_title">1肯达尔·詹娜：时髦就是这么简单</div>
+                           <div class="tab_content_pic"><img src="images/big_pic.png" /></div>
+                       </div>
                        <div class="tab_content">
-                           <div class="tab_content_title">肯达尔·詹娜：时髦就是这么简单</div>
+                           <div class="tab_content_title">2肯达尔·詹娜：时髦就是这么简单</div>
+                           <div class="tab_content_pic"><img src="images/big_pic.png" /></div>
+                       </div>
+                       <div class="tab_content">
+                           <div class="tab_content_title">3肯达尔·詹娜：时髦就是这么简单</div>
+                           <div class="tab_content_pic"><img src="images/big_pic.png" /></div>
+                       </div>
+                       <div class="tab_content">
+                           <div class="tab_content_title">4肯达尔·詹娜：时髦就是这么简单</div>
+                           <div class="tab_content_pic"><img src="images/big_pic.png" /></div>
+                       </div>
+                       <div class="tab_content">
+                           <div class="tab_content_title">5肯达尔·詹娜：时髦就是这么简单</div>
+                           <div class="tab_content_pic"><img src="images/big_pic.png" /></div>
+                       </div>
+                       <div class="tab_content">
+                           <div class="tab_content_title">6肯达尔·詹娜：时髦就是这么简单</div>
+                           <div class="tab_content_pic"><img src="images/big_pic.png" /></div>
+                       </div>
+                       <div class="tab_content">
+                           <div class="tab_content_title">7肯达尔·詹娜：时髦就是这么简单</div>
                            <div class="tab_content_pic"><img src="images/big_pic.png" /></div>
                        </div>
                        <div class="tab_title">
                            <ul>
-                               <li class="tab_1 tab_on"></li>
-                               <li class="tab_2"></li>
-                               <li class="tab_3"></li>
-                               <li class="tab_4"></li>
-                               <li class="tab_5"></li>
-                               <li class="tab_6"></li>
-                               <li class="tab_7"></li>
+                               <li class="tab_1 tab_on"  data-num="1"></li>
+                               <li class="tab_2"  data-num="2"></li>
+                               <li class="tab_3"  data-num="3"></li>
+                               <li class="tab_4"  data-num="4"></li>
+                               <li class="tab_5"  data-num="5"></li>
+                               <li class="tab_6"  data-num="6"></li>
+                               <li class="tab_7"  data-num="7"></li>
                            </ul>
                        </div>
                    </div>
@@ -831,6 +921,7 @@
                <div class="scene_9 page page_11 hide">
                    <div class="liai"></div>
                    <div class="liai_say"></div>
+                   <div class="weixin_layout"></div>
                    <a class="share">分享至朋友圈</a>
                </div>
            </div>
@@ -850,6 +941,9 @@
            </div>
            <div class="text"></div>
        </div>
+       
+                  <audio id="audio_music" src="images/music.mp3" autoplay loop>
+
        
        <script src="scripts/jquery.js"></script>
        <script src="scripts/swipe.js"></script>
@@ -967,21 +1061,21 @@
                
                showSecondPage = function () {
                    $(this).fadeOut();
-                   $('.page_1').addClass('startFly_2')
-                    showSecondPageStyle();
-               },
-               
-               showNext = function () {
-                   $(this).fadeOut();
-                   $('.page_2').fadeOut();
-                   $('.hand_1').fadeOut();
-               },
-               
-               showSecondPageStyle = function () {
-                    $('.page_1').hide();
-                   $('.page_2').addClass('fadeShow');
+                   $('.page_1').addClass('zoomClear');
+                   setTimeout(function () {
+                       $('.page_1').hide();
+                   }, 1000);
                    $('.clothes').addClass('zoom');
                    $('.hand_1').addClass('startFly_2').show();
+               },
+               
+               showMain = function () {
+                   $(this).fadeOut();
+                   $('.page_2').addClass('zoomClear');
+                   setTimeout(function () {
+                       $('.page_2').hide();
+                   }, 1000);
+                   $('.hand_1').fadeOut();
                },
 
 			   handleFly = function () {
@@ -1007,9 +1101,11 @@
                
                    var elem = document.getElementById('focus');
                    
+                 
+                   
                    window.mySwipe = Swipe(elem, {
                        startSlide: 0,
-                       auto: 3000,
+                       auto: false,
                        continuous: true,
                        disableScroll: false,
                        // stopPropagation: true,
@@ -1019,11 +1115,13 @@
                        }
                    });
                    
-                   mySwipe.stop = function(){
+                     mySwipe.stop = function(){
                        //delay = 0;
                        delay = options.auto > 0 ? options.auto : 0;
                        clearTimeout(interval);
                    }
+                   
+                   
                };
                
                
@@ -1091,14 +1189,35 @@
         }
     }
 })()
+
+    var music = function () {
+                var isPlay = true;
+                $("#music").on("click",function(){
+                    var audio = $('#audio_music')[0];
+                    var that = $(this);
+                    if (isPlay) {
+                        audio.pause();
+                        isPlay = false;
+                        that.removeClass('on');
+                    }
+                    else {
+                        audio.play();
+                        isPlay = true;
+                        that.addClass('on');
+                    }
+                });
+
+            };
            
 $(function(){
     loadIndex();
     startFly();
-    $('.clothes').click(showNext);
+    $('.clothes').click(showMain);
     
     touchPageUp();
     bindPageUp();
+    
+    music();
     
     $(document.body).on('click', '.product li, .product_a li, .product_b li ', function(){
         mask.open('win', $(this));
@@ -1108,6 +1227,25 @@ $(function(){
         mask.close('win');
     });
     
+    
+    var showCurrentTab = function () {
+        var defaultClass = 'tab_on';
+        var self = $(this);
+        var conent = $('.tab_content').eq(self.attr('data-num') - 1);
+        
+        self.parents('ul').find('li').removeClass(defaultClass);
+        self.addClass(defaultClass);
+            
+        conent.siblings().removeClass(defaultClass);
+        conent.addClass(defaultClass);
+    };
+    
+    $('.tab_title li').on('click', showCurrentTab);
+    
+    $('.share').click(function () {
+        $('.weixin_layout').show();
+        return false;
+    });
     
    
 
