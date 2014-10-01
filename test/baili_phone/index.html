@@ -1119,15 +1119,26 @@
 //					$('.plane').click(handleFly);
                     
                     
-                    touch.on('.plane', 'touchstart', function(ev){
-                        ev.preventDefault();
-                    });
                     
-                    touch.on('.plane', 'touchend', function(ev){
-                        ev.preventDefault();
+                    
+                    $('.plane').bind("touchstart", function(e){
+                        var touch = e.originalEvent.touches[0];
+                        yStart = touch.pageX;
                     });
+                    $('.plane').bind("touchmove", function(e){
+                        event.preventDefault();
+                        var touch = e.originalEvent.touches[0];
+                        yEnd = touch.pageX;
+                        console.log(yStart + '--' + yEnd);
+                       
+                        if (yEnd + 20 < yStart) { //down
+                            handleFly();
+                        }
+                       
+                    });
+                  
 
-                     touch.on('.plane', 'swipeleft swipeup', handleFly);
+//                     touch.on('.plane', 'swipeleft swipeup', handleFly);
 			   },
                
                loadSecond = function () {
