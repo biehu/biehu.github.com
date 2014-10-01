@@ -1129,7 +1129,6 @@
                         event.preventDefault();
                         var touch = e.originalEvent.touches[0];
                         yEnd = touch.pageX;
-                        console.log(yStart + '--' + yEnd);
                        
                         if (yEnd + 20 < yStart) { //down
                             handleFly.apply(this);
