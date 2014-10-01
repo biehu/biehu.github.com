@@ -7,7 +7,10 @@
        <meta charset="utf-8" />
        <title>Untitled Document</title>
        <style>
-           
+          .win {
+               position:absolute;
+               width:100%;
+           } 
            
        @-webkit-keyframes float {
            0% {-webkit-transform:
@@ -388,6 +391,10 @@
            background: url(images/close.png) no-repeat;
        }
        
+       #win_1 .win_close {
+           margin-top:-171px;
+       }
+       
        .text {
            font-family: "微软雅黑";
            font-size: 27px;
@@ -436,7 +443,6 @@
            top: 0;
            width: 483px;
            height: 578px;
-           -webkit-transform: translate(-500px, -600px);
        }
        
        
@@ -560,11 +566,12 @@
                   }
                   
                   .tab_content {
-                      display:none;
+                      opacity:0;
+                      transition: 1s;
                   }
                   
                   .tab_content.tab_on {
-                      display:block;
+                      opacity:1;
                   }
                   
                   .tab_content_pic {
@@ -774,6 +781,55 @@
                        top: 30px;
                        left: -2px;
                    }
+                   
+                   
+                   .page_6 .go_shopping {
+                       -webkit-transform: translate(-706px, 826px);
+                       -webkit-transition: 1s;
+                   }
+                   
+                   .page_6 .product {
+                       transform: translate(1280px, -2182px);
+                       transition: 1s;
+                   }
+                   
+                   .page_7 .product {
+                       transform: translate(-1280px, 2182px);
+                       transition: 1s;
+                   }
+                   
+                    .page_7 .product_a {
+                       transform: translate(1280px, -2182px);
+                       transition: 1s;
+                   }
+                   
+                   .page_9 .product {
+                       transform: translate(-966px, 1156px);
+                       transition: 1s;
+                   }
+                   
+                    .page_9 .product_a {
+                       transform: translate(966px, -1156px);
+                       transition: 1s;
+                   }
+                   
+                   .page_9 .product_b {
+                       transform: translate(1280px, 2182px);
+                       transition: 1s;
+                   }
+                   
+                   .page_6 .go_shopping.style,
+                   .page_6 .product.style,
+                   .page_7 .product.style,
+                   .page_7 .product_a.style,
+                   .page_9 .product_a.style,
+                   .page_9 .product.style,
+                   .page_9 .product_b.style
+                   {
+                       transform: translate(0, 0);
+                   }
+                   
+                  
  
                    
        </style>
@@ -956,12 +1012,7 @@
            </div>
        </div>
        
-       <style>
-           .win {
-               position:absolute;
-               width:100%;
-           }
-       </style>
+       
        <div id="mask_cloth" class="mask_cloth"></div>
        <div id="win" class="win" style="display:none;">
            <div class="pic">
@@ -969,6 +1020,13 @@
            <a class="win_close" href="#"></a>
            </div>
            <div class="text"></div>
+       </div>
+       
+       <div id="win_1" class="win" style="display:none;">
+           <div class="pic">
+               <img src="images/mask_1.png" />
+           <a class="win_close" href="#"></a>
+           </div>
        </div>
        
                   <audio id="audio_music" src="images/music.mp3" autoplay loop>
@@ -980,6 +1038,44 @@
        <script language="javascript" src="http://imgcache.gtimg.cn/tencentvideo_v1/tvp/js/tvp.player_v2_jq.js" charset="utf-8"></script>
        <script src="scripts/touch.js"></script>
        <script>
+           
+           var showStyle6 = function (type) {
+               if (type === 1) {
+                   $('.page_6 .go_shopping').addClass('style');
+                    $('.page_6 .product').addClass('style');
+               }
+               else {
+                   $('.page_6 .go_shopping').removeClass('style');
+                    $('.page_6 .product').removeClass('style');
+               }
+               
+           };
+           
+            var showStyle7 = function (type) {
+               if (type === 1) {
+                   $('.page_7 .product').addClass('style');
+                    $('.page_7 .product_a').addClass('style');
+               }
+               else {
+                   $('.page_7 .product').removeClass('style');
+                    $('.page_7 .product_a').removeClass('style');
+               }
+               
+           };
+           
+            var showStyle9 = function (type) {
+               if (type === 1) {
+                   $('.page_9 .product').addClass('style');
+                    $('.page_9 .product_a').addClass('style');
+                    $('.page_9 .product_b').addClass('style');
+               }
+               else {
+                   $('.page_9 .product').removeClass('style');
+                    $('.page_9 .product_a').removeClass('style');
+                    $('.page_9 .product_b').removeClass('style');
+               }
+               
+           };
            
            
             /*
@@ -1005,10 +1101,52 @@
                     $(".scene_"+(page+1)).removeClass('up');
                     $(".scene_"+(page+2)).addClass('hide');
                     
+                    if ((page+1) == 4) {
+                        showStyle6(1);
+                    }
+                    else {
+                        showStyle6(0);
+                    }
+                    
+                     if ((page+1) == 5) {
+                        showStyle7(1);
+                    }
+                    else {
+                        showStyle7(0);
+                    }
+                    
+                     if ((page+1) == 7) {
+                        showStyle9(1);
+                    }
+                    else {
+                        showStyle9(0);
+                    }
+                    
                 }
                 else{
                     $(".scene_"+page).addClass('up');
                     $(".scene_"+(page+1)).removeClass('hide');
+                    
+                    if ((page+1) == 4) {
+                        showStyle6(1);
+                    }
+                    else {
+                        showStyle6(0);
+                    }
+                    
+                     if ((page+1) == 5) {
+                        showStyle7(1);
+                    }
+                    else {
+                        showStyle7(0);
+                    }
+                    
+                      if ((page+1) == 7) {
+                        showStyle9(1);
+                    }
+                    else {
+                        showStyle9(0);
+                    }
                 }
                
                 // 翻页
@@ -1234,11 +1372,14 @@
                var obj=document.getElementById(objId);
                obj.style.display="block";
 
+            if (btn){
 			   var imgSrc = btn.attr('data-src');
 			   var imgTitle = btn.attr('data-title');
 
 			   $(obj).find('img')[0].src=imgSrc;
 			   $(obj).find('.text').html(imgTitle);
+               
+               }
                resizeMask(obj);
         },
         close:function(objId){
@@ -1276,6 +1417,15 @@ $(function(){
     bindPageUp();
     
     music();
+    
+    $(document.body).on('click touchstart', '.intro', function(){
+        mask.open('win_1');
+    });
+    
+    $(document.body).on('click', '#win_1 .win_close', function(){
+        mask.close('win_1');
+    });
+    
     
     $(document.body).on('click touchstart', '.product li, .product_a li, .product_b li ', function(){
         mask.open('win', $(this));
