@@ -678,7 +678,7 @@ left: 245px;
    <body>
        <div class="container">
            <div id="j_load" class="load">加载中...</div>
-           <div clss="pages">
+           <div class="pages">
                <div class="page page_1">
                    <div class="map"></div>
                    <div class="plane"></div>
@@ -900,7 +900,7 @@ left: 245px;
            };
            
            
-           var indexImgs = ['images/map.png', 'images/plane.png', 'images/hand.png'],
+           var indexImgs = ['images/map.png', 'images/plane.png', 'images/push_plane.png'],
                loadedImgNum = 0,
            
                loadImg = function (url) {
@@ -924,7 +924,6 @@ left: 245px;
                showPage = function () {
                    $('#j_load').hide();
                    $('.pages').show();
-                   
                    
                },
                
@@ -1032,22 +1031,22 @@ left: 245px;
     }
 })()
            
-          $(function () {
-              loadIndex();
-			  startFly();
-              $('.clothes').click(showNext);
-              
-              touchPageUp();
-                    bindPageUp();
-                    
-                    $(document.body).on('click', '.product li, .product_a li, .product_b li ', function () {
-                        mask.open('win', $(this));
-                    });
-
-					 $(document.body).on('click', '.win_close', function () {
-                        mask.close('win');
-                    });
-          });
+$(function(){
+    loadIndex();
+    startFly();
+    $('.clothes').click(showNext);
+    
+    touchPageUp();
+    bindPageUp();
+    
+    $(document.body).on('click', '.product li, .product_a li, .product_b li ', function(){
+        mask.open('win', $(this));
+    });
+    
+    $(document.body).on('click', '.win_close', function(){
+        mask.close('win');
+    });
+});
           
           
         
