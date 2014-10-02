@@ -1178,13 +1178,16 @@
                     
                     if ((page+1) == 4) {
                         showStyle6(1);
+                        console.log($(".scene_"+(page+1)).find('.hand_1'));
+                        $(".scene_"+(page+1)).find('.hand_1').addClass('startFly_2').show();
                     }
                     else {
                         showStyle6(0);
                     }
                     
                      if ((page+1) == 5) {
-                        showStyle7(1);
+                         showStyle7(1);
+                        $(".scene_"+(page+1)).find('.hand_1').addClass('startFly_2').show();
                     }
                     else {
                         showStyle7(0);
@@ -1192,6 +1195,7 @@
                     
                       if ((page+1) == 7) {
                         showStyle9(1);
+                        $(".scene_"+(page+1)).find('.hand_1').addClass('startFly_2').show();
                     }
                     else {
                         showStyle9(0);
