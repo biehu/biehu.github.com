@@ -1534,7 +1534,63 @@ if (window.innerHeight < 1000) {
 }    
 
 });
+
+
+
+/*
+                微信分享
+            
+            */
+
+
+            document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+        
+    WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+        WeixinJSBridge.invoke('sendAppMessage', {
+            "img_url": window.shareData.imgUrl,
+            "link": window.shareData.timeLineLink,
+            "desc": window.shareData.tContent,
+            "title": window.shareData.tTitle
+        }, function(res) {
+            dp_share(); 
+    });
+});
+
+WeixinJSBridge.on('menu:share:timeline', function(argv) {
+    WeixinJSBridge.invoke('shareTimeline', {
+        "img_url": window.shareData.imgUrl,
+        "img_width": "640",
+        "img_height": "640",
+        "link": window.shareData.timeLineLink,
+        "desc": window.shareData.tContent,
+        "title": window.shareData.tTitle
+    }, function(res) {
+        dp_share(); 
+    });
+});
+WeixinJSBridge.on('menu:share:weibo', function(argv) {
+            WeixinJSBridge.invoke('shareWeibo', {
+                "content": window.shareData.tContent,
+                "url": window.shareData.timeLineLink
+            }, function(res) {
+                dp_share();
+            });
+        });
+
+        }, false)
+
+
+
+
+        window.shareData = {
+    "imgUrl": "http://upload.mcchina.com/2014/1002/1412223671166.jpg", 
+    "timeLineLink": "http://www.mcchina.com/mini/2015ssfashionweekParisphone/",
+    "tTitle": "嘉人网相约巴黎 游走时装周8个精彩时刻",
+    "tContent": "蒋梦婕亮相2015春夏纽约时装周Tadashi Shoji秀场。一袭宝蓝色抹胸A字裙搭配浅黄色尖头高跟鞋，再加上侧放在一边的麻花辫，彰显了蒋梦婕的青春与活力，成为了Tadashi Shoji 秀场上的亮点之一。"
+};
           
+          
+          alert(222);
           
         
            
