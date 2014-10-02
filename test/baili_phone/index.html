@@ -1446,7 +1446,8 @@
 $(function(){
     loadIndex();
     startFly();
-    $('.clothes').on('click touchstart', showMain);
+    
+    $(document.body).on('click touchstart', '.clothes', showMain);
     
     touchPageUp();
     bindPageUp();
