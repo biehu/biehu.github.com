@@ -389,13 +389,19 @@ ul {
 .tab a {
     display:inline-block;
     width:30px;
-    height:43px;
+    height:20px;
+	padding-top:24px;
     background:url(../images/tab.jpg) no-repeat;
+	text-align:center;
+	color:#000;
+	font-size:13px;
+	font-family:Arial;
 }
 
 .recommend .tab .tab_on,
 .recommend .tab a:hover {
     background-position-y:-61px;
+	color:#fff;
 }
 
 .tab .tab_1 {
@@ -411,16 +417,16 @@ ul {
 }
 
 .tab .tab_4 {
-    background-position: -105px 0;
+    background-position: -108px 0;
 }
 
 .tab .tab_5 {
-    background-position: -138px 0;
+    background-position: -143px 0;
 }
 
 .tab .tab_6 {
     width:36px;
-    background-position: -175px 0;
+    background-position: -176px 0;
 }
 
 .tab .tab_7 {
