@@ -65,15 +65,17 @@
        
        <script src="scripts/jquery.js"></script>
        <script>
-            /*
+	      
+		(function () {
+
+		   /*
             * 翻页
             */
+		   var yStart, yEnd;
            var index = 0;
            var allNum = 3;
            var isAnimate = false;
            var isModal = false;
-           var yStart;
-           var yEnd;
            
            var slide = function (el, num) {
                 el.css('WebkitTransitionDuration', '.5s');
@@ -102,7 +104,7 @@
                 },750);
             };
             
-            var touchPageUp = function(){
+            var bindTouchPageUp = function(){
             
                 $(document).bind("touchstart", function(e){
                     var touch = e.originalEvent.touches[0];
@@ -144,8 +146,14 @@
                    setPage(0, ++index);
                });
            };
-           
-          
+
+		   var init = function () {
+			   bindPageUp();
+			   bindTouchPageUp();
+		   };
+
+		   init();
+        }());
        </script>
    </body>
 </html>
