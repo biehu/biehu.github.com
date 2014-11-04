@@ -1,0 +1,371 @@
+
+<!-- saved from url=(0037)http://sandbox.runjs.cn/show/wppaum3l -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style>
+	a {
+		display:block;
+		width:100%;
+		height:80px;
+		margin:5px;
+		background:#ccc;
+		text-align:center;
+		text-decoration:none;
+		font-size:32px;
+		line-height:80px;
+	}
+	
+	.box {
+		height:100px;
+		margin-top:300px;
+		background:#f00;
+	}
+</style>
+
+</head><body><a href="javascript:void(weixinShare({type:'friend', title:'标题', content:'内容', url:'http://m.sohu.com', imgUrl:'http://s1.rr.itc.cn/w/u/0/home_logo.png'}))">分享给朋友</a>
+<a href="javascript:void(weixinShare({type:'friends', title:'标题', content:'内容', url:'http://m.sohu.com', imgUrl:'http://s1.rr.itc.cn/w/u/0/home_logo.png'}))">分享给朋友圈</a>
+
+
+
+<div id="box" class="box">
+</div>
+    	<style></style>
+	    		<script>(function () {
+ 
+/**
+ * 
+ * 只有qq浏览器使用
+ * by mandycui、wangfz 
+ * 微信分享模块
+ *
+ *  options {
+ *      shareUrl    {String}
+ *      title       {String}
+ *      contents    {String}
+ *      imgUrl      {String}
+ *      to_app      {Int}       1是微信好友 8是微信朋友圈 
+ *  }
+ *
+ *  
+ */
+function wxShare(){
+    var obj = {
+        init : function(){}
+    };
+
+    if( /mqq/i.test(navigator.userAgent) ){
+        if(typeof x5 === 'undefined'){
+            var getScript = function (url, onComplete, charset) {
+                var script = document.createElement("script");
+                script.language = "javascript"; script.type = "text/javascript";
+                if (charset) {
+                    script.charset = charset;
+                }
+                // charset && (script.charset = charset);
+                                
+                script.onload = script.onreadystatechange = function() {
+                    if(!this.readyState || this.readyState=='loaded' || this.readyState=='complete'){
+                        if (onComplete) {
+                            onComplete();
+                        }
+                        // onComplete && onComplete();
+                        script.onload = script.onreadystatechange = null;
+                        script.parentNode.removeChild(script);  
+                    }
+                };
+                
+                script.src = url;
+                document.getElementsByTagName("head")[0].appendChild(script);
+            };        
+            
+            getScript('http://3gimg.qq.com/OPT/mtt_push_v04.js', function(){ // 如果浏览器那边能整合一下这个js就好了, 轻应用push也在用
+                obj.init=_share();
+            }, 'utf-8');
+        }else{
+            obj.init=_share();
+        }
+    }
+
+    function _share(){
+        /**
+         * Created by mandycui on 2014/7/22.
+         */
+
+        var native = {
+            ua : navigator.userAgent
+        };
+        native.init=function(opt, suc, err){
+
+            suc = function(){};
+            err = function(){};
+
+            //option.img_title 和 option.cus_txt 不知干嘛的，暂时屏蔽
+            var option = opt || {};
+            option.url = opt.shareUrl || opt.url || '';
+            option.description = opt.contents || opt.description || '';
+            option.img_url = opt.imgUrl || opt.img_url || 'http://3gimg.qq.com/html5app/205/7c6/785/8fa/c64/34d/cb7/14d/27a/abc/d20/56/180_180.png';
+            
+            var ua = navigator.userAgent;
+            var vision = getVision(ua);
+            var mttSystem = getMttSystem(ua);
+            if(mttSystem === 0){ //不是qq浏览器      
+                if (err) {err();}
+            }else{
+                if(mttSystem==1){
+                    if(vision >= 50){
+                        androidShareNew(option, suc, err);
+                    }else{
+                        androidShareOld(option, suc, err);
+                    }
+                }else{
+                    x5.app.share(option, suc, err);
+                }
+            }
+        };
+
+        x5.app.share = function (options,succCallback,errCallback){
+
+            if (typeof succCallback !== "function") {
+                console.log("x5.app.share Error: succCallback is not a function");
+                return;
+            }
+            errCallback = succCallback;
+            if (typeof errCallback !== "function") {
+                console.log("x5.app.share Error: errCallback is not a function");
+                return;
+            }
+
+            x5.exec(succCallback, errCallback, "app", "share", [options]);
+        };
+        /**  
+         * 获得版本，判断版本类型.
+         * 不是QQ浏览器： 返回值=0
+         * Android    ： 返回值=1
+         * ios：         返回值=2
+         */
+        function getMttSystem(ua){
+            var isAndroid = /android/ig.test(ua) && /mqq/ig.test(ua);
+            var isIos = /iphone|ipod|ios/ig.test(ua) && /mqq/ig.test(ua);
+            if(isAndroid){
+                return 1;
+            }
+            if(isIos){
+                return 2;
+            }
+            if(!isAndroid && !isIos){
+                return 0;
+            }
+        }
+        function getVision(ua){
+            var mttSystem = getMttSystem(ua);
+            if(typeof mtt !== "undefined"){
+                mttSystem = 1;
+            }
+            
+            if(mttSystem==1){
+                var info = getBrowserParam();
+                if(info){
+                    info = eval('(' + info + ')');
+                    var qua = info.qua + "";
+                    qua = qua.match(/([0-9\.]+)/ig,'');
+                    if(qua && qua.length > 0)
+                        return qua[0];
+                }
+            }
+            
+            try {
+                var reg = /MQQBrowser\/(\d{2})/;
+                var regRemoveDot = /\./g;
+                ua =  ua.replace(regRemoveDot,'');
+                var res = reg.exec(ua);
+                if(res && res.length > 1){
+                    return res[1];
+                }
+                return undefined;
+            }catch(e){
+                return undefined;
+            }
+        }
+        function getBrowserParam(){
+            var browserparam = "";
+            if (typeof mtt !== "undefined"){
+                try{
+                    if(mtt.getBrowserParam)
+                        browserparam =  mtt.getBrowserParam() + "";
+                    return browserparam;
+                }catch(e){
+                    return "";
+                }
+            }else{
+                return "";
+            }
+        }
+        function androidShareNew(option, suc, err){
+            try{
+                var ret = window.mttQB.share(option);
+                if(ret >= 0){
+                    if (suc) { suc(); }
+                }else{
+                    if (err) { err(); }
+                }
+            }catch(e){
+                if (err) { err(); }
+            }
+        }
+        function androidShareOld(option, suc, err){   
+            if(typeof x5mtt!="undefined"){  
+                try{
+                    var ret = window.x5mtt.share(JSON.stringify(option));
+                    if(ret >= 0){
+                        if (suc) { suc(); }
+                    }else{
+                        if (err) { err(); }
+                    }
+                }catch(e){
+                    if (err) { err(); }
+                }
+            }else{
+                if (err) { err(); }
+            }
+        }
+            
+        return native.init;
+    }
+    
+    return obj;
+};
+wxShare()
+
+/*
+ * qq浏览器5.4及以上微信分享
+ */
+var newWxShare = (function () {
+    var serverType, shareParams;
+    var newQQbrowerWeixinApi = 'http://jsapi.qq.com/get?api=app.canShareTo,app.isInstallApk,app.share';
+
+    var loadQqPushJs = function (url, callback) {
+        var head = document.getElementsByTagName('head')[0];
+        var js = document.createElement('script');
+        
+        js.setAttribute('src', url);
+        js.setAttribute('type', 'text/javascript'); 
+        head.appendChild(js);
+        js.onload = callback;
+        
+    };
+
+    var handleShareWeixinNewQQbrower = function () {
+			  browser.app.share(shareParams);  
+        
+    };
+    
+//    type: android 或者 ios
+//    data = {
+//        title: '标题',
+//        description: '内容',
+//        url: '页面链接',
+//        img_url: '分享图片链接',
+//        to_app: '类型' // 1 ,朋友；8, 朋友圈
+//    }
+    var init = function (type, data) {
+        if (!type || !data) {
+            return;
+        }
+        
+        serverType = type;
+        shareParams = data;
+        loadQqPushJs(newQQbrowerWeixinApi, handleShareWeixinNewQQbrower);
+    };
+    
+    return {
+        init: init
+    };
+}());
+
+// 参数options说明
+// {
+//    type: '类型', 注： friend 好友，friends 朋友圈
+//    title: '标题',
+//    content: '内容',
+//    url: '链接',
+//    imgUrl: '图片链接'
+// }
+window.weixinShare = function (options) {
+    var qqBrowerShareType, qqBrowerVersion;
+    var ua = window.navigator.userAgent;
+    var uaMarks = {a: 'Android', q: 'MQQBrowser', s: 'SogouMobileBrowser', u: 'UCBrowser'};
+    var isAndroid = new RegExp(uaMarks.a).test(ua);
+    var isQqBrower = new RegExp(uaMarks.q).test(ua);
+    var isSogouBrower = new RegExp(uaMarks.s).test(ua);
+    var isUcBrower = new RegExp(uaMarks.u).test(ua);
+    
+    var getBrowerVersion = function (mark) {
+        var reg, regRemoveDot, res;
+
+        try {
+            reg = new RegExp(mark + '\\/(\\d{2})', 'i');
+            regRemoveDot = /\./g;
+            ua =  ua.replace(regRemoveDot,'');
+            res = reg.exec(ua);
+            if(res && res.length > 1){
+                return parseInt(res[1], 10);
+            }
+            return 0;
+        }catch(e){
+            return 0;
+        }
+    };
+	
+
+ 
+    // uc浏览器(安卓9.7及以上)
+    if (isAndroid && isUcBrower && getBrowerVersion(uaMarks.u) > 96) {
+        ucweb.startRequest("shell.page_share", [options.title, 
+                                                options.content, 
+                                                options.url, 
+                                                options.type === 'friend' ? 'WechatFriends' : 'WechatTimeline', 
+                                                '', '', getPos.getNodeInfoById('box')]);
+        return;
+    }
+
+    // qq浏览器(5.0及以上)
+    if (isQqBrower) {
+        qqBrowerShareType = options.type === 'friend' ? 1 : 8;
+        qqBrowerVersion = getBrowerVersion(uaMarks.q);
+        if (qqBrowerVersion > 53) {
+            newWxShare.init(isAndroid ? 'android' : 'ios', 
+                            { title: options.title,
+                              description: options.content,
+                              url: options.url,
+                              img_url: options.imgUrl,
+                              to_app: qqBrowerShareType });
+            return;
+        }
+        if (isAndroid && qqBrowerVersion > 49) {
+            wxShare().init({ title: options.title,
+                             contents: options.content,
+                             url: options.url,
+                             imgUrl: options.imgUrl,
+                             to_app: qqBrowerShareType });
+            return;
+        }
+        
+    }
+    
+    // sogou浏览器(安卓3.1.1及以上，苹果)
+    if (isSogouBrower &&
+        window.SogouMse &&
+        window.SogouMse.Utility &&
+        window.SogouMse.Utility.shareWithInfo) {
+        SogouMse.Utility.shareWithInfo({ shareTitle: options.title,
+                                         shareContent: options.content,
+                                         shareUrl: options.url,
+                                         shareImageUrl: options.imgUrl,
+                                         shareType: options.type === 'friend' ? '2' : '4' });
+        return;    
+    }
+};
+       
+}());
+
+</script>
+	
+<!-- Generated by RunJS (Fri Oct 31 16:51:43 CST 2014) 1ms --><div id="chrome-hosts-manager-ipaddr" title="当前标签页IP：点击隐藏">117.135.138.169</div></body></html>
