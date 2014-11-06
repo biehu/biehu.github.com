@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=1024" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <title>impress.js | presentation tool based on the power of CSS3 transforms and transitions in modern browsers | by Bartek Szopka @bartaz</title>
+        <meta name="description" content="impress.js is a presentation tool based on the power of CSS3 transforms and transitions in modern browsers and inspired by the idea behind prezi.com." />
+        <meta name="author" content="Bartek Szopka" />
+        <link href="doc/impress-demo.css" rel="stylesheet" />
+        <style>
+            .big {
+                font-size: 200px;
+            }
+            
+            #bored {
+                color: #000;
+                font-size: 80px;
+                line-height: 80px;
+            }
+        </style>
+    </head>
+    <body class="impress-not-supported">
+        <div id="impress">
+            <div id="bored" class="step slide" data-x="-1000" data-y="-1500">
+                <p>1. 兼容性</p>
+                <p>2. 体验更好</p>
+                <p>3. 线上实现和问题</p>
+                <p>4. 优化</p>
+            </div>
+            <div class="step big" data-x="1000" data-y="2325" data-z="-3000" data-rotate="300" data-scale="1">
+                <p>兼容性</p>
+            </div>
+            <div class="step slide" data-x="3000" data-y="-1500">
+                <p>
+                    Uc  qq 搜狗<br />  
+                                                            安卓uc浏览器(安卓9.7及以上) 最新的是 9.9.5<br />  
+                                                            安卓 qq浏览器(5.0及以上)  苹果 5.4<br />  
+                                                            安卓 sogou浏览器(安卓3.1.1及以上，苹果最新)<br />  
+                     <br />                                       
+                                                            最新的<br />  
+                                                            安卓uc  sogou qq
+                </p>
+            </div>
+            <div class="step big" data-x="5000" data-y="2325" data-z="-3000" data-rotate="300" data-scale="1">
+                <p>体验更好</p>
+            </div>
+            <div class="step slide" data-x="7000" data-y="-1500">
+                <p>
+                    Uc <br />  
+                                            页面截图， 划定区域<br />  
+                                            Qq<br />  
+                                            对安装微信判断，给出自定义提示<br />  
+                                            安卓对不能分享做出提示（微信版本太低）
+
+                </p>
+            </div>
+            <div class="step big" data-x="9000" data-y="2325" data-z="-3000" data-rotate="300" data-scale="1">
+                <p>线上实现和问题</p>
+            </div>
+            <div class="step slide" data-x="11000" data-y="-1500">
+                <p>
+                    支持的版本显示按钮<br />
+（最新qq ，没有安装微信不显示分享微信按钮）<br />
+<br />
+特性检查不是版本检查<br />
+ 遇到的问题<br />
+搜狗浏览器，开始做的是按钮 最后苹果得到支持，正文页修改<br />
+<br />
+微信软件下分享没有图片
+<br />
+添加统计，开始手动调用， 分享出去加载链接后面
+<br />
+PNG 透明的注意
+<br />
+qq 5.3 以下是集合框
+uc 9.9.5 以下会有组合框选择截图和链接， 9.7 系列会有集合框
+
+
+                </p>
+            </div>
+            <div class="step big" data-x="2825" data-y="2325" data-z="-3000" data-rotate="300" data-scale="1">
+                <p>优化</p>
+            </div>
+            <div class="step slide" data-x="1000" data-y="-1500">
+                <p>
+                    模块化，最后用户操作的时候 执行更少的代码
+                </p>
+            </div>
+            
+        </div>
+        <script>
+            if ("ontouchstart" in document.documentElement) {
+                document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
+            }
+        </script>
+        <script src="doc/impress.js">
+        </script>
+        <script>
+            impress().init();
+        </script>
+    </body>
+</html>

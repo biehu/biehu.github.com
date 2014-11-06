@@ -1,0 +1,226 @@
+
+<!-- saved from url=(0037)http://sandbox.runjs.cn/show/gwohq3rm -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style>
+a {
+    display: block;
+    width: 100%;
+    height: 80px;
+    margin: 5px;
+    background: #ccc;
+    text-align: center;
+    text-decoration: none;
+    font-size: 32px;
+    line-height: 80px;
+}
+
+.box {
+    height: 100px;
+    margin-top: 300px;
+    background: #f00;
+}
+</style>
+
+</head><body><a href="javascript:void(weixinShare({type:'friend', title:'标题', content:'内容', url:'http://m.sohu.com', imgUrl:'http://s1.rr.itc.cn/w/u/0/home_logo.png'}))">分享给朋友</a>
+<a href="javascript:void(weixinShare({type:'friends', title:'标题', content:'内容', url:'http://m.sohu.com', imgUrl:'http://s1.rr.itc.cn/w/u/0/home_logo.png'}))">分享给朋友圈</a>
+
+
+
+
+
+
+<div id="box" class="box">
+</div>
+        <style></style>
+                <script>
+                    
+(function () {
+    /*
+     * qq浏览器微信分享
+     */
+    var qqWeixinShare = (function () {
+        var serverType, shareParams;
+        var oldApi = 'http://3gimg.qq.com/OPT/mtt_push_v04.js';
+        var newApi = 'http://jsapi.qq.com/get?api=app.canShareTo,app.isInstallApk,app.share';
+    
+        var loadJs = function (url, callback) {
+            var head = document.getElementsByTagName('head')[0];
+            var js = document.createElement('script');
+            
+            js.setAttribute('src', url);
+            js.setAttribute('type', 'text/javascript'); 
+            js.onload = callback;
+            head.appendChild(js);
+        };
+        
+        var handleOldShare = function () {
+            window.mttQB.share(shareParams);
+        };
+    
+        var handleNewShare = function () {
+            var params = {
+                android: {'packagename':'com.tencent.mm'},
+                ios: {'apkKey':'weixin'}
+            };
+            
+            browser.app.isInstallApk(function(data){
+                if (!data) {
+                    alert('没有安装微信！');
+                    return;
+                }
+    
+                browser.app.canShareTo(
+                    {to_app: shareParams.to_app},
+                    function(data){
+                        if (data < 0) {
+                            alert('不能分享');
+                            return;
+                        }
+                        
+                        browser.app.share(shareParams);
+                     });
+            }, params[serverType]);
+        };
+        
+    //    type: android 或者 ios
+    //    old: 0 或者 1 说明 0是 5.0及以上 1 是5.4及以上 
+    //    data = {
+    //        title: '标题',
+    //        description: '内容',
+    //        url: '页面链接',
+    //        img_url: '分享图片链接',
+    //        to_app: '类型' // 1 ,朋友；8, 朋友圈
+    //    }
+        var init = function (data, type) {
+            shareParams = data;
+            if (data && type) {
+                serverType = type;
+                loadJs(newApi, handleNewShare);
+            }
+            else if (data) {
+                loadJs(oldApi, handleOldShare);
+            }
+        };
+        
+        return init;
+    }());
+    
+    // 参数options说明
+    // {
+    //    type: '类型', 注： friend 好友，friends 朋友圈
+    //    title: '标题',
+    //    content: '内容',
+    //    url: '链接',
+    //    imgUrl: '图片链接'
+    // }
+    var weixinShare = (function () {
+        var qqBrowerVersion, getQqBrowerData, func;
+        var ua = window.navigator.userAgent;
+        var uaMarks = {a: 'Android', q: 'MQQBrowser', s: 'SogouMobileBrowser', u: 'UCBrowser'};
+        var isAndroid = new RegExp(uaMarks.a).test(ua);
+        var isQqBrower = new RegExp(uaMarks.q).test(ua);
+        var isSogouBrower = new RegExp(uaMarks.s).test(ua);
+        var isUcBrower = new RegExp(uaMarks.u).test(ua);
+        
+        var getBrowerVersion = function (mark) {
+            var reg, regRemoveDot, res;
+    
+            try {
+                reg = new RegExp(mark + '\\/(\\d{2})', 'i');
+                regRemoveDot = /\./g;
+                ua =  ua.replace(regRemoveDot,'');
+                res = reg.exec(ua);
+                if(res && res.length > 1){
+                    return parseInt(res[1], 10);
+                }
+                return 0;
+            }catch(e){
+                return 0;
+            }
+        };
+        
+        var getPos = {
+            getTop: function(e){
+                var offset = e.offsetTop;
+                if (e.offsetParent != null) 
+                    offset += getPos.getTop(e.offsetParent);
+                return offset;
+            },
+            getLeft: function(e){
+                var offset = e.offsetLeft;
+                if (e.offsetParent != null) 
+                    offset += getPos.getLeft(e.offsetParent);
+                return offset;
+            },
+            getNodeInfoById: function(e){
+                var myNode = document.getElementById(e);
+                if (myNode) {
+                    var pos = [getPos.getLeft(myNode), getPos.getTop(myNode), myNode.offsetWidth, myNode.offsetHeight]
+                    return (pos)
+                }
+                else {
+                    return false
+                }
+            }
+        };
+        
+        var getQqBrowerData = function (options) {
+            return { title: options.title,
+                     description: options.content,
+                     url: options.url,
+                     img_url: options.imgUrl,
+                     to_app: options.type === 'friend' ? 1 : 8 };
+        };
+     
+        // uc浏览器(安卓9.7及以上)
+        if (isAndroid && isUcBrower && getBrowerVersion(uaMarks.u) > 96) {
+            func = function (options) {
+                ucweb.startRequest("shell.page_share", 
+                                    [options.title, 
+                                    options.content, 
+                                    options.url, 
+                                    options.type === 'friend' ? 'WechatFriends' : 'WechatTimeline', 
+                                    '', '', getPos.getNodeInfoById('box')]);
+            };
+        }
+        
+        // qq浏览器(5.0及以上)
+        if (isQqBrower) {
+            qqBrowerVersion = getBrowerVersion(uaMarks.q);
+            if (qqBrowerVersion > 53) {
+                func = function (options) {
+                    qqWeixinShare(getQqBrowerData(options), isAndroid ? 'android' : 'ios');
+                                
+                };
+            }
+            else if (isAndroid && qqBrowerVersion > 49) {
+                func = function (options) {
+                    qqWeixinShare(getQqBrowerData(options));
+                                
+                };
+            }
+            
+        }
+        
+        // sogou浏览器(安卓3.1.1及以上，苹果)
+        if (isSogouBrower &&
+            window.SogouMse &&
+            window.SogouMse.Utility &&
+            window.SogouMse.Utility.shareWithInfo) {
+            func = function (options) {
+                SogouMse.Utility.shareWithInfo({ shareTitle: options.title,
+                                             shareContent: options.content,
+                                             shareUrl: options.url,
+                                             shareImageUrl: options.imgUrl,
+                                             shareType: options.type === 'friend' ? '2' : '4' });
+            };
+        }
+        
+        return func;
+    }());
+    
+    window.weixinShare = weixinShare;
+}());
+
+</script>
+    
+</body></html>
