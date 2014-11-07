@@ -20,8 +20,8 @@ a {
 }
 </style>
 
-</head><body><a href="javascript:void(weixinShare({type:'friend', title:'标题', content:'内容', url:'http://m.sohu.com', imgUrl:'http://s1.rr.itc.cn/w/u/0/home_logo.png'}))">分享给朋友</a>
-<a href="javascript:void(weixinShare({type:'friends', title:'标题', content:'内容', url:'http://m.sohu.com', imgUrl:'http://s1.rr.itc.cn/w/u/0/home_logo.png'}))">分享给朋友圈</a>
+</head><body><a class="to-f" href="#">分享给朋友</a>
+<a class="to-fs" href="#">分享给朋友圈</a>
 
 
 
@@ -103,6 +103,41 @@ a {
         
         return init;
     }());
+    
+    /*
+     * 微信app分享设置
+     * 
+     * weixinShareData = {
+        "img_url":"",
+        "link":"",
+        "title":"",
+        "desc":""
+    };
+     * 
+     */
+    var weixinAppShareSet = function (weixinShareData) {
+        document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+            // 分享到朋友圈;
+            WeixinJSBridge.on('menu:share:timeline', function(argv) {
+                WeixinJSBridge.invoke('shareTimeline', {
+                    "img_url": weixinShareData.img_url,
+                    "img_width": "92",
+                    "img_height": "92",
+                    "link": weixinShareData.link,
+                    "desc": weixinShareData.desc,
+                    "title": weixinShareData.title
+                }, function(){});
+            });
+            WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+                WeixinJSBridge.invoke('sendAppMessage', {
+                    "img_url": weixinShareData.img_url,
+                    "link": weixinShareData.link,
+                    "desc": weixinShareData.desc,
+                    "title": weixinShareData.title
+                }, function(){});
+            });
+        }, false);
+    };
     
     // 参数options说明
     // {
@@ -218,45 +253,46 @@ a {
         return func;
     }());
     
-    /*
-     * 微信app分享设置
-     * 
-     * weixinShareData = {
-        "img_url":"",
-        "link":"",
-        "title":"",
-        "desc":""
-    };
-     * 
-     */
-    var weixinAppShareSet = function (weixinShareData) {
-        document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
-            // 分享到朋友圈;
-            WeixinJSBridge.on('menu:share:timeline', function(argv) {
-                WeixinJSBridge.invoke('shareTimeline', {
-                    "img_url": weixinShareData.img_url,
-                    "img_width": "92",
-                    "img_height": "92",
-                    "link": weixinShareData.link,
-                    "desc": weixinShareData.desc,
-                    "title": weixinShareData.title
-                }, function(){});
-            });
-            WeixinJSBridge.on('menu:share:appmessage', function(argv) {
-                WeixinJSBridge.invoke('sendAppMessage', {
-                    "img_url": weixinShareData.img_url,
-                    "link": weixinShareData.link,
-                    "desc": weixinShareData.desc,
-                    "title": weixinShareData.title
-                }, function(){});
-            });
-        }, false);
-    }
     
-    window.weixinAppShareSet = weixinAppShareSet;
-    window.weixinShare = weixinShare;
+    // 参数options说明
+    // className 为分享元素class
+    // type: '类型', 注： friend 好友，friends 朋友圈
+    // data ： {   
+    //    title: '标题',
+    //    content: '内容',
+    //    url: '链接',
+    //    imgUrl: '图片链接'
+    // }
+    var weixin = function (className, type, data) {
+        weixinAppShareSet({
+            img_url: data.imgUrl,
+            link: data.url,
+            title: data.title,
+            desc: data.content
+        });
+        
+        document.body.addEventListener('click', function (e) { 
+            if (e.target.className === className) {      
+                weixinShare({
+                    type: type,
+                    title: data.title,
+                    content: data.content,
+                    url: data.url,
+                    imgUrl: data.imgUrl
+                });
+                return false;
+            }
+        }, false);
+    };
+
+    window.shareToWeixin = weixin;
 }());
 
+</script>
+
+<script>
+    shareToWeixin('to-f', 'friend', {title:'标题', content:'内容', url:'http://m.sohu.com', imgUrl:'http://s1.rr.itc.cn/w/u/0/home_logo.png'});
+    shareToWeixin('to-fs', 'friends', {title:'标题', content:'内容', url:'http://m.sohu.com', imgUrl:'http://s1.rr.itc.cn/w/u/0/home_logo.png'});
 </script>
     
 </body></html>
