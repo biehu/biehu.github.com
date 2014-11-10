@@ -36,9 +36,6 @@ a {
                 <script>
                     
 (function () {
-    /*
-     * qq浏览器微信分享
-     */
     var qqWeixinShare = (function () {
         var serverType, shareParams;
         var oldApi = 'http://3gimg.qq.com/OPT/mtt_push_v04.js';
@@ -83,15 +80,6 @@ a {
             }, params[serverType]);
         };
         
-    //    type: android 或者 ios
-    //    old: 0 或者 1 说明 0是 5.0及以上 1 是5.4及以上 
-    //    data = {
-    //        title: '标题',
-    //        description: '内容',
-    //        url: '页面链接',
-    //        img_url: '分享图片链接',
-    //        to_app: '类型' // 1 ,朋友；8, 朋友圈
-    //    }
         var init = function (data, type) {
             shareParams = data;
             if (data && type) {
@@ -106,15 +94,7 @@ a {
         return init;
     }());
     
-    // 参数options说明
-    // {
-    //    type: '类型', 注： friend 好友，friends 朋友圈
-    //    title: '标题',
-    //    content: '内容',
-    //    url: '链接',
-    //    imgUrl: '图片链接'
-    // }
-    var weixinShare = (function () {
+    var weixinWebShare = (function () {
         var qqBrowerVersion, getQqBrowerData, func;
         var ua = window.navigator.userAgent;
         var uaMarks = {a: 'Android', q: 'MQQBrowser', s: 'SogouMobileBrowser', u: 'UCBrowser'};
@@ -218,10 +198,55 @@ a {
         }
         
         return func;
-    }());
+    })();
+    
+    var weixinAppShare = (function (weixinShareData) {
+        var func, run;
+        func = function () {
+            if (run) {
+                return;
+            }
+            run = true;
+            document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+                // 分享到朋友圈;
+                WeixinJSBridge.on('menu:share:timeline', function(argv) {
+                    WeixinJSBridge.invoke('shareTimeline', {
+                        "img_url": weixinShareData.imgUrl,
+                        "img_width": "92",
+                        "img_height": "92",
+                        "link": weixinShareData.url,
+                        "desc": weixinShareData.content,
+                        "title": weixinShareData.title
+                    }, function(){});
+                });
+                WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+                    WeixinJSBridge.invoke('sendAppMessage', {
+                        "img_url": weixinShareData.imgUrl,
+                        "link": weixinShareData.url,
+                        "desc": weixinShareData.content,
+                        "title": weixinShareData.title
+                    }, function(){});
+                });
+            }, false);
+        };
+        return func;
+    })();
+
+    // 参数options说明
+    // {
+    //    type: '类型', 注： friend 好友，friends 朋友圈
+    //    title: '标题',
+    //    content: '内容',
+    //    url: '链接',
+    //    imgUrl: '图片链接'
+    // }
+    var weixinShare = function (options) {
+        weixinAppShare(options);
+        weixinWebShare(options);
+    };
     
     window.weixinShare = weixinShare;
-}());
+})();
 
 </script>
     
