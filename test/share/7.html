@@ -194,17 +194,27 @@ a {
             };
         }
         
-        return func;
+        return function (options) {
+            if (options.before) {
+                options.before();
+            }
+            func(options);
+            if (options.after) {
+                options.after();
+            }
+        };
     })();
     
     /*
      * 微信app分享
      */
     var weixinAppShareRun;
+    
     var weixinAppShare = function (weixinShareData) {
-        if (weixinAppShareRun) { return; }
+        if (weixinAppShareRun) { 
+            return; 
+        }
         weixinAppShareRun = true;
-		alert(1);
         document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
             // 分享到朋友圈;
             WeixinJSBridge.on('menu:share:timeline', function(argv) {
@@ -235,6 +245,9 @@ a {
     //    content: '内容',
     //    url: '链接',
     //    imgUrl: '图片链接'
+    // 
+    //    before: function 分享之前调用
+    //    after: function  分享之后调用
     // }
     var weixinShare = function (options) {
         weixinAppShare(options);
@@ -251,11 +264,29 @@ window.onload = function () {
     var toFriendLink = document.getElementById('to_f');
     var toFriendsLink = document.getElementById('to_fs');
     toFriendLink.addEventListener('click', 
-                                  weixinShare({type:'friend', title:'标题', content:'内容', url:'http://m.sohu.com', imgUrl:'http://s1.rr.itc.cn/w/u/0/home_logo.png'}),
+                                  weixinShare({
+                                      type:'friend', title:'标题', content:'内容', url:'http://m.sohu.com',     
+                                      imgUrl:'http://s1.rr.itc.cn/w/u/0/home_logo.png', 
+                                      before: function () {
+                                            alert('我是之前调用的哦');
+                                      }, 
+                                      after: function () {
+                                        alert('我是之后调用的哦');
+                                      }
+                                  }),
                                   false);
     toFriendsLink.addEventListener('click', 
-                                  weixinShare({type:'friends', title:'标题', content:'内容', url:'http://m.sohu.com', imgUrl:'http://s1.rr.itc.cn/w/u/0/home_logo.png'}),
-                                  false);                                  
+                                  weixinShare({
+                                      type:'friend', title:'标题', content:'内容', url:'http://m.sohu.com',     
+                                      imgUrl:'http://s1.rr.itc.cn/w/u/0/home_logo.png', 
+                                      before: function () {
+                                        alert('我是之前调用的哦');
+                                      }, 
+                                      after: function () {
+                                        alert('我是之后调用的哦');
+                                      }
+                                  }),
+                                  false);                                 
 };
 
 </script>
