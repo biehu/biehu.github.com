@@ -22,7 +22,7 @@
            .page,
            .page-load {
                width: 640px;
-               height: 1136px;
+               height: 1000px;
                overflow: hidden;
                position: absolute;
                top: 0;
@@ -93,7 +93,7 @@
            .footer-bg,
            .footer {
                position: absolute;
-               bottom: 0;
+               bottom: -50px;
            }
            
            .load-text {
@@ -438,13 +438,15 @@
 	    </div>
         <script src="http://biehu.github.io/test/mobile/js/jquery-1.9.1.min.js"></script>
         <script>
-            var resizeBody = function () {
-               var sildeHeight = 1000;
+            var resizeBody = function (sildeHeight) {
                zoom = $(window).height() / sildeHeight;
                if (zoom > 1) {
                    zoom = 1;
                }
+               
                $("body").css({"zoom": zoom});
+               
+               
            };
            
            var styleCover = function () {
@@ -488,9 +490,11 @@
                 
                 if (page > 6) {
                     $('.page-header').fadeIn();
+                    resizeBody(1136);
                 }
                 else {
                     $('.page-header').fadeOut();
+                    resizeBody(1000);
                 }
                 
                 if (page === 7) {
@@ -579,7 +583,7 @@
         };
         
            $(function () {
-               resizeBody();
+               resizeBody(1000);
                page();
                load();
                weixinAlert();
