@@ -20,7 +20,20 @@
            }
            
            .page {
-               position: relative;
+               width: 640px;
+               height: 1136px;
+               overflow: hidden;
+               position: absolute;
+               top: 0;
+               left: 50%;
+               margin-left: -320px;
+               -webkit-transform: translate(0px, 0px) scale(1);
+               -webkit-transition: -webkit-transform 0.4s;
+           }
+           
+           .page-header {
+               display: none;
+               width: 640px;
                height: 1136px;
            }
            
@@ -250,17 +263,55 @@
                transform: translateY(1500px);
                transition-delay: 1.5s;
            }
+           
+           /*
+            * 翻页
+            */
+           .down {
+                -webkit-transform: translate(0px, 100%) scale(0);
+            }
+            
+            .up {
+                -webkit-transform: translate(0px, -100%) scale(0);
+            }
+            
+            @-webkit-keyframes arrowUpDown {
+                0% {bottom: 10px;}
+                100% {bottom: 20px;}
+            }
+            
+            .page-btn {
+                -webkit-animation-name: arrowUpDown;
+                -webkit-animation-duration: .4s;
+                -webkit-animation-iteration-count: infinite;
+                -webkit-animation-direction: alternate;
+                -webkit-animation-timing-function: linear;
+            }
+            
+            /*
+             * 加载
+             */
+            .load.hide {
+                -webkit-transform: scale(2);
+                -moz-transform: scale(2);
+                -ms-transform: scale(2);
+                transform: scale(2);
+                opacity: 0;
+                -webkit-transition: all 0.3s;
+                -moz-transition: all 0.3s;
+                transition: all 0.3s;
+            }
         </style>
 	</head>
 	<body>
 	    <div class="wrap">
-	        <div class="page load" style="display: none;">
+	        <div class="page load page_1">
 	            <div class="load-text">
     	            <p class="text-1"><img src="images/load-text-1.png" /></p>
     	            <p class="text-2"><img src="images/load-text-2.png" /></p>
                 </div>
 	        </div>
-            <div class="page cover" style="display: none;">
+            <div class="page down cover page_2">
                 <div class="header">
                     <p class="text-1"><img src="images/main-text.png" /></p>
                     <p class="text-2"><img src="images/star-text.png" /></p>
@@ -273,7 +324,7 @@
                     <img src="images/2-desc.png" />
                 </div>
             </div>
-            <div class="page star">
+            <div class="page down star page_3">
                 <div class="mark"><img src="images/mark.png" /></div>
                 <div class="pic"><img src="images/1.jpg" /></div>
                 <div class="footer-bg"><img src="images/footer-bg.png" /></div>
@@ -281,9 +332,9 @@
                     连帽外套、运动短裤：<br />
 均为Alexander Wang x H&M
                 </div>
-                <div class="page-btn"><img src="images/page-btn.png" /></div>
+                <div class="page-btn"><a class="next" href="#"><img src="images/page-btn.png" /></a></div>
             </div>
-            <div class="page star">
+            <div class="page down star page_4">
                 <div class="mark"><img src="images/mark.png" /></div>
                 <div class="pic"><img src="images/2.jpg" /></div>
                 <div class="footer-bg"><img src="images/footer-bg.png" /></div>
@@ -291,9 +342,9 @@
                     连帽外套、运动短裤：<br />
 均为Alexander Wang x H&M
                 </div>
-                <div class="page-btn"><img src="images/page-btn.png" /></div>
+                <div class="page-btn"><a class="next" href="#"><img src="images/page-btn.png" /></a></div>
             </div>
-            <div class="page star">
+            <div class="page down star page_5">
                 <div class="mark"><img src="images/mark.png" /></div>
                 <div class="pic"><img src="images/3.jpg" /></div>
                 <div class="footer-bg"><img src="images/footer-bg.png" /></div>
@@ -301,9 +352,9 @@
                     连帽外套、运动短裤：<br />
 均为Alexander Wang x H&M
                 </div>
-                <div class="page-btn"><img src="images/page-btn.png" /></div>
+                <div class="page-btn"><a class="next" href="#"><img src="images/page-btn.png" /></a></div>
             </div>
-            <div class="page star">
+            <div class="page down star page_6">
                 <div class="mark"><img src="images/mark.png" /></div>
                 <div class="pic"><img src="images/4.jpg" /></div>
                 <div class="footer-bg"><img src="images/footer-bg.png" /></div>
@@ -311,9 +362,9 @@
                     连帽外套、运动短裤：<br />
 均为Alexander Wang x H&M
                 </div>
-                <div class="page-btn"><img src="images/page-btn.png" /></div>
+                <div class="page-btn"><a class="next" href="#"><img src="images/page-btn.png" /></a></div>
             </div>
-            <div class="page star">
+            <div class="page down star page_7">
                 <div class="mark"><img src="images/mark.png" /></div>
                 <div class="pic"><img src="images/5.jpg" /></div>
                 <div class="footer-bg"><img src="images/footer-bg.png" /></div>
@@ -321,9 +372,9 @@
                     连帽外套、运动短裤：<br />
 均为Alexander Wang x H&M
                 </div>
-                <div class="page-btn"><img src="images/page-btn.png" /></div>
+                <div class="page-btn"><a class="next" href="#"><img src="images/page-btn.png" /></a></div>
             </div>
-            <div class="page star">
+            <div class="page down star page_8">
                 <div class="mark"><img src="images/mark.png" /></div>
                 <div class="pic"><img src="images/1.jpg" /></div>
                 <div class="footer-bg"><img src="images/footer-bg.png" /></div>
@@ -331,18 +382,18 @@
                     连帽外套、运动短裤：<br />
 均为Alexander Wang x H&M
                 </div>
-                <div class="page-btn"><img src="images/page-btn.png" /></div>
+                <div class="page-btn"><a class="next" href="#"><img src="images/page-btn.png" /></a></div>
             </div>
-            <div class="page-header" style="display: none;">
+            <div class="page-header">
                 <img src="images/gift_01.png" />
             </div>
-            <div class="page gift" style="display: none;">
+            <div class="page down gift page_9">
                 <p class="pic-1"><img src="images/gift_02.png" /></p>
                 <p class="pic-2"><img src="images/gift_03.png" /></p>
                 <p class="pic-3"><img src="images/gift_04.png" /></p>
-                <div class="page-btn"><img src="images/page-btn.png" /></div>
+                <div class="page-btn"><a class="next" href="#"><img src="images/page-btn.png" /></a></div>
             </div>
-            <div class="page about" style="display: none;">
+            <div class="page down about page_10">
                 <p class="pic-1"><img src="images/about_02.png" /></p>
                 <p class="pic-2"><a href="#"><img src="images/about_03.png" /></a></p>
             </div>
@@ -367,8 +418,106 @@
                $('.gift p').addClass('slide');
            };
            
+           var page = (function () {
+
+           /*
+            * 翻页
+            */
+           var yStart, yEnd;
+           var index = 0;
+           var allNum = 3;
+           var isAnimate = false;
+           var isModal = false;
+           
+           var slide = function (el, num) {
+                el.css('WebkitTransitionDuration', '.5s');
+                el.css('webkitTransform', 'translateY(' + num +　')');
+           };
+           
+           var setPage = function (dir,page) {
+               
+                isAnimate = true;
+                
+                if(dir === 1){
+                    $(".page_"+(page+1)).removeClass('up');
+                    $(".page_"+(page+2)).addClass('down');
+                    
+                }
+                else{
+                    $(".page_"+page).addClass('up');
+                    $(".page_"+(page+1)).removeClass('down');
+                }
+               
+                // 翻页
+                setTimeout(function(){
+                    if (isAnimate) {
+                        isAnimate = false;
+                    }
+                },750);
+            };
+            
+            var bindTouchPageUp = function(){
+            
+                $(document).bind("touchstart", function(e){
+                    var touch = e.originalEvent.touches[0];
+                    yStart = touch.pageY;
+                });
+                $(document).bind("touchmove", function(e){
+                    event.preventDefault();
+                    var touch = e.originalEvent.touches[0];
+                    yEnd = touch.pageY;
+                    if (isAnimate || isModal) 
+                        return false;
+                    if (yEnd - 100 > yStart & yEnd > yStart) { //down
+                        if (index === 0)
+                            return false;
+                        setPage(1, --index);
+                    }
+                    else 
+                        if (yEnd + 100 < yStart & yEnd < yStart) { //up
+                            if (index === (allNum - 1)) 
+                                return false;
+                            setPage(0, ++index);
+                        }
+                });
+                
+            };
+
+            
+           var bindPageUp = function () {
+               $(".next").bind('click', function(e){
+                   e.preventDefault();
+                   if (index == (allNum - 1)) {
+                       return;
+                   }
+                   
+                   if (isAnimate) {
+                       isAnimate = false;
+                   }
+                   
+                   setPage(0, ++index);
+               });
+           };
+
+           var init = function () {
+               bindPageUp();
+               bindTouchPageUp();
+           };
+
+           return init;
+        })();
+        
+        var load = function () {
+            $(window).on('load', function () {
+                alert(1);
+                $('.load').addClass('hide');
+            });
+        };
+        
            $(function () {
                resizeBody();
+               page();
+               load();
                styleCover();
                styleGift();
            });
