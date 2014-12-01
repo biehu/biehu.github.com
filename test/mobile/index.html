@@ -199,6 +199,10 @@
                 -webkit-animation-timing-function: linear;
 
             }
+            
+            .load .load-text.stop p {
+                -webkit-animation: none;
+            }
 
            /*
             * 封面效果
@@ -301,101 +305,118 @@
                 -moz-transition: all 0.3s;
                 transition: all 0.3s;
             }
+            
+           /*
+            * 微信弹框
+            */
+            .weixin-win {
+                display: none;
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: 100%;
+                background: url(images/shareBg.png) no-repeat right top rgba(0, 0, 0, 0.6);
+                background-size: 160px 350px;
+                z-index: 999999;
+            }
         </style>
 	</head>
 	<body>
 	    <div class="wrap">
 	        <div class="page load page_1">
 	            <div class="load-text">
-    	            <p class="text-1"><img src="images/load-text-1.png" /></p>
-    	            <p class="text-2"><img src="images/load-text-2.png" /></p>
+    	            <p class="text-1"><img src="http://biehu.me/test/mobile/images/load-text-1.png" /></p>
+    	            <p class="text-2"><img src="http://biehu.me/test/mobile/images/load-text-2.png" /></p>
                 </div>
 	        </div>
             <div class="page down cover page_2">
                 <div class="header">
-                    <p class="text-1"><img src="images/main-text.png" /></p>
-                    <p class="text-2"><img src="images/star-text.png" /></p>
-                    <p class="text-3"><img src="images/man.png" /></p>
+                    <p class="text-1"><img src="http://biehu.me/test/mobile/images/main-text.png" /></p>
+                    <p class="text-2"><img src="http://biehu.me/test/mobile/images/star-text.png" /></p>
+                    <p class="text-3"><img src="http://biehu.me/test/mobile/images/man.png" /></p>
                 </div>
-                <div class="pic-head"><img src="images/head.png" /></div>
-                <div class="pic"><img src="images/1.jpg" /></div>
-                <div class="footer-bg"><img src="images/footer-bg.png" /></div>
+                <div class="pic-head"><img src="http://biehu.me/test/mobile/images/head.png" /></div>
+                <div class="pic"><img src="http://biehu.me/test/mobile/images/1.jpg" /></div>
+                <div class="footer-bg"><img src="http://biehu.me/test/mobile/images/footer-bg.png" /></div>
                 <div class="footer">
-                    <img src="images/2-desc.png" />
+                    <img src="http://biehu.me/test/mobile/images/2-desc.png" />
                 </div>
             </div>
             <div class="page down star page_3">
-                <div class="mark"><img src="images/mark.png" /></div>
-                <div class="pic"><img src="images/1.jpg" /></div>
-                <div class="footer-bg"><img src="images/footer-bg.png" /></div>
+                <div class="mark"><img src="http://biehu.me/test/mobile/images/mark.png" /></div>
+                <div class="pic"><img src="http://biehu.me/test/mobile/images/1.jpg" /></div>
+                <div class="footer-bg"><img src="http://biehu.me/test/mobile/images/footer-bg.png" /></div>
                 <div class="desc">
                     连帽外套、运动短裤：<br />
 均为Alexander Wang x H&M
                 </div>
-                <div class="page-btn"><a class="next" href="#"><img src="images/page-btn.png" /></a></div>
+                <div class="page-btn"><a class="next" href="#"><img src="http://biehu.me/test/mobile/images/page-btn.png" /></a></div>
             </div>
             <div class="page down star page_4">
-                <div class="mark"><img src="images/mark.png" /></div>
-                <div class="pic"><img src="images/2.jpg" /></div>
-                <div class="footer-bg"><img src="images/footer-bg.png" /></div>
+                <div class="mark"><img src="http://biehu.me/test/mobile/images/mark.png" /></div>
+                <div class="pic"><img src="http://biehu.me/test/mobile/images/2.jpg" /></div>
+                <div class="footer-bg"><img src="http://biehu.me/test/mobile/images/footer-bg.png" /></div>
                 <div class="desc">
                     连帽外套、运动短裤：<br />
 均为Alexander Wang x H&M
                 </div>
-                <div class="page-btn"><a class="next" href="#"><img src="images/page-btn.png" /></a></div>
+                <div class="page-btn"><a class="next" href="#"><img src="http://biehu.me/test/mobile/images/page-btn.png" /></a></div>
             </div>
             <div class="page down star page_5">
-                <div class="mark"><img src="images/mark.png" /></div>
-                <div class="pic"><img src="images/3.jpg" /></div>
-                <div class="footer-bg"><img src="images/footer-bg.png" /></div>
+                <div class="mark"><img src="http://biehu.me/test/mobile/images/mark.png" /></div>
+                <div class="pic"><img src="http://biehu.me/test/mobile/images/3.jpg" /></div>
+                <div class="footer-bg"><img src="http://biehu.me/test/mobile/images/footer-bg.png" /></div>
                 <div class="desc">
                     连帽外套、运动短裤：<br />
 均为Alexander Wang x H&M
                 </div>
-                <div class="page-btn"><a class="next" href="#"><img src="images/page-btn.png" /></a></div>
+                <div class="page-btn"><a class="next" href="#"><img src="http://biehu.me/test/mobile/images/page-btn.png" /></a></div>
             </div>
             <div class="page down star page_6">
-                <div class="mark"><img src="images/mark.png" /></div>
-                <div class="pic"><img src="images/4.jpg" /></div>
-                <div class="footer-bg"><img src="images/footer-bg.png" /></div>
+                <div class="mark"><img src="http://biehu.me/test/mobile/images/mark.png" /></div>
+                <div class="pic"><img src="http://biehu.me/test/mobile/images/4.jpg" /></div>
+                <div class="footer-bg"><img src="http://biehu.me/test/mobile/images/footer-bg.png" /></div>
                 <div class="desc">
                     连帽外套、运动短裤：<br />
 均为Alexander Wang x H&M
                 </div>
-                <div class="page-btn"><a class="next" href="#"><img src="images/page-btn.png" /></a></div>
+                <div class="page-btn"><a class="next" href="#"><img src="http://biehu.me/test/mobile/images/page-btn.png" /></a></div>
             </div>
             <div class="page down star page_7">
-                <div class="mark"><img src="images/mark.png" /></div>
-                <div class="pic"><img src="images/5.jpg" /></div>
-                <div class="footer-bg"><img src="images/footer-bg.png" /></div>
+                <div class="mark"><img src="http://biehu.me/test/mobile/images/mark.png" /></div>
+                <div class="pic"><img src="http://biehu.me/test/mobile/images/5.jpg" /></div>
+                <div class="footer-bg"><img src="http://biehu.me/test/mobile/images/footer-bg.png" /></div>
                 <div class="desc">
                     连帽外套、运动短裤：<br />
 均为Alexander Wang x H&M
                 </div>
-                <div class="page-btn"><a class="next" href="#"><img src="images/page-btn.png" /></a></div>
+                <div class="page-btn"><a class="next" href="#"><img src="http://biehu.me/test/mobile/images/page-btn.png" /></a></div>
             </div>
             <div class="page down star page_8">
-                <div class="mark"><img src="images/mark.png" /></div>
-                <div class="pic"><img src="images/1.jpg" /></div>
-                <div class="footer-bg"><img src="images/footer-bg.png" /></div>
+                <div class="mark"><img src="http://biehu.me/test/mobile/images/mark.png" /></div>
+                <div class="pic"><img src="http://biehu.me/test/mobile/images/1.jpg" /></div>
+                <div class="footer-bg"><img src="http://biehu.me/test/mobile/images/footer-bg.png" /></div>
                 <div class="desc">
                     连帽外套、运动短裤：<br />
 均为Alexander Wang x H&M
                 </div>
-                <div class="page-btn"><a class="next" href="#"><img src="images/page-btn.png" /></a></div>
+                <div class="page-btn"><a class="next" href="#"><img src="http://biehu.me/test/mobile/images/page-btn.png" /></a></div>
             </div>
             <div class="page-header">
-                <img src="images/gift_01.png" />
+                <img src="http://biehu.me/test/mobile/images/gift_01.png" />
             </div>
             <div class="page down gift page_9">
-                <p class="pic-1"><img src="images/gift_02.png" /></p>
-                <p class="pic-2"><img src="images/gift_03.png" /></p>
-                <p class="pic-3"><img src="images/gift_04.png" /></p>
-                <div class="page-btn"><a class="next" href="#"><img src="images/page-btn.png" /></a></div>
+                <p class="pic-1"><img src="http://biehu.me/test/mobile/images/gift_02.png" /></p>
+                <p class="pic-2"><img src="http://biehu.me/test/mobile/images/gift_03.png" /></p>
+                <p class="pic-3"><img src="http://biehu.me/test/mobile/images/gift_04.png" /></p>
+                <div class="page-btn"><a class="next" href="#"><img src="http://biehu.me/test/mobile/images/page-btn.png" /></a></div>
             </div>
             <div class="page down about page_10">
-                <p class="pic-1"><img src="images/about_02.png" /></p>
-                <p class="pic-2"><a href="#"><img src="images/about_03.png" /></a></p>
+                <p class="pic-1"><img src="http://biehu.me/test/mobile/images/about_02.png" /></p>
+                <p class="pic-2"><a id="weixin-btn" href="#"><img src="http://biehu.me/test/mobile/images/about_03.png" /></a></p>
+                <div id="weixin-win" class="weixin-win"><img src="images/shreBg.png" /></div>
             </div>
 	    </div>
         <script src="js/jquery-1.9.1.min.js"></script>
@@ -425,7 +446,7 @@
             */
            var yStart, yEnd;
            var index = 0;
-           var allNum = 3;
+           var allNum = 10;
            var isAnimate = false;
            var isModal = false;
            
@@ -509,8 +530,19 @@
         
         var load = function () {
             $(window).on('load', function () {
-                alert(1);
+                $('.load-text').addClass('stop');
                 $('.load').addClass('hide');
+            });
+        };
+        
+        var weixinAlert = function () {
+            $('#weixin-btn').on('click', function (e) {
+               e.preventDefault();
+               $('#weixin-win').fadeIn(); 
+            });
+            
+            $('#weixin-win').on('click', function () {
+                $(this).fadeOut();
             });
         };
         
@@ -518,6 +550,7 @@
                resizeBody();
                page();
                load();
+               weixinAlert();
                styleCover();
                styleGift();
            });
