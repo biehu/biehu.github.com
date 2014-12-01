@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Untitled Document</title>
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            
+            body {
+               background: #000; 
+            }
+            
+           .wrap {
+              width: 640px;
+              margin: 0 auto;
+           }
+           
+           .page {
+               width: 640px;
+               height: 1136px;
+               overflow: hidden;
+               position: absolute;
+               top: 0;
+               left: 50%;
+               margin-left: -320px;
+               -webkit-transform: translate(0px, 0px) scale(1);
+               -webkit-transition: -webkit-transform 0.4s;
+           }
+           
+           .page-header {
+               display: none;
+               width: 640px;
+               height: 1136px;
+           }
+           
+           .header {
+               position: absolute;
+               z-index: 1;
+               height: 218px;
+           }
+           
+           .header p {
+               position: absolute;
+           }
+           
+           .text-1 {
+               top: 40px;
+           }
+           
+           .text-2 {
+               top: 150px;
+               left: 424px;
+           }
+           
+           .text-3 {
+               top: 21px;
+               left: 509px;
+           }
+           
+           .pic-head {
+               z-index: 2;
+           }
+           
+           .cover .pic-head,
+           .cover .pic {
+               position: absolute;
+               top: 20px;
+           }
+           
+           .footer {
+               height: 394px;
+           }
+           
+           .cover .footer {
+               height: 480px
+           }
+           
+           .footer-bg,
+           .footer {
+               position: absolute;
+               bottom: 0;
+           }
+           
+           .load-text {
+               position: absolute;
+               top: 50%;
+               height: 154px;
+               margin-top: -77px;
+           }
+           
+           .page-btn {
+               position: absolute;
+               bottom: 0;
+               width: 100%;
+               text-align: center;
+           }
+           
+           .page-header {
+               position: fixed;
+           }
+           
+           .gift,
+           .about {
+               padding-top: 203px;
+           }
+           
+           .mark {
+               position: absolute;
+               top: 10px;
+               right: 10px;
+               z-index: 2;
+           }
+           
+           .desc {
+               position: absolute;
+               bottom: 50px;
+               z-index: 2;
+               padding: 10px;
+               color: #fff;
+               font-size: 25px;
+               line-height: 35px;
+           }
+           
+           /*
+            * 加载中
+            */
+           @-webkit-keyframes loading {
+                0% {
+                    opacity: 0;
+                    transform: translateX(-700px);
+                }
+                
+                20% {
+                    opacity: 0;
+                    transform: translateX(-400px); 
+                }
+                
+                40%, 50%, 60% {
+                    opacity: 1;
+                    transform: translateX(0); 
+                }
+                
+                80% {
+                    opacity: 0;
+                    transform: translateX(400px); 
+                }
+                
+                100% {
+                    opacity: 0;
+                    transform: translateX(700px);
+                }
+            }
+            
+            @-webkit-keyframes loading-1 {
+                0% {
+                    opacity: 0;
+                    transform: translateX(700px);
+                }
+                
+                20% {
+                    opacity: 0;
+                    transform: translateX(400px); 
+                }
+                
+                40%, 50%, 60% {
+                    opacity: 1;
+                    transform: translateX(0); 
+                }
+                
+                80% {
+                    opacity: 0;
+                    transform: translateX(-400px); 
+                }
+                
+                100% {
+                    opacity: 0;
+                    transform: translateX(-700px);
+                }
+            }
+            
+            .load .text-1 {
+                -webkit-animation-name: loading;
+                -webkit-animation-duration: 3s;
+                -webkit-animation-iteration-count: infinite;
+                -webkit-animation-direction: alternate;
+                -webkit-animation-timing-function: linear;
+
+            }
+            
+            .load .text-2 {
+                -webkit-animation-name: loading-1;
+                -webkit-animation-duration: 3s;
+                -webkit-animation-iteration-count: infinite;
+                -webkit-animation-direction: alternate;
+                -webkit-animation-timing-function: linear;
+
+            }
+            
+            .load .load-text.stop p {
+                -webkit-animation: none;
+            }
+
+           /*
+            * 封面效果
+            */
+           .header p,
+           .footer {
+               transition: all .5s ease-in-out;
+           }
+           
+           .header p.slide {
+               transform: translate(0);
+           }
+           
+           .header .text-1 {
+               transform: translateX(-700px);
+               transition-delay: .5s;
+
+           }
+           
+           .header .text-2 {
+               transform: translateX(1000px);
+               transition-delay: 1s;
+           }
+           
+           .header .text-3 {
+               transform: translateY(-500px);
+               transition-delay: 1.5s;
+           }
+           
+           .footer {
+               opacity: 0;
+               transition-delay: 2s;
+           }
+           
+           .footer.show {
+               opacity: 1;
+           }
+           
+           /*
+            * 礼物
+            */
+           .gift p {
+               transition: all .5s ease-in-out;
+           }
+           
+           .gift p.slide {
+               transform: translate(0);
+           }
+           
+           .gift .pic-1 {
+               transform: translateY(1500px);
+               transition-delay: .5s;
+
+           }
+           
+           .gift .pic-2 {
+               transform: translateY(1500px);
+               transition-delay: 1s;
+           }
+           
+           .gift .pic-3 {
+               transform: translateY(1500px);
+               transition-delay: 1.5s;
+           }
+           
+           /*
+            * 翻页
+            */
+           .down {
+                -webkit-transform: translate(0px, 100%) scale(0);
+            }
+            
+            .up {
+                -webkit-transform: translate(0px, -100%) scale(0);
+            }
+            
+            @-webkit-keyframes arrowUpDown {
+                0% {bottom: 10px;}
+                100% {bottom: 20px;}
+            }
+            
+            .page-btn {
+                -webkit-animation-name: arrowUpDown;
+                -webkit-animation-duration: .4s;
+                -webkit-animation-iteration-count: infinite;
+                -webkit-animation-direction: alternate;
+                -webkit-animation-timing-function: linear;
+            }
+            
+            /*
+             * 加载
+             */
+            .load.hide {
+                -webkit-transform: scale(2);
+                -moz-transform: scale(2);
+                -ms-transform: scale(2);
+                transform: scale(2);
+                opacity: 0;
+                -webkit-transition: all 0.3s;
+                -moz-transition: all 0.3s;
+                transition: all 0.3s;
+            }
+            
+           /*
+            * 微信弹框
+            */
+            .weixin-win {
+                display: none;
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: 100%;
+                background: url(images/shareBg.png) no-repeat right top rgba(0, 0, 0, 0.6);
+                background-size: 160px 350px;
+                z-index: 999999;
+            }
+        </style>
+	</head>
+	<body>
+	    <div class="wrap">
+	        <div class="page load page_1">
+	            <div class="load-text">
+    	            <p class="text-1"><img src="http://biehu.me/test/mobile/images/load-text-1.png" /></p>
+    	            <p class="text-2"><img src="http://biehu.me/test/mobile/images/load-text-2.png" /></p>
+                </div>
+	        </div>
+            <div class="page down cover page_2">
+                <div class="header">
+                    <p class="text-1"><img src="http://biehu.me/test/mobile/images/main-text.png" /></p>
+                    <p class="text-2"><img src="http://biehu.me/test/mobile/images/star-text.png" /></p>
+                    <p class="text-3"><img src="http://biehu.me/test/mobile/images/man.png" /></p>
+                </div>
+                <div class="pic-head"><img src="http://biehu.me/test/mobile/images/head.png" /></div>
+                <div class="pic"><img src="http://biehu.me/test/mobile/images/1.jpg" /></div>
+                <div class="footer-bg"><img src="http://biehu.me/test/mobile/images/footer-bg.png" /></div>
+                <div class="footer">
+                    <img src="http://biehu.me/test/mobile/images/2-desc.png" />
+                </div>
+            </div>
+            <div class="page down star page_3">
+                <div class="mark"><img src="http://biehu.me/test/mobile/images/mark.png" /></div>
+                <div class="pic"><img src="http://biehu.me/test/mobile/images/1.jpg" /></div>
+                <div class="footer-bg"><img src="http://biehu.me/test/mobile/images/footer-bg.png" /></div>
+                <div class="desc">
+                    连帽外套、运动短裤：<br />
+均为Alexander Wang x H&M
+                </div>
+                <div class="page-btn"><a class="next" href="#"><img src="http://biehu.me/test/mobile/images/page-btn.png" /></a></div>
+            </div>
+            <div class="page down star page_4">
+                <div class="mark"><img src="http://biehu.me/test/mobile/images/mark.png" /></div>
+                <div class="pic"><img src="http://biehu.me/test/mobile/images/2.jpg" /></div>
+                <div class="footer-bg"><img src="http://biehu.me/test/mobile/images/footer-bg.png" /></div>
+                <div class="desc">
+                    连帽外套、运动短裤：<br />
+均为Alexander Wang x H&M
+                </div>
+                <div class="page-btn"><a class="next" href="#"><img src="http://biehu.me/test/mobile/images/page-btn.png" /></a></div>
+            </div>
+            <div class="page down star page_5">
+                <div class="mark"><img src="http://biehu.me/test/mobile/images/mark.png" /></div>
+                <div class="pic"><img src="http://biehu.me/test/mobile/images/3.jpg" /></div>
+                <div class="footer-bg"><img src="http://biehu.me/test/mobile/images/footer-bg.png" /></div>
+                <div class="desc">
+                    连帽外套、运动短裤：<br />
+均为Alexander Wang x H&M
+                </div>
+                <div class="page-btn"><a class="next" href="#"><img src="http://biehu.me/test/mobile/images/page-btn.png" /></a></div>
+            </div>
+            <div class="page down star page_6">
+                <div class="mark"><img src="http://biehu.me/test/mobile/images/mark.png" /></div>
+                <div class="pic"><img src="http://biehu.me/test/mobile/images/4.jpg" /></div>
+                <div class="footer-bg"><img src="http://biehu.me/test/mobile/images/footer-bg.png" /></div>
+                <div class="desc">
+                    连帽外套、运动短裤：<br />
+均为Alexander Wang x H&M
+                </div>
+                <div class="page-btn"><a class="next" href="#"><img src="http://biehu.me/test/mobile/images/page-btn.png" /></a></div>
+            </div>
+            <div class="page down star page_7">
+                <div class="mark"><img src="http://biehu.me/test/mobile/images/mark.png" /></div>
+                <div class="pic"><img src="http://biehu.me/test/mobile/images/5.jpg" /></div>
+                <div class="footer-bg"><img src="http://biehu.me/test/mobile/images/footer-bg.png" /></div>
+                <div class="desc">
+                    连帽外套、运动短裤：<br />
+均为Alexander Wang x H&M
+                </div>
+                <div class="page-btn"><a class="next" href="#"><img src="http://biehu.me/test/mobile/images/page-btn.png" /></a></div>
+            </div>
+            <div class="page down star page_8">
+                <div class="mark"><img src="http://biehu.me/test/mobile/images/mark.png" /></div>
+                <div class="pic"><img src="http://biehu.me/test/mobile/images/1.jpg" /></div>
+                <div class="footer-bg"><img src="http://biehu.me/test/mobile/images/footer-bg.png" /></div>
+                <div class="desc">
+                    连帽外套、运动短裤：<br />
+均为Alexander Wang x H&M
+                </div>
+                <div class="page-btn"><a class="next" href="#"><img src="http://biehu.me/test/mobile/images/page-btn.png" /></a></div>
+            </div>
+            <div class="page-header">
+                <img src="http://biehu.me/test/mobile/images/gift_01.png" />
+            </div>
+            <div class="page down gift page_9">
+                <p class="pic-1"><img src="http://biehu.me/test/mobile/images/gift_02.png" /></p>
+                <p class="pic-2"><img src="http://biehu.me/test/mobile/images/gift_03.png" /></p>
+                <p class="pic-3"><img src="http://biehu.me/test/mobile/images/gift_04.png" /></p>
+                <div class="page-btn"><a class="next" href="#"><img src="http://biehu.me/test/mobile/images/page-btn.png" /></a></div>
+            </div>
+            <div class="page down about page_10">
+                <p class="pic-1"><img src="http://biehu.me/test/mobile/images/about_02.png" /></p>
+                <p class="pic-2"><a id="weixin-btn" href="#"><img src="http://biehu.me/test/mobile/images/about_03.png" /></a></p>
+                <div id="weixin-win" class="weixin-win"><img src="images/shreBg.png" /></div>
+            </div>
+	    </div>
+        <script src="js/jquery-1.9.1.min.js"></script>
+        <script>
+            var resizeBody = function () {
+               var sildeHeight = 1136;
+               zoom = $(window).height() / sildeHeight;
+               if (zoom > 1) {
+                   zoom = 1;
+               }
+               $("body").css({"zoom": zoom});
+           };
+           
+           var styleCover = function () {
+               $('.cover .header p').addClass('slide');
+               $('.cover .footer').addClass('show');
+           };
+           
+           var styleGift = function () {
+               $('.gift p').addClass('slide');
+           };
+           
+           var page = (function () {
+
+           /*
+            * 翻页
+            */
+           var yStart, yEnd;
+           var index = 0;
+           var allNum = 10;
+           var isAnimate = false;
+           var isModal = false;
+           
+           var slide = function (el, num) {
+                el.css('WebkitTransitionDuration', '.5s');
+                el.css('webkitTransform', 'translateY(' + num +　')');
+           };
+           
+           var setPage = function (dir,page) {
+               
+                isAnimate = true;
+                
+                if(dir === 1){
+                    $(".page_"+(page+1)).removeClass('up');
+                    $(".page_"+(page+2)).addClass('down');
+                    
+                }
+                else{
+                    $(".page_"+page).addClass('up');
+                    $(".page_"+(page+1)).removeClass('down');
+                }
+               
+                // 翻页
+                setTimeout(function(){
+                    if (isAnimate) {
+                        isAnimate = false;
+                    }
+                },750);
+            };
+            
+            var bindTouchPageUp = function(){
+            
+                $(document).bind("touchstart", function(e){
+                    var touch = e.originalEvent.touches[0];
+                    yStart = touch.pageY;
+                });
+                $(document).bind("touchmove", function(e){
+                    event.preventDefault();
+                    var touch = e.originalEvent.touches[0];
+                    yEnd = touch.pageY;
+                    if (isAnimate || isModal) 
+                        return false;
+                    if (yEnd - 100 > yStart & yEnd > yStart) { //down
+                        if (index === 0)
+                            return false;
+                        setPage(1, --index);
+                    }
+                    else 
+                        if (yEnd + 100 < yStart & yEnd < yStart) { //up
+                            if (index === (allNum - 1)) 
+                                return false;
+                            setPage(0, ++index);
+                        }
+                });
+                
+            };
+
+            
+           var bindPageUp = function () {
+               $(".next").bind('click', function(e){
+                   e.preventDefault();
+                   if (index == (allNum - 1)) {
+                       return;
+                   }
+                   
+                   if (isAnimate) {
+                       isAnimate = false;
+                   }
+                   
+                   setPage(0, ++index);
+               });
+           };
+
+           var init = function () {
+               bindPageUp();
+               bindTouchPageUp();
+           };
+
+           return init;
+        })();
+        
+        var load = function () {
+            $(window).on('load', function () {
+                $('.load-text').addClass('stop');
+                $('.load').addClass('hide');
+            });
+        };
+        
+        var weixinAlert = function () {
+            $('#weixin-btn').on('click', function (e) {
+               e.preventDefault();
+               $('#weixin-win').fadeIn(); 
+            });
+            
+            $('#weixin-win').on('click', function () {
+                $(this).fadeOut();
+            });
+        };
+        
+           $(function () {
+               resizeBody();
+               page();
+               load();
+               weixinAlert();
+               styleCover();
+               styleGift();
+           });
+           
+        </script>
+	</body>
+</html>
