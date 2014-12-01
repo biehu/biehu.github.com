@@ -29,7 +29,7 @@
                left: 50%;
                margin-left: -320px;
                -webkit-transform: translate(0px, 0px) scale(1);
-               -webkit-transition: -webkit-transform 0.4s;
+               -webkit-transition: -webkit-transform .5s;
            }
            
            .page-load {
@@ -131,8 +131,13 @@
                z-index: 2;
                padding: 10px;
                color: #fff;
-               font-size: 25px;
+               font-size: 1.5em;
                line-height: 35px;
+               -webkit-text-size-adjust:auto;
+           }
+           
+           @media only screen and (max-device-width: 480px) {      
+               .desc { -webkit-text-size-adjust:auto; }               
            }
            
            /*
@@ -219,32 +224,32 @@
             */
            .header p,
            .footer {
-               transition: all .5s ease-in-out;
+               -webkit-transition: all .5s ease-in-out;
            }
            
            .header p.slide {
-               transform: translate(0);
+               -webkit-transform: translate(0);
            }
            
            .header .text-1 {
-               transform: translateX(-700px);
-               transition-delay: .5s;
+               -webkit-transform: translateX(-700px);
+               -webkit-transition-delay: .5s;
 
            }
            
            .header .text-2 {
-               transform: translateX(1000px);
-               transition-delay: 1s;
+               -webkit-transform: translateX(1000px);
+               -webkit-transition-delay: 1s;
            }
            
            .header .text-3 {
-               transform: translateY(-500px);
-               transition-delay: 1.5s;
+               -webkit-transform: translateY(-500px);
+               -webkit-transition-delay: 1.5s;
            }
            
            .footer {
                opacity: 0;
-               transition-delay: 2s;
+               -webkit-transition-delay: 2s;
            }
            
            .footer.show {
@@ -255,27 +260,27 @@
             * 礼物
             */
            .gift p {
-               transition: all .5s ease-in-out;
+               -webkit-transition: all .5s ease-in-out;
            }
            
            .gift p.slide {
-               transform: translate(0);
+               -webkit-transform: translate(0);
            }
            
            .gift .pic-1 {
-               transform: translateY(1500px);
-               transition-delay: .5s;
+               -webkit-transform: translateY(1500px);
+               -webkit-transition-delay: .5s;
 
            }
            
            .gift .pic-2 {
-               transform: translateY(1500px);
-               transition-delay: 1s;
+               -webkit-transform: translateY(1500px);
+               -webkit-transition-delay: 1s;
            }
            
            .gift .pic-3 {
-               transform: translateY(1500px);
-               transition-delay: 1.5s;
+               -webkit-transform: translateY(1500px);
+               -webkit-transition-delay: 1.5s;
            }
            
            /*
@@ -431,7 +436,7 @@
             </div>
             <div id="weixin-win" class="weixin-win"><img src="http://biehu.me/test/mobile/images/shreBg.png" /></div>
 	    </div>
-        <script src="js/jquery-1.9.1.min.js"></script>
+        <script src="http://biehu.me/test/mobile/js/jquery-1.9.1.min.js"></script>
         <script>
             var resizeBody = function () {
                var sildeHeight = 1136;
