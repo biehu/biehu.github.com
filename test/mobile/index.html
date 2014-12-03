@@ -261,25 +261,27 @@
             */
            .gift p {
                -webkit-transition: all 1s ease-in;
+               opacity: 0;
            }
            
            .gift p.slide {
+               opacity: 1;
                -webkit-transform: translate(0);
            }
            
            .gift .pic-1 {
-               -webkit-transform: translateY(1500px);
+               -webkit-transform: translateY(1000px);
                -webkit-transition-delay: .5s;
 
            }
            
            .gift .pic-2 {
-               -webkit-transform: translateY(1500px);
+               -webkit-transform: translateY(1000px);
                -webkit-transition-delay: 1s;
            }
            
            .gift .pic-3 {
-               -webkit-transform: translateY(1500px);
+               -webkit-transform: translateY(1000px);
                -webkit-transition-delay: 1.5s;
            }
            
@@ -287,11 +289,13 @@
             * 详情页
             */
            .star .desc {
+               opacity: 1;
                -webkit-transform: translateY(500px);
                -webkit-transition: all 1s ease-in;
            }
            
            .star .desc.slide {
+               opacity: 0;
                -webkit-transform: translate(0);
            }
            
