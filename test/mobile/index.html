@@ -93,7 +93,7 @@
            .footer-bg,
            .footer {
                position: absolute;
-               bottom: -50px;
+               bottom: 0;
            }
            
            .load-text {
@@ -338,10 +338,29 @@
                 background-size: 160px 350px;
                 z-index: 999999;
             }
+
+		#music {
+			position: fixed;
+			left: 50%;
+			top: 3%;
+			width: 56px;
+			height: 56px;
+            margin-left: -310px;
+			background: url(images/music_control_1.png) no-repeat 1px 1px;
+			z-index: 99;
+			opacity: 0;
+		}
+
+		#music.on {
+			background: url(images/music_control_2.png) no-repeat 1px 1px;
+			}
         </style>
 	</head>
 	<body>
 	    <div class="wrap">
+		<div id="music" class="on" style="opacity: 1;"></div>
+		<audio id="audio_music" src="images/music.mp3" autoplay="" loop="">
+</audio>
 	        <div class="page-load">
 	            <div class="load-text">
     	            <p class="text-1"><img src="http://biehu.github.io/test/mobile/images/load-text-1.png" /></p>
@@ -581,11 +600,30 @@
                 $(this).fadeOut();
             });
         };
+
+		var music = function () {
+				var isPlay = true;
+				$("#music").on("click",function(){
+					var audio = $('#audio_music')[0];
+					var that = $(this);
+					if (isPlay) {
+						audio.pause();
+						isPlay = false;
+						that.removeClass('on');
+					}
+					else {
+						audio.play();
+						isPlay = true;
+						that.addClass('on');
+					}
+				});
+			};
         
            $(function () {
                resizeBody(1000);
                page();
                load();
+               music();
                weixinAlert();
            });
            
