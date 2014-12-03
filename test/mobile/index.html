@@ -284,6 +284,19 @@
            }
            
            /*
+            * 详情页
+            */
+           .star .desc {
+               -webkit-transform: translateY(1500px);
+               -webkit-transition: all .5s ease-in-out;
+           }
+           
+           .star .desc.slide {
+               -webkit-transform: translate(0);
+           }
+           
+           
+           /*
             * 翻页
             */
            .down {
@@ -334,8 +347,6 @@
                 width: 640px;
                 height: 1000px;
                 margin-left: -320px;
-                background: url(images/shareBg.png) no-repeat right top rgba(0, 0, 0, 0.6);
-                background-size: 160px 350px;
                 z-index: 999999;
             }
 
@@ -477,6 +488,11 @@
                $('.gift p').addClass('slide');
            };
            
+           var styleDetail = function (page) {
+               $('.star .desc').eq(page - 1).addClass('slide');
+           };
+           
+           
            var page = (function () {
 
            /*
@@ -514,6 +530,10 @@
                 else {
                     $('.page-header').fadeOut();
                     resizeBody(1000);
+                }
+                
+                if (page > 0 && page < 7) {
+                    styleDetail(page);
                 }
                 
                 if (page === 7) {
@@ -602,30 +622,30 @@
         };
 
 		var music = function () {
-				var isPlay = true;
-				$("#music").on("click",function(){
-					var audio = $('#audio_music')[0];
-					var that = $(this);
-					if (isPlay) {
-						audio.pause();
-						isPlay = false;
-						that.removeClass('on');
-					}
-					else {
-						audio.play();
-						isPlay = true;
-						that.addClass('on');
-					}
-				});
-			};
-        
-           $(function () {
-               resizeBody(1000);
-               page();
-               load();
-               music();
-               weixinAlert();
-           });
+			var isPlay = true;
+			$("#music").on("click",function(){
+				var audio = $('#audio_music')[0];
+				var that = $(this);
+				if (isPlay) {
+					audio.pause();
+					isPlay = false;
+					that.removeClass('on');
+				}
+				else {
+					audio.play();
+					isPlay = true;
+					that.addClass('on');
+				}
+			});
+		};
+    
+       $(function () {
+           resizeBody(1000);
+           page();
+           load();
+           music();
+           weixinAlert();
+       });
            
         </script>
 	</body>
