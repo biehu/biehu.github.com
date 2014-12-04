@@ -32,6 +32,17 @@
                -webkit-transition: -webkit-transform .5s;
            }
            
+           .page_bg {
+               width: 640px;
+               height: 1000px;
+               overflow: hidden;
+               position: absolute;
+               top: 0;
+               left: 50%;
+               margin-left: -320px;
+               -webkit-transition: all 1s;
+           }
+           
            .page-load {
                z-index: 5;
                background: #000;
@@ -324,6 +335,22 @@
                 -webkit-animation-timing-function: linear;
             }
             
+            .off {
+                opacity: 0;
+            }
+            
+            .on {
+                opacity: 1;
+            }
+            
+            .page_bg {
+                -webkit-transition-delay: .5s;
+            }
+            
+            .page_bg_7 {
+                -webkit-transition-delay: 0;
+            }
+            
             /*
              * 加载
              */
@@ -371,6 +398,10 @@
 		#music.on {
 			background: url(images/music_control_2.png) no-repeat 1px 1px;
 			}
+            
+            .footer-bg img {
+                vertical-align: bottom;
+            }
         </style>
 	</head>
 	<body>
@@ -397,67 +428,79 @@
                     <img src="images/2-desc.png" />
                 </div>
             </div>
-            <div class="page down star page_2">
+            <div class="page_bg page_bg_2 off">
                 <div class="mark"><img src="images/mark.png" /></div>
                 <div class="pic"><img src="images/1.jpg" /></div>
                 <div class="footer-bg"><img src="images/footer-bg.png" /></div>
+                <div class="page-btn"><a class="next" href="#"><img src="images/page-btn.png" /></a></div>
+            </div>
+            <div class="page down star page_2">
                 <div class="desc">
                     连帽外套、运动短裤：<br />
 均为Alexander Wang x H&M<br />
 连帽外套、运动短裤：<br />
 连帽外套、运动短裤：
                 </div>
-                <div class="page-btn"><a class="next" href="#"><img src="images/page-btn.png" /></a></div>
             </div>
-            <div class="page down star page_3">
+            <div class="page_bg page_bg_3 off">
                 <div class="mark"><img src="images/mark.png" /></div>
                 <div class="pic"><img src="images/2.jpg" /></div>
                 <div class="footer-bg"><img src="images/footer-bg.png" /></div>
+                <div class="page-btn"><a class="next" href="#"><img src="images/page-btn.png" /></a></div>
+            </div>
+            <div class="page down star page_3">
                 <div class="desc">
                     连帽外套、运动短裤：<br />
 均为Alexander Wang x H&M
                 </div>
-                <div class="page-btn"><a class="next" href="#"><img src="images/page-btn.png" /></a></div>
             </div>
-            <div class="page down star page_4">
+            <div class="page_bg page_bg_4 off">
                 <div class="mark"><img src="images/mark.png" /></div>
                 <div class="pic"><img src="images/3.jpg" /></div>
                 <div class="footer-bg"><img src="images/footer-bg.png" /></div>
+                <div class="page-btn"><a class="next" href="#"><img src="images/page-btn.png" /></a></div>
+            </div>
+            <div class="page down star page_4">
                 <div class="desc">
                     连帽外套、运动短裤：<br />
 均为Alexander Wang x H&M
                 </div>
-                <div class="page-btn"><a class="next" href="#"><img src="images/page-btn.png" /></a></div>
             </div>
-            <div class="page down star page_5">
+            <div class="page_bg page_bg_5 off">
                 <div class="mark"><img src="images/mark.png" /></div>
                 <div class="pic"><img src="images/4.jpg" /></div>
                 <div class="footer-bg"><img src="images/footer-bg.png" /></div>
+                <div class="page-btn"><a class="next" href="#"><img src="images/page-btn.png" /></a></div>
+            </div>
+            <div class="page down star page_5">
                 <div class="desc">
                     连帽外套、运动短裤：<br />
 均为Alexander Wang x H&M
                 </div>
-                <div class="page-btn"><a class="next" href="#"><img src="images/page-btn.png" /></a></div>
             </div>
-            <div class="page down star page_6">
+            <div class="page_bg page_bg_6 off">
                 <div class="mark"><img src="images/mark.png" /></div>
                 <div class="pic"><img src="images/5.jpg" /></div>
                 <div class="footer-bg"><img src="images/footer-bg.png" /></div>
+                <div class="page-btn"><a class="next" href="#"><img src="images/page-btn.png" /></a></div>
+            </div>
+            <div class="page down star page_6">
                 <div class="desc">
                     连帽外套、运动短裤：<br />
 均为Alexander Wang x H&M
                 </div>
+            </div>
+            <div class="page_bg page_bg_7 off">
+                <div class="mark"><img src="images/mark.png" /></div>
+                <div class="pic"><img src="images/3.jpg" /></div>
+                <div class="footer-bg"><img src="images/footer-bg.png" /></div>
                 <div class="page-btn"><a class="next" href="#"><img src="images/page-btn.png" /></a></div>
             </div>
             <div class="page down star page_7">
-                <div class="mark"><img src="images/mark.png" /></div>
-                <div class="pic"><img src="images/1.jpg" /></div>
-                <div class="footer-bg"><img src="images/footer-bg.png" /></div>
                 <div class="desc">
                     连帽外套、运动短裤：<br />
 均为Alexander Wang x H&M
                 </div>
-                <div class="page-btn"><a class="next" href="#"><img src="images/page-btn.png" /></a></div>
             </div>
             <div class="page-header">
                 <img src="images/gift_01.png" />
@@ -496,8 +539,24 @@
                $('.gift p').addClass('slide');
            };
            
-           var styleDetail = function (page) {
-               $('.star .desc').eq(page - 1).addClass('slide');
+           var styleDetail = function (dir, page) {
+               var index = (page - 1 < 0) ? 0 : (page - 1);
+               if (dir === 1) {
+                   if (page === 0) {
+                       $('.page_bg').eq(index).addClass('off');
+                   }
+                   else {
+                       $('.page_bg').eq(index).removeClass('off');
+                   }
+                   
+                   $('.page_bg').eq(index + 1).addClass('off');
+               }
+               else {
+                   $('.star .desc').eq(index).addClass('slide');
+                   $('.page_bg').eq(index - 1).addClass('off'); 
+                   $('.page_bg').eq(index).removeClass('off'); 
+               }
+               
            };
            
            
@@ -518,13 +577,15 @@
            };
            
            var setPage = function (dir,page) {
+               if (page === 0) {
+                   window.location.reload();
+               }
                
                 isAnimate = true;
                 
                 if(dir === 1){
                     $(".page_"+(page+1)).removeClass('up');
                     $(".page_"+(page+2)).addClass('down');
-                    
                 }
                 else{
                     $(".page_"+page).addClass('up');
@@ -540,8 +601,8 @@
                     resizeBody(1000);
                 }
                 
-                if (page > 0 && page < 7) {
-                    styleDetail(page);
+                if (page >= 0 && page <= 7) {
+                    styleDetail(dir, page);
                 }
                 
                 if (page === 7) {
@@ -572,14 +633,17 @@
                     if (isAnimate || isModal) 
                         return false;
                     if (yEnd - 100 > yStart & yEnd > yStart) { //down
-                        if (index === 0)
+                        if (index === 0) {
                             return false;
+                        }
+                            
                         setPage(1, --index);
                     }
                     else 
                         if (yEnd + 100 < yStart & yEnd < yStart) { //up
-                            if (index === (allNum - 1)) 
-                                return false;
+                            if (index === (allNum - 1)) {
+                                index = -1;
+                            }
                             setPage(0, ++index);
                         }
                 });
@@ -611,11 +675,19 @@
         })();
         
         var load = function () {
-            $(window).on('load', function () {
-                $('.page-load .load-text').addClass('stop');
-                $('.page-load').addClass('hide');
+            if (!window.localStorage.getItem('ready')) {
+                window.localStorage.setItem('ready', true);
+                $(window).on('load', function () {
+                    $('.page-load .load-text').addClass('stop');
+                    $('.page-load').addClass('hide');
+                    styleCover();
+                });
+            }
+            else {
+                $('.page-load').remove();
                 styleCover();
-            });
+            }
+             
         };
         
         var weixinAlert = function () {
