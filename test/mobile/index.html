@@ -455,9 +455,8 @@
             <div class="page down star page_2">
                 <div class="desc">
                     连帽外套、运动短裤：<br />
-均为Alexander Wang x H&M<br />
-连帽外套、运动短裤：<br />
-连帽外套、运动短裤：
+均为Alexander Wang x H&M
+
                 </div>
             </div>
             <div class="page_bg page_bg_3 off">
@@ -468,8 +467,9 @@
             </div>
             <div class="page down star page_3">
                 <div class="desc">
-                    连帽外套、运动短裤：<br />
-均为Alexander Wang x H&M
+                    牛仔外套：<br />
+Philipp Plein
+
                 </div>
             </div>
             <div class="page_bg page_bg_4 off">
@@ -480,8 +480,10 @@
             </div>
             <div class="page down star page_4">
                 <div class="desc">
-                    连帽外套、运动短裤：<br />
+                    连帽外套：<br />
 均为Alexander Wang x H&M
+
+
                 </div>
             </div>
             <div class="page_bg page_bg_5 off">
@@ -492,8 +494,9 @@
             </div>
             <div class="page down star page_5">
                 <div class="desc">
-                    连帽外套、运动短裤：<br />
-均为Alexander Wang x H&M
+                    上衣：<br />
+Sean Suen
+
                 </div>
             </div>
             <div class="page_bg page_bg_6 off">
@@ -504,8 +507,9 @@
             </div>
             <div class="page down star page_6">
                 <div class="desc">
-                    连帽外套、运动短裤：<br />
-均为Alexander Wang x H&M
+                印花西装外套：<br />
+Issey Miyake
+
                 </div>
             </div>
             <div class="page_bg page_bg_7 off">
@@ -516,8 +520,8 @@
             </div>
             <div class="page down star page_7">
                 <div class="desc">
-                    连帽外套、运动短裤：<br />
-均为Alexander Wang x H&M
+                    印花西服套装：<br />
+Issey Miyake
                 </div>
             </div>
             <div class="page-header">
@@ -693,19 +697,11 @@
         })();
         
         var load = function () {
-            if (!window.localStorage.getItem('ready')) {
-                window.localStorage.setItem('ready', true);
-                $(window).on('load', function () {
-                    $('.page-load .load-text').addClass('stop');
-                    $('.page-load').addClass('hide');
-                    styleCover();
-                });
-            }
-            else {
-                $('.page-load').remove();
+            $(window).on('load', function () {
+                $('.page-load .load-text').addClass('stop');
+                $('.page-load').addClass('hide');
                 styleCover();
-            }
-             
+            });
         };
         
         var weixinAlert = function () {
