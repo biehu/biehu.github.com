@@ -285,6 +285,14 @@ var bindListClick = function () {
        play($(this).attr('data-index'));
        return false; 
     });
+    
+    $('.list a').on('mouseenter', function () {
+        $(this).css('opacity', '0.5');
+    });
+    
+    $('.list a').on('mouseleave', function () {
+        $(this).css('opacity', '1');
+    })
 };
 
 $(function () {

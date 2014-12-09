@@ -556,7 +556,7 @@ img {
     left: 0;
     width: 100%;
     height: 815px;
-    background:rgba(0,0,0,0.4);
+    background:rgba(0,0,0,0.7);
 }
 
 .list ul li img {
@@ -575,7 +575,7 @@ img {
     z-index: 10000;
     width: 100%;
     height: 275px;
-    background:rgba(0,0,0,0.4);
+    background:rgba(0,0,0,0.7);
     font-size: 13px;
 }
 
@@ -609,4 +609,8 @@ img {
     width: 67px;                                                                                                                                                                                                                                                                 
     height: 39px;
     background: url(../images/close.png) no-repeat;
+}
+
+.text img {
+   width: 100%; 
 }
