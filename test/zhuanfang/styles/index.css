@@ -652,3 +652,13 @@ img {
     height: 45px;
     background: url(../images/logo.jpg) no-repeat;
 }
+
+
+.text img {
+    margin-left: -20px;
+}
+
+.weixin img,
+.person img {
+    margin-left: 0;
+}
