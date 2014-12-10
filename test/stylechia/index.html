@@ -65,25 +65,37 @@
           left: 704px;
       }
       
-      .nav-1:hover, .nav-1.on {
-          background-image: url(images/nav-2_02.png);
-      }
       
       .nav-2 {
           left: 814px;
       }
       
-      .nav-2:hover, .nav-2.on {
-          background-image: url(images/nav-2_04.png);
-      }
-      
       .nav-3 {
           left: 930px;
       }
-      
-      /*.nav-3:hover, .nav-3.on {
-          background-image: url(images/nav-2_06.png);
-      }*/
+
+	  .nav-1 .nav-link,
+	  .nav-1:hover .nav-hover, 
+	  .nav-1.on .nav-hover,
+	  .nav-2 .nav-link,
+	  .nav-2:hover .nav-hover, 
+	  .nav-2.on .nav-hover,
+	  .nav-3 .nav-link,
+	  .nav-3.on .nav-hover {
+		display: block;
+	  }
+
+	  .nav-1 .nav-hover,
+	  .nav-1:hover .nav-link, 
+	  .nav-1.on .nav-link,
+	  .nav-2 .nav-hover,
+	  .nav-2:hover .nav-link, 
+	  .nav-2.on .nav-link,
+	  .nav-3 .nav-hover,
+	  .nav-3.on .nav-link {
+		display: none;
+	  }
+
      
      .text-4,
      .text-5,
@@ -132,9 +144,18 @@
                 <div class="text text-6"><img src="images/header-text-yishu.png" /></div>
                 <div class="text text-7"><img src="images/header-text-1.png" /></div>
                 
-                <div id="two" class="text nav-1 on"><img src="images/nav_02.png" /></div>
-                <div id="one" class="text nav-2"><img src="images/nav_04.png" /></div>
-                <div class="text nav-3"><img src="images/nav_06.png" /></div>
+                <div id="two" class="text nav-1 on">
+					<img class="nav-link" src="images/nav_02.png" />
+					<img class="nav-hover" src="images/nav-2_02.png" />
+				</div>
+                <div id="one" class="text nav-2">
+					<img class="nav-link" src="images/nav_04.png" />
+					<img class="nav-hover" src="images/nav-2_04.png" />
+				</div>
+                <div class="text nav-3">
+					<img class="nav-link" src="images/nav_06.png" />
+					<img class="nav-hover" src="images/nav-2_06.png" />
+				</div>
          </div>       
                 
     </div>
