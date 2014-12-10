@@ -497,7 +497,6 @@ img {
 }
 
 .text-wrap {
-    width: 410px;
     height: 815px;
     overflow: hidden;
 }
@@ -519,6 +518,10 @@ img {
 
 .text-6, .text-7 {
     top:40px;
+}
+.text-7 {
+    top: 20px;
+    width: 100%;
 }
 
 .text strong {
@@ -611,6 +614,41 @@ img {
     background: url(../images/close.png) no-repeat;
 }
 
-.text img {
+/*.text img {
    width: 100%; 
+}*/
+
+@-webkit-keyframes arrowUpDown {
+        0% {bottom:
+                110px;
+        }
+            100% {bottom:
+                120px;
+        }
+}
+
+.mouse {
+    position: absolute;
+    right: 0;
+    z-index: 1000;
+    bottom: 110px;
+    width: 93px;
+    height: 100px;
+    background: url(../images/mouse.png) no-repeat;
+    -webkit-animation-name: arrowUpDown;
+    -webkit-animation-duration: .4s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    -webkit-animation-timing-function: linear;
+}
+
+.logo {
+    position: absolute;
+    left: 50%;
+    bottom: -53px;
+    margin-left: 390PX;
+    z-index: 1000;
+    width: 108px;
+    height: 45px;
+    background: url(../images/logo.jpg) no-repeat;
 }
