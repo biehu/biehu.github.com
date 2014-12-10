@@ -21,55 +21,47 @@
       }
       
       .text-1 {
-          background-image: url(images/header-text-2.png);
           top: 18px;
           left: 188px;
           left: -100%;
       }
       
       .text-2 {
-          background-image: url(images/header-2014.png);
           top: 15px;
           left: 590px;
           left: 100%;
       }
       
       .text-3 {
-          background-image: url(images/header-text-3.png);
-          top: 92px;
+          top: 112px;
           left: 193px;
           left: -100%;
           z-index: 2;
       }
       
       .text-4 {
-          background-image: url(images/header-text-jiaren.png);
           top: 142px;
           left: 339px;
           z-index: 2;   
       }
       
       .text-5 {
-          background-image: url(images/header-text-zhongguofeng.png);
-          top: 112px;
+          top: 142px;
           left: 269px;
           z-index: 1;
       }
       
       .text-6 {
-          background-image: url(images/header-text-yishu.png);
-          top: 485px;
+          top: 585px;
           left: 339px;
       }
       
       .text-7 {
-          background-image: url(images/header-text-1.png);
-          top: 268px;
-          left: 174px;
+          top: 298px;
+	      left: 144px;
       }
       
       .nav-1 {
-          background-image: url(images/nav_02.png);
           left: 704px;
       }
       
@@ -78,7 +70,6 @@
       }
       
       .nav-2 {
-          background-image: url(images/nav_04.png);
           left: 814px;
       }
       
@@ -87,7 +78,6 @@
       }
       
       .nav-3 {
-          background-image: url(images/nav_06.png);
           left: 930px;
       }
       
@@ -112,9 +102,16 @@
      }
      
      .text-wrap {
-         position: relative;
+         position: absolute;
+		 width: 1200px;
          height: 622px;
+		 left: 50%;
+		 margin-left: -700px;
      }
+
+	 .text img {
+		width: 100%;
+	 }
 
   </style>
   <script src="js/jquery-1.9.1.min.js"></script>
@@ -126,18 +123,18 @@
      <div class="top" >
          
          <div class="text-wrap">
-                <div class="text text-1"></div>
-                <div class="text text-2"></div>
-                <div class="text text-3"></div>
+                <div class="text text-1"><img src="images/header-text-2.png" /></div>
+                <div class="text text-2"><img src="images/header-2014.png" /></div>
+                <div class="text text-3"><img src="images/header-text-3.png" /></div>
                 
-                <div class="text text-4"></div>
-                <div class="text text-5"></div>
-                <div class="text text-6"></div>
-                <div class="text text-7"></div>
+                <div class="text text-4"><img src="images/header-text-jiaren.png" /></div>
+                <div class="text text-5"><img src="images/header-text-zhongguofeng.png" /></div>
+                <div class="text text-6"><img src="images/header-text-yishu.png" /></div>
+                <div class="text text-7"><img src="images/header-text-1.png" /></div>
                 
-                <div id="two" class="text nav-1 on"></div>
-                <div id="one" class="text nav-2"></div>
-                <div class="text nav-3"></div>
+                <div id="two" class="text nav-1 on"><img src="images/nav_02.png" /></div>
+                <div id="one" class="text nav-2"><img src="images/nav_04.png" /></div>
+                <div class="text nav-3"><img src="images/nav_06.png" /></div>
          </div>       
                 
     </div>
@@ -444,15 +441,15 @@ sizeDefault = function (selector, w, h) {
 
 style = function () {
     $('.text-1').animate({'left': '188px'});
-    $('.text-2').delay(500).animate({'left': '590px'});
+    $('.text-2').delay(500).animate({'left': '700px'});
     $('.text-3').delay(500).animate({'left': '193px'});
     $('.text-4').css({opacity: 0}).delay(1000).animate({'opacity': '1'});
     $('.text-5').css({opacity: 0}).delay(1200).animate({'opacity': '1'});
     $('.text-6').css({opacity: 0}).delay(1400).animate({'opacity': '1'});
     $('.text-7').css({opacity: 0}).delay(1600).animate({'opacity': '1'});
-    $('.nav-1').delay(2000).animate({'left': '704px'});
-    $('.nav-2').delay(2200).animate({'left': '814px'});
-    $('.nav-3').delay(2400).animate({'left': '930px'});
+    $('.nav-1').delay(2000).animate({'left': '755px'});
+    $('.nav-2').delay(2200).animate({'left': '894px'});
+    $('.nav-3').delay(2400).animate({'left': '1020px'});
     
 };
 
@@ -466,7 +463,7 @@ pageInit = function () {
     size('.text-5', 320, 476);
     size('.text-6', 220, 106);
     size('.text-7', 187, 402);
-    sizeDefault('.nav-1, .nav-2, .nav-3', 92, 94);
+    sizeDefault('.nav-1, .nav-2, .nav-3', 120, 120);
 };
 
 $(function () {
