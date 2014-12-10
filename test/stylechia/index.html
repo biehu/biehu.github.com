@@ -144,7 +144,7 @@
                 <div class="text text-6"><img src="images/header-text-yishu.png" /></div>
                 <div class="text text-7"><img src="images/header-text-1.png" /></div>
                 
-                <div id="two" class="text nav-1 on">
+                <div id="two-link" class="text nav-1 on">
 					<img class="nav-link" src="images/nav_02.png" />
 					<img class="nav-hover" src="images/nav-2_02.png" />
 				</div>
@@ -439,7 +439,7 @@ $('#one').click(function(event) {
     $(this).siblings().removeClass('on').end().addClass('on');
  $("html,body").animate({scrollTop:$("#two").offset().top},2000);
 });
-$('#two').click(function(event) {
+$('#two-link').click(function(event) {
     $(this).siblings().removeClass('on').end().addClass('on');
  $("html,body").animate({scrollTop:0},2000);
 });
