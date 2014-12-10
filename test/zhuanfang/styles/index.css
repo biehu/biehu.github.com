@@ -676,6 +676,17 @@ img {
     -webkit-animation-timing-function: linear;
 }
 
+.yin {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    z-index: 1000;
+    width: 252px;
+    height: 37px;
+    margin-top: -40px;
+    background: url(../images/yin.png) no-repeat;
+}
+
 .logo {
     position: absolute;
     left: 50%;
