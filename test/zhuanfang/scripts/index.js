@@ -229,8 +229,12 @@ var bindClose = function () {
     });
 };
 
-
+var isScrll = 0;
 var scrollFunc = function (e) {
+    isScrll = isScrll + 1
+    if (isScrll % 2 === 0) {
+        return;
+    }
     var type;
     e=e || window.event;
     if(e.wheelDelta){//IE/Opera/Chrome 
@@ -244,7 +248,6 @@ var scrollFunc = function (e) {
     else {
        txtPlay.turn1(); 
     }
-    
 };
 
 
