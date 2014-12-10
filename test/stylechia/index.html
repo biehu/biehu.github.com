@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+  <meta name="robots" content="all" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="copyright" content="" />
+  <link rel="stylesheet" type="text/css" href="images/jquery.bxslider.css"/>
+  <style type="text/css">
+  .bx-viewport,.bx-wrapper{height: 100% !important;}
+  .bx-pager{display: none;}
+  </style>
+  <link rel="stylesheet" type="text/css" href="images/base.css"/>
+ <style>
+      .text {
+          position: absolute;
+          background-repeat: no-repeat;
+          background-size: auto 100%;
+      }
+      
+      .text-1 {
+          background-image: url(images/header-text-2.png);
+          top: 18px;
+          left: 188px;
+          left: -100%;
+      }
+      
+      .text-2 {
+          background-image: url(images/header-2014.png);
+          top: 15px;
+          left: 590px;
+          left: 100%;
+      }
+      
+      .text-3 {
+          background-image: url(images/header-text-3.png);
+          top: 92px;
+          left: 193px;
+          left: -100%;
+          z-index: 2;
+      }
+      
+      .text-4 {
+          background-image: url(images/header-text-jiaren.png);
+          top: 142px;
+          left: 339px;
+          z-index: 2;   
+      }
+      
+      .text-5 {
+          background-image: url(images/header-text-zhongguofeng.png);
+          top: 112px;
+          left: 269px;
+          z-index: 1;
+      }
+      
+      .text-6 {
+          background-image: url(images/header-text-yishu.png);
+          top: 485px;
+          left: 339px;
+      }
+      
+      .text-7 {
+          background-image: url(images/header-text-1.png);
+          top: 268px;
+          left: 174px;
+      }
+      
+      .nav-1 {
+          background-image: url(images/nav_02.png);
+          left: 704px;
+      }
+      
+      .nav-1:hover, .nav-1.on {
+          background-image: url(images/nav-2_02.png);
+      }
+      
+      .nav-2 {
+          background-image: url(images/nav_04.png);
+          left: 814px;
+      }
+      
+      .nav-2:hover, .nav-2.on {
+          background-image: url(images/nav-2_04.png);
+      }
+      
+      .nav-3 {
+          background-image: url(images/nav_06.png);
+          left: 930px;
+      }
+      
+      /*.nav-3:hover, .nav-3.on {
+          background-image: url(images/nav-2_06.png);
+      }*/
+     
+     .text-4,
+     .text-5,
+     .text-6,
+     .text-7 {
+         opacity: 0;
+     }
+     
+     .nav-1,
+     .nav-2,
+     .nav-3 {
+         position: fixed;
+         bottom: 10px;
+         left: 100%;
+         z-index: 1000; 
+     }
+     
+     .text-wrap {
+         position: relative;
+         height: 622px;
+     }
+
+  </style>
+  <script src="js/jquery-1.9.1.min.js"></script>
+  <script src="js/jquery.bxslider.min.js"></script>
+</head>
+<body>
+ 
+  <div class="content">
+     <div class="top" >
+         
+         <div class="text-wrap">
+                <div class="text text-1"></div>
+                <div class="text text-2"></div>
+                <div class="text text-3"></div>
+                
+                <div class="text text-4"></div>
+                <div class="text text-5"></div>
+                <div class="text text-6"></div>
+                <div class="text text-7"></div>
+                
+                <div id="two" class="text nav-1 on"></div>
+                <div id="one" class="text nav-2"></div>
+                <div class="text nav-3"></div>
+         </div>       
+                
+    </div>
+   
+    <div class="two">
+      <ul class="bxslider" id="two">
+        <li>
+          <div class="two_1">
+            <img style="width:100%" src="images/two_1_1.jpg">
+            <p>
+              <a href="http://www.mcchina.com/fashion/story/20141208-58503.shtml">这一次，Chanel为嘉人中国风带来的作品，就是将设计、时装、超模、摄影以及艺术结合到一个全新境界的惊世之作。Chanel邀来超级名模秦舒培，亲身演绎今年秋冬系列中四套total look，并由新锐摄影师于聪操刀，拍摄出一组酷味十足的时装大片。这样的组合本来就已经堪称豪华，可是从来都不愿流俗的Chanel却另有奇思妙想，又将年轻的中国艺术家郭鸿蔚请来，用拼贴的方式将Chanel经典的斜纹软呢重新诠释，带来异乎寻常的超现实视觉冲击。</a>
+            </p>
+          </div>
+        </li>
+        <li>
+          <div class="two_2" >
+            <img style="height:100%" class="img_height" src="images/two_2.jpg">
+            <p><a href="http://www.mcchina.com/fashion/story/20141208-58503-pn-2.shtml">
+              2014年，深爱艺术的Chloé品牌设计师Clare Waight Keller ，同样以一袭如暗夜点缀繁星的长裙，向梵高致礼。让设计师灵光乍现的画作，正是艺术大师在1888年创作的名画《罗纳河上的星夜》。如同画作一般，Chloe连衣裙以冷色的蓝调为基底，表达如夜般的神秘莫测；加之明黄色的点缀，如此强烈的色调对比，为整体带一丝活泼的气氛。只有文艺的Chloe女郎，才能驾驭如此浪漫的衣裳。</a>
+            </p>
+          </div>
+        </li>
+        <li>
+          <div class="two_3" >
+            <img style="width:100%" src="images/two_3.jpg">
+            <p><a href="http://www.mcchina.com/fashion/story/20141208-58503-pn-3.shtml">
+              作为时尚界的传奇人物，Diane von Furstenberg一直以来都是为时尚界所仰慕的女神。这一次，Diane为中国女性带来品牌标示性设计的裹身裙，大胆的采用了似火的中国红与神秘的水墨黑，并将今年中国的吉祥物——银色的骏马印制其上，引发关于纵马远行的遐想。时尚女王的新衣，总是关于女性、关于独立、关于自我的成长。</a>
+            </p>
+          </div>
+        </li>
+        <li>
+          <div class="two_4" >
+            <img style="width:100%" src="images/two_4.jpg">
+            <p><a href="http://www.mcchina.com/fashion/story/20141208-58503-pn-4.shtml">
+              鲜艳的宝石、精美的刺绣、热情的红色、明快的蓝色、奔腾的骏马图案，意大利双人设计师组合品牌设计师Domenico Dolce&Stefano Gabbana先生最驾轻就熟的这些绚丽元素，搭配略带中式旗袍风情的廓形设计，造就了今年Dolce &Gabanna为嘉人中国风特别设计的这款别致裙装。来自童话故事的灵感，结合传统刺绣和占星学，两位喜爱古典与现代艺术的设计师从来就不缺乏灵感。他们就像童话世界里的国王，双手带有点石成金的魔力，总能为现代女性带来犹如艺术品般美仑美奂的传世之作。</a>
+            </p>
+          </div>
+        </li>
+        <li>
+          <div class="two_5" >
+            <img style="width:100%" src="images/two_5.jpg" >
+            <p><a href="http://www.mcchina.com/fashion/story/20141208-58503-pn-5.shtml">
+              “唯一真实的乐园是人们失去的乐园，唯一幸福的岁月是失去的岁月。”普鲁斯特在其巨著《追忆似水年华》中，以一千种方式重复着这一想法。对于设计师Donna Karan而言，这一次为嘉人中国风带来的作品，在忧伤中蕴含着甜蜜。设计的灵感来自Donna对已逝多年丈夫的挚爱，那些曾经共同走过的美好时光，那些曾经共同拥有的微小器物，所有的回忆都变成了吉光片羽，犹如时间流淌，隽永悠长。</a>
+            </p>
+          </div>
+        </li>
+        <li>
+          <div class="two_6" >
+            <img style="height:100%" class="img_height" src="images/two_6.jpg">
+            <p>
+              <a href="http://www.mcchina.com/fashion/story/20141208-58503-pn-6.shtml">
+                ETRO的创立人和设计师Gimmo Etro对旅游、文化和美的无限激情构成了ETRO 的品牌精髓。与父亲一样，Veronica Etro 也热爱旅游。怀着对遥远神秘的东方国度的热情，Etro被中国传统的漆艺技法深深打动，这种匠人纯粹的手工制作饱含浓郁的色彩以及强烈的设计感，让人迷醉。Etro 摈弃了印花织品家族形象，改用了大面积的色块渲染，传达出不一样的异国之美。
+              </a>
+            </p>
+          </div>
+        </li>
+        <li>
+          <div class="two_7" >
+            <img style="width:100%" src="images/two_7.jpg">
+            <p>
+              <a href="http://www.mcchina.com/fashion/story/20141208-58503-pn-7.shtml">
+                品牌设计师Lucie Breitenecker Leopold女士的设计灵感源于在荷兰阿姆斯特丹的一次旅途，当时在荷兰国立博物馆里她看到了一系列精美绝伦的亚洲艺术作品，其中包括雕塑、画作以及一些传统的亚洲服饰。此次作品中融入的中国元素为：丝绸面料的选用，整体廓型以及衣袖的独特造型。
+              </a>
+            </p>
+          </div>
+        </li>
+        <li>
+          <div class="two_8" >
+            <img style="height:100%" class="img_height" src="images/two_8.jpg">
+            <p>
+              <a href="http://www.mcchina.com/fashion/story/20141208-58503-pn-8.shtml">
+                2014春夏系列，FENDI就与第四代掌门人Delfina Delettrez Fendi开展了极具创意的全新合作，推出了一个妙趣横生的超现实主义时尚珠宝系列。在她为嘉人Style China所创作的这款配饰中，眼睛与各种闪亮元素和彩色皮裘相互搭配，与闪光材质和水晶构成了鲜明的对比反差。小小的水晶碎片装饰令眼睛熠熠生辉，而金属睫毛则营造出更为与众不同的感觉。
+              </a>
+            </p>
+          </div>
+        </li>
+        <li>
+          <div class="two_9" >
+            <img style="width:100%" src="images/two_9.jpg">
+            <p>
+              <a href="http://www.mcchina.com/fashion/story/20141208-58503-pn-9.shtml">
+                作为深谙女性心理的设计师Giuseppe Zanotti，独具匠心地为嘉人中国风设计了这一款高跟鞋，闪耀夺目的水钻、华丽前卫的设计，并且巧妙地平衡色彩与材质的搭配。上古时代的艺术图腾带给设计师无尽的奇思妙想，续写出现代版龙的传说。红色的巨龙象征着中国的历史。艺术的过程就像是制作一双鞋，首先需要绘制一个草图，然后在鞋跟、轮廓、宝石、形状和色彩这些元素之间尝试着搭配，最终实现完美的结合。在这种风格下，红色的巨龙表现夸张一点的意愿，而黑色是对这种夸张的平衡。
+              </a>
+            </p>
+          </div>
+        </li>
+        <li>
+          <div class="two_10" >
+            <img style="height:100%" class="img_height" src="images/two_10.jpg">
+            <p>
+              <a href="http://www.mcchina.com/fashion/story/20141208-58503-pn-10.shtml">
+                <span>Coach 红与黑</span>
+                传统意义上的中国红，鲜艳而不媚俗、华贵而不张扬。就像这一款Coach最新上任的设计总监Stuart Vevers 设计的Coach手袋所用的红一样，点缀线条写意的黑色泼墨，红的浓郁、美的肆意。
+              </a>
+            </p>
+          </div>
+        </li>
+        <li>
+          <div class="two_11" >
+            <img style="width:100%" src="images/two_11.jpg">
+            <p>
+              <a href="http://www.mcchina.com/fashion/story/20141208-58503-pn-11.shtml">
+                为了纪念与米兰的不解之缘，以及对最初设计时代的怀念，创始人兼设计师Giorgio Armani先生为嘉人中国风带来了一款命名为Giorgio Armani Borgonuovo的手袋。这款手袋拥有简洁而优雅的曲线，可调节的搭扣手柄，以及通过采用不同的颜色和材质——从印花小牛皮到复古鳄鱼皮，以及对比色和深浅同色的组合搭配，诠释独特个性的同时，别具特色。
+              </a>
+            </p>
+          </div>
+        </li>
+        <li>
+          <div class="two_12" >
+            <img style="width:100%" src="images/two_12.jpg">
+            <p>
+              <a href="http://www.mcchina.com/fashion/story/20141208-58503-pn-12.shtml">
+                Hogan特别为嘉人女性带来的手袋图案设计上，延续着她一贯的格调，线条纤细优美，笔触精致细腻，带着一丝童心的女性卡通头像，配色大胆而鲜艳。配合Hogan手袋大小适中的Size，以及优雅实用的设计，无一不体现出嘉人都市新女性在自信从容中，那一抹童趣未泯的小心机。
+              </a>
+            </p>
+          </div>
+        </li>
+        <li>
+          <div class="two_13" >
+            <img style="height:100%" class="img_height" src="images/two_13.jpg">
+            <p>
+              <a href="http://www.mcchina.com/fashion/story/20141208-58503-pn-13.shtml">
+                年轻的Jimmy Choo 创意总监Sandra Choi 为了这次嘉人中国风活动设计了一款标志性的糖果塑胶手包，灵感来自于英国的两位艺术合作伙伴Sue Webster和Tim Noble—— 她心目中前卫而酷的艺术家。手包利用了人民币的符号，而传递了积极信息的“YES”标识被印灯所照亮，看到这样时髦而别具一格的手包，你不想带着它环游世界吗？
+              </a>
+            </p>
+          </div>
+        </li>
+        <li>
+          <div class="two_14" >
+            <img style="width:100%" src="images/two_14.jpg">
+            <p>
+              <a href="http://www.mcchina.com/fashion/story/20141208-58503-pn-14.shtml">
+                有六十多年历史的法国品牌Longchamp，一直坚信真正的时尚犹如不朽的艺术，从不会被流逝的时光所掩埋，斗转星移而不失光辉，岁月磨砺而愈见光彩。就如同这只创意总监Sophie 特别为我们呈现的Le Pliage Héritages手袋，就是向深受时髦的巴黎女性钟爱二十年的Le Pliage尼龙折叠包致敬。坚挺光滑的小牛皮，配上代表性的梯形外观，让手袋款式更加洗练和写实；加之大朵绚烂的盛唐牡丹点缀，以传统中见时尚，创意中见永恒。
+              </a>
+            </p>
+          </div>
+        </li>
+        <li>
+          <div class="two_15"  >
+            <img style="width:100%" src="images/two_15.jpg">
+            <p>
+              <a href="http://www.mcchina.com/fashion/story/20141208-58503-pn-15.shtml">
+                无论世间潮流如何变幻，Marni 总是如艺术家挥洒色彩般，凭借明快的色调、富有建筑感的几何线条，令你眼前一亮。这一次，Marni借鉴中国艺术家萧勤色彩平衡和几何间分那种微妙的禅道理念，为你打造最抢眼的It Bag。
+              </a>
+            </p>
+          </div>
+        </li>
+        <li>
+          <div class="two_16" >
+            <img style="height:100%" class="img_height" src="images/two_16.jpg">
+            <p>
+              <a href="http://www.mcchina.com/fashion/story/20141208-58503-pn-16.shtml">
+                Michael Kors 最心爱的抽象派大师Mark Rothko曾经说到——我年轻时艺术是一条孤独的路，没有艺廊，没有收藏家，没有评论家，也没有钱。但那却是一个黄金时期，因为我们都一无所有，反而能更肆无忌惮地追求理想。几十年后，Michael Kors 用复古的抽象图案——千鸟格，向不朽的大师致敬。
+              </a>
+            </p>
+          </div>
+        </li>
+        <li>
+          <div class="two_17" >
+            <img style="height:100%" class="img_height" src="images/two_17.jpg">
+            <p>
+              <a href="http://www.mcchina.com/fashion/story/20141208-58503-pn-17.shtml">
+                女装创意总监Alessandra Facchinetti 将Tod’s女郎诠释得如此摩登时髦，其实在优雅柔美的外表下，隐藏着一颗自由不羁的灵魂，每一次出场都有着自己独特的风格。一如Sellas手袋，这款来自TOD’S的“周年嘉礼”，以TOD’S标志性的马鞍包Sellas手袋为原型，完美呈现鞍状线条的同时，亦以流云漓彩般的紫色琉璃晶珠饰于包身。将无形的剔透光影化作有形的艺术元素，融入造型小巧的Sellas 手袋，缔造出这一美轮美奂的时尚单品。
+              </a>
+            </p>
+          </div>
+        </li>
+        <li>
+          <div class="two_18" >
+            <img style="height:100%" class="img_height" src="images/two_18.jpg">
+            <p>
+              <a href="http://www.mcchina.com/fashion/story/20141208-58503-pn-18.shtml">
+                今天，时尚界的大帝Karl Lagerfeld，用自己的一双妙手，以对童话王国里人鱼公主的想象和理解，打造出韵味十足的鱼尾长裙。材质是Karl最钟爱的黑色丝绸缎子，装饰着黑色和银色的皮质花朵。整条长裙采用刺绣工艺，线条自然流畅，没有一丝多余的赘饰，呈现出如流水般的廓型。一旦穿上，便立刻凸显出女性修长的身段，搭配鲜艳的红唇，晶莹的钻石，犹如深海中美人鱼披上霓裳，别具一种优雅的气质和独特的吸引力。
+              </a>
+            </p>
+          </div>
+        </li>
+        <li>
+          <div class="two_19" >
+            <img style="width:100%" src="images/two_19.jpg">
+            <p>
+              <a href="http://www.mcchina.com/fashion/story/20141208-58503-pn-19.shtml">
+                结合现代主义运动Bauhaus，Neil Barrett为我们呈现了凸显女性硬朗风格的棒球衫，采用传统中国纺织原料，以金色印花和色块利落的切割，打破黑色的沉闷和乏味，简约中隐现奢华。
+              </a>
+            </p>
+          </div>
+        </li>
+        <li>
+          <div class="two_20" >
+            <img style="height:100%" class="img_height" src="images/two_20.jpg">
+            <p>
+              <a href="http://www.mcchina.com/fash/story/20141208-58503-pn-20.shtml">
+                看到Ports 1961的这件作品，总让人不禁想到昆曲游园惊梦中的桥段——朝飞暮卷，云霞翠轩，雨丝风片，烟波画船。如行云似的笔墨点缀其上，仿佛流水般的唱腔在裙摆间流淌。这古代中国最传统最纯粹的文化，在Ports 1961设计师的手中得以流传。
+              </a>
+            </p>
+          </div>
+        </li>
+        <li>
+          <div class="two_21" >
+            <img style="width:100%" src="images/two_21.jpg">
+            <p>
+              <a href="http://www.mcchina.com/fashion/story/20141208-58503-pn-21.shtml">
+                设计师永远不缺乏来自艺术界的缪斯，如同时尚界永不缺乏缤纷的色彩。只有自信时髦的Sportmax能够如此大胆，以泼墨写意书法的王冬龄作为灵感之神，仅用最简单的黑与白，勾勒出抽象神秘的不规则图案。设计师用这样不拘一格的材质剪裁出的连衣裙，气韵浑然天成、妙趣匠心独具，牢牢锁住偏爱含蓄内敛的中国女性芳心，让平凡的黑与白在夏日中变得如此曼妙生姿。
+              </a>
+            </p>
+          </div>
+        </li>
+        <li>
+          <div class="two_22" >
+            <img style="height:100%" class="img_height" src="images/two_22.jpg">
+            <p>
+              <a href="http://www.mcchina.com/fashion/story/20141208-58503-pn-22.shtml">
+                莫高窟那些婀娜多姿的飞天、精美绝伦的壁画、构图精巧的花砖，度过了千年的岁月；时至今日，依然能给予远在万里之外的纽约最潮设计师Tory Burch以灵感，让人不禁感叹艺术不朽的生命力。
+              </a>
+            </p>
+          </div>
+        </li>
+        <li>
+          <div class="two_23" >
+            <img style="height:100%" class="img_height" src="images/two_23.jpg">
+            <p>
+              <a href="http://www.mcchina.com/fashion/story/20141208-58503-pn-23.shtml">
+                那些来自欧洲的女演员们，总与好莱坞的明星有所不同。从Anna Karina 到Catherine Deneuve，从Jeanne Moreau，所谓的巴黎名伶，她们从不流俗，每一个都如此的个性鲜明，性格独特，更具有文艺电影女主角的气质。源自意大利的Trussardi是如此深爱欧洲电影，因此全力将每一位Trussardi 女郎都打造成电影中经典优雅的女主角，充满自信，敢于冒险。这一次，设计师Gaia Trussardi 邀请中国艺术家周依，以红色蟒蛇纹的棒球皮衣为素材，共同打造了充满趣味炫目的动画，送给外表优美而内心坚强的你。
+              </a>
+            </p>
+          </div>
+        </li>
+        <li>
+          <div class="two_24" >
+            <img style="height:100%" class="img_height" src="images/two_24.jpg">
+            <p>
+              <a href="http://www.mcchina.com/fashion/story/20141208-58503-pn-24.shtml">
+                这一次，嘉人非常感谢的设计师，就是Theory的设计总监Olivier Theyskens。这是他即将离开Theory 之前，最后一次为Style China献上的礼物，如同临别的祝福，弥足珍贵。Olivier一贯以灵动、颓废、脆弱而美丽为风格。这次为嘉人女性带来的这款长裙，选用了黑白作为主色调，款式简洁内敛。然而设计师特有的匠心，让普普通通的单品也极富优雅的格调。
+              </a>
+            </p>
+          </div>
+        </li>
+        <li>
+          <div class="two_25" >
+            <img style="height:100%" class="img_height" src="images/two_25.jpg">
+            <p>
+              <a href="http://www.mcchina.com/fashion/story/20141208-58503-pn-25.shtml">
+                中国传统文房四宝中的砚池，虽然在“笔墨纸砚”中忝居末位，但所谓“四宝”砚为首，取自天然、质地坚实的砚台，能传之百代。主打东方元素的夏姿陈，一向偏爱古代中国的人文情怀与艺术，总能游刃有余将传统与时尚融合。这一套为嘉人中国风设计的首饰，仿佛顺延着墨色在砚池中流动的线条，将彩色珠宝撞色搭配，取其型、仿其材、磨其色，如切如磋，如琢如磨，完美呈现出东方女性的典雅、温婉而时髦的格调。
+              </a>
+            </p>
+          </div>
+        </li>
+        <li>
+          <div class="two_26">
+            <img style="width:100%" src="images/two_26.jpg">
+            <p>
+              <a href="http://www.mcchina.com/fashion/story/20141208-58503-pn-26.shtml">
+                人们常说，水晶是光线的艺术，当光线消失，水晶也就没有了生命。施华洛世奇这位水晶大师，最近一直醉心于玩味纯粹晶体所带来的光学效果，他通过结合艺术与光线，利用LED效果、全像图、万花筒和以动态影像为灵感的图案，加上不同的光线折射方式，为这些如精灵般的珠宝带来万千的光影变幻，如梦似幻，给中国女性带来耳目一新的惊艳。
+              </a>
+            </p>
+             <!--  <a href="javascript:;" class="end">end</a> -->
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="three" id="three">
+      
+    </div>
+  </div>
+</body>
+  <script type="text/javascript">
+var winHeight=$(window).height();
+var winWidth=$(window).width();
+var img1Height=winHeight*0.13625;
+$('img.img_height').css('height', winHeight);
+$('li').css('height', winHeight);
+$('img.img_height').css('width', 'auto');
+  $(function(){
+    $('.bxslider').bxSlider({
+      auto: false,
+        autoControls: true,
+        captions: true
+    });
+  })
+$('#one').click(function(event) {
+    $(this).siblings().removeClass('on').end().addClass('on');
+ $("html,body").animate({scrollTop:$("#two").offset().top},2000);
+});
+$('#two').click(function(event) {
+    $(this).siblings().removeClass('on').end().addClass('on');
+ $("html,body").animate({scrollTop:0},2000);
+});
+
+$('.end').click(function(event) {
+  $('.three').css('display', 'block');
+  $('.three').animate({top:'0px'});
+  
+});
+
+var size, sizeDefault, pageInit, style;
+        
+size = function (selector, w, h) {
+    $(selector).width(w).height(h / 800 * 100 + '%');
+};
+
+sizeDefault = function (selector, w, h) {
+    $(selector).width(w).height(h);
+};
+
+style = function () {
+    $('.text-1').animate({'left': '188px'});
+    $('.text-2').delay(500).animate({'left': '590px'});
+    $('.text-3').delay(500).animate({'left': '193px'});
+    $('.text-4').css({opacity: 0}).delay(1000).animate({'opacity': '1'});
+    $('.text-5').css({opacity: 0}).delay(1200).animate({'opacity': '1'});
+    $('.text-6').css({opacity: 0}).delay(1400).animate({'opacity': '1'});
+    $('.text-7').css({opacity: 0}).delay(1600).animate({'opacity': '1'});
+    $('.nav-1').delay(2000).animate({'left': '704px'});
+    $('.nav-2').delay(2200).animate({'left': '814px'});
+    $('.nav-3').delay(2400).animate({'left': '930px'});
+    
+};
+
+pageInit = function () {
+    var w = $(window).width(), 
+        h = $(window).height();
+    size('.text-1', 603, 137);
+    size('.text-2', 96, 43);
+    size('.text-3', 216, 32);
+    size('.text-4', 59, 112);
+    size('.text-5', 320, 476);
+    size('.text-6', 220, 106);
+    size('.text-7', 187, 402);
+    sizeDefault('.nav-1, .nav-2, .nav-3', 92, 94);
+};
+
+$(function () {
+    pageInit();
+    style();
+});
+
+</script>
+</html>
