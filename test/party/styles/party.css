@@ -106,7 +106,7 @@ ul, li {
 }
 
 .party-wrap {
-    font-family: "΢���ź�";
+    font-family: "微软雅黑";
 }
 
 .video,
@@ -165,10 +165,19 @@ ul, li {
 .star-link {
     position: absolute;
     bottom: 0;
-    right: 0;
+    right: -33px;
     width: 244px;
     height: 166px;
     background: url(../images/star-link.png) no-repeat;
+}
+
+.star-link-1 {
+    right: 228px;
+    background: url(../images/star-link-1.png) no-repeat;
+}
+
+.star-link-1:hover {
+   background: url(../images/star-hover-1.png) no-repeat; 
 }
 
 .star-link:hover {

@@ -15,43 +15,43 @@ a:hover {color:#fff;text-decoration:none;}
 a:active {color:#000;}
 .hide{display:none}
 
-.content, .top,.two,.two_1,.two_2,.two_3,.two_4,.two_5,.two_6,.two_7,.two_8,.two_9,.two_10,.two_11,.two_12,.two_13,.two_14,.two_15,.two_16,.two_17,.two_18,.two_19,.two_20,.two_21,.two_22,.two_23,.two_24,.two_25,.two_26,.two_27{width: 100%;height: 100%;overflow: hidden;}
+.content, .top,.two,.two_1,.two_2,.two_3,.two_4,.two_5,.two_6,.two_7,.two_8,.two_9,.two_10,.two_11,.two_12,.two_13,.two_14,.two_15,.two_16,.two_17,.two_18,.two_19,.two_20,.two_21,.two_22,.two_23,.two_24,.two_25,.two_26,.two_27{width: 100%;height: 100%;}
 .top,.two_1,.two_2,.two_3,.two_4,.two_5,.two_6,.two_7,.two_8,.two_9,.two_10,.two_11,.two_12,.two_13,.two_14,.two_15,.two_16,.two_17,.two_18,.two_19,.two_20,.two_21,.two_22,.two_23,.two_24,.two_25,.two_26,.two_27{position: relative;}
 .top a,.two_1 p,.two_2 p ,.two_3 p,.two_4 p,.two_5 p,.two_6 p,.two_7 p,.two_8 p,.two_9 p,.two_10 p,.two_11 p,.two_12 p,.two_13 p,.two_14 p,.two_15 p,.two_16 p,.two_17 p,.two_18 p,.two_19 p,.two_20 p,.two_21 p,.two_22 p,.two_23 p,.two_24 p,.two_25 p,.two_26 p,.two_27 p{position: absolute;}
-.li{width: 100%;overflow: hidden;height: 100%;}
-.top{background:url(top_bg.jpg);background-repeat: no-repeat; background-position: center;background-size: auto 100%;}
+.li{width: 100%;height: 100%;}
+.top{background:url(../images/top_bg.jpg);background-repeat: no-repeat; background-position: center;background-size: auto 100%;}
 .top a{position: absolute;bottom:9.25%;right:19.25%;}
 .two_1{background-color: #fff;}
-.two_1 p{color: #fff;display: block;padding: 20px 25px 25px 25px;background-color:#000;width: 37.82%;line-height: 24px;left: 16%;top: 68%;}
+.two_1 p{color: #fff;display: block;padding: 20px 25px 25px 25px;background-color:#000;width: 37.82%;line-height: 24px;left: 16%;top: 76%;}
 .two_2{background-color: #a10000;}
 .two_2 p{color: #fff;display: block;padding: 20px 25px 25px 25px;background-color:#000;width: 37.82%;line-height: 24px;left: 16%;top: 68%;}
 .two_3{background-color: #fff;}
-.two_3 p{color: #fff;display: block;padding: 20px 25px 25px 25px;background-color:#000;width: 37.82%;line-height: 24px;left: 16%;top: 68%;}
+.two_3 p{color: #fff;display: block;padding: 20px 25px 25px 25px;background-color:#000;width: 37.82%;line-height: 24px;left: 16%;top: 77%;}
 .two_4{background-color: #000;}
-.two_4 p{color: #fff;display: block;padding: 20px 25px 25px 25px;background-color:#292826;width: 37.82%;line-height: 24px;left: 16%;top: 68%;}
+.two_4 p{color: #fff;display: block;padding: 20px 25px 25px 25px;background-color:#292826;width: 37.82%;line-height: 24px;left: 16%;top: 74%;}
 .two_5{background-color: #fff;}
-.two_5 p{color: #fff;display: block;padding: 20px 25px 25px 25px;background-color:#000;width: 37.82%;line-height: 24px;left: 16%;top: 68%;}
+.two_5 p{color: #fff;display: block;padding: 20px 25px 25px 25px;background-color:#000;width: 37.82%;line-height: 24px;left: 16%;top: 76%;}
 .two_6{background-color: #a10000;}
 .two_6 p{color: #fff;display: block;padding: 20px 25px 25px 25px;background-color:#000;width: 37.82%;line-height: 24px;left: 16%;top: 68%;}
 .two_7{background-color: #fff;}
-.two_7 p{color: #fff;display: block;padding: 20px 25px 25px 25px;background-color:#000;width: 37.82%;line-height: 24px;left: 16%;top: 68%;}
+.two_7 p{color: #fff;display: block;padding: 20px 25px 25px 25px;background-color:#000;width: 37.82%;line-height: 24px;left: 16%;top: 76%;}
 .two_8{background-color: #000;}
 .two_8 p{color: #fff;display: block;padding: 20px 25px 25px 25px;background-color:#292826;width: 37.82%;line-height: 24px;left: 16%;top: 68%;}
 .two_9{background-color: #fff;}
-.two_9 p{color: #fff;display: block;padding: 20px 25px 25px 25px;background-color:#000;width: 37.82%;line-height: 24px;left: 16%;top: 66%;}
+.two_9 p{color: #fff;display: block;padding: 20px 25px 25px 25px;background-color:#000;width: 37.82%;line-height: 24px;left: 16%;top: 73%;}
 .two_10{background-color: #fff;}
 .two_10 p{color: #fff;display: block;padding: 20px 25px 25px 25px;background-color:#000;width: 37.82%;line-height: 24px;left: 16%;top: 68%;}
 .two_10 span{color: #a10000;display: block;font-size: 48px;line-height: 36px;padding-bottom: 20px;font-weight: bold;}
 .two_11{background-color: #a10000;}
-.two_11 p{color: #fff;display: block;padding: 20px 25px 25px 25px;background-color:#000;width: 37.82%;line-height: 24px;left: 16%;top: 68%;}
+.two_11 p{color: #fff;display: block;padding: 20px 25px 25px 25px;background-color:#000;width: 37.82%;line-height: 24px;left: 16%;top: 77%;}
 .two_12{background-color: #fff;}
-.two_12 p{color: #fff;display: block;padding: 20px 25px 25px 25px;background-color:#000;width: 37.82%;line-height: 24px;left: 16%;top: 68%;}
+.two_12 p{color: #fff;display: block;padding: 20px 25px 25px 25px;background-color:#000;width: 37.82%;line-height: 24px;left: 16%;top: 77%;}
 .two_13{background-color: #000;}
 .two_13 p{color: #fff;display: block;padding: 20px 25px 25px 25px;background-color:#292826;width: 37.82%;line-height: 24px;left: 16%;top: 68%;}
 .two_14{background-color: #fff;}
-.two_14 p{color: #fff;display: block;padding: 20px 25px 25px 25px;background-color:#000;width: 37.82%;line-height: 24px;left: 16%;top: 68%;}
+.two_14 p{color: #fff;display: block;padding: 20px 25px 25px 25px;background-color:#000;width: 37.82%;line-height: 24px;left: 16%;top: 75%;}
 .two_15{background-color: #a10000;}
-.two_15 p{color: #fff;display: block;padding: 20px 25px 25px 25px;background-color:#000;width: 37.82%;line-height: 24px;left: 16%;top: 71%;}
+.two_15 p{color: #fff;display: block;padding: 20px 25px 25px 25px;background-color:#000;width: 37.82%;line-height: 24px;left: 16%;top: 79%;}
 .two_16{background-color: #fff;}
 .two_16 p{color: #fff;display: block;padding: 20px 25px 25px 25px;background-color:#000;width: 37.82%;line-height: 24px;left: 16%;top: 68%;}
 .two_17{background-color: #000;}
@@ -59,11 +59,11 @@ a:active {color:#000;}
 .two_18{background-color: #000;}
 .two_18 p{color: #fff;display: block;padding: 20px 25px 25px 25px;background-color:#292826;width: 37.82%;line-height: 24px;left: 16%;top: 68%;}
 .two_19{background-color: #fff;}
-.two_19 p{color: #fff;display: block;padding: 20px 25px 25px 25px;background-color:#000;width: 37.82%;line-height: 24px;left: 16%;top: 71%;}
+.two_19 p{color: #fff;display: block;padding: 20px 25px 25px 25px;background-color:#000;width: 37.82%;line-height: 24px;left: 16%;top: 79%;}
 .two_20{background-color: #000;}
 .two_20 p{color: #fff;display: block;padding: 20px 25px 25px 25px;background-color:#292826;width: 37.82%;line-height: 24px;left: 11%;top: 68%;}
 .two_21{background-color: #fff;}
-.two_21 p{color: #fff;display: block;padding: 20px 25px 25px 25px;background-color:#000;width: 37.82%;line-height: 24px;left: 16%;top: 68%;}
+.two_21 p{color: #fff;display: block;padding: 20px 25px 25px 25px;background-color:#000;width: 37.82%;line-height: 24px;left: 16%;top: 76%;}
 .two_22{background-color: #a10000;}
 .two_22 p{color: #fff;display: block;padding: 20px 25px 25px 25px;background-color:#000;width: 37.82%;line-height: 24px;left: 16%;top: 68%;}
 .two_23{background-color: #fff;}
@@ -73,7 +73,7 @@ a:active {color:#000;}
 .two_25{background-color: #fff;}
 .two_25 p{color: #fff;display: block;padding: 20px 25px 25px 25px;background-color:#000;width: 37.82%;line-height: 24px;left: 16%;top: 68%;}
 .two_26{background-color: #fff;}
-.two_26 p{color: #fff;display: block;padding: 20px 25px 25px 25px;background-color:#000;width: 37.82%;line-height: 24px;left: 16%;top: 68%;}
+.two_26 p{color: #fff;display: block;padding: 20px 25px 25px 25px;background-color:#000;width: 37.82%;line-height: 24px;left: 16%;top: 76%;}
 .end{position: absolute;
 top: 50%;
 right: 0px;
@@ -86,4 +86,12 @@ z-index: 99999;
 background: url(../images/bon.png) no-repeat right top;
 }
 .two{position: absolute;top:100%;}
-.three{background:url(two_27.jpg);background-repeat: no-repeat; background-position: center;background-size: auto 100%;position: absolute;top:200%; width: 100%;height: 100%;z-index: 999999;}
+.three {
+    position: absolute;
+    top: 200%;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    background: #fff;
+    z-index: 8;
+}
