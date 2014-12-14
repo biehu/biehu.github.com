@@ -118,7 +118,7 @@ ul, li {
 
 .result-header p:nth-child(1) {
     position: fixed;
-    top: 130px;
+    top: 180px;
     left: 40px;
     width: 30%;
 }
