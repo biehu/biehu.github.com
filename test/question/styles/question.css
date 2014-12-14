@@ -105,6 +105,13 @@ ul, li {
 /*
  * 结果
  */
+.result .page-inner {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
 .result-header {
     text-align: center;
 }
