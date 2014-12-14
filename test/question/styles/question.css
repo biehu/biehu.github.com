@@ -175,13 +175,17 @@ ul, li {
  * 答案
  */
 .answer {
-    padding: 446px 0 103px;
+    padding: 0 0 103px;
     background: url(../images/answer.jpg) no-repeat;
     background-size: 100%;
 }
 
 .answer .page-inner {
-    padding: 0 50px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 0 50px 50px;
+    box-sizing: border-box;
 }
 
 .answer-header {
