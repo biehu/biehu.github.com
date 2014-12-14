@@ -116,6 +116,13 @@ ul, li {
     text-align: center;
 }
 
+.result-header p:nth-child(1) {
+    position: absolute;
+    top: 50px;
+    left: 40px;
+    width: 30%;
+}
+
 .result-header img {
     width: 100%;
 }
