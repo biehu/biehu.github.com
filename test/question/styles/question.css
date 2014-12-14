@@ -35,8 +35,8 @@ ul, li {
  */
 .page {
     height: 1136px;
-    font-size: 4rem;
-    line-height: 3rem;
+    font-size: 1.5rem;
+    line-height: 2.2rem;
     overflow: hidden;
     position: absolute;
     top: 0;
@@ -81,6 +81,7 @@ ul, li {
 
 .question strong {
     color: #e60012;
+    font-size: 2.4rem;
 }
 
 .question-start {
