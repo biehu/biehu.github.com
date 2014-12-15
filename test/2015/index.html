@@ -93,6 +93,270 @@ transition: all 0.5s;
     transition-delay: 1.2s;
 }
 
+.hide {
+	display: none;
+}
+
+/*
+	2
+*/
+.second > div {
+	position: absolute;
+	opacity: 0;
+	transition: all 1s;
+}
+
+.second .fly-2 {
+	top: 43px;
+	left: 483px;
+	left: 100%;
+}
+
+.second .fly-1 {
+	top: 728px;
+	left: 433px;
+	left: -100%;
+}
+
+.second-text {
+	top: 180px;
+	left: 400px;
+	top: -149px;
+}
+
+.second-ball {
+	top: 106px;
+	left: 111px;
+	top: -155px;
+}
+
+.second-title {
+	top: 277px;
+	left: 100px;
+	-webkit-transform: scale(0.5, 0.5);
+}
+
+.page-mark {
+	position: absolute;
+	left: 50%;
+	bottom: 10px;
+}
+
+.page-mark > div {
+  width: 31px;
+  height: 36px;
+  background: url(images/loading.png) no-repeat;
+  -webkit-animation: bouncedelay 1.4s infinite ease-in-out;
+  animation: bouncedelay 1.4s infinite ease-in-out;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.page-mark .mark-1 {
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+.page-mark .mark-2 {
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+
+.active > div {
+	opacity: 1;
+}
+
+.active .second-ball {
+	top: 106px;
+	transition-delay: 1s;
+}
+
+.active .second-text {
+	top: 180px;
+	transition-delay: 1.2s;
+}
+
+.active .second-title {
+	-webkit-transform: scale(1, 1);
+	transition-delay: .5s;
+}
+
+.second.active .fly-1 {
+    opacity: 1;
+    left: 433px;
+    transition-delay: .5s;
+}
+
+.second.active .fly-2 {
+    opacity: 1;
+    left: 483px;
+    transition-delay: .5s;
+}
+
+/*
+	0
+*/
+
+.zero > div {
+	position: absolute;
+	opacity: 0;
+	transition: all 1s;
+}
+
+.zero .fly-1 {
+	top: 168px;
+	left: 59px;
+	left : -100%;
+}
+
+.zero .fly-2 {
+	top: 752px;
+	left: 188px;
+	left: 100%;
+}
+
+.zero .zero-text {
+	top: 257px;
+	left: 94px;
+}	
+
+.zero .zero-cloud {
+	top: 0;
+	left: 0;
+	left: -100%;
+}
+
+.zero .zero-title {
+	top: 380px;
+	left: 246px;
+	left: 100%;
+	-webkit-transform: rotate(90deg);
+}
+
+.zero .zero-bird {
+	top: 270px;
+	left: 349px;
+}
+
+.zero .page-mark > div {
+  background: url(images/loading-0.png) no-repeat;
+}
+
+
+.active > div {
+	opacity: 1;
+}
+
+.zero.active .fly-1 {
+	left: 59px;
+}
+
+.zero.active .fly-2 {
+	left: 188px;
+}
+
+.active .zero-cloud {
+	left: 0;
+	transition-delay: 1s;
+}
+
+.active .zero-title {
+	left: 246px;
+	-webkit-transform: rotate(0deg);
+	transition-delay: 1s;
+}
+
+.active .zero-bird,
+.active .zero-text {
+	transition-delay: 2s;
+}
+
+/*
+	1
+*/
+.first > div {
+	position: absolute;
+	opacity: 0;
+	transition: all 1s;
+}
+
+.first .page-mark > div {
+  background: url(images/loading-1.png) no-repeat;
+}
+
+.first .fly-1 {
+	top: 27px;
+	left: 492px;
+	left : -100%;
+}
+
+.first .fly-2 {
+	top: 213px;
+	left: 246px;
+	left: 100%;
+}
+
+.first .first-title {
+	top: 27px;
+	left: 255px;
+	left: 100%;
+}
+
+.first .first-run {
+	top: 92px;
+	left: 0;
+	-webkit-transform: scale(0);
+	-webkit-transform-origin: 90% 100%;
+}
+
+.first .first-map {
+	top: 596px;
+	left: 157px;
+}
+
+.active > div {
+	opacity: 1;
+}
+
+.first.active .fly-1 {
+	left: 492px;
+}
+
+
+.first.active .fly-2 {
+	left: 246px;
+}
+
+.active .first-title {
+	left: 260px;
+	transition-delay: 1s;
+}
+
+.active .first-run {
+	-webkit-transform: scale(1);
+	transition-delay: 1.5s;
+	transition-duration: 2s;
+}
+
+.active .first-map {
+	transition-delay: .5s;
+}
+
+.page {
+-webkit-transform: translate(0px, 0px);
+                -webkit-transition: -webkit-transform 2s;
+}
+
+.down {
+                -webkit-transform: translate(0px, 100%);
+            }
+            
+            .up {
+                -webkit-transform: translate(0px, -100%);
+            }
+
+
+
+
 
 /*
  * 动画
@@ -101,23 +365,68 @@ transition: all 0.5s;
     0% {opacity: 0;}
     100% {opacity: 1;}
 }
+
+@-webkit-keyframes bouncedelay {
+  0%, 80%, 100% { -webkit-transform: scale(0.0) }
+  40% { -webkit-transform: scale(1.0) }
+}
+
                 
            
         </style>
 	</head>
 	<body>
 	    <div class="wrap">
-	        <div class="page load">
+	        <div class="page load page_1 active">
 	            <div class="fly-1"><img src="images/fly-1.png" /></div>
 	            <div class="fly-2"><img src="images/fly-2.png" /></div>
                 <div class="load-text"><img src="images/2015.png" /></div>
-                <div class="load-text-light"><img src="images/2015-light.png" /></div>
+                <div class="load-text-light next"><img src="images/2015-light.png" /></div>
                 <div class="load-line"><img src="images/line.png" /></div>
 	        </div>
+			<div class="page second page_2 down">
+				<div class="fly-1"><img src="images/fly-1.png" /></div>
+	            <div class="fly-2"><img src="images/fly-2.png" /></div>
+				<div class="second-text"><img src="images/2-txt.png" /></div>
+				<div class="second-ball"><img src="images/ball.png" /></div>
+				<div class="second-title"><img src="images/2.png" /></div>
+				<div class="page-mark">
+					<div class="mark-1"></div>
+					<div class="mark-2"></div>
+					<div class="mark-3"></div>
+				</div>
+			</div>
+			<div class="page zero page_3 down">
+				<div class="fly-1"><img src="images/fly-1.png" /></div>
+	            <div class="fly-2"><img src="images/fly-2.png" /></div>
+				<div class="zero-text"><img src="images/0-txt.png" /></div>
+				<div class="zero-cloud"><img src="images/cloud.png" /></div>
+				<div class="zero-title"><img src="images/0.png" /></div>
+				<div class="zero-bird"><img src="images/bird.png" /></div>
+				<div class="page-mark">
+					<div class="mark-1"></div>
+					<div class="mark-2"></div>
+					<div class="mark-3"></div>
+				</div>
+			</div>
+			<div class="page first page_4 down">
+				<div class="fly-1"><img src="images/fly-1.png" /></div>
+	            <div class="fly-2"><img src="images/fly-2.png" /></div>
+				<div class="first-title"><img src="images/1.png" /></div>
+				<div class="first-map"><img src="images/map.png" /></div>
+				<div class="first-run"><img src="images/run.png" /></div>
+				<div class="page-mark">
+					<div class="mark-1"></div>
+					<div class="mark-2"></div>
+					<div class="mark-3"></div>
+				</div>
+			</div>
+
 	    </div>
         <script src="js/jquery-1.9.1.min.js"></script>
         <script>
-            var resizeBody;
+            var resizeBody,
+				page;
             
             resizeBody = function () {
                var sildeWidth = 640;
@@ -128,10 +437,99 @@ transition: all 0.5s;
                
                $("body").css({"zoom": zoom});
            };
+
+		   page = function () {
+
+		   /*
+            * 翻页
+            */
+		   var yStart, yEnd;
+           var index = 0;
+           var allNum = 4;
+           var isAnimate = false;
+           var isModal = false;
+           
+           var slide = function (el, num) {
+                el.css('WebkitTransitionDuration', '.5s');
+                el.css('webkitTransform', 'translateY(' + num +　')');
+           };
+           
+           var setPage = function (dir,page) {
+               
+                isAnimate = true;
+                
+                if(dir === 1){
+                    $(".page_"+(page+1)).removeClass('up').addClass('active');
+                    $(".page_"+(page+2)).addClass('down').removeClass('active');
+                    
+                }
+                else{
+                    $(".page_"+page).addClass('up').removeClass('active');
+                    $(".page_"+(page+1)).removeClass('down').addClass('active');
+                }
+               
+                // 翻页
+                setTimeout(function(){
+                    if (isAnimate) {
+                        isAnimate = false;
+                    }
+                },750);
+            };
+            
+            var bindTouchPageUp = function(){
+            
+                $(document).bind("touchstart", function(e){
+                    var touch = e.originalEvent.touches[0];
+                    yStart = touch.pageY;
+                });
+                $(document).bind("touchmove", function(e){
+                    event.preventDefault();
+                    var touch = e.originalEvent.touches[0];
+                    yEnd = touch.pageY;
+                    if (isAnimate || isModal) 
+                        return false;
+                    if (yEnd - 100 > yStart & yEnd > yStart) { //down
+                        if (index === 0)
+                            return false;
+                        setPage(1, --index);
+                    }
+                    else 
+                        if (yEnd + 100 < yStart & yEnd < yStart) { //up
+                            if (index === (allNum - 1)) 
+                                return false;
+                            setPage(0, ++index);
+                        }
+                });
+                
+            };
+
+            
+           var bindPageUp = function () {
+               $(".next").bind('click', function(e){
+                   e.preventDefault();
+                   if (index == (allNum - 1)) {
+                       return;
+                   }
+                   
+                   if (isAnimate) {
+                       isAnimate = false;
+                   }
+                   
+                   setPage(0, ++index);
+               });
+           };
+
+		   var init = function () {
+			   bindPageUp();
+			   bindTouchPageUp();
+		   };
+
+		   init();
+        };
            
            window.onload = function () {
                resizeBody();
-               $('.load').addClass('active');
+			   page();
            };
         </script>
 	</body>
