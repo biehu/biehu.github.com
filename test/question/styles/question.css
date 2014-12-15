@@ -274,5 +274,9 @@ ul, li {
 
 .share {
 	display: none;
-	opacity: .8;
+	opacity: .9;
+}
+
+.share img {
+	width: 100%;
 }
