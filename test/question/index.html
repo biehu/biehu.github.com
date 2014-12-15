@@ -180,7 +180,15 @@ PM2.5让肌肤问题频发，<br />
        
        <script src="scripts/jquery-1.9.1.min.js"></script>
        <script>
-           var resizeBody, page;
+
+	   (function () {
+           var resizeBody, page, changeFontSize;
+
+		   changeFontSize = function () {
+				if (navigator.userAgent.indexOf('Android') > -1) {
+					$('body').css('fontSize', '12px');
+				}
+		   };
                 
            resizeBody = function () {
                var sildeHeight = 1136,
@@ -282,7 +290,11 @@ PM2.5让肌肤问题频发，<br />
            window.onload = function () {
                resizeBody();
                page();
+			   changeFontSize();
            }
+
+
+		   })();
        </script>
    </body>
 </html>
