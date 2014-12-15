@@ -105,22 +105,15 @@ ul, li {
 /*
  * 结果
  */
-.result .page-inner {
+.result .page-header {
     position: absolute;
-    bottom: 0;
+    top: 0;
     width: 100%;
     box-sizing: border-box;
 }
 
 .result-header {
     text-align: center;
-}
-
-.result-header p:nth-child(1) {
-    position: fixed;
-    top: 180px;
-    left: 40px;
-    width: 30%;
 }
 
 .result-header img {
@@ -134,6 +127,9 @@ ul, li {
 }
 
 .gift {
+    position: absolute;
+    bottom: 0;
+    margin: 0 60px;
     padding-left: 90px;
     background: url(../images/gift.png) no-repeat;
 }
