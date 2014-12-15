@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+        <style>
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+   background: #e1dad0; 
+}
+
+.page {
+    position: absolute;
+    width: 640px;
+    height: 896px;
+    overflow: hidden;
+}
+
+.load {
+    background: url(images/bg.jpg) no-repeat;
+}
+
+.load > div {
+    position: absolute;
+}
+
+.fly-1 {
+    top: 175px;
+    left: 87px;
+    left: -100%;
+    transition: all 1s;
+}
+
+.load-text,
+.load-text-light {
+    top: 364px;
+    left: 0;
+    opacity: 0;
+    -webkit-transform: scale(0.5, 0.5);
+    transition: all 1s;
+}
+
+.load-line {
+    top: 168px;
+    left: 279px;
+    opacity: 0;
+transition: all 0.5s;
+    
+}
+
+.fly-2 {
+    top: 600px;
+    left: 492px;
+    left: 100%;
+    transition: all 1s;
+}
+
+.active .load-text-light {
+    -webkit-animation-name: toggleShow;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    -webkit-animation-timing-function: linear;
+}
+
+.active .load-text,
+.active .load-text-light {
+    opacity: 1;
+    -webkit-transform: scale(1, 1);
+    transition-delay: 0.7s;
+}
+
+.active .load-line {
+    opacity: 1;
+    transition-duration: 1s;
+    transition-delay: 2s;
+}
+
+.active .fly-1 {
+    opacity: 1;
+    left: 87px;
+    transition-delay: 1s;
+}
+
+.active .fly-2 {
+    opacity: 1;
+    left: 492px;
+    transition-delay: 1.2s;
+}
+
+
+/*
+ * 动画
+ */
+ @-webkit-keyframes toggleShow {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+                
+           
+        </style>
+	</head>
+	<body>
+	    <div class="wrap">
+	        <div class="page load">
+	            <div class="fly-1"><img src="images/fly-1.png" /></div>
+	            <div class="fly-2"><img src="images/fly-2.png" /></div>
+                <div class="load-text"><img src="images/2015.png" /></div>
+                <div class="load-text-light"><img src="images/2015-light.png" /></div>
+                <div class="load-line"><img src="images/line.png" /></div>
+	        </div>
+	    </div>
+        <script src="js/jquery-1.9.1.min.js"></script>
+        <script>
+            var resizeBody;
+            
+            resizeBody = function () {
+               var sildeWidth = 640;
+               zoom = $(window).width() / sildeWidth;
+               if (zoom > 1) {
+                   zoom = 1;
+               }
+               
+               $("body").css({"zoom": zoom});
+           };
+           
+           window.onload = function () {
+               resizeBody();
+               $('.load').addClass('active');
+           };
+        </script>
+	</body>
+</html>
