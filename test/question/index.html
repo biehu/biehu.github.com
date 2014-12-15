@@ -121,6 +121,9 @@ PM2.5让肌肤问题频发，<br />
                </div>
            </div>
        </div>
+	   <div class="page share">
+			<img src="images/share.jpg" />
+	   </div>
        <!--<div class="page result page-3 down">
            <div class="page-inner">
                <div class="result-header">
@@ -182,7 +185,22 @@ PM2.5让肌肤问题频发，<br />
        <script>
 
 	   (function () {
-           var resizeBody, page, changeFontSize;
+           var resizeBody, 
+			   page, 
+			   changeFontSize,
+			   share;
+		   
+		   share = function () {
+				
+				$('.gift-btn').on('click', function (e) {
+					e.preventDefault();
+					$('.share').fadeIn();	
+				});
+
+				$('.share').on('click', function () {
+					$(this).fadeOut();
+				});
+		   };
 
 		   changeFontSize = function () {
 				if (navigator.userAgent.indexOf('Android') > -1) {
@@ -293,6 +311,7 @@ PM2.5让肌肤问题频发，<br />
                resizeBody();
                page();
 			   changeFontSize();
+			   share();
            }
 
 
