@@ -355,6 +355,86 @@ transition: all 0.5s;
             }
 
 
+/*
+ * 5
+ */
+.five > div {
+    position: absolute;
+    opacity: 0;
+    transition: all 1s;
+}
+
+.active > div {
+    opacity: 1;
+}
+
+.five .fly-1 {
+    top: 66px;
+    left: 120px;
+    left : -100%;
+}
+
+.five .fly-2 {
+    top: 575px;
+    left: 498px;
+    left : 100%;
+}
+
+.five .page-mark > div {
+  background: url(images/loading-2.png) no-repeat;
+}
+
+.five .five-title {
+    top: 125px;
+    left: 160px;
+    top: 100%;
+}
+
+.five .five-horse {
+    top: 487px;
+    left: 197px;
+    -webkit-transform: translateX(10px) scale(0);
+}
+
+.five .five-text {
+    top: 637px;
+    left: 107px;
+    -webkit-transform: translateX(100%);
+}
+
+.five .five-rule {
+    top: -100%;
+}
+
+.five.active .fly-1 {
+   left: 120px;
+}
+
+
+.five.active .fly-2 {
+    left: 498px;
+}
+
+.active .five-rule {
+    top: 0;
+    transition-delay: 1s;
+}
+
+.active .five-title {
+    top: 125px;
+    transition-delay: 1s;
+}
+
+.active .five-horse {
+    -webkit-transform: translateX(0) scale(1);
+    transition-delay: 2s;
+}
+
+.active .five-text {
+    -webkit-transform: translateX(0);
+    transition-delay: 2.5s;
+}
+
 
 
 
@@ -421,14 +501,27 @@ transition: all 0.5s;
 					<div class="mark-3"></div>
 				</div>
 			</div>
+            <div class="page five page_5">
+                <div class="fly-1"><img src="images/fly-1.png" /></div>
+                <div class="fly-2"><img src="images/fly-2.png" /></div>
+                <div class="five-title"><img src="images/5.png" /></div>
+                <div class="five-horse"><img src="images/horse.png" /></div>
+                <div class="five-rule"><img src="images/rule.png" /></div>
+                <div class="five-text"><img src="images/5-txt.png" /></div>
+                <div class="page-mark">
+                    <div class="mark-1"></div>
+                    <div class="mark-2"></div>
+                    <div class="mark-3"></div>
+                </div>
+            </div>
+            
 
 	    </div>
         <script src="js/jquery-1.9.1.min.js"></script>
         <script>
-            var resizeBody,
-				page;
+            var year2015 = window.year2015 || {};
             
-            resizeBody = function () {
+            year2015.resizeBody = function () {
                var sildeWidth = 640;
                zoom = $(window).width() / sildeWidth;
                if (zoom > 1) {
@@ -438,14 +531,14 @@ transition: all 0.5s;
                $("body").css({"zoom": zoom});
            };
 
-		   page = function () {
+		   year2015.page = function () {
 
 		   /*
             * 翻页
             */
 		   var yStart, yEnd;
            var index = 0;
-           var allNum = 4;
+           var allNum = 5;
            var isAnimate = false;
            var isModal = false;
            
@@ -528,8 +621,8 @@ transition: all 0.5s;
         };
            
            window.onload = function () {
-               resizeBody();
-			   page();
+               year2015.resizeBody();
+			   year2015.page();
            };
         </script>
 	</body>
