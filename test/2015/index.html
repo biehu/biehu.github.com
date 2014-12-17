@@ -609,13 +609,62 @@ transition: all 0.5s;
   100% { opacity: 0; }
 }
 
+
+		#music {
+			position: fixed;
+			left: 50%;
+			top: 100px;
+			width: 56px;
+			height: 56px;
+            margin-left: -290px;
+			background: url(images/music_control_1.png) no-repeat 1px 1px;
+			z-index: 99;
+			opacity: 0;
+		}
+
+		#music.on {
+			background: url(images/music_control_2.png) no-repeat 1px 1px;
+			}
+
+			.page-mark {
+			width: 20px;
+height: 41px;
+background: url(images/arrow.png) no-repeat;
+background-size: 20px;
+position: fixed;
+left: 50%;
+bottom: 25px;
+margin-left: -15px;
+z-index: 999;
+-webkit-animation: arrowUpFx 1.5s infinite;
+animation: arrowUpFx 1.5s infinite;
+			}
+
+
+@-webkit-keyframes arrowUpFx {
+	0% {
+		transform:translateY(42px);
+		-webkit-transform:translateY(42px);
+		opacity:0
+	}
+	60% {
+		transform:translateY(12px);
+		-webkit-transform:translateY(12px);
+		opacity:1
+	}
+	100% {
+		transform:translateY(0px);
+		-webkit-transform:translateY(0px);
+		opacity:0
+	}
+}
                 
            
         </style>
 	</head>
 	<body>
 	    <div class="wrap">
-	     
+	     <div id="music" class="on" style="opacity: 1;"></div>
 	        <div class="page load page_1 active">
 	            <div class="fly-1"><img src="images/fly-1.png" /></div>
 	            <div class="fly-2"><img src="images/fly-2.png" /></div>
@@ -630,9 +679,6 @@ transition: all 0.5s;
 				<div class="second-ball"><img src="images/ball.png" /></div>
 				<div class="second-title"><img src="images/2.png" /></div>
 				<div class="page-mark">
-					<div class="mark-1"></div>
-					<div class="mark-2"></div>
-					<div class="mark-3"></div>
 				</div>
 			</div>
 			<div class="page zero page_3 down">
@@ -655,9 +701,6 @@ transition: all 0.5s;
 				<div class="first-map"><img src="images/map.png" /></div>
 				<div class="first-run"><img src="images/run.png" /></div>
 				<div class="page-mark">
-					<div class="mark-1"></div>
-					<div class="mark-2"></div>
-					<div class="mark-3"></div>
 				</div>
 			</div>
             <div class="page five page_5 down">
@@ -668,9 +711,6 @@ transition: all 0.5s;
                 <div class="five-rule"><img src="images/rule.png" /></div>
                 <div class="five-text"><img src="images/5-txt.png" /></div>
                 <div class="page-mark">
-                    <div class="mark-1"></div>
-                    <div class="mark-2"></div>
-                    <div class="mark-3"></div>
                 </div>
             </div>
            
@@ -679,9 +719,6 @@ transition: all 0.5s;
                 <div class="six-pic"><img src="images/team.png" /></div>
                 <div class="six-text"><img src="images/6-txt.png" /></div>
                 <div class="page-mark">
-                    <div class="mark-1"></div>
-                    <div class="mark-2"></div>
-                    <div class="mark-3"></div>
                 </div>
             </div> 
             <div class="page seven page_7 down">
@@ -802,10 +839,30 @@ transition: all 0.5s;
 
 		   init();
         };
+
+		var music = function () {
+			var isPlay = true;
+            $('#audio_music')[0].play();
+			$("#music").on("click",function(){
+				var audio = $('#audio_music')[0];
+				var that = $(this);
+				if (isPlay) {
+					audio.pause();
+					isPlay = false;
+					that.removeClass('on');
+				}
+				else {
+					audio.play();
+					isPlay = true;
+					that.addClass('on');
+				}
+			});
+		};
            
            window.onload = function () {
                year2015.resizeBody();
 			   year2015.page();
+			   music();
            };
         </script>
 	</body>
