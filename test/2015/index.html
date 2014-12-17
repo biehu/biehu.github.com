@@ -34,6 +34,12 @@ body {
     left: 87px;
     left: -100%;
     transition: all 1s;
+    
+    -webkit-animation-name: fly-1;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    -webkit-animation-timing-function: linear;
 }
 
 .load-text,
@@ -58,6 +64,12 @@ transition: all 0.5s;
     left: 492px;
     left: 100%;
     transition: all 1s;
+    
+    -webkit-animation-name: fly-2;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    -webkit-animation-timing-function: linear;
 }
 
 .active .load-text-light {
@@ -304,8 +316,7 @@ transition: all 0.5s;
 .first .first-run {
 	top: 92px;
 	left: 0;
-	-webkit-transform: scale(0);
-	-webkit-transform-origin: 90% 100%;
+    -webkit-transform: translateX(-100%);
 }
 
 .first .first-map {
@@ -332,7 +343,7 @@ transition: all 0.5s;
 }
 
 .active .first-run {
-	-webkit-transform: scale(1);
+	-webkit-transform: translateX(0);
 	transition-delay: 1.5s;
 	transition-duration: 2s;
 }
@@ -542,8 +553,8 @@ transition: all 0.5s;
 }
 
 .active .seven-point-big-gift {
-    -webkit-animation: gogo 3s infinite ease-in-out;
-  animation: gogo 3s infinite ease-in-out;
+    -webkit-animation: gogo 1s infinite ease-in-out;
+  animation: gogo 1s infinite ease-in-out;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
@@ -559,19 +570,25 @@ transition: all 0.5s;
     100% {opacity: 1;}
 }
 
+ @-webkit-keyframes fly-1 {
+    0% {-webkit-transform: translateX(0) }
+    100% {-webkit-transform: translateX(5px)}
+}
+
+ @-webkit-keyframes fly-2 {
+    0% {-webkit-transform: translateX(0) }
+    100% {-webkit-transform: translateX(-5px)}
+}
+
 @-webkit-keyframes bouncedelay {
   0%, 80%, 100% { -webkit-transform: scale(0.0) }
   40% { -webkit-transform: scale(1.0) }
 }
 
 @-webkit-keyframes gogo {
-  0% { -webkit-transform: translate(0, 0)}
-  10% { -webkit-transform: translate(1px, 1px)}
-  40% { -webkit-transform: translate(2px, 2px) }
-  50% { -webkit-transform: translate(3px, 3px) }
-  60% { -webkit-transform: translate(2px, 2px) }
-  80% { -webkit-transform: translate(1px, 1px) }
-  100% { -webkit-transform: translate(2px, 2px) }
+  0% { opacity: 0;}
+  50% { opacity: 1; }
+  100% { opacity: 0; }
 }
 
                 
@@ -625,7 +642,7 @@ transition: all 0.5s;
 					<div class="mark-3"></div>
 				</div>
 			</div>
-            <div class="page five page_5">
+            <div class="page five page_5 down">
                 <div class="fly-1"><img src="images/fly-1.png" /></div>
                 <div class="fly-2"><img src="images/fly-2.png" /></div>
                 <div class="five-title"><img src="images/5.png" /></div>
@@ -639,7 +656,7 @@ transition: all 0.5s;
                 </div>
             </div>
            
-            <div class="page six page_6">
+            <div class="page six page_6 down">
                 <div class="six-title"><img src="images/6.png" /></div>
                 <div class="six-pic"><img src="images/team.png" /></div>
                 <div class="six-text"><img src="images/6-txt.png" /></div>
@@ -649,7 +666,7 @@ transition: all 0.5s;
                     <div class="mark-3"></div>
                 </div>
             </div> 
-            <div class="page seven page_7">
+            <div class="page seven page_7 down">
                 <div class="seven-logo"><img src="images/logo.png" /></div>
                 <div class="seven-point-big"><img src="images/7-pic.png" /></div>
                 <div class="seven-point-big-gift"><img src="images/7-pic-point.png" /></div>
@@ -661,6 +678,7 @@ transition: all 0.5s;
             
 
 	    </div>
+		<audio id="audio_music" src="images/music.mp3" autoplay loop>
         <script src="js/jquery-1.9.1.min.js"></script>
         <script>
             var year2015 = window.year2015 || {};
@@ -721,6 +739,9 @@ transition: all 0.5s;
                 });
                 $(document).bind("touchmove", function(e){
                     event.preventDefault();
+                    if (index === 0) {
+                        return;
+                    }
                     var touch = e.originalEvent.touches[0];
                     yEnd = touch.pageY;
                     if (isAnimate || isModal) 
