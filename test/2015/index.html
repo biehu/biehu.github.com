@@ -195,6 +195,32 @@ transition: all 0.5s;
 	transition-delay: 1.2s;
 }
 
+.second-text img {
+	opacity: 0;
+	transition: all 1s;
+}
+
+.active .second-text img  {
+	opacity: 1;
+}
+
+
+.active .second-text p:nth-child(2) img {
+	transition-delay: 2.2s;
+}
+
+.active .second-text p:nth-child(3) img {
+	transition-delay: 2.6s;
+}
+
+.active .second-text p:nth-child(4) img {
+	transition-delay: 2.8s;
+}
+
+.active .second-text p:nth-child(5) img {
+	transition-delay: 3s;
+}
+
 .active .second-title {
 	-webkit-transform: scale(1, 1);
 	transition-delay: .5s;
@@ -675,7 +701,13 @@ animation: arrowUpFx 1.5s infinite;
 			<div class="page second page_2 down">
 				<div class="fly-1"><img src="images/fly-1.png" /></div>
 	            <div class="fly-2"><img src="images/fly-2.png" /></div>
-				<div class="second-text"><img src="images/2-txt.png" /></div>
+				<div class="second-text">
+					<p><img src="images/2-txt_01.png" /></p>
+					<p><img src="images/2-txt_02.png" /></p>
+					<p><img src="images/2-txt_03.png" /></p>
+					<p><img src="images/2-txt_04.png" /></p>
+					<p><img src="images/2-txt_05.png" /></p>
+				</div>
 				<div class="second-ball"><img src="images/ball.png" /></div>
 				<div class="second-title"><img src="images/2.png" /></div>
 				<div class="page-mark">
