@@ -287,6 +287,31 @@ transition: all 0.5s;
   background: url(images/loading-0.png) no-repeat;
 }
 
+.zero .zero-text  img {
+	opacity: 0;
+transition: all 1s;
+}
+
+.active .zero-text  img {
+opacity: 1;
+}
+
+.active .zero-text  p:nth-child(2) img {
+transition-delay: 2.2s;
+}
+
+.active .zero-text  p:nth-child(3) img  {
+transition-delay: 2.4s;
+}
+
+.active .zero-text  p:nth-child(4) img  {
+transition-delay: 2.6s;
+}
+
+.active .zero-text  p:nth-child(5) img  {
+transition-delay: 2.8s;
+}
+
 
 .active > div {
 	opacity: 1;
@@ -684,6 +709,51 @@ animation: arrowUpFx 1.5s infinite;
 		opacity:0
 	}
 }
+
+.first-title div:nth-child(1) img {
+	vertical-align: bottom;
+}
+
+.first-title div {
+	display: table-cell;
+	vertical-align: bottom;
+}
+
+.first-title img {
+	opacity: 0;
+	transition: all 1s;
+}
+
+.active .first-title img  {
+	opacity: 1;
+}
+
+.first-title p:nth-child(1) img {
+	-webkit-transform:translateY(-100%);
+}
+
+.active .first-title p:nth-child(1) img {
+	transition-delay: 2s;
+	-webkit-transform:translateY(0);
+}
+
+
+.active .first-title p:nth-child(2) img {
+	transition-delay: 2.2s;
+}
+
+.active .first-title p:nth-child(3) img {
+	transition-delay: 2.6s;
+}
+
+.active .first-title p:nth-child(4) img {
+	transition-delay: 2.8s;
+}
+
+.active .first-title p:nth-child(5) img {
+	transition-delay: 3s;
+}
+
                 
            
         </style>
@@ -716,7 +786,13 @@ animation: arrowUpFx 1.5s infinite;
 			<div class="page zero page_3 down">
 				<div class="fly-1"><img src="images/fly-1.png" /></div>
 	            <div class="fly-2"><img src="images/fly-2.png" /></div>
-				<div class="zero-text"><img src="images/0-txt.png" /></div>
+				<div class="zero-text">
+					<p><img src="images/0-txt_01.png" /></p>
+					<p><img src="images/0-txt_02.png" /></p>
+					<p><img src="images/0-txt_03.png" /></p>
+					<p><img src="images/0-txt_04.png" /></p>
+					<p><img src="images/0-txt_05.png" /></p>
+				</div>
 				<div class="zero-cloud"><img src="images/cloud.png" /></div>
 				<div class="zero-title"><img src="images/0.png" /></div>
 				<div class="zero-bird"><img src="images/bird.png" /></div>
@@ -726,7 +802,18 @@ animation: arrowUpFx 1.5s infinite;
 			<div class="page first page_4 down">
 				<div class="fly-1"><img src="images/fly-1.png" /></div>
 	            <div class="fly-2"><img src="images/fly-2.png" /></div>
-				<div class="first-title"><img src="images/1.png" /></div>
+				<div class="first-title">
+				
+					<div><img src="images/1_01.png" /></div>
+					<div>
+						<p><img src="images/1_02.png" /></p>
+						<p><img src="images/1_03.png" /></p>
+						<p><img src="images/1_04.png" /></p>
+						<p><img src="images/1_05.png" /></p>
+						<p><img src="images/1_06.png" /></p>
+					</div>
+				
+				</div>
 				<div class="first-map"><img src="images/map.png" /></div>
 				<div class="first-run"><img src="images/run.png" /></div>
 				<div class="page-mark">
