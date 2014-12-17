@@ -533,11 +533,11 @@ transition-delay: 2.8s;
 }
 
 .active .six-pic {
-    top: 600px;
+    top: 630px;
     width: 100%;
     text-align: center;
     -webkit-transform: translateY(100%);
-    transition-delay: 1.2s;
+    transition-delay: 2s;
 }
 
 .active .six-pic,
@@ -755,6 +755,28 @@ animation: arrowUpFx 1.5s infinite;
 	transition-delay: 3s;
 }
 
+.six-text img {
+	opacity: 0;
+	transition: all 1s;
+}
+
+.active .six-text img  {
+	opacity: 1;
+}
+
+
+.active .six-text p:nth-child(2) img {
+	transition-delay: 1.2s;
+}
+
+.active .six-text p:nth-child(3) img {
+	transition-delay: 1.6s;
+}
+
+.active .six-text p:nth-child(4) img {
+	transition-delay: 1.8s;
+}
+
                 
            
         </style>
@@ -834,7 +856,12 @@ animation: arrowUpFx 1.5s infinite;
             <div class="page six page_6 down">
                 <div class="six-title"><img src="images/6.png" /></div>
                 <div class="six-pic"><img src="images/team.png" /></div>
-                <div class="six-text"><img src="images/6-txt.png" /></div>
+                <div class="six-text">
+					<p><img src="images/6-txt_01.png" /></p>
+					<p><img src="images/6-txt_02.png" /></p>
+					<p><img src="images/6-txt_03.png" /></p>
+					<p><img src="images/6-txt_04.png" /></p>
+				</div>
                 <div class="page-mark">
                 </div>
             </div> 
