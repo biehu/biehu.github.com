@@ -152,7 +152,7 @@ transition: all 0.5s;
   animation-fill-mode: both;
 }
 
-.page-mark .mark-1 {
+.page-mark .mark-3 {
   -webkit-animation-delay: -0.32s;
   animation-delay: -0.32s;
 }
@@ -435,6 +435,119 @@ transition: all 0.5s;
     transition-delay: 2.5s;
 }
 
+/*
+ * 6
+ */
+
+.six > div {
+    position: absolute;
+    opacity: 0;
+    transition: all 1s;
+}
+
+.active > div {
+    opacity: 1;
+}
+
+.six-title {
+    top: 240px;
+    -webkit-transform: scale(5);
+}
+
+.active .six-text {
+    top: 463px;
+    width: 100%;
+    text-align: center;
+    -webkit-transform: translateY(100%);
+    transition-delay: 1s;
+}
+
+.active .six-pic {
+    top: 600px;
+    width: 100%;
+    text-align: center;
+    -webkit-transform: translateY(100%);
+    transition-delay: 1.2s;
+}
+
+.active .six-pic,
+.active .six-text {
+    -webkit-transform: translateY(0);
+}
+
+
+.active .six-title {
+    -webkit-transform: scale(1);
+}
+
+/*
+ * 7
+ */
+.seven > div {
+    position: absolute;
+    opacity: 0;
+    transition: all 1s;
+}
+
+.active > div {
+    opacity: 1;
+}
+
+.seven-logo {
+    top: 30px;
+    left: 50px;
+    -webkit-transform: translateY(-100%);
+}
+
+
+
+.seven-point-big-gift,
+.seven-point-big {
+    top: 137px;
+    width: 100%;
+    text-align: center;
+}
+
+.seven-text {
+    top: 500px;
+    left: 240px;
+}
+
+.seven-point-red {
+    top: 483px;
+    left: 387px;
+    -webkit-transform: translateX(100%);
+}
+
+.seven-point-green {
+    top: 796px;
+    left: 198px;
+     -webkit-transform: translateX(-100%);
+}
+
+.active .seven-logo {
+   -webkit-transform: translateY(0); 
+}
+
+.active .seven-point-red {
+    -webkit-transform: translateX(0);
+}
+
+.active .seven-point-green {
+     -webkit-transform: translateX(0);
+}
+
+.active .seven-text {
+     transition-delay: 1s;
+}
+
+.active .seven-point-big-gift {
+    -webkit-animation: gogo 3s infinite ease-in-out;
+  animation: gogo 3s infinite ease-in-out;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
 
 
 
@@ -451,12 +564,23 @@ transition: all 0.5s;
   40% { -webkit-transform: scale(1.0) }
 }
 
+@-webkit-keyframes gogo {
+  0% { -webkit-transform: translate(0, 0)}
+  10% { -webkit-transform: translate(1px, 1px)}
+  40% { -webkit-transform: translate(2px, 2px) }
+  50% { -webkit-transform: translate(3px, 3px) }
+  60% { -webkit-transform: translate(2px, 2px) }
+  80% { -webkit-transform: translate(1px, 1px) }
+  100% { -webkit-transform: translate(2px, 2px) }
+}
+
                 
            
         </style>
 	</head>
 	<body>
 	    <div class="wrap">
+	     
 	        <div class="page load page_1 active">
 	            <div class="fly-1"><img src="images/fly-1.png" /></div>
 	            <div class="fly-2"><img src="images/fly-2.png" /></div>
@@ -514,6 +638,26 @@ transition: all 0.5s;
                     <div class="mark-3"></div>
                 </div>
             </div>
+           
+            <div class="page six page_6">
+                <div class="six-title"><img src="images/6.png" /></div>
+                <div class="six-pic"><img src="images/team.png" /></div>
+                <div class="six-text"><img src="images/6-txt.png" /></div>
+                <div class="page-mark">
+                    <div class="mark-1"></div>
+                    <div class="mark-2"></div>
+                    <div class="mark-3"></div>
+                </div>
+            </div> 
+            <div class="page seven page_7">
+                <div class="seven-logo"><img src="images/logo.png" /></div>
+                <div class="seven-point-big"><img src="images/7-pic.png" /></div>
+                <div class="seven-point-big-gift"><img src="images/7-pic-point.png" /></div>
+                <div class="seven-point-red"><img src="images/red-point.png" /></div>
+                <div class="seven-text"><img src="images/7-txt.png" /></div>
+                <div class="seven-point-green"><img src="images/green-point.png" /></div>
+            </div>
+         
             
 
 	    </div>
@@ -538,7 +682,7 @@ transition: all 0.5s;
             */
 		   var yStart, yEnd;
            var index = 0;
-           var allNum = 5;
+           var allNum = 7;
            var isAnimate = false;
            var isModal = false;
            

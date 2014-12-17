@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+   <head>
+       <meta charset="utf-8" />
+       <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+       <title>Untitled Document</title>
+       <link rel="stylesheet" href="styles/question.css" />
+   </head> 
+   <body>
+4
+       <div class="page result   ">
+           <div class="page-inner">
+               <div class="result-header">
+                   <p><img src="images/result-bg-1.jpg" /></p>
+                   <div class="result-text result-text-white"></div>
+               </div>
+               <div class="result-content">
+                   <div class="result">
+                       相信你一定在肌肤清污这件事上所过不少功课。在空气污染越发严重的都市环境中，肌肤经不起怠慢，为了保持目前健康的肌肤状态，请坚持做好隔离雾霾、肌肤清洁、深度净化等护肤步骤。
+                   </div>
+               </div>
+               <div class="gift">
+                       <p><a class="gift-btn" href="#"></a></p>
+                       分享结果至朋友圈，截图给健康之友官方微信，留下你的姓名和联系方式，20份<em>Olay夜间精华原液</em>等你赢！！
+               </div>
+           </div>
+       </div>
+	   
+          <div class="page share">
+			<img src="images/share.jpg" />
+	   </div>
+       
+       
+       
+       
+       <script src="scripts/jquery-1.9.1.min.js"></script>
+       <script>
+
+	   (function () {
+           var score = [],
+			
+		   
+			   resizeBody, 
+			   page, 
+			   changeFontSize,
+			   share;
+		   
+		   share = function () {
+				
+				$('.gift-btn').on('click', function (e) {
+					e.preventDefault();
+					$('.share').fadeIn();	
+				});
+
+				$('.share').on('click', function () {
+					$(this).fadeOut();
+				});
+		   };
+
+		   changeFontSize = function () {
+				if (navigator.userAgent.indexOf('Android') > -1) {
+					$('html').css('fontSize', '24px');
+					$('.page').css('lineHeight', '1.5rem');
+					$('.answer-content a, .gift, .answer-header, .result').css('lineHeight', '1rem');
+				}
+		   };
+                
+           resizeBody = function () {
+               var sildeHeight = 1136,
+                   zoom = ($(window).height()) / sildeHeight;
+                   
+               if (zoom > 1) zoom = 1;
+               $("body").css({"zoom": zoom});
+           };
+           
+           page = function () {
+
+           /*
+            * 翻页
+            */
+           var yStart, yEnd;
+           var index = 0;
+           var allNum = 8;
+           var isAnimate = false;
+           var isModal = false;
+           
+           var slide = function (el, num) {
+                el.css('WebkitTransitionDuration', '.5s');
+                el.css('webkitTransform', 'translateY(' + num +　')');
+           };
+           
+           var setPage = function (dir,page) {
+               
+                isAnimate = true;
+                
+                if(dir === 1){
+                    $(".page-"+(page+1)).removeClass('up');
+                    $(".page-"+(page+2)).addClass('down');
+                    
+                }
+                else{
+                    $(".page-"+page).addClass('up');
+                    $(".page-"+(page+1)).removeClass('down');
+                }
+               
+                // 翻页
+                setTimeout(function(){
+                    if (isAnimate) {
+                        isAnimate = false;
+                    }
+                },750);
+            };
+            
+            var bindTouchPageUp = function(){
+            
+                $(document).bind("touchstart", function(e){
+                    var touch = e.originalEvent.touches[0];
+                    yStart = touch.pageY;
+                });
+                $(document).bind("touchmove", function(e){
+                    event.preventDefault();
+                    var touch = e.originalEvent.touches[0];
+                    yEnd = touch.pageY;
+                    if (isAnimate || isModal) 
+                        return false;
+                    if (yEnd - 100 > yStart & yEnd > yStart) { //down
+                        if (index === 0)
+                            return false;
+                        setPage(1, --index);
+                    }
+                    else 
+                        if (yEnd + 100 < yStart & yEnd < yStart) { //up
+                            if (index === (allNum - 1)) 
+                                return false;
+                            setPage(0, ++index);
+                        }
+                });
+                
+            };
+          
+          var getSendData = function (d) {
+              var num = 0,
+                  answer = '',
+                  result = 0;
+                  
+              d.forEach(function (item) {
+                  num += parseInt(item.score);
+                  answer += item.answer;
+              });
+              
+              if (num >= 3 && num < 11) {
+                  result = 1;
+              }
+              else if (num >= 11 && num < 21) {
+                  result = 2;
+              }
+              else if (num >= 21 && num < 31) {
+                  result = 3;
+              }
+              else if (num >= 31 && num < 41) {
+                  result = 4;
+              }
+              
+              return {
+                  answer: answer,
+                  result: result
+              }
+          };
+            
+           var bindPageUp = function () {
+
+               $(".next").bind('click', function(e){
+				  
+                   e.preventDefault();
+                   if (index > 0) {
+                       score[index] = {};
+                       score[index].score = $(this).attr('data-score');
+                       score[index].answer = $(this).find('em').html();
+                   }
+				   
+                   if (index == (allNum - 1)) {
+                       return;
+                   }
+                   
+                   if (isAnimate) {
+                       isAnimate = false;
+                   }
+                   
+                   setPage(0, ++index);
+               });
+
+			   $('.last-ask .next').bind('click', function(e) {
+					e.preventDefault();
+//                    console.log(getSendData(score));
+                    var data = getSendData(score);
+
+//					$.post("insert.php", data);
+                    $('.result').eq(data.result - 1);
+			   });
+           };
+
+           var init = function () {
+               bindPageUp();
+//               bindTouchPageUp();
+           };
+
+           init();
+        };
+           
+           window.onload = function () {
+               resizeBody();
+               page();
+			   changeFontSize();
+			   share();
+           }
+
+
+		   })();
+       </script>
+   </body>
+</html>
