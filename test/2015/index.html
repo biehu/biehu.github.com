@@ -15,6 +15,7 @@ width: 100%;
 height: 100%;
 overflow: hidden;
    background: #e1dad0; 
+   transform-origin: 0 0;
 }
 
 .page {
@@ -903,7 +904,7 @@ animation: arrowUpFx 1.5s infinite;
                    zoom = 1;
                }
                
-               $("body").css({"zoom": zoom});
+               $("body").css({"transform": 'scale(' + zoom + ')'});
            };
 
 		   year2015.page = function () {
@@ -1020,10 +1021,7 @@ animation: arrowUpFx 1.5s infinite;
 
 		$('.page').hide();
 			   year2015.resizeBody();
-
-			   setTimeout(function () {
 			   $('.page').show();
-			   }, 1000);
           
            window.onload = function () {
 			   
