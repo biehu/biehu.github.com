@@ -903,7 +903,7 @@ animation: arrowUpFx 1.5s infinite;
                    zoom = 1;
                }
                
-               $("body").css({"zoom": zoom});
+               $("body").css({ "zoom": zoom });
            };
 
 		   year2015.page = function () {
@@ -1017,13 +1017,11 @@ animation: arrowUpFx 1.5s infinite;
 			});
 		};
 
-
-		$('.page').hide();
-			   year2015.resizeBody();
-			   $('.page').show();
           
            window.onload = function () {
-			   
+			   $('.page').hide();
+			   year2015.resizeBody();
+			   $('.page').show();
 			   year2015.page();
 			   music();
            };
