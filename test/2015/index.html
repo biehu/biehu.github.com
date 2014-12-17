@@ -909,7 +909,9 @@ animation: arrowUpFx 1.5s infinite;
                
                $("body").css({ "zoom": zoom });
 			   $('.wrap').show();
-			   $('.page_1').addClass('active');
+			   setTimeout(function () {
+					$('.page_1').addClass('active');
+			   }, 100);
            };
 
 		   year2015.page = function () {
