@@ -1020,7 +1020,11 @@ animation: arrowUpFx 1.5s infinite;
 
 		$('.page').hide();
 			   year2015.resizeBody();
-          $('.page').show();
+
+			   setTimeout(function () {
+			   $('.page').show();
+			   }, 1000);
+          
            window.onload = function () {
 			   
 			   year2015.page();
