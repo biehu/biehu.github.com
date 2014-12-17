@@ -15,8 +15,6 @@ width: 100%;
 height: 100%;
 overflow: hidden;
    background: #e1dad0; 
-   -webkit-transform-origin: 0 0;
-   transform-origin: 0 0;
 }
 
 .page {
@@ -905,7 +903,7 @@ animation: arrowUpFx 1.5s infinite;
                    zoom = 1;
                }
                
-               $("body").css({"transform": 'scale(' + zoom + ')'});
+               $("body").css({"zoom": zoom});
            };
 
 		   year2015.page = function () {
