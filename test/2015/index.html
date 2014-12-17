@@ -165,10 +165,18 @@ transition: all 0.5s;
 }
 
 .page-mark .mark-3 {
+-webkit-animation: bouncedelay2 1.4s infinite ease-in-out;
+  animation: bouncedelay 1.4s infinite ease-in-out;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
   -webkit-animation-delay: -0.32s;
   animation-delay: -0.32s;
 }
 .page-mark .mark-2 {
+-webkit-animation: bouncedelay1 1.4s infinite ease-in-out;
+  animation: bouncedelay 1.4s infinite ease-in-out;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
   -webkit-animation-delay: -0.16s;
   animation-delay: -0.16s;
 }
@@ -583,6 +591,16 @@ transition: all 0.5s;
 @-webkit-keyframes bouncedelay {
   0%, 80%, 100% { -webkit-transform: scale(0.0) }
   40% { -webkit-transform: scale(1.0) }
+}
+
+@-webkit-keyframes bouncedelay1 {
+  0%, 80%, 100% { -webkit-transform: scale(0.0) }
+  40% { -webkit-transform: scale(0.8) }
+}
+
+@-webkit-keyframes bouncedelay2 {
+  0%, 80%, 100% { -webkit-transform: scale(0.0) }
+  40% { -webkit-transform: scale(0.6) }
 }
 
 @-webkit-keyframes gogo {
