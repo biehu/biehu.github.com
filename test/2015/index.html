@@ -17,6 +17,10 @@ overflow: hidden;
    background: #e1dad0; 
 }
 
+.wrap {
+	display: none;
+}
+
 .page {
     position: absolute;
     width: 640px;
@@ -798,7 +802,7 @@ animation: arrowUpFx 1.5s infinite;
 	<body>
 	    <div class="wrap">
 	     <div id="music" class="on" style="opacity: 1;"></div>
-	        <div class="page load page_1 active">
+	        <div class="page load page_1">
 	            <div class="fly-1"><img src="images/fly-1.png" /></div>
 	            <div class="fly-2"><img src="images/fly-2.png" /></div>
                 <div class="load-text"><img src="images/2015.png" /></div>
@@ -904,6 +908,8 @@ animation: arrowUpFx 1.5s infinite;
                }
                
                $("body").css({ "zoom": zoom });
+			   $('.wrap').show();
+			   $('.page_1').addClass('active');
            };
 
 		   year2015.page = function () {
@@ -1019,9 +1025,7 @@ animation: arrowUpFx 1.5s infinite;
 
           
            window.onload = function () {
-			   $('.page').hide();
 			   year2015.resizeBody();
-			   $('.page').show();
 			   year2015.page();
 			   music();
            };
