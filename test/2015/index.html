@@ -200,7 +200,7 @@ transition: all 0.5s;
 
 .active .second-text {
 	top: 180px;
-	transition-delay: 1.2s;
+	transition-delay: 2s;
 }
 
 .second-text img {
@@ -211,7 +211,6 @@ transition: all 0.5s;
 .active .second-text img  {
 	opacity: 1;
 }
-
 
 .active .second-text p:nth-child(2) img {
 	transition-delay: 2.2s;
@@ -232,6 +231,19 @@ transition: all 0.5s;
 .active .second-title {
 	-webkit-transform: scale(1, 1);
 	transition-delay: .5s;
+}
+
+.second-title img {
+	opacity: 0;
+	transition: all 1s;
+}
+
+.active .second-title img {
+	opacity: 1;
+}
+
+.active .second-title p:nth-child(2) img {
+	transition-delay: 4s;
 }
 
 .second.active .fly-1 {
@@ -341,12 +353,15 @@ transition-delay: 2.8s;
 .active .zero-title {
 	left: 246px;
 	-webkit-transform: rotate(0deg);
-	transition-delay: 1s;
+	transition-delay: 4s;
 }
 
-.active .zero-bird,
 .active .zero-text {
-	transition-delay: 2s;
+	transition-delay: 3s;
+}
+
+.active .zero-bird {
+transition-delay: 5s;
 }
 
 /*
@@ -416,7 +431,7 @@ transition-delay: 2.8s;
 }
 
 .active .first-map {
-	transition-delay: .5s;
+	transition-delay: 4s;
 }
 
 .page {
@@ -495,7 +510,7 @@ transition-delay: 2.8s;
 
 .active .five-rule {
     top: 0;
-    transition-delay: 1s;
+    transition-delay: 2s;
 }
 
 .active .five-title {
@@ -505,12 +520,12 @@ transition-delay: 2.8s;
 
 .active .five-horse {
     -webkit-transform: translateX(0) scale(1);
-    transition-delay: 2s;
+    transition-delay: 3s;
 }
 
 .active .five-text {
     -webkit-transform: translateX(0);
-    transition-delay: 2.5s;
+    transition-delay: 4s;
 }
 
 /*
@@ -796,6 +811,46 @@ animation: arrowUpFx 1.5s infinite;
 	transition-delay: 1.8s;
 }
 
+.second-title {
+	display: table;
+}
+
+.second-title p {
+position: relative;
+	display: table-cell;
+}
+
+.second-title p:nth-child(1) {
+z-index: 1;
+}
+
+.second-title p:nth-child(2)  {
+	left: -30px;
+}
+
+.first-run p:nth-child(2) {
+position: relative;
+right: -57px;
+top: -60px;
+	text-align: right;
+}
+
+.first-run img {
+	opacity: 0;
+	transition: all 1s;
+}
+
+.active .first-run p:nth-child(1) img {
+opacity: 1;
+transition-delay: 3s;
+}
+
+
+.active .first-run p:nth-child(2) img {
+opacity: 1;
+transition-delay: 5s;
+}
+
                 
            
         </style>
@@ -821,7 +876,11 @@ animation: arrowUpFx 1.5s infinite;
 					<p><img src="images/2-txt_05.png" /></p>
 				</div>
 				<div class="second-ball"><img src="images/ball.png" /></div>
-				<div class="second-title"><img src="images/2.png" /></div>
+				<div class="second-title">
+					<p><img src="images/2.png" /></p>
+<p><img src="images/2-box.png" /></p>
+
+				</div>
 				<div class="page-mark">
 				</div>
 			</div>
@@ -857,7 +916,10 @@ animation: arrowUpFx 1.5s infinite;
 				
 				</div>
 				<div class="first-map"><img src="images/map.png" /></div>
-				<div class="first-run"><img src="images/run.png" /></div>
+				<div class="first-run">
+					<p><img src="images/run.png" /></p>
+					<p><img src="images/run-man.png" /></p>
+				</div>
 				<div class="page-mark">
 				</div>
 			</div>
