@@ -133,16 +133,35 @@ var imgPlay = function () {
 
 var nav = function () {
     $('.nav a').click(function () {
+        if ($(this).is('.on')) {
+            return false;
+        }
+        
         var index = $(this).attr('data-index');
+        
         $('.slide-box').find('dt').eq(index).click();
+        
         $(this).parents('ul').find('a').removeClass('on');
         $(this).addClass('on');
+        
         return false;
     });
+};
+
+
+var imgText = function () {
+    $('.section-right li  a')
+        .on('mouseenter', function () {
+            $(this).find('span').animate({left: 0});
+        })
+        .on('mouseleave', function () {
+            $(this).find('span').animate({left: '100%'});
+        });
 };
 
 $(function () {
     slide();
     imgPlay();
     nav();
+    imgText();
 });
