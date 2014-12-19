@@ -15,6 +15,11 @@ var changePos = function (index) {
             left: -400
         });
     }
+    else if (index === 0) {
+        root.find('.slide-box-list').animate({
+            left: 0
+        });
+    }
 };
 
 var changeNav = function (index) {
