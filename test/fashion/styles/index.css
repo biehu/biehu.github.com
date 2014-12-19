@@ -52,6 +52,7 @@ a {
     width: 1600px;
     height: 825px;
     overflow: hidden;
+    background: #353535;
 }
 
 .slide-box dt,
@@ -355,10 +356,6 @@ width: 70px;
     
 }
 
-/*.section-right li  a:hover img {
-    transform: scale(1.3);
-}*/
-
 .section-bottom {
     position: absolute;
     bottom: 0;
@@ -398,8 +395,4 @@ width: 70px;
     width: 25px;
     height: 23px;
     background: url(../images/mark.png) no-repeat;
-}
-
-.section-wrap {
-    width: 798px;
 }

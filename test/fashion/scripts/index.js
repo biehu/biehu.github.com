@@ -3,14 +3,25 @@
  */
 var root = $('.slide-box');
 
-var changePos = function (dt) {
-    var index = parseInt(dt.attr('x_index'));
+var changePos = function (index) {
     
     if (index > 0 && index < 4) {
         root.find('.slide-box-list').animate({
             left: -(index - 1) * 200
         });
     }
+    else if (index === 4) {
+        root.find('.slide-box-list').animate({
+            left: -400
+        });
+    }
+};
+
+var changeNav = function (index) {
+    var items = $('.nav').find('a');
+    
+    items.removeClass('on');
+    items.eq(index).addClass('on');
 };
 
 var slide = function () {
@@ -24,13 +35,9 @@ var slide = function () {
         })
     });
     
-    $(".slide-box dt").click(function(event) {
-        var _this = $(this);
-        if(_this.attr("rel") == "disable") {
-            return false;
-        }
-        
-        $(".slide-box>dl").attr("rel",_this.attr("x_index"));
+    $(".slide-box dt").click(function() {
+        var _this = $(this),
+            index = parseInt(_this.attr('x_index'));
     
         _this.siblings('dd:visible').animate({width: 0},function(){
                 $(this).hide();
@@ -42,7 +49,8 @@ var slide = function () {
             _this.siblings('dt:hidden').width(198).show();
         });
         
-        changePos(_this);
+        changePos(index);
+        changeNav(index);
     });
 
 };
@@ -126,8 +134,12 @@ var scrollRight = function (e) {
 };
 
 var imgPlay = function () {
-    $('.focus-prev').on('click', scrollLeft)
-    $('.focus-next').on('click', scrollRight)
+    $('.focus-prev').on('click', scrollLeft);
+    $('.focus-next').on('click', scrollRight);
+    
+    setInterval(function () {
+        $('.focus-next').click();
+    }, 2000);
 };
 
 
@@ -136,14 +148,8 @@ var nav = function () {
         if ($(this).is('.on')) {
             return false;
         }
-        
         var index = $(this).attr('data-index');
-        
         $('.slide-box').find('dt').eq(index).click();
-        
-        $(this).parents('ul').find('a').removeClass('on');
-        $(this).addClass('on');
-        
         return false;
     });
 };
