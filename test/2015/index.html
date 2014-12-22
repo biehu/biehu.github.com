@@ -1088,11 +1088,45 @@ transition-delay: 5s;
 			});
 		};
 
+
+		 var weixinAppShare = function (weixinShareData) {
+       
+        document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+            // 分享到朋友圈;
+            WeixinJSBridge.on('menu:share:timeline', function(argv) {
+                WeixinJSBridge.invoke('shareTimeline', {
+                    "img_url": weixinShareData.imgUrl,
+                    "img_width": "92",
+                    "img_height": "92",
+                    "link": weixinShareData.url,
+                    "desc": weixinShareData.content,
+                    "title": weixinShareData.title
+                }, function(){});
+            });
+            WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+                WeixinJSBridge.invoke('sendAppMessage', {
+                    "img_url": weixinShareData.imgUrl,
+                    "link": weixinShareData.url,
+                    "desc": weixinShareData.content,
+                    "title": weixinShareData.title
+                }, function(){});
+            });
+        }, false);
+    };
+
           
            window.onload = function () {
 			   year2015.resizeBody();
 			   year2015.page();
 			   music();
+
+			   weixinAppShare({
+			   imgUrl: 'biehu.me/test/2015/images/share.jpg',
+			   url: location.href,
+			   content: '新的一年里，致同与您共同成长',
+			   title: '致同祝您圣诞快乐 新年幸福！'
+				
+			   });
            };
         </script>
 	</body>
