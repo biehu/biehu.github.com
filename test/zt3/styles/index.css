@@ -85,9 +85,9 @@ ul {
     position: relative;
 }
 
-.scroll_content {
+/*.scroll_content {
     background:#fff;
-}
+}*/
 
 
 .scroll_control a {
@@ -451,7 +451,7 @@ ul {
 }
 
 .tab_content p {
-    padding:10px 0 0 20px;
+    padding:10px 0 0 0;
 }
 
 .tab_content p img,
@@ -465,4 +465,98 @@ ul {
     font-size: 13px;
     line-height: 23px;
     font-family: Arial;
+}
+
+.next {
+    position: absolute;
+    bottom: -5px;
+    right: 0;
+    width: 120px;
+    height: 120px;
+    background: url(../images/page-next-btn.png) no-repeat;
+}
+
+.tab_content_1 p {
+    position: relative;
+}
+
+.mask_cloth{display:none;position:absolute;top:0;left:0;background:#fff;opacity:0.5;filter:alpha(opacity=50)}
+
+#ad {
+    display: none;
+    position: absolute;
+}
+
+.close-ad {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 46px;
+    height: 46px;
+    background: url(../images/close.jpg) no-repeat;
+}
+
+.left {
+    
+    position: absolute;
+top: 0;
+height: 827px;
+    left: 0;
+    width: 710px;
+}
+
+.right {
+    right: 0;
+    left: auto;
+}
+
+.say {
+    overflow:hidden;
+    height: 320px;
+    color: #fff;
+    font-size: 13px;
+    line-height: 25px;
+    font-family: "微软雅黑";
+}
+
+.new-page  h2 {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.mark-white-start {
+    display: inline-block;
+    background: url(../images/mark-white-start.png) no-repeat;
+}
+
+.mark-white-end {
+    display: inline-block;
+    background: url(../images/mark-white-end.png) no-repeat;
+}
+
+.new-page .say p {
+    overflow: hidden;
+     margin-top: 20px;
+}
+
+.new-page .say p span {
+    display: block;
+    padding-right: 20px;
+}
+
+
+
+.new-page .say img {
+    float: left;
+    margin-right: 20px;
+}
+
+.say div p {
+    float: left;
+    width: 50%;
+    height: 176px;
+}
+
+.say div p img {
+    margin-bottom: 55px;
 }

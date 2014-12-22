@@ -45,17 +45,8 @@ var scrollRight1 = function () {
 };
 
 var page = function () {
-    $('.scroll_left_btn').on('click', function () {
-	$(".scroll_content").turn('previous');
-	return false;
-	});
-    $('.scroll_right_btn').on('click', function () {
-
-	
-			$(".scroll_content").turn('next');
-		
-	return false;
-	});
+    $('.scroll_left_btn').on('click', scrollLeft);
+    $('.scroll_right_btn').on('click', scrollRight);
 };
 
 var playVideo = function () {
@@ -121,6 +112,7 @@ var mask=(function(){
         //弹出框位置
         obj.style.left = (windowWidth - openw) / 2 + "px";
         obj.style.top=bodyScrollTop+(windowHeight - openh) / 2 +"px";
+        obj.style.zIndex = "1001";
     }
 
     //视窗尺寸
@@ -155,13 +147,14 @@ var mask=(function(){
 })()
 
 var playVideo = function () {
+    
     var widths=$(window).width();
     $(".zhezhao1").css({width:widths,left:-widths,display:"none"});
-    $(document.body).on('click', ".begin", function(){
+    $(".begin").click(function(){
         $(".zhezhao1").stop().animate({left:"0px",zIndex:"999"},500).css({display:"block"});
         return false;
     });
-    $(document.body).on('click', ".closes", function(){
+    $(".closes").click(function(){
 
 
         $(".zhezhao1").css({zIndex:"9"}).stop().animate({left:-widths},500,function(){
@@ -179,52 +172,5 @@ $(function () {
     page();
     gotoMain();
 
-
-	$(".scroll_content").turn({
-		page: 2,
-		width: 1500,
-		height: 827,
-		autoCenter: true
-	});
-
-		
-
-
-		if ($(".scroll_content").width() > $('.page_content').width()) {
-			$(".scroll_content").css('left', -$(".scroll_content").width() + $('.page_content').width());
-		}
-
-		$(".scroll_content").bind('turning', function(e, page) { 
-
-			console.log(page);
-if (page === 10) {
-  mask.open('ad');
-}
-
-if (page === 16) {
-	$('.scroll_right_btn').hide();
-}
-
-else {
-	$('.scroll_right_btn').show();
-}
-
-if (page === 3) {
-$('.scroll_left_btn').hide();
-}
-else {
-$('.scroll_left_btn').show();
-}
-
- });
-
-
- $('.video').parents('.page-wrapper').css('overflow', 'auto');
-
     
-});
-
-	$(".scroll_content").bind('start', function(e, turn) { 
-
-
 });

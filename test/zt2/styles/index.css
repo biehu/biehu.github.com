@@ -25,6 +25,7 @@ ul {
 
 .page_container {
     height:1330px;
+	overflow:hidden;
     background: url(../images/body_bg.jpg) no-repeat;
     font-family:"微软雅黑";
 }
@@ -32,7 +33,6 @@ ul {
 .page_content {
     min-width:1200px;
     max-width:1500px;
-    overflow:hidden;
     margin:0 auto;
 }
 
@@ -110,8 +110,7 @@ ul {
 
 .scroll_item {
     position:relative;
-    width:100%;
-    height:827px;
+    width:750px;
 }
 
 .editers {
@@ -309,19 +308,16 @@ ul {
     text-align:center;
 }
 
-.large_pic {
-    position:absolute;
-    top:0;
-    left:0;
-}
+
 
 .large_pic_info {
-    position:absolute;
-    top:0;
-    right:0;
     width:750px;
     height:827px;
     background:#fff;
+}
+
+.large_pic img {
+	width: 100%;
 }
 
 .editer_say {
@@ -480,11 +476,12 @@ ul {
     position: relative;
 }
 
-.mask_cloth{display:none;position:absolute;top:0;left:0;background:#fff;opacity:0.5;filter:alpha(opacity=50)}
+.mask_cloth{display:none;z-index:11000;position:absolute;top:0;left:0;background:#fff;opacity:0.5;filter:alpha(opacity=50)}
 
 #ad {
     display: none;
     position: absolute;
+z-index:33333333333333333;
 }
 
 .close-ad {
@@ -498,11 +495,11 @@ ul {
 
 .left {
     
-    position: absolute;
 top: 0;
 height: 827px;
     left: 0;
-    width: 710px;
+    width: 750px;
+	background: rgba(0, 0, 0, .6);
 }
 
 .right {
@@ -520,7 +517,7 @@ height: 827px;
 }
 
 .new-page  h2 {
-    margin-top: 20px;
+    padding-top: 20px;
     text-align: center;
 }
 
