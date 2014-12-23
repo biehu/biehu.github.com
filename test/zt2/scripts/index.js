@@ -196,7 +196,6 @@ $(function () {
 
 		$(".scroll_content").bind('turning', function(e, page) { 
 
-			console.log(page);
 if (page === 10) {
   mask.open('ad');
 }
