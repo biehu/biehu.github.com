@@ -183,7 +183,7 @@ $(function () {
 	$(".scroll_content").turn({
 		page: 2,
 		width: 1500,
-		height: 827,
+		height: 850,
 		autoCenter: true
 	});
 
