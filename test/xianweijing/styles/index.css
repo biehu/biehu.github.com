@@ -1,0 +1,255 @@
+* {
+    margin:0;
+    padding:0;
+}
+
+ul {
+    list-style:none;
+}
+
+img {
+    vertical-align:bottom;
+}
+
+a img {
+    border:none;
+}
+
+a {
+    text-decoration:none;
+}
+
+.clear {
+    clear:both;
+}
+
+body {
+	overflow: hidden;
+}
+
+.cover {
+    height: 836px;
+    background: url(../images/cover-bg.jpg) no-repeat center top;
+}
+
+
+.page {
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.odd-section {
+    background-color: #d9f6ff;
+}
+
+.cover .inner {
+    position: relative;
+    width: 1000px;
+    height: 836px;
+    margin: 0 auto;
+}
+
+.cover .text {
+    position: absolute;
+}
+
+.cover .text-1 {
+    top: 300px;
+    left: 241px;
+    width: 189px;
+    height: 150px;
+}
+
+.cover .text-2 {
+    top: 391px;
+    left: 731px;
+    width: 173px;
+    height: 154px;
+}
+
+.cover .text-3 {
+    top: 451px;
+    left: 151px;
+    width: 183px;
+    height: 136px;
+}
+
+.cover .text-4 {
+    top: 451px;
+    left: 961px;
+    width: 185px;
+    height: 159px;
+}
+
+.nav {
+    position: fixed;
+    top: 376px;
+    right: 10px;
+    z-index: 10;
+}
+
+.nav li {
+    margin-bottom: 10px;
+}
+
+.nav a {
+    display: block;
+    width: 19px;
+    height: 19px;
+    background: url(../images/focus-point.png) no-repeat;
+}
+
+.nav a.on,
+.nav a:hover {
+    background: url(../images/focus-point-hover.png) no-repeat;
+}
+
+.page-1 .section {
+    text-align: center;
+}
+
+.page-1 .section-table {
+    text-align: center;
+}
+
+.page-bottom {
+    height: 13px;
+    background: url(../images/section-bottom.png) repeat-x;
+}
+
+.page-2 {
+    text-align: center;
+}
+
+.odd-section .page-bottom {
+    background: url(../images/section-bottom-white.png) repeat-x left bottom;
+}
+
+.page-2 .page-bottom {
+    margin-top: 30px;
+}
+
+.page-3 {
+    position: relative;
+    padding-top: 30px;
+    text-align: center;
+}
+
+.page-3 .section-table {
+    position: relative;
+    height: 480px;
+    padding: 51px 0 0 22px;
+    background: url(../images/page3-bg.jpg) no-repeat center top;
+}
+
+.page-3 .page-bottom {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.page-4 {
+    text-align: center;
+}
+.page-5 .inner {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.page5-left {
+	width: 664px;
+	overflow: hidden;
+}
+
+.page5-left,
+.page5-right {
+    float: left;}
+
+.page5-left .history a {
+    margin-left: 14px;
+}
+
+.page5-left .history a img {
+    padding: 5px;
+    border: 1px dotted #ff0000;
+}
+
+.page {
+    display: none;
+}
+
+.page.on {
+    display: block;
+}
+
+.cover .text img ,
+.page-1 .section-table img,
+.page-2 .section-table img,
+.page-3 .section-table img,
+.page-4 .section-table img
+{
+    position: relative;
+    top: -3000px;
+}
+
+.vote {
+	color: #000;
+}
+
+.vote i {
+	display: inline-block;
+	width: 23px;
+	height: 23px;
+	margin: 0 5px 0 -145px;
+	border: 1px solid #8f8f8c;
+	vertical-align: middle;
+}
+
+.vote.on i {
+	background: url(../images/true.jpg) no-repeat center center;
+}
+
+#vote2 {
+	position: relative;
+	top: 2px;
+}
+
+
+.cover select {
+	position: absolute;
+	top: 136px;
+	left: 162px;
+}
+
+.fx_wrap {
+    position: absolute;
+left: 50%;
+top: 283px;
+z-index: 999;
+width: 1000px;
+margin-left: -350px;
+}
+.fx{position: absolute;right:0;width:58px;height: 58px; cursor: pointer;background: url(../images/fx.jpg);}
+.fx .slayer {
+    background: url(../images/shareLayer.jpg) no-repeat #fff;
+    width: 198px;
+    height: 254px;
+    overflow: hidden;
+    position: absolute;
+    right:0px;
+    top:0px;
+    z-index: 10;
+    border: 1px solid #eee;
+    display: none;
+}
+.fx .slayer .weixinshare {
+    background: url(../images/shareweixin.png) no-repeat;
+    position: absolute;
+    width: 168px;
+    height: 214px;
+    padding: 40px 0 0 30px;
+}
+.fx .slayer a{display: block;height: 50%;}
+.fx:hover .slayer{
+    display: block;
+}

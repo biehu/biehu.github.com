@@ -307,6 +307,7 @@ a {
 .section3 {
     overflow: hidden;
     padding-top: 30px;
+	height: 852px;
     background: url(../images/section3.jpg) no-repeat center top;
 }
 
@@ -474,4 +475,8 @@ a {
 
 .after {
     clear: both;
+}
+
+.section3 .question2 .title {
+	color: #fff;
 }
