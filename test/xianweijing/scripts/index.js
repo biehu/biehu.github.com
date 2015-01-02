@@ -3,36 +3,106 @@
  */
 function cpu(t,b,c,d) {return c*((t=t/d-1)*t*t+1)+b;}
 var changeIndex = true;
-var nowPage = 1;
+var nowPageNum = 0;
+var isScroll = true;
 
-var change = function (elem, start, length, callback) {
-    if (!changeIndex) {
-        return;
-    }
-    changeIndex = false;
+var change = function (elem, start, length) {
+    isScroll = false;
     
     var duration = 20;
     var count = 0;
     var scrollInterval;
     
     scrollInterval = setInterval(function(){
-        elem.height(cpu(count, start, length, duration));
+        elem.scrollTop = cpu(count, start, length, duration);
         count++;
         if(count == duration){
             clearInterval(scrollInterval);
-            callback();
-            changeIndex = true;
+            isScroll = true;
         }
     },10);
 
 };
 
-var page = function (e) {
-	if (!e.isTrigger) {
-		return;
-	}
-	
+var isClearPage = function (page) {
+    var pageTop = page.offset().top;
+    var pageHeight = page.height();
+    var screenHeight = window.innerHeight;
+    var documentTop = document.body.scrollTop;
+    
+    if (pageTop > (screenHeight + documentTop) || 
+        (pageHeight + pageTop) < documentTop) {
+            return true;
+    }
+    return false;
+};
 
+var changePage1 = function (type) {
+    var i, delay, top;
+    
+    if (type === 0) {
+        top = -3000;
+        delay = 100;
+    }
+    else {
+        top = 0;
+        delay = 500;
+    }
+    
+    for (i = 1; i < 5; i += 1) {
+        $('.text[data-index="' + i + '"]').find('img').
+			delay(delay * i).animate({'top': top});
+    }
+    
+};
+
+var changePageOther = function (type) {
+    var i, deday, root, selector = '';
+    
+    if (type === 0) {
+        opacity = 0;
+        for (i = 1; i < 6; i += 1) {
+            if (i !== nowPageNum && i !== (nowPageNum - 1) && i !== (nowPageNum + 1)) {
+                selector += '.page-' + i + ',';
+            }
+        }
+        root = $(selector.substr(0, selector.length - 1));
+        deday = 10;
+    }
+    else {
+        opacity = 1;
+        root = $('.page-' + nowPageNum);
+        deday = 500;
+    }
+    
+    for (i = 1; i < 8; i += 1) {
+        root.find('[data-index="' + i + '"]').css({opacity: 0}).
+			delay(deday * i).animate({'opacity': opacity});
+    }
+    
+};
+
+var clearPageStyle = function () {
+    if (nowPageNum >= 1) {
+        changePage1(0);
+    }
+    changePageOther(0); 
+};
+
+
+var changePageStyle = function () {
+    clearPageStyle();
+    
+    if (nowPageNum === 0) {
+        changePage1(1);
+    }
+    else {
+       changePageOther(1); 
+    }
+};
+
+var page = function (e) {
+    
     var pageNum = $(this).attr('data-page');
     var onPage = $('.page.on');
     var onPageNum = $('.nav .on').attr('data-page');
@@ -44,24 +114,19 @@ var page = function (e) {
         return;
     }
     
-    nowPage = pageNum;
+    $(this).parents('.nav').find('a').removeClass('on');
+    $(this).addClass('on');
     
-    $(this).parents('.nav').find('a').removeClass('on').end().end().addClass('on');
-    toPage.addClass('on');
-    if (pageNum > onPageNum) {
-        setTimeout(function () {
-            change(onPage, onPageTop, -onPageTop, function () {
-                onPage.removeClass('on');
-            });
-        }, 0);
+    if (document.all) {
+       change(document.documentElement, document.documentElement.scrollTop, toPage[0].offsetTop - document.documentElement.scrollTop); 
     }
     else {
-        setTimeout(function () {
-            change(toPage, 0, toPage.data('data-height'), function () {
-                onPage.removeClass('on');
-            });
-        }, 0);
+        change(document.body, document.body.scrollTop, toPage[0].offsetTop - document.body.scrollTop);
     }
+    
+    
+    nowPageNum = Number(pageNum);
+    changePageStyle();
     
     return false;
 };
@@ -83,96 +148,53 @@ var bindPage = function () {
 /*
  * 页面效果
  */
-var next = 1;
+var pages = [], 
+    tops = [],
+    pagetarget;
 
-var changePage = function (num) {
-	if (next < 5) {
-        $('.text[data-index="' + next + '"]').find('img').animate({'top': num});
+var styleNav = function (num) {
+    $('.nav').find('a').removeClass('on').eq(num).addClass('on');
+};
+  
+var stylePage = function (num) {
+    nowPageNum = num;
+    changePageStyle();
+    styleNav(num);
+};
+
+var scroll = function () {
+    if (!isScroll) {
+        return;
     }
-
-	if (next === 5) {
-		$('[data-page="' + (num === 0 ? 1 : 0) + '"]').click();
-	}
-
-	if (next > 5 && next < 12) {
-		$('.page-1 [data-index="' + (next - 5) + '"]').animate({'top': num});
-	}
-
-	if (next === 12) {
-		$('[data-page="' + (num === 0 ? 2 : 1) + '"]').click();
-	}
-
-	if (next > 12 && next < 17) {
-		$('.page-2 [data-index="' + (next - 12) + '"]').animate({'top': num});
-	}
-
-	if (next === 17) {
-		$('[data-page="' + (num === 0 ? 3 : 2) + '"]').click();
-	}
-
-	if (next > 17 && next < 21) {
-		$('.page-3 [data-index="' + (next - 17) + '"]').animate({'top': num});
-	}
-
-	if (next === 21) {
-		$('[data-page="' + (num === 0 ? 4 : 3) + '"]').click();
-	}
-
-	if (next > 21 && next < 27) {
-		$('.page-4 [data-index="' + (next - 21) + '"]').animate({'top': num});
-	}
-
-	if (next === 27) {
-		$('[data-page="' + (num === 0 ? 5 : 4) + '"]').click();
-	}
-
-};
-var stylePageNext = function () {
-	
-	if (next > 27) {
-		return;
-	}
-	changePage(0);
-    next += 1;
-};
-
-var stylePagePrev = function () {
-	next -= 1;
-    changePage(-3000);
-};
-
-var isScrll = 1;
-var scrollFunc = function (e) {
     
-	if (isScrll === 0) {
-		return;
-	}
-
-    var type;
-    e=e || window.event;
-    if(e.wheelDelta){//IE/Opera/Chrome 
-       type = e.wheelDelta; 
-    }else if(e.detail){//Firefox 
-       type = e.detail; 
-    } 
-    if (type < 0) {// 往下
-        stylePageNext();
+    var top = document.body.scrollTop || document.documentElement.scrollTop;
+    var i, l;
+    
+    console.log(top);
+    
+    for (i = 0, l = tops.length; i < l; i += 1) {
+        if (top > tops[i] && top < tops[i + 1] && tops[i] !== pagetarget) {
+            stylePage(i);
+            pagetarget = tops[i];
+            break;
+        }
     }
-    else {// 往上
-        stylePagePrev();
-    }
+    
+};
 
-	isScrll = 0;
-	setTimeout(function () {
-		isScrll = 1;
-	}, 100);
+var setPagePos = function () {
+    var i, page;
+    
+    for(i = 0; i < 6; i +=1 ) {
+        page = $('.page-' + i);
+        pages.push(page);
+        tops.push(Number(page.offset().top));
+    }
 };
 
 var bindScroll = function () {
-    if(document.addEventListener){ 
-        document.addEventListener('DOMMouseScroll',scrollFunc,false); 
-    }//W3C 
-    window.onmousewheel=document.onmousewheel=scrollFunc;//IE/Opera/Chrome 
+    setPagePos();
+    $(window).on('scroll', scroll);
 };
 
 
@@ -191,7 +213,7 @@ var sendData = function () {
 		e.preventDefault();
 
 		var _this = $(this);
-		var v = _this.attr('data-index');
+		var v = _this.attr('data-value');
 		var n = parseInt(_this.find('span').html());
 		var url = "http://mini.mcchina.com/beautylab001/?callback=?";
 		
@@ -244,6 +266,8 @@ var showWeixin = function () {
 
 
 $(function () {
+    changePage1(1);
+    
     bindPage();
     bindScroll();
 	sendData();
