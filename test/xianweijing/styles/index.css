@@ -188,6 +188,7 @@ a {
     
 }
 
+.page-1 .section-table .show,
 .page-4 .section-table .show {
     opacity: 1;
     filter:alpha(opacity=100);
@@ -254,8 +255,4 @@ margin-left: -350px;
 .fx .slayer a{display: block;height: 50%;}
 .fx:hover .slayer{
     display: block;
-}
-
-.page-3 .section-table-row {
-    padding-top: 7px;
 }
