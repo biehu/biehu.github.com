@@ -444,7 +444,7 @@
                     <p class="text-2"><img src="images/star-text.png" /></p>
                     <p class="text-3"><img src="images/man.png" /></p>
                 </div>
-                <div class="pic-head"><img src="images/head.png" /></div>
+                <!--<div class="pic-head"><img src="images/head.png" /></div>-->
                 <div class="pic"><img src="images/1.jpg" /></div>
                 <div class="footer-bg"><img src="images/footer-bg.png" /></div>
                 <div class="footer">
@@ -453,27 +453,30 @@
             </div>
             <div class="page_bg page_bg_2 off">
                 <div class="mark"><img src="images/mark.png" /></div>
-                <div class="pic"><img src="images/1.jpg" /></div>
+                <div class="pic"><img src="images/2.jpg" /></div>
                 <div class="footer-bg"><img src="images/footer-bg.png" /></div>
                 <div class="page-btn"><a class="next" href="#"><img src="images/page-btn.png" /></a></div>
             </div>
             <div class="page down star page_2">
                 <div class="desc">
-                    连帽外套、运动短裤：<br />
-均为Alexander Wang x H&M
+                    牛仔外套：<br />
+Philipp Plein
 
                 </div>
             </div>
+
+			
             <div class="page_bg page_bg_3 off">
                 <div class="mark"><img src="images/mark.png" /></div>
-                <div class="pic"><img src="images/2.jpg" /></div>
+                <div class="pic"><img src="images/3.jpg" /></div>
                 <div class="footer-bg"><img src="images/footer-bg.png" /></div>
                 <div class="page-btn"><a class="next" href="#"><img src="images/page-btn.png" /></a></div>
             </div>
             <div class="page down star page_3">
                 <div class="desc">
-                    牛仔外套：<br />
-Philipp Plein
+                    连帽外套：<br />
+均为Alexander Wang x H&M
+
 
                 </div>
             </div>
@@ -490,51 +493,37 @@ Philipp Plein
             </div>
             <div class="page_bg page_bg_5 off">
                 <div class="mark"><img src="images/mark.png" /></div>
-                <div class="pic"><img src="images/3.jpg" /></div>
-                <div class="footer-bg"><img src="images/footer-bg.png" /></div>
-                <div class="page-btn"><a class="next" href="#"><img src="images/page-btn.png" /></a></div>
-            </div>
-            <div class="page down star page_5">
-                <div class="desc">
-                    连帽外套：<br />
-均为Alexander Wang x H&M
-
-
-                </div>
-            </div>
-            <div class="page_bg page_bg_6 off">
-                <div class="mark"><img src="images/mark.png" /></div>
                 <div class="pic"><img src="images/4.jpg" /></div>
                 <div class="footer-bg"><img src="images/footer-bg.png" /></div>
                 <div class="page-btn"><a class="next" href="#"><img src="images/page-btn.png" /></a></div>
             </div>
-            <div class="page down star page_6">
+            <div class="page down star page_5">
                 <div class="desc">
                     上衣：<br />
 Sean Suen
 
                 </div>
             </div>
-            <div class="page_bg page_bg_7 off">
+            <div class="page_bg page_bg_6 off">
                 <div class="mark"><img src="images/mark.png" /></div>
                 <div class="pic"><img src="images/5.jpg" /></div>
                 <div class="footer-bg"><img src="images/footer-bg.png" /></div>
                 <div class="page-btn"><a class="next" href="#"><img src="images/page-btn.png" /></a></div>
             </div>
-            <div class="page down star page_7">
+            <div class="page down star page_6">
                 <div class="desc">
                 印花西装外套：<br />
 Issey Miyake
 
                 </div>
             </div>
-            <div class="page_bg page_bg_8 off">
+            <div class="page_bg page_bg_7 off">
                 <div class="mark"><img src="images/mark.png" /></div>
                 <div class="pic"><img src="images/6.jpg" /></div>
                 <div class="footer-bg"><img src="images/footer-bg.png" /></div>
                 <div class="page-btn"><a class="next" href="#"><img src="images/page-btn.png" /></a></div>
             </div>
-            <div class="page down star page_8">
+            <div class="page down star page_7">
                 <div class="desc">
                     印花西服套装：<br />
 Issey Miyake
@@ -543,13 +532,13 @@ Issey Miyake
             <div class="page-header">
                 <img src="images/gift_01.png" />
             </div>
-            <div class="page down gift page_9">
+            <div class="page down gift page_8">
                 <p class="pic-1"><img src="images/gift_02.png" /></p>
                 <p class="pic-2"><img src="images/gift_03.png" /></p>
                 <p class="pic-3"><img src="images/gift_04.png" /></p>
                 <div class="page-btn"><a class="next" href="#"><img src="images/page-btn.png" /></a></div>
             </div>
-            <div class="page down about page_10">
+            <div class="page down about page_9">
                 <p class="pic-1"><img src="images/about_02.png" /></p>
                 <p class="pic-2"><a id="weixin-btn" href="#"><img src="images/about_03.png" /></a></p>
             </div>
@@ -557,6 +546,8 @@ Issey Miyake
 	    </div>
         <script src="js/jquery-1.9.1.min.js"></script>
         <script>
+			var PAGENUM = $('.page').length;
+
             var resizeBody = function (sildeHeight) {
                zoom = $(window).height() / sildeHeight;
                if (zoom > 1) {
@@ -605,7 +596,7 @@ Issey Miyake
             */
            var yStart, yEnd;
            var index = 0;
-           var allNum = 10;
+           var allNum = PAGENUM;
            var isAnimate = false;
            var isModal = false;
            
@@ -630,7 +621,7 @@ Issey Miyake
                     $(".page_"+(page+1)).removeClass('down');
                 }
                 
-                if (page > 7) {
+                if (page > (PAGENUM - 3)) {
                     $('.page-header').fadeIn();
                     resizeBody(1136);
                 }
@@ -639,11 +630,11 @@ Issey Miyake
                     resizeBody(1000);
                 }
                 
-                if (page >= 0 && page <= 8) {
+                if (page >= 0 && page <= (PAGENUM - 2)) {
                     styleDetail(dir, page);
                 }
                 
-                if (page === 8) {
+                if (page === (PAGENUM - 2)) {
                     styleGift();
                 }
                
