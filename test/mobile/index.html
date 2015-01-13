@@ -790,6 +790,13 @@ JKJY by STELLA
                 });
             }, false);
         };
+
+		weixinAppShare({
+               url: location.href,
+               imgUrl: 'http://biehu.me/test/mobile/images/1.jpg',
+               content: encodeURIComponent('我们冒着被华妃娘娘赏一杖红的风险大胆提问，这么帅的“二叔”，你见过吗？'),
+               title: '这么帅的"二叔"你见过吗？'
+           });
     
        $(function () {
            resizeBody(1000);
@@ -797,12 +804,6 @@ JKJY by STELLA
            load();
            music();
            weixinAlert();
-           weixinAppShare({
-               url: location.href,
-               imgUrl: 'http://biehu.me/test/mobile/images/1.jpg',
-               content: encodeURIComponent('我们冒着被华妃娘娘赏一杖红的风险大胆提问，这么帅的“二叔”，你见过吗？'),
-               title: '这么帅的"二叔"你见过吗？'
-           });
        });
            
         </script>
