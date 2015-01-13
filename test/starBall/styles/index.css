@@ -1,0 +1,389 @@
+* {
+    margin:0;
+    padding:0;
+}
+
+ul {
+    list-style:none;
+}
+
+img {
+    vertical-align:bottom;
+}
+
+a img {
+    border:none;
+}
+
+a {
+    text-decoration:none;
+}
+
+.clear {
+    clear:both;
+}
+body{
+    background-color:#000;
+}
+.container{
+    font-family:"微软雅黑";
+    color:#fff;
+    font-size:13px;
+}
+.banner{
+    background:url(../images/banner.jpg) no-repeat center top;
+    height:500px;
+}
+.mis_gift{
+    height:582px;
+    width:1000px;
+    margin:0 auto;
+    background:url(../images/two.jpg) no-repeat;
+    position:relative; 
+}
+.gift_text{
+    position:absolute;
+    top:83px;
+    left:65px;
+    line-height:22px;
+}
+.gift_text p{
+    margin-left:30px;
+}
+.gift_text .up,.gift_text .down{
+    width:19px;
+    height:17px;
+    display:inline-block;
+    
+}
+.gift_text .up{
+    background:url(../images/up.png) no-repeat;
+    position:absolute;
+    top:0;
+    left:0;
+}
+.gift_text .down{
+    background:url(../images/down.png) no-repeat;
+    position: relative;
+    top: 7px;
+}
+.gift_ad{
+    font-size:15px;
+    position:absolute;
+}
+.gift_one{
+    top:324px;
+    left:111px;
+}
+.gift_two{
+    top:382px;
+    left:336px;
+}
+.gift_three{
+    top:324px;
+    left:575px;
+}
+.gift_four{
+    top:380px;
+    left:802px;
+}
+.gift_time1{
+    top:352px;
+    left:86px;
+}
+.gift_time{
+    position:absolute;
+    font-family:Times New Roman;
+    font-size:30px;
+    font-style:italic;
+}
+.gift_time2{
+    top:195px;
+    left:318px;
+}
+.gift_time3{
+    top:352px;
+    left:554px;
+}
+.gift_time4{
+    top:195px;
+    left:783px;
+}
+.this_light{
+    height:208px;
+    width:1155px;
+    margin:0 auto;
+    background:url(../images/ld.jpg) no-repeat;
+    position:relative; 
+}
+.this_light li{
+    position:absolute;
+    top:50px;
+    width:162px;
+    line-height:22px;
+}
+.this_light li h3{
+    font-size:20px;
+    line-height:29px;
+    font-weight:normal;
+    padding-left:5px;
+    margin-bottom:4px;
+}
+.this_light_one{
+    left:192px;
+}
+.this_light_two{
+    left:521px;
+}
+.this_light_three{
+    left:870px;
+}
+.after_news{
+    width:909px;
+    margin:0 auto;
+}
+.after_news h2{
+    height:116px;
+    background:url(../images/hx.png) 400px 45px no-repeat;
+}
+.after_news ul{
+    overflow:hidden;
+}
+.after_news li{
+    height:322px;
+    width:302px;
+    float:left;
+    margin:1px 1px 0 0;
+    display:inline;
+    position:relative;
+}
+.after_news_text{
+    background:#D94342;
+    width:262px;
+    height:50px;
+    font-size:15px;
+    padding-left:40px;
+    line-height:50px;
+    position:absolute;
+    top:272px;
+    left:0;
+}
+.god_create{
+    width:1196px;
+    height:1624px;
+    background:url(../images/jiedu.jpg) 0 362px no-repeat;
+    margin:0 auto;
+    position:relative;
+    line-height:22px;
+}
+.god_yy{
+    padding-left:100px;
+    overflow:hidden;
+}
+.god_yy li{
+    width:198px;
+    float:left;
+    display:inline;
+    margin-right:10px;
+}
+.god_create h2{
+    height:130px;
+    background:url(../images/god.png) 520px 45px no-repeat;
+}
+.god_create h3{
+     font-size:20px;
+    line-height:29px;
+    font-weight:normal;
+    border-bottom:1px solid #fff;
+    margin:13px 0 5px 10px;
+}
+.god_yy .up,.my_text .up{
+    width:19px;
+    height:17px;
+    display:inline-block;
+    background:url(../images/up.png) no-repeat;
+    margin-right:10px;
+}
+.god_yy p{line-height:22px; margin-left:10px;}
+.jiedu_country{
+    margin:65px 0 0 70px;
+    background:url(../images/history.png) no-repeat;
+    width:1054px;
+    height:623px;
+    position:relative;
+}
+.jiedu_fg{
+    position:absolute;
+    left:40px;
+    top:385px;
+    width:294px;
+    color:#000;
+}
+.jiedu_yg{
+    position:absolute;
+    left:385px;
+    top:100px;
+    width:294px;
+    color:#000;
+}
+.jiedu_zg{
+    position:absolute;
+    left:713px;
+    top:385px;
+    width:294px;
+    color:#000;
+}
+.jiedu_country h3{
+   color:#fff;
+   border:none;
+   height:40px; 
+   font-size:20px;
+   padding-left:10px;
+}
+.my_text{
+    width:308px;
+    position:absolute;
+}
+.my_text1{
+    width:308px;
+    position:absolute;
+    top:1270px;
+    left:53px;
+}
+.my_text2{
+    width:308px;
+    position:absolute;
+    top:1327px;
+    left:394px;
+}
+.my_text3{
+    width:308px;
+    position:absolute;
+    top:1270px;
+    left:750px;
+}
+.god_create .my_text h3{
+    font-size:39px;
+    line-height:56px;
+    border-bottom:1px solid #fff;
+    margin:13px 0 5px 10px;
+    font-style:italic;
+    font-family:"宋体";
+}
+.my_text .down{
+    background:url(../images/down.png) no-repeat;
+    position: relative;
+    top: 7px;
+    left:3px;
+    width:19px;
+    height:17px;
+    display:inline-block;
+}
+.my_text a
+{
+    color:#C30609;
+}
+
+/*
+ * 他们有话说
+ */
+.say {
+    clear: both;
+    height: 835px;
+    background: url(../images/say_bg.jpg) no-repeat;
+}
+
+.say_content {
+    width: 910px;
+    padding-top: 60px;
+    margin: 0 auto;
+    color: #000;
+}
+
+.say_content li {
+    float: left;
+    margin-right: 1px;
+    padding-top: 45px;
+}
+
+.say_item_content {
+    position: relative;
+    width: 300px;
+    height: 280px;
+}
+
+.say_item_bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    opacity: .8;
+}
+
+.say_item_main {
+    position: relative;
+    padding: 20px;
+}
+
+.sayer {
+    height: 90px;
+    line-height: 20px;
+    border-bottom: 9px solid #000;
+}
+
+.sayer em {
+    display: inline-block;
+    padding-top: 10px;
+    font-style: normal;
+    font-size: 20px;
+}
+
+.sayer img {
+    float: left;
+    margin-right: 15px;
+}
+
+.say_text {
+    position: relative;
+}
+
+.say_text i {
+    position: absolute;
+    width: 19px;
+    height: 17px;
+}
+
+.mark_start {
+    top: 5px;
+    background: url(../images/up_black.png) no-repeat;
+}
+
+.mark_end {
+    bottom: 15px;
+    right: 10px;
+    background: url(../images/down_black.png) no-repeat;
+}
+
+.say_text p {
+    padding: 15px 15px 15px 20px;
+    font-size: 13px;
+    line-height: 22px;
+}
+
+.say_text a {
+    color: #b11515;
+}
+
+.say_item strong {
+    display: block;
+    color: #fff;
+    font-size: 28px;
+}
+
+/*
+ * 页尾
+ */
+.page_footer .footer {
+    margin-top: 0;
+    background: #000;
+}
