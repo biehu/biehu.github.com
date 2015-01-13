@@ -734,7 +734,7 @@ Issey Miyake
 			});
 		};
         
-        var weixinAppShare = function (weixinShareData) {
+        var weixinAppShare = function () {
             document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
                 // 分享到朋友圈;
                 WeixinJSBridge.on('menu:share:timeline', function(argv) {
@@ -764,12 +764,12 @@ Issey Miyake
            load();
            music();
            weixinAlert();
-           weixinAppShare({
+           window.weixinShareData = {
                url: location.href,
                imgUrl: 'http://biehu.me/test/mobile/images/1.jpg',
                content: '辰亦儒赤身搏击，大展胸肌人鱼线，壮硕身材一览无遗。',
                title: '辰亦儒赤身搏击展傲人胸肌'
-           });
+           };
        });
            
         </script>
