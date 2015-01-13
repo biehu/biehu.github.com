@@ -539,8 +539,41 @@ Issey Miyake
             </div>
             <div id="weixin-win" class="weixin-win"></div>
 	    </div>
+		<script>
+		
+		var weixinAppShare = function (weixinShareData) {
+            document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+                // 分享到朋友圈;
+                WeixinJSBridge.on('menu:share:timeline', function(argv) {
+                    WeixinJSBridge.invoke('shareTimeline', {
+                        "img_url": weixinShareData.imgUrl,
+                        "img_width": "92",
+                        "img_height": "92",
+                        "link": weixinShareData.url,
+                        "desc": weixinShareData.content,
+                        "title": weixinShareData.title
+                    }, function(){});
+                });
+                WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+                    WeixinJSBridge.invoke('sendAppMessage', {
+                        "img_url": weixinShareData.imgUrl,
+                        "link": weixinShareData.url,
+                        "desc": weixinShareData.content,
+                        "title": weixinShareData.title
+                    }, function(){});
+                });
+            }, false);
+        };
+		weixinAppShare({
+               url: location.href,
+               imgUrl: 'http://biehu.me/test/mobile/images/1.jpg',
+               content: '辰亦儒赤身搏击，大展胸肌人鱼线，壮硕身材一览无遗。',
+               title: '辰亦儒赤身搏击展傲人胸肌'
+           });
+		</script>
         <script src="js/jquery-1.9.1.min.js"></script>
         <script>
+
             var resizeBody = function (sildeHeight) {
                zoom = $(window).height() / sildeHeight;
                if (zoom > 1) {
@@ -734,268 +767,12 @@ Issey Miyake
 			});
 		};
         
-        var weixinAppShare = function () {
-            document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
-                // 分享到朋友圈;
-                WeixinJSBridge.on('menu:share:timeline', function(argv) {
-                    WeixinJSBridge.invoke('shareTimeline', {
-                        "img_url": weixinShareData.imgUrl,
-                        "img_width": "92",
-                        "img_height": "92",
-                        "link": weixinShareData.url,
-                        "desc": weixinShareData.content,
-                        "title": weixinShareData.title
-                    }, function(){});
-                });
-                WeixinJSBridge.on('menu:share:appmessage', function(argv) {
-                    WeixinJSBridge.invoke('sendAppMessage', {
-                        "img_url": weixinShareData.imgUrl,
-                        "link": weixinShareData.url,
-                        "desc": weixinShareData.content,
-                        "title": weixinShareData.title
-                    }, function(){});
-                });
-            }, false);
-        };
-
-		(function () {
-    /*
-     * qq浏览器微信分享
-     */
-    var qqWeixinShare = (function () {
-        var serverType, shareParams;
-        var oldApi = 'http://3gimg.qq.com/OPT/mtt_push_v04.js';
-        var newApi = 'http://jsapi.qq.com/get?api=app.canShareTo,app.isInstallApk,app.share';
-    
-        var loadJs = function (url, callback) {
-            var head = document.getElementsByTagName('head')[0];
-            var js = document.createElement('script');
-            
-            js.setAttribute('src', url);
-            js.setAttribute('type', 'text/javascript'); 
-            js.onload = callback;
-            head.appendChild(js);
-        };
-        
-        var handleOldShare = function () {
-            window.mttQB.share(shareParams);
-        };
-    
-        var handleNewShare = function () {
-            var params = {
-                android: {'packagename':'com.tencent.mm'},
-                ios: {'apkKey':'weixin'}
-            };
-            
-            browser.app.isInstallApk(function(data){
-                if (!data) {
-                    alert('没有安装微信！');
-                    return;
-                }
-                // 针对安卓qq浏览器5.4及以上版本，支持微信不能分享自定义提示      
-                if (serverType === Object.keys(params)[0]) {
-                    browser.app.canShareTo(
-                       {to_app: shareParams.to_app},
-                       function(data){
-                          if (data < 0) {
-                              alert('不能分享');
-                              return;
-                          }
-                          browser.app.share(shareParams);
-                       });
-                }
-                else {
-                    browser.app.share(shareParams);
-                }
-            }, params[serverType]);
-        };
-        
-        var init = function (data, type) {
-            shareParams = data;
-            if (data && type) {
-                serverType = type;
-                loadJs(newApi, handleNewShare);
-            }
-            else if (data) {
-                loadJs(oldApi, handleOldShare);
-            }
-        };
-        
-        return init;
-    }());
-    
-    /*
-     * 浏览器微信分享
-     */
-    var weixinWebShare = function () {
-        var qqBrowerVersion, func;
-        var ua = window.navigator.userAgent;
-        var uaMarks = {a: 'Android', q: 'MQQBrowser', s: 'SogouMobileBrowser', u: 'UCBrowser'};
-        var isAndroid = new RegExp(uaMarks.a).test(ua);
-        var isQqBrower = new RegExp(uaMarks.q).test(ua);
-        var isSogouBrower = new RegExp(uaMarks.s).test(ua);
-        var isUcBrower = new RegExp(uaMarks.u).test(ua);
-        
-        var getBrowerVersion = function (mark) {
-            var reg, regRemoveDot, res;
-    
-            try {
-                reg = new RegExp(mark + '\\/(\\d{2})', 'i');
-                regRemoveDot = /\./g;
-                ua =  ua.replace(regRemoveDot,'');
-                res = reg.exec(ua);
-                if(res && res.length > 1){
-                    return parseInt(res[1], 10);
-                }
-                return 0;
-            }catch(e){
-                return 0;
-            }
-        };
-        
-        var getQqBrowerData = function (options) {
-            return { title: options.title,
-                     description: options.content,
-                     url: options.url,
-                     img_url: options.imgUrl,
-                     to_app: options.type === 'friend' ? 1 : 8 };
-        };
-     
-        // uc浏览器(安卓9.7及以上)
-        if (isAndroid && isUcBrower && getBrowerVersion(uaMarks.u) > 96) {
-            func = function (options) {
-                ucweb.startRequest("shell.page_share", 
-                                    [options.title, 
-                                    options.content, 
-                                    options.url, 
-                                    options.type === 'friend' ? 'WechatFriends' : 'WechatTimeline', 
-                                    '', '', '']);
-            };
-        }
-        
-        // qq浏览器(5.0及以上)
-        if (isQqBrower) {
-            qqBrowerVersion = getBrowerVersion(uaMarks.q);
-            if (qqBrowerVersion > 53) {
-                func = function (options) {
-                    qqWeixinShare(getQqBrowerData(options), isAndroid ? 'android' : 'ios');
-                                
-                };
-            }
-            else if (isAndroid && qqBrowerVersion > 49) {
-                func = function (options) {
-                    qqWeixinShare(getQqBrowerData(options));
-                };
-            }
-            
-        }
-        
-        // sogou浏览器(安卓3.1.1及以上，苹果)
-        if (isSogouBrower &&
-            window.SogouMse &&
-            window.SogouMse.Utility &&
-            window.SogouMse.Utility.shareWithInfo) {
-            func = function (options) {
-                SogouMse.Utility.shareWithInfo({ shareTitle: options.title,
-                                                 shareContent: options.content,
-                                                 shareUrl: options.url,
-                                                 shareImageUrl: options.imgUrl,
-                                                 shareType: options.type === 'friend' ? '2' : '4' });
-            };
-        }
-        
-        return function (options) {
-            if (options.before) {
-                options.before();
-            }
-            func(options);
-            if (options.after) {
-                options.after();
-            }
-        };
-    };
-    
-    /*
-     * 微信app分享
-     */
-    var weixinAppShareRun;
-    
-    var weixinAppShare = function (weixinShareData) {
-        if (weixinAppShareRun) { 
-            return; 
-        }
-        weixinAppShareRun = true;
-        document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
-            // 分享到朋友圈;
-            WeixinJSBridge.on('menu:share:timeline', function(argv) {
-                WeixinJSBridge.invoke('shareTimeline', {
-                    "img_url": weixinShareData.imgUrl,
-                    "img_width": "92",
-                    "img_height": "92",
-                    "link": weixinShareData.url,
-                    "desc": weixinShareData.content,
-                    "title": weixinShareData.title
-                }, function(){
-				
-					alert('我已经分享成功了！！');
-				
-				});
-            });
-            WeixinJSBridge.on('menu:share:appmessage', function(argv) {
-                WeixinJSBridge.invoke('sendAppMessage', {
-                    "img_url": weixinShareData.imgUrl,
-                    "link": weixinShareData.url,
-                    "desc": weixinShareData.content,
-                    "title": weixinShareData.title
-                }, function(){
-					alert('分享给朋友');
-				});
-            });
-        }, false);
-    };
-
-    // 参数options说明
-    // {
-    //    type: '类型', 注： friend 好友，friends 朋友圈
-    //    title: '标题',
-    //    content: '内容',
-    //    url: '链接',
-    //    imgUrl: '图片链接'
-    // 
-    //    before: function 分享之前调用
-    //    after: function  分享之后调用
-    // }
-    var weixinShare = function (options) {
-        weixinAppShare(options);
-        return function (e) {
-            e.preventDefault();
-            var share = weixinWebShare();
-            share(options);
-        };
-    };
-    
-    window.weixinShare = weixinShare;
-})();
-    
        $(function () {
            resizeBody(1000);
            page();
            load();
            music();
            weixinAlert();
-		   weixinShare({
-                                      type:'friend', 
-                                      url: window.location.href,
-               imgUrl: 'http://biehu.me/test/mobile/images/1.jpg',
-               content: '辰亦儒赤身搏击，大展胸肌人鱼线，壮硕身材一览无遗。',
-               title: '辰亦儒赤身搏击展傲人胸肌',
-                                      before: function () {
-//                                            alert('我是之前调用的哦');
-                                      }, 
-                                      after: function () {
-//                                        alert('我是之后调用的哦');
-                                      }
-                                  })
        });
            
         </script>
