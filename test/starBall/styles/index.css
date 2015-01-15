@@ -68,52 +68,57 @@ body{
     top: 7px;
 }
 .gift_ad{
-    font-size:15px;
-    position:absolute;
+	font-size:15px;
+	position:absolute;
+	width: 129px;
 }
 .gift_one{
-    top:324px;
-    left:111px;
+	top:321px;
+	left:95px;
 }
 .gift_two{
-    top:382px;
-    left:336px;
+	top:381px;
+	left:327px;
 }
 .gift_three{
     top:324px;
     left:575px;
 }
 .gift_four{
-    top:380px;
-    left:802px;
+	top:380px;
+	left:784px;
 }
 .gift_time1{
-    top:352px;
-    left:86px;
+	top:369px;
+	left:59px;
 }
 .gift_time{
-    position:absolute;
-    font-family:Times New Roman;
-    font-size:30px;
-    font-style:italic;
+	position:absolute;
+	font-family:Times New Roman;
+	font-size:30px;
+	font-style:italic;
+	width: 187px;
 }
 .gift_time2{
-    top:195px;
-    left:318px;
+	top:168px;
+	left:310px;
 }
 .gift_time3{
-    top:352px;
-    left:554px;
+	top:367px;
+	left:538px;
 }
 .gift_time4{
-    top:195px;
-    left:783px;
+	top:167px;
+	left:776px;
+}
+.this_light_wrap {
+	background:url(../images/ld.jpg) no-repeat center top;
+
 }
 .this_light{
     height:208px;
     width:1155px;
     margin:0 auto;
-    background:url(../images/ld.jpg) no-repeat;
     position:relative; 
 }
 .this_light li{
@@ -153,11 +158,17 @@ body{
     height:322px;
     width:302px;
     float:left;
-    margin:1px 1px 0 0;
+    margin:2px 1px 0 0;
     display:inline;
     position:relative;
 }
+.after_news_one:hover .after_news_text {
+	display: block;
+}
 .after_news_text{
+	display: none;
+	opacity: .8;
+    filter:alpha(opacity=80);
     background:#D94342;
     width:262px;
     height:50px;
@@ -168,10 +179,12 @@ body{
     top:272px;
     left:0;
 }
+.god_create_wrap {
+	background:url(../images/jiedu.jpg) center 362px no-repeat;
+}
 .god_create{
     width:1196px;
     height:1624px;
-    background:url(../images/jiedu.jpg) 0 362px no-repeat;
     margin:0 auto;
     position:relative;
     line-height:22px;
@@ -206,7 +219,7 @@ body{
 }
 .god_yy p{line-height:22px; margin-left:10px;}
 .jiedu_country{
-    margin:65px 0 0 70px;
+    margin:65px 0 0 60px;
     background:url(../images/history.png) no-repeat;
     width:1054px;
     height:623px;
@@ -247,28 +260,29 @@ body{
 .my_text1{
     width:308px;
     position:absolute;
-    top:1270px;
-    left:53px;
+    top: 1270px;
+	left: 64px;
 }
 .my_text2{
     width:308px;
     position:absolute;
-    top:1327px;
-    left:394px;
+    top: 1315px;
+	left: 428px;
 }
 .my_text3{
     width:308px;
     position:absolute;
-    top:1270px;
-    left:750px;
+    top: 1270px;
+	left: 782px;
 }
 .god_create .my_text h3{
     font-size:39px;
     line-height:56px;
     border-bottom:1px solid #fff;
-    margin:13px 0 5px 10px;
+    margin:13px 0 5px 0;
     font-style:italic;
     font-family:"宋体";
+	font-weight:bold;
 }
 .my_text .down{
     background:url(../images/down.png) no-repeat;
@@ -290,7 +304,7 @@ body{
 .say {
     clear: both;
     height: 835px;
-    background: url(../images/say_bg.jpg) no-repeat;
+    background: url(../images/say_bg.jpg) no-repeat center top;
 }
 
 .say_content {
@@ -302,7 +316,7 @@ body{
 
 .say_content li {
     float: left;
-    margin-right: 1px;
+    margin-right: 2px;
     padding-top: 45px;
 }
 
@@ -318,6 +332,7 @@ body{
     height: 100%;
     background: #fff;
     opacity: .8;
+	filter:alpha(opacity=80);
 }
 
 .say_item_main {
@@ -348,20 +363,21 @@ body{
 }
 
 .say_text i {
-    position: absolute;
-    width: 19px;
-    height: 17px;
+	position: absolute;
+	width: 26px;
+	height: 30px;
+	left: -9px;
 }
 
 .mark_start {
-    top: 5px;
-    background: url(../images/up_black.png) no-repeat;
+	top: 3px;
+	background: url(../images/up_black.png) no-repeat;
 }
 
 .mark_end {
-    bottom: 15px;
-    right: 10px;
-    background: url(../images/down_black.png) no-repeat;
+	bottom: 7340083px;
+	right: 30px;
+	background: url(../images/down_black.png) no-repeat;
 }
 
 .say_text p {
@@ -386,4 +402,49 @@ body{
 .page_footer .footer {
     margin-top: 0;
     background: #000;
+}
+
+.god_yy li i {
+	display: block;
+	position: relative;
+}
+
+.god_yy_title_bg {
+	opacity: .6;
+	filter:alpha(opacity=60);
+}
+
+.god_yy li i:hover .god_yy_title_bg {
+	opacity: 1;
+	filter:alpha(opacity=100);
+}
+
+.god_yy li i:hover .god_yy_title {
+	display: none;
+}
+
+.god_yy li i .god_yy_title {
+	position: absolute;
+	top: 75px;
+	left: 62px;
+}
+
+.dream {
+	margin: 20px 0 30px 0;
+	text-align: center;
+}
+
+.my_text_simple {
+	margin-bottom: 5px;
+}
+
+.after_news_one a {
+	color: #fff;
+
+}
+.mh_team{
+    width:1000px;
+    height:135px;
+    background: url(../images/mh_team.jpg) 20px 33px no-repeat;
+    margin:0 auto;
 }
