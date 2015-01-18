@@ -54,43 +54,43 @@ a {
 	top: 45px;
 	margin-left: -520px;
 	-webkit-animation-name: arrowUpDown1;
-	-webkit-animation-duration: .6s;
+	-webkit-animation-duration: .8s;
 	-webkit-animation-iteration-count: infinite;
 	-webkit-animation-direction: alternate;
-	-webkit-animation-timing-function: linear;
+	-webkit-animation-timing-function: ease-in-out;
 
 	-moz-animation-name: arrowUpDown1;
 	-moz-animation-duration: .6s;
 	-moz-animation-iteration-count: infinite;
 	-moz-animation-direction: alternate;
-	-moz-animation-timing-function: linear;
+	-moz-animation-timing-function: ease-in-out;
 
 	animation-name: arrowUpDown1;
 	animation-duration: .6s;
 	animation-iteration-count: infinite;
 	animation-direction: alternate;
-	animation-timing-function: linear;
+	animation-timing-function: ease-in-out;
 }
 .bali {
 	top: 213px;
 	margin-left: 393px;
 	-webkit-animation-name: arrowUpDown2;
-	-webkit-animation-duration: .6s;
+	-webkit-animation-duration: .8s;
 	-webkit-animation-iteration-count: infinite;
 	-webkit-animation-direction: alternate;
-	-webkit-animation-timing-function: linear;
+	-webkit-animation-timing-function: ease-in-out;
 
 	-moz-animation-name: arrowUpDown2;
 	-moz-animation-duration: .6s;
 	-moz-animation-iteration-count: infinite;
 	-moz-animation-direction: alternate;
-	-moz-animation-timing-function: linear;
+	-moz-animation-timing-function: ease-in-out;
 
 	animation-name: arrowUpDown2;
 	animation-duration: .6s;
 	animation-iteration-count: infinite;
 	animation-direction: alternate;
-	animation-timing-function: linear;
+	animation-timing-function: ease-in-out;
 }
 @-webkit-keyframes arrowUpDown1 {
 	0% {top:
@@ -98,6 +98,7 @@ a {
 }
 	100% {top:
 		65px;
+
 }
 }
 @-moz-keyframes arrowUpDown1 {
@@ -217,6 +218,7 @@ a {
     display:inline;
     cursor:pointer;
 }
+.tab_btn li:hover,
 .tab_btn li.on{
     background:url(../images/white_button.png) no-repeat;
     color:#000;
@@ -310,21 +312,6 @@ a {
     width: 290px;
     height: 170px;
     overflow: hidden;
-}
-.zouxiu_left img {
-    -webkit-transition-timing-function: linear;
-    -moz-transition-timing-function: linear;
-    -o-transition-timing-function: linear;
-    transition-timing-function: linear;
-    -webkit-transition-duration: 400ms;
-    -moz-transition-duration: 400ms;
-    -o-transition-duration: 400ms;
-    transition-duration: 400ms;
-}
-.zouxiu_left:hover img {
-    transform: scale(1.04, 1.04);
-    -ms-transform: scale(1.04, 1.04);
-    -webkit-transform: scale(1.04, 1.04);
 }
 .zouxiu_right{
     float:left;
@@ -603,4 +590,48 @@ span.more{
 .page_footer .footer {
     margin-top: 0;
     background: #000;
+}
+
+.zoom img,
+.zouxiu_left img {
+    -webkit-transition-timing-function: linear;
+    -moz-transition-timing-function: linear;
+    -o-transition-timing-function: linear;
+    transition-timing-function: linear;
+    -webkit-transition-duration: 400ms;
+    -moz-transition-duration: 400ms;
+    -o-transition-duration: 400ms;
+    transition-duration: 400ms;
+}
+.zoom:hover img,
+.zouxiu_left:hover img {
+    transform: scale(1.04, 1.04);
+    -ms-transform: scale(1.04, 1.04);
+    -webkit-transform: scale(1.04, 1.04);
+}
+.focus_img {
+	width: 580px;
+	height: 551px;
+}
+.model_name {
+	width: 89px;
+	height: 89px;
+}
+
+.say_title {
+	position: absolute;
+	top: 67px;
+	left: 50%;
+	margin-left: -130px;
+}
+
+.scroll_item a:hover,
+.model a:hover,
+.zouxiu_right a:hover {
+	color: #ccc;
+}
+.scroll_item a:hover span,
+.model a:hover span,
+.zouxiu_right a:hover span {
+	color: #fff;
 }

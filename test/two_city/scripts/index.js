@@ -1,5 +1,5 @@
 var showBannerText = function () {
-    $('.banner_text_img span').animate({bottom: 0});
+    $('.banner_text_img span').animate({bottom: 0}, {easing: 'easeOutCubic', duration: 1500});
 };
 
 var showFocusText = function () {
