@@ -90,7 +90,8 @@ a {
     height: 100%;
     background: #000;
     opacity: .8;
-	alpha(opacity=80);
+	filter: "alpha(opacity=80)";
+	-ms-filter: "alpha(opacity=80)"; 
 }
 .banner_title span {
     position: relative;
@@ -107,7 +108,8 @@ a {
 .banner_link_bali:hover {
     background: #000;
     opacity: .2;
-	alpha(opacity=20);
+	filter: "alpha(opacity=20)";
+	-ms-filter: "alpha(opacity=20)"; 
 }
 
 .two_team{
@@ -209,7 +211,8 @@ a {
     height: 100%;
     background: #fff;
     opacity: .2;
-	alpha(opacity=20);
+	filter: "alpha(opacity=20)";
+	-ms-filter: "alpha(opacity=20)"; 
 }
 .zouxiu{
     float:left;
@@ -241,7 +244,7 @@ a {
 .zouxiu_right{
     float:left;
     width:224px;
-    padding:14px 16px 18px 20px;
+    padding:14px 14px 18px 20px;
 }
 .zouxiu_right .time{
     font-size:16px;
