@@ -437,21 +437,21 @@ span.more{
     left: 116px;
 }
 .say_main_left_control .click_right{
-   left:521px;
+   left:523px;
 }
 .click_left{
-   background:url(../images/d_left.png) no-repeat; 
+   background:url(../images/d_left.png) no-repeat center top; 
    left:599px;
 }
 .click_left:hover {
-	background:url(../images/d_left_hover.png) no-repeat; 
+	background:url(../images/d_left_hover.png) no-repeat center top; 
 }
 .click_right{
-   background:url(../images/d_right.png) no-repeat; 
-   left:1004px;
+   background:url(../images/d_right.png) no-repeat center top; 
+   left:1006px;
 }
 .click_right:hover {
-	background:url(../images/d_right_hover.png) no-repeat; 
+	background:url(../images/d_right_hover.png) no-repeat center top; 
 }
 .broadcast strong {
     padding-left: 15px;
