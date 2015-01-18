@@ -596,3 +596,11 @@ span.more{
 .model a {
 	color: #fff;
 }
+
+/*
+ * 页尾
+ */
+.page_footer .footer {
+    margin-top: 0;
+    background: #000;
+}
