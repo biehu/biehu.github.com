@@ -1,0 +1,510 @@
+* {
+    margin:0;
+    padding:0;
+}
+
+ul {
+    list-style:none;
+}
+
+img {
+    vertical-align:bottom;
+}
+
+a img {
+    border:none;
+}
+
+a {
+    text-decoration:none;
+}
+
+.clear {
+    clear:both;
+}
+
+.page_header {
+	height: 45px;
+	background: #000;
+}
+
+.container{
+    color:#fff;
+    background:#000;
+    font-size:13px;
+    font-family:"微软雅黑";
+	background:url(../images/banner.jpg) no-repeat center top fixed;
+}
+
+/*
+	banner
+*/
+.banner{
+	position: relative;
+    height:791px;
+}
+.banner > div {
+	position: absolute;
+}
+.milan,
+.bali {
+	left: 50%;
+}
+.milan {
+	top: 45px;
+	margin-left: -520px;
+}
+.bali {
+	top: 213px;
+	margin-left: 393px;
+}
+.banner_text {
+    bottom: 0;
+    z-index: 1;
+	width: 100%;
+	text-align: center;
+}
+.banner_title {
+	position: relative;
+    height: 93px;
+    color: #fff;
+    font-size: 34px;
+    line-height: 93px;
+}
+.banner_text_img {
+    height: 409px;
+    overflow: hidden;
+    position: relative;
+}
+.banner_text_img span {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+}
+.banner_title i {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: .8;
+	alpha(opacity=80);
+}
+.banner_title span {
+    position: relative;
+}
+.banner_link {
+    width: 100%;
+    height: 700px;
+}
+.banner_link a {
+    float: left;
+    width: 50%;
+    height: 100%;   
+}
+.banner_link_bali:hover {
+    background: #000;
+    opacity: .2;
+	alpha(opacity=20);
+}
+
+.two_team{
+    background:#333333;
+}
+.tab_btn{
+   padding: 30px 0 30px 0;
+    overflow: hidden;
+    width: 1000px;
+}
+.tab_btn li{
+    height:41px;
+    width:117px;
+    background:url(../images/black_button.png) no-repeat;
+    font-size:23px;
+    line-height:41px;
+    text-align:center;
+    margin-right:18px;
+    float:left;
+    display:inline;
+    cursor:pointer;
+}
+.tab_btn li.on{
+    background:url(../images/white_button.png) no-repeat;
+    color:#000;
+}
+.team_tab{
+     background:url(../images/tab_bg.jpg) no-repeat;
+     height:120px;
+     margin-bottom: 47px;
+     text-align: center;
+}
+.team_tab span{
+    display:inline-block;
+    line-height:60px;
+    text-align:center;
+}
+.team_time{
+    width:76px;
+    height:60px;
+}
+.team_name{
+    width:120px;
+    height:60px;
+}
+.show{
+    margin:0 auto;
+    padding-top:40px;
+    background:#000;
+    width:1180px;
+    height: 546px;
+    overflow: hidden;
+}
+.focus{
+    position: relative;
+    float:left;
+    width:580px;
+    height:550px;
+    overflow: hidden;
+    margin-right:22px;
+    display:inline;
+}
+.focus a,
+.zouxiu a {
+    color: #fff;
+}
+.focus a > div {
+    position: absolute;
+}
+.focus_mark {
+    left: 10px;
+    z-index: 1;
+    width: 144px;
+    height: 158px;
+    background: url(../images/focus_mark.png) no-repeat;
+}
+.focus_mark span {
+    position: absolute;
+    bottom: 21px;
+    width: 100%;
+    font-size: 20px;
+    font-family: Arial;
+    text-align: center;
+}
+.focus_text{
+    right: -100%;
+    height: 100%;
+    width:213px;
+}
+.focus_text_content {
+    position: relative;
+    padding: 46px 15px 0 23px;
+}
+.focus_text i {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    opacity: .2;
+	alpha(opacity=20);
+}
+.zouxiu{
+    float:left;
+}
+.zouxiu2{
+    margin:11px 0;
+}
+.zouxiu_left{
+    float:left;
+    width: 290px;
+    height: 170px;
+    overflow: hidden;
+}
+.zouxiu_left img {
+    -webkit-transition-timing-function: linear;
+    -moz-transition-timing-function: linear;
+    -o-transition-timing-function: linear;
+    transition-timing-function: linear;
+    -webkit-transition-duration: 400ms;
+    -moz-transition-duration: 400ms;
+    -o-transition-duration: 400ms;
+    transition-duration: 400ms;
+}
+.zouxiu_left:hover img {
+    transform: scale(1.04, 1.04);
+    -ms-transform: scale(1.04, 1.04);
+    -webkit-transform: scale(1.04, 1.04);
+}
+.zouxiu_right{
+    float:left;
+    width:224px;
+    padding:14px 16px 18px 20px;
+}
+.zouxiu_right .time{
+    font-size:16px;
+    color:#8F8F8F;
+}
+.zouxiu_right p,.focus_text p{
+    line-height:20px;
+}
+.zouxiu_right h3,.focus h3{
+    line-height:24px;
+    font-weight:normal;
+    font-size:20px;
+    margin:6px 0 10px;
+}
+.tab_content {
+    display: none;
+}
+.tab_content.on {
+    display: block;
+}
+a.more,
+span.more{
+    color:#EFE813;
+}
+.say_wrap{
+    height:344px;
+    background:url(../images/say_bg.png) repeat-x;
+}
+.say{
+    width:1180px;
+    margin:0 auto;
+    position:relative;
+}
+.figure_left{
+    width:103px;
+    height:103px;
+    position:absolute;
+    left:26px;
+    top:94px;
+}
+.say_main_left{
+    top:120px;
+    left:145px;
+    position:absolute;
+    width:374px;
+}
+.say_figure{
+    font-size:20px;
+}
+.comment{
+    font-size:15px;
+    margin-bottom:8px;
+}
+.model{
+    padding-top:17px;
+}
+.model_name{
+    float:left;
+    width:90px;
+    height:90px;
+}
+.model_text{
+    float:left;
+    width:274px;
+    padding-left:10px;
+    line-height:20px;
+}
+.dot{
+    width:21px; 
+    height:19px;
+    background:url(../images/dot.png) no-repeat;
+    position:absolute;
+    top:169px;
+}
+.dot_left{
+    left:515px;
+}
+.dot_right{
+    left:997px;
+}
+.figure_right{
+    width:103px;
+    height:103px;
+    position:absolute;
+    left:1028px;
+    top:94px;
+}
+.say_main_right{
+    top:120px;
+    left:628px;
+    position:absolute;
+    width:374px;
+}
+.say_main_right .say_figure,.say_main_right .comment{
+    text-align:right;
+}
+.click{
+    height:35px;
+    position:absolute;
+    top:222px;
+    width:24px;
+	cursor: pointer;
+}
+.say_main_left_control .click_left {
+    left: 116px;
+}
+.say_main_left_control .click_right{
+   left:521px;
+}
+.click_left{
+   background:url(../images/d_left.png) no-repeat; 
+   left:599px;
+}
+.click_left:hover {
+	background:url(../images/d_left_hover.png) no-repeat; 
+}
+.click_right{
+   background:url(../images/d_right.png) no-repeat; 
+   left:1004px;
+}
+.click_right:hover {
+	background:url(../images/d_right_hover.png) no-repeat; 
+}
+.broadcast strong {
+    padding-left: 15px;
+}
+.broadcast {
+    width:1200px;
+    margin:0 auto;
+	padding: 20px 0 100px 0;
+    overflow:hidden;
+}
+.broadcast ul li{
+    width:276px;
+    background:#2A2929;
+    padding-left:12px;
+    margin-right:14px;
+    float:left;
+    display:inline;
+}
+.title{
+    font-size:25px;
+    font-weight:bold;
+    height:45px;
+    line-height:43px;
+}
+.broadcast h3{
+    height:47px;
+    line-height:47px;
+    font-size:20px;
+    font-weight:normal;
+}
+.broadcast p{
+    line-height:20px;
+    width:224px;
+    margin-bottom:16px;
+    }
+.broadcast ul li img{
+    border:1px solid #fff;
+}
+.img_wrap{
+    width:257px;
+    height:263px;
+    border:3px solid #474545;
+}
+.bottom_info_wrap{
+    background:#232222;
+    height:305px;
+}
+.bottom_info {
+    width:1180px;
+    position:relative;
+    margin:0 auto;
+    color:#6E6E6E;
+}
+.wechat_text{
+    position:absolute;
+    top:140px;
+    right:842px;
+    text-align:right;
+    width:242px;
+}
+.wechat_img{
+    width:161px;
+    height:162px;
+    background:url(../images/wechat.jpg) no-repeat;
+    position:absolute;
+    left:342px;
+    top:25px;
+}
+.make{
+    position:absolute;
+    top:208px;
+    left:175px;
+    text-align:center;
+    line-height:25px;
+}
+.make span{
+    margin-right:25px;
+}
+
+.show_wrap {
+    background: #000;
+}
+.tab_title {
+    width: 530px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+/*
+	左右切换
+*/
+.swipe {
+  border-top:1px solid #454444;
+  overflow: hidden;
+  visibility: hidden;
+  position: relative;
+}
+.swipe-wrap {
+  overflow: hidden;
+  position: relative;
+}
+.swipe-wrap > div {
+  float:left;
+  width:100%;
+  position: relative;
+}
+
+.page_bottom {
+	background: #000 url(../images/bottom_bg.jpg) no-repeat center top;
+}
+
+/*
+	微博
+*/
+.weibos {
+	position: absolute;
+	top: 54px;
+	left: 518px;
+}
+.weibos li {
+	float: left;
+	width: 77px;
+	margin-right: 20px;
+	text-align: center;
+	line-height: 28px;
+}
+.weibos li a {
+	color: #6E6E6E;
+}
+
+/*
+	滚动广播
+*/
+.scroll {
+	height: 829px;
+	overflow: hidden;
+}
+.scroll_item a {
+	color: #fff;
+}
+
+.model a {
+	color: #fff;
+}
