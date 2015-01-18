@@ -53,10 +53,92 @@ a {
 .milan {
 	top: 45px;
 	margin-left: -520px;
+	-webkit-animation-name: arrowUpDown1;
+	-webkit-animation-duration: .6s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-direction: alternate;
+	-webkit-animation-timing-function: linear;
+
+	-moz-animation-name: arrowUpDown1;
+	-moz-animation-duration: .6s;
+	-moz-animation-iteration-count: infinite;
+	-moz-animation-direction: alternate;
+	-moz-animation-timing-function: linear;
+
+	animation-name: arrowUpDown1;
+	animation-duration: .6s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-timing-function: linear;
 }
 .bali {
 	top: 213px;
 	margin-left: 393px;
+	-webkit-animation-name: arrowUpDown2;
+	-webkit-animation-duration: .6s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-direction: alternate;
+	-webkit-animation-timing-function: linear;
+
+	-moz-animation-name: arrowUpDown2;
+	-moz-animation-duration: .6s;
+	-moz-animation-iteration-count: infinite;
+	-moz-animation-direction: alternate;
+	-moz-animation-timing-function: linear;
+
+	animation-name: arrowUpDown2;
+	animation-duration: .6s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-timing-function: linear;
+}
+@-webkit-keyframes arrowUpDown1 {
+	0% {top:
+		45px;
+}
+	100% {top:
+		65px;
+}
+}
+@-moz-keyframes arrowUpDown1 {
+	0% {top:
+		45px;
+}
+	100% {top:
+		65px;
+}
+}
+@keyframes arrowUpDown1 {
+		0% {top:
+		45px;
+}
+	100% {top:
+		65px;
+}
+}
+@-webkit-keyframes arrowUpDown2 {
+	0% {top:
+		213px;
+}
+	100% {top:
+		233px;
+}
+}
+@-moz-keyframes arrowUpDown2 {
+	0% {top:
+		213px;
+}
+	100% {top:
+		233px;
+}
+}
+@keyframes arrowUpDown2 {
+	0% {top:
+		213px;
+}
+	100% {top:
+		233px;
+}
 }
 .banner_text {
     bottom: 0;
@@ -75,6 +157,9 @@ a {
     height: 409px;
     overflow: hidden;
     position: relative;
+}
+.banner_text_img img {
+	margin-left: 14px;
 }
 .banner_text_img span {
     position: absolute;
@@ -500,8 +585,8 @@ span.more{
 /*
 	滚动广播
 */
-.scroll {
-	height: 829px;
+.scroll_content {
+	height: 784px;
 	overflow: hidden;
 }
 .scroll_item a {

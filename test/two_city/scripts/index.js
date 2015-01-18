@@ -26,16 +26,16 @@ var swipeChange = function () {
 };
 
 var scroll = function () {
-	$(".scroll").mCustomScrollbar({
+	$(".scroll_content").mCustomScrollbar({
 		scrollButtons:{enable:true},
 		theme:"light-thick",
 		scrollbarPosition:"outside"
 	});
 };
 
-window.onload = function () {
+$(function () {
     showBannerText();
 	swipeChange();
 	scroll();
     addEvents();
-};
+});
