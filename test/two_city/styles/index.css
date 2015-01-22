@@ -625,11 +625,13 @@ span.more{
 	margin-left: -130px;
 }
 
+.focus_text:hover,
 .scroll_item a:hover,
 .model a:hover,
 .zouxiu_right a:hover {
 	color: #ccc;
 }
+.focus_text:hover span,
 .scroll_item a:hover span,
 .model a:hover span,
 .zouxiu_right a:hover span {
