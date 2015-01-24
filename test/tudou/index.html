@@ -8,12 +8,16 @@
    </head>
    <body>
 		<div class="container">
+			<div id="music" class="music"></div>
 		    <div class="bgs">
 		        <div class="all-bg"></div>
 		        <div class="bg bg-12 bg-1 bg-2">
 		            <div class="bg-top"><img src="images/cover_top.png" /></div>
 		            <div class="bg-left"><img src="images/cover_left.png" /></div>
 		            <div class="bg-right"><img src="images/cover_right.png" /></div>
+                    <div class="light light-left"><img src="images/1_light_left.png" /></div>
+                    <div class="light light-center"><img src="images/1_light_center.png" /></div>
+                    <div class="light light-right"><img src="images/1_light_right.png" /></div>
 		        </div>
                 <div class="bg bg-3">
                     <div class="bg-top"><img src="images/2_top.png" /></div>
@@ -24,14 +28,21 @@
                     <div class="bg-top"><img src="images/3_top.png" /></div>
                     <div class="bg-bottom"><img src="images/3_bottom.png" /></div>
                 </div>
+                <div class="bg bg-6">
+                    <div class="bg-bottom"><img src="images/4_bottom.png" /></div>
+					<div class="flower"><img src="images/4_flower.png" /></div>
+                </div>
 		    </div>
-            <div class="pages">
+            <div class="pages" style="-webkit-transform: matrix(1, 0, 0, 1, 0, -2840);">
+                <!-- 1-->
                 <div class="page page-1">
                     <div class="page-title"></div>
                 </div>
+                <!-- 2-->
                 <div class="page page-2">
                     <div class="page-sub-title"></div>
                 </div>
+                <!-- 3-->
                 <div class="page page-3">
                     <div class="page-row-wrap">
                         <div class="page-row">
@@ -47,6 +58,7 @@
                         </div>
                     </div>    
                 </div>
+                <!-- 4-->
                 <div class="page page-45 page-4">
                     <div class="page-row-wrap">
                         <div class="page-row">
@@ -65,6 +77,7 @@
                         </div>
                     </div>  
                 </div>
+                <!-- 5-->
                 <div class="page page-45 page-5">
                     <div class="page-row-wrap">
                         <div class="page-row">
@@ -82,8 +95,26 @@
                         </div>
                     </div>  
                 </div>
+                <!-- 6 -->
+                <div class="page page-6">
+                    <div class="page-row-wrap">
+                        <div class="page-row">
+                            <div class="page-title">
+                                <img src="images/4_title.png" />
+                            </div>
+                        </div>
+                        <div class="page-row">
+                            <p><a href="#"><img src="images/4_02.png" /></a></p>
+                            <p><img src="images/4_03.png" /></p>
+                        </div>
+                    </div>  
+                </div>
+
             </div>
 		</div>
+
+		<audio id="audio_music" src="images/music.mp3" autoplay loop>
+
        <script src="scripts/jquery.js" ></script>
        <script src="scripts/index.js" ></script>
    </body>

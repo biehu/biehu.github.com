@@ -127,10 +127,32 @@
     var effectIndex = function () {
         $('.page-1').addClass('show-title');
     };
+	
+	
+	var music = function () {
+		var isPlay = true;
+		$("#music").on("click",function(){
+			var audio = $('#audio_music')[0];
+			var that = $(this);
+			if (isPlay) {
+				audio.pause();
+				isPlay = false;
+				that.addClass('on');
+			}
+			else {
+				audio.play();
+				isPlay = true;
+				that.removeClass('on');
+			}
+		});
+
+	};
+
     
     $(window).load(function () {
         pageInit();
         effectIndex();
+		music();
     });
     
 })();
