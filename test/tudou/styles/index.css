@@ -224,6 +224,11 @@ body,
     opacity: .8;
 }
 
+.bg-4 .bg-top,
+.bg-5 .bg-top {
+    bottom: 30px;
+}
+
 .bg-4 .bg-bottom,
 .bg-5 .bg-bottom {
     bottom: 0;
