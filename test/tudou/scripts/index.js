@@ -124,8 +124,13 @@
         bind();
     };
     
+    var effectIndex = function () {
+        $('.page-1').addClass('show-title');
+    };
+    
     $(window).load(function () {
         pageInit();
+        effectIndex();
     });
     
 })();

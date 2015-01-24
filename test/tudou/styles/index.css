@@ -73,7 +73,7 @@ body,
     position: absolute;
     left: 0;
     top: 0;
-    -webkit-transition: all 0.3s linear;
+    -webkit-transition: all 0.3s ease-in-out;
     -webkit-backface-visibility: hidden;
 }
 
@@ -273,7 +273,7 @@ body,
     -webkit-transform: translateY(1000px);
 }
 
-.page-1.show .page-title {
+.page-1.show-title .page-title {
     -webkit-transform: translateY(0);
 }
 
