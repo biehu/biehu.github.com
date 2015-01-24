@@ -73,7 +73,7 @@ body,
     position: absolute;
     left: 0;
     top: 0;
-    -webkit-transition: all 0.3s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
     -webkit-backface-visibility: hidden;
 }
 
