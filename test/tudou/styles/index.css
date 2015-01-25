@@ -327,7 +327,7 @@ body,
 .page-7 .map-bo {
     position: absolute;
     right: 72px;
-    bottom: 104px;
+    top: 210px;
     width: 10px;
     height: 10px;
     background: #fff;
