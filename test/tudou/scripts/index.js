@@ -131,7 +131,7 @@
 	
 	var music = function () {
 		var isPlay = true;
-		$(document.body).on("touchstart", "#music" ,function(){
+		$("#music").on("touchstart", function(){
 			var audio = $('#audio_music')[0];
 			var that = $(this);
 			if (isPlay) {
