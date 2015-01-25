@@ -282,7 +282,7 @@ body,
 	background-size: 100%;
 }
 
-.page-6 .page-row:nth-child(2) {
+.page-6 .page-row:nth-child(1) {
 	position: absolute;
 	bottom: 0;
 	width: 100%;
@@ -306,8 +306,9 @@ body,
 
 .page-7 .page-title {
     position: relative;
+    width: 320px;
     height: 324px;
-    margin-top: 10px;
+    marigin: 10px auto 0;
     background: url(../images/5_map_bg.png) center top;
 }
 
@@ -317,7 +318,7 @@ body,
 
 .page-7 .map-bo {
     position: absolute;
-    right: 88px;
+    right: 72px;
     bottom: 104px;
     width: 10px;
     height: 10px;

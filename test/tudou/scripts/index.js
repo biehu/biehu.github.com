@@ -151,8 +151,8 @@
     
     $(window).load(function () {
         pageInit();
-//        effectIndex();
-//		music();
+        effectIndex();
+		music();
     });
     
 })();
