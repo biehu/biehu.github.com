@@ -83,10 +83,9 @@ body,
 }
 
 .music {
-	position: fixed;
+	position: absolute;
 	left: 8px;
 	top: 8px;
-	z-index: 10;
 	width: 24px;
 	height: 24px;
 	background: url(../images/music.png) no-repeat 1px 1px;
@@ -221,7 +220,7 @@ body,
 .page-45 .page-title {
     height: 149px;
     margin-top: 10px;
-    background: url(../images/text3_yy.png) center top;
+    background: url(../images/text3_yy.png) no-repeat center top;
 }
 
 .page-45 .page-title img {
@@ -317,7 +316,7 @@ body,
     position: relative;
     width: 320px;
     height: 324px;
-    marigin: 10px auto 0;
+    margin: 10px auto 0;
     background: url(../images/5_map_bg.png) center top;
 }
 
@@ -350,6 +349,10 @@ body,
 .page-7.show .address-name {
     -webkit-animation: address-name-animate 1s ease-in-out infinite alternate;
     -webkit-animation-delay: 2s;
+}
+
+.page-7 .page-row:nth-child(2) p {
+    text-align: center;
 }
 
 
