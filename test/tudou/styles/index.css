@@ -296,6 +296,51 @@ body,
 /*
 	7
 */
+.bg-7 img {
+	width: 100%;
+}
+
+.bg-7 .bg-bottom {
+	bottom: 0;
+}
+
+.page-7 .page-title {
+    position: relative;
+    height: 324px;
+    margin-top: 10px;
+    background: url(../images/5_map_bg.png) center top;
+}
+
+.page-7 .page-title img {
+    margin-top: 7px;
+}
+
+.page-7 .map-bo {
+    position: absolute;
+    right: 88px;
+    bottom: 104px;
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border-radius: 50%;
+    opacity: 0;
+}
+
+.page-7.show .map-bo {
+    -webkit-animation: map-bo-animate 1.5s linear infinite;
+    -webkit-animation-delay: 2s;
+}
+
+.page-7 .address-name {
+    position: absolute;
+    top: 150px;
+    left: 220px;
+}
+
+.page-7.show .address-name {
+    -webkit-animation: address-name-animate 1s ease-in-out infinite alternate;
+    -webkit-animation-delay: 2s;
+}
 
 
 /*
@@ -529,4 +574,88 @@ body,
 .bg-6.show .flower {
 	opacity: .8;
 }
+
+/* --- 7 */
+
+@-webkit-keyframes address-name-animate {
+    0% {
+        -webkit-transform: translateY(0);
+    }
+    100% {
+        -webkit-transform: translateY(-10px);
+    }
+}
+
+@-webkit-keyframes map-bo-animate {
+    0% {
+        -webkit-transform: scale(0,0);
+        opacity: 1
+    }
+    100% {
+        -webkit-transform: scale(5,5);
+        opacity: 0
+    }
+}
+
+@-webkit-keyframes rotates {
+    0% {
+        -webkit-transform: rotate(0)
+    }
+    100% {
+        -webkit-transform: rotate(-360deg)
+    }
+}
+
+.page-7 .page-title,
+.page-7 .page-title img,
+.page-7 .page-row:nth-child(2) p {
+    -webkit-transition: all 1s ease-in-out;
+}
+
+.page-7 .page-title {
+    opacity: 0;
+    -webkit-transition-delay: .5s;
+}
+
+.page-7.show .page-title {
+    opacity: 1;
+}
+                                                                                                                       
+.page-7 .page-title img {
+    opacity: 0;
+}
+
+.page-7.show .page-title img {
+    opacity: 1;
+}
+
+.page-7.show .page-title img {
+    -webkit-transition-delay: 1.5s;
+}
+
+.page-7.show .page-row:nth-child(2) p:nth-child(1) {
+    -webkit-transition-delay: 2s;
+}
+
+.page-7.show .page-row:nth-child(2) p:nth-child(2) {
+    -webkit-transition-delay: 2.2s;
+}
+
+.page-7.show .page-row:nth-child(2) p:nth-child(3) {
+    -webkit-transition-delay: 2.4s;
+}
+
+.page-7.show .page-row:nth-child(2) p:nth-child(4) {
+    -webkit-transition-delay: 2.6s;
+}
+
+.page-7 .page-row:nth-child(2) p {
+    -webkit-transform: translateY(1000px);
+}
+
+.page-7.show .page-row:nth-child(2) p {
+    -webkit-transform: translateY(0);
+}
+
+
 
