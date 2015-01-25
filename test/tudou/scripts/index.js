@@ -131,7 +131,7 @@
 	
 	var music = function () {
 		var isPlay = true;
-		$("#music").on("click",function(){
+		$(document.body).on("touchstart", "#music" ,function(){
 			var audio = $('#audio_music')[0];
 			var that = $(this);
 			if (isPlay) {
@@ -144,6 +144,7 @@
 				isPlay = true;
 				that.removeClass('on');
 			}
+            return false;
 		});
 
 	};

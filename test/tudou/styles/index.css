@@ -271,20 +271,29 @@ body,
 
 .bg-6 .bg-bottom {
 	bottom: 0;
+    z-index: 25;
 }
 
 .bg-6 .bg-bottom img {
 	opacity: .8;
 }
 
+.page-6 .table-row{
+    display: table-row;
+}
+
 .page-6 .page-title {
+    display: table-cell;
 	background: url(../images/4_text_bg.png) no-repeat center bottom;
 	background-size: 100%;
 }
 
+.page-6 .gift {
+    display: table-cell;
+    vertical-align: bottom;
+}
+
 .page-6 .page-row:nth-child(1) {
-	position: absolute;
-	bottom: 0;
 	width: 100%;
 }
 
