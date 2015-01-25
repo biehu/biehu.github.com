@@ -227,11 +227,12 @@ body,
 .page-45 .page-title {
     height: 149px;
     margin-top: 10px;
-    background: url(../images/text3_yy.png) no-repeat center top;
+    background: url(../images/gq/3.png) no-repeat center top;
+	background-size: 100%;
 }
 
 .page-45 .page-title img {
-    margin-top: 7px;
+	width: 100%;
 }
 
 .page-45 .page-row:nth-child(3) {
@@ -244,6 +245,10 @@ body,
 
 .page-45 .page-row-wrap {
     box-sizing: border-box;
+}
+
+.page-45 .page-row:nth-child(2) img {
+	width: 100%;
 }
 
 .page-45 .page-row:nth-child(3) {
