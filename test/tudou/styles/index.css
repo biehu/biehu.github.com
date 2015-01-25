@@ -141,21 +141,28 @@ body,
     width: 100%;
     height: 109px;
     margin-top: -54px;
-    background: url(../images/text1_td.png) no-repeat center top;
-    background-size: auto 109px;
-} 
+	text-align: center;
+}
+
+.page-1 img {
+	width: 238px;
+}
 
 /*
  * 2
  */
+.page-2 img {
+	width: 238px;
+}
+
+
 .page-sub-title {
     position: absolute;
     top: 50%;
     width: 100%;
     height: 101px;
     margin-top: -50px;
-    background: url(../images/text1.png) no-repeat center top;
-    background-size: auto 101px;
+    text-align: center;
 }
 
 /*
@@ -322,7 +329,7 @@ body,
     position: relative;
     width: 320px;
     height: 304px;
-    margin: 10px auto 0;
+    margin: -35px auto 0;
     background: url(../images/5_map_bg.png) center top;
 }
 
@@ -367,6 +374,8 @@ body,
  */
 .bg > div,
 .page-title,
+.page-1 .page-row,
+.page-2 .page-row,
 .page-3 img {
     -webkit-transition: all 1s ease-in-out;
 }
@@ -397,11 +406,20 @@ body,
 }
 
 .bg-bottom,
-.page-1 .page-title {
+.page-1 .page-title .page-row,
+.page-2 .page-sub-title .page-row,
+.page-2 .page-sub-title .page-row {
     -webkit-transform: translateY(1000px);
+	-webkit-transition-delay: .5s;
 }
 
-.page-1.show-title .page-title {
+.page-2 .page-sub-title .page-row:nth-child(2),
+.page-1 .page-title .page-row:nth-child(2) {
+	-webkit-transition-delay: 1s;
+}
+
+.page-2.show .page-sub-title .page-row,
+.page-1.show .page-title .page-row {
     -webkit-transform: translateY(0);
 }
 

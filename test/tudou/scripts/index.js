@@ -152,7 +152,7 @@
     
     $(window).load(function () {
         pageInit();
-        effectIndex();
+//        effectIndex();
 		music();
     });
     
