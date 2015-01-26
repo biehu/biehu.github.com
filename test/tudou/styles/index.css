@@ -702,5 +702,22 @@ body,
     -webkit-transform: translate(0,0);
 }
 
+/*
+ * video
+ */
+.video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .5);
+}
 
-
+.video-pos {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    height: 200px;
+    margin-top: -100px;
+}

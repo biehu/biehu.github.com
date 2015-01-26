@@ -148,12 +148,37 @@
 		});
 
 	};
+    
+    var videoAdd = function (e) {
+        e.preventDefault();
+        
+        var videoHtml = ['<div class="video">',
+'            <div class="video-pos">',
+'                <iframe src="http://www.tudou.com/programs/view/html5embed.action?type=0&code=nYgRAj7rkzY&lcode=&resourceId=0_06_05_99" allowtransparency="true" allowfullscreen="true" scrolling="no" border="0" frameborder="0" style="width:100%;height: 200px;"></iframe>',
+'            </div>',
+'        </div>'].join("");
+        
+        $('body').append(videoHtml);
+        return false;
+    };
+    
+    var videoRemove = function () {
+        if ($('.video').length > 0) {
+            $('.video').remove();
+        }
+    };
+    
+    var bindVideo = function () {
+        $('#play-video').on('touchend', videoAdd);
+        $('body').on('touchstart', '.video', videoRemove);
+    };
 
     
     $(window).load(function () {
         pageInit();
 //        effectIndex();
 		music();
+        bindVideo();
     });
     
 })();
