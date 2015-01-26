@@ -13,16 +13,16 @@
     var pageHeight, startX, startY, margin;
     
     var bind = function () {
-        document.body.addEventListener('touchstart', function (e) {
+        root[0].addEventListener('touchstart', function (e) {
             onStart(e.changedTouches[0]);
         });
         
-        document.body.addEventListener('touchmove', function (e) {
+        root[0].addEventListener('touchmove', function (e) {
             e.preventDefault();
             onMove(e.changedTouches[0]);
         });
         
-        document.body.addEventListener('touchend', function (e) {
+        root[0].addEventListener('touchend', function (e) {
             onEnd(e.changedTouches[0]);
         });
     };
