@@ -1,0 +1,184 @@
+* {
+    margin:0;
+    padding:0;
+}
+
+ul {
+    list-style:none;
+}
+
+img {
+    vertical-align:bottom;
+}
+
+a img {
+    border:none;
+}
+
+a {
+    text-decoration:none;
+}
+
+.clear {
+    clear:both;
+}
+
+.container img{position:absolute;}
+.banner{
+	background: url(../images/banner.jpg) center top no-repeat;
+	height: 683px;
+}
+.section1_wrap{
+	background: url(../images/section1.jpg) center top no-repeat;
+	height: 941px;
+}
+.section1,.section2,.section3,.section4{
+	margin: 0 auto;
+	position: relative;
+	width: 936px;
+}
+.section1_text{
+	width: 930px;
+	position:absolute;
+	left: 36px;
+	top: 40px;
+	font-size: 26px;
+	color: #AF2A2A;
+	line-height: 45px;
+	font-family: "微软雅黑";
+	font-style: italic;
+}
+.product1{
+	top:407px;
+	left:372px;
+}
+.product2{
+	top:482px;
+	left:710px;
+}
+.section1_n1{
+	left:345px;
+	top:360px;
+}
+.section1_n2{
+	left:648px;
+	top:735px;
+}
+
+
+.section2_wrap{
+	background: url(../images/section2.jpg) center top no-repeat;
+	height: 833px;
+}
+.product3{
+	top:396px;
+	left:105px;
+}
+.product4{
+	left:378px;
+	top:253px;
+}
+.section2_n2{
+	left:17px;
+	top:584px;
+}
+.section2_n1{
+	left:288px;
+	top:251px;
+}
+
+
+.section3_wrap{
+	background: url(../images/section3.jpg) center top no-repeat;
+	height: 859px;
+}
+.product5{
+	top:394px;
+	left:720px;
+}
+.product6{
+	left:437px;
+	top:281px;
+}
+.section3_n2{
+	left:840px;
+	top:340px;
+}
+.section3_n1{
+	left:350px;
+	top:280px;
+}
+
+.section4_wrap{
+	background: url(../images/section4.jpg) center top no-repeat;
+	height:918px;
+}
+.product7{
+	top:270px;
+	left:372px;
+}
+.product8{
+	left:101px;
+	top:450px;
+}
+.section4_n2{
+	left:47px;
+	top:488px;
+}
+.section4_n1{
+	left:343px;
+	top:275px;
+}
+.section4_btn{
+	width: 250px;
+	height: 60px;
+	position: absolute;
+	left:366px;
+	top: 854px;
+}
+
+
+.ad_wrap{
+    background: #E9E2D9 url(../images/ad.jpg) center top no-repeat;
+	padding: 20px 0 40px;
+}
+.ad{
+	width: 1000px;
+	overflow: hidden;
+	margin: 0 auto;
+	padding-left: 36px;
+}
+.ad li{
+	float: left;
+	width: 294px;
+	height: 294px;
+	border:1px solid #FFA0AD;
+	margin: 0 13px;
+	padding: 7px 0 0 5px;
+}
+.section_foot{
+	width: 936px;
+	position: relative;
+	margin: 0 auto;
+}
+.section_foot_wrap{
+	background: #C00000;
+	height: 215px;
+}
+.qrcode{
+	position: absolute;
+	left: -114px;
+	top: 10px;
+}
+.team{
+	position: absolute;
+	left: 24px;
+	top: 82px;
+	line-height: 34px;
+	font-family: "微软雅黑";
+	color:#5B5A55;
+	font-size: 15px;
+}
+.team span{
+	margin-right: 20px;
+}
