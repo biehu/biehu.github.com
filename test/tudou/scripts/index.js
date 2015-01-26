@@ -169,8 +169,8 @@
     };
     
     var bindVideo = function () {
-        $('#play-video').on('touchend', videoAdd);
-        $('body').on('touchstart', '.video', videoRemove);
+        $('#play-video').on('click', videoAdd);
+        $('body').on('click', '.video', videoRemove);
     };
 
     
