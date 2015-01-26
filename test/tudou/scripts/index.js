@@ -131,7 +131,7 @@
     var videoAdd = function (e) {
         e.preventDefault();
         
-        var videoHtml = ['<div class="video">',
+        var videoHtml = ['<div class="video" onclick="videoRemove()">',
 '            <div class="video-pos">',
 '                <iframe src="http://www.tudou.com/programs/view/html5embed.action?type=0&code=nYgRAj7rkzY&lcode=&resourceId=0_06_05_99" allowtransparency="true" allowfullscreen="true" scrolling="no" border="0" frameborder="0" style="width:100%;height: 200px;"></iframe>',
 '            </div>',
@@ -140,7 +140,7 @@
         $('.container').append(videoHtml);
     };
     
-    var videoRemove = function () {
+    window.videoRemove = function () {
         if ($('.video').length > 0) {
             $('.video').remove();
         }
@@ -148,7 +148,6 @@
     
     var bindVideo = function () {
         $('#play-video').on('touchend', videoAdd);
-        $('.container').on('touchend', '.video', videoRemove);
     };
 
     
