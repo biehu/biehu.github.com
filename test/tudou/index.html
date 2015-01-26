@@ -159,36 +159,5 @@
 		<audio id="audio_music" src="images/music.mp3" autoplay loop>
         <script src="scripts/jquery.js" ></script>
         <script src="scripts/index.js" ></script>
-        <script>
-            function bindWeixinFun(){
-    document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
-        // 分享到朋友圈;
-        WeixinJSBridge.on('menu:share:timeline', function(argv) {
-            WeixinJSBridge.invoke('shareTimeline', {
-                            "appid": "",
-                "img_url": weixinShareData.img_url,
-                "img_width": "92",
-                "img_height": "92",
-                "link": weixinShareData.link,
-                "desc": weixinShareData.desc,
-                "title": weixinShareData.title
-            }, function(){});
-        });
-        WeixinJSBridge.on('menu:share:appmessage', function(argv) {
-            WeixinJSBridge.invoke('sendAppMessage', {
-                            "appid": "",
-                "img_url": weixinShareData.img_url,
-                "link": weixinShareData.link,
-                "desc": weixinShareData.desc,
-                "title": weixinShareData.title
-            }, function(){});
-        });
-    }, false);
-}
-
-bindWeixinFun();
-
-var weixinShareData = {img_url: "http://s7.rr.itc.cn/org/wapChange/20151_15_20/a3phix0693919233667.jpg", link: "http://m.sohu.com/n/407834176/?wscrid=53939_3", title: "网传姚贝娜已过世 经纪人斥造谣：仍在抢救", desc: "搜狐娱乐讯昨日（1月15日），有媒体在微博爆料称歌手姚贝娜乳腺癌复发，器官衰竭、意识丧失，已住进北大…希望媒体给姚贝娜和其家人一些私人和人性的空间，暂时不要去医院，有进一步的消息，我们会及时通知各位。"};
-        </script>
    </body>
 </html>  

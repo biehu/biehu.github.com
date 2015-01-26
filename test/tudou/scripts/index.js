@@ -158,7 +158,7 @@
 '            </div>',
 '        </div>'].join("");
         
-        $('body').append(videoHtml);
+        $('.container').append(videoHtml);
         return false;
     };
     
@@ -170,7 +170,7 @@
     
     var bindVideo = function () {
         $('#play-video').on('touchend', videoAdd);
-        $('body').on('touchend', '.video', videoRemove);
+        $('.container').on('touchend', '.video', videoRemove);
     };
 
     
