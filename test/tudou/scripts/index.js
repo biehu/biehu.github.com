@@ -1,127 +1,106 @@
 (function () {
     'use strict';
     
-    /*
-     * 翻页
-     */
-    var root = $('.pages');
-    var section = root.find('.page');
-    var bg = $('.bg');
-    var movePrevent = false;
-    var touchDown = false;
-    var curPage = 0;
-    var pageHeight, startX, startY, margin;
     
-    var bind = function () {
-        root[0].addEventListener('touchstart', function (e) {
-            onStart(e.changedTouches[0]);
-        });
-        
-        root[0].addEventListener('touchmove', function (e) {
-            e.preventDefault();
-            onMove(e.changedTouches[0]);
-        });
-        
-        root[0].addEventListener('touchend', function (e) {
-            onEnd(e.changedTouches[0]);
-        });
-    };
-    
-    var prevPage = function () {
-        animatePage(curPage - 1);
-    };
-    
-    var nextPage = function () {
-        animatePage(curPage + 1);
-    };
-    
-    var setTop = function (pos) {
-        root.css({'-webkit-transform': 'matrix(1, 0, 0, 1, 0,' + pos + ')'});
-    };
-    
-    var onStart = function (e) {
-        if (movePrevent) {
-            return;
-        }
-        
-        touchDown = true;
-        
-        startX = e.pageX;
-        startY = e.pageY;
-        margin = root.css('-webkit-transform');
-        margin = margin.replace("matrix(", "");
-        margin = margin.replace(")", "");
-        margin = margin.split(",");
-        margin = parseInt(margin[5]);
-    };
-    
-    var onMove = function (e) {
-        if (movePrevent || !touchDown) {
-            return;
-        }
-        
-        if (e.pageY !== startY) {
-            setTop(margin + e.pageY - startY);
-        }
-    };
-    
-    var onEnd = function (e) {
-        if (movePrevent) {
-            return;
-        }
-        
-        var endY = e.pageY;
-        
-        touchDown = false;
-        
-        if (Math.abs(endY - startY) < 50) {
-            animatePage(curPage);
-        }
-        else if (endY > startY) {
-            prevPage();
-        }
-        else {
-            nextPage();
-        }
-        
-    };
-    
-    var animatePage = function (newPage) {
-        var newMarginTop, curBg;
-        
-        if (newPage < 0) {
-            newPage = 0;
-        }
-        if (newPage > section.length - 1) {
-            newPage = section.length - 1;
-        }
-        
-        curPage = newPage;
-        
-        movePrevent = true;
-        root.one('webkitTransitionEnd', function () {
-            movePrevent = false;
-        });
-        newMarginTop  = newPage * (-pageHeight);
-        setTop(newMarginTop);
-        
-        section.removeClass('show');
-        section.eq(curPage).addClass('show');
-        
-        curBg = $('.bg-' + (curPage + 1));
-        if (!curBg.hasClass('show')) {
-            bg.removeClass('show');
-            curBg.addClass('show');
-        }
-    };
+   /*
+            * 翻页
+            */
+           var yStart, yEnd;
+           var index = 0;
+           var allNum = $('.page').length;
+           var isAnimate = false;
+           var isModal = false;
+           
+           var slide = function (el, num) {
+                el.css('WebkitTransitionDuration', '.5s');
+                el.css('webkitTransform', 'translateY(' + num +　')');
+           };
+           
+           var setPage = function (dir,page) {
+               
+                isAnimate = true;
+                
+                if(dir === 1){
+                    $(".page-"+(page+1)).removeClass('up').addClass('show');
+                    $(".page-"+(page+2)).removeClass('show').addClass('down');
+                    
+                }
+                else{
+                    $(".page-"+page).removeClass('show').addClass('up');
+                    $(".page-"+(page+1)).removeClass('down').addClass('show');
+                }
+                
+                var curBg = $('.bg-' + (page + 1));
+                var bg = $('.bg');
+                if (!curBg.hasClass('show')) {
+                    bg.removeClass('show');
+                    curBg.addClass('show');
+                }
+               
+                // 翻页
+                setTimeout(function(){
+                    if (isAnimate) {
+                        isAnimate = false;
+                    }
+                },750);
+            };
+            
+            var bindTouchPageUp = function(){
+            
+                $(document).bind("touchstart", function(e){
+                    var touch = e.originalEvent.touches[0];
+                    yStart = touch.pageY;
+                });
+                $(document).bind("touchmove", function(e){
+                    event.preventDefault();
+                    var touch = e.originalEvent.touches[0];
+                    yEnd = touch.pageY;
+                    if (isAnimate || isModal) 
+                        return false;
+                    if (yEnd - 100 > yStart & yEnd > yStart) { //down
+                        if (index === 0)
+                            return false;
+                        setPage(1, --index);
+                    }
+                    else 
+                        if (yEnd + 100 < yStart & yEnd < yStart) { //up
+                            if (index === (allNum - 1)) 
+                                return false;
+                            setPage(0, ++index);
+                        }
+                });
+                
+            };
+
+            
+           var bindPageUp = function () {
+               $(".next").bind('click', function(e){
+                   e.preventDefault();
+                   if (index == (allNum - 1)) {
+                       return;
+                   }
+                   
+                   if (isAnimate) {
+                       isAnimate = false;
+                   }
+                   
+                   setPage(0, ++index);
+               });
+           };
+
+           var initScroll = function () {
+               
+               $('.page-1, .bg-1').addClass('show');
+//               bindPageUp();
+               bindTouchPageUp();
+           };
     
     var pageInit = function () {
-        pageHeight = $(window).height();
+        var pageHeight = $(window).height();
+        var section = $('.page');
         
         section.height(pageHeight);
-        animatePage(curPage);
         
-        bind();
     };
     
     var effectIndex = function () {
@@ -159,7 +138,6 @@
 '        </div>'].join("");
         
         $('.container').append(videoHtml);
-        return false;
     };
     
     var videoRemove = function () {
@@ -175,8 +153,8 @@
 
     
     $(window).load(function () {
+        initScroll();
         pageInit();
-//        effectIndex();
 		music();
         bindVideo();
     });
