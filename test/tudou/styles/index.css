@@ -190,6 +190,10 @@ body,
     margin-top: 5px;
 }
 
+.page-3 img {
+    width: 100%;
+}
+
 .bg-3 .bg-bottom img {
     opacity: .4;
 }
@@ -374,6 +378,10 @@ body,
 
 .page-7 .page-row:nth-child(2) p {
     text-align: center;
+}
+
+.page-7 .page-row:nth-child(2) p img {
+    width: 100%;
 }
 
 
