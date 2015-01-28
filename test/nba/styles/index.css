@@ -73,20 +73,13 @@ img {
     left: 0;
 }
 
+.wrap {
+    background: #000;
+}
+
 /*
- * 1
+ * say
  */
-.page-1{
-    background: url(../images/p1.jpg) no-repeat;
-    background-size: cover;
-}
-
-.page-1 img:nth-child(2) {
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
 .say-text-wrap {
     position: absolute;
     bottom: 0;
@@ -102,5 +95,61 @@ img {
     font-weight: bold;
     font-size: 2.1rem;
     line-height: 3rem;
-    -webkit-text-stroke:1px #000;
+}
+
+.say-text-wrap img:nth-child(2) {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.say-text-wrap img:nth-child(3) {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/*
+ * 1
+ */
+.p1{
+    background: url(../images/p1.jpg) no-repeat;
+    background-size: cover;
+}
+
+/*
+ * 2
+ */
+.p2 img {
+    position: absolute;
+    top: 0;
+}
+
+/*
+ * 3
+ */
+.p3 img {
+    position: absolute;
+    top: 0;
+}
+
+/*
+ * 4
+ */
+.p4 {
+    background: url(../images/p4.jpg) no-repeat;
+    background-size: cover;
+}
+
+.p4 .link {
+    width: 100%;
+    height: 100%;
+}
+
+.p4 .link a {
+    float: left;
+    width: 26%;
+    height: 48%;
+    border: 1px solid #f00;
+    -webkit-transform: translateX(27%) skewX(-17deg);
 }
