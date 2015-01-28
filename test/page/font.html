@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+   <head>
+       <meta charset="utf-8" />
+       <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+       <title>Untitled Document</title>
+       <style>
+        /* code for animated blinking cursor */
+        .typed-cursor{
+            opacity: 1;
+            font-weight: 100;
+            -webkit-animation: blink 0.7s infinite;
+            -moz-animation: blink 0.7s infinite;
+            -ms-animation: blink 0.7s infinite;
+            -o-animation: blink 0.7s infinite;
+            animation: blink 0.7s infinite;
+        }
+        @-keyframes blink{
+            0% { opacity:1; }
+            50% { opacity:0; }
+            100% { opacity:1; }
+        }
+        @-webkit-keyframes blink{
+            0% { opacity:1; }
+            50% { opacity:0; }
+            100% { opacity:1; }
+        }
+        @-moz-keyframes blink{
+            0% { opacity:1; }
+            50% { opacity:0; }
+            100% { opacity:1; }
+        }
+        @-ms-keyframes blink{
+            0% { opacity:1; }
+            50% { opacity:0; }
+            100% { opacity:1; }
+        }
+        @-o-keyframes blink{
+            0% { opacity:1; }
+            50% { opacity:0; }
+            100% { opacity:1; }
+        }
+        .type-wrap {
+            width: 300px;
+        }
+    </style>
+   </head>
+   <body>
+    
+    
+    
+      <div class="wrap">
+        <h1 class="h1">Typed.js</h1>
+
+        <div class="type-wrap">
+            <span id="typed"></span>
+        </div>
+
+    </div>
+    
+    
+    <script src="scripts/jquery.js"></script>
+    <script src="scripts/typed.js"></script>
+    <script>
+    $(function(){
+
+        $("#typed").typed({
+            strings: ["Typed.js is a <strong>jQuery</strong> plugin.Typed.js is a <strong>jQuery</strong> plugin.Typed.js is a <strong>jQuery</strong> plugin.Typed.js is a <strong>jQuery</strong> plugin.Typed.js is a <strong>jQuery</strong> plugin.Typed.js is a <strong>jQuery</strong> plugin.Typed.js is a <strong>jQuery</strong> plugin.Typed.js is a <strong>jQuery</strong> plugin.Typed.js is a <strong>jQuery</strong> plugin.Typed.js is a <strong>jQuery</strong> plugin.Typed.js is a <strong>jQuery</strong> plugin.Typed.js is a <strong>jQuery</strong> plugin.Typed.js is a <strong>jQuery</strong> plugin.Typed.js is a <strong>jQuery</strong> plugin.Typed.js is a <strong>jQuery</strong> plugin.Typed.js is a <strong>jQuery</strong> plugin.Typed.js is a <strong>jQuery</strong> plugin.Typed.js is a <strong>jQuery</strong> plugin.Typed.js is a <strong>jQuery</strong> plugin."],
+            typeSpeed: 30,
+            backDelay: 500,
+            loop: false,
+            contentType: 'html', // or text
+            // defaults to false for infinite loop
+            loopCount: false,
+            callback: function(){ foo(); },
+            resetCallback: function() { newTyped(); }
+        });
+
+        $(".reset").click(function(){
+            $("#typed").typed('reset');
+        });
+
+    });
+
+    function newTyped(){ /* A new typed object */ }
+
+    function foo(){ console.log("Callback"); }
+
+    </script>
+   </body>
+</html>
