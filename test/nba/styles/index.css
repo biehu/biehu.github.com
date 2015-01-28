@@ -26,7 +26,8 @@ a {
 html,
 body,
 .wrap,
-.loading {
+.loading,
+.page {
     width: 100%;
     height: 100%;
     font-size: 10px;
@@ -75,11 +76,12 @@ img {
 /*
  * 1
  */
-.page-1 .content {
-    bottom: 0;
+.page-1{
+    background: url(../images/p1.jpg) no-repeat;
+    background-size: cover;
 }
 
-.page-1 .content img:nth-child(2) {
+.page-1 img:nth-child(2) {
     position: absolute;
     top: 0;
     left: 0;
@@ -87,15 +89,14 @@ img {
 
 .say-text-wrap {
     position: absolute;
-    top: 22%;
+    bottom: 0;
 }
 
 .say-text {
-    width: 86.7%;
-    margin: 0 auto;
-    padding: 5px 10px 0 34%;
-    box-sizing: border-box;
-    text-indent: 2em;
+    position: absolute;
+    top: 26%;
+    padding: 0 11.3% 0 40.8%;
+    text-indent: 2rem;
     color: #f8ef62;
     font-weight: bold;
     font-size: 2.1rem;
