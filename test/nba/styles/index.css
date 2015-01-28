@@ -52,7 +52,7 @@ img {
     background: #000;
     text-align: center;
     color: #fff;
-    font-size: 2.4em;
+    font-size: 2.4rem;
     font-family: Corbel;
 }
 
@@ -98,6 +98,7 @@ img {
     text-indent: 2em;
     color: #f8ef62;
     font-weight: bold;
-    font-size: 21px;
+    font-size: 2.1rem;
+    line-height: 3rem;
     -webkit-text-stroke:1px #000;
 }
