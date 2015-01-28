@@ -90,6 +90,7 @@ img {
 .say-text-wrap {
     position: absolute;
     bottom: 0;
+    width: 100%;
 }
 
 .say-text {
