@@ -157,43 +157,24 @@ var load = function () {
 };
 
 /*
- * 奖杯
- */
-var cup = function () {
-    var cupImg = new Image();
-    var canvas = document.getElementById('cup');
-    var context = canvas.getContext('2d');
-    var winWidth = $(window).width();
-    var imgHeight, imgWidth;
-    
-    var drawImg = function () {
-        var w = cupImg.width;
-        var h = cupImg.height;
-       
-        imgWidth = winWidth;
-        imgHeight = winWidth * h / w;
-        
-        canvas.width = winWidth;
-        canvas.height = imgHeight;
-        context.drawImage(cupImg, 0, 0, imgWidth, imgHeight);
-    };
-    
-    cupImg.onload = drawImg;
-    cupImg.src = 'http://www.biehu.me/test/nba/images/p1.jpg';
-};
-
-/*
  * 生成图片
  */
 var drawCanvas = function () {
-    var canvas, board, img;
+	var wWidth = window.innerWidth;
+	var wHeight = window.innerHeight;
+    var canvas, board, img, cup;
     canvas = document.getElementById('cup');
     img = document.getElementById('img');
     
-    canvas.height = 200;
-    canvas.width = 300;
-    
     board = canvas.getContext('2d');
+	
+	cup = new Image();
+	cup.onload = function () {
+		canvas.height = this.height;
+		canvas.width = this.width;
+		board.drawImage(this, 0, 0, this.width, this.height);
+	};
+	cup.src = 'http://www.biehu.me/test/nba/images/p1.jpg';
     
     var mousePress = false;
     var last = null;
@@ -208,6 +189,8 @@ var drawCanvas = function () {
             return;
         var xy = pos(event);
         if (last != null) {
+			board.lineWidth = 5;
+			board.strokeStyle = "#ffffff";
             board.beginPath();
             board.moveTo(last.x, last.y);
             board.lineTo(xy.x, xy.y);
@@ -233,17 +216,11 @@ var drawCanvas = function () {
             x = event.offsetX + event.target.offsetLeft;
             y = event.offsetY + event.target.offsetTop;
         }
-        //               log('x='+x+' y='+y);
+//        console.log('x='+x+' y='+y);
         return {
             x: x,
             y: y
         };
-    }
-    
-    function log(msg){
-        var log = document.getElementById('log');
-        var val = log.value;
-        log.value = msg + '\n' + val;
     }
     
     function isTouch(event){
@@ -269,10 +246,6 @@ var drawCanvas = function () {
         
     }
     
-    board.lineWidth = 2;
-    board.strokeStyle = "#0000ff";
-    
-    
     canvas.onmousedown = beginDraw;
     canvas.onmousemove = drawing;
     canvas.onmouseup = endDraw;
@@ -286,7 +259,6 @@ $(function () {
 
 //   page();
 //   load();
-cup();
 
 drawCanvas();
 })
