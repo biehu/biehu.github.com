@@ -1,43 +1,50 @@
 * {
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
 }
+
 ul {
-    list-style:none;
+    list-style: none;
 }
+
 img {
-    vertical-align:bottom;
+    vertical-align: bottom;
 }
+
 a img {
-    border:none;
+    border: none;
 }
+
 a {
-    text-decoration:none;
+    text-decoration: none;
 }
+
 .clear {
-    clear:both;
+    clear: both;
 }
+
 body {
     overflow: hidden;
 }
-html,
-body,
-.wrap,
-.loading,
-.page {
+
+html, body, .wrap, .loading, .page {
     width: 100%;
     height: 100%;
     font-size: 10px;
 }
+
 img {
     width: 100%;
 }
+
 .hide {
-    display: none!important;
+    display: none !important;
 }
+
 .content {
     position: absolute;
 }
+
 .wrap {
     background: #000;
 }
@@ -53,20 +60,24 @@ img {
     font-size: 2.4rem;
     font-family: Corbel;
 }
+
 .loading-inner {
     display: table-cell;
     height: 100%;
     vertical-align: middle;
 }
+
 .loading {
     position: absolute;
     top: 0;
     left: 0;
     z-index: 1000;
 }
+
 .ball {
     position: relative;
 }
+
 .ball img:nth-child(2) {
     position: absolute;
     top: 0;
@@ -159,10 +170,52 @@ img {
 .p4 .links {
     z-index: 1;
 }
+
+/*
+	5
+*/
 .cup {
     width: 100%;
     height: 100%;
 }
+.p5 {
+    background: url(../images/cup.jpg) no-repeat;
+    background-size: 100%;
+}
+
+.draw-bottom {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+
+}
+
+.share {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, .5);
+}
+
+.draw-bottom .draw-btn img {
+	width: 85px;
+	margin: 20px;
+}
+
+.draw-btn {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+
+.sign-text {
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+
 
 
 
