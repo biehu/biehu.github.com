@@ -5,11 +5,12 @@
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
 <title></title>
 <link rel="stylesheet" href="styles/index.css" />
+<link rel="stylesheet" href="styles/effect.css" />
 </head>
 <body>
     <div class="wrap">
         <!-- loading -->
-        <div class="loading">
+        <div class="loading hide">
             <div class="loading-inner">
                 <div class="ball">
                     <img src="images/ball-wrap.png" />
@@ -22,7 +23,7 @@
             </div>
         </div>
         <!-- 1 -->
-        <div class="page p1 ">
+        <div class="page p1 hide">
             <div class="say-text-wrap">
                 <img src="images/say.png" />
                 <img src="images/say-arrow.png" />
@@ -31,34 +32,42 @@
             </div>
         </div>
         <!-- 2 -->
-        <div class="page p2 down">
-            <img data-index="1" src="images/p2-top.png" />
-            <img data-index="3" src="images/p2-middle.png" />
-            <img data-index="5" src="images/p2-bottom.png" />
-            <img data-index="2" src="images/pe2.png" />
-            <img data-index="4" src="images/pe3.png" />
-            <img data-index="6" src="images/pe4.png" />
+        <div class="page p2 hide">
+            <img class="tmxL" src="images/p2-top.png" />
+            <img class="td2 tmxL" src="images/pe2.png" />
+            <img class="td4 tmxR" src="images/p2-middle.png" />
+            <img class="td6 tmxR" src="images/pe3.png" />
+            <img class="td8 tmxL" src="images/p2-bottom.png" />
+            <img class="wobble" src="images/pe4.png" />
         </div>
-        <!-- 3
+        <!-- 3 -->
         <div class="page p3 hide">
-            <img src="images/p3-left.png" />
-            <img src="images/p3-right.png" />
-            <img src="images/p3-bottom.png" />
-            <img src="images/pe5.png" />
-            <img src="images/pe6.png" />
-            <img src="images/pe7.png" />
-            <img src="images/pe8.png" />
-            <img src="images/eye.png" />
+            <img class="tmxL" src="images/p3-left.png" />
+            <img class="td2 tmxL" src="images/pe8.png" />
+            <img class="td4 tmxR" src="images/p3-right.png" />
+            <img class="td6 tmxR" src="images/pe5.png" />
+            <img class="td8 tmxR" src="images/p3-bottom.png" />
+            <img class="td10 opa" src="images/pe6.png" />
+            <img class="td10 opa" src="images/pe7.png" />
+            <img class="zoom" src="images/eye.png" />
         </div>
-        <!-- 4 
+        <!-- 4 -->
         <div class="page p4 hide">
-            <div class="link">
-                <a href="#"></a>
-                <a href="#"></a>
-                <a href="#"></a>
-                <a href="#"></a>
-                <a href="#"></a>
-                <a href="#"></a>
+            <div class="link links-top">
+                <img src="images/teams_01.jpg" />
+                <p>
+                    <a href="#"></a>
+                    <a href="#"></a>
+                    <a href="#"></a>
+                </p>
+            </div>
+            <div class="link links-bottom">
+                <img src="images/teams_02.jpg" />
+                <p>
+                    <a href="#"></a>
+                    <a href="#"></a>
+                    <a href="#"></a>
+                </p>
             </div>
             <div class="say-text-wrap">
                 <img src="images/say.png" />
@@ -68,9 +77,12 @@
                         想想还有点小激动呢！快替我在6个中选一个吧!
                 </p>
             </div>
-        </div> -->
+        </div>
+        <!-- 5 -->
+        <div class="page p5">
+            <canvas id="cup" class="cup"></canvas>
+        </div>
     </div>
-    
     <script src="scripts/jquery.js"></script>
     <script src="scripts/typed.js"></script>
     <script src="scripts/index.js"></script>

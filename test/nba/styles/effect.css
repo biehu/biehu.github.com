@@ -1,0 +1,139 @@
+.td2 {
+    -webkit-transition-delay: .2s;
+}
+.td4 {
+    -webkit-transition-delay: .4s;
+}
+.td6 {
+    -webkit-transition-delay: .6s;
+}
+.td8 {
+    -webkit-transition-delay: .8s;
+}
+.td10 {
+    -webkit-transition-delay: 1s;
+}
+.td12 {
+    -webkit-transition-delay: 1.2s;
+}
+.td14 {
+    -webkit-transition-delay: 1.4s;
+}
+.td16 {
+    -webkit-transition-delay: 1.6s;
+}
+.td18 {
+    -webkit-transition-delay: 1.8s;
+}
+.td20 {
+    -webkit-transition-delay: 2s;
+}
+.tmxL,
+.tmxR,
+.tmyT,
+.tmyB,
+.opa {
+    -webkit-transition-property: all;
+    -webkit-transition-duration: .5s;
+    -webkit-transition-timing-function: ease-in-out;
+}
+.tmxL {
+    -webkit-transform: translateX(-1000px);
+}
+.tmxR {
+    -webkit-transform: translateX(1000px);
+}
+.tmyT {
+    -webkit-transform: translateY(-2000px);
+}
+.tmyB {
+    -webkit-transform: translateX(2000px);
+}
+.opa {
+    opacity: 0;
+}
+.on .tmxL,
+.on .tmxR {
+    -webkit-transform: translateX(0);
+}
+.on .tmyT,
+.on .tmyB {
+    -webkit-transform: translateY(0);
+}
+.on .opa {
+    opacity: 1;
+}
+
+.beat,
+.wobble,
+.zoom {
+    -webkit-animation-duration: 1s;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    -webkit-animation-fill-mode: forwards;
+}
+.beat {
+    -webkit-animation-name: beat;
+}
+@-webkit-keyframes beat {
+    from { 
+        -webkit-transform: translateY(0);
+    }
+    to{ 
+        -webkit-transform: translateY(60%);
+    }
+}
+.wobble {
+    opacity: 0;
+}
+.on .wobble {
+    -webkit-animation-name: wobble;
+    -webkit-animation-delay: 1.5s;
+    -webkit-animation-iteration-count: 1;
+}
+@-webkit-keyframes wobble {
+  16.65% {
+    opacity: 1;
+    -webkit-transform: translateY(8px);
+    transform: translateY(8px);
+  }
+  33.3% {
+    -webkit-transform: translateY(-6px);
+    transform: translateY(-6px);
+  }
+  49.95% {
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);
+  }
+  66.6% {
+    -webkit-transform: translateY(-2px);
+    transform: translateY(-2px);
+  }
+  83.25% {
+    -webkit-transform: translateY(1px);
+    transform: translateY(1px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+.zoom {
+    opacity: 0;
+}
+.on .zoom {
+    -webkit-animation-name: zoom;
+    -webkit-animation-delay: 1.5s;
+    -webkit-transform-origin: 73.1% 67.1%;
+}
+@-webkit-keyframes zoom {
+    0% {
+        opacity: 1;
+        -webkit-transform: scale(0);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: scale(1);
+    }
+}
