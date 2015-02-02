@@ -3,16 +3,19 @@
  */
 var say = function (p, text) {
 	var page = $('.p' + p);
+    var arrow = page.find('.end-arrow');
     var textWrap = page.find('.txt');
 
     var sayEnd = function () {
-        page.find('.end-arrow').fadeIn();
+        arrow.fadeIn();
     };
     
     var startEnd = function () {
         $('#txt' + p).addClass('txt').html(text);
         sayEnd();
-		page.find('.say-text-wrap').fadeOut();
+        if (arrow.is(':visible')) {
+            page.find('.say-text-wrap').fadeOut();
+        }
     };
     
     textWrap.typed({
