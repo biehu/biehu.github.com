@@ -12,9 +12,7 @@ var say = function (p, text) {
     var startEnd = function () {
         $('#txt' + p).addClass('txt').html(text);
         sayEnd();
-		setTimeout(function () {
-			page.find('.say-text-wrap').fadeOut();
-		}, 1000);
+		page.find('.say-text-wrap').fadeOut();
     };
     
     textWrap.typed({
