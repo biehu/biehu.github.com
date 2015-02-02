@@ -115,6 +115,7 @@
     transform: translateY(1px);
   }
   100% {
+	opacity: 1;
     -webkit-transform: translateY(0);
     transform: translateY(0);
   }
@@ -130,10 +131,11 @@
 @-webkit-keyframes zoom {
     0% {
         opacity: 1;
-        -webkit-transform: scale(0);
+        -webkit-transform: scale(.8);
     }
     100% {
         opacity: 1;
-        -webkit-transform: scale(1);
+        -webkit-transform: scale(1.2);
     }
 }
+

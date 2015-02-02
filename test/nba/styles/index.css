@@ -46,6 +46,7 @@ img {
 }
 
 .wrap {
+	overflow: hidden;
     background: #000;
 }
 
@@ -110,7 +111,7 @@ img {
     bottom: 0;
     width: 100%;
 }
-.say-text {
+.txt {
     position: absolute;
     top: 26%;
     padding: 0 11.3% 0 40.8%;
@@ -135,6 +136,9 @@ img {
     background: url(../images/p1.jpg) no-repeat;
     background-size: cover;
 }
+.p1 .end-arrow {
+	display: none;
+}
 .p2 img {
     position: absolute;
     top: 0;
@@ -152,9 +156,13 @@ img {
 }
 .p4 .link a {
     float: left;
-    width: 26%;
+    width: 27%;
     height: 100%;
     -webkit-transform: translateX(27%) skewX(-17deg);
+}
+.p4 .link a.active {
+	background: #000;
+	opacity: .5;
 }
 .p4 .link p {
     position: absolute;
@@ -171,22 +179,57 @@ img {
     z-index: 1;
 }
 
+.p4 .links-top p {
+	left: -3px;
+}
+
+
+.p4 .links-bottom p {
+	left: 4px;
+}
+
 /*
 	5
 */
-.cup {
-	position: absolute;
-	top: 0;
-	z-index: 10;
+.draw-img {
+	position: relative;
+	top: -200px;
+	left: -70px;
 }
+
 .p5 {
-    background: url(../images/cup.jpg) no-repeat;
-    background-size: 100%;
+	background: url(../images/cup.jpg) no-repeat;
+	background-size: 100%;
+}
+
+.cup-bg {
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 100%;
+	-webkit-transition: all 1s ease-in-out;
+}
+
+.cup-bg-on {
+	width: 640px;
+	top: -270px;
+	left: -260px;
+}
+
+.cup-bg img {
+	width: 100%;
+}
+
+.draw-img {
+	position: absolute;
+	z-index: 10;
+	
 }
 
 .draw-bottom {
 	position: absolute;
 	bottom: 0;
+	z-index: 10;
 	width: 100%;
 	text-align: center;
 
