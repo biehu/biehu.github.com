@@ -228,6 +228,8 @@ var drawCanvas = function () {
 			return;
 		}
         var xy = pos(event);
+		var imgData = board.getImageData(xy.x, xy.y, canvas.width, canvas.height);
+		console.log(imgData);
         if (last != null) {
 			board.lineWidth = 5;
 			board.strokeStyle = "#000000";
