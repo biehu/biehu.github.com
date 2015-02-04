@@ -212,7 +212,7 @@ var drawCanvas = function () {
 			canvas.width = this.width;
 			board.drawImage(this, 0, 0, this.width, this.height);
 		};
-		cup.src = 'http://sandbox.runjs.cn/uploads/rs/253/mbyavxki/cup-only.png';
+		cup.src = 'http://biehu.me/test/nba1/nba/images/cup-only.png';
 	};
     
     function beginDraw(event){
