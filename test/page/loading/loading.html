@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+   <head>
+       <meta charset="utf-8" />
+       <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+       <title>Untitled Document</title>
+       <style>
+            .loading {
+                position: absolute;
+                left: 0;
+                top: 0;
+                height: 10px;
+                background: #f00;
+            }
+       </style>
+   </head>
+   <body>
+       <div class="loading"></div>
+       <div class="loading-text"></div>
+       
+       <script src="scripts/jquery.js"></script>
+       <script> 
+	    (function () {
+            var pics = [
+                "http://mat1.gtimg.com/fashion/jellyzheng/bk57/app/bg1.jpg",
+                "http://mat1.gtimg.com/fashion/jellyzheng/bk57/app/bg2.jpg",
+                "http://mat1.gtimg.com/fashion/jellyzheng/bk57/app/bg3.jpg",
+                "http://mat1.gtimg.com/fashion/jellyzheng/bk57/app/bg4.jpg",
+                "http://mat1.gtimg.com/fashion/jellyzheng/bk57/app/bg5.jpg",
+                "http://mat1.gtimg.com/fashion/jellyzheng/bk57/app/wap_W1.png",
+                "http://mat1.gtimg.com/fashion/jellyzheng/bk57/app/wap_W8.png",
+                "http://mat1.gtimg.com/fashion/jellyzheng/bk57/app/wap_W3.png",
+                "http://mat1.gtimg.com/fashion/jellyzheng/bk57/app/wap_W9.png",
+                "http://mat1.gtimg.com/fashion/jellyzheng/bk57/app/wap_Z4.png",
+                "http://mat1.gtimg.com/fashion/jellyzheng/bk57/app/wap_Z5.png",
+                "http://mat1.gtimg.com/fashion/jellyzheng/bk57/app/wap_Z9.png",
+                "http://mat1.gtimg.com/fashion/jellyzheng/bk57/app/wap_T5.png",
+                "http://mat1.gtimg.com/fashion/jellyzheng/bk57/app/wap_Z3_1.png",
+                "http://mat1.gtimg.com/fashion/jellyzheng/bk57/app/wap_Z3_2.png",
+                "http://mat1.gtimg.com/fashion/jellyzheng/bk57/app/wap_W4.png",
+                "http://mat1.gtimg.com/fashion/jellyzheng/bk57/app/wap_Z2_l1.png",
+                "http://mat1.gtimg.com/fashion/jellyzheng/bk57/app/wap_Z2_l2.png",
+                "http://mat1.gtimg.com/fashion/jellyzheng/bk57/app/wap_Z2_l3.png",
+                "http://mat1.gtimg.com/fashion/jellyzheng/bk57/app/wap_Z2_l4.png",
+                "http://mat1.gtimg.com/fashion/jellyzheng/bk57/app/wap_T1.png",
+                "http://mat1.gtimg.com/fashion/jellyzheng/bk57/app/wap_T2.png",
+                "http://mat1.gtimg.com/fashion/jellyzheng/bk57/app/wap_T3.png",
+                "http://mat1.gtimg.com/fashion/jellyzheng/bk57/app/wap_T4.png"
+            ];
+            var index = 0;
+            var len = pics.length;
+            
+            var progress = function (w) {
+                $('.loading').animate({width: w}, 100, 'linear', function () {
+                    $('.loading-text').text(w);
+                });
+            };
+            
+            var loaded = function () {
+                alert('已经加载完了！');
+            };
+            
+            var load = function () {
+                var img = new Image();
+                img.src = pics[index];
+                img.onload = function () {
+                    progress(Math.floor((index + 1) / len * 100) + '%');
+                    index += 1;
+                    if (index < len) {
+                        load();
+                    }
+                    else {
+                        loaded();
+                    }
+                };
+            };
+            
+            var init = function () {
+                if (len > 0) {
+                    load();
+                }
+                else {
+                    progress('100%');
+                }
+            };
+            
+            init();
+
+        })();
+       </script>
+   </body>
+</html>

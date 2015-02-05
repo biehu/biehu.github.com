@@ -147,8 +147,68 @@ var share = function () {
     });
 };
 
+/*
+	封面
+*/
+var cover = function () {
+	var canvas = document.getElementById('cloud');
+	var ctx = canvas.getContext('2d');
+	var touchRadius = 20;
+	
+	var draw = function () {
+		var img = new Image();
+
+		canvas.width = window.innerWidth;
+		canvas.height = window.innerHeight;
+
+		img.onload = function () {
+			console.log(1, window.innerWidth, window.innerHeight);
+			ctx.drawImage(img, 0, 0, window.innerWidth, this.height * window.innerWidth / this.width);
+		};
+		img.src = './images/cloud.png';
+	};
+	
+	var fillCircle = function (x, y,radius,fillColor) {
+	   this.fillStyle = fillColor || '#eee';
+	   this.beginPath();
+	   this.moveTo(x, y);
+	   this.arc(x, y, radius, 0, Math.PI * 2, false);
+	   this.fill();
+	};
+	
+	var getTransparentPercent = function (ctx, width, height) {
+		var imgData = ctx.getImageData(0, 0, width, height);
+		var pixles = imgData.data;
+		var transPixs = [];
+		var i, l;
+		for (i = 0, l = pixles.length; i < l; i += 4) {
+			if (pixles[i + 3] === 0) transPixs.push(i);
+		}
+		return transPixs.length / (pixles.length / 4) * 100                 
+	 };
+	 
+	 draw();
+	 canvas.addEventListener('touchstart', function (e) {
+		$('.hand').hide();
+	 }, false);
+	 canvas.addEventListener('touchmove', function (e) {
+		 e.preventDefault();
+		 var x = e.touches[0].clientX;
+		 var y = e.touches[0].clientY;
+		 ctx.globalCompositeOperation = 'destination-out';
+		 
+		 fillCircle.call(ctx, x, y, touchRadius);
+		 if (parseInt(getTransparentPercent(ctx, canvas.width, canvas.height)) > 80) {
+			$('.start-before').fadeOut();
+			$('.start').addClass('show');
+		 }
+		 
+	 }, false);
+};
+
 
 $(function () {
     page();
     share();
+	cover();
 });
