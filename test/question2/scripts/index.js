@@ -153,6 +153,8 @@ var share = function () {
 */
 var cover = function () {
 	var canvas = document.getElementById('cloud');
+	if (!canvas) return;
+
 	var ctx = canvas.getContext('2d');
 	var touchRadius = 20;
 	
