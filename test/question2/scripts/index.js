@@ -92,7 +92,7 @@ var  page = function () {
     
    var bindPageUp = function () {
 
-       $(".answer li").bind('click', function(e){
+       $(".answer li, .start-btn").bind('click', function(e){
           
            e.preventDefault();
            if (index > 0) {
@@ -199,7 +199,7 @@ var cover = function () {
 		 ctx.globalCompositeOperation = 'destination-out';
 		 
 		 fillCircle.call(ctx, x, y, touchRadius);
-		 if (parseInt(getTransparentPercent(ctx, canvas.width, canvas.height)) > 80) {
+		 if (parseInt(getTransparentPercent(ctx, canvas.width, canvas.height)) > 60) {
 			$('.start-before').fadeOut();
 			$('.start').addClass('show');
 		 }
