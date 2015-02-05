@@ -6,15 +6,45 @@
 <title></title>
 <link rel="stylesheet" href="styles/index.css" />
 <link rel="stylesheet" href="styles/effect.css" />
+<style>
+.p23 img:nth-child(2) {
+	-webkit-transition-delay: 1s;
+}
+
+.p23 img:nth-child(3) {
+	-webkit-transition-delay: 1.5s;
+}
+
+.p23 img:nth-child(4) {
+	-webkit-transition-delay: 2.5s;
+}
+
+.p23 img:nth-child(5) {
+	-webkit-transition-delay: 3s;
+}
+
+.p2 img:nth-child(6) {
+	-webkit-animation-delay: 4s;
+}
+
+.p3 img:nth-child(6), 
+.p3 img:nth-child(7) {
+	-webkit-transition-delay: 4s;
+}
+
+.p3 img:nth-child(8) {
+	-webkit-animation-delay: 4.5s;
+}
+</style>
 </head>
 <body>
     <div class="wrap">
         <!-- loading -->
-        <div class="loading hide">
+        <div class="loading">
             <div class="loading-inner">
                 <div class="ball">
                     <img src="images/ball-wrap.png" />
-                    <img src="images/ball.png" />
+                    <img class="beat" src="images/ball.png" />
                 </div>
                 <div class="loading-text">
                     <img src="images/loading.png" />
@@ -23,64 +53,68 @@
             </div>
         </div>
         <!-- 1 -->
-        <div class="page p1 hide">
+        <div class="page p1">
             <div class="say-text-wrap">
                 <img src="images/say.png" />
-                <img src="images/say-arrow.png" />
-                <p id="say-text" class="say-text">
+                <img class="end-arrow" src="images/say-arrow.png" />
+                <p id="txt1" class="txt">
                 </p>
             </div>
         </div>
         <!-- 2 -->
-        <div class="page p2 hide">
+        <div class="page p23 p2  down">
             <img class="tmxL" src="images/p2-top.png" />
-            <img class="td2 tmxL" src="images/pe2.png" />
-            <img class="td4 tmxR" src="images/p2-middle.png" />
-            <img class="td6 tmxR" src="images/pe3.png" />
-            <img class="td8 tmxL" src="images/p2-bottom.png" />
+            <img class="tmxL" src="images/pe2.png" />
+            <img class="tmxR" src="images/p2-middle.png" />
+            <img class="tmxR" src="images/pe3.png" />
+            <img class="tmxL" src="images/p2-bottom.png" />
             <img class="wobble" src="images/pe4.png" />
         </div>
         <!-- 3 -->
-        <div class="page p3 hide">
+        <div class="page p23 p3  down">
             <img class="tmxL" src="images/p3-left.png" />
-            <img class="td2 tmxL" src="images/pe8.png" />
-            <img class="td4 tmxR" src="images/p3-right.png" />
-            <img class="td6 tmxR" src="images/pe5.png" />
-            <img class="td8 tmxR" src="images/p3-bottom.png" />
-            <img class="td10 opa" src="images/pe6.png" />
-            <img class="td10 opa" src="images/pe7.png" />
+            <img class="tmxL" src="images/pe8.png" />
+            <img class="tmxR" src="images/p3-right.png" />
+            <img class="tmxR" src="images/pe5.png" />
+            <img class="tmxR" src="images/p3-bottom.png" />
+            <img class="opa" src="images/pe6.png" />
+            <img class="opa" src="images/pe7.png" />
             <img class="zoom" src="images/eye.png" />
         </div>
         <!-- 4 -->
-        <div class="page p4 hide">
+        <div class="page p4 down">
             <div class="link links-top">
                 <img src="images/teams_01.jpg" />
                 <p>
-                    <a href="#"></a>
-                    <a href="#"></a>
-                    <a href="#"></a>
+                    <a class="next" data-num="1" href="#"></a>
+                    <a class="next" data-num="2" href="#"></a>
+                    <a class="next" data-num="3" href="#"></a>
                 </p>
             </div>
             <div class="link links-bottom">
                 <img src="images/teams_02.jpg" />
                 <p>
-                    <a href="#"></a>
-                    <a href="#"></a>
-                    <a href="#"></a>
+                    <a class="next" data-num="4" href="#"></a>
+                    <a class="next" data-num="5" href="#"></a>
+                    <a class="next" data-num="6" href="#"></a>
                 </p>
             </div>
             <div class="say-text-wrap">
                 <img src="images/say.png" />
                 <img src="images/say-arrow.png" />
                 <img src="images/eye1.png" />
-                <p class="say-text">
-                        想想还有点小激动呢！快替我在6个中选一个吧!
+                <p id="txt4" class="txt">
                 </p>
             </div>
         </div>
         <!-- 5 -->
-        <div class="page p5">
-			<canvas id="cup" class="cup"></canvas>
+        <div class="page p5 down">
+			<div class="cup-bg">
+				<img src="images/cup-pic.png" />
+			</div>
+			<div class="draw-img hide">
+				<canvas id="cup" class="cup"></canvas>
+			</div>
             <img class="sign-text" src="images/sign.png" />
             <div class="say-text-wrap hide">
                 <img src="images/say.png" />
@@ -92,8 +126,8 @@
             <div class="draw-bottom hide">
                 <img class="draw-bottom-bg" src="images/opa-bg.png" />
 				<p class="draw-btn">
-					<img src="images/draw-btn_03.jpg" />
-					<img src="images/draw-btn_05.jpg" />
+					<img class="draw-clean" src="images/draw-btn_03.jpg" />
+					<img class="draw-save" src="images/draw-btn_05.jpg" />
 				</p>
             </div>
 			<div class="share hide">

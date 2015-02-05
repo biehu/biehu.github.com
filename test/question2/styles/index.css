@@ -1,0 +1,160 @@
+* {
+    margin:0;
+    padding:0;
+}
+
+ul {
+    list-style:none;
+}
+
+img {
+    vertical-align:bottom;
+}
+
+a img {
+    border:none;
+}
+
+a {
+    text-decoration:none;
+}
+
+.clear {
+    clear:both;
+}
+
+.hide {
+    display: none;
+}
+
+img {
+    width: 100%;
+}
+
+html,
+body {
+    font-size: 10px;
+}
+
+/*
+ * all
+ */
+body,
+.container {
+    overflow: hidden;
+}
+.show {
+    opacity: 1;
+}          
+html,
+body,
+.container,
+.bgs,
+.pages,
+.bg,
+.page,
+.result {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.bgs,
+.bg,
+.bg > div {
+    position: absolute;
+}
+.bgs .bg1 {
+    background: url(../images/bg.jpg) no-repeat;
+    background-size: cover;
+}
+.container {
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+}
+.content {
+    box-sizing: border-box;
+    padding: 0 20px;
+}
+
+/*
+ * page
+ */
+.page {
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    -webkit-transform: translate(0px, 0px);
+    -webkit-transition: -webkit-transform 0.4s;
+}
+.down {
+    -webkit-transform: translate(0px, 100%);
+}
+.up {
+    -webkit-transform: translate(0px, -100%);
+}
+.answer li em {
+    font-style: normal;
+}
+.answer li {
+    margin-top: 15px;
+    padding: 5px 10px;
+    border: 2px solid #e60012;
+    border-radius: 10px;
+}
+.answer li:hover,
+.answer li.on {
+    background: #e60012;
+    color: #fff;
+}
+.page-content {
+    margin-top: 10px;
+}
+.page-main {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+}
+
+/*
+ * result
+ */
+.result {
+    background: url(../images/result-bg.jpg);
+    background-size: cover;
+}
+.result .content {
+    margin-top: 10px;
+}
+.result-main {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+}
+.share {
+    margin-top: 10px;
+}
+.share-left {
+    float: left;
+    width: 40px;
+    padding: 0 10px;
+}
+.share-right {
+    margin-left: 60px
+}
+.share-btn {
+    width: 136px;
+}
+.share-right b {
+    color: #e60012;
+    font-weight: normal;
+}
+.share-prompt {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url(../images/share.jpg) no-repeat;
+    background-size: cover;
+    opacity: .8;
+}
