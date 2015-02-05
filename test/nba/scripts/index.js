@@ -3,18 +3,20 @@
  */
 var say = function (p, text) {
 	var page = $('.p' + p);
+    var arrow = page.find('.end-arrow');
     var textWrap = page.find('.txt');
 
     var sayEnd = function () {
-        page.find('.end-arrow').fadeIn();
+        arrow.fadeIn();
+
     };
     
     var startEnd = function () {
         $('#txt' + p).addClass('txt').html(text);
         sayEnd();
-		setTimeout(function () {
-			page.find('.say-text-wrap').fadeOut();
-		}, 1000);
+        if (arrow.is(':visible')) {
+            page.find('.say-text-wrap').fadeOut();
+        }
     };
     
     textWrap.typed({
@@ -146,8 +148,7 @@ var page = function () {
  * loading
  */
 var loading = function () {
-//    var pics = ["http://www.biehu.me/test/nba/images/ball-wrap.png", "http://www.biehu.me/test/nba/images/ball.png", "http://www.biehu.me/test/nba/images/loading.png", "http://www.biehu.me/test/nba/images/say.png", "http://www.biehu.me/test/nba/images/say-arrow.png", "http://www.biehu.me/test/nba/images/p2-top.png", "http://www.biehu.me/test/nba/images/p2-middle.png", "http://www.biehu.me/test/nba/images/p2-bottom.png", "http://www.biehu.me/test/nba/images/pe2.png", "http://www.biehu.me/test/nba/images/pe3.png", "http://www.biehu.me/test/nba/images/pe4.png", "http://www.biehu.me/test/nba/images/p1.jpg"];
-	var pics= ["http://www.biehu.me/test/nba/images/ball-wrap.png"];
+    var pics = ["http://www.biehu.me/test/nba/images/ball-wrap.png", "http://www.biehu.me/test/nba/images/ball.png", "http://www.biehu.me/test/nba/images/loading.png", "http://www.biehu.me/test/nba/images/say.png", "http://www.biehu.me/test/nba/images/say-arrow.png", "http://www.biehu.me/test/nba/images/p2-top.png", "http://www.biehu.me/test/nba/images/p2-middle.png", "http://www.biehu.me/test/nba/images/p2-bottom.png", "http://www.biehu.me/test/nba/images/pe2.png", "http://www.biehu.me/test/nba/images/pe3.png", "http://www.biehu.me/test/nba/images/pe4.png", "http://www.biehu.me/test/nba/images/p1.jpg"];
     var index = 0;
     var len = pics.length;
     
@@ -212,7 +213,7 @@ var drawCanvas = function () {
 			canvas.width = this.width;
 			board.drawImage(this, 0, 0, this.width, this.height);
 		};
-		cup.src = 'http://sandbox.runjs.cn/uploads/rs/253/mbyavxki/cup-only.png';
+		cup.src = 'http://biehu.me/test/nba/images/cup-only.png';
 	};
     
     function beginDraw(event){
@@ -228,6 +229,7 @@ var drawCanvas = function () {
 			return;
 		}
         var xy = pos(event);
+		var imgData = board.getImageData(xy.x, xy.y, canvas.width, canvas.height);
         if (last != null) {
 			board.lineWidth = 5;
 			board.strokeStyle = "#000000";

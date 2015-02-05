@@ -147,6 +147,7 @@ var share = function () {
     });
 };
 
+
 /*
 	封面
 */
