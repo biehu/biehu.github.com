@@ -187,8 +187,8 @@ body,
 .cover .start.show .start-btn {
 	-webkit-animation-name: hvr-buzz-out;
 	animation-name: hvr-buzz-out;
-	-webkit-animation-duration: 0.75s;
-	animation-duration: 0.75s;
+	-webkit-animation-duration: 2s;
+	animation-duration: 2s;
 	-webkit-animation-timing-function: linear;
 	animation-timing-function: linear;
 	-webkit-animation-iteration-count: 1;
