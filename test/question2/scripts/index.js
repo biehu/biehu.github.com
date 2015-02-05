@@ -199,7 +199,7 @@ var cover = function () {
 		 ctx.globalCompositeOperation = 'destination-out';
 		 
 		 fillCircle.call(ctx, x, y, touchRadius);
-		 if (parseInt(getTransparentPercent(ctx, canvas.width, canvas.height)) > 40) {
+		 if (parseInt(getTransparentPercent(ctx, canvas.width, canvas.height)) > 30) {
 			$('.start-before').fadeOut();
 			$('.start').addClass('show');
 		 }
