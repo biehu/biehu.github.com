@@ -93,7 +93,6 @@ var  page = function () {
    var bindPageUp = function () {
 
        $(".answer li, .start-btn img").bind('touchstart click', function(e){
-		   alert(1);
 		   if (!$(this).parents('.page').hasClass('last-ask')) {
 			   if (index > 0) {
 				   score[index] = {};
@@ -114,14 +113,12 @@ var  page = function () {
        });
 
        $('.last-ask li').bind('click', function(e) {
-		   alert(2);
 //                    console.log(getSendData(score));
             var data = getSendData(score);
 
             $.post("admin/insert.php", data, function () {
                 
             });
-			alert('result' + data.result + '.html');
             window.location.href = 'result' + data.result + '.html';
 
        });
@@ -224,10 +221,10 @@ var cover = function () {
 
 		 
 //		 fillCircle.call(ctx, x, y, touchRadius);
-//		 if (parseInt(getTransparentPercent(ctx, canvas.width, canvas.height)) > 30) {
+		 if (parseInt(getTransparentPercent(ctx, canvas.width, canvas.height)) > 30) {
 			$('.start-before').fadeOut();
 			$('.start').addClass('show');
-//		 }
+		 }
 	 }, false);
 	 canvas.addEventListener('touchend', function (e) {
 		mousePress = false;
