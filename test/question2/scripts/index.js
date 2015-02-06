@@ -157,6 +157,7 @@ var cover = function () {
 
 	var ctx = canvas.getContext('2d');
 	var touchRadius = 20;
+	var mousePress = false;
 	
 	var draw = function () {
 		var img = new Image();
@@ -184,6 +185,7 @@ var cover = function () {
 		var pixles = imgData.data;
 		var transPixs = [];
 		var i, l;
+
 		for (i = 0, l = pixles.length; i < l; i += 4) {
 			if (pixles[i + 3] === 0) transPixs.push(i);
 		}
@@ -193,20 +195,44 @@ var cover = function () {
 	 draw();
 	 canvas.addEventListener('touchstart', function (e) {
 		$('.hand').hide();
+		mousePress = true;
+		event.preventDefault();
+		event.stopPropagation(); 
 	 }, false);
 	 canvas.addEventListener('touchmove', function (e) {
-		 e.preventDefault();
+		 event.preventDefault();
+		 event.stopPropagation();
+
+		 if (!mousePress) return;
 		 var x = e.touches[0].clientX;
 		 var y = e.touches[0].clientY;
+
 		 ctx.globalCompositeOperation = 'destination-out';
-		 
 		 fillCircle.call(ctx, x, y, touchRadius);
 		 if (parseInt(getTransparentPercent(ctx, canvas.width, canvas.height)) > 30) {
 			$('.start-before').fadeOut();
 			$('.start').addClass('show');
 		 }
-		 
 	 }, false);
+	 canvas.addEventListener('touchend', function (e) {
+		mousePress = false;
+        event.preventDefault();
+		event.stopPropagation(); 
+	 }, false);
+	 $('.page').on('touchstart touchmove touchend', function () {
+		return false;
+	 });
+	
+
+};
+
+/*
+	设置页面高度
+*/
+var setHeight = function () {
+	var pageHeight = $(window).height();
+	var section = $('.page, body, html');
+	section.height(pageHeight);
 };
 
 
@@ -214,4 +240,5 @@ $(function () {
     page();
     share();
 	cover();
+	setHeight();
 });
