@@ -92,24 +92,25 @@ var  page = function () {
     
    var bindPageUp = function () {
 
-       $(".answer li, .start-btn img").bind('click', function(e){
+       $(".answer li, .start-btn img").bind('touchstart click', function(e){
 		   alert(1);
-		   if ($(this).parents('.page').hasClass('last-ask')) return;
-           if (index > 0) {
-               score[index] = {};
-               score[index].score = $(this).attr('data-score');
-               score[index].answer = $(this).find('em').html();
-           }
-           
-           if (index == (allNum - 1)) {
-               return;
-           }
-           
-           if (isAnimate) {
-               isAnimate = false;
-           }
-           
-           setPage(0, ++index);
+		   if (!$(this).parents('.page').hasClass('last-ask')) {
+			   if (index > 0) {
+				   score[index] = {};
+				   score[index].score = $(this).attr('data-score');
+				   score[index].answer = $(this).find('em').html();
+			   }
+			   
+			   if (index == (allNum - 1)) {
+				   return;
+			   }
+			   
+			   if (isAnimate) {
+				   isAnimate = false;
+			   }
+			   
+			   setPage(0, ++index);
+		   }
        });
 
        $('.last-ask li').bind('click', function(e) {
