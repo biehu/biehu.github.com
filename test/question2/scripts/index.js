@@ -92,7 +92,7 @@ var  page = function () {
     
    var bindPageUp = function () {
 
-       $(".answer li, .start-btn").bind('click', function(e){
+       $(".answer li, .start").bind('click', function(e){
           
            e.preventDefault();
            if (index > 0) {
@@ -156,7 +156,6 @@ var cover = function () {
 	if (!canvas) return;
 
 	var ctx = canvas.getContext('2d');
-	var touchRadius = 20;
 	var mousePress = false;
 	var last;
 	
@@ -219,7 +218,7 @@ var cover = function () {
 		 ctx.globalCompositeOperation = 'destination-out';
 		 var xy = pos(e);
 		 if (last != null) {
-			ctx.lineWidth = 20;
+			ctx.lineWidth = 30;
 			ctx.strokeStyle = "#000000";
 			ctx.beginPath();
 			ctx.moveTo(last.x, last.y);
