@@ -94,7 +94,6 @@ var  page = function () {
 
        $(".answer li, .start-btn img").bind('click', function(e){
 		   alert(1);
-           e.preventDefault();
 		   if ($(this).parents('.page').hasClass('last-ask')) return;
            if (index > 0) {
                score[index] = {};
@@ -115,7 +114,6 @@ var  page = function () {
 
        $('.last-ask li').bind('click', function(e) {
 		   alert(2);
-            e.preventDefault();
 //                    console.log(getSendData(score));
             var data = getSendData(score);
 
