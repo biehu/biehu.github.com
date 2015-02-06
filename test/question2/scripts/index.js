@@ -119,7 +119,9 @@ var  page = function () {
             $.post("admin/insert.php", data, function () {
                 
             });
-            location.href = 'result' + data.result + '.html';
+			alert('result' + data.result + '.html');
+            window.location.href = 'result' + data.result + '.html';
+
        });
    };
 
