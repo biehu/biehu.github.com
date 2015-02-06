@@ -180,6 +180,9 @@ body,
 .cover p {
 	z-index: 11;
 }
+.cover .start-btn {
+	z-index: 11000;
+}
 .cover .cover-title {
 	top: 31.3%;
 }
