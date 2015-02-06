@@ -158,6 +158,7 @@ var cover = function () {
 	var ctx = canvas.getContext('2d');
 	var touchRadius = 20;
 	var mousePress = false;
+	var last;
 	
 	var draw = function () {
 		var img = new Image();
@@ -191,6 +192,17 @@ var cover = function () {
 		}
 		return transPixs.length / (pixles.length / 4) * 100                 
 	 };
+
+	function pos(event){
+        var x = event.touches[0].pageX;
+        var y = event.touches[0].pageY;
+        
+
+        return {
+            x: x,
+            y: y
+        };
+    }
 	 
 	 draw();
 	 canvas.addEventListener('touchstart', function (e) {
@@ -202,13 +214,22 @@ var cover = function () {
 	 canvas.addEventListener('touchmove', function (e) {
 		 event.preventDefault();
 		 event.stopPropagation();
-
 		 if (!mousePress) return;
-		 var x = e.touches[0].clientX;
-		 var y = e.touches[0].clientY;
-
+		
 		 ctx.globalCompositeOperation = 'destination-out';
-		 fillCircle.call(ctx, x, y, touchRadius);
+		 var xy = pos(e);
+		 if (last != null) {
+			ctx.lineWidth = 20;
+			ctx.strokeStyle = "#000000";
+			ctx.beginPath();
+			ctx.moveTo(last.x, last.y);
+			ctx.lineTo(xy.x, xy.y);
+			ctx.stroke();
+		 }
+		 last = xy;
+
+		 
+//		 fillCircle.call(ctx, x, y, touchRadius);
 		 if (parseInt(getTransparentPercent(ctx, canvas.width, canvas.height)) > 30) {
 			$('.start-before').fadeOut();
 			$('.start').addClass('show');
@@ -218,6 +239,7 @@ var cover = function () {
 		mousePress = false;
         event.preventDefault();
 		event.stopPropagation(); 
+		last = null;
 	 }, false);
 	 $('.page').on('touchstart touchmove touchend', function () {
 		return false;
