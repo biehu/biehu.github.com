@@ -92,8 +92,7 @@ var  page = function () {
     
    var bindPageUp = function () {
 
-       $(".answer li, .start").bind('click', function(e){
-          
+       $(".answer li, .start-btn img").bind('touchstart click', function(e){
            e.preventDefault();
            if (index > 0) {
                score[index] = {};
@@ -221,10 +220,10 @@ var cover = function () {
 
 		 
 //		 fillCircle.call(ctx, x, y, touchRadius);
-		 if (parseInt(getTransparentPercent(ctx, canvas.width, canvas.height)) > 30) {
+//		 if (parseInt(getTransparentPercent(ctx, canvas.width, canvas.height)) > 30) {
 			$('.start-before').fadeOut();
 			$('.start').addClass('show');
-		 }
+//		 }
 	 }, false);
 	 canvas.addEventListener('touchend', function (e) {
 		mousePress = false;
