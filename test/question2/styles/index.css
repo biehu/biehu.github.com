@@ -164,6 +164,10 @@ body,
 	position: absolute;
 	top: 0;
 }
+.cover .text2015 {
+	top: auto;
+	bottom: 0;
+}
 .cloud {
 	z-index: 10;
 	width: 100%;
@@ -174,9 +178,6 @@ body,
 }
 .cover .cover-title {
 	top: 31.3%;
-}
-.cover .start-btn {
-	top: 76.8%;
 }
 .cover .start {
 	display: none;
