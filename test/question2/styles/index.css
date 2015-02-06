@@ -59,9 +59,13 @@ body,
     background: url(../images/bg.jpg) no-repeat;
     background-size: cover;
 }
-.container {
+.result {
     font-size: 1.4rem;
 	line-height: 1.6rem;
+}
+.page {
+	font-size: 1.8rem;
+	line-height: 2.2rem;
 }
 .content {
     box-sizing: border-box;
