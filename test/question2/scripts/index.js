@@ -92,7 +92,7 @@ var  page = function () {
     
    var bindPageUp = function () {
 
-       $(".answer li, .start-btn").bind('click', function(e){
+       $(".answer li, .start-btn").bind('touchstart', function(e){
           
            e.preventDefault();
            if (index > 0) {
