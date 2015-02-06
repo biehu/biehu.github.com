@@ -92,7 +92,7 @@ var  page = function () {
     
    var bindPageUp = function () {
 
-       $(".answer li, .start-btn img").bind('touchstart click', function(e){
+       $(".answer li, .start-btn img").bind('click', function(e){
 		   alert(1);
            e.preventDefault();
 		   if ($(this).parents('.page').hasClass('last-ask')) return;
