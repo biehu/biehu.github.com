@@ -244,6 +244,9 @@ var cover = function () {
 	 $('.page').on('touchstart touchmove touchend', function () {
 		return false;
 	 });
+	 $('.hand').on('touchstart', function () {
+		$(this).hide();
+	 });
 	
 
 };
