@@ -171,15 +171,7 @@ var cover = function () {
 		};
 		img.src = './images/cloud.png';
 	};
-	
-	var fillCircle = function (x, y,radius,fillColor) {
-	   this.fillStyle = fillColor || '#eee';
-	   this.beginPath();
-	   this.moveTo(x, y);
-	   this.arc(x, y, radius, 0, Math.PI * 2, false);
-	   this.fill();
-	};
-	
+
 	var getTransparentPercent = function (ctx, width, height) {
 		var imgData = ctx.getImageData(0, 0, width, height);
 		var pixles = imgData.data;
@@ -218,7 +210,7 @@ var cover = function () {
 		 ctx.globalCompositeOperation = 'destination-out';
 		 var xy = pos(e);
 		 if (last != null) {
-			ctx.lineWidth = 30;
+			ctx.lineWidth = 40;
 			ctx.strokeStyle = "#000000";
 			ctx.beginPath();
 			ctx.moveTo(last.x, last.y);
