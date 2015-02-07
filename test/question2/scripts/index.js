@@ -100,6 +100,7 @@ var  page = function () {
 		   }
 		   
 		   if (index == (allNum - 1)) {
+			   send();
 			   return;
 		   }
 		   
@@ -110,7 +111,7 @@ var  page = function () {
 		   setPage(0, ++index);
        });
 
-       $('.last-ask li').bind('click', function(e) {
+       var send = function() {
 //                    console.log(getSendData(score));
             var data = getSendData(score);
 
@@ -119,7 +120,7 @@ var  page = function () {
 //            });
             window.location.href = './result' + data.result + '.html';
 
-       });
+       };
    };
 
    var init = function () {
