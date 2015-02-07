@@ -157,7 +157,7 @@ var cover = function () {
 
 	var ctx = canvas.getContext('2d');
 	var mousePress = false;
-	var last;
+	var last = { x: 0, y: 0 };
 	
 	var draw = function () {
 		var img = new Image();
@@ -235,10 +235,6 @@ var cover = function () {
 	 $('.page').on('touchstart touchmove touchend', function () {
 		return false;
 	 });
-	 $('.hand').on('touchstart', function () {
-		$(this).hide();
-	 });
-	
 
 };
 
