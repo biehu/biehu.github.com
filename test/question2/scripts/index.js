@@ -112,7 +112,7 @@ var  page = function () {
        });
 
        var send = function() {
-                    console.log(getSendData(score));
+//                    console.log(getSendData(score));
             var data = getSendData(score);
 
 //            $.post("admin/insert.php", data, function () {
