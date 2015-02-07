@@ -117,7 +117,7 @@ var  page = function () {
 //            $.post("admin/insert.php", data, function () {
 //                
 //            });
-            window.location.href = '/result' + data.result + '.html';
+            window.location.href = './result' + data.result + '.html';
 
        });
    };
