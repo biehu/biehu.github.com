@@ -300,4 +300,15 @@ body,
     transform: translateX(-1px) rotate(0);
   }
 }
-
+.loading {
+	position: absolute;
+	z-index: 100;
+	width: 100%;
+	height: 100%;
+	background: #000;
+	box-sizing: border-box;
+	padding: 20px;
+	text-align: center;
+	color: #fff;
+	font-size: 18px;
+}

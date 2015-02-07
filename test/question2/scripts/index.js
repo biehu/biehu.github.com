@@ -246,8 +246,60 @@ var setHeight = function () {
 	section.height(pageHeight);
 };
 
+/*
+	loading
+*/
+var loading = (function () {
+            var pics = [
+                "http://biehu.me/test/question2/images/bg.jpg",
+                "http://biehu.me/test/question2/images/cover-title2.png",
+                "http://biehu.me/test/question2/images/cover-bg.jpg",
+                "http://biehu.me/test/question2/images/cloud.png"
+            ];
+            var index = 0;
+            var len = pics.length;
+            
+            var progress = function (w) {
+                
+                    $('.loading em').text(w);
+               
+            };
+            
+            var loaded = function () {
+                $('.loading').fadeOut();
+            };
+            
+            var load = function () {
+                var img = new Image();
+                img.src = pics[index];
+                img.onload = function () {
+                    progress(Math.floor((index + 1) / len * 100) + '%');
+                    index += 1;
+                    if (index < len) {
+                        load();
+                    }
+                    else {
+                        loaded();
+                    }
+                };
+            };
+            
+            var init = function () {
+                if (len > 0) {
+                    load();
+                }
+                else {
+                    progress('100%');
+                }
+            };
+            
+            return init;
+
+        })();
+
 
 $(function () {
+	loading();
     page();
     share();
 	cover();
