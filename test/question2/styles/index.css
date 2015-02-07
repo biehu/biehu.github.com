@@ -206,7 +206,9 @@ body,
 	animation-iteration-count: 1;
 }
 .cover .hand {
+	width: 121px;
 	top: 60.2%;
+	left: 50%;
 	-webkit-animation-name: hvr-wobble-to-top-right;
   animation-name: hvr-wobble-to-top-right;
   -webkit-animation-duration: 1s;

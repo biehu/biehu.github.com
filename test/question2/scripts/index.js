@@ -157,7 +157,7 @@ var cover = function () {
 
 	var ctx = canvas.getContext('2d');
 	var mousePress = false;
-	var last = { x: 0, y: 0 };
+	var last;
 	
 	var draw = function () {
 		var img = new Image();
@@ -166,7 +166,7 @@ var cover = function () {
 		canvas.height = window.innerHeight;
 
 		img.onload = function () {
-			console.log(1, window.innerWidth, window.innerHeight);
+			last = { x: window.innerWidth / 2, y: this.height * window.innerWidth / this.width / 2 };
 			ctx.drawImage(img, 0, 0, window.innerWidth, this.height * window.innerWidth / this.width);
 		};
 		img.src = './images/cloud.png';
