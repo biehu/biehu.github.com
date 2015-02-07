@@ -93,33 +93,31 @@ var  page = function () {
    var bindPageUp = function () {
 
        $(".answer li, .start-btn img").bind('touchstart click', function(e){
-		   if (!$(this).parents('.page').hasClass('last-ask')) {
-			   if (index > 0) {
-				   score[index] = {};
-				   score[index].score = $(this).attr('data-score');
-				   score[index].answer = $(this).find('em').html();
-			   }
-			   
-			   if (index == (allNum - 1)) {
-				   return;
-			   }
-			   
-			   if (isAnimate) {
-				   isAnimate = false;
-			   }
-			   
-			   setPage(0, ++index);
+		   if (index > 0) {
+			   score[index] = {};
+			   score[index].score = $(this).attr('data-score');
+			   score[index].answer = $(this).find('em').html();
 		   }
+		   
+		   if (index == (allNum - 1)) {
+			   return;
+		   }
+		   
+		   if (isAnimate) {
+			   isAnimate = false;
+		   }
+		   
+		   setPage(0, ++index);
        });
 
        $('.last-ask li').bind('click', function(e) {
 //                    console.log(getSendData(score));
             var data = getSendData(score);
 
-            $.post("admin/insert.php", data, function () {
-                
-            });
-            window.location.href = 'result' + data.result + '.html';
+//            $.post("admin/insert.php", data, function () {
+//                
+//            });
+            window.location.href = '../result' + data.result + '.html';
 
        });
    };
