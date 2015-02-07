@@ -296,6 +296,16 @@ var loading = (function () {
             return init;
 
         })();
+/*
+	ios 音乐播放
+*/
+var iosAutoPlay = function () {
+	if (/i(Phone|P(o|a)d)/.test(navigator.userAgent)) {
+        $(document).one("touchstart",function(){
+            $('#audio_music')[0].play();
+        });
+    }
+};
 
 
 $(function () {
@@ -304,4 +314,5 @@ $(function () {
     share();
 	cover();
 	setHeight();
+	iosAutoPlay();
 });
