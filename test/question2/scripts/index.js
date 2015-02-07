@@ -302,7 +302,6 @@ var loading = (function () {
 var iosAutoPlay = function () {
 	if (/i(Phone|P(o|a)d)/.test(navigator.userAgent)) {
         $('#cloud').one("touchstart",function(){
-			alert($('#audio_music')[0].src);
             $('#audio_music')[0].play();
         });
     }
