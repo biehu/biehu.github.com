@@ -1,0 +1,161 @@
+* {
+    margin:0;
+    padding:0;
+}
+
+ul {
+    list-style:none;
+}
+
+img {
+    vertical-align:bottom;
+}
+
+a img {
+    border:none;
+}
+
+a {
+    text-decoration:none;
+}
+
+.clear {
+    clear:both;
+}
+.container{
+	font-family: "微软雅黑";
+	font-size: 14px;
+	color: #fff;
+}
+
+.banner_wrap_root,
+#banner_wrap {
+	height: 835px;
+}
+
+.banner_wrap0{
+	background: url(../images/banner.jpg) center top no-repeat;
+}
+.banner_wrap1{
+	background: url(../images/banner1.jpg) center top no-repeat;
+}
+.banner_wrap2{
+	background: url(../images/banner2.jpg) center top no-repeat;
+}
+.banner_wrap3{
+	background: url(../images/banner3.jpg) center top no-repeat;
+}
+.banner{
+	width: 1000px;
+	position:relative;
+	margin: 0 auto;
+}
+.banner_change{
+	position: absolute;
+	width: 242px;
+	right: 0;
+	top: 460px;
+}
+.banner_change img{
+	margin: 0 0 10px 10px;
+	cursor: pointer;
+}
+
+.section1_wrap,.section3_wrap{
+	background:#000;
+	height: 748px;
+	padding-top: 28px;
+}
+.section1,.section2,.section3,.section4{
+	margin: 0 auto;
+	position: relative;
+	width: 1000px;
+}
+.model1_img{
+	position: absolute;
+	top: 20px;
+	left: 20px;
+}
+.section1 .say,.section3 .say{
+	position: absolute;
+	left: 500px;
+	top: 84px;
+	color: #fff;
+	font-size: 38px;
+	width: 288px;
+
+	font-weight: bold;
+}
+.say p{
+	margin-top: -10px;
+}
+
+.section1 .intro,.section3 .intro{
+	position: absolute;
+	left: 463px;
+	top: 498px;
+}
+.intro p{
+	line-height: 25px;
+	text-indent: 35px;
+}
+.section1 .choice,.section3 .choice{
+	position: absolute;
+	left: 785px;
+	top: 10px;
+}
+.choice p{
+	background: url(../images/intro.png) 0 11px no-repeat;
+	line-height: 40px;
+	height: 40px;
+	padding-left: 24px;
+	width: 191px;
+}
+.choice .last{
+	border-bottom: 2px solid #fff;
+}
+
+
+.section2_wrap,.section4_wrap{
+	background: url(../images/section2.jpg) center top no-repeat;
+	height: 763px;
+}
+.model2_img{
+	position: absolute;
+	top: 45px;
+	left: 520px;
+}
+.section2 .say,.section4 .say{
+	position: absolute;
+	left: 240px;
+	top: 100px;
+	color: #fff;
+	font-size: 38px;
+	width: 288px;
+	font-weight: bold;
+}
+.say strong{
+	font-family: "宋体";
+	font-size: 68px;
+	color: #F10002;
+	font-weight: bolder;
+}
+.section2 .intro,.section4 .intro{
+	position: absolute;
+	left: 280px;
+	top: 520px;
+	text-align: right;
+	width: 250px;
+}
+.section2 .intro p,.section4 .intro p{
+	margin-right: 30px;
+}
+
+.section2 .choice,.section4 .choice{
+	position: absolute;
+	left: 0;
+	top: 32px;
+}
+
+
+

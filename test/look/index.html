@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title></title>
+<!-- 公共样式及统计代码 -->
+<!--#include virtual="/section/716.html"-->
+<style>
+.page_footer .footer {
+	margin-top: 0;
+	background: #000;
+}
+</style>
+<link rel="stylesheet" href="styles/index.css" />
+</head>
+<body>
+<div class="page_header">
+<!--#include virtual="/section/715.html"-->
+</div>	
+<div class="container">
+	<div class="banner_wrap_root">
+		<div id="banner_wrap" class="banner_wrap0">
+			<div class="banner">
+				<div class="banner_change"> 
+					<img src="images/banner_img.gif" /><img src="images/banner_img.gif" /><img src="images/banner_img.gif" /><img src="images/banner_img.gif" />
+				</div> 
+			</div>
+		</div>
+	</div>
+    <div class="section1_wrap">
+        <div class="section1">
+            <img class="model1_img" src="images/model_img.jpg" />
+            <div class="say">
+                <img class="editor" src="images/editor.png" />
+                <p><img class="quotes1" src="images/quotes1.png" /><br><strong>我</strong>觉得这一套衣服我非常适合我去和男友约会的时候穿。<img class="quotes2" src="images/quotes2.png" /></p>
+            </div>
+            <div class="intro">
+                <img  src="images/arrow1.png" />
+                <p>上衣：Charlotte Olympia</p>
+                <p>包：Charlotte Olympia</p>
+                <p>格子裙：Charlotte Olympia</p>
+                <p>风衣：Charlotte Olympia</p>
+                <p>鞋：Charlotte Olympia</p>
+            </div>
+            <div class="choice">
+                <img  src="images/choice.png" />
+                <p>1.Charlotte Olympia</p>
+                <p>2.Charlotte Olympia</p>
+                <p class="last">3.Charlotte Olympia</p>
+            </div>
+        </div>
+    </div>
+    <div class="section2_wrap">
+        <div class="section2">
+            <img class="model2_img" src="images/model2_img.jpg" />
+            <div class="say">
+                <img class="editor" src="images/editor.png" />
+                <p><img class="quotes1" src="images/quotes1.png" /><br><strong>我</strong>觉得这一套衣服我非常适合我去和男友约会的时候穿。<img class="quotes2" src="images/quotes2.png" /></p>
+            </div>
+            <div class="intro">
+                <img class="arrow2" src="images/arrow2.png" />
+                <p>上衣：Charlotte Olympia</p>
+                <p>包：Charlotte Olympia</p>
+                <p>格子裙：Charlotte Olympia</p>
+                <p>风衣：Charlotte Olympia</p>
+                <p>鞋：Charlotte Olympia</p>
+            </div>
+            <div class="choice">
+                <img  src="images/choice.png" />
+                <p>1.Charlotte Olympia</p>
+                <p>2.Charlotte Olympia</p>
+                <p class="last">3.Charlotte Olympia</p>
+            </div>
+        </div>
+    </div>
+    <div class="section3_wrap">
+        <div class="section3">
+            <img class="model1_img" src="images/model_img.jpg" />
+            <div class="say">
+                <img class="editor" src="images/editor.png" />
+                <p><img class="quotes1" src="images/quotes1.png" /><br><strong>我</strong>觉得这一套衣服我非常适合我去和男友约会的时候穿。<img class="quotes2" src="images/quotes2.png" /></p>
+            </div>
+            <div class="intro">
+                <img  src="images/arrow1.png" />
+                <p>上衣：Charlotte Olympia</p>
+                <p>包：Charlotte Olympia</p>
+                <p>格子裙：Charlotte Olympia</p>
+                <p>风衣：Charlotte Olympia</p>
+                <p>鞋：Charlotte Olympia</p>
+            </div>
+            <div class="choice">
+                <img  src="images/choice.png" />
+                <p>1.Charlotte Olympia</p>
+                <p>2.Charlotte Olympia</p>
+                <p class="last">3.Charlotte Olympia</p>
+            </div>
+        </div>
+    </div>
+    <div class="section4_wrap">
+        <div class="section4">
+            <img class="model2_img" src="images/model2_img.jpg" />
+            <div class="say">
+                <img class="editor" src="images/editor.png" />
+                <p><img class="quotes1" src="images/quotes1.png" /><br><strong>我</strong>觉得这一套衣服我非常适合我去和男友约会的时候穿。<img class="quotes2" src="images/quotes2.png" /></p>
+            </div>
+            <div class="intro">
+                <img class="arrow2" src="images/arrow2.png" />
+                <p>上衣：Charlotte Olympia</p>
+                <p>包：Charlotte Olympia</p>
+                <p>格子裙：Charlotte Olympia</p>
+                <p>风衣：Charlotte Olympia</p>
+                <p>鞋：Charlotte Olympia</p>
+            </div>
+            <div class="choice">
+                <img  src="images/choice.png" />
+                <p>1.Charlotte Olympia</p>
+                <p>2.Charlotte Olympia</p>
+                <p class="last">3.Charlotte Olympia</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="page_footer">
+<!--#include virtual="/section/717.html"-->
+</div>
+<script src="scripts/jquery.js"></script>
+<script>
+/*
+	banner 焦点图
+*/
+var pics = [
+	'images/banner.jpg',
+	'images/banner1.jpg',
+	'images/banner2.jpg',
+	'images/banner3.jpg'
+];
+
+var onBannerClick = function () {
+	var index = $(this).index();
+	var bannerWrap = $('#banner_wrap');
+	bannerWrap.fadeOut().
+		addClass('banner_wrap' + index).
+		fadeIn();
+};
+
+$('.banner_change img').click(onBannerClick);
+
+</script>
+</body>
+</html>
