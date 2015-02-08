@@ -99,9 +99,8 @@ var  page = function () {
 			   score[index].answer = $(this).find('em').html();
 		   }
 		   
-		   if (index == (allNum - 1)) {
+		   if (index == (allNum - 2)) {
 			   send();
-//			   return;
 		   }
 		   
 		   if (isAnimate) {
@@ -112,13 +111,11 @@ var  page = function () {
        });
 
        var send = function() {
-//                    console.log(getSendData(score));
             var data = getSendData(score);
 
 //            $.post("admin/insert.php", data, function () {
 //                
 //            });
-//            window.location.href = './result' + data.result + '.html';
 			$('.result').hide();
 			$('.result' + data.result).show();
 
