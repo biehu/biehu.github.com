@@ -101,7 +101,7 @@ var  page = function () {
 		   
 		   if (index == (allNum - 1)) {
 			   send();
-			   return;
+//			   return;
 		   }
 		   
 		   if (isAnimate) {
@@ -118,7 +118,9 @@ var  page = function () {
 //            $.post("admin/insert.php", data, function () {
 //                
 //            });
-            window.location.href = './result' + data.result + '.html';
+//            window.location.href = './result' + data.result + '.html';
+			$('.result').hide();
+			$('.result' + data.result).show();
 
        };
    };
