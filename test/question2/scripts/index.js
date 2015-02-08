@@ -138,7 +138,7 @@ var share = function () {
                 
     $('.share-btn').on('click', function (e) {
         e.preventDefault();
-        $('.share-prompt').fadeIn();   
+        $(this).parents('.result').find('.share-prompt').fadeIn();   
     });
 
     $('.share-prompt').on('click', function () {
