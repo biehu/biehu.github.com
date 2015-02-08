@@ -99,6 +99,7 @@ var  page = function () {
 			   score[index].answer = $(this).find('em').html();
 		   }
 		   
+		   console.log(index, allNum);
 		   if (index == (allNum - 2)) {
 			   send();
 		   }
