@@ -295,7 +295,7 @@ var loading = (function () {
 
         })();
 /*
-	ios 音乐播放
+	音乐播放
 */
 var iosAutoPlay = function () {
 	if (/i(Phone|P(o|a)d)/.test(navigator.userAgent)) {
@@ -304,6 +304,25 @@ var iosAutoPlay = function () {
         });
     }
 };
+var music = function () {
+		var isPlay = true;
+		$("#music").on("touchstart", function(){
+			var audio = $('#audio_music')[0];
+			var that = $(this);
+			if (isPlay) {
+				audio.pause();
+				isPlay = false;
+				that.addClass('on');
+			}
+			else {
+				audio.play();
+				isPlay = true;
+				that.removeClass('on');
+			}
+            return false;
+		});
+
+	};
 
 
 $(function () {
@@ -313,4 +332,5 @@ $(function () {
 	cover();
 	setHeight();
 	iosAutoPlay();
+	music();
 });

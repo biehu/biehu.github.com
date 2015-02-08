@@ -315,3 +315,29 @@ body,
 	color: #fff;
 	font-size: 18px;
 }
+.music {
+	position: absolute;
+	left: 8px;
+	top: 8px;
+	z-index: 1000000;
+	width: 24px;
+	height: 24px;
+	background: url(../images/music.png) no-repeat 1px 1px;
+	background-size: 100%;
+	z-index: 99;
+	-webkit-animation: rotates 1.2s linear infinite;
+}
+
+.music.on {
+	-webkit-animation: none;
+}
+
+@-webkit-keyframes rotates {
+    0% {
+        -webkit-transform: rotate(0)
+    }
+
+    100% {
+        -webkit-transform: rotate(-360deg)
+    }
+}
