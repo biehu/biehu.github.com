@@ -135,13 +135,15 @@ var  page = function () {
  * 分享提示
  */
 var share = function () {
-                
-    $('.share-btn').on('click', function (e) {
+    alert(1);        
+    $('.share-btn').on('touchstart', function (e) {
+		alert(2);
         e.preventDefault();
         $('.share-prompt').fadeIn();   
     });
 
-    $('.share-prompt').on('click', function () {
+    $('.share-prompt').on('touchstart', function () {
+		alert(3);
         $(this).fadeOut();
     });
 };
