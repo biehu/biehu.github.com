@@ -114,9 +114,9 @@ var  page = function () {
        var send = function() {
             var data = getSendData(score);
 
-//            $.post("admin/insert.php", data, function () {
-//                
-//            });
+            $.post("admin/insert.php", data, function () {
+                
+            });
 			$('.result').hide();
 			$('.result' + data.result).show();
 
