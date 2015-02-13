@@ -3,9 +3,21 @@
 <head>
 <meta charset="utf-8" />
 <title>秋冬纽约时装周</title>
+<!-- 公共样式及统计代码 -->
+<!--#include virtual="/section/716.html"-->
+<style>
+.page_footer .footer {
+	margin-top: 0;
+	background: #000;
+}
+</style>
+<link rel="stylesheet" href="styles/jquery.mCustomScrollbar.css" />
 <link rel="stylesheet" href="styles/index.css" />
 </head>
 <body>
+<div class="page_header">
+<!--#include virtual="/section/715.html"-->
+</div>
 <div class="container">
     <!-- 头部  -->
     <div class="banner">
@@ -13,39 +25,96 @@
         <div class="banner-bg stars"></div>
         <div class="banner-bg car"></div>
         <div class="banner-bg star-big"></div>
-        <div class="focus">
-            <div class="focus_change">
-                <img class="focus_img" src="images/line.jpg" />
-                <p class="focus_text">编辑直击Calvin Klein现场 感受品牌优雅本色</p>
+        
+        <div class="focus ">
+            <div id="slider" class="swipe">
+                <div class="swipe-wrap">
+                    <div class="focus_change">
+					  <a href="#" target="_blank">
+                        <img class="focus_img" src="images/line.jpg" />
+                        <p class="focus_text">1编辑直击Calvin Klein现场 感受品牌优雅本色</p>
+				      </a>
+                    </div>
+                    <div class="focus_change">
+					<a href="#" target="_blank">
+                        <img class="focus_img" src="images/line.jpg" />
+                        <p class="focus_text">2编辑直击Calvin Klein现场 感受品牌优雅本色</p>
+						</a>
+                    </div>
+                    <div class="focus_change">
+					<a href="#" target="_blank">
+                        <img class="focus_img" src="images/line.jpg" />
+                        <p class="focus_text">3编辑直击Calvin Klein现场 感受品牌优雅本色</p>
+						</a>
+                    </div>
+                    <div class="focus_change">
+					<a href="#" target="_blank">
+                        <img class="focus_img" src="images/line.jpg" />
+                        <p class="focus_text">4编辑直击Calvin Klein现场 感受品牌优雅本色</p>
+						</a>
+                    </div>
+                    <div class="focus_change">
+					<a href="#" target="_blank">
+                        <img class="focus_img" src="images/line.jpg" />
+                        <p class="focus_text">5编辑直击Calvin Klein现场 感受品牌优雅本色</p>
+						</a>
+                    </div>
+                </div>
+                
             </div>
-            <ul class="focus_btn"><li></li><li class="on"></li><li></li><li></li><li></li></ul>
-            <div class="focus_left"></div>
-            <div class="focus_right"></div>
-        </div>
+            <ul class="focus_btn">
+                <li class="on"> </li> <li> </li> <li> </li> <li> </li> <li> </li>
+            </ul>
+                <div class="focus_left" onclick="swipe.prev()"></div>
+                <div class="focus_right" onclick="swipe.next()"></div>
+                
+            </div>
     </div>
     <!-- 头部  END -->
+
+
+<!-- 12 -->
+	<div class="tab on">
+    
+    <!-- 今日观秀 -->
     <div class="scroll_wrap">
-        <div class="scroll">
-            <p>：19.00 &nbsp;&nbsp;Rachel Comey&nbsp;&nbsp;| &nbsp;&nbsp;19.00 &nbsp;&nbsp;Rachel Comey&nbsp;&nbsp;|  &nbsp;&nbsp;19.00  &nbsp;&nbsp;Rachel Comey  &nbsp;&nbsp;|  &nbsp;&nbsp;19.00  &nbsp;&nbsp;Rachel Comey  &nbsp;&nbsp;|  &nbsp;&nbsp;19.00  &nbsp;&nbsp;Rachel Comey  &nbsp;&nbsp;|  &nbsp;&nbsp;19.00 &nbsp;&nbsp; Rachel Comey  &nbsp;&nbsp;|  &nbsp;&nbsp;19.00  &nbsp;&nbsp;Rachel Comey</p>
-        </div>
+        <div id="demo" style="width:1111px;overflow:hidden; margin: 0 auto; position:relative; height:44px;">
+            <div id="indemo" class="cf" style="width: 200%; overflow: hidden;">
+                <div id="demo1" class="scroll">
+                    <p>：19.00 &nbsp;&nbsp;Rachel Comey&nbsp;&nbsp;| &nbsp;&nbsp;19.00 &nbsp;&nbsp;Rachel Comey&nbsp;&nbsp;|  &nbsp;&nbsp;19.00  &nbsp;&nbsp;Rachel Comey  &nbsp;&nbsp;|  &nbsp;&nbsp;19.00  &nbsp;&nbsp;Rachel Comey  &nbsp;&nbsp;|  &nbsp;&nbsp;19.00  &nbsp;&nbsp;Rachel Comey  &nbsp;&nbsp;|  &nbsp;&nbsp;19.00 &nbsp;&nbsp; Rachel Comey  &nbsp;&nbsp;|  &nbsp;&nbsp;19.00  &nbsp;&nbsp;Rachel Comey</p>
+                </div>
+                <div id="demo2" class="scroll">
+                </div>
+           </div>
+       </div> 
     </div>
+    <!-- 今日观秀 END　-->
     <div class="main">
         <div class="show_wrap">
+           <!-- best of today -->
             <div class="show">
-                <img class="show_img" src="images/show.png" />
+                <a href="#" target="_blank">
+<img class="show_img" src="images/show.png" />
+</a>
                 <div class="time">12/2/2015</div>
                 <ul class="show_detail">
                     <li>
-                        <img class="show_model" src="images/show_model.gif" />
+                        <a href="#" target="_blank">
+<img class="show_model" src="images/show_model.gif" />
                         <p class="show_text">容貌酷似混血的日本当红赤坂沙世是个地道的东京女孩，留着一头比男生还短的帅气超短发。</p>
+
+</a>
                         <div class="editor">
                             <div class="editor_img"><img src="images/head.gif" /></div>
                             <p>Eddi Liu<br>Sr.Fashion Editor </p>
                         </div>
                     </li>
                     <li>
-                        <img class="show_model" src="images/show_model.gif" />
+                        <a href="#" target="_blank">
+<img class="show_model" src="images/show_model.gif" />
                         <p class="show_text">容貌酷似混血的日本当红赤坂沙世是个地道的东京女孩，留着一头比男生还短的帅气超短发。</p>
+
+</a>
                         <div class="editor">
                             <div class="editor_img"><img src="images/head.gif" /></div>
                             <p>Eddi Liu<br>Sr.Fashion Editor </p>
@@ -58,33 +127,60 @@
                     <p>3 The Rolling Stones</p>
                     <p>4 The Rolling Stones</p>
                 </div>
+                
+                <div class="num">
+                    <div class="num-row num-row-1">
+                        <span class="num-on"></span>
+                        <ul>
+                            <li></li><li></li><li></li><li data-index="0"></li>
+							<li data-index="1"></li><li data-index="2"></li><li data-index="3"></li>
+                        </ul>
+                    </div>
+                    <div class="num-row num-row-2">
+                        <ul>
+                            <li data-index="4"></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
+            <!-- best of today END -->
         </div>
+
+		<!-- 视频  -->
+		
         <div class="dress">
             <div class="dress_left">
-                <div class="comment">
-                    <div class="comment_img"><img src="images/comment_head.png" /></div>
-                    <div class="comment_text"><h3>特邀时尚评论员</h3>李不懂<p>知名时尚博主&nbsp;&nbsp;|&nbsp;&nbsp;时尚专栏作者&nbsp;&nbsp;|“拾壹罗汉”成员</p></div>
-                    <div class="clear"></div>
-                </div>
-                <div class="comment_show">
-                    <img src="images/comment_model.jpg" />
-                    <p>纽约时装周最后一日，压轴大秀轮番上阵，秀场内Calvin Klein、Ralph Lauren、Marc Jacobs绝对美cry，秀场外各位大咖奔走竞相全力以赴纽约最后压轴之日。浮夸女王Anna Dello Rossu将立体褶皱h玩到登峰造极，意大利时尚编辑Giovanna Battaglia条纹裙装演绎优雅。<a href="">阅读更多&gt;&gt;</a></p>
+                <div class="mask-bg dress-left-bg"></div>
+                <div class="dress-left-content">
+                    <div class="comment">
+                        <div class="comment_img"><img src="images/comment_head.png" /></div>
+                        <div class="comment_text"><h3>特邀时尚评论员</h3>李不懂<p>知名时尚博主&nbsp;&nbsp;|&nbsp;&nbsp;时尚专栏作者&nbsp;&nbsp;|“拾壹罗汉”成员</p></div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="comment_show">
+                        <a href="#" target="_blank">
+<img src="images/comment_model.jpg" />
+</a>
+                        <p>纽约时装周最后一日，压轴大秀轮番上阵，秀场内Calvin Klein、Ralph Lauren、Marc Jacobs绝对美cry，秀场外各位大咖奔走竞相全力以赴纽约最后压轴之日。浮夸女王Anna Dello Rossu将立体褶皱h玩到登峰造极，意大利时尚编辑Giovanna Battaglia条纹裙装演绎优雅。<a href="#" target="_blank">阅读更多&gt;&gt;</a></p>
+                    </div>
                 </div>
             </div>
             <div class="dress_right">
-                <div class="busy">
-                    <div class="what"></div>
-                    <img class="busy_text" src="images/busy_text.png" />
-                    <a class="busy_btn" href=""></a>
-                    <a class="busy_btn1" href=""></a>
+                <div class="busy begin">
+                    <div class="mask-bg busy-bg"></div>
+                    <div class="busy-content">
+                        <div class="what"></div>
+                        <img class="busy_text" src="images/busy_text.png" />
+                        <a class="busy_btn busy_btn1" href=""></a>
+                    </div>
                 </div>
-                <div class="record">
+                <div class="record begin2">
                     <div class="record_left">
                         <a class="record_btn" href=""></a>
-                        <img class="record_text" src="images/zr.png" />
+                        <img class="record_text" src="images/bg.png" />
                     </div>
                     <div class="record_right">
+                        <div class="mask-bg record_right_bg"></div>
                         <img class="play" src="images/play.jpg" />
                     </div>
                     <div class="clear"></div>
@@ -93,31 +189,794 @@
             <div class="clear"></div>
         </div>
     </div>
-    <div class="last_wrap">
-        <div class="last">
-            <ul >
-                <li>
-                    <div class="last_top">
-                        <img src="images/xiu1.jpg" /></li>
-                        <p>Thakoon2015春夏</p>
+
+	<!-- 视频 END -->
+
+	<!-- 视频播放 -->
+	<div class="zhezhao zhezhao1">
+		<div class="zhezhao_m">
+			 <a class="closes"></a>
+			 <div class="vedio">
+			 <embed id="obembed" src="http://static.video.qq.com/TPout.swf?vid=q0127uryrh0&amp;auto=1" allowfullscreen="true" quality="high" width="1000" height="570" align="middle" allowscriptaccess="always" type="application/x-shockwave-flash">
+			</div>
+		</div>
+	</div>
+	<!-- 视频播放 END -->
+
+
+	<!-- 视频播放 -->
+	<div class="zhezhao zhezhao2">
+		<div class="zhezhao_m">
+			 <a class="closes"></a>
+			 <div class="vedio">
+			 <embed id="obembed" src="http://static.video.qq.com/TPout.swf?vid=q0127uryrh0&amp;auto=1" allowfullscreen="true" quality="high" width="1000" height="570" align="middle" allowscriptaccess="always" type="application/x-shockwave-flash">
+			</div>
+		</div>
+	</div>
+	<!-- 视频播放 END -->
+
+	</div>
+
+
+<!-- 12 END -->
+<!-- 13 -->
+	<div class="tab">
+    
+    <!-- 今日观秀 -->
+    <div class="scroll_wrap">
+        <div id="demo" style="width:1111px;overflow:hidden; margin: 0 auto; position:relative; height:44px;">
+            <div id="indemo" class="cf" style="width: 200%; overflow: hidden;">
+                <div id="demo1" class="scroll">
+                    <p>：19.00 &nbsp;&nbsp;Rachel Comey&nbsp;&nbsp;| &nbsp;&nbsp;19.00 &nbsp;&nbsp;Rachel Comey&nbsp;&nbsp;|  &nbsp;&nbsp;19.00  &nbsp;&nbsp;Rachel Comey  &nbsp;&nbsp;|  &nbsp;&nbsp;19.00  &nbsp;&nbsp;Rachel Comey  &nbsp;&nbsp;|  &nbsp;&nbsp;19.00  &nbsp;&nbsp;Rachel Comey  &nbsp;&nbsp;|  &nbsp;&nbsp;19.00 &nbsp;&nbsp; Rachel Comey  &nbsp;&nbsp;|  &nbsp;&nbsp;19.00  &nbsp;&nbsp;Rachel Comey</p>
+                </div>
+                <div id="demo2" class="scroll">
+                </div>
+           </div>
+       </div> 
+    </div>
+    <!-- 今日观秀 END　-->
+    <div class="main">
+        <div class="show_wrap">
+           <!-- best of today -->
+            <div class="show">
+                <a href="#" target="_blank">
+<img class="show_img" src="images/show.png" />
+</a>
+                <div class="time">12/2/2015</div>
+                <ul class="show_detail">
+                    <li>
+                        <a href="#" target="_blank">
+<img class="show_model" src="images/show_model.gif" />
+                        <p class="show_text">容貌酷似混血的日本当红赤坂沙世是个地道的东京女孩，留着一头比男生还短的帅气超短发。</p>
+
+</a>
+                        <div class="editor">
+                            <div class="editor_img"><img src="images/head.gif" /></div>
+                            <p>Eddi Liu<br>Sr.Fashion Editor </p>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank">
+<img class="show_model" src="images/show_model.gif" />
+                        <p class="show_text">容貌酷似混血的日本当红赤坂沙世是个地道的东京女孩，留着一头比男生还短的帅气超短发。</p>
+
+</a>
+                        <div class="editor">
+                            <div class="editor_img"><img src="images/head.gif" /></div>
+                            <p>Eddi Liu<br>Sr.Fashion Editor </p>
+                        </div>
+                    </li>
+                </ul>
+                <div class="intro">
+                    <p>1 Tory Burch</p>
+                    <p>2 Francoise Gilot</p>
+                    <p>3 The Rolling Stones</p>
+                    <p>4 The Rolling Stones</p>
+                </div>
+                
+                <div class="num">
+                    <div class="num-row num-row-1">
+                        <span class="num-on"></span>
+                        <ul>
+                            <li></li><li></li><li></li><li data-index="0"></li>
+							<li data-index="1"></li><li data-index="2"></li><li data-index="3"></li>
+                        </ul>
                     </div>
-                    <div class="last_bottom">
-                        <div class="kx"></div>
-                        <div class="kx_main"><img src="images/xiu1.jpg" /></div>
+                    <div class="num-row num-row-2">
+                        <ul>
+                            <li data-index="4"></li>
+                        </ul>
                     </div>
-            </ul>
+                </div>
+            </div>
+            <!-- best of today END -->
+        </div>
+
+		<!-- 视频  -->
+		
+        <div class="dress">
+            <div class="dress_left">
+                <div class="mask-bg dress-left-bg"></div>
+                <div class="dress-left-content">
+                    <div class="comment">
+                        <div class="comment_img"><img src="images/comment_head.png" /></div>
+                        <div class="comment_text"><h3>特邀时尚评论员</h3>李不懂<p>知名时尚博主&nbsp;&nbsp;|&nbsp;&nbsp;时尚专栏作者&nbsp;&nbsp;|“拾壹罗汉”成员</p></div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="comment_show">
+                        <a href="#" target="_blank">
+<img src="images/comment_model.jpg" />
+</a>
+                        <p>纽约时装周最后一日，压轴大秀轮番上阵，秀场内Calvin Klein、Ralph Lauren、Marc Jacobs绝对美cry，秀场外各位大咖奔走竞相全力以赴纽约最后压轴之日。浮夸女王Anna Dello Rossu将立体褶皱h玩到登峰造极，意大利时尚编辑Giovanna Battaglia条纹裙装演绎优雅。<a href="#" target="_blank">阅读更多&gt;&gt;</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="dress_right">
+                <div class="busy begin">
+                    <div class="mask-bg busy-bg"></div>
+                    <div class="busy-content">
+                        <div class="what"></div>
+                        <img class="busy_text" src="images/busy_text.png" />
+                        <a class="busy_btn busy_btn1" href=""></a>
+                    </div>
+                </div>
+                <div class="record begin2">
+                    <div class="record_left">
+                        <a class="record_btn" href=""></a>
+                        <img class="record_text" src="images/bg.png" />
+                    </div>
+                    <div class="record_right">
+                        <div class="mask-bg record_right_bg"></div>
+                        <img class="play" src="images/play.jpg" />
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="clear"></div>
         </div>
     </div>
+
+	<!-- 视频 END -->
+
+	<!-- 视频播放 -->
+	<div class="zhezhao zhezhao1">
+		<div class="zhezhao_m">
+			 <a class="closes"></a>
+			 <div class="vedio">
+			 <embed id="obembed" src="http://static.video.qq.com/TPout.swf?vid=q0127uryrh0&amp;auto=1" allowfullscreen="true" quality="high" width="1000" height="570" align="middle" allowscriptaccess="always" type="application/x-shockwave-flash">
+			</div>
+		</div>
+	</div>
+	<!-- 视频播放 END -->
+
+
+	<!-- 视频播放 -->
+	<div class="zhezhao zhezhao2">
+		<div class="zhezhao_m">
+			 <a class="closes"></a>
+			 <div class="vedio">
+			 <embed id="obembed" src="http://static.video.qq.com/TPout.swf?vid=q0127uryrh0&amp;auto=1" allowfullscreen="true" quality="high" width="1000" height="570" align="middle" allowscriptaccess="always" type="application/x-shockwave-flash">
+			</div>
+		</div>
+	</div>
+	<!-- 视频播放 END -->
+
+	</div>
+
+	<!-- 13 END -->
+	<!-- 14 -->
+
+	<div class="tab">
     
+    <!-- 今日观秀 -->
+    <div class="scroll_wrap">
+        <div id="demo" style="width:1111px;overflow:hidden; margin: 0 auto; position:relative; height:44px;">
+            <div id="indemo" class="cf" style="width: 200%; overflow: hidden;">
+                <div id="demo1" class="scroll">
+                    <p>：19.00 &nbsp;&nbsp;Rachel Comey&nbsp;&nbsp;| &nbsp;&nbsp;19.00 &nbsp;&nbsp;Rachel Comey&nbsp;&nbsp;|  &nbsp;&nbsp;19.00  &nbsp;&nbsp;Rachel Comey  &nbsp;&nbsp;|  &nbsp;&nbsp;19.00  &nbsp;&nbsp;Rachel Comey  &nbsp;&nbsp;|  &nbsp;&nbsp;19.00  &nbsp;&nbsp;Rachel Comey  &nbsp;&nbsp;|  &nbsp;&nbsp;19.00 &nbsp;&nbsp; Rachel Comey  &nbsp;&nbsp;|  &nbsp;&nbsp;19.00  &nbsp;&nbsp;Rachel Comey</p>
+                </div>
+                <div id="demo2" class="scroll">
+                </div>
+           </div>
+       </div> 
+    </div>
+    <!-- 今日观秀 END　-->
+    <div class="main">
+        <div class="show_wrap">
+           <!-- best of today -->
+            <div class="show">
+                <a href="#" target="_blank">
+<img class="show_img" src="images/show.png" />
+</a>
+                <div class="time">12/2/2015</div>
+                <ul class="show_detail">
+                    <li>
+                        <a href="#" target="_blank">
+<img class="show_model" src="images/show_model.gif" />
+                        <p class="show_text">容貌酷似混血的日本当红赤坂沙世是个地道的东京女孩，留着一头比男生还短的帅气超短发。</p>
+
+</a>
+                        <div class="editor">
+                            <div class="editor_img"><img src="images/head.gif" /></div>
+                            <p>Eddi Liu<br>Sr.Fashion Editor </p>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank">
+<img class="show_model" src="images/show_model.gif" />
+                        <p class="show_text">容貌酷似混血的日本当红赤坂沙世是个地道的东京女孩，留着一头比男生还短的帅气超短发。</p>
+
+</a>
+                        <div class="editor">
+                            <div class="editor_img"><img src="images/head.gif" /></div>
+                            <p>Eddi Liu<br>Sr.Fashion Editor </p>
+                        </div>
+                    </li>
+                </ul>
+                <div class="intro">
+                    <p>1 Tory Burch</p>
+                    <p>2 Francoise Gilot</p>
+                    <p>3 The Rolling Stones</p>
+                    <p>4 The Rolling Stones</p>
+                </div>
+                
+                <div class="num">
+                    <div class="num-row num-row-1">
+                        <span class="num-on"></span>
+                        <ul>
+                            <li></li><li></li><li></li><li data-index="0"></li>
+							<li data-index="1"></li><li data-index="2"></li><li data-index="3"></li>
+                        </ul>
+                    </div>
+                    <div class="num-row num-row-2">
+                        <ul>
+                            <li data-index="4"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- best of today END -->
+        </div>
+
+		<!-- 视频  -->
+		
+        <div class="dress">
+            <div class="dress_left">
+                <div class="mask-bg dress-left-bg"></div>
+                <div class="dress-left-content">
+                    <div class="comment">
+                        <div class="comment_img"><img src="images/comment_head.png" /></div>
+                        <div class="comment_text"><h3>特邀时尚评论员</h3>李不懂<p>知名时尚博主&nbsp;&nbsp;|&nbsp;&nbsp;时尚专栏作者&nbsp;&nbsp;|“拾壹罗汉”成员</p></div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="comment_show">
+                        <a href="#" target="_blank">
+<img src="images/comment_model.jpg" />
+</a>
+                        <p>纽约时装周最后一日，压轴大秀轮番上阵，秀场内Calvin Klein、Ralph Lauren、Marc Jacobs绝对美cry，秀场外各位大咖奔走竞相全力以赴纽约最后压轴之日。浮夸女王Anna Dello Rossu将立体褶皱h玩到登峰造极，意大利时尚编辑Giovanna Battaglia条纹裙装演绎优雅。<a href="#" target="_blank">阅读更多&gt;&gt;</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="dress_right">
+                <div class="busy begin">
+                    <div class="mask-bg busy-bg"></div>
+                    <div class="busy-content">
+                        <div class="what"></div>
+                        <img class="busy_text" src="images/busy_text.png" />
+                        <a class="busy_btn busy_btn1" href=""></a>
+                    </div>
+                </div>
+                <div class="record begin2">
+                    <div class="record_left">
+                        <a class="record_btn" href=""></a>
+                        <img class="record_text" src="images/bg.png" />
+                    </div>
+                    <div class="record_right">
+                        <div class="mask-bg record_right_bg"></div>
+                        <img class="play" src="images/play.jpg" />
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+
+	<!-- 视频 END -->
+
+	<!-- 视频播放 -->
+	<div class="zhezhao zhezhao1">
+		<div class="zhezhao_m">
+			 <a class="closes"></a>
+			 <div class="vedio">
+			 <embed id="obembed" src="http://static.video.qq.com/TPout.swf?vid=q0127uryrh0&amp;auto=1" allowfullscreen="true" quality="high" width="1000" height="570" align="middle" allowscriptaccess="always" type="application/x-shockwave-flash">
+			</div>
+		</div>
+	</div>
+	<!-- 视频播放 END -->
+
+
+	<!-- 视频播放 -->
+	<div class="zhezhao zhezhao2">
+		<div class="zhezhao_m">
+			 <a class="closes"></a>
+			 <div class="vedio">
+			 <embed id="obembed" src="http://static.video.qq.com/TPout.swf?vid=q0127uryrh0&amp;auto=1" allowfullscreen="true" quality="high" width="1000" height="570" align="middle" allowscriptaccess="always" type="application/x-shockwave-flash">
+			</div>
+		</div>
+	</div>
+	<!-- 视频播放 END -->
+
+	</div>
+	<!-- 14 END -->
+	<!-- 15 -->
+	<div class="tab">
+    
+    <!-- 今日观秀 -->
+    <div class="scroll_wrap">
+        <div id="demo" style="width:1111px;overflow:hidden; margin: 0 auto; position:relative; height:44px;">
+            <div id="indemo" class="cf" style="width: 200%; overflow: hidden;">
+                <div id="demo1" class="scroll">
+                    <p>：19.00 &nbsp;&nbsp;Rachel Comey&nbsp;&nbsp;| &nbsp;&nbsp;19.00 &nbsp;&nbsp;Rachel Comey&nbsp;&nbsp;|  &nbsp;&nbsp;19.00  &nbsp;&nbsp;Rachel Comey  &nbsp;&nbsp;|  &nbsp;&nbsp;19.00  &nbsp;&nbsp;Rachel Comey  &nbsp;&nbsp;|  &nbsp;&nbsp;19.00  &nbsp;&nbsp;Rachel Comey  &nbsp;&nbsp;|  &nbsp;&nbsp;19.00 &nbsp;&nbsp; Rachel Comey  &nbsp;&nbsp;|  &nbsp;&nbsp;19.00  &nbsp;&nbsp;Rachel Comey</p>
+                </div>
+                <div id="demo2" class="scroll">
+                </div>
+           </div>
+       </div> 
+    </div>
+    <!-- 今日观秀 END　-->
+    <div class="main">
+        <div class="show_wrap">
+           <!-- best of today -->
+            <div class="show">
+                <a href="#" target="_blank">
+<img class="show_img" src="images/show.png" />
+</a>
+                <div class="time">12/2/2015</div>
+                <ul class="show_detail">
+                    <li>
+                        <a href="#" target="_blank">
+<img class="show_model" src="images/show_model.gif" />
+                        <p class="show_text">容貌酷似混血的日本当红赤坂沙世是个地道的东京女孩，留着一头比男生还短的帅气超短发。</p>
+
+</a>
+                        <div class="editor">
+                            <div class="editor_img"><img src="images/head.gif" /></div>
+                            <p>Eddi Liu<br>Sr.Fashion Editor </p>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank">
+<img class="show_model" src="images/show_model.gif" />
+                        <p class="show_text">容貌酷似混血的日本当红赤坂沙世是个地道的东京女孩，留着一头比男生还短的帅气超短发。</p>
+
+</a>
+                        <div class="editor">
+                            <div class="editor_img"><img src="images/head.gif" /></div>
+                            <p>Eddi Liu<br>Sr.Fashion Editor </p>
+                        </div>
+                    </li>
+                </ul>
+                <div class="intro">
+                    <p>1 Tory Burch</p>
+                    <p>2 Francoise Gilot</p>
+                    <p>3 The Rolling Stones</p>
+                    <p>4 The Rolling Stones</p>
+                </div>
+                
+                <div class="num">
+                    <div class="num-row num-row-1">
+                        <span class="num-on"></span>
+                        <ul>
+                            <li></li><li></li><li></li><li data-index="0"></li>
+							<li data-index="1"></li><li data-index="2"></li><li data-index="3"></li>
+                        </ul>
+                    </div>
+                    <div class="num-row num-row-2">
+                        <ul>
+                            <li data-index="4"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- best of today END -->
+        </div>
+
+		<!-- 视频  -->
+		
+        <div class="dress">
+            <div class="dress_left">
+                <div class="mask-bg dress-left-bg"></div>
+                <div class="dress-left-content">
+                    <div class="comment">
+                        <div class="comment_img"><img src="images/comment_head.png" /></div>
+                        <div class="comment_text"><h3>特邀时尚评论员</h3>李不懂<p>知名时尚博主&nbsp;&nbsp;|&nbsp;&nbsp;时尚专栏作者&nbsp;&nbsp;|“拾壹罗汉”成员</p></div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="comment_show">
+                        <a href="#" target="_blank">
+<img src="images/comment_model.jpg" />
+</a>
+                        <p>纽约时装周最后一日，压轴大秀轮番上阵，秀场内Calvin Klein、Ralph Lauren、Marc Jacobs绝对美cry，秀场外各位大咖奔走竞相全力以赴纽约最后压轴之日。浮夸女王Anna Dello Rossu将立体褶皱h玩到登峰造极，意大利时尚编辑Giovanna Battaglia条纹裙装演绎优雅。<a href="#" target="_blank">阅读更多&gt;&gt;</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="dress_right">
+                <div class="busy begin">
+                    <div class="mask-bg busy-bg"></div>
+                    <div class="busy-content">
+                        <div class="what"></div>
+                        <img class="busy_text" src="images/busy_text.png" />
+                        <a class="busy_btn busy_btn1" href=""></a>
+                    </div>
+                </div>
+                <div class="record begin2">
+                    <div class="record_left">
+                        <a class="record_btn" href=""></a>
+                        <img class="record_text" src="images/bg.png" />
+                    </div>
+                    <div class="record_right">
+                        <div class="mask-bg record_right_bg"></div>
+                        <img class="play" src="images/play.jpg" />
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+
+	<!-- 视频 END -->
+
+	<!-- 视频播放 -->
+	<div class="zhezhao zhezhao1">
+		<div class="zhezhao_m">
+			 <a class="closes"></a>
+			 <div class="vedio">
+			 <embed id="obembed" src="http://static.video.qq.com/TPout.swf?vid=q0127uryrh0&amp;auto=1" allowfullscreen="true" quality="high" width="1000" height="570" align="middle" allowscriptaccess="always" type="application/x-shockwave-flash">
+			</div>
+		</div>
+	</div>
+	<!-- 视频播放 END -->
+
+
+	<!-- 视频播放 -->
+	<div class="zhezhao zhezhao2">
+		<div class="zhezhao_m">
+			 <a class="closes"></a>
+			 <div class="vedio">
+			 <embed id="obembed" src="http://static.video.qq.com/TPout.swf?vid=q0127uryrh0&amp;auto=1" allowfullscreen="true" quality="high" width="1000" height="570" align="middle" allowscriptaccess="always" type="application/x-shockwave-flash">
+			</div>
+		</div>
+	</div>
+	<!-- 视频播放 END -->
+
+	</div>
+	<!-- 15 END -->
+	<!-- 16 -->
+	<div class="tab">
+    
+    <!-- 今日观秀 -->
+    <div class="scroll_wrap">
+        <div id="demo" style="width:1111px;overflow:hidden; margin: 0 auto; position:relative; height:44px;">
+            <div id="indemo" class="cf" style="width: 200%; overflow: hidden;">
+                <div id="demo1" class="scroll">
+                    <p>：19.00 &nbsp;&nbsp;Rachel Comey&nbsp;&nbsp;| &nbsp;&nbsp;19.00 &nbsp;&nbsp;Rachel Comey&nbsp;&nbsp;|  &nbsp;&nbsp;19.00  &nbsp;&nbsp;Rachel Comey  &nbsp;&nbsp;|  &nbsp;&nbsp;19.00  &nbsp;&nbsp;Rachel Comey  &nbsp;&nbsp;|  &nbsp;&nbsp;19.00  &nbsp;&nbsp;Rachel Comey  &nbsp;&nbsp;|  &nbsp;&nbsp;19.00 &nbsp;&nbsp; Rachel Comey  &nbsp;&nbsp;|  &nbsp;&nbsp;19.00  &nbsp;&nbsp;Rachel Comey</p>
+                </div>
+                <div id="demo2" class="scroll">
+                </div>
+           </div>
+       </div> 
+    </div>
+    <!-- 今日观秀 END　-->
+    <div class="main">
+        <div class="show_wrap">
+           <!-- best of today -->
+            <div class="show">
+                <a href="#" target="_blank">
+<img class="show_img" src="images/show.png" />
+</a>
+                <div class="time">12/2/2015</div>
+                <ul class="show_detail">
+                    <li>
+                        <a href="#" target="_blank">
+<img class="show_model" src="images/show_model.gif" />
+                        <p class="show_text">容貌酷似混血的日本当红赤坂沙世是个地道的东京女孩，留着一头比男生还短的帅气超短发。</p>
+
+</a>
+                        <div class="editor">
+                            <div class="editor_img"><img src="images/head.gif" /></div>
+                            <p>Eddi Liu<br>Sr.Fashion Editor </p>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank">
+<img class="show_model" src="images/show_model.gif" />
+                        <p class="show_text">容貌酷似混血的日本当红赤坂沙世是个地道的东京女孩，留着一头比男生还短的帅气超短发。</p>
+
+</a>
+                        <div class="editor">
+                            <div class="editor_img"><img src="images/head.gif" /></div>
+                            <p>Eddi Liu<br>Sr.Fashion Editor </p>
+                        </div>
+                    </li>
+                </ul>
+                <div class="intro">
+                    <p>1 Tory Burch</p>
+                    <p>2 Francoise Gilot</p>
+                    <p>3 The Rolling Stones</p>
+                    <p>4 The Rolling Stones</p>
+                </div>
+                
+                <div class="num">
+                    <div class="num-row num-row-1">
+                        <span class="num-on"></span>
+                        <ul>
+                            <li></li><li></li><li></li><li data-index="0"></li>
+							<li data-index="1"></li><li data-index="2"></li><li data-index="3"></li>
+                        </ul>
+                    </div>
+                    <div class="num-row num-row-2">
+                        <ul>
+                            <li data-index="4"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- best of today END -->
+        </div>
+
+		<!-- 视频  -->
+		
+        <div class="dress">
+            <div class="dress_left">
+                <div class="mask-bg dress-left-bg"></div>
+                <div class="dress-left-content">
+                    <div class="comment">
+                        <div class="comment_img"><img src="images/comment_head.png" /></div>
+                        <div class="comment_text"><h3>特邀时尚评论员</h3>李不懂<p>知名时尚博主&nbsp;&nbsp;|&nbsp;&nbsp;时尚专栏作者&nbsp;&nbsp;|“拾壹罗汉”成员</p></div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="comment_show">
+                        <a href="#" target="_blank">
+<img src="images/comment_model.jpg" />
+</a>
+                        <p>纽约时装周最后一日，压轴大秀轮番上阵，秀场内Calvin Klein、Ralph Lauren、Marc Jacobs绝对美cry，秀场外各位大咖奔走竞相全力以赴纽约最后压轴之日。浮夸女王Anna Dello Rossu将立体褶皱h玩到登峰造极，意大利时尚编辑Giovanna Battaglia条纹裙装演绎优雅。<a href="#" target="_blank">阅读更多&gt;&gt;</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="dress_right">
+                <div class="busy begin">
+                    <div class="mask-bg busy-bg"></div>
+                    <div class="busy-content">
+                        <div class="what"></div>
+                        <img class="busy_text" src="images/busy_text.png" />
+                        <a class="busy_btn busy_btn1" href=""></a>
+                    </div>
+                </div>
+                <div class="record begin2">
+                    <div class="record_left">
+                        <a class="record_btn" href=""></a>
+                        <img class="record_text" src="images/bg.png" />
+                    </div>
+                    <div class="record_right">
+                        <div class="mask-bg record_right_bg"></div>
+                        <img class="play" src="images/play.jpg" />
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+
+	<!-- 视频 END -->
+
+	<!-- 视频播放 -->
+	<div class="zhezhao zhezhao1">
+		<div class="zhezhao_m">
+			 <a class="closes"></a>
+			 <div class="vedio">
+			 <embed id="obembed" src="http://static.video.qq.com/TPout.swf?vid=q0127uryrh0&amp;auto=1" allowfullscreen="true" quality="high" width="1000" height="570" align="middle" allowscriptaccess="always" type="application/x-shockwave-flash">
+			</div>
+		</div>
+	</div>
+	<!-- 视频播放 END -->
+
+
+	<!-- 视频播放 -->
+	<div class="zhezhao zhezhao2">
+		<div class="zhezhao_m">
+			 <a class="closes"></a>
+			 <div class="vedio">
+			 <embed id="obembed" src="http://static.video.qq.com/TPout.swf?vid=q0127uryrh0&amp;auto=1" allowfullscreen="true" quality="high" width="1000" height="570" align="middle" allowscriptaccess="always" type="application/x-shockwave-flash">
+			</div>
+		</div>
+	</div>
+	<!-- 视频播放 END -->
+
+	</div>
+	<!-- 16 END  -->
+	<div class="clear"></div>
+    <div class="last_wrap">
+        <ul class="last">
+            <li>
+
+<div class="scroll_content">
+                <div class="last_top">
+                    <a href="#" target="_blank">
+<img src="images/xiu1.jpg" />
+                    <p>Thakoon2015春夏</p>
+</a>
+                </div>
+                <div class="last_bottom">
+                    <div class="kx">
+                        <h2>看秀</h2>
+                        第一时间了解流行趋势
+                    </div>
+                    <a href="#" target="_blank">
+<div class="kx_main"><img src="images/model1.jpg" /></div>
+                    <div class="third_kx">
+                        <p class="third_kx_tit">DVF2015春夏 穿起来轻松自如的优雅裹身裙</p>
+                        <p class="third_kx_text">当然，裹身裙只是品牌v精神之一，更多要表现的是女人的优雅魅力。</p>
+                    </div>
+</a>
+                </div>
+
+				<div class="last_bottom">
+                    <a href="#" target="_blank">
+<div class="kx_main"><img src="images/model1.jpg" /></div>
+                    <div class="third_kx">
+                        <p class="third_kx_tit">DVF2015春夏 穿起来轻松自如的优雅裹身裙</p>
+                        <p class="third_kx_text">当然，裹身裙只是品牌v精神之一，更多要表现的是女人的优雅魅力。</p>
+                    </div>
+</a>
+                </div>
+
+				<div class="last_bottom">
+                    <a href="#" target="_blank">
+<div class="kx_main"><img src="images/model1.jpg" /></div>
+                    <div class="third_kx">
+                        <p class="third_kx_tit">DVF2015春夏 穿起来轻松自如的优雅裹身裙</p>
+                        <p class="third_kx_text">当然，裹身裙只是品牌v精神之一，更多要表现的是女人的优雅魅力。</p>
+                    </div>
+</a>
+                </div>
+
+				</div>
+            </li>
+            <li>
+
+			<div class="scroll_content">
+                <div class="last_top">
+                    <a href="#" target="_blank">
+<img src="images/xiu1.jpg" />
+                    <p>Thakoon2015春夏</p>
+</a>
+                </div>
+                <div class="last_bottom">
+                    <div class="kx">
+                        <h2>看秀</h2>
+                        第一时间了解流行趋势
+                    </div>
+                    <a href="#" target="_blank">
+<div class="kx_main"><span class="img-radius-border"><img src="images/model2.png" /></span></div>
+                    <div class="third_kx">
+                        <p class="third_kx_tit">DVF2015春夏 穿起来轻松自如的优雅裹身裙</p>
+                        <p class="third_kx_text">当然，裹身裙只是品牌v精神之一，更多要表现的是女人的优雅魅力。</p>
+                    </div>
+</a>
+                </div>
+
+				<div class="last_bottom">
+                    <a href="#" target="_blank">
+<div class="kx_main"><span class="img-radius-border"><img src="images/model2.png" /></span></div>
+                    <div class="third_kx">
+                        <p class="third_kx_tit">DVF2015春夏 穿起来轻松自如的优雅裹身裙</p>
+                        <p class="third_kx_text">当然，裹身裙只是品牌v精神之一，更多要表现的是女人的优雅魅力。</p>
+                    </div>
+</a>
+                </div>
+				<div class="last_bottom">
+                    <a href="#" target="_blank">
+<div class="kx_main"><span class="img-radius-border"><img src="images/model2.png" /></span></div>
+                    <div class="third_kx">
+                        <p class="third_kx_tit">DVF2015春夏 穿起来轻松自如的优雅裹身裙</p>
+                        <p class="third_kx_text">当然，裹身裙只是品牌v精神之一，更多要表现的是女人的优雅魅力。</p>
+                    </div>
+</a>
+                </div>
+
+				</div>
+            </li>
+            <li>
+			<div class="scroll_content">
+                <div class="last_top">
+                    <a href="#" target="_blank">
+<img src="images/xiu1.jpg" />
+                    <p>Thakoon2015春夏</p>
+</a>
+                </div>
+                <div class="last_bottom">
+                    <div class="kx">
+                        <h2>看秀</h2>
+                        第一时间了解流行趋势
+                    </div>
+                    <a href="#" target="_blank">
+<div class="kx_main"><img src="images/model3.jpg" /></div>
+                    <div class="third_kx">
+                        <p class="third_kx_tit">DVF2015春夏 穿起来轻松自如的优雅裹身裙</p>
+                        <p class="third_kx_text">当然，裹身裙只是品牌v精神之一，更多要表现的是女人的优雅魅力。</p>
+                    </div>
+</a>
+                </div>
+				</div>
+            </li>
+            <li>
+
+			<div class="scroll_content">
+                <div class="last_top">
+                    <a href="#" target="_blank">
+<img src="images/xiu1.jpg" />
+                    <p>Thakoon2015春夏</p>
+</a>
+                </div>
+                <div class="last_bottom">
+                    <div class="kx">
+                        <h2>看秀</h2>
+                        第一时间了解流行趋势
+                    </div>
+                    <a href="#" target="_blank">
+<div class="kx_main"><img src="images/model1.jpg" /></div>
+                    <div class="third_kx">
+                        <p class="third_kx_tit">DVF2015春夏 穿起来轻松自如的优雅裹身裙</p>
+                        <p class="third_kx_text">当然，裹身裙只是品牌v精神之一，更多要表现的是女人的优雅魅力。</p>
+                    </div>
+</a>
+                </div>
+
+				</div>
+            </li>
+        </ul>
+        <div class="bottom_info">
+            <div class="weibos">
+                <ul>
+                    <li>
+                        <a href="http://weibo.com/chinamarieclaire"><img src="images/j.png"><br>《嘉人》</a>
+                        <iframe allowtransparency="" border="0" frameborder="0" height="22" marginheight="0" marginwidth="0" scrolling="no" src="http://widget.weibo.com/relationship/followbutton.php?width=200&amp;height=22&amp;uid=1399746707&amp;style=5&amp;btn=red&amp;dpc=1" style="width: 64px; height: 22px;" width="200"></iframe>
+                    </li>
+                    <li>
+                        <a href="http://weibo.com/u/1549364094"><img src="images/j2.png"><br>江疏影</a>
+                        <iframe allowtransparency="" border="0" frameborder="0" height="22" marginheight="0" marginwidth="0" scrolling="no" src="http://widget.weibo.com/relationship/followbutton.php?width=200&amp;height=22&amp;uid=1549364094&amp;style=5&amp;btn=red&amp;dpc=1" style="width: 64px; height: 22px;" width="200"></iframe>
+                    </li>
+					<li>
+                        <a href="http://weibo.com/meadusa"><img src="images/j2.png"><br>江疏影</a>
+                        <iframe allowtransparency="" border="0" frameborder="0" height="22" marginheight="0" marginwidth="0" scrolling="no" src="http://widget.weibo.com/relationship/followbutton.php?width=200&amp;height=22&amp;uid=3193322601&amp;style=5&amp;btn=red&amp;dpc=1" style="width: 64px; height: 22px;" width="200"></iframe>
+                    </li>
+					<li>
+                        <a href="http://weibo.com/u/5361012289"><img src="images/j2.png"><br>江疏影</a>
+                        <iframe allowtransparency="" border="0" frameborder="0" height="22" marginheight="0" marginwidth="0" scrolling="no" src="http://widget.weibo.com/relationship/followbutton.php?width=200&amp;height=22&amp;uid=5361012289&amp;style=5&amp;btn=red&amp;dpc=1" style="width: 64px; height: 22px;" width="200"></iframe>
+                    </li>
+                </ul>
+            </div>
+            <div class="wechat_img"><img src="images/prcode.png" /></div>
+        </div>        
+    </div>
+	
     <div class="section_foot_wrap">
         <div class="section_foot">
-            <img class="qrcode" src="images/team.png" /> 
-            <p class="team"><span>监制 蔡璐</span><span>统筹 姜媛</span><span>策划 向辉</span><span>设计 龚璐畅</span><span>页面制作 马帅</span><br>合作及投稿联系 wangxianghui@hearst.com.cn</p>    
+            <p class="team"><span>出品人 Joyce Liu、Ethan Law</span><span>监制 邓立、蔡璐</span><span>策划 /统筹 范书淼、 Cici Wang</span><span>艺人统筹/Stylist Wang Yaolu 、Eddi Liu </span><span>编辑 沈亚萍 李惠 Lvy 朱海嘉 戴雅静 </span><br><span>妆发 杨雅哲</span><span>摄影/摄像 Mingsheng Chen</span><span>视觉 庾健 </span><span> 微信 海嘉</span><span>页面制作 马帅</span><span>视频 Genius Orbit inc</span></p>    
         </div>
     </div>
 </div>
 
+<div class="page_footer">
+<!--#include virtual="/section/717.html"-->
+</div>
+
 <script src="scripts/jquery.js"></script>
+<script src="scripts/swipe.js"></script>
+<script src="scripts/jquery.mCustomScrollbar.js"></script>
 <script src="scripts/index.js"></script>
 </body>
 </html>

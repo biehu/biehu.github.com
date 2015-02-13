@@ -1,0 +1,69 @@
+/* CSS Document */
+div{
+	position:absolute;
+}
+/*导航*/
+.titler{
+	left: 32px;
+	top: 3px;
+	font-size:20px;
+	font-family:"幼圆";
+}
+/*接收者*/
+.recipient{
+	left: 19px;
+	top: 29px;
+	width:100px;
+}
+/*内容简介*/
+.introduce{
+	left: 19px;
+	top: 49px;
+	width: 178px;
+	height: 50px;
+}
+/*查看和关闭*/
+.lookc{
+	left: 157px;
+	top: 21px;
+	
+	width: 32px;
+}
+/*发送时间*/
+.senddate{
+	left: 80px;
+	top: 134px;
+	
+	width: 77px;
+}
+/*发信者*/
+.sender{
+	left: 68px;
+	top: 116px;
+	width: 100px;
+	text-align:right;
+}
+/*粉色爱心*/
+.pinkWall{
+	background:url(../img/o1.gif);
+	width: 209px;
+	height: 181px;
+}
+/*写纸条*/
+.paper{
+	left: 48px;
+	top: 128px;
+	background:url(../img/1.gif);
+}
+a:link{
+	color:#FF6600;text-decoration:none;
+}
+a:hover{
+	color:#FF6600;text-decoration:none;
+}
+a:visited{
+	color:#3399FF;text-decoration:none;
+}
+a:active{
+	color:#FF6600;
+}

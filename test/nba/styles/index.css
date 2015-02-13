@@ -260,8 +260,84 @@ img {
 	width: 100%;
 }
 
+/*
+	6
+*/
+.p6 .pbg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: url(../images/last-bg.jpg) no-repeat;
+	background-size: 100%;
+}
+
+.p6 .pbgg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: url(../images/last-gray-bg.jpg) no-repeat;
+	background-size: 100%;
+	opacity: 0;
+}
 
 
+.logo1 {
+	position: absolute;
+	top: 50%;
+	height: 400px;
+	margin-top: -90px;
+	-webkit-transition: all 1s;
+	-webkit-clip-path: polygon(0 0, 0 0%, 0% 0);
+}
+
+.link-btn {
+	position: absolute;
+	top: 65%;
+
+}
+
+.logo2 {
+	position: absolute;
+	top: 80%;
+	height: 1000px;
+	-webkit-transition: all 1s;
+	-webkit-clip-path: polygon(0 0, 0 0%, 0% 0);
+}
+
+.link-btn {
+	margin-bottom: 10px;
+	opacity: 0;
+}
+
+.on .pbg {
+	opacity: 0;
+	-webkit-transition: all 1s;
+	-webkit-transition-delay: 1s;
+}
+
+.on .pbgg {
+	opacity: 1;
+	-webkit-transition: all 1s;
+	-webkit-transition-delay: 1s;
+}
+
+.on .link-btn {
+	opacity: 1;
+	-webkit-transition: all 1s;
+	-webkit-transition-delay: 2s;
+}
+
+.on .logo1 {
+	-webkit-clip-path: polygon(0 0, 0 100%, 100% 0);
+}
+
+.on .logo2 {
+	-webkit-clip-path: polygon(0 0, 0 100%, 100% 0);
+}
 
 
 

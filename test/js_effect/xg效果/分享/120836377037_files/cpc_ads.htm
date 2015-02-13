@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=GB2312">
+<title>SOGOU推广服务</title>
+<style type="text/css">
+<!--
+body{margin:0;}
+#div_ad {
+	font-family:arial,simsun,sans-serif;
+	background-color:#fffff;
+	border:1px #fffff solid;
+	overflow:hidden;
+}
+#div_ad div{
+	word-break:break-all;
+	word-wrap:break-word;
+}
+#div_ad .ad_split {
+	border-top:1px solid #fffff;
+}
+#div_ad .ad_null {
+	border-top:0px solid #fffff;
+}
+#div_ad td {
+	width: 348px;
+}
+#div_ad td #div_td {
+	width: 348px;
+	padding-left: 0px;
+}
+#div_ad .ad_title {
+	padding:0 0 0 2px;
+	margin-bottom:3px;
+}
+#div_ad .ad_title a {
+	line-height: 16px;
+	font-size:14px;
+	font-weight:normal;
+	color:#0000FF;
+	text-decoration:underline;
+	width: ;
+	display: ;
+}
+#div_ad .ad_title a:hover {
+	text-decoration:underline;
+	color:#FF0000;
+	width: ;
+	display: ;
+}
+#div_ad .ad_desc {
+	padding:0 0 0 2px;
+}
+#div_ad .ad_desc a {
+	line-height:16px;
+	font-size: 10px;
+	font-weight:normal;
+	color:#000000;
+	text-decoration:none;
+	cursor:pointer;
+	width: ;
+	display: ;
+}
+#div_ad .ad_desc a:hover {
+	color:#FF0900;
+	font-weight:normal;
+	width: ;
+	display: ;
+}
+#div_ad .domain a {
+	color: #009900;
+	font-weight: normal;
+	font-size: 12px;
+	text-decoration: none;
+	width: ;
+	display: ;
+}
+#div_ad .domain a:hover {
+	color: #009900;
+	font-weight:normal;
+	width: ;
+	display: ;
+}
+#div_ad .ad_banner {
+	line-height:12px;
+	background-color:#fffff;
+	font-size:11px;
+	padding:2px 0 0 0;
+	margin-bottom:-2px;
+}
+#div_ad .ad_banner a{
+	color:#000000;
+	text-decoration:none;
+}
+#div_ad .ad_highlight {
+	color:#FF0900;
+}
+#div_textlink .ad_ppc {
+	position:absolute
+} 
+#banner_tr {
+	background-color: #FFFFFF;
+}
+#div_ad .ad_ppc {
+	padding-left:4px;
+	margin-top:-2px;
+	margin-bottom:-2px;
+}
+.ad_filter {
+	FILTER: Revealtrans(duration=0.5);
+	POSITION: absolute;
+}
+-->
+</style>
+<!-- base href="http://inte.sogou.com/cpc_ads?pid=wwwhc360com&ct=context&fmt=v_120_240&iw=350&ih=126&charset=gb2312&c_bo=fffff&c_bg=fffff&c_li=0000FF&c_te=000000&c_bt=000000&c_hl=FF0900&sv=0&sl=1&hl=1&tfs=14&tft=0&tml=36&dn=2&ucl=009900&ufs=12&uft=0&dfs=10&mhc=FF0900&mht=0&tdw=&lod=85&ppc=0&dul=0&new=1&tlh=16&tpl=0&ul=3&ti=%E9%9D%92%E5%B2%9B%E6%B1%BD%E8%BD%A6%E7%BE%8E%E5%AE%B9%E5%BA%97%E8%BF%9B%E5%8A%A3%E8%B4%A8%E8%B4%A7%E8%B0%8B%E6%9A%B4%E5%88%A9%20%E6%B6%88%E8%B4%B9%E8%80%85%E9%81%AD%E5%9D%91%E5%AE%B3-%E6%B1%BD%E8%BD%A6%E7%94%A8%E5%93%81%2C%E6%B1%BD%E8%BD%A6%E5%90%8E%E5%B8%82%E5%9C%BA-%E6%B1%BD%E8%BD%A6%E7%94%A8%E5%93%81%E8%A1%8C%E4%B8%9A-hc360%E6%85%A7%E8%81%AA%E7%BD%91&ref=&sohuurl=http://info.auto-a.hc360.com/2011/05/120836377037.shtml" -->
+</head>
+
+<body onload="setTime()">
+<script language="javascript" type="text/javascript">
+var page_style=594;
+var show_id=0, can_be_trans=0;
+var is_dis_domain = 0;
+var keep_white = 0;
+var pid="wwwhc360com";
+var isok=1;
+var hide_url= 
+
+function setTime()
+{
+	var seq_num = ((page_style & 0x30) >> 4);
+	if (seq_num <= 1) return;
+	var interval = 5000;
+	if (can_be_trans == 1) return setTimeout('setTime()', interval);
+	var trans_mode = Math.random() * 21;
+	for (var i=0; i<seq_num; i++)
+	{
+		var trans_div = document.getElementById('trans_div_'+i);
+		var show_mode = (i == show_id) ? 1 : 0;
+		trans(trans_div, show_mode, trans_mode);
+	}
+	setTimeout('setTime()', interval);
+	show_id = (show_id + 1) % seq_num;
+}
+
+function send_pv_ok()
+{
+	if (typeof(document.pv_ok)=='undefined') document.pv_ok = new Array();
+	var a = new Image();
+	a.src = "http://wb.brand.sogou.com/not_ok_pv?pid=" + pid;
+	document.pv_ok.push(a);
+}
+
+function trans(item, show_mode, trans_mode)
+{
+	if (item == null) return;
+ 	item.filters.revealTrans.Transition = trans_mode;
+	item.filters.revealTrans.apply();
+	item.style.visibility = (show_mode == 1) ? 'visible' : 'hidden';
+	item.filters.revealTrans.play();
+}
+
+function isTrans(c) { can_be_trans=c; }
+
+var ad_info = [
+	{
+		title : "买电器到库巴，超值特价！",
+		desc : "慧聪网库巴特惠，给力特价！",
+		url : "http://a1click.cpc.sogou.com/bill_cpc?p=DePeWF6Ye1H2hLcBljUlljnMxylVG4SrlUJmodJvtW7klllllyullasbHG@2MlllJZl=&q=cGlkPXd3d2hjMzYwY29tJnI9MSZoPTE2ODUxNTk1OSZ2PTMmYz1PJnB2aWQ9MTJDMjU5NzdEQ0I1Q0QyOSZ0PTAmcz0yMDEwMAA=&url=http://www.coo8.com/%3Futm_source=sogou%26utm_medium=cpc%26utm_content=pinpai%26utm_campaign=jingpin", 
+		hl : "",
+hl_flag : "1",
+key_word : "慧聪网",
+	ppc : "",
+	domain_url : "www.coo8.com"
+	},
+	{
+		title : "58同城首页招聘求职/招聘/人才网",
+		desc : "58同城招聘频道：本地最大的免费招聘，免费求职的平台，信息真实可靠！",
+		url : "http://a1click.cpc.sogou.com/bill_cpc?p=J19OqBGY2SV2hLcBlxclllJMxylRMHYLlUlEEdJvtW7klllllyuwlasbHG@2MGrg1r5q1GzclllloZ==&q=cGlkPXd3d2hjMzYwY29tJnI9MSZoPTE2ODUxNTk1OSZ2PTMmYz1PJnB2aWQ9MTJDMjU5NzdEQ0I1Q0QyOSZ0PTAmcz0yMDEwMAA=&url=http://bj.58.com/job.shtml%3Futm_term=zhaopinhui%26utm_medium=cpc%26utm_content=zhaopin20110903%26utm_source=sogou%26utm_campaign=zhaopin", 
+		hl : "",
+hl_flag : "1",
+key_word : "慧聪网首页招聘",
+	ppc : "",
+	domain_url : "bj.58.com"
+	},
+];
+var hl_str = "安防,办公,保健品,保养,本厂,泵阀,遍布,博览会,";
+function highlight(str, hl_mode, hl_ctl, hl_flag, key_word){if ( hl_flag != 1 )return str;if((((page_style & 0x00C0)>>6) & (0x1<<hl_mode))!=0) return str;if (hl_mode==0 && hl_ctl=="CT_SPEC")str="<font class=\"ad_highlight\">"+str+"</font>";for(var i=0;i<2;i++){if(key_word=="")continue;reg_str=new RegExp("("+key_word+")","g");str=str.replace(reg_str, '<font class="ad_highlight">$1</font>');}return str;}
+//mr14
+var mpa=new Array(1000);var mal=0,omdt=0;var u=function(){return new Date().getTime()};var p=function(i){return " onclick=\"cl(this,"+i+")\""};function mmd(e){mpa[mal++]=1;}function cl(e,id){e=e?e:window.event;t=e.innerHTML;e.href=ad_info[id].url+"&ml="+mal+"&mc="+(u()-omdt);mal=0;e.innerHTML=t;}function mdl(){omdt=u();}document.onmousemove=mmd;document.onmousedown=mdl;function hd_url(hd_flag){if(hd_flag == 1)return "onMouseOver=\"window.status=\'\';return true;\"";else return "";}
+function process_str(str, len, hl_mode, hl_ctl, hl_flag, key_word)
+{var bytes=str.length;var d_array=str.match(/[^\x00-\x80]/ig);if(d_array!=null)bytes+=d_array.length;if(bytes<=len)return highlight(str, hl_mode, hl_ctl, hl_flag, key_word);var b_len=0,r_len=0;var ret_str="";for(var i=0;i<len;i++){b_len+=(str.charCodeAt(i)>255)?2:1;if(b_len<=len)r_len++;if(b_len>=len){ret_str=str.substring(0, r_len)+"..";break;}}return highlight(ret_str,hl_mode,hl_ctl, hl_flag, key_word);}
+function render_page(seq_id)
+{var dis_num=(page_style & 0x000F);var hv=((page_style & 0x0200)>>9);var sv=((page_style & 0x0100)>>8);var page=((page_style & 0x0030) >> 4);var visual=(seq_id==0)?"visible":"hidden";document.write('<div id="trans_div_'+seq_id+'" style="VISIBILITY: '+visual+';" onmouseover=isTrans(1) onmouseout=isTrans(0) class="ad_filter">');document.write('<table width="350" height="126" border="0" cellpadding="0" cellspacing="0" style="table-layout: fixed" id="div_ad">');if(hv==0)document.write('<tr>');for(var i=0;i<dis_num;i++){var white_str='>';id=seq_id+(page*i)%(page*dis_num);var href_url='href="'+ad_info[id].url+'"'+hd_url(hide_url)+p(id);if (keep_white==2) {white_str=' style="cursor:pointer;" onclick="window.open(\'' + ad_info[id].url + '\', \'_blank\')">';href_url='';}
+if (hv==0) document.write('<td valign="top"' + white_str);if (hv==1 && i==0) document.write('<tr><td class="ad_null"' + white_str);if (hv==1 && i!=0) document.write('<tr><td class="ad_split"' + white_str);document.write('<div id="div_td">');if (typeof(ad_info[id])=="undefined")continue;
+var title_len= 36;if (ad_info[id].ppc!="") title_len -= 2;var sub_title=process_str(ad_info[id].title,title_len,0,ad_info[id].hl, ad_info[id].hl_flag, ad_info[id].key_word);var sub_desc  = process_str(ad_info[id].desc, 85, 1, ad_info[id].hl, ad_info[id].hl_flag, ad_info[id].key_word);document.write('<div class="ad_title">');document.write('<a title="'+ad_info[id].title+'" '+href_url+'>'+sub_title+'</a>');if(ad_info[id].ppc != ""&&keep_white!=2 && hide_url != 1)document.write('<a href="'+ad_info[id].ppc+'" target="_blank" border="0"><img class="ad_ppc" alt="点此免费通话" src="http://images.sohu.com/cs/jsfile/js/ppc/ppc.gif"  border="0"/></a>');document.write('</div>');document.write('<div class="ad_desc"><a '+href_url+'>'+sub_desc+'</a></div>');var sub_domain = ad_info[id].domain_url;if (is_dis_domain == 1)document.write('<div class="domain"><a '+href_url+'>'+sub_domain+'</a></div>');document.write('</div>');if (hv == 0) document.write('</td>');if (hv == 1) document.write('</td></tr>');}if (hv == 0) document.write('</tr>');if (sv == 1) {document.write('<tr id="banner_tr">');if (hv == 0){for(var i=0;i<dis_num-1;++i){document.write('<td></td>');}}document.write('<td align="right" valign="bottom"><div class="ad_banner"><a href="http://www.sogou.com/fuwu/">SOGOU推广服务</a></div></tr>');}document.write('</table>');document.write('</div>');}</script>
+<table style="table-layout: fixed;" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td>
+<script language="javascript" type="text/javascript"> 
+for (var i=0; i<((page_style & 0x0030) >> 4); i++) render_page(i);
+if (isok != 1) send_pv_ok();
+</script><div id="trans_div_0" style="VISIBILITY: visible;" onmouseover="isTrans(1)" onmouseout="isTrans(0)" class="ad_filter"><table style="table-layout: fixed;" id="div_ad" width="350" border="0" cellpadding="0" cellspacing="0" height="126"><tbody><tr><td class="ad_null"><div id="div_td"><div class="ad_title"><a title="买电器到库巴，超值特价！" href="http://a1click.cpc.sogou.com/bill_cpc?p=DePeWF6Ye1H2hLcBljUlljnMxylVG4SrlUJmodJvtW7klllllyullasbHG@2MlllJZl=&amp;q=cGlkPXd3d2hjMzYwY29tJnI9MSZoPTE2ODUxNTk1OSZ2PTMmYz1PJnB2aWQ9MTJDMjU5NzdEQ0I1Q0QyOSZ0PTAmcz0yMDEwMAA=&amp;url=http://www.coo8.com/%3Futm_source=sogou%26utm_medium=cpc%26utm_content=pinpai%26utm_campaign=jingpin" onclick="cl(this,0)">买电器到库巴，超值特价！</a></div><div class="ad_desc"><a href="http://a1click.cpc.sogou.com/bill_cpc?p=DePeWF6Ye1H2hLcBljUlljnMxylVG4SrlUJmodJvtW7klllllyullasbHG@2MlllJZl=&amp;q=cGlkPXd3d2hjMzYwY29tJnI9MSZoPTE2ODUxNTk1OSZ2PTMmYz1PJnB2aWQ9MTJDMjU5NzdEQ0I1Q0QyOSZ0PTAmcz0yMDEwMAA=&amp;url=http://www.coo8.com/%3Futm_source=sogou%26utm_medium=cpc%26utm_content=pinpai%26utm_campaign=jingpin" onclick="cl(this,0)"><font class="ad_highlight"><font class="ad_highlight">慧聪网</font></font>库巴特惠，给力特价！</a></div></div></td></tr><tr><td class="ad_split"><div id="div_td"><div class="ad_title"><a title="58同城首页招聘求职/招聘/人才网" href="http://a1click.cpc.sogou.com/bill_cpc?p=J19OqBGY2SV2hLcBlxclllJMxylRMHYLlUlEEdJvtW7klllllyuwlasbHG@2MGrg1r5q1GzclllloZ==&amp;q=cGlkPXd3d2hjMzYwY29tJnI9MSZoPTE2ODUxNTk1OSZ2PTMmYz1PJnB2aWQ9MTJDMjU5NzdEQ0I1Q0QyOSZ0PTAmcz0yMDEwMAA=&amp;url=http://bj.58.com/job.shtml%3Futm_term=zhaopinhui%26utm_medium=cpc%26utm_content=zhaopin20110903%26utm_source=sogou%26utm_campaign=zhaopin" onclick="cl(this,1)">58同城首页招聘求职/招聘/人才网</a></div><div class="ad_desc"><a href="http://a1click.cpc.sogou.com/bill_cpc?p=J19OqBGY2SV2hLcBlxclllJMxylRMHYLlUlEEdJvtW7klllllyuwlasbHG@2MGrg1r5q1GzclllloZ==&amp;q=cGlkPXd3d2hjMzYwY29tJnI9MSZoPTE2ODUxNTk1OSZ2PTMmYz1PJnB2aWQ9MTJDMjU5NzdEQ0I1Q0QyOSZ0PTAmcz0yMDEwMAA=&amp;url=http://bj.58.com/job.shtml%3Futm_term=zhaopinhui%26utm_medium=cpc%26utm_content=zhaopin20110903%26utm_source=sogou%26utm_campaign=zhaopin" onclick="cl(this,1)">58同城招聘频道：本地最大的免费招聘，免费求职的平台，信息真实可靠！</a></div></div></td></tr></tbody></table></div></td></tr></tbody></table>
+
+</body></html>

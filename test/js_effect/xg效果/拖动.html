@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+   *{  
+        -moz-user-select:-moz-none;  
+ } 
+</style>
+
+<style type="text/css">
+	*{ margin:0; padding:0;}
+	#box{ width:690px; border:1px solid #000; margin:50px auto;}
+	#scro{ width:100%; height:30px; background:red; margin:10px 0; position:relative;}
+	.scro_line{ width:100%; height:0; overflow:hidden; border-top:2px groove #000; position:absolute; left:0; top:15px; z-index:0;}
+	.scro_mouse{ width:66px; height:20px; background:#ccc; cursor:pointer; position:absolute; left:0; top:5px; z-index:1;}
+	.show{ width:100px; height:30px; position:absolute; display:none; top:-30px; left:0;}
+</style>
+</head>
+<body>
+    <div id="box">
+        <div id="scro">
+        	<div class="show"></div>
+        	<div class="scro_line"></div>
+        	<div class="scro_mouse"></div>
+        </div>
+        <div class="text"></div>
+    </div>
+	<script src="http://www.16sucai.com/uploadfile/show4/jquerytop/js/jquery-1.4.2.min.js" type="text/javascript" language="javascript"></script>
+<script type="text/javascript">
+$(function(){
+	var scro_zoom = parseInt($(".scro_mouse").width()/2);
+		$(".scro_mouse").mousedown(function(){
+				$(".show").fadeIn(300);
+				$(".scro_mouse").bind("mousemove",function(e){
+				var X = e.pageX - $("#scro").offset().left; //得到left值;
+				var Y = e.pageY - $("#scro").offset().top - 5;//得到top值;
+				$(this).css("left",X-scro_zoom);
+				$(".show").text( X + "," + Y + "," + $(".scro_mouse").css("left"));
+			});
+
+
+		}).mouseup(function(){
+
+			$(this).unbind("mousemove");
+			$(".show").hide();
+		})
+
+
+	
+})
+document.body.onselectstart=function(){return false;}  
+</script>
+</body>
+</html>

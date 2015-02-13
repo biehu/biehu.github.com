@@ -1,0 +1,105 @@
+/**************************************************************
+   结构样式
+ **************************************************************/
+#page {
+	width:98%;
+	background:#fff;
+	padding:5px;
+	margin:0 auto;
+	font-size:12px;
+	font-family:Tahoma,Helvetica,Arial,sans-serif;
+}
+#page .input {
+	border-width: 1px;
+	border-style: solid;
+	border-color: #888 #DDD #DDD #888;  
+	width:200px;
+	height:18px;
+}
+#page .select {
+	border: 1px solid #ccc;
+	width:205px;
+}
+#page .button {
+	padding: 1px 10px;
+	cursor: pointer;
+	color: #fff;
+	background: #508231;
+	margin-left:55px;
+}
+#page .clear {
+	clear:both;
+}
+
+/**************************************************************
+   查询样式
+ **************************************************************/
+.page_header h1 {
+	color:#53504D;
+	font-size:18px;
+	padding:5px;
+	background:#F1FFE3;
+	border-bottom: 1px solid #B8E78B;
+}
+.page_search {
+	width:65%;
+}
+.page_search h2 , .page_list h2{
+	color:#53504D;
+	font-size:14px;
+	padding:5px;
+	width:90%;
+	background:#F1F7F9;
+}
+.page_search p {
+	height:30px;
+	float:left;
+}
+.page_search p label {
+	float:left;
+	text-align:left;
+	padding-top:2px;
+	padding-left:55px;
+	padding-right:15px;
+	width:100px;
+}
+
+/**************************************************************
+   表格样式
+ **************************************************************/
+.page_list {
+	clear:both;
+}
+.page_list table {
+	width: 91%;
+	margin-bottom: 10px;  
+	line-height: 150%;
+	border-collapse: collapse;
+}
+.page_list table th,
+.page_list table td {
+	text-align: left;
+	vertical-align: top;
+	padding: 4px 7px !important;
+	padding: 6px 10px;
+}
+.page_list thead th {
+	background: #F1FFE3;
+	border-bottom: 1px solid #B8E78B;
+}
+.page_list tbody tr.dark {
+	background-color: #F5F5F5;
+}
+.page_list tbody td {
+	border-bottom: 1px solid #DDD;
+}
+.page_list tbody tr:hover {
+	background-color: #FBFEDF;
+}
+.page_list table a {
+	color:#53504D;
+	text-decoration:none;
+}
+.page_list table a:hover {
+	text-decoration:underline;
+}

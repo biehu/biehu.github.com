@@ -1,0 +1,48 @@
+td {
+	font-size: 12px;
+	color: #000000;
+	line-height:20px;
+}
+a:link {color: #0000FF;text-decoration: none;}
+a:visited {color: #0000FF;text-decoration: none;}
+a:hover {color: #0000FF;text-decoration: none;}
+a:active {color: #0000FF;text-decoration: none;}
+
+a.black:link {color: #000000;text-decoration: none;}
+a.black:visited {color: #000000;text-decoration: none;}
+a.black:hover {color: #ff0000;text-decoration: underline;}
+a.black:active {color: #ff0000;text-decoration: underline;}
+
+a.white:link {color: #fff;text-decoration: none;}
+a.white:visited {color: #fff;text-decoration: none;}
+a.white:hover {color: #fff;text-decoration: underline;}
+a.white:active {color: #fff;text-decoration: underline;}
+
+.hei {font-family: "ºÚÌå";font-size: 18px;color: #3C00FF;}
+.title {font-family: "ºÚÌå";font-size: 20px;line-height: 30px;color: #000060;}
+.px14 {font-size: 14px;line-height: 20px;}
+.px14white {font-size: 14px;line-height: 20px;color:#ffffff;}
+.relationpx {font-size: 14px;line-height: 20px;color:#ffffff;}
+.relationpx {font-size: 14px;line-height: 20px;color:#ffffff;}
+.line {border:#8F8F8F 1px solid;}
+.l18 {line-height:18px;}
+.l20 {line-height:20px;}
+
+.3xxly2{font-family: "ºÚÌå";font-size: 18px;color: #3C00FF;}
+
+a.3dh:link {color: #000;text-decoration: none;}
+a.3dh:visited {color: #000;text-decoration: none;}
+a.3dh:hover {color: #000;text-decoration: underline;}
+a.3dh:active {color: #000;text-decoration: underline;}
+
+A.a01:link { COLOR: #000000; TEXT-DECORATION: none}
+A.a01:visited { COLOR: #000000; TEXT-DECORATION: none}
+A.a01:active { COLOR: #ff0000; TEXT-DECORATION: none}
+A.a01:hover { COLOR: #ff0000; TEXT-DECORATION: underline}
+
+A.a03:link { COLOR: #ffffff;font-size: 14px;line-height: 20px;TEXT-DECORATION: none}
+A.a03:visited { COLOR: #ffffff;font-size: 14px;line-height: 20px; TEXT-DECORATION: none}
+A.a03:active { COLOR: #ffffff;font-size: 14px;line-height: 20px;TEXT-DECORATION: none}
+A.a03:hover {COLOR: #ffffff;font-size: 14px;line-height: 20px;TEXT-DECORATION: underline}
+
+

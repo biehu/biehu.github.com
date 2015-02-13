@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="keywords" content="站长,网页特效,js特效,广告代码,zzjs,zzjs.net,sky,www.zzjs.net,站长特效 网" />
+<title>兼容多种浏览器的公告栏文字滚动效果js代码。上下定时翻动</title>
+<style type="text/css">
+.cls_container{border:1px solid #ccc;width:680px;font-size:12px;height:24px;overflow:hidden;}
+.cls_container ul{overflow:hidden;zoom:1;list-style-type:none;margin:0;padding:0;margin-left:32px;}
+.cls_container ul li{height:24px;line-height:24px;width:320px;float:left;display:inline;}
+</style>
+</head>
+<body>
+<div id="myscroll" class="cls_container">
+<ul>
+<li><a href="<#ZC_BLOG_HOST#>?cat=2">欢迎来到站长特效网</a></li>
+<li><a href="<#ZC_BLOG_HOST#>?cat=3">微软和谷歌对浏览器的垄断会导致Web的私有化吗? </a></li>
+<li><a href="<#ZC_BLOG_HOST#>?cat=4">Subversion高级应用:SVN的多种认证方式</a></li>
+<li><a href="<#ZC_BLOG_HOST#>?cat=5">年度总结:2008年Java工具</a></li>
+<li><a href="<#ZC_BLOG_HOST#>?cat=6">要不要把IT主导权还给业务人员? </a></li>
+<li><a href="<#ZC_BLOG_HOST#>?cat=7">IT专家网08年回顾:开发语言与开发平台共舞 </a></li>
+<li><a href="<#ZC_BLOG_HOST#>?cat=8">zzjs站长特效，做国内最帅的网页特效站</a></li>
+<li><a href="<#ZC_BLOG_HOST#>?cat=9">方正科技七大优势 打造全流程专业外包</a></li>
+<li><a href="<#ZC_BLOG_HOST#>?cat=10">08回顾:Oracle能否继续领跑者数据库市场? </a></li>
+<li><a href="<#ZC_BLOG_HOST#>?cat=11">Web安全性问题的层次关系分析</a></li>
+<li><a href="<#ZC_BLOG_HOST#>?cat=2">从融合至存储 以太网成企业网络终极答案</a></li>
+</ul>
+</div>
+<script type="text/javascript">
+var scrollIntermittent =(function(){
+	var counter = 0;
+	var element,height,maxHeight,timer;
+	return{
+		init: function(elementId, height) {
+			element=document.getElementById(elementId);
+			element.innerHTML += element.innerHTML;
+			elementHeight = height;
+			maxHeight = element.scrollHeight / 2;
+			scrollIntermittent.scroll();
+			element.onmouseover = scrollIntermittent.stop;
+			element.onmouseout = function() {
+				timer = setTimeout(scrollIntermittent.scroll, 1000);
+			};
+		},
+		scroll: function() {
+			if (element.scrollTop < maxHeight) {
+				element.scrollTop++;
+				counter++;
+			} else {
+				element.scrollTop = 0;
+				counter = 0;
+			}
+			if (counter < elementHeight) {
+				timer = setTimeout(scrollIntermittent.scroll, 20);
+			} else {
+				counter = 0;
+				timer = setTimeout(scrollIntermittent.scroll, 3000);
+			}
+		},
+		stop: function() {
+			clearTimeout(timer);
+		}
+	}
+})()
+scrollIntermittent.init("myscroll", 24);
+</script>
+</body>
+</html>

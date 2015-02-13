@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>兼容IE、FF的列表左右无间断滚动效果</title>
+        <style type="text/css" media="all">
+            .d1 {
+                margin: 10px auto;
+                width: 500px;
+                border: #103E63 1px solid;
+                background-color: #EFEFEF;
+                height: auto;
+                overflow: hidden;
+                white-space: nowrap;
+            }
+            
+            .d2 {
+                margin: 0px auto;
+                background-color: #FF9933;
+            }
+            
+            .div2 {
+                width: auto;
+                height: auto;
+                font-size: 12px;
+                float: left;
+                overflow: hidden;
+            }
+            
+            ul {
+                margin: 0px;
+                padding: 9px;
+                list-style: none;
+                line-height: 19px;
+                font-size: 12px;
+            }
+            
+            a:link, a:visited {
+                color: #3F78CF;
+                text-decoration: none;
+            }
+            
+            a:hover {
+                color: #FF00CC;
+                text-decoration: underline;
+            }
+        </style>
+        <script language="javascript" type="text/javascript">
+            
+            var s;
+            var s2;
+            var s3;
+            var s4;
+            var timer;
+            function init(){
+                s = getid("div1");
+                s2 = getid("div2");
+                s3 = getid("div3");
+                s4 = getid("scroll");
+                s4.style.width = (s2.offsetWidth * 2 + 100) + "px";
+                s3.innerHTML = s2.innerHTML;
+                timer = setInterval(mar, 30)
+            }
+            
+            function mar(){
+                console.log(s2.offsetWidth, s.scrollLeft);
+                if (s2.offsetWidth <= s.scrollLeft) {
+                    s.scrollLeft -= s2.offsetWidth;
+                }
+                else {
+                    s.scrollLeft += 1;
+                }
+            }
+            
+            function getid(id){
+                return document.getElementById(id);
+            }
+            
+            window.onload = init;
+        </script>
+    </head>
+    <body>
+        <div class="d1" id="div1" onmouseover="clearInterval(timer)" onmouseout="timer=setInterval(mar,30)">
+            <div class="scroll" id="scroll">
+                <div class="div2" id="div2">
+                    <ul>
+                        <li>
+                            <a title="超级漂亮的几款清新、常用的网页CSS布局配色实例" target="_blank" href="http://www.ablanxue.com">超级漂亮的几款清新、常用的网页CSS布局配色实例</a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="div3" class="div2">
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

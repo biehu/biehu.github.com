@@ -1,0 +1,98 @@
+<!-- ++++++++++++++++++++++++++++++在<body></body>之间输入下面的代码++++++++++++++++++++++++++++++++ --> 
+点击右键看看！ 
+<style> 
+body,td,a {font-size:9pt;color:black} 
+.none{border:black 1px solid;background:D9D9D9;padding-top:2} 
+.over {border:black 1px solid;background:707888;color:white;padding-top:2} 
+</style> 
+<body oncontextmenu="return false"> 
+<div style="position:absolute; left: 100; top: 100;cursor: hand;display='none';" ID=plane 
+onmousedown="down=true;divleft=event.clientX-parseInt(plane.style.left); 
+divtop=event.clientY-parseInt(plane.style.top)" onmouseup="down=false"> 
+<div align=center style="position:absolute; left:150px; top:33px; width:100px; 
+height:19px; z-index:1;color:white;background:707888;cursor:default;" class="none" 
+onmouseover="menuin();init()">右键菜单</div> 
+<div align=center id="item1" style="position:absolute; left:50px; top:55px; width:99px; 
+height:19px; z-index:2; filter:alpha(opacity=0)" onmouseover="this.className='over';menuin()" 
+onmouseout="this.className='none';" class="none" 
+><a href=http://www.pcedu.com.cn>网络学院</a></div> 
+<div align=center id="item2" style="position:absolute; left:250px; top:77px; width:99px; height:19px; z-index:3;filter:alpha(opacity=0)" 
+class=none onmouseover="this.className='over';menuin()" 
+onmouseout="this.className='none';"><a href=#>菜单项二</a></div> 
+<div align=center id="item3" style="position:absolute; left:50px; top:99px; width:99px; height:19px; z-index:4; filter:alpha(opacity=0)" 
+class=none onmouseover="this.className='over';menuin()" 
+onmouseout="this.className='none';">菜单项三</div> 
+<div align=center id="item4" style="position:absolute; left:250px; top:121px; width:99px; height:19px; z-index:5;filter:alpha(opacity=0)" 
+class=none onmouseover="this.className='over';menuin()" 
+onmouseout="this.className='none';">菜单项四</div>　<div align=center id="item5" style="position:absolute; left:50px; top:143px; width:99px; height:19px; z-index:6; filter:alpha(opacity=0)" 
+class=none onmouseover="this.className='over';menuin()" 
+onmouseout="this.className='none';">菜单项五</div> 
+</div> 
+<script language="vbs"> 
+dim down,divleft,divtop,timelinestart,timelinestop,tidone,tidtwo,tidtree 
+down=false 
+timelinestart=0 
+timelinestop=0 
+sub document_onmousedown 
+if window.event.button=2 then 
+plane.style.display="" 
+plane.style.left=window.event.clientx-153 
+plane.style.top=window.event.clienty-35 
+end if 
+end sub 
+sub document_onmousemove 
+if down then 
+plane.style.left=window.event.clientx-divleft 
+plane.style.top=window.event.clienty-divtop 
+end if 
+end sub 
+sub document_ondargstart 
+window.event.returnvalue=false 
+end sub 
+function menuin() 
+cleartimeout(tidtree) 
+end function 
+sub document_onclick 
+tidtree=settimeout("outit()",200) 
+end sub 
+function init() 
+if timelinestart<>5 then 
+cleartimeout(tidtwo) 
+item1.style.pixelLeft=item1.style.pixelLeft+20 
+item1.filters.alpha.opacity=item1.filters.alpha.opacity+20 
+item2.style.pixelLeft=item2.style.pixelLeft-20 
+item2.filters.alpha.opacity=item2.filters.alpha.opacity+20 
+item3.style.pixelLeft=item3.style.pixelLeft+20 
+item3.filters.alpha.opacity=item3.filters.alpha.opacity+20 
+item4.style.pixelLeft=item4.style.pixelLeft-20 
+item4.filters.alpha.opacity=item4.filters.alpha.opacity+20 
+item5.style.pixelLeft=item5.style.pixelLeft+20 
+item5.filters.alpha.opacity=item5.filters.alpha.opacity+20 
+timelinestart=timelinestart+1 
+else 
+cleartimeout(tidone) 
+end if 
+tidone=settimeout("init()",1) 
+end function 
+function outit() 
+if timelinestart<>0 then 
+cleartimeout(tidone) 
+item1.style.pixelLeft=item1.style.pixelLeft-20 
+item1.filters.alpha.opacity=item1.filters.alpha.opacity-20 
+item2.style.pixelLeft=item2.style.pixelLeft+20 
+item2.filters.alpha.opacity=item2.filters.alpha.opacity-20 
+item3.style.pixelLeft=item3.style.pixelLeft-20 
+item3.filters.alpha.opacity=item3.filters.alpha.opacity-20 
+item4.style.pixelLeft=item4.style.pixelLeft+20 
+item4.filters.alpha.opacity=item4.filters.alpha.opacity-20 
+item5.style.pixelLeft=item5.style.pixelLeft-20 
+item5.filters.alpha.opacity=item5.filters.alpha.opacity-20 
+timelinestart=timelinestart-1 
+else 
+cleartimeout(tidtwo) 
+plane.style.display="none" 
+exit function 
+end if 
+tidtwo=settimeout("outit()",1) 
+end function 
+</script>

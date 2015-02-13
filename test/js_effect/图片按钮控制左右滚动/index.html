@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jquery图片横向左右滚动效果（带按钮控制）_前端开发-武方博</title>
+<style type="text/css"> 
+*{ margin:0; padding:0;}
+body { font:12px/1.8 Arial; color:#666;}
+h1.tit-h1 { font-size:38px; text-align:center; margin:30px 0 15px; color:#f60;}
+.go-back{ text-align:center; border-top:1px dashed #ccc; padding:10px; margin-top:20px; font-size:40px;}
+.wrap{border:1px dashed #ccc; background:#f8f8f8; padding:20px;}
+
+/* v_show style */
+.v_show { width:595px; margin:20px 0 1px 60px; }
+.v_caption { height:35px; overflow:hidden; background:url(img/btn_cartoon.gif) no-repeat 0 0; }
+.v_caption h2 { float:left; width:84px; height:35px; overflow:hidden; background:url(img/btn_cartoon.gif) no-repeat; text-indent:-9999px; }
+.v_caption .cartoon { background-position: 0 -100px; }
+.v_caption .variety { background-position:-100px -100px; }
+.highlight_tip { display:inline; float:left; margin:14px 0 0 10px; }
+.highlight_tip span { display:inline; float:left; width:7px; height:7px; overflow:hidden; margin:0 2px; background:url(img/btn_cartoon.gif) no-repeat 0 -320px; text-indent:-9999px; }
+.highlight_tip .current { background-position:0 -220px; }
+.change_btn { float:left; margin:7px 0 0 10px; }
+.change_btn span { display:block; float:left; width:30px; height:23px; overflow:hidden; background:url(img/btn_cartoon.gif) no-repeat; text-indent:-9999px; cursor:pointer; }
+.change_btn .prev { background-position:0 -400px;  }
+.change_btn .next { width:31px; background-position:-30px -400px; }
+.v_caption em { display:inline; float:right; margin:10px 12px 0 0; font-family:simsun; }
+.v_content { position:relative; width:592px; height:160px; overflow:hidden; border-right:1px solid #E7E7E7; border-bottom:1px solid #E7E7E7; border-left:1px solid #E7E7E7; }
+.v_content_list { position:absolute; width:2500px;top:0px; left:0px; }
+.v_content ul {float:left;}
+.v_content ul li { display:inline; float:left; margin:10px 2px 0; padding:8px; background:url(img/v_bg.gif) no-repeat; }
+.v_content ul li a { display:block; width:128px; height:80px; overflow:hidden; }
+.v_content ul li img {  width:128px; height:96px; }
+.v_content ul li h4 { width:128px; height:18px; overflow:hidden; margin-top:12px; font-weight:normal; }
+.v_content ul li h4 a { display:inline !important; height:auto !important; }
+.v_content ul li span { color:#666; }
+.v_content ul li em { color:#888; font-family:Verdana; font-size:0.9em; }
+</style> 
+<script type="text/javascript" src="http://www.wufangbo.com/demo/jquery-1.4.4.min.js"></script>
+
+</head>
+<body>
+
+<h1 class="tit-h1">jquery图片横向左右滚动效果（带按钮控制）_前端开发-武方博</h1> 
+<div class="wrap">
+
+
+
+<div class="v_show">
+	<div class="v_caption">
+		<h2 class="cartoon" title="卡通动漫">卡通动漫</h2>
+		
+		<div class="change_btn">
+			<span class="prev" >上一页</span>
+			<span class="next">下一页</span>
+		</div>
+		<em><a href="#">更多>></a></em>
+	</div>
+	<div class="v_content">
+		<div  class="v_content_list">
+			<ul>
+				<li><a href="#"><img src="img/01.jpg" alt="海贼王" /></a><h4><a href="#">海贼王</a></h4><span>播放:<em>28,276</em></span></li>
+				<li><a href="#"><img src="img/01.jpg" alt="海贼王" /></a><h4><a href="#">海贼王</a></h4><span>播放:<em>28,276</em></span></li>
+				<li><a href="#"><img src="img/01.jpg" alt="海贼王" /></a><h4><a href="#">海贼王</a></h4><span>播放:<em>28,276</em></span></li>
+				<li><a href="#"><img src="img/01.jpg" alt="海贼王" /></a><h4><a href="#">海贼王</a></h4><span>播放:<em>28,276</em></span></li>
+				<li><a href="#"><img src="img/02.jpg" alt="哆啦A梦" /></a><h4><a href="#">哆啦A梦</a></h4><span>播放:<em>33,326</em></span></li>
+				<li><a href="#"><img src="img/02.jpg" alt="哆啦A梦" /></a><h4><a href="#">哆啦A梦</a></h4><span>播放:<em>33,326</em></span></li>
+				<li><a href="#"><img src="img/02.jpg" alt="哆啦A梦" /></a><h4><a href="#">哆啦A梦</a></h4><span>播放:<em>33,326</em></span></li>
+				<li><a href="#"><img src="img/02.jpg" alt="哆啦A梦" /></a><h4><a href="#">哆啦A梦</a></h4><span>播放:<em>33,326</em></span></li>
+				<li><a href="#"><img src="img/03.jpg" alt="火影忍者" /></a><h4><a href="#">火影忍者</a></h4><span>播放:<em>28,276</em></span></li>
+				<li><a href="#"><img src="img/03.jpg" alt="火影忍者" /></a><h4><a href="#">火影忍者</a></h4><span>播放:<em>28,276</em></span></li>
+				<li><a href="#"><img src="img/03.jpg" alt="火影忍者" /></a><h4><a href="#">火影忍者</a></h4><span>播放:<em>28,276</em></span></li>
+				<li><a href="#"><img src="img/03.jpg" alt="火影忍者" /></a><h4><a href="#">火影忍者</a></h4><span>播放:<em>28,276</em></span></li>
+				<li><a href="#"><img src="img/04.jpg" alt="龙珠" /></a><h4><a href="#">龙珠</a></h4><span>播放 <em>57,865</em></span></li>
+				<li><a href="#"><img src="img/04.jpg" alt="龙珠" /></a><h4><a href="#">龙珠</a></h4><span>播放 <em>57,865</em></span></li>
+				<li><a href="#"><img src="img/04.jpg" alt="龙珠" /></a><h4><a href="#">龙珠</a></h4><span>播放 <em>57,865</em></span></li>
+				<li><a href="#"><img src="img/04.jpg" alt="龙珠" /></a><h4><a href="#">龙珠</a></h4><span>播放 <em>57,865</em></span></li>
+		     </ul>
+		</div>
+	</div>
+</div>
+
+
+    
+</div>
+
+
+
+<div class="go-back"><a href="http://www.wufangbo.com/jquery-examples-list">返回jQuery实例列表</a></div>
+<h4 style="text-align:center;"><a href="http://www.wufangbo.com">郑州前端开发</a> <a href="http://www.wufangbo.com">郑州网页设计</a> <a href="http://www.wufangbo.com">郑州美工</a> <a href="http://www.wufangbo.com">郑州UED</a> <a href="http://www.wufangbo.com">郑州div+css </a> <a href="http://www.wufangbo.com">郑州页面重构 </a><a href="http://www.wufangbo.com">武方博前端开发 </a> <a href="http://www.wufangbo.com">前端开发武方博</a> <a href="http://www.wufangbo.com/sitemap.xml">站点地图</a></h4>
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-20541395-2']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+<script type="text/javascript">
+(function(){
+    var page = 1;
+    var i = 4; //每版放4个图片
+	var $parent, $v_show, $v_content;
+	
+	var setDomElem = function (obj) {
+		$parent = obj.parents("div.v_show");//根据当前点击元素获取到父元素
+		$v_show = $parent.find("div.v_content_list"); //寻找到“视频内容展示区域”
+		$v_content = $parent.find("div.v_content"); //寻找到“视频内容展示区域”外围的DIV元素
+	};
+	 
+	
+	
+    //向后 按钮
+    $("span.next").click(function(){    //绑定click事件
+	    setDomElem($(this));
+		 var v_width = $v_content.width() ;
+		 var len = $v_show.find("li").length;
+		 var page_count = Math.ceil(len / i) ;   //只要不是整数，就往大的方向取最小的整数
+		 if( !$v_show.is(":animated") ){    //判断“视频内容展示区域”是否正在处于动画
+			  if( page == page_count ){  //已经到最后一个版面了,如果再向后，必须跳转到第一个版面。
+				$v_show.animate({ left : '0px'}, "slow"); //通过改变left值，跳转到第一个版面
+				page = 1;
+				}else{
+				$v_show.animate({ left : '-='+v_width }, "slow");  //通过改变left值，达到每次换一个版面
+				page++;
+			 }
+		 }
+		
+   });
+    //往前 按钮
+    $("span.prev").click(function(){
+setDomElem($(this));
+		 var v_width = $v_content.width();
+		 var len = $v_show.find("li").length;
+		 var page_count = Math.ceil(len / i) ;   //只要不是整数，就往大的方向取最小的整数
+		 if( !$v_show.is(":animated") ){    //判断“视频内容展示区域”是否正在处于动画
+		 	 if( page == 1 ){  //已经到第一个版面了,如果再向前，必须跳转到最后一个版面。
+				$v_show.animate({ left : '-='+v_width*(page_count-1) }, "slow");
+				page = page_count;
+			}else{
+				$v_show.animate({ left : '+='+v_width }, "slow");
+				page--;
+			}
+		}
+		
+    });
+})();
+
+
+</script>
+</body> 
+</html>

@@ -1,0 +1,207 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="gbk">
+<title>原生Js实现按数据源均分时间点幻灯效果(已封装)@Mr.Think</title>
+<link rel="stylesheet" href="http://mrthink.net/demo/css/base.css" />
+<link rel="shortcut icon" type="image/x-icon" href="http://mrthink.net/wp-content/themes/zsofa/favicon.ico" />
+<meta name="author" content="Mr.Think又名青鸟简称i" />
+<meta name="keywords" content="i,Mr.Think,Mr.Think的博客,前端技术,用户体验,网站策划,网站优化,javascript,jQuery,css,html青鸟,青鸟的博客,PHP爱好者" />
+<meta name="description" content="Mr.Think的博客,中文网名青鸟,现专注于WEB前端开发,同时也是一位PHP的爱好者.爱思考,有点代码洁癖,生吃过螃蟹腿,喜好肉食.这里是我记录知识与生活琐事的地方." />
+<link rel="pingback" href="http://mrthink.net/xmlrpc.php" />
+<link rel="alternate" type="application/rss+xml" title="Mr.Think的博客 RSS Feed" href="http://mrthink.net/feed/" />
+<style>
+#itimeslide{position:relative;margin:0 20px;padding:15px 0}
+#itimeslide #date{display:none;position:absolute;left:74px;top:3px;width:70px}
+#itimeslide #date span{display:block;height:14px;padding:0 3px;background:#4e7db3;color:#fff;font-size:12px;line-height:14px}
+#itimeslide #date em{display:block;width:5px;height:3px;margin:0 auto;background:url(http://mrthink.net/demo/images/20101224sprite.gif) no-repeat -61px 0}
+#itimeslide #timeline{overflow:visible;width:100%;height:2px;margin:16px 0 20px;background:#c7c7c7}
+#itimeslide #timeline li{display:block;position:absolute;left:0;top:24px;width:17px;height:17px;background:url(http://mrthink.net/demo/images/20101224sprite.gif) no-repeat 0 0;text-indent:-999px;cursor:pointer}
+#itimeslide #timeline li.hover{background-position:-20px 0}
+#itimeslide span#titletop{display:none;position:absolute;top:45px;width:12px;height:8px;background:url(http://mrthink.net/demo/images/20101224sprite.gif) no-repeat -88px -21px;z-index:1}
+#itimeslide #title{display:none;position:absolute;top:52px;padding:15px 10px;background:#f8f8ff;border:1px solid #708bab;border-radius:5px;-weblit-border-radius:5px;-moz-border-radius:5px;-webkit-box-shadow:3px 3px 3px #c7c7c7;
+-moz-box-shadow:3px 3px 3px #c7c7c7}
+</style>
+<script>
+	/*******************************
+ * @author Mr.Think
+ * @author blog http://mrthink.net/
+ * @2010.12.24
+ * @可自由转载及使用,但请注明版权归属
+ *******************************/
+//原数据 JSON :) 一般是由后台传入的
+var JSONData=[
+	{'date':'2010-12-25','title':'原生Js实现按数据源均分时间点幻灯片','href':'http://mrthink.net/'},
+	{'date':'2010-11-01','title':'原生Js获取元素样式属性值的方法','href':'http://mrthink.net/'},
+	{'date':'2010-10-22','title':'纯CSS实现列表鼠标划过变色','href':'http://mrthink.net/'},
+	{'date':'2010-09-23','title':'实现checkbox的全选/全不选/点选/行内点选','href':'http://mrthink.net/'},
+	{'date':'2010-09-05','title':'JS计时器setTimeout()与setInterval()方法的区别','href':'http://mrthink.net/'},
+	{'date':'2010-06-07','title':'加载xml文档的函数(原生JavaScript版及jQuery版)','href':'http://mrthink.net/'},
+	{'date':'2010-05-09','title':'限制字符输入数功能(jQ版和原生JS版)','href':'http://mrthink.net/'},
+	{'date':'2010-04-13','title':'奇或偶数行高亮显示及鼠标划过高亮显示类','href':'http://mrthink.net/'},
+	{'date':'2010-03-01','title':'结构/表现/行为完全分离的选项卡(jQ版和原生JS版)','href':'http://mrthink.net/'},
+	{'date':'2010-02-22','title':'简易的点击展开/关闭效果(原生JS版和JQ版)','href':'http://mrthink.net/'},
+	{'date':'2010-02-01','title':'网站基本优化：php的gzip压缩方法','href':'http://mrthink.net/'},
+	{'date':'2010-01-20','title':'基于jQuery的渐隐渐显图片轮换幻灯片','href':'http://mrthink.net/'}
+];
+	
+function iTimePoint(iTimeSlideId, dateId, timeLineId, titleTop, titleId, defaultShow){
+    /* 传入参数说明:
+     * iTimeSlideId: 外围ID名. 本样例DOM中#itimeslide;
+     * dateId: 日期ID名. 本样例DOM中#date;
+     * timeLineId: 时间点分布ID名. 本样例DOM中#timeline;
+     * titleTop: 标题容器上方小三角ID名. 本样例DOM中#titletop;
+     * titleId: 标题容器ID名. 本样例DOM中#title;
+     * defaultShow: 设定初始显示的时间点, 默认为0, 可不传值
+     */
+	
+    //参数判断,测试用,成功运行后可删除
+    if (arguments.length < 5 || arguments.length>6) {
+        alert('参数传入错误,请传入5或6个值! :)');
+        return false;
+    }
+	
+	//通用方法
+    var iBase = {
+        //document.getElementById
+        Id: function(name){
+            return document.getElementById(name);
+        },
+        //时间点动画显示
+        PointSlide: function(elem, val){
+            //可通过修改i+=5中的5控制滑动速度
+            for (var i = 0; i <= 100; i += 5) {
+                (function(){
+                    //这个pos定义很重要,若直接使用闭包获取到的不是上面的i
+                    var pos = i;
+                    //平滑移动
+                    setTimeout(function(){
+                        elem.style.left = pos * val / 100 + 'px';
+                    }, (pos + 1) * 10);
+                })();
+            }
+        },
+        //为元素添加样式
+        AddClass: function(elem, val){
+            //若元素无class,直接赋值
+            if (!elem.className) {
+                elem.className = val;
+            }else {
+                //否则通过添加空格新增一个class
+                var oVal = elem.className;
+                oVal += ' ';
+                oVal += val;
+                elem.className = val;
+            }
+        },
+        //获取元素索引
+        Index: function(cur, obj){
+            for (var i = 0; i < obj.length; i++) {
+                if (obj[i] == cur) {
+                    return i;
+                }
+            }
+        }
+    }
+	//整个函数变量定义区
+    var dataLen = JSONData.length;
+    var iTimeSilde = iBase.Id(iTimeSlideId);
+    var date = iBase.Id(dateId);
+    var timeLine = iBase.Id(timeLineId);
+    var titletop = iBase.Id(titleTop);
+    var title = iBase.Id(titleId);
+    var iTimeSildeW = iTimeSilde.offsetWidth;//幻灯区实际宽度
+    var timePoint = document.createElement('ul');//用来存储时间点的ul
+    var timePointLeft = null;//时间点相对于父元素左边距离
+    var timePointLeftCur = null;//每两个时间点间距
+    var pointIndex = 0;//时间点在队列中的索引值
+	var defaultShow = defaultShow || 0;//默认显示的时间
+	var clearFun=null;//当用户无意识的划过时中止执行
+	var that=null;
+    //根据数据条数生成对应的时间点html
+    for (var i = 0; i < dataLen; i++) {
+        timePoint.innerHTML += '<li></li>';
+    }
+    //将时间点插入到时间线DIV中
+    timeLine.appendChild(timePoint)
+    var timePoints = timeLine.getElementsByTagName('li');
+    //时间点平滑显示
+    for (var i = 0; i < timePoints.length; i++) {
+		//每两个时间点间间距
+        timePointLeftCur = parseInt(iTimeSildeW / (dataLen + 1));
+		//计算对应时间点左边距
+        timePointLeft = (i + 1) * timePointLeftCur;
+		//时间点动画形式初始化
+        iBase.PointSlide(timePoints[i], timePointLeft);
+		//初始显示时间点
+        setTimeout(function(){
+            timePoints[defaultShow].onmouseover();
+        }, 1200);
+		//获取时间点默认class值,为鼠标事件做准备
+        timePoints[i].oldClassName = timePoints[i].className;
+        timePoints[i].onmouseover = function(){
+			that = this;//确保clearFun中的this是当前的this
+			//提升用户体验,当用户无意识地划过时不执行函数
+			clearFun=setTimeout(function(){
+				//计算出当前时间点索引值,为鼠标划出做准备
+		        pointIndex = iBase.Index(that, timePoints);
+				//去除上一个时间点高亮样式
+				for (var m = 0; m < timePoints.length; m++) {
+					if (m != pointIndex) {
+						timePoints[m].className = timePoints[m].oldClassName
+					}
+				}
+				//为当前时间点加载高亮样式
+	            iBase.AddClass(that, 'hover');
+				//切换日期及标题值
+	            date.innerHTML = '<span>' + (JSONData[pointIndex]['date'] || '') + '</span><em></em>';
+	            title.innerHTML = '<a href="' + (JSONData[pointIndex]['href'] || '') + '">' + (JSONData[pointIndex]['title'] || '') + '</a>';
+	            //改变日期及标题的位置,此处减去的数字,可根据实际样式调整
+	            date.style.left = ((pointIndex + 1) * timePointLeftCur - 25) + 'px';
+	            titletop.style.left = ((pointIndex + 1) * timePointLeftCur + 6) + 'px';
+	            //当标题框左边距与标题框宽度之和大于外围宽度时,以右边为绝对点
+	            if ((title.offsetWidth + (pointIndex + 1) * timePointLeftCur) < iTimeSildeW) {
+	                title.style.left = ((pointIndex + 1) * timePointLeftCur - timePointLeftCur) + 'px';
+	            }else {
+	                title.style.left = (iTimeSildeW - title.offsetWidth) + 'px';
+	            }
+	            //显示日期/时间点/标题
+	            date.style.display = 'block';
+	            titletop.style.display = 'block';
+	            title.style.display = 'block';
+			},200);//200为认定无意识划过的时间,可自行调节
+        }
+        timePoints[i].onmouseout = function(){
+			//若停留时间低于200ms,认定为无意识划过,中止函数
+			clearTimeout(clearFun);
+        }
+    }
+}
+
+//样例加载该函数
+window.onload = function(){
+    iTimePoint('itimeslide', 'date', 'timeline', 'titletop','title');
+}
+
+</script>
+
+</head>
+<body>
+<div id="d_head">
+<h1><a href="http://mrthink.net/">Mr.Think的博客</a><em>可自由转载及使用,但请注明出处.</em></h1>
+<h2><span><a title="订阅Mr.Think的博客" href="http://mrthink.net/feed/">RSS Feed</a></span>@专注Web前端技术, 热爱Php, 崇尚简单生活的凡夫俗子.</h2>
+</div>	
+<div class="return">返回文章页:<a href="http://mrthink.net/js-slide-itimepoint/">原生Js实现按数据源均分时间点幻灯效果(已封装)@Mr.Think</a></div>
+<!--DEMO start-->
+<div id="demo">
+	<div id="itimeslide">
+
+		<div id="date"></div>
+		<div id="timeline"></div>
+		<span id="titletop"></span>
+		<div id="title"></div>
+	</div>
+</div>
+<!--DEMO end-->
+</body>
+</html>

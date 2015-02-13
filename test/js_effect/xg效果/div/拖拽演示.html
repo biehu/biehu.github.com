@@ -1,0 +1,369 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+   <title>popper.w's code</title> 
+     <style type="text/css"> 
+    body{text-align:center} 
+    #dd{ margin:50px auto} 
+    #odiv{ width:400px; height:200px;border:1px dotted red; border:1px dashed green;} 
+    #odiv ul{ list-style:none; text-align:left; width:150px; font-size:11px;} 
+    #odiv ul li{height:25px; line-height:25px; border-bottom:1px dashed green;} 
+    #ho{ width:150px; height:150px; border:1px dotted red} 
+     </style> 
+<script type="text/javascript" > 
+function $ (o) { 
+      return document.getElementById(o); 
+} 
+function XCreateElement(tagName,tagParent,attrs) 
+{ 
+    if(tagName&&arguments.length<2){tagParent=document.body;} 
+        var oTemp=document.createElement(tagName); 
+        if(attrs&&attrs.constructor==Object) 
+        { 
+        for(var o in attrs) 
+            { 
+                oTemp.setAttribute(o,attrs[o]); 
+            } 
+             
+        } 
+        tagParent.appendChild(oTemp); 
+        return oTemp; 
+} 
+function XSetCss(obj,cssArgs){ 
+    if(arguments.length==2) 
+    {  
+    if(cssArgs.constructor==Object){ 
+    for(var o in cssArgs) 
+            { 
+                if(obj.style[o]!="undefiend") 
+                { 
+                obj.style[o]=cssArgs[o];             
+                }          
+            }  
+        } 
+    if(cssArgs.constructor==Array&&cssArgs.length==2){ 
+                obj.style[cssArgs[0]]=cssArgs[1];             
+     
+    } 
+    } 
+} 
+function XslideUp(obj,type,mX,num) { 
+            if(!type){return;} 
+            try{ 
+                XSetCss(obj,[type,XgetOffset(obj)[type]-num+"px"]); 
+                $("aa").innerHTML=XgetOffset(obj)[type]; 
+            if(XgetOffset(obj)[type]>mX){             
+            setTimeout(function(){XslideUp(obj,type,mX,num);},1);             
+            } 
+            else{ 
+                XSetCss(obj,[type,mX]) 
+            } 
+            } 
+            catch(e){} 
+        } 
+function XslideDown(obj,type,mX,num) { 
+            if(!type){return;} 
+            try{ 
+                XSetCss(obj,[type,XgetOffset(obj)[type]+num+"px"]); 
+                $("aa").innerHTML=XgetOffset(obj)[type]; 
+            if(XgetOffset(obj)[type]<mX){             
+            setTimeout(function(){XslideDown(obj,type,mX,num);},1);             
+            } 
+            else{ 
+                XSetCss(obj,[type,mX]) 
+            } 
+            } 
+            catch(e){} 
+        } 
+function XgetOffset (obj) { 
+        return {height:obj.offsetHeight,width:obj.offsetWidth} 
+} 
+/*移动函数*/ 
+/*o:element   l: left t:top*/ 
+function Xmove(o,l,t){ 
+o.style.position="absolute"; 
+var a=1; 
+var ol=parseInt(o.offsetLeft); 
+var ot=parseInt(o.offsetTop); 
+var iTimer=setInterval(function(){ 
+   if(a==10) 
+    { 
+        Xtransp(o,"end"); 
+        clearInterval(iTimer); 
+    } 
+   o.style.left=ol+a*(l-ol)/10+"px"; 
+   o.style.top=ot+a*(t-ot)/10+"px"; 
+   a++; 
+},20); 
+} 
+/* 取消事件冒泡*/ 
+function XcancleBubble(e) 
+{ 
+var e = window.event || e; 
+if (e.preventDefault) e.preventDefault(); 
+else e.returnValue = false; 
+} 
+/*设置透明度函数 o: dom 节点 mode: start:设置 开始   end 设置结束 , num: 透明度 1-100 内 整数*/ 
+function Xtransp(o,mode,num){ 
+           if(mode=="start"){ 
+           
+            if(document.all){ 
+                o.style.filter = "Alpha(Opacity="+num+")"; 
+            }else{ 
+                o.style.opacity = num/100; 
+            } 
+            } 
+        else { 
+            if(document.all){ 
+                o.style.filter = "Alpha(Opacity=100)"; 
+            }else{ 
+                o.style.opacity = 1; 
+            } 
+         
+         
+        } 
+} 
+function Xvisible(obj,start,end,step,interval,callback) 
+        { 
+            var st = start > end; 
+            //步进start 
+            st ? start-=step : start+=step;     
+            //当start和end的关系发生变化时停止运行 
+            if((start<end ^ st)){ 
+                try 
+                { 
+                    obj.style.filter="alpha(opacity="+start+")";//IE 
+                    obj.style.MozOpacity=start/100;//FF 
+                } 
+                catch(e){}; 
+                setTimeout(function(){visible(obj,start,end,step,interval,callback);},interval);                 
+            } 
+            //执行回调         
+            else         
+                callback ? callback() : ""; 
+        } 
+var XgetScroll=function(){ 
+    return{height:document.documentElement.scrollHeight,top:document.documentElement.scrollTop}; 
+}; 
+function getOffset(evt) 
+{ 
+var target = evt.target; 
+if (target.offsetLeft == undefined) 
+{ 
+    target = target.parentNode; 
+} 
+var pageCoord = getPageCoord(target); 
+var eventCoord = 
+{ 
+    x: window.pageXOffset + evt.clientX, 
+    y: window.pageYOffset + evt.clientY 
+}; 
+var offset = 
+{ 
+    offsetX: eventCoord.x - pageCoord.x, 
+    offsetY: eventCoord.y - pageCoord.y 
+}; 
+return offset; 
+} 
+function getPageCoord(element) 
+{ 
+var coord = {x: 0, y: 0}; 
+while (element) 
+{ 
+    coord.x += element.offsetLeft; 
+    coord.y += element.offsetTop; 
+    element = element.offsetParent; 
+} 
+return coord; 
+} 
+function getEventOffset(evt) 
+{ 
+var msg = ""; 
+if (evt.offsetX == undefined) 
+{ 
+    var evtOffsets = getOffset(evt); 
+    msg={offsetX:evtOffsets.offsetX,offsetY:evtOffsets.offsetY}; 
+} 
+else 
+{ 
+    msg={offsetX:evt.offsetX,offsetY:evt.offsetY}; 
+} 
+return msg; 
+} 
+function fDragStart(XEle) 
+{ 
+    switch(fCkBrs()) 
+    { 
+        case 3: 
+            window.getSelection().removeAllRanges(); 
+            break; 
+                 
+            default: 
+            XEle.setCapture(); 
+            break; 
+    } 
+} 
+function fDragEnd(XEle) 
+{ 
+    switch(fCkBrs()) 
+    { 
+        case 3: 
+            window.getSelection().removeAllRanges(); 
+            break; 
+                 
+            default: 
+            XEle.releaseCapture(); 
+            break; 
+    } 
+} 
+function fCkBrs() 
+{ 
+switch (navigator.appName) 
+{ 
+case 'Opera': return 2; 
+case 'Netscape': return 3; 
+default: return 1; 
+} 
+}  
+function getOffsete (e,o) { 
+    var e=e||window.event; 
+    var eSrc=e.srcElement||e.target; 
+    if(eSrc!=o){getOffsete(e.offsetParent)} 
+} 
+var DragZindexNumber=10; 
+function Xdrag(obj,odrag){ 
+var ex,xy,tag=0; 
+var odrag=odrag?odrag:obj 
+odrag.style.cursor="move"; 
+if(tag==0){ 
+odrag.onmousedown=function(e) 
+    {    
+        obj.style.zIndex=DragZindexNumber++; 
+        Xtransp(obj,"start") 
+        tag=1; 
+        var e = e||window.event; 
+        ex=e.clientX-obj.offsetLeft; 
+        ey=e.clientY-obj.offsetTop; 
+        var tempDiv=XCreateElement("div"); 
+        XSetCss(tempDiv,{width:obj.offsetWidth+"px", 
+                        height:obj.offsetHeight+"px", 
+                        border:"1px dotted red", 
+                        position:"absolute", 
+                        left:obj.offsetLeft+"px", 
+                        top:obj.offsetTop+"px", 
+                        zIndex:999 
+            }); 
+        this.ele=tempDiv; 
+        fDragStart(tempDiv); 
+        document.body.onmousemove=function(e){ 
+        if(tag==1) 
+        {  
+            var e=e||window.event; 
+            XSetCss(tempDiv,{left:e.clientX-ex+"px",top:e.clientY-ey+"px"}) 
+        } 
+        else{if(!tempDiv==null)tempDiv.parentNode.removeChild(tempDiv)} 
+        } 
+       tempDiv.onmouseup=function(e) 
+        { 
+        var e=e||window.event; 
+        fDragEnd(tempDiv); 
+        obj.style.position="absolute"; 
+        Xtransp(obj,"end"); 
+        Xmove(obj,tempDiv.offsetLeft,tempDiv.offsetTop); 
+        tempDiv.parentNode.removeChild(tempDiv); 
+        tag=0; 
+        } 
+    } 
+} 
+} 
+function Xcover(color,num){/*color:遮罩的背景色 eg: red/#cbcbcb, num:1-100内的整数*/ 
+    var cDiv={}; 
+    this.color=color; 
+    this.num=num; 
+    this.start=function(){ 
+        cDiv=XCreateElement("div"); 
+        XSetCss(cDiv, 
+                { 
+                    position:"absolute", 
+                    top:"0px", 
+                    left:"0px", 
+                    zIndex:2, 
+                    width:"0px", 
+                    margin:"0px auto", 
+                    background:this.color, 
+                    filter:"Alpha(Opacity="+this.num+")", 
+                    opacity:this.num/100 
+                }) 
+        cDiv.innerText="<h3>双击关闭</h3>"; 
+        XslideDown(cDiv,"width",getCover().X-25,50); 
+        XslideDown(cDiv,"height",getCover().H,30); 
+        cDiv.ondblclick=function(){ 
+            cDiv.parentNode.removeChild(cDiv); 
+            } 
+        }; 
+    this.stop=function(){ 
+            cDiv.parentNode.removeChild(cDiv); 
+    }; 
+} 
+function getCover(){ 
+    var m={} 
+     m.H=screen.availHeight>document.documentElement.scrollHeight?screen.availHeight:document.documentElement.scrollHeight; 
+     m.X=screen.availwidth>document.documentElement.scrollWidth?screen.availWidth:document.documentElement.scrollWidth; 
+    return m; 
+} 
+</script> 
+</head> 
+<body> 
+          <div id="aa"></div> 
+       <div id="test"> 
+        <h1 id="dd">Just a Test</h1> 
+        <input type="button" id="test1" value="XslideUp-H" /> 
+        <input type="button" id="test2" value="XslideDown-H" /> 
+        <input type="button" id="test3" value="XslideUp-W" /> 
+        <input type="button" id="test4" value="XslideDown-W" /> 
+        <input type="button" id="test5" value="Xcover" /> 
+        <input type="button" id="test6" value="Xmove" /> 
+        <input type="button" id="test7" value="Xdrag" /> 
+       </div> 
+       <div id="odiv"> 
+       <h1 id="oTitle">什么时候能拖动我啊</h1> 
+        <ul> 
+            <li>Author:popper.w</li> 
+            <li>Email:popper11@126.com</li> 
+            <li>QQ:84101340</li> 
+            <li>webSite: [url]www.hongwei2008.cn[/url]</li> 
+        </ul> 
+       </div> 
+       <div id="ho"></div> 
+</body> 
+</html> 
+<script type="text/javascript"> 
+$("test1").onclick=function(){ 
+XslideUp($("odiv"),"height",20,10); 
+} 
+$("test2").onclick=function(){ 
+XslideDown($("odiv"),"height",200,10); 
+} 
+$("test3").onclick=function(){ 
+XslideUp($("odiv"),"width",100,10); 
+} 
+$("test4").onclick=function(){ 
+XslideDown($("odiv"),"width",400,10); 
+} 
+var m=new Xcover("yellow",50); 
+$("test5").onclick=function(){ 
+    // 
+    //Xdrag($("test"),$("dd")); 
+    m.start(); 
+    // 
+} 
+$("test6").onclick=function(){ 
+    Xmove($("ho"),50,100); 
+} 
+$("test7").onclick=function(){ 
+XSetCss($("oTitle"),{height:"30px",lineHeight:"30px",textIndent:"20px",fontSize:"12px",background:"#cbcbcb"}) 
+Xdrag($("ho")) 
+Xdrag($("odiv"),$("oTitle")); 
+} 
+</script>

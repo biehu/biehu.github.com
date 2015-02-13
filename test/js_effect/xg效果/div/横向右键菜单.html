@@ -1,0 +1,111 @@
+<style>
+ 
+div{
+display:inline;
+float:left;
+color:#333}
+.skin0 { 
+position:absolute; 
+text-align:left; 
+width:274px; 
+border:1px solid #333; 
+background-color:transparent; 
+font-family:Verdana; 
+font-size:9pt;
+line-height:15px; 
+cursor:default; 
+visibility:hidden; 
+} 
+.skin1 { 
+cursor:default; 
+font:menutext; 
+position:absolute; 
+text-align:left; 
+font-family: Arial, Helvetica, sans-serif; 
+font-size:9pt; 
+width:140px; 
+background-color:#ccc; 
+visibility:hidden; 
+border:2 outset buttonhighlight; 
+} 
+.menuitems {padding:5px} 
+ 
+
+</style>
+<body ondragstart="window.event.returnValue=false" onselectstart="event.returnValue=false">
+<script language="JavaScript1.2">
+<!-- Begin 
+var menuskin = "skin0"; // skin0, or skin1 
+var display_url = 0; // Show URLs in status bar? 
+function showmenuie5() { 
+var rightedge = document.body.clientWidth-event.clientX; 
+var bottomedge = document.body.clientHeight-event.clientY; 
+if (rightedge < ie5menu.offsetWidth) 
+ie5menu.style.left = document.body.scrollLeft + event.clientX - ie5menu.offsetWidth; 
+else 
+ie5menu.style.left = document.body.scrollLeft + event.clientX; 
+if (bottomedge < ie5menu.offsetHeight) 
+ie5menu.style.top = document.body.scrollTop + event.clientY - ie5menu.offsetHeight; 
+else 
+ie5menu.style.top = document.body.scrollTop + event.clientY; 
+ie5menu.style.visibility = "visible"; 
+return false; 
+} 
+
+function hidemenuie5() { 
+ie5menu.style.visibility = "hidden"; 
+} 
+function highlightie5() { 
+if (event.srcElement.className == "menuitems") { 
+event.srcElement.style.backgroundColor = "#999"; 
+event.srcElement.style.color = "#fff"; 
+if (display_url) 
+window.status = event.srcElement.url; 
+} 
+} 
+
+function lowlightie5() { 
+if (event.srcElement.className == "menuitems") { 
+event.srcElement.style.backgroundColor = ""; 
+event.srcElement.style.color = "#333"; 
+window.status = ""; 
+} 
+} 
+
+function jumptoie5() { 
+if (event.srcElement.className == "menuitems") { 
+if (event.srcElement.getAttribute("target") != null) 
+window.open(event.srcElement.url, event.srcElement.getAttribute("target")); 
+else 
+window.location = event.srcElement.url; 
+} 
+} 
+// End -->
+</script>
+<div id="ie5menu" onmouseover="highlightie5()" onmouseout="lowlightie5()" onclick="jumptoie5();">
+    <div class="menuitems" url="#">
+        首页</div>
+    <div class="menuitems" url="#">
+        日志</div>
+    <div class="menuitems" url="#">
+        相册</div>
+    <div class="menuitems" url="#">
+        留言</div>
+    <div class="menuitems" url="#">
+        收藏</div>
+    <div class="menuitems" onclick="javascript:window.location.reload()">
+        刷新</div>
+    <div class="menuitems" url="#">
+        音乐</div>
+    <div class="menuitems" url="#">
+        灰度</div>
+</div>
+<script language="JavaScript1.2">
+if (document.all && window.print) { 
+ie5menu.className = menuskin; 
+document.oncontextmenu = showmenuie5; 
+document.body.onclick = hidemenuie5; 
+}
+</script>
+请单击右键
+</body>

@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+.focus{ text-align:left; height:225px; font-size:12px;}
+.focusPic{ width:380px; height:225px; float:left; overflow:hidden;}
+.focusPic img{ width:380px; height:225px; display:block;}
+.focusFont{ width:267px; float:left; display:inline; margin-left:3px; border-top:1px solid #ededed;}
+.focusFont dl{ width:100%; overflow:hidden; padding:5px; border-bottom:1px solid #ededed;}
+.focusFont dt{ width:50px; float:left; text-align:center;}
+.focusFont dt img{ width:50px; height:30px; border:1px solid #999; display:block;}
+.focusFont dd{ width:205px;margin-left:55px;color:#666; line-height:15px; height:34px; overflow:hidden;}
+.focusFont dd b{ line-height:20px; display:block; height:20px; overflow:hidden;}
+.focusFont .dlHove{ background-color:#f4f4f4;}
+.focusFont .dlHove a{ color:#f06;}
+.focusFont .dlHove img{ border:1px solid #f93;}
+
+.focusLink{ line-height:20px; margin-top:10px; padding:4px 10px; border:1px solid #f0e898; background-color:#fffbd3; font-size:12px;}
+
+</style>
+</head>
+<body>
+<div class="focus">
+      <div id="focusPic" class="focusPic">
+        <a target="_blank" href="/plus/view.php?aid=658"><img src="images/large_img_1.jpg"></a>
+        <a target="_blank" href="/plus/view.php?aid=658"><img src="images/large_img_2.jpg"></a>
+        <a target="_blank" href="/plus/view.php?aid=658"><img src="images/large_img_3.jpg"></a>
+       <a target="_blank" href="/plus/view.php?aid=658"><img src="images/large_img_4.jpg"></a>
+      </div>
+      <div id="focusFont" class="focusFont">
+        <dl  class="dlHove" onmouseout="imgPlay.turnOut()" onmouseover="imgPlay.turn(0)">
+          <dt><a target="_blank" href="http://www.web600.net/html/tool.html"><img src="/uploads/allimg/091027/1-09102H32R90-L.jpg"></a></dt>
+          <dd><b><a target="_blank" title="网页设计制作工具锦囊" href="http://www.web600.net/html/tool.html">网页设计制作工具锦囊</a></b>收集了各种方便快捷的工具 提高你的工作效率..</dd>
+        </dl>
+        <dl onmouseout="imgPlay.turnOut()" onmouseover="imgPlay.turn(1)">
+          <dt><a target="_blank" href="#"><img src="/uploads/091027/1-09102H31UIX.jpg"></a></dt>
+          <dd><b><a target="_blank" title="精品韩国女性衣服商城模板[在线购物模板]" href="#">精品韩国女性衣服商城模板[在线购物模板]</a></b>更多模板请点击模板下载查阅..</dd>
+        </dl>
+        <dl onmouseout="imgPlay.turnOut()" onmouseover="imgPlay.turn(2)" class="">
+          <dt><a target="_blank" href="#"><img src="/uploads/091226/5-0912262301144R.jpg"></a></dt>
+          <dd><b><a target="_blank" title="Vista蓝色风格电脑PNG图标" href="#">Vista蓝色风格电脑PNG图标</a></b>设计最常用素材 为您的作品添加风采!</dd>
+        </dl>
+        <dl onmouseout="imgPlay.turnOut()" onmouseover="imgPlay.turn(3)" class="">
+          <dt><a target="_blank" href="http://www.web600.net/html/zuopin/webzp/201006053093.html"><img src="/uploads/allimg/091027/1-09102H23Q30-L.jpg"></a></dt>
+          <dd><b><a target="_blank" title="网页、平面等作品图库" href="http://www.web600.net/html/zuopin/webzp/201006053093.html">网页、平面等作品图库<span style="color:#f00;">全新上线</span></a></b>汇集平面设计、界面图标、网页设计、数字艺术等作品</dd>
+        </dl>
+      
+      </div>
+    </div>
+
+	<script type="text/javascript">
+	<!--
+
+	var imgPlay=(function(){
+		var current=0;
+		var step=225;//一次变化的高度
+		var duration=16;//一次变化需要的次数
+		var scrollInterval,autoScroller;
+		var focusPic=document.getElementById('focusPic');
+		var focusFont=document.getElementById('focusFont');
+		
+		//算法
+		function cpu(t,b,c,d) {return c*((t=t/d-1)*t*t+1)+b;}
+		
+		return{
+			init:function(){
+				focusPic.scrollTop=0;
+				imgPlay.turnOut();
+			},
+			turn:function(index){
+				clearInterval(autoScroller);
+				imgPlay.scroll(index);
+			},
+			turnOut:function(){
+				clearInterval(autoScroller);
+				autoScroller=setInterval(function(){
+					imgPlay.scroll(current);
+					current++;
+					if(current==3){
+						current=0;
+					}
+				},3000);
+			},
+			scroll:function(index){
+				var count=0;//一次变化的当前次数
+				clearInterval(scrollInterval);
+
+				//图片描述区样式
+				var items=focusFont.getElementsByTagName('dl');
+				for(var i=0;i<4;i++){
+					items[i].className='';
+				}
+				items[index].className='dlHove';
+
+				//移动距离
+				var span=index-current;
+				var begin_value=focusPic.scrollTop;
+				var chang_in_value=span*step+(current*step-begin_value);
+
+				//切换
+				scrollInterval=setInterval(function(){
+					focusPic.scrollTop=cpu(count,begin_value,chang_in_value,duration);
+					count++;
+					if(count==duration){
+						clearInterval(scrollInterval);
+						scrollInterval=0;
+						count=0;
+						focusPic.scrollTop=begin_value+chang_in_value;
+						current=index;
+					}
+				},10);
+			}
+		}
+	})()
+
+imgPlay.init();
+
+	</script>
+</body>
+</html>

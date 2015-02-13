@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>符合标准的正常工作的对联广告</title>
+<script language="JavaScript" type="text/javascript">
+lastScrollY=0;
+function heartBeat(){ 
+var diffY;
+if (document.documentElement && document.documentElement.scrollTop)
+	diffY = document.documentElement.scrollTop;
+else if (document.body)
+	diffY = document.body.scrollTop
+else
+    {/*Netscape stuff*/}
+	
+//alert(diffY);
+percent=(diffY-lastScrollY)/10; 
+document.getElementById("info").innerHTML=percent;
+if(percent>0)percent=Math.ceil(percent); 
+else percent=Math.floor(percent); 
+document.getElementById("lovexin12").style.top=parseInt(document.getElementById
+("lovexin12").style.top)+percent+"px";
+document.getElementById("lovexin14").style.top=parseInt(document.getElementById
+("lovexin12").style.top)+percent+"px";
+lastScrollY=lastScrollY+percent; 
+//alert(lastScrollY);
+}
+suspendcode12="<DIV id=\"lovexin12\" style='left:2px;POSITION:absolute;TOP:120px;'>ad1</div>"
+suspendcode14="<DIV id=\"lovexin14\" style='right:2px;POSITION:absolute;TOP:120px;'>ad2</div>"
+document.write(suspendcode12); 
+document.write(suspendcode14); 
+window.setInterval("heartBeat()",1);
+</script>
+<style type="text/css">
+<!--
+#lovexin12,#lovexin14{
+   width:120px;
+   height:250px;
+   background-color:#e5e5e5;
+   border:1px solid #ddd;
+}
+html,body{
+  height:1000px;
+  }
+#mm{
+  height:1000px;
+  }
+-->
+</style>
+</head>
+<body>
+<div id="info" style="position:fixed;top:0;right:0;width:100px;height:100px"></div>
+<div id="mm">
+</div>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=gb2312"/>
+<style>
+    #listUl li{filter:alpha(opacity=100)}
+	#listUl li span.fGray,#listUl li span.fGray a{color:#666}
+	.zb .list{border:none}
+	.tUnderline{text-decoration:underline}
+	.fSize12{font-size:12px}
+</style>
+</head>
+<body>
+<div class="zb" style="text-align:left">
+    <div class="list">
+      <ul id="listUl">
+	   <li><p><span>[中大建设集团]</span><span class="time">14:04:30</span>说:<br/>
+          你还好吗<br/>
+		  <span class="fGray fSize12">来自:<a href="#" class="tUnderline">装饰材料大采购</a></span>
+		  </p></li>
+		  <li><p><span>[中大建设集团]</span><span class="time">14:04:30</span>说:<br/>
+          我很好，今天是个好天气<br/>
+		  <span class="fGray fSize12">来自:<a href="#" class="tUnderline">建筑安装材料中秋火爆大采购</a></span>
+		  </p></li>
+		  <li><p><span>[中大建设集团]</span><span class="time">14:04:30</span>说:<br/>
+          哈哈 今天有一个好的心情 真好 希望每天都这样<br/>
+		  <span class="fGray fSize12">来自:<a href="#" class="tUnderline">世界杯场馆材料大采购</a></span>
+		  </p></li>
+		  <li><p><span>[中大建设集团]</span><span class="time">14:04:30</span>说:<br/>
+          您公司的产品有什么优点 您公司的产品有什么优点吗?<br/>
+		  <span class="fGray fSize12">来自:<a href="#" class="tUnderline">建筑安装材料中秋火爆大采购</a></span>
+		  </p></li>
+		  <li><p><span>[中大建设集团]</span><span class="time">14:04:30</span>说:<br/>
+          您公司的产品有什么优点 您公司的产品有什么优点吗?<br/>
+		  <span class="fGray fSize12">来自:<a href="#" class="tUnderline">建筑安装材料中秋火爆大采购</a></span>
+		  </p></li>
+		  <li><p><span>[中大建设集团]</span><span class="time">14:04:30</span>说:<br/>
+          您公司的产品有什么优点 您公司的产品有什么优点吗?<br/>
+		  <span class="fGray fSize12">来自:<a href="#" class="tUnderline">建筑安装材料中秋火爆大采购</a></span>
+		  </p></li>
+		  <li><p><span>[中大建设集团]</span><span class="time">14:04:30</span>说:<br/>
+          您公司的产品有什么优点 您公司的产品有什么优点吗?<br/>
+		  <span class="fGray fSize12">来自:<a href="#" class="tUnderline">建筑安装材料中秋火爆大采购</a></span>
+		  </p></li>
+		  <li><p><span>[中大建设集团]</span><span class="time">14:04:30</span>说:<br/>
+          您公司的产品有什么优点 您公司的产品有什么优点吗?<br/>
+		  <span class="fGray fSize12">来自:<a href="#" class="tUnderline">建筑安装材料中秋火爆大采购</a></span>
+		  </p></li>
+		  <li><p><span>[中大建设集团]</span><span class="time">14:04:30</span>说:<br/>
+          您公司的产品有什么优点 您公司的产品有什么优点吗?<br/>
+		  <span class="fGray fSize12">来自:<a href="#" class="tUnderline">建筑安装材料中秋火爆大采购</a></span>
+		  </p></li>
+
+      </ul>
+    </div>
+</div>
+	<script type="text/javascript">
+	var rollShow={
+	   itemnum:0,
+	   nextspeed:4000,
+	   rollspeed:50,
+	   alphaspeed:50,
+	   init:function(id){
+		var objP=document.getElementById(id);
+		var items=objP.getElementsByTagName("li");
+		var len=items.length;
+		if(rollShow.itemnum==len)
+			rollShow.itemnum=0;
+		var obj=items[rollShow.itemnum];
+		obj.style.height="0";
+		obj.style.overflow="hidden";
+		obj.style.borderTop="1px solid #fff";//兼容ie使li显示背景图
+		var firstTagObjP=objP.firstChild;
+		objP.insertBefore(obj,firstTagObjP);
+		var objHeight=obj.getElementsByTagName("p")[0].offsetHeight;
+		rollShow.setAlpha(obj,0);
+		rollShow.roll(id,objHeight);
+		rollShow.itemnum++;
+		setTimeout('rollShow.init("'+id+'")',rollShow.nextspeed);
+		},
+		roll:function(id,nMax){ 
+		var obj=document.getElementById(id).getElementsByTagName("li")[0];
+		  var h = obj.offsetHeight; 
+		  if (h < nMax){ 
+		    obj.style.height = (h + 2)+"px"; 
+			//alert(obj.style.height);
+		    setTimeout("rollShow.roll('"+id+"',"+nMax+")",rollShow.rollspeed); 
+		  }else{
+			obj.getElementsByTagName("p")[0].style.visibility="visible";
+			rollShow.show(id,0.05);
+		  }
+		}, 
+		show:function(id,num){
+			var i=num;
+			var o=document.getElementById(id).getElementsByTagName("li")[0];
+			rollShow.setAlpha(o,i);
+			if(i<1){
+				i+=0.05;
+				setTimeout("rollShow.show('"+id+"',"+i+")",rollShow.alphaspeed); 
+			}
+		},
+		setAlpha:function(obj,alphanum){
+			if(obj.filters){
+				obj.filters[0].opacity=alphanum*100;
+			}
+			else 
+				obj.style.opacity=alphanum;		
+		}
+	}
+	rollShow.init("listUl");
+	</script>
+</body>
+</html>

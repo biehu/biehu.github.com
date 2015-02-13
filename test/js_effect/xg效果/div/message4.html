@@ -1,0 +1,94 @@
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>MessageDialog TestPage</title>
+<style type="text/css">
+#msgDiv{background-color:#eeeeee;position:absolute;border-bottom:2px solid #999999;border-right:2px solid #999999;border-top:1px solid #F8F6C1;border-left:1px solid #F8F6C1;}
+#msgTitle{background-color:#3A80F3;padding-left:3px;padding-right:3px;color:white;font-family:verdana;}
+#msgContent{background-color:#eeeeee;padding:7px;text-align:center}
+#msgTable{width:100%}
+#btnBar{text-align:center;padding:7px;}
+#hiddenDiv{position:absolute;left:0;top:0;background-color:black;opacity:0.50;filter:progid:DXImageTransform.Microsoft.Alpha(style=0,opacity=50,finishOpacity=100);}
+.cmdBtn{width:80px;height:25px;}
+</style>
+<script language="javascript" type="text/javascript">
+function LoadMessageDiv()
+{
+    document.write("<div id=\"hiddenDiv\" style=\"display:block;\"></div>");
+    document.write("<div id=\"msgDiv\" style=\"display:none;\">");
+    document.write("<table id=\"msgTable\"><tr><td id=\"msgTitle\">title</td></tr><tr><td id=\"msgContent\">content</td></tr><tr><td id=\"btnBar\"></td></tr></table>");
+    document.write("</div>");
+    document.write();
+}
+
+function ShowMessage(url,title,msg,width,height)
+{
+    var hidDiv=document.getElementById("hiddenDiv");
+    var messageDiv=document.getElementById("msgDiv");
+    var msgTitleTD=document.getElementById("msgTitle");
+    var msgContentTD=document.getElementById("msgContent");
+ var buttonBar=document.getElementById("btnBar");
+
+ var bodyWidth=document.body.clientWidth;
+ var bodyHeight=document.body.clientHeight;
+
+ var pX=(bodyWidth-width)/2;
+ var pY=(bodyHeight-height)/2;
+
+    hidDiv.style.display="";
+ hidDiv.style.height=bodyHeight;
+ hidDiv.style.width=bodyWidth;
+
+    messageDiv.style.display="";
+ messageDiv.style.height=height+"px";
+ messageDiv.style.width=width+"px";
+ messageDiv.style.left=pX;
+ messageDiv.style.top=pY;
+    msgTitleTD.innerText=title;
+ msgContentTD.innerText=msg;
+
+ if(buttonBar.childNodes.length==0)
+ {
+  var yesBtn=document.createElement("input");
+  yesBtn.type="button";
+  yesBtn.value=" Yes ";
+  yesBtn.attachEvent("onclick",GoToUrl(url))
+  yesBtn.className="cmdBtn";
+
+  var spaceTextEle=document.createTextNode("  ");
+
+  var noBtn=document.createElement("input");
+  noBtn.type="button";
+  noBtn.value=" No ";
+  noBtn.attachEvent("onclick",CloseDialog)
+  noBtn.className="cmdBtn";
+
+  buttonBar.appendChild(yesBtn);
+  buttonBar.appendChild(spaceTextEle);
+  buttonBar.appendChild(noBtn);
+ }
+}
+
+function CloseDialog()
+{
+ var hidDiv=document.getElementById("hiddenDiv");
+    var messageDiv=document.getElementById("msgDiv");
+    messageDiv.style.display="none";
+    hidDiv.style.display="none";
+}
+
+function GoToUrl(url)
+{
+    return function()
+ {
+  document.location.href=url;
+ }
+}
+</script>
+</head>
+<body>
+<div>
+<script language="javascript" type="text/javascript">LoadMessageDiv();</script>
+<input type="button" value="Call Message" onclick="ShowMessage('http://madogao.blog.hexun.com','Warning','Are you sure you will do that?',320,120)" />
+</div>
+</body> 
+</html>

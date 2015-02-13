@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <style>
+  *{margin:0;padding:0}
+  #demo{overflow:hidden;height:178px;width:433px;background:#214984;color:#ffffff}
+  </style>
+ </head>
+ <body>
+<div id="demo">
+	<div id="demo1">
+		<img src="images/1.jpg">
+		<img src="images/2.jpg">
+		<img src="images/3.jpg">
+		<img src="images/4.jpg">
+	</div>
+	<div id="demo2"></div>
+</div>
+<script type="text/javascript">
+var scrollContinue=(function(){
+	var speed=30;
+	var demo=document.getElementById("demo");
+	var demo1=document.getElementById("demo1");
+	var demo2=document.getElementById("demo2");
+	return{
+		init:function(){
+			demo2.innerHTML=demo1.innerHTML;
+			var mar=setInterval(scrollContinue.marquee,speed);
+			demo.onmouseover=function(){
+				clearInterval(mar);
+			}
+			demo.onmouseout=function(){
+				mar=setInterval(scrollContinue.marquee,speed);
+			}
+		},
+		marquee:function (){
+			if(demo2.offsetTop-demo.scrollTop<=0){
+				demo.scrollTop-=demo1.offsetHeight;
+			}else{
+				demo.scrollTop++;
+			}
+		}
+	}
+})()
+
+scrollContinue.init();
+</script>
+
+ </body>
+</html>

@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script type="text/javascript">    
+      var animation = {
+            timer: 20,
+			count: 20,
+			tweenCubicEaseOut:function(initPos, targetPos, currentCount, count) {
+				var b = initPos, c = targetPos - initPos, t = currentCount, d = count;
+                return c * ((t = t / d - 1) * t * t + 1) + b;
+			},
+            setOpacity:function(elem,num){
+				if(elem.filters){
+					elem.style.filter="alpha(opacity="+num+")";
+				}else{
+					elem.style.opacity=num/100;
+				}
+			},
+			show:function(objId){
+				var obj = document.getElementById(objId);
+				obj.style.display="block";
+				var targetHeight=obj.offsetHeight;
+
+				//重置
+				animation.setOpacity(obj,0);
+				obj.style.height=0;
+
+                var currentCount = 0;
+                var targetAlpha = 100;
+                var initAlpha = document.all ? obj.filters.alpha.opacity : window.getComputedStyle(obj, null).opacity * 100;
+				var initPos = 0;
+                var flag = setInterval(function() {
+                    if (currentCount > animation.count) {
+                        clearInterval(flag);
+                    }else {
+                        currentCount++;
+                        var tmp = animation.tweenCubicEaseOut(initAlpha, targetAlpha, currentCount, animation.count);
+                        animation.setOpacity(obj, tmp);
+                        //清除小数点的误差
+                        if (Math.abs(tmp - targetAlpha) < 1) {
+                            animation.setOpacity(obj, targetAlpha);
+							clearInterval(flag);
+                        }
+						var tmpY = animation.tweenCubicEaseOut(initPos, targetHeight, currentCount, animation.count);
+                        //width值不能小于0，但是算法返回值有可能出现负值
+                        try {
+                            obj.style.height = tmpY + "px";
+                        }
+                        catch (e) {
+                        }
+                        //清除小数点的误差
+                        if (Math.abs(tmpY - targetHeight) < 1) {
+                            obj.style.height = targetHeight + "px";
+							clearInterval(flag);
+                        }
+                    }
+                }
+                , this.timer);
+			},
+            fade: function(objId) {
+                var obj = document.getElementById(objId);
+				obj.style.display="block";
+				
+				//重置
+				animation.setOpacity(obj,0);
+                
+				var currentCount = 0;
+                var target = 100;
+                var init = document.all ? obj.filters.alpha.opacity : window.getComputedStyle(obj, null).opacity * 100;
+                var flag = setInterval(function() {
+                    if (currentCount > animation.count) {
+                        clearInterval(flag);
+                    }
+                    else {
+                        currentCount++;
+                        var tmp = animation.tweenCubicEaseOut(init, target, currentCount, animation.count);
+                        animation.setOpacity(obj, tmp);
+                        //清除小数点的误差
+                        if (Math.abs(tmp - target) < 1) {
+                            animation.setOpacity(obj, target);
+							clearInterval(flag);
+                        }
+						
+                    }
+                }
+                , this.timer);
+            },
+            slide: function(objId) {
+                var obj = document.getElementById(objId);
+				obj.style.display="block";
+				var target =obj.offsetHeight;
+
+				//重置
+				obj.style.height=0;
+
+                var currentCount = 0;
+                var initPos = 0;
+                var flag = setInterval(function() {
+                    if (currentCount > animation.count) {
+                        clearInterval(flag);
+                    }else {
+                        currentCount++;
+                        var tmpY = animation.tweenCubicEaseOut(initPos, target, currentCount, animation.count);
+                        //width值不能小于0，但是算法返回值有可能出现负值
+                        try {
+                            obj.style.height = tmpY + "px";
+                        }
+                        catch (e) {
+                        }
+                        //清除小数点的误差
+                        if (Math.abs(tmpY - target) < 1) {
+                            obj.style.height = target + "px";
+							clearInterval(flag);
+                        }
+                    }
+                }
+                , this.timer);
+            }
+        }
+    </script>
+
+    <style type="text/css">
+       #test{display:none;width:100px;height:300px;background:#ccc}
+    </style>
+</head>
+<body>
+	 <input type="button" value="show" onclick="animation.show('test');" />
+	 <input type="button" value="slide" onclick="animation.slide('test');" />
+	 <input type="button" value="fade" onclick="animation.fade('test');" />
+   <div id="test"></div>
+</body>
+</html>

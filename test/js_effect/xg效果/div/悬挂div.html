@@ -1,0 +1,262 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>ads</title>
+<style type="text/css">
+body{
+font-size:12px;
+margin:0px;
+}
+/**for ads**/
+h1{
+font-size:14px;
+}
+.ads{
+margin:0px auto;
+width:325px;
+height:190px;
+border:1px solid #ddd;
+}
+</style>
+</head>
+
+<body>
+<h1>CSDN右下角悬挂效果</h1>
+<!--开始-->
+<style type="text/css">
+#ads_14{
+float:right;
+font-family: verdana,sans-serif;
+}
+#ads_14 H6
+{
+width:282px;
+height:27px;
+padding:0px;
+margin:0px;
+background:url(images/skin/bg.gif) no-repeat;
+}
+#ads_14 #drag
+{
+cursor:move;
+}
+#ads_14 #head
+{
+float:right;
+width:45px;
+height:27px;
+line-height:27px;
+cursor:pointer;
+}
+#msg_top
+{
+width:279px;
+height:105px;
+border-left:#CDCDCD 1px solid;
+border-right:#CDCDCD 1px solid;
+}
+ul
+{
+padding:0px;
+margin:0px;
+list-style:none;
+}
+.msg_top_left
+{
+float:left;
+width:80px;
+height:105px;
+padding-right:10px;
+border-bottom:#CDCDCD 1px dashed;
+}
+.msg_top_right
+{
+float:left;
+width:175px;
+height:105px;
+padding-left:10px;
+border-bottom:#CDCDCD 1px dashed;
+}
+.msg_top_right a
+{
+font-size:12px;
+text-decoration:none;
+line-height:20px;
+}
+#msg_buttom
+{
+width:279px;
+height:100px;
+border-left:#CDCDCD 1px solid;
+border-right:#CDCDCD 1px solid;
+border-bottom:#CDCDCD 1px solid;
+}
+#msg_buttom ul
+{
+float:left;
+width:120px;
+height:102px;
+line-height:20px;
+padding:5px;
+}
+</style>
+<div id="ads_14" class="ads_14">
+<h6 id="drag"><div id="head"><em><img id="small" src="images/skin/small.gif" border="0"></em><em>&nbsp;&nbsp;&nbsp;</em><em><img id="close" src="images/skin/close.gif" border="0"></em></div></h6>
+<div id="msg_top">
+   <ul class="msg_top_left">
+    <li>
+    <img src="images/skin/untitled.bmp">
+    </li>
+   </ul>
+   <ul class="msg_top_right">
+    <LI><A title="微软启动最严厉反盗版验证" href="http://g.csdn.net/5067111" target="_blank">微软启动最严厉反盗版验证</A></LI>
+    <LI><A title="Mozilla建开发者工具实验室" href="http://g.csdn.net/5067110" target="_blank">Mozilla建开发者工具实验室</A></LI>
+    <LI><A title="Google Apps安全漏洞揭秘" href="http://g.csdn.net/5067028" target="_blank">Google Apps安全漏洞揭秘</A></LI>
+    <LI><A title="微软发布Silverlight2 " href="http://g.csdn.net/5067027" target="_blank">微软发布Silverlight2 </A></LI>
+    <LI><A title="WinHEC邀您一起揭开Window7神秘面纱！" href="http://g.csdn.net/5067145" target="_blank">WinHEC邀您一起揭开Window</A></LI>
+   </ul>
+</div>
+<div id="msg_buttom">
+   <ul>
+    <li><a title="微软与您畅享[奇迹之旅]，精彩不容错过！" href="http://g.csdn.net/5067051" target="_blank">微软与您畅享[奇迹之</a></li>
+    <li><a title="汽车信息化机遇与挑战" href="http://g.csdn.net/5065580" target="_blank">汽车信息化机遇与挑战</a></li>
+    <li><a title="计算机程序的行为学" href="http://g.csdn.net/5065579" target="_blank">计算机程序的行为学</a></li>
+    <li><a title="独立思考能力从哪里来" href="http://g.csdn.net/5065578" target="_blank">独立思考能力从哪里来</a></li>
+   </ul>
+   <ul>
+    <li><a title="避免肥胖十五条法则" href="http://g.csdn.net/5065503" target="_blank">避免肥胖十五条法则</a></li>
+    <li><a title="清明节第一次相亲" href="http://g.csdn.net/5065502" target="_blank">清明节第一次相亲</a></li>
+    <li><a title="不要爱上论坛女人" href="http://g.csdn.net/5065501" target="_blank">不要爱上论坛女人</a></li>
+    <li><a title="IBM" href="http://g.csdn.net/5065501" target="_blank">IBM</a></li>
+   </ul>
+</div>
+</div>
+<div id="hidden"></div>
+<!--伸缩广告结束-->
+<!--开始-->
+<script language="javascript">
+var data = {
+     'bs' : 'http://www.test.com',
+     'as': 'http://localhost/adsformat/',
+     'ad' :[['2','images/2007032256654.jpg', 'rd?go=eJxNjk1rwz']]
+     };
+function msgBox()
+{
+   this.container = "ads_14";
+   this.dragArea = "drag";
+   this.width = 282;
+   this.height = 235;
+   this.smallHeight = 27;
+   this.smallId = "small";
+   this.closeId = "close";
+   this.area = ( document.compatMode.toLowerCase()=="css1compat" ) ? document.documentElement : document.body;
+   this.space = 15;
+   this.timer;
+   this.timeOut = 150;
+   this.smalled = false;
+   window.msgBoxListener = this;
+   this.$(this.smallId).onclick= function(){msgBoxListener.toSmall()};
+   this.$(this.closeId).onclick = function(){msgBoxListener.close()};
+}
+msgBox.prototype.flow = function()
+{
+   this.$(this.container).style.position = "absolute";
+   this.$(this.container).style.zIndex = "1000";
+   if(this.smalled)
+   {
+    this.$(this.container).style.top = this.area.scrollTop + this.area.clientHeight - this.smallHeight - this.space + "px";
+   }else{
+    this.$(this.container).style.top = this.area.scrollTop + this.area.clientHeight - this.height - this.space + "px";
+   }
+    this.$(this.container).style.left = this.area.scrollLeft + this.area.clientWidth - this.width - this.space + "px";
+}
+msgBox.prototype.toSmall = function()
+{
+   if(this.smalled)
+   {
+    this.$(this.smallId).src = "images/skin/small.gif";
+    this.$(this.container).style.marginTop = -this.height + "px";
+    this.$(this.container).style.height = this.height + "px";
+    this.$(this.container).style.overflow = "hidden";
+    this.smalled = false;
+    this.flow();
+    this.$(this.container).style.marginTop = "0px";
+   }else{
+    this.$(this.smallId).src = "images/skin/big.gif";
+    this.$(this.container).style.height = this.smallHeight + "px";
+    this.$(this.container).style.overflow = "hidden";
+    this.smalled = true;
+    this.flow();
+   }
+}
+msgBox.prototype.close = function()
+{
+   document.body.removeChild(this.$(this.container));
+}
+msgBox.prototype.auto = function()
+{
+   this.flow();
+   window["onresize"]=function(){msgBoxListener.flow();};
+     window["onscroll"]=function(){msgBoxListener.flow();};
+   document.onmousedown = function(){clearInterval(msgBoxListener.timer);msgBoxListener.drag(msgBoxListener.container, msgBoxListener.dragArea);};
+}
+msgBox.prototype.drag = function(container, drag)
+{
+   var IMOUSEDOWN = true;
+   var isIE = (navigator.appVersion.indexOf("MSIE") != -1) ? true : false;
+   container = document.getElementById(container);
+   drag = document.getElementById(drag);
+   if(drag)
+   {
+    try{
+      if(IMOUSEDOWN){
+       drag.onmousedown=function(a){
+        var d=document;
+        if(!a)a=window.event;
+        drag.style.cursor="move";
+        var x=a.layerX?a.layerX:a.offsetX,y=a.layerY?a.layerY:a.offsetY;
+        if(drag.setCapture)
+        drag.setCapture();
+        else if(window.captureEvents)
+        window.captureEvents(Event.MOUSEMOVE|Event.MOUSEUP);
+        d.onmousemove=function(a){
+         if(!a)a=window.event;
+         if(!a.pageX)a.pageX = (a.clientX<0 ?0:a.clientX);
+         if(!a.pageY)a.pageY = (a.clientY <0 ?0:a.clientY);
+         var tx = a.pageX-x, ty = a.pageY-y;
+         if(isIE){
+          ty = ty + document.documentElement.scrollTop - document.documentElement.clientTop;
+         }
+         container.style.position = "absolute";
+          container.style.left = tx+"px";
+          container.style.top = ty+"px";
+        };
+        d.onmouseup=function(){
+         if(drag.releaseCapture)
+         drag.releaseCapture();
+         else if(window.captureEvents)
+         window.captureEvents(Event.MOUSEMOVE|Event.MOUSEUP);
+         d.onmousemove=null;
+         d.onmouseup=null;
+        };
+       };
+      }else{
+       container.style.cursor="pointer";
+       drag.style.cursor="move";
+      }
+    }catch(e){
+      alert(e);
+    }
+   }
+}
+msgBox.prototype.$ = function(ele)
+{
+   return document.getElementById(ele);
+}
+var msgBox1 = new msgBox();
+msgBox1.auto();
+</script>
+<!--结束-->
+</body>
+</html>

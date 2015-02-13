@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+<body>
+<form name="form1">
+           	<table border="0" width="370" id="table1" bordercolor="#808080" cellpadding="2" cellspacing="0">
+              <tr>
+                <td width="117" class=song_black_14 align="right"><p align="left"> <font size="2">备选字段</font>
+                    <select size="14" name="D1" ondblclick="moveselect(this,'D2')" multiple style="width:140px;height:197px">
+                      <option value="员工1">字段1</option>
+                      <option value="字段2">字段2</option>
+                      <option value="字段3">字段3</option>
+                    </select>
+                </td>
+                <td width="117" class=song_black_14 align="right"><p align="center">
+                    <input type="button" value="&lt;&lt;" name="B3" onclick="moveselect('D2','D1',1)">
+                  <p align="center">
+                    <input type="button" value="&lt;" name="B5" onclick="moveselect('D2','D1')"></p>
+                  <p align="center">
+                    <input type="button" value="&gt;" name="B6" onclick="moveselect('D1','D2')"></p>
+                  <p align="center">
+                    <input type="button" value="&gt;&gt;" name="B4" onclick="moveselect('D1','D2',1)"></p>
+                </td>
+                <td width="117" class=song_black_14 align="right"><p align="left"> <font size="2">已选字段</font>
+                    <select size="14" name="D2" ondblclick="moveselect(this,'D1')" multiple style="width:140px;height:197px">
+                      <option value="字段4">字段4</option>
+                      <option value="字段5">字段5</option>
+                    </select>
+                </td>
+              </tr>
+            </table>
+           
+           </form>
+		   <script type="text/javascript">
+		   <!--
+			function moveselect(obj,target,all){
+				if (!all) all=0;
+				var obj=document.forms['form1'][obj];
+				var target=document.forms['form1'][target];
+				var mot,mov;
+				if (all==0){
+				   while (obj.selectedIndex>-1){
+					   mot=obj.options[obj.selectedIndex].text;
+					   mov=obj.options[obj.selectedIndex].value;
+					   obj.remove(obj.selectedIndex);
+					   selectAddOption(target,mot,mov);
+				   }
+				}else{
+					for (i=0;i<obj.length;i++){
+					   mot=obj.options[i].text;
+					   mov=obj.options[i].value;
+					   selectAddOption(target,mot,mov);
+					 }
+					obj.options.length=0;
+				}
+			}
+
+			//select添加选项
+			function selectAddOption(select,optiontext,optionvalue){
+			   var newoption=document.createElement("OPTION");
+			   newoption.text=optiontext;
+			   newoption.value=optionvalue;
+				if(navigator.userAgent.indexOf("MSIE")>0){
+					 select.add(newoption);
+				}else{
+					select.add(newoption,null);
+				}
+			}
+
+		   //-->
+		   </script>
+</body>
+</html>

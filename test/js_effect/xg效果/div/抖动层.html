@@ -1,0 +1,12 @@
+<img  id="win" style='position:relative' src="http://www.alixixi.com/UploadPic/2008-9/2008962512241.jpg">
+<br /><br />
+<button onclick="zd()">Õñ¶¯</button>
+<script >
+function zd(u){ 
+ var a=['top','left'],b=0;
+ u=setInterval(function(){
+  document.getElementById('win').style[a[b%2]]=(b++)%4<2?0:4;
+  if(b>15){clearInterval(u);b=0}
+ },32)
+}
+</script>

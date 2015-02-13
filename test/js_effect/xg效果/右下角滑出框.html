@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>右下角弹窗广告</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+#msg_win{border:1px solid #A67901;background:#EAEAEA; position:fixed;_position:absolute;right:0;overflow:hidden; z-index:99; display:none}
+#msg_win a{ color:#333;}
+</style>
+</head>
+
+<body style="height:2000px">
+	<h1>右下角弹窗广告 - <a href="http://www.css88.com/">WEB前端开发</a> - <a href="http://d2.sodao.com/">Sodao设计组</a> - <a href="http://www.sodao.com/">搜道网（美女时钟）</a></h1>
+
+<script type="text/javascript">
+var RBMessage={
+	boxW:200,
+	boxH:101,
+	init:function(){
+		var that = this;
+		this.createBox();
+		document.getElementById("msg_close").onclick = function() {
+            that.BoxWin.style.display="none";
+        }
+	},
+	bind: function() { //绑定窗口滚动条与大小变化事件
+        var that = this,
+        st, rt;
+        window.onscroll = function() {
+			if( !!window.ActiveXObject && !window.XMLHttpRequest ){
+				clearTimeout(st);
+				clearTimeout(that.timer2);
+				that.setOpacity(0);
+				st = setTimeout(function() {
+					that.BoxWin.style.top = that.getY().top;
+					that.show();
+				},500);
+			}
+        };
+        window.onresize = function(){
+			if (!!window.ActiveXObject && !window.XMLHttpRequest) {
+				clearTimeout(rt);
+				rt = setTimeout(function(){
+					that.BoxWin.style.top = that.getY().top
+				}, 100);
+			}
+		}
+    },
+	show: function() { //渐显
+        clearInterval(this.timer2);
+        var that = this,
+        fx = this.fx(0, 100, 0.1),
+        t = 0;
+        this.timer2 = setInterval(function() {
+            t = fx();
+            that.setOpacity(t[0]);
+            if (t[1] == 0) {
+                clearInterval(that.timer2)
+            }
+        },
+        10);
+    },
+	fx: function(a, b, c) { //缓冲计算
+        var cMath = Math[(a - b) > 0 ? "floor": "ceil"],
+        c = c || 0.1;
+        return function() {
+            return [a += cMath((b - a) * c), a - b]
+        }
+    },
+	setOpacity: function(x) { //设置透明度
+        var v = x >= 100 ? '': 'Alpha(opacity=' + x + ')';
+        this.BoxWin.style.visibility = x <= 0 ? 'hidden': 'visible'; //IE有绝对或相对定位内容不随父透明度变化的bug
+        this.BoxWin.style.filter = v;
+        this.BoxWin.style.opacity = x / 100;
+    },
+	getY: function() { //计算移动坐标
+        var d = document,
+        b = document.body,
+        e = document.documentElement;
+        var s = Math.max(b.scrollTop, e.scrollTop);
+        var h = /BackCompat/i.test(document.compatMode) ? b.clientHeight: e.clientHeight;
+        var h2 = this.BoxWin.offsetHeight;
+        return {
+            foot: s + h + h2 + 2 + 'px',
+            top: s + h - h2 - 2 + 'px'
+        }
+    },
+	moveTo: function(y) { //移动动画
+        clearInterval(this.timer);
+        var that = this;
+		var moveTopNum=-that.boxH;
+        this.timer = setInterval(function() {
+			moveTopNum+=5;
+            that.BoxWin.style.bottom =  moveTopNum +'px';
+            if (moveTopNum >= 0) {
+                clearInterval(that.timer);
+				that.bind();
+            }
+        },50);
+		return this;
+    },
+	createBox:function(){
+		this.BoxWin=document.createElement('div');
+        this.BoxWin.style.width = this.boxW+"px";
+        this.BoxWin.style.height =  this.boxH+"px";
+		this.BoxWin.style.bottom = - this.boxH+"px";
+        this.BoxWin.id = "msg_win";
+        this.BoxWin.innerHTML = '<div class="icos"><a href="javascript:void 0" title="关闭" id="msg_close">X</a></div><div id="msg_title">温馨提示(标题)</div><div id="msg_content"></div>';
+        document.body.appendChild(this.BoxWin);
+		var that = this;
+		setTimeout(function() { //初始化最先位置
+            that.BoxWin.style.display = 'block';
+            that.moveTo();
+        },1000);
+		return this;
+	}
+};
+RBMessage.init();
+</script>
+<!--统计代码-->
+<script type="text/javascript"> 
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script> 
+<script type="text/javascript"> 
+try {
+var pageTracker = _gat._getTracker("UA-3448069-1");
+pageTracker._trackPageview();
+} catch(err) {}</script> 
+</body>
+</html>

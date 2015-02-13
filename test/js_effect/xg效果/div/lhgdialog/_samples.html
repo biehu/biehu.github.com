@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>lhgdialog - samples</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<style type="text/css">
+body{margin:0;padding:0;font:14px Verdana, Arial, sans-serif;line-height:200%;}
+#content{padding-left:50px;padding-right:50px;}
+#content h2{font-size:18px;color:#1E9300;padding-top:8px;margin-bottom:8px;}
+#content h3{margin-top:8px;margin-bottom:8px;FONT:bold 14px 宋体,tahoma,arial,sans-serif;COLOR:#0033CC;}
+#content div{margin-top:10px;margin-bottom:10px;border:#666 solid 1px;padding:10px;}
+#content input{margin-bottom:5px;height:22px;font:12px Tahoma;border:1px solid #808080;}
+#content span{color:#f00;font-weight:bold;}
+ul, ol{color:#000000;}
+	</style>
+	<script type="text/javascript" src="lhgdialog.js"></script>
+	<script type="text/javascript">
+function open1()
+{
+    lhgdialog.opendlg( '弹出普通带遮罩层的窗口', '', 400, 300 );
+}
+function open2()
+{
+    lhgdialog.opendlg( '弹出普通带遮罩层的窗口', '_content.html', 400, 300, true );
+}
+function open3()
+{
+    lhgdialog.opendlg( '指定弹出窗口的位置', '', 400, 300, '', 1000, 100 );
+}
+function open4()
+{
+    lhgdialog.opendlg( '在窗口中加载外部页面', 'http://www.google.com', 640, 480 );
+}
+	</script>
+</head>
+
+<body>
+    <div id="content">
+	    <h2>一、组件简介</h2>
+		<span>lhgdialog DIV弹出窗口框架是一个简洁、高效、美观、易用的多功能弹出窗口组件。</span><br /><b>它的主要特点有：</b><br />
+	    <ol>
+	        <li>代码简洁：整个组件所有代码总共<span>18K</span>，如果不算上图片和CSS样式表文件，总共大小才<span>12K</span>不到。（这是在代码未压缩情况下）</li>
+	        <li>程序运行效率高：弹出窗口在打开和拖动时非常流畅，在同等测试条件下，CUP的占有率在<span>30%左右，最高不超过40%</span>。而其它弹出
+	                  窗口（比如：JQuery，ExtJs，Mootools，还有其它弹出窗口等）CUP的占有率都在<span>50%左右，最高60%以上</span>。</li>
+	        <li>窗口样式更改简便：组件采用的是QQ2009窗口的界面，虽说不上很漂亮，但也不算难看（本个界面设计能力较差:-)...）如果你
+	                    想更改窗口样式也很容易，<span>组件采用的是静态模板来设计的窗口的样式</span>，你只要更改lhgdialog.html里body
+						之间的HTML代码，再相应改下lhgdialog.css样式表文件即可。而且组件样式不受调用页面限制，可随意更改
+						你想要的样式。</li>
+	        <li>可扩展性强，复用性高：组件提供了基本常用的功能，在此基础上可根据个人需要增加相应功能，只需要增加少量代码即可开发
+	                        出各种弹出窗口。<span>而且窗口的内容页和框架也是相互独立的</span>，设计好框架后你只要更改内容页即可。</li>
+	        <li>组件调用灵活：在同一页面可以调用任意多个弹出窗口，<span>而且最突出的是在同一页面可以弹出不带遮罩和带遮罩的窗口混用。</span></li>
+	        <li>支持所有主流浏览器：<span>IE6+，Firefox2.0+，Chrome(谷歌浏览器)，Opera9.5+，Safari3.0+等。</span>（题外音：个人觉得Opera最好用，打开
+	                      网页的速度是我上面列出所有浏览器中最快的，不是指打开我的组件，而是打开任何网页个人感觉速度很
+						  快，而且人性化设计也是比较突出的。不是做广告噢:-)...）</li>
+		</ol>
+		本人编写组件一直争取能在满足使用的情况下做到代码最简洁，执行效率高，所以有些不太实用的功能就没有加上，如朋友们需要
+	    可自行加上，或与我共同探讨也可。我的QQ：463214570 ，blog：http://www.cnblogs.com/lhgstudio
+		<h2>二、组件结构</h2>
+		<ol>
+		    <li><span>lhgdialog.js</span>：组件主调用文件，在调用的地方只需要该文件。</li>
+			<li><span>lhgdialog.html</span>：组件窗口静态模板文件，控制窗口样式及对窗口的操作。</li>
+			<li><span>lhgdialog.css</span>：组件窗口样式表文件。</li>
+			<li><span>_content.html</span>：组件窗口内容页示例文件，此页面由用户自己随意定制。</li>
+			<li><span>_samples.html</span>：调用组件示例页，即此页面。</li>
+			<li><span>images</span>：窗口所有图片文件夹</li>
+		</ol>
+		<h2>三、调用方法及参数说明</h2>
+		<ol>
+        <li>在需要调用的页面引入lhgdialog.js，例如：<span>&lt;script type=&quot;text/javascript&quot; src=&quot;lhgdialog.js&quot;&gt;&lt;/script&gt;</span></li>
+	    <li>然后在要调用的位置上引发的事件中加入调用代码，例如：&lt;input type=&quot;button&quot; onclick=&quot;lhgdialog.opendlg(...);&quot;/&gt;          或者在onclick=这写个自己的函数，如：open();然后再在JS的部位里加个function open()函数，再在里面调用lhgdialog.opendlg</li>
+	    <li>参数说明：lhgdialog.opendlg是主调函数，他共有7个参数，详细如下：<br/>
+	        lhgdialog.opendlg( <span>窗口标题，内容页，窗口宽，窗口高，是否显示遮罩层，弹出窗口距顶部距离，弹出窗口距左边距离</span> ）<br/>
+	        例如：lhgdialog.opendlg( '登录窗口', 'login.html', 400, 300 ); 后面的参数如果不用可以省略<br/>
+	        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lhgdialog.opendlg( '', 'ok.html', 600, 480, true, 100, 200 ); 如果前面有不填的参数就用''就可以了，但不可省略。</li>
+		</ol>
+	    <h2>四、功能及示例</h2>
+		<h3>1. 弹出普通不带遮罩层的窗口(可弹出任意个)</h3>
+		<div>
+		    <input type="button" id="btn1" value="弹出普通不带遮罩层的窗口" onclick="open1();" /><br />
+			<span>调用代码：</span>lhgdialog.opendlg( '弹出普通带遮罩层的窗口', '', 400, 300 );
+		</div>
+		<h3>2. 弹出普通带遮罩层的窗口</h3>
+		<div>
+		    <input type="button" id="btn1" value="弹出普通带遮罩层的窗口" onclick="open2();" /><br />
+			<span>调用代码：</span>lhgdialog.opendlg( '弹出普通不带遮罩层的窗口', '', 400, 300, true );
+		</div>
+		<h3>3. 指定弹出窗口的位置(距离top:1000px,left:100px)</h3>
+		<div>
+		    <input type="button" id="btn1" value="指定弹出窗口的位置" onclick="open3();" /><br />
+			<span>调用代码：</span>lhgdialog.opendlg( '指定弹出窗口的位置', '', 400, 300, '', 1000, 100 );<br/>
+			<span>注：top和left都可单独指定</span>
+		</div>
+		<h3>4. 在窗口中加载外部页面</h3>
+		<div>
+		    <input type="button" id="btn1" value="在窗口中加载外部页面" onclick="open4();" /><br />
+			<span>调用代码：</span>lhgdialog.opendlg( '在窗口中加载外部页面', 'http://www.google.com', 640, 480 );
+		</div>
+	</div>
+</body>
+</html>

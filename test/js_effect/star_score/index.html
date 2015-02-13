@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<style type="text/css">
+.starWrapper{border:1px solid #FFCC00;padding:5px;width:120px;}
+.starWrapper img{cursor:pointer;}
+</style>
+<script type="text/javascript">
+var starScore=(function(){
+var imgSrc = 'images/link.gif'; //没有填色的星星
+var imgSrc_2 = 'images/hover.gif'; //打分后有颜色的星星
+
+//得到事件对象
+function getEventObject(ev){
+	var e = ev || window.event;
+	return e.target || e.srcElement; 
+}
+
+return{
+	rate:function(obj,oEvent){
+		var target=getEventObject(oEvent);
+		var imgArray = obj.getElementsByTagName("img");
+		var scores=obj.getElementsByTagName("em")[0];
+
+		//点击后记住序号
+		for(var i=0;i<imgArray.length;i++){
+		   imgArray[i]._num = i;
+		   imgArray[i].onclick=function(i){
+			   return function(){
+					obj._num=i;
+			   }
+		   }(i);
+		}
+
+		//滑过变样
+		if(target.tagName=="IMG"){
+		   for(var j=0;j<imgArray.length;j++){
+				if(j<=target._num){
+					 imgArray[j].src=imgSrc_2;
+					 scores.innerHTML=j+1+"分";
+				} else {
+					imgArray[j].src=imgSrc;
+				}
+		   }
+		} else {
+		   for(var k=0;k<imgArray.length;k++){
+				imgArray[k].src=imgSrc;
+				scores.innerHTML="0分";
+		   }
+		}
+	},
+	rateOut:function(obj){
+		var imgArray = obj.getElementsByTagName("img");
+		var scores=obj.getElementsByTagName("em")[0];
+		for(var j=0;j<imgArray.length;j++){
+			if(j<=obj._num){
+				 imgArray[j].src=imgSrc_2;
+				 scores.innerHTML=j+1+"分";
+			} else {
+				imgArray[j].src=imgSrc;
+			}
+	   }
+	
+	}
+}
+
+})()
+</script>
+<body>
+<p class="starWrapper">
+          <span  onmouseover="starScore.rate(this,event)" onmouseout="starScore.rateOut(this)"><img src="http://www.jb51.net/upload/20080508122008586.gif" title="很烂" /><img src="http://www.jb51.net/upload/20080508122008586.gif" title="一般" /><img src="http://www.jb51.net/upload/20080508122008586.gif" title="还好" /><img src="http://www.jb51.net/upload/20080508122008586.gif" title="较好" /><img src="http://www.jb51.net/upload/20080508122008586.gif" title="很好" />
+		  <em>0分</em></span>
+ </p>
+ <p class="starWrapper">
+           <span  onmouseover="starScore.rate(this,event)" onmouseout="starScore.rateOut(this)"><img src="http://www.jb51.net/upload/20080508122008586.gif" title="很烂" /><img src="http://www.jb51.net/upload/20080508122008586.gif" title="一般" /><img src="http://www.jb51.net/upload/20080508122008586.gif" title="还好" /><img src="http://www.jb51.net/upload/20080508122008586.gif" title="较好" /><img src="http://www.jb51.net/upload/20080508122008586.gif" title="很好" />
+		  <em>0分</em></span>
+ </p>
+</body>
+</html> 

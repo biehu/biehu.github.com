@@ -1,0 +1,96 @@
+/*  
+Theme Name: Airos Chou
+Theme URI: http://www.sunflowamedia.com
+Description: Web Design examples
+*/
+
+body {
+	font-size: 12px;
+	margin: 0;
+	padding: 0;
+}
+p,h1,h2,h3,h4 {
+	margin: 0;
+	padding: 0;
+}
+/*--------------------------------------------
+container
+--------------------------------------------*/
+div.examples_body {
+     width: 750px;
+	 margin: 50px auto 0 auto;
+	 clear: both;
+	 overflow: hidden;
+}
+h2.title_name {
+     font-family: normal Georgia,'Times New Roman',Times,serif;
+	 font-weight: normal;
+     font-size: 4em;
+     padding: 50px 0 20px 0;
+     text-align: center;
+}
+h2.title_name span {
+	 font-family: normal Georgia,'Times New Roman',Times,serif;
+     color: #AAA;
+     font-size: 0.9em;
+}
+h2.title_name small {
+     color: #AAAAAA;
+     display: block;
+     font-family: normal Verdana,Arial,Helvetica,sans-serif;
+     font-size: 0.2em;
+     letter-spacing: 1.0em;
+     text-transform: uppercase;
+}
+div.examples_body h3 {
+     color: #555;
+     font-size: 130%;
+	 padding-bottom: 15px;
+	 margin-bottom: 15px;
+}
+p.demo_btn {
+     width: 750px;
+	 margin: 30px auto;
+	 font-size: 0;
+	 text-indent: -9999px;
+	 clear: both;
+	 overflow: hidden;
+}
+p.demo_btn a {
+     width: 160px;
+	 height: 41px;
+	 float: right;
+     background: url(../images/Download_Button.gif) no-repeat;
+}
+p.demo_btn a:hover {
+     background: url(../images/Download_Button_o.gif) no-repeat;
+}
+
+/* UNLESS YOU KNOW WHAT YOU'RE DOING, DO NOT CHANGE THE FOLLOWING RULES */
+.easy-accordion { display: block; position: relative; overflow: hidden; padding: 0; margin: 0;}
+.easy-accordion dt, .easy-accordion dd { margin: 0; padding: 0;}
+.easy-accordion dt, .easy-accordion dd { position: absolute;}
+.easy-accordion dt { margin-bottom: 0; margin-left: 0; z-index:5; /* Safari */ -webkit-transform: rotate(-90deg); /* Firefox */ -moz-transform: rotate(-90deg);-moz-transform-origin: 20px 0px;  /* Internet Explorer */ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3); cursor:pointer;}
+.easy-accordion dd { z-index:1; opacity: 0; overflow: hidden;}
+.easy-accordion dd.active { opacity: 1;}
+.easy-accordion dd.no-more-active { z-index: 2; opacity: 1;}
+.easy-accordion dd.active { z-index: 3;}
+.easy-accordion dd.plus { z-index: 4;}
+.easy-accordion .slide-number { position: absolute; bottom:0; left: 10px; font-weight: normal; font-size: 1.1em;/* Safari */ -webkit-transform: rotate(90deg); /* Firefox */ -moz-transform: rotate(90deg);  /* Internet Explorer */ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);}
+/* FEEL FREE TO CUSTOMIZE THE FOLLOWING RULES */
+
+dd p {line-height: 120%}
+#accordion-1 { width: 728px; height: 245px; padding: 10px; background: #fff; border: 1px solid #b5c9e8;}
+#accordion-1 dl { width: 728px; height: 245px; color: #294F88;}	
+#accordion-1 dt { height:46px; line-height: 44px; text-align: right; padding:0 15px 0 0; font-size:1.1em; font-weight: bold; font-family: Tahoma, Geneva, sans-serif; text-transform:uppercase; letter-spacing:1px; background: #fff url(../images/slide-title-inactive-1.jpg) no-repeat; color:#26526c;}
+#accordion-1 dt.active { cursor: pointer; color:#fff; background:#fff url(../images/slide-title-active-1.jpg) no-repeat;}
+#accordion-1 dt.hover { color: #68889b;}
+#accordion-1 dt.active.hover { color: #fff;}
+#accordion-1 dd { padding: 25px; background: url(../images/slide.jpg) repeat-x; border:1px solid #dbe9ea; border-left:0; margin-right: 3px;}
+#accordion-1 .slide-number { color:#68889b; left:10px; font-weight: bold;}
+#accordion-1 .active .slide-number { color: #FFF;}
+#accordion-1 a { color: #68889b;}
+#accordion-1 dd img { float: right; margin: 0 0 0 30px;}
+#accordion-1 h4 { font-size: 1.5em; margin-bottom: 10px;}
+#accordion-1 a.more { padding-top: 10px; display: block;}
+#accordion-1 a.more:hover { text-decoration: underline;}

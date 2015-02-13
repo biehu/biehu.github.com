@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>符合标准的正常工作的对联广告</title>
+<script language="JavaScript" type="text/javascript">
+var lastScrollY=0;
+var scroll;
+function heartBeat(){ 
+	var diffY= document.documentElement.scrollTop || document.body.scrollTop;
+	var percent=(diffY-lastScrollY)/10; 
+	if(percent==0) {
+		clearTimeout(scroll);
+	}else{
+		percent=percent>0?Math.ceil(percent):Math.floor(percent);
+		var strip1=document.getElementById("lovexin12");
+		var strip2=document.getElementById("lovexin14");
+		strip1.style.top=parseInt(strip1.style.top)+percent+"px";
+		strip2.style.top=parseInt(strip2.style.top)+percent+"px";
+		lastScrollY=lastScrollY+percent;
+		scroll=setTimeout(heartBeat,10);
+	}
+}
+
+window.onscroll=function(){
+	heartBeat();
+}
+</script>
+<style type="text/css">
+<!--
+#lovexin12,#lovexin14{
+   width:120px;
+   height:250px;
+   background-color:#e5e5e5;
+   border:1px solid #ddd;
+}
+html,body{
+  height:1000px;
+  }
+#mm{
+  height:1000px;
+  }
+-->
+</style>
+</head>
+<body>
+<!--对联-->
+<div id="lovexin12" style="left: 2px; position: absolute; top: 100px;">ad1</div>
+<div id="lovexin14" style="right: 2px; position: absolute; top: 100px;">ad2</div>
+<!--内容-->
+<div id="mm">
+</div>
+</body>
+</html>

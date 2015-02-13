@@ -1,0 +1,685 @@
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<div id="divStay"></div>
+<div id="divStayTopleft">
+<table cellspacing="0" cellpadding="0" width="113" border="0">
+  <tr>
+    <td colspan="3"><img height="34" src="images/qq/qq_top.gif" width="113" usemap="#clickarea" border="0"/><map id="clickarea"><area shape="circle" coords="91,18,10" onclick="CloseQQ(event)" onmouseover="changeCursor(this,0)" onmouseout="changeCursor(this,1)"></map></td>
+  </tr>
+  <tr>
+    <td width="6"><img height="120" src="images/qq/qq_life.gif" width="6"></td>
+    <td valign="top" width="100" background="images/qq/qq_bg.gif">
+    <table cellspacing="0" cellpadding="0" width="100" align="center" border="0">
+      <tr>
+        <td height="30">
+          <table cellspacing="0" cellpadding="0" width="100" border="0">
+            <tr>
+              <td>
+                <img height="13" src="images/qq/qq_ico1.gif" width="16">
+				  <span class="font_12"><span style="font-size: 9pt">客户服务</span></span>
+			  </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <table border="0" width="100%" cellpadding="2" id="table1">
+            <tr>
+               <td width="15" valign="top" height="23">
+                 <img border="0" src="images/qq/qq_v01.gif" width="16" height="16">
+			   </td>
+               <td valign="bottom">
+			     <a target='blank' href='tencent://message/?uin=345889543&Site=翱天电气科技&Menu=yes'>
+				   <img border='0' SRC='images/qq/talk.gif' alt='[翱天电气科技]'>
+				 </a>
+			   </td>
+             </tr>
+           </table>
+        </td>
+      </tr>
+	  <tr>
+        <td>
+		  <table border="0" width="100%" cellpadding="2" id="table3">
+            <tr>
+              <td width="15" valign="top" height="23">
+                <img border="0" src="images/qq/qq_n01.gif" width="16" height="16">
+			  </td>
+              <td valign="bottom">
+			    <a target='blank' href='tencent://message/?uin=345889543&Site=翱天电气科技&Menu=yes'>
+				  <img border='0' SRC='images/qq/message.gif' alt='[翱天电气科技]'>
+				</a>
+			  </td>
+            </tr>
+          </table>
+		</td>
+      </tr>
+      <tr>
+        <td>
+          <table border="0" width="100%" cellpadding="2" id="table2">
+            <tr>
+              <td width="15" valign="top" height="23">
+                <img border="0" src="images/qq/qq_n01.gif" width="16" height="16">
+			  </td>
+              <td valign="bottom">
+			    <a href="javascript:void(0)" onclick="startChat()">
+				  <img border='0' SRC='images/qq/chat.gif' alt='[翱天电气科技]'>
+				</a>
+			  </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    </td>
+    <td width="7"><img height="120" src="images/qq/qq_right.gif" width="7"></td>
+  </tr>
+  <tr>
+    <td colspan="3"><img height="30" src="images/qq/qq_bottom1.gif" width="113"></td>
+  </tr>
+  <tr>
+    <td colspan="3"><img height="33" src="images/qq/qq_logo.gif" width="113"></td>
+  </tr>
+</table>
+</div>
+
+<div id="main">
+  <div id="ChatHead">
+    <span id="headMsg">【在线聊吧】</span>
+    <marquee id="mar" direction="left" onmouseover="this.stop();this.style.cursor='hand';" onmouseout="this.start()"  scrollDelay='300'>
+	   欢迎使用翱天电气科技网页聊天系统!
+	</marquee>&nbsp;
+    <img id="winState" border='0' height="15" width="15" src='images/qq/mini.gif' alt='[翱天电气科技]' onclick="changState(this);" onmouseover="this.style.cursor='hand'"/>
+  </div>
+  <div id="ChatBody">
+    <div id="ChatContent"></div>
+    <div id="ChatBtn">
+      <form action="" name="chat" method="post">
+        <textarea name="ChatValue" rows="3" cols="52"></textarea><br/>
+	    <img border='0' SRC='images/qq/send.gif' alt='[翱天电气科技]' onclick="ChatSend(this.parentNode);" onmouseover="this.style.cursor='hand'"/>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div id="divPageMask"></div>
+<div id="maskWin">
+	<div id="maskHead">请输入您的昵称</div>
+	<div id="maskBody">
+		<center><br/><br/>
+		    <label>昵称:</label><input id="nickName" type="text"/><br/><br/>
+			<input type="button" id="msgbox_button" onclick="Mask.Event('yes',callback);" value="确定"/>
+			<input type="button" id="msgbox_button2" onclick="Mask.Event('no',callback);" value="取消"/>
+		</center>
+	</div>
+</div>
+<style type="text/css">
+a:link,a:visited{
+	text-decoration:none;
+	color:#333333;
+}
+a:hover{
+	text-decoration:none;
+	color:#FF6600
+}
+#divStay,#divStayTopleft{
+	position: absolute;
+	z-index:10;
+}
+#mar{
+    width : 250px ; 
+	font-size:15px;
+	background-color:#ffffff;
+}
+#headMsg {
+    text-align:left;
+	font-size:16px;
+	font-weight:bold;
+	font-family:"华文新魏";
+	color:#009933;
+}
+#main {
+	position: absolute;
+	right: 0px;
+	bottom: 0px;
+	height: 0px;
+	width: 400px;
+	background-color: #ffffff;
+	padding: 1px;
+	overflow:hidden;
+	display:none;
+	font-size:12px;
+	z-index:10;
+}
+#main form 
+  {
+    margin:0;
+    font:normal 12px Verdana, Arial;
+  }
+#main table,input 
+  {
+    font:normal 12px Verdana, Arial;
+  }
+#ChatHead {
+	text-align:right;
+	padding:3px;
+	border:1px solid #003399;
+	background:#DCDCFF;
+	font-size:11px;
+	color:#3366FF;
+	cursor:move;
+}
+#ChatHead a:link,#ChatHead a:visited, {
+	font-size:14px;
+	font-weight:bold;
+	padding:0 3px
+}
+#ChatBody {
+	border:1px solid #003399;
+	border-top:none;
+	padding:2px;
+}
+#ChatContent {
+	height:200px;
+	padding:6px;
+	overflow-y:scroll;
+	word-break: break-all
+}
+#ChatBtn {
+	border-top:1px solid #003399;
+	padding:2px
+}
+#divPageMask{
+    background-color:#000000; 
+	filter:alpha(opacity=50);
+	left:0px;
+	position:absolute;
+	top:0px;
+	z-index:30;
+	}
+#maskWin{
+   background-color:#EEEEEE;
+   position: absolute;
+   left:0px;top:-300px;
+   z-index:50;
+   width:300px;
+   height:150px;
+   }
+#maskHead{
+   background-color: #B1CDF3;
+   height:25px;
+   position:relative;
+   font-size:14px;
+   line-height:25px;
+   padding-left:10px;
+   border-bottom:1px solid #000;
+   }
+#maskBody{
+   text-align:center;
+   clear:both;
+   height:28px;
+   }
+#msgbox_button,#msgbox_button2{
+   background-color: #B1CDF3;
+   border:1px solid #003366;
+   font-size:12px;
+   line-height:20px;
+   height:21px;
+   }
+</style>
+<script type="text/javascript">
+//*****************************Begin:工具函数*************************************//
+//判断浏览器类型
+var isIE = (document.all) ? true : false;
+//定义$(id)函数
+var $ = function (id) 
+        {
+           return "string" == typeof id ? document.getElementById(id) : id;
+        };
+//定义类函数
+var Class = {
+    create: function() 
+	{
+      return function() 
+	          { this.initialize.apply(this, arguments); }
+    }
+}
+//定义子函数
+var Extend = function(destination, source) 
+            {
+				for (var property in source) 
+				{
+					destination[property] = source[property];
+				}
+             }
+//绑定函数
+var Bind = function(object, fun) 
+		   {
+				return function() 
+				{
+					return fun.apply(object, arguments);
+				}
+			}
+//绑定函数监听器
+var BindAsEventListener = function(object, fun) 
+			{
+				return function(event) 
+				{
+					return fun.call(object, (event || window.event));
+				}
+			}
+//当前样式
+var CurrentStyle = function(element)
+            {
+				return element.currentStyle || document.defaultView.getComputedStyle(element, null);
+			}
+//添加事件处理函数
+function addEventHandler(oTarget, sEventType, fnHandler) 
+			{
+				if (oTarget.addEventListener) 
+				{
+					oTarget.addEventListener(sEventType, fnHandler, false);
+				} 
+				else if(oTarget.attachEvent) 
+				{
+					oTarget.attachEvent("on" + sEventType, fnHandler);
+				} 
+				else 
+				{
+					oTarget["on" + sEventType] = fnHandler;
+				}
+			};
+//移除事件处理函数
+function removeEventHandler(oTarget, sEventType, fnHandler) 
+{
+    if (oTarget.removeEventListener) 
+	{
+        oTarget.removeEventListener(sEventType, fnHandler, false);
+    } 
+	else if (oTarget.detachEvent) 
+	{
+        oTarget.detachEvent("on" + sEventType, fnHandler);
+    } 
+	else 
+	{ 
+        oTarget["on" + sEventType] = null;
+    }
+};
+//*****************************End:工具函数*************************************//
+<!--Begin: chat显示 -->
+<!--Begin: QQ在线客服 -->
+function picsize(obj,MaxWidth){
+  img=new Image();
+  img.src=obj.src;
+  if (img.width>MaxWidth)
+  {
+    return MaxWidth;
+  }
+  else
+  {
+    return img.width;
+  }
+}
+function CloseQQ(evt)
+{
+	//alert(evt.clientX+':'+evt.clientY)
+	divStayTopleft.style.display="none";
+	if(parseInt($("main").style.height)>0)
+	{
+	  ChatClose();
+	}
+	return true; 
+}
+function changeCursor(obj,curstate)
+{
+	var parent = obj.parentNode.parentNode.firstChild;
+	if(curstate==0)
+	{
+		parent.style.cursor='hand'
+	}
+	else if(curstate==1)
+	{
+		parent.style.cursor='default'
+	}
+}
+//var online= new Array();
+function FloatTop()
+{
+  var startX1 =document.body.offsetWidth-125 ,startY1 = 5;
+  var startX2 =0,startY2 = 95;
+  var ns = (navigator.appName.indexOf("Netscape") != -1);
+  var d = document;
+  function ml(id,startX,startY)
+  {
+    var el=d.getElementById?d.getElementById(id):d.all?d.all[id]:d.layers[id];
+    if(d.layers)el.style=el;
+     el.sP=function(x,y)
+	       {
+		     this.style.left=x;
+			 this.style.top=y;
+		    };
+	  el.x = startX;
+	  el.y = startY;
+ 	  return el;
+  }
+  window.stayTopLeft=function()
+  {
+    var pY = ns ? pageYOffset : document.body.scrollTop;
+    ftlObj.y += (pY + startY1 - ftlObj.y)/8;
+    ftlObj1.y += (pY + startY2 - ftlObj1.y)/8;
+    ftlObj.sP(document.body.scrollLeft+document.body.offsetWidth-125, ftlObj.y);
+    ftlObj1.sP(ftlObj1.x, ftlObj1.y);
+    setTimeout("stayTopLeft()", 30);
+  }
+  ftlObj = ml("divStay",document.body.scrollLeft+document.body.offsetWidth-125,0);
+  ftlObj1 = ml("divStayTopLeft",0,30);
+  //ftlObj = ml("divStay",(document.body.scrollLeft+document.body.offsetWidth)/2+379,0);
+  //ftlObj1 = ml("divStayTopLeft",(document.body.scrollLeft+document.body.offsetWidth)/2+379,30);
+  stayTopLeft();
+}
+FloatTop();
+
+
+window.onload=function(){document.getElementById('main').style.height='0px';};
+var handle;
+var nickName = "";
+//开启/关闭聊天窗口
+function startChat(){
+  if(nickName.length==0){
+  	Mask.Open();
+	$("nickName").focus();
+  }else{
+	  var obj = document.getElementById("main");
+	  if (parseInt(obj.style.height)==0)
+	  { 
+		  handle = setInterval("changeH('up')",1);
+		  $("winState").src="images/qq/mini.gif";
+	  }else{
+		  handle = setInterval("changeH('down')",1) 
+		  $("winState").src="images/qq/max.gif";
+	  } 
+  }
+}
+function changeH(str)
+{
+ var obj = document.getElementById("main");
+ if(str=="up")
+ {
+   obj.style.display="block";
+   if(parseInt(obj.style.height)>320)
+   {
+     clearInterval(handle);
+   }
+   else
+   {
+     obj.style.height=(parseInt(obj.style.height)+5).toString()+"px";
+	 obj.style.top = document.body.clientHeight - parseInt(obj.style.height);
+	 obj.style.left = document.body.clientWidth - 400;
+   }
+ }
+ if(str=="down")
+ {
+   if (parseInt(obj.style.height)<5)
+   {   
+     clearInterval(handle);
+   }
+   else
+   {
+     if(parseInt(obj.style.height) == 5)obj.style.display="none";
+     obj.style.height=(parseInt(obj.style.height)-5).toString()+"px"; 
+	 obj.style.top = document.body.clientHeight - parseInt(obj.style.height);
+	 obj.style.left = document.body.clientWidth - 400;
+   }
+ }
+}
+//关闭聊天窗口
+function ChatClose(){$("main").style.display = "none";}
+var winStat = 1;
+var currentTop ;
+var currentLeft ;
+//改变聊天窗口的按钮状态
+function changState(obj)
+{   //$("main").style.height=325,width=400
+    //$("ChatHead").style.height=30,width=400
+	if(winStat ==1){
+	   //保存当前状态
+	   currentTop = $("main").style.top;
+       currentLeft = $("main").style.left;
+	   
+	   obj.src="images/qq/max.gif";
+	   $("main").style.height = 30;
+	   $("main").style.top = document.body.clientHeight - 30;
+	   $("main").style.left = document.body.clientWidth - 400;
+	   winStat=2;
+	}else{
+	   obj.src="images/qq/mini.gif";
+	   $("main").style.height = 325;
+	   $("main").style.top = currentTop;
+	   $("main").style.left = currentLeft;
+	   winStat=1;
+	}
+}
+//发送聊天信息
+function ChatSend(obj)
+{
+   var o = obj.ChatValue;
+   if (o.value.length>0)
+   {
+      $("ChatContent").innerHTML += "<strong>"+nickName+"说：</strong>"+o.value+"<br/>";
+      o.value='';
+    }
+}
+
+
+//拖放程序
+var Drag = Class.create();
+Drag.prototype = {
+  //拖放对象
+  initialize: function(drag, options) 
+  {
+	this.Drag = $(drag);//拖放对象
+	this._x = this._y = 0;//记录鼠标相对拖放对象的位置
+	this._marginLeft = this._marginTop = 0;//记录margin
+	//事件对象(用于绑定移除事件)
+	this._fM = BindAsEventListener(this, this.Move);
+	this._fS = Bind(this, this.Stop);
+	
+	this.SetOptions(options);
+	
+	this.Limit = !!this.options.Limit;
+	this.mxLeft = parseInt(this.options.mxLeft);
+	this.mxRight = parseInt(this.options.mxRight);
+	this.mxTop = parseInt(this.options.mxTop);
+	this.mxBottom = parseInt(this.options.mxBottom);
+	
+	this.LockX = !!this.options.LockX;
+	this.LockY = !!this.options.LockY;
+	this.Lock = !!this.options.Lock;
+	
+	this.onStart = this.options.onStart;
+	this.onMove = this.options.onMove;
+	this.onStop = this.options.onStop;
+	
+	this._Handle = $(this.options.Handle) || this.Drag;
+	this._mxContainer = $(this.options.mxContainer) || null;
+	
+	this.Drag.style.position = "absolute";
+	/*
+	//透明
+	if(isIE && !!this.options.Transparent)
+	{
+		//填充拖放对象
+		with(this._Handle.appendChild(document.createElement("div")).style)
+		{
+			width = height = "100%"; backgroundColor = "#fff"; filter = "alpha(opacity:0)";
+		}
+	}
+	*/
+	addEventHandler(this._Handle, "mousedown", BindAsEventListener(this, this.Start));
+  },
+  //设置默认属性
+  SetOptions: function(options) 
+  {
+	this.options = 
+	{
+		//默认值
+		Handle:"",//设置触发对象（不设置则使用拖放对象）
+		Limit:false,//是否设置范围限制(为true时下面参数有用,可以是负数)
+		mxLeft:0,//左边限制
+		mxRight:document.body.clientWidth,//右边限制
+		mxTop:0,//上边限制
+		mxBottom:document.body.clientHeight,//下边限制
+		mxContainer:"",//指定限制在容器内
+		LockX:false,//是否锁定水平方向拖放
+		LockY:false,//是否锁定垂直方向拖放
+		Lock:false,//是否锁定
+		Transparent:false,//是否透明
+		onStart:function(){},//开始移动时执行
+		onMove:function(){},//移动时执行
+		onStop:function(){}//结束移动时执行
+	};
+	Extend(this.options, options || {});
+  },
+  //准备拖动
+  Start: function(oEvent) 
+  {
+	if(this.Lock){ return; }
+	if(this.Limit)
+	{
+		//修正错误范围参数
+		this.mxRight = Math.max(this.mxRight, this.mxLeft + this.Drag.offsetWidth);
+		this.mxBottom = Math.max(this.mxBottom, this.mxTop + this.Drag.offsetHeight);
+		//如果有容器必须设置position为relative来相对定位，并在获取offset之前设置
+		!this._mxContainer || CurrentStyle(this._mxContainer).position == "relative" || (this._mxContainer.style.position = "relative");
+	}
+	//记录鼠标相对拖放对象的位置
+	this._x = oEvent.clientX - this.Drag.offsetLeft;
+	this._y = oEvent.clientY - this.Drag.offsetTop;
+	//记录margin
+	this._marginLeft = parseInt(CurrentStyle(this.Drag).marginLeft) || 0;
+	this._marginTop = parseInt(CurrentStyle(this.Drag).marginTop) || 0;
+	//mousemove时移动 mouseup时停止
+	addEventHandler(document, "mousemove", this._fM);
+	addEventHandler(document, "mouseup", this._fS);
+	/*
+	if(isIE){
+		//焦点丢失
+		addEventHandler(this._Handle, "losecapture", this._fS);
+		//设置鼠标捕获
+		this._Handle.setCapture();
+	}else{
+		//焦点丢失
+		addEventHandler(window, "blur", this._fS);
+		//阻止默认动作
+		oEvent.preventDefault();
+	};
+	*/
+	//附加程序
+	this.onStart();
+  },
+  //拖动
+  Move: function(oEvent) 
+  {
+	//判断是否锁定
+	if(this.Lock){ this.Stop(); return; };
+	//清除选择
+	window.getSelection ? window.getSelection().removeAllRanges() : document.selection.empty();
+	//设置移动参数
+	var iLeft = oEvent.clientX - this._x, iTop = oEvent.clientY - this._y;
+	//设置范围限制
+	if(this.Limit){
+		//设置范围参数
+		var mxLeft = this.mxLeft, mxRight = this.mxRight, mxTop = this.mxTop, mxBottom = this.mxBottom;
+		//如果设置了容器，再修正范围参数
+		if(!!this._mxContainer){
+			mxLeft = Math.max(mxLeft, 0);
+			mxTop = Math.max(mxTop, 0);
+			mxRight = Math.min(mxRight, this._mxContainer.clientWidth);
+			mxBottom = Math.min(mxBottom, this._mxContainer.clientHeight);
+		};
+		//修正移动参数
+		iLeft = Math.max(Math.min(iLeft, mxRight - this.Drag.offsetWidth), mxLeft);
+		iTop = Math.max(Math.min(iTop, mxBottom - this.Drag.offsetHeight), mxTop);
+	}
+	//设置位置，并修正margin
+	if(!this.LockX){ this.Drag.style.left = iLeft - this._marginLeft + "px"; }
+	if(!this.LockY){ this.Drag.style.top = iTop - this._marginTop + "px"; }
+	//附加程序
+	this.onMove();
+  },
+  //停止拖动
+  Stop: function() 
+  {
+	//移除事件
+	removeEventHandler(document, "mousemove", this._fM);
+	removeEventHandler(document, "mouseup", this._fS);
+	if(isIE)
+	{
+		removeEventHandler(this._Handle, "losecapture", this._fS);
+		this._Handle.releaseCapture();
+	}
+	else
+	{
+		removeEventHandler(window, "blur", this._fS);
+	};
+	//附加程序
+	this.onStop();
+  }
+};
+var drag = new Drag("main", { mxContainer: null, Handle: null, Limit: true});
+
+<!--Begin: mask显示 -->
+var Mask = function(){
+     function sDisp(val)
+     {
+		 var dispalyType;
+		 var dType=["hidden","visible"];
+		 var obj=document.getElementsByTagName("select");
+		 for (i=0;i<obj.length;i++)
+		 {
+		   obj[i].style.visibility=dType[val];
+		 }
+	 }
+	 
+	 function resizeMask()
+	 {
+		divPageMask.style.width = document.body.scrollWidth;
+		divPageMask.style.height = document.body.scrollHeight>document.body.clientHeight?document.body.scrollHeight:document.body.clientHeight;
+		maskWin.style.left = (document.body.offsetWidth - maskWin.offsetWidth) / 2;
+		maskWin.style.top = (document.body.offsetHeight - maskWin.offsetHeight) / 2;
+	 }
+	
+	return{
+			 Open: function()
+			 {
+				 sDisp(0);  
+				 $("divPageMask").style.display="block";
+				 resizeMask();
+				 window.onResize = resizeMask;
+				 $("maskWin").style.display="block";
+			 },
+			 Close: function()
+			 {
+				 sDisp(1);
+				 divPageMask.style.width = "0px";
+				 divPageMask.style.height = "0px";
+				 maskWin.style.top = "-300px";
+				 window.onResize = null;
+			 },
+			 Event: function(value,callback){
+			      if(callback)
+			         callback(value);
+				  this.Close();
+			 }
+		   }; 
+}();
+
+function callback(m_value){
+    if(m_value=='yes')
+	{
+		nickName = $("nickName").value;
+		startChat();
+	}
+}
+<!--End: chat显示 -->
+</script>
+<!--End: QQ在线客服 -->

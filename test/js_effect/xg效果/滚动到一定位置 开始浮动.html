@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+<title>  </title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<style type="text/css"> 
+body,html{margin:0;padding:0;font-size:12px;font-family:Arial;font:12px/1 Helvetica, Tahoma, Arial, \5b8b\4f53, sans-serif;background:url(/100100759.png) fixed}
+#float{background:url(http://www.css88.com/wp-content/uploads/2009/10/tb2.png) no-repeat -12px -37px;width:744px;height:34px;border:1px solid #C0DBF8;position:absolute;top:0}
+#box{position:relative;height:500px;width:744px;background:#ddd url(http://home.blueidea.com/attachment/201004/9/506384_1270823833Kkk2.jpg) no-repeat;}
+</style> 
+</head> 
+<body> 
+<div style="height:300px;background:#eee"></div> 
+<div id="box"><div id="float" ></div></div> 
+<div style="height:1000px;background:#eee"></div> 
+</body> 
+<script type="text/javascript">
+
+var IO=document.getElementById('float'),Y=IO,H=0,IE6;
+IE6=window.ActiveXObject&&!window.XMLHttpRequest;
+while(Y){H+=Y.offsetTop;Y=Y.offsetParent};
+if(IE6)
+    IO.style.cssText="position:absolute;top:expression(this.fix?(document"+
+        ".documentElement.scrollTop-(this.javascript||"+H+")):0)";
+window.onscroll=function (){
+    var d=document,s=Math.max(d.documentElement.scrollTop,document.body.scrollTop);
+    if(s>H&&IO.fix||s<=H&&!IO.fix)return;
+    if(!IE6)IO.style.position=IO.fix?"":"fixed";        
+    IO.fix=!IO.fix;
+};
+try{document.execCommand("BackgroundImageCache",false,true)}catch(e){};
+ //]]>
+</script> 
+</html>

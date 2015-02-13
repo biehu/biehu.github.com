@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>遮罩</title>
+<style>
+/*遮罩*/
+.mask_cloth{display:none;position:absolute;top:0;left:0;background:#000;opacity:0.5;filter:alpha(opacity=50)}
+
+.catetory_add,.catetory_shift{display:none;position:absolute;background:#fff}
+.catetory_add{width:300px;height:200px;border:1px solid #000}
+.catetory_add ul,.login ul{margin: 50px 0 0 50px}
+.catetory_add p{text-align:center}
+</style>
+</head>
+<body>
+<button type="button" onclick="mask.open('catetory_add')">新增</button>
+<div id="mask_cloth" class="mask_cloth"></div>
+<div id="catetory_add" class="catetory_add">
+	<form action="">
+		<ul>
+			<li><label>所属分类：<input type="text" /></label></li>
+			<li><label>分类名称：<input type="text" /></label></li>
+		</ul>
+		<p><button type="submit">确认</button><button type="reset" onclick="mask.close('catetory_add')">取消</button></p>
+	</form>
+</div>
+<script type="text/javascript">
+var mask=(function(){
+	var maskCloth=document.getElementById("mask_cloth");
+	//弹出框居中
+	function resizeMask(obj){
+		var windowWidth=Math.max(document.documentElement.clientWidth,document.body.clientWidth);
+		var windowHeight=getWinWH()['h'];
+		var bodyHeight=Math.max(document.documentElement.clientHeight,document.body.scrollHeight);
+		var bodyScrollTop=Math.max(document.documentElement.scrollTop,document.body.scrollTop);
+		var openw =obj.offsetWidth; 
+		var openh =obj.offsetHeight; 
+
+		var isIE6=!!window.ActiveXObject && !window.XMLHttpRequest;
+		var frame;
+
+		if(isIE6){
+			frame='<iframe style="width:100%;height:100%;filter:Alpha(opacity=0);" border="0" frameborder="0"></iframe>';
+			maskCloth.innerHTML=frame;
+		}
+
+		//遮罩宽高
+		maskCloth.style.width=windowWidth+"px";
+		maskCloth.style.height=bodyHeight+"px";
+		//弹出框位置
+		obj.style.left = (windowWidth - openw) / 2 + "px";
+		obj.style.top=bodyScrollTop+(windowHeight - openh) / 2 +"px";
+		obj.style.zIndex = "1001";
+	}
+
+	//视窗尺寸
+	function getWinWH(){
+		var winWidth,winHeight;
+		if (self.innerHeight) { // all except Explorer
+			winWidth = self.innerWidth;
+			winHeight = self.innerHeight;
+		} else if (document.documentElement && document.documentElement.clientHeight) { // Explorer 6 Strict Mode
+			winWidth = document.documentElement.clientWidth;
+			winHeight = document.documentElement.clientHeight;
+		} else if (document.body) { // other Explorers
+			winWidth = document.body.clientWidth;
+			winHeight = document.body.clientHeight;
+		}
+
+		return {'w':winWidth,'h':winHeight};
+	}
+	
+	return{
+		open:function(objId){
+			   maskCloth.style.display="block";
+			   var obj=document.getElementById(objId);
+			   obj.style.display="block";
+			   resizeMask(obj);
+		},
+		close:function(objId){
+				document.getElementById(objId).style.display="none";
+				maskCloth.style.display="none";
+		}
+	}
+})()
+</script>
+</body>
+</html>

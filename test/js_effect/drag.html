@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+<body>
+<div id="f" style="position: absolute; width: 200px; height: 150px; background-color: #ccc; top: 150px; left: 200px; z-index: 101; border: solid 1px blue;">
+        <div id="title" style="background-color: Blue; cursor: move; height: 20px; color: #fff;font-size: 13px; padding-top: 5px; padding-left: 10px;"> 拖动层 </div>
+    </div>
+<script type="text/javascript">
+var drag=(function(){
+	var posX;
+	var posY;      
+	var fdiv = document.getElementById("f");
+
+	//获得事件对象
+	function getEventObject(W3CEvent) {
+		 return W3CEvent || window.event;
+	}
+	//移动
+	function mousemove(e){
+		var e=getEventObject(e);
+		fdiv.style.left = (e.clientX-posX) + "px";
+		fdiv.style.top = (e.clientY-posY) + "px";
+	}
+	return{
+		init:function(){
+			//鼠标按下
+			document.getElementById("title").onmousedown=function(e){
+				var e=getEventObject(e);
+				posX=e.clientX-parseInt(fdiv.style.left);
+				posY=e.clientY-parseInt(fdiv.style.top);
+				document.onmousemove = mousemove;          
+			}
+			//鼠标放开
+			document.onmouseup = function(){
+				document.onmousemove = null;
+			}
+		}
+	
+	}
+
+})()
+
+drag.init();
+</script>
+
+</body>
+</html>

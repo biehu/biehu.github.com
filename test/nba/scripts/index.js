@@ -56,11 +56,11 @@ var page = function () {
         
         if(dir === 1){
             $(".p"+(page+1)).removeClass('up').addClass('on');
-            $(".p"+(page+2)).addClass('down');
+            $(".p"+(page+2)).removeClass('on').addClass('down');
             
         }
         else{
-            $(".p"+page).addClass('up');
+            $(".p"+page).removeClass('on').addClass('up');
             $(".p"+(page+1)).removeClass('down').addClass('on');
         }
        
@@ -213,9 +213,10 @@ var drawCanvas = function () {
 			canvas.width = this.width;
 			board.drawImage(this, 0, 0, this.width, this.height);
 		};
-		cup.src = 'http://biehu.me/test/nba/images/cup-only.png';
+		cup.src = 'http://biehu.me/test/nba1/nba/images/cup-only.png';
 	};
-    
+    
+
     function beginDraw(event){
         mousePress = true;
 		event.preventDefault();
@@ -225,12 +226,13 @@ var drawCanvas = function () {
     function drawing(event){
         event.preventDefault();
 		event.stopPropagation(); 
-        if (!mousePress) {
+        if (!mousePress) 
+{
 			return;
 		}
         var xy = pos(event);
 		var imgData = board.getImageData(xy.x, xy.y, canvas.width, canvas.height);
-        if (last != null) {
+        if (last != null && imgData.data[3] > 0) {
 			board.lineWidth = 5;
 			board.strokeStyle = "#000000";
             board.beginPath();
@@ -252,12 +254,15 @@ var drawCanvas = function () {
     function pos(event){
         var x = event.touches[0].pageX + 70;
         var y = event.touches[0].pageY + 200;
-        
+        
+
         return {
             x: x,
             y: y
         };
-    }
+    }
+
+
     
     function save(){
         //base64

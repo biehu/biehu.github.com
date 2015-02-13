@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<link rel="stylesheet" href="css/common.css" type="text/css" />
+<title>通用后台管理系统</title>
+</head>
+
+<body>
+<div class="header_content">
+     <div class="logo"><img src="images/man_logo.jpg" alt="51EHUO-无忧易货网后台管理" /></div>
+	 <div class="right_nav">
+	    <div class="text_left"><ul class="nav_list"><li><img src="images/direct.gif" width="8" height="21" />网站后台管理系统</li></ul>
+	    </div>
+		<div class="text_right"><ul class="nav_return"><li><img src="images/return.gif" width="13" height="21" />&nbsp;返回无忧易货 [ <a href="#">企业平台</a> |  <a href="#">普通平台</a> ]</li>
+		<li> [<a href="#">易货论坛</a>]</li>
+		<li> [<a href="#">论坛管理</a>]&nbsp;&nbsp;</li>
+		</ul>
+		</div>
+	 </div>
+</div>
+</body>
+</html>

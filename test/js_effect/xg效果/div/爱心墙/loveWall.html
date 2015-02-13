@@ -1,0 +1,45 @@
+<html>
+<head>
+<!--标题-->
+<title>爱墙啊~你真凉~首页</title>
+<!--插入css样式-->
+<link rel="stylesheet" href="css/love.css" type="text/css"></head>
+<!--插入js脚本-->
+<script src="js/love.js"></script>
+</head>
+<body background="img/bg.jpg">
+<!--导航栏-->
+<div class="titler"><a href="javascript:location.reload()">首页</a>&nbsp;<a href="javascript:writepaper()">写纸条</a></div>
+<!--填写-->
+<div id="writepp" class="paper" style="display:none" >
+<form name="f1">
+<table>
+<tr>
+<td>收信人:</td>
+<td><input type="text" id="revename" maxlength="14"></td>
+</tr>
+<tr>
+<td>内  容:</td>
+<td><textarea cols="19" rows="5" id="loveletter"></textarea></td>
+</tr>
+<tr>
+<td>写信人:</td>
+<td><input type="text" id="sendname" maxlength="14"></td>
+</tr>
+<tr>
+<td colspan="2" align="center"><input type="button" value="提交" onClick="addlove()"></td>
+</tr>
+</table>
+</form>
+</div>
+<!--初始化的一个爱意-->
+<div class="pinkWall" style="left: 366px;top: 218px;" onMouseDown="begin(this)" id="1" >
+<div class="recipient">亲爱的:</div>
+<div class="lookc"><img src="img/look.gif" alt="查看" onClick="looklook()" />&nbsp;<img src="img/close.gif" alt="关闭" onClick="hiddenp(1)" /></div>
+<div class="introduce">&nbsp;&nbsp;&nbsp;&nbsp;我对不起你...我好喜欢你..我不会再不耐烦你了..不要不理我..好不好..<br /></div>
+<div class="sender">破张棋</div>
+<div class="senddate">2009-03-23</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+ 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN"> 
+<head> 
+<title>可滚动跟随弹出框效果代码——脚本之家</title> 
+<script> 
+function getPosition() { 
+var top = document.documentElement.scrollTop; 
+var left = document.documentElement.scrollLeft; 
+var height = document.documentElement.clientHeight; 
+var width = document.documentElement.clientWidth; 
+return {top:top,left:left,height:height,width:width}; 
+} 
+
+function showPop(){ 
+var width = 300; //弹出框的宽度 
+var height = 160; //弹出框的高度 
+var obj = document.getElementById("pop"); 
+
+obj.style.display = "block"; 
+obj.style.position = "absolute"; 
+obj.style.zindex = "999"; 
+obj.style.width = width + "px"; 
+obj.style.height = height + "px"; 
+
+var Position = getPosition(); 
+leftadd = (Position.width-width)/2; 
+topadd = (Position.height-height)/2; 
+obj.style.top = (Position.top + topadd) + "px"; 
+obj.style.left = (Position.left + leftadd) + "px"; 
+
+window.onscroll = function (){ 
+var Position = getPosition(); 
+obj.style.top = (Position.top + topadd) +"px"; 
+obj.style.left = (Position.left + leftadd) +"px"; 
+}; 
+} 
+
+function hidePop(){ 
+document.getElementById("pop").style.display = "none"; 
+} 
+</script> 
+</head> 
+<body> 
+作者：丁学－－滚动跟随 
+<div id="pop" style="border:1px solid #CCC;display:none;">test<br><a href="javascript:hidePop();" mce_href="javascript:hidePop();">hide</a></div> 
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> 
+<a href="javascript:showPop()" mce_href="javascript:showPop()">show</a> 
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> 
+</body> 
+</html> 
+

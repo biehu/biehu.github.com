@@ -1,0 +1,23 @@
+<script language="jscript"> 
+// 
+function A(p,callback){ 
+    //带都少个参数都可以 
+    alert(p); 
+    callback(); 
+} 
+function __Callback_0(){ 
+    //这里可能做一系列的变化 
+    alert("call back!"); 
+} 
+
+A("<br>1.",__Callback_0); 
+//直接将函数做为参数传递 
+A("<br>2.",function c(){alert("go go !!!!!!!!!");}); 
+//直接将函数做为参数传递 
+A("<hr>3.",function c(){ 
+   var i=25; 
+     var c="小明哥"; 
+    var x="男"; 
+     document.write("名称："+c+",性别："+x+",年龄："+i); 
+}); 
+</script> 

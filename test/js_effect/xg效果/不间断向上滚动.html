@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <style>
+  #demo{width:232px;height:139px;overflow:hidden}
+  </style>
+ </head>
+
+ <body>
+<div id=demo>
+	  <div id=demo1>
+		  <img src="http://www.lanrentuku.com/down/js/images/12460764740.jpg">
+		  <img src="http://www.lanrentuku.com/down/js/images/12460764741.jpg">
+		  <img src="http://www.lanrentuku.com/down/js/images/12460764742.jpg">
+		  <img src="http://www.lanrentuku.com/down/js/images/12460764743.jpg">
+		  <img src="http://www.lanrentuku.com/down/js/images/12460764744.jpg">
+	  </div>
+	  <div id=demo2></div>
+</div>
+   <script>
+   var speed=50,
+       demo=document.getElementById("demo"),
+	   demo1=document.getElementById("demo1"),
+	   demo2=document.getElementById("demo2");
+   demo2.innerHTML=demo1.innerHTML;
+   function Marquee(){
+	   if(demo2.offsetTop-demo.scrollTop<=0)
+			demo.scrollTop-=demo1.offsetHeight;
+	   else{
+			 demo.scrollTop++;
+	   }
+   }
+   var MyMar=setInterval(Marquee,speed);
+   demo.onmouseover=function() {clearInterval(MyMar)}
+   demo.onmouseout=function() {MyMar=setInterval(Marquee,speed)}
+   </script>
+ </body>
+</html>

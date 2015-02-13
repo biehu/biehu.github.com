@@ -1,0 +1,218 @@
+<html>  
+<head>  
+<title></title>  
+<script type="text/javascript" >  
+<!--   
+function inpFun()   
+{   
+    var obje=function(){};   
+    obje.names='arguments from hosting.';   
+    var rtnVal=window.showModalDialog("a.htm",obje,"help=no;status=no;resizable=yes;scroll=no;center=yes;edge=sunken");   
+    alert(rtnVal);   
+}   
+-->  
+</script>  
+<script type="text/javascript" language="javascript">  
+<!--   
+function dragAB()   
+{   
+    alert("你可以拖动我吗？")   
+}   
+window.alert = function(txt)   
+{   
+    var shield = document.createElement("DIV");   
+    shield.id = "shield";   
+    shield.style.position = "absolute";   
+    shield.style.left = "0px";   
+    shield.style.top = "0px";   
+    shield.style.width = "100%";   
+    shield.style.height = "100%";   
+    shield.style.background = "#6600cc";   
+    shield.style.textAlign = "center";   
+    shield.style.zIndex = "10000";   
+    shield.style.filter = "alpha(opacity=0)";   
+    var alertFram = document.createElement("DIV");   
+    alertFram.id="alertFram";   
+    alertFram.style.position = "absolute";   
+    alertFram.style.right = "50%";   
+    alertFram.style.bottom = "50%";   
+    alertFram.style.marginRight = "-125px";   
+    alertFram.style.marginBottom = "-75px";   
+      
+    alertFram.style.width = "250px";   
+    alertFram.style.height = "150px";   
+    alertFram.style.background = "#000";   
+    alertFram.style.textAlign = "center";   
+    alertFram.style.lineHeight = "150px";   
+    alertFram.style.zIndex = "10002";   
+    strHtml = "<ul style=\"list-style:none;margin:0px;padding:0px;width:100%\">\n";   
+    strHtml += "<li onmousedown=\"oMove(parentNode.parentNode);\" title=\"可移动提示框\" style=\"cursor:move;background:#002F9C;text-align:left;padding-left:5px;font-size:14px;font-weight:bold;color: #FFFFFF;height:25px;line-height:25px;border-left:1px solid #FFFFFF;border-top:1px solid #FFFFFF;border-right:1px solid #FFFFFF;\">可移动提示框</li>\n";   
+    strHtml += "<li style=\"background:#5A7EDC;text-align:center;font-size:12px;color: #FFFFFF;height:120px;line-height:120px;border-left:1px solid #FFFFFF;border-right:1px solid #FFFFFF;\">"+txt+"</li>\n";   
+    strHtml += "<li style=\"background:#002F9C;text-align:center;font-weight:bold;height:25px;line-height:25px; border-left:1px solid #FFFFFF;border-bottom:1px solid #FFFFFF;border-right:1px solid #FFFFFF;\"><input type=button value=' 确定 ' onclick=\"remove()\"></li>\n";   
+    strHtml += "</ul>\n";   
+    alertFram.innerHTML = strHtml;   
+    document.body.appendChild(alertFram);   
+    document.body.appendChild(shield);   
+    var c = 0;   
+    this.doAlpha = function()   
+    {   
+        if (c++ > 50){clearInterval(ad);return 0;}   
+        shield.style.filter = "alpha(opacity="+c+");";   
+    }   
+    this.remove=function()   
+    {   
+       shield.style.filter = "";   
+       shield.id = "";   
+       shield.style.position = "";   
+       shield.style.left = "";   
+       shield.style.top = "";   
+       shield.style.width = "";   
+       shield.style.height ="";   
+       shield.style.background = "";   
+       shield.style.textAlign = "";   
+       shield.style.zIndex = "";   
+       shield.style.filter = "";   
+       alertFram.innerHTML="";   
+       alertFram.id="";   
+       alertFram.style.position = "";   
+       alertFram.style.left = "";   
+       alertFram.style.top = "";   
+       alertFram.style.marginLeft = "";   
+       alertFram.style.marginTop = "";   
+       alertFram.style.width = "";   
+       alertFram.style.height = "";   
+       alertFram.style.background = "";   
+       alertFram.style.textAlign = "";   
+       alertFram.style.lineHeight = "";   
+       alertFram.style.zIndex = "";   
+    }   
+      
+    var ad = setInterval("doAlpha()",10);   
+    alertFram.focus();   
+    document.body.onselectstart = function(){return false;};   
+}   
+function oMove(obj)   
+{   
+    var otop,oleft;   
+    tag_1=true;   
+    otop = event.y - obj.offsetTop;   
+    oleft = event.x - obj.offsetLeft;   
+    obj.setCapture();   
+    obj.onmousemove = function()   
+    {   
+        if(tag_1)   
+        {   
+           obj.style.left = event.x - oleft;   
+           obj.style.top = event.y - otop;   
+        }   
+    }   
+    obj.onmouseup = function()   
+    {   
+       obj.onmouseup = null;   
+       obj.style.filter = null;   
+       tag_1=false;   
+       obj.releaseCapture();   
+    }   
+}   
+//-->  
+</script>  
+<script type="text/javascript" language="javascript">  
+<!--   
+//兼容IE,firefox                   
+function sAlert(txt)   
+{   
+    var eSrc=(document.all)?window.event.srcElement:arguments[1];   
+    var shield = document.createElement("DIV");   
+    shield.id = "shield";   
+    shield.style.position = "absolute";   
+    shield.style.left = "0px";   
+    shield.style.top = "0px";   
+    shield.style.width = "100%";   
+    shield.style.height = "100%"//document.body.scrollHeight+"px";   
+    shield.style.background = "#cc0066";   
+    shield.style.textAlign = "center";   
+    shield.style.zIndex = "770";   
+    shield.style.filter = "alpha(opacity=0)";   
+    shield.style.opacity = 0;   
+    var alertFram = document.createElement("DIV");   
+    alertFram.id="alertFram";   
+    alertFram.style.position = "absolute";   
+    alertFram.style.left = "50%";   
+    alertFram.style.top = "50%";   
+    alertFram.style.marginLeft = "-225px" ;   
+    alertFram.style.marginTop = -75+document.documentElement.scrollTop+"px";   
+    alertFram.style.width = "450px";   
+    alertFram.style.height = "150px";   
+    alertFram.style.background = "#ccc";   
+    alertFram.style.textAlign = "center";   
+    alertFram.style.lineHeight = "150px";   
+    alertFram.style.zIndex = "777";   
+    strHtml = "<ul style=\"list-style:none;margin:0px;padding:0px;width:100%\">\n";   
+    strHtml += "    <li style=\"background:#DD828D;text-align:left;padding-left:20px;font-size:14px;font-weight:bold;height:25px;line-height:25px;border:1px solid #F9CADE;\">Browser兼容提示框</li>\n";   
+    strHtml += "    <li style=\"background:#fff;text-align:center;font-size:12px;height:120px;line-height:120px;border-left:1px solid #F9CADE;border-right:1px solid #F9CADE;\">"+txt+"</li>\n";   
+    strHtml += "    <li style=\"background:#FDEEF4;text-align:center;font-weight:bold;height:25px;line-height:25px; border:1px solid #F9CADE;\"><input type=\"button\" value=\"确 定\" id=\"do_OK\" onclick=\"doOk();\"/></li>\n";   
+    strHtml += "</ul>\n";   
+    alertFram.innerHTML = strHtml;   
+    document.body.appendChild(alertFram);   
+    document.body.appendChild(shield);   
+    this.setOpacity = function(obj,opacity)   
+    {   
+        if(opacity>=1)opacityopacity=opacity/100;   
+        try   
+        {   
+            obj.style.opacity=opacity;   
+        }   
+        catch(e)   
+        {}   
+        try   
+        {   
+            if(obj.filters.length>0&&obj.filters("alpha"))   
+            {   
+                obj.filters("alpha").opacity=opacity*100;   
+            }   
+            else   
+            {   
+                obj.style.filter="alpha(opacity=\""+(opacity*100)+"\")";   
+            }   
+        }   
+        catch(e)   
+        {}   
+    }   
+    var c = 0;   
+    this.doAlpha = function()   
+    {   
+        if (++c > 20)   
+        {   
+            clearInterval(ad);   
+            return 0;   
+        }   
+        setOpacity(shield,c);   
+    }   
+    var ad = setInterval("doAlpha()",1);   
+    this.doOk = function()   
+    {   
+        //alertFram.style.display = "none";   
+        //shield.style.display = "none";   
+        document.body.removeChild(alertFram);   
+        document.body.removeChild(shield);   
+        eSrc.focus();   
+        document.body.onselectstart = function(){return true;}   
+        document.body.oncontextmenu = function(){return true;}   
+    }   
+    document.getElementById("do_OK").focus();   
+    eSrc.blur();   
+    document.body.onselectstart = function(){return false;}   
+    document.body.oncontextmenu = function(){return false;}   
+}   
+-->  
+</script>  
+</head>  
+<body>  
+<p>  
+<input type="button" name="cry" value="运行可拖动提示框" onclick="dragAB();"/>  
+</p>  
+<p>  
+<input type="button" name="btn_1" value="兼容IE,firefox提示框" onclick="sAlert('兼容IE,firefox')" />  
+</p>  
+</body>  
+</html>  
