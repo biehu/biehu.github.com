@@ -190,6 +190,16 @@ body,
 }
 .cover .start-btn {
 	z-index: 11000;
+	
+}
+.cover .start-btn img:nth-child(2) {
+	display: none;
+}
+.cover .start-btn:hover img:nth-child(1) {
+	display: none;
+}
+.cover .start-btn:hover img:nth-child(2) {
+	display: block;
 }
 .cover .start {
 	display: none;
