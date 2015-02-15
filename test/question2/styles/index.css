@@ -61,7 +61,7 @@ body,
 }
 .result {
     font-size: 1.2rem;
-	line-height: 1.6rem;
+	line-height: 1.3rem;
 }
 .page {
 	font-size: 1.8rem;
@@ -124,7 +124,7 @@ body,
 }
 .result-main {
     position: absolute;
-    bottom: 20px;
+    bottom: 0;
     width: 100%;
 }
 .share {
