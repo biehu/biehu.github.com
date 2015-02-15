@@ -122,9 +122,6 @@ body,
     background: url(../images/result-bg.jpg);
     background-size: cover;
 }
-.result .content {
-    margin-top: 10px;
-}
 .result-main {
     position: absolute;
     bottom: 20px;
