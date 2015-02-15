@@ -84,7 +84,7 @@ body,
     left: 0;
     top: 0;
     -webkit-transform: translate(0px, 0px);
-    -webkit-transition: -webkit-transform 0.4s;
+    -webkit-transition: -webkit-transform 10s;
 }
 .down {
     -webkit-transform: translate(0px, 100%);
@@ -195,9 +195,11 @@ body,
 .cover .start-btn img:nth-child(2) {
 	display: none;
 }
+.cover .start-btn.on img:nth-child(1),
 .cover .start-btn:hover img:nth-child(1) {
 	display: none;
 }
+.cover .start-btn.on img:nth-child(2),
 .cover .start-btn:hover img:nth-child(2) {
 	display: block;
 }

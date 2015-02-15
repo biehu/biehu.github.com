@@ -93,13 +93,13 @@ var  page = function () {
    var bindPageUp = function () {
 
        $(".answer li, .start-btn").bind('touchstart click', function(e){
+		   $('.start-btn').addClass('on');
 		   if (index > 0) {
 			   score[index] = {};
 			   score[index].score = $(this).attr('data-score');
 			   score[index].answer = $(this).find('em').html();
 		   }
 		   
-		   console.log(index, allNum);
 		   if (index == (allNum - 2)) {
 			   send();
 		   }
