@@ -1,3 +1,0 @@
-//汽车汽配	汽车 、汽车用品、汽车配件、维修保养、摩托车
-//通栏 760x90
-document.write('<iframe marginheight="0" marginwidth="0" frameborder="0" width="760" height="90" scrolling="no" src="http://hcafp.allyes.com/main/adfshow?user=hcafp|NEWS_FIN_BANNER|qiche&db=hcafp&border=0&local=yes"><noscript><a href="http://hcafp.allyes.com/main/adfclick?user=hcafp|NEWS_FIN_BANNER|qiche&db=hcafp"><img src="http://hcafp.allyes.com/main/adfshow?user=hcafp|NEWS_FIN_BANNER|qiche&db=hcafp" width="760" height="90" border="0"></a></noscript></iframe>');

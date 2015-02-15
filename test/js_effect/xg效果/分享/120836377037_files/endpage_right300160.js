@@ -1,2 +1,0 @@
-//所有终极页右侧三屏banner 300x160
-document.write('<iframe marginheight="0" marginwidth="0" frameborder="0" width="300" height="160" scrolling="no" src="http://hcafp.allyes.com/main/adfshow?user=hcafp|news_fin_banner3|banner3&db=hcafp&border=0&local=yes"><noscript><a href="http://hcafp.allyes.com/main/adfclick?user=hcafp|news_fin_banner3|banner3&db=hcafp"><img src="http://hcafp.allyes.com/main/adfshow?user=hcafp|news_fin_banner3|banner3&db=hcafp" width="300" height="160" border="0"></a></noscript></iframe>');

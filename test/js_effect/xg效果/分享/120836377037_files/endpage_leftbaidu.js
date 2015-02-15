@@ -1,2 +1,0 @@
-document.write('<iframe marginheight="0" marginwidth="0" frameborder="0" width="580" height="100" scrolling="no" src="http://hcafp.allyes.com/main/adfshow?user=hcafp|news_fin_banner5|news_fin_banner5&db=hcafp&border=0&local=yes"><noscript><a href="http://hcafp.allyes.com/main/adfclick?user=hcafp|news_fin_banner5|news_fin_banner5&db=hcafp"><img src="http://hcafp.allyes.com/main/adfshow?user=hcafp|news_fin_banner5|news_fin_banner5&db=hcafp" width="580" height="100" border="0"></a></noscript></iframe>');
-			  
