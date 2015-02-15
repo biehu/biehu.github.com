@@ -308,7 +308,7 @@ body,
 .cover .cover-bottom {
 	position: absolute;
 	top: auto;
-	bottom: 0;
+	bottom: -30px;
 	width: 100%;
 }
 .loading {
