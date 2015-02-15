@@ -224,8 +224,8 @@ body,
 .cover .hand {
 	width: 50px;
 	top: 71%;
-left: 50%;
-margin-left: -25px;
+	left: 50%;
+	margin-left: -25px;
 	-webkit-animation-name: hvr-wobble-to-top-right;
   animation-name: hvr-wobble-to-top-right;
   -webkit-animation-duration: 1s;
