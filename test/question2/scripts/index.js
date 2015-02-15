@@ -252,7 +252,7 @@ var loading = (function () {
                 "http://biehu.me/test/question2/images/bg.jpg",
                 "http://biehu.me/test/question2/images/cover-title2.png",
                 "http://biehu.me/test/question2/images/cover-bg.jpg",
-                "http://biehu.me/test/question2/images/cloud.png"
+                "http://biehu.me/test/question2/images/cloud.jpg"
             ];
             var index = 0;
             var len = pics.length;
