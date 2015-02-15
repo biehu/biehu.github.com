@@ -189,9 +189,6 @@ body,
 .cover .start-btn {
 	z-index: 11000;
 }
-.cover .cover-title {
-	top: 31.3%;
-}
 .cover .start {
 	display: none;
 }
@@ -210,8 +207,9 @@ body,
 }
 .cover .hand {
 	width: 121px;
-	top: 60.2%;
+	top: 51.2%;
 	left: 50%;
+	margin-left: -60px;
 	-webkit-animation-name: hvr-wobble-to-top-right;
   animation-name: hvr-wobble-to-top-right;
   -webkit-animation-duration: 1s;
@@ -303,6 +301,12 @@ body,
     transform: translateX(-1px) rotate(0);
   }
 }
+.cover .cover-bottom {
+	position: absolute;
+	top: auto;
+	bottom: 0;
+	width: 100%;
+}
 .loading {
 	position: absolute;
 	z-index: 100;
@@ -339,5 +343,23 @@ body,
 
     100% {
         -webkit-transform: rotate(-360deg)
+    }
+}
+
+.one-cloud {
+	  -webkit-transform: translate(-40%, 0);
+	  -webkit-animation-name: scroll;
+	  -webkit-animation-duration: 10s;
+	  -webkit-animation-timing-function:linear;
+	  -webkit-animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes scroll {
+    0% {
+        -webkit-transform: translate(-40%, 0);
+    }
+
+    100% {
+        -webkit-transform: translate(100%, 0);
     }
 }

@@ -166,7 +166,7 @@ var cover = function () {
 			last = { x: window.innerWidth / 2, y: this.height * window.innerWidth / this.width / 2 };
 			ctx.drawImage(img, 0, 0, window.innerWidth, this.height * window.innerWidth / this.width);
 		};
-		img.src = './images/cloud.png';
+		img.src = './images/cloud.jpg';
 	};
 
 	var getTransparentPercent = function (ctx, width, height) {
