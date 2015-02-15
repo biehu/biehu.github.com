@@ -272,8 +272,8 @@ var drawCanvas = function () {
     }
     
     function pos(event){
-        var x = event.touches[0].pageX + 70;
-        var y = event.touches[0].pageY + 200;
+        var x = event.touches[0].pageX + 260;
+        var y = event.touches[0].pageY + 270;
         
 
         return {
