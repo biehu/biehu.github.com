@@ -5,18 +5,22 @@ var say = function (p, text) {
 	var page = $('.p' + p);
     var arrow = page.find('.end-arrow');
     var textWrap = page.find('.txt');
+	var wrap = page.find('.say-text-wrap');
 
     var sayEnd = function () {
         arrow.fadeIn();
-
+		wrap.addClass('end');
     };
+
+	var clear = function () {
+		arrow.hide();
+	};
     
     var startEnd = function () {
         $('#txt' + p).addClass('txt').html(text);
-        sayEnd();
-        if (arrow.is(':visible')) {
-            page.find('.say-text-wrap').fadeOut();
-        }
+        arrow.show();
+        page.find('.say-text-wrap').fadeOut();
+		clear();
     };
     
     textWrap.typed({
@@ -30,7 +34,7 @@ var say = function (p, text) {
 	    showCursor: false,
         resetCallback: startEnd
     });
-    $('body').on('touchstart', function () {
+    $('body').on('click', function () {
         textWrap.typed('reset');
     });
 };
@@ -117,6 +121,7 @@ var page = function () {
     
    var bindPageUp = function () {
 	   var setTime;
+	   var isSelected;
        $(".next").bind('click', function(e){
            e.preventDefault();
            if (index == (allNum - 1)) {
@@ -126,12 +131,25 @@ var page = function () {
 			   isAnimate = false;
            }
            
-		   $(this).parents('.page').find('a').removeClass('active');
-		   $(this).addClass('active');
+		   // 球队选择
+		   if ($(this).parents('.page').length > 0) { 
+			   if ($(this).parents('.page').find('.say-text-wrap').is('.end') && !isSelected) {
+					$(this).parents('.page').find('a').removeClass('active');
+					$(this).addClass('active');
+					isSelected = true;
+			   }
+			   else {
+					e.stopPropagation();
+					return;
+			   }
+				
+		   }
+		   
+
 		   clearTimeout(setTime);
 		   setTime = setTimeout(function () {
 				setPage(0, ++index);
-		   }, 3000);
+		   }, Number($(this).attr('data-delay')));
            
        });
    };
@@ -150,7 +168,7 @@ var page = function () {
 var loading = function () {
 //    var pics = ["http://www.biehu.me/test/nba/images/ball-wrap.png", "http://www.biehu.me/test/nba/images/ball.png", "http://www.biehu.me/test/nba/images/loading.png", "http://www.biehu.me/test/nba/images/say.png", "http://www.biehu.me/test/nba/images/say-arrow.png", "http://www.biehu.me/test/nba/images/p2-top.png", "http://www.biehu.me/test/nba/images/p2-middle.png", "http://www.biehu.me/test/nba/images/p2-bottom.png", "http://www.biehu.me/test/nba/images/pe2.png", "http://www.biehu.me/test/nba/images/pe3.png", "http://www.biehu.me/test/nba/images/pe4.png", "http://www.biehu.me/test/nba/images/p1.jpg"];
 
-	var pics = ['http://www.biehu.me/test/nba/images/pe4.png'];
+	var pics = ['http://www.biehu.me/test/nba/images/ball-wrap.png'];
     var index = 0;
     var len = pics.length;
     
@@ -215,7 +233,7 @@ var drawCanvas = function () {
 			canvas.width = this.width;
 			board.drawImage(this, 0, 0, this.width, this.height);
 		};
-		cup.src = 'http://biehu.me/test/nba1/nba/images/cup-only.png';
+		cup.src = 'http://biehu.me/test/nba/images/cup-pic.png';
 	};
     
 
