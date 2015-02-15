@@ -92,7 +92,7 @@ var  page = function () {
     
    var bindPageUp = function () {
 
-       $(".answer li, .start-btn img").bind('touchstart click', function(e){
+       $(".answer li, .start-btn").bind('touchstart click', function(e){
 		   if (index > 0) {
 			   score[index] = {};
 			   score[index].score = $(this).attr('data-score');
