@@ -1,0 +1,177 @@
+* {
+    margin:0;
+    padding:0;
+}
+
+ul {
+    list-style:none;
+}
+
+img {
+    vertical-align:bottom;
+}
+
+a img {
+    border:none;
+}
+
+a {
+    text-decoration:none;
+}
+
+.clear {
+    clear:both;
+}
+
+/*
+ * common
+ */
+
+.container {
+    width: 20000px;
+    height: 716px;
+    overflow: hidden;
+    font-family: "微软雅黑";
+}
+
+.page {
+    position: relative;
+    float: left;
+    height: 715px;
+}
+
+/*
+ * cover
+ */
+
+.cover {
+    width: 477px;
+    background: url(../images/cover.jpg) no-repeat;
+    color: #7e6515;
+    font-size: 13px;
+    line-height: 22px;
+}
+
+.cover ul {
+    overflow: hidden;
+    padding: 504px 0 0 15px;
+}
+
+.cover ul li {
+   float: left; 
+   padding-bottom: 25px;
+   cursor: pointer;
+}
+
+.cover ul li img {
+    opacity: .5;
+}
+
+.cover ul li.on img,
+.cover ul li:hover img {
+    opacity: 1;
+}
+
+.cover ul li.on,
+.cover ul li:hover {
+    background: url(../images/point.png) no-repeat center 90px;
+}
+
+.cover p {
+    padding: 0 15px;
+}
+
+/*
+ * page
+ */
+
+.page1 {
+    width: 1440px;
+}
+
+.code {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.clothes {
+    position: absolute;
+    top: 359px;
+    left: 600px;
+    width: 370px;
+    height: 370px;
+}
+
+.clothes p {
+    position: absolute;
+}
+
+.clothes1 {
+    width: 222px;
+    color: #fff;
+    font-size: 13px;
+    line-height: 22px;
+}
+
+.clothes-other {
+    color: #000;
+    font-size: 12px;
+}
+
+.clothes1 strong {
+    display: block;
+    padding-bottom: 5px;
+    font-weight: normal;
+    font-size: 20px;
+}
+
+.clothes2 {
+    top: 229px;
+    left: 40px;
+}
+
+.clothes3 {
+    top: 330px;
+    left: 10px;
+}
+
+.clothes4 {
+    top: 293px;
+    left: -162px;
+}
+
+.jewelry {
+    color: #aaaaaa;
+    font-size: 12px;
+}
+
+.jewelry p {
+    position: absolute;
+}
+
+.jewelry-other {
+    color: #000;
+}
+
+.jewelry1 {
+    top: 152px;
+    left: 922px;
+}
+
+.jewelry2 {
+    top: 461px;
+    left: 1091px;
+}
+
+.jewelry3 {
+    top: 671px;
+    left: 1131px;
+}
+
+.jewelry4 {
+    top: 671px;
+    left: 831px;
+}
+
+
