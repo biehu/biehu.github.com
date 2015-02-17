@@ -28,8 +28,7 @@ a {
  */
 
 .container {
-    width: 20000px;
-    height: 716px;
+    height: 715px;
     overflow: hidden;
     font-family: "微软雅黑";
 }
@@ -214,4 +213,183 @@ a {
     left: 751px;
 }
 
+/*************************************/
+
+.page3  .clothes {
+    position: absolute;
+    top: 340px;
+    left: 480px;
+    width: 370px;
+    height: 370px;
+}
+
+.page3 .clothes2{
+    top: 280px;
+    left: 54px; 
+}
+
+
+.page3 .clothes3 {
+    top: 346px;
+    left: -21px;
+}
+
+.page3 .clothes4 {
+    top: 320px;
+    left: -160px;
+}
+
+.page3 .jewelry1 {
+    top: 114px;
+    left: 803px;
+}
+
+.page3 .jewelry2 {
+    top: 465px;
+    left: 903px;
+}
+
+.page3 .jewelry3 {
+    top: 679px;
+    left: 1045px;
+}
+
+.page3 .jewelry4 {
+    top: 671px;
+    left: 751px;
+}
+
+/*************************************/
+.page4  .clothes {
+    position: absolute;
+    top: 328px;
+    left: 502px;
+    width: 370px;
+    height: 370px;
+}
+
+.page4 .clothes2{
+    top: 280px;
+    left: 51px; 
+    text-align:center;
+}
+
+
+.page4 .clothes3 {
+    top: 360px;
+    left: -46px;
+}
+
+.page4 .clothes4 {
+    top: 320px;
+    left: -213px;
+}
+
+.page4 .jewelry1 {
+    top: 114px;
+    left: 822px;
+}
+
+.page4 .jewelry2 {
+    top: 329px;
+    left: 1120px;
+}
+
+.page4 .jewelry3 {
+    top: 679px;
+    left: 1045px;
+}
+
+.page4 .jewelry4 {
+    top: 671px;
+    left: 751px;
+}
+
+
+.page5 .clothes {
+    top: 329px;
+    left: 495px;
+}
+
+.page5 .clothes2 {
+    top: 171px;
+    left: -2px;
+    color: #898888;
+}
+
+.page5 .clothes3 {
+    top: 300px;
+    left: 50px;
+}
+
+.page5 .clothes4 {
+    top: 363px;
+    left: -52px;
+}
+
+.page5 .jewelry1 {
+    top: 62px;
+    left: 729px;
+}
+
+.page5 .jewelry2 {
+    top: 221px;
+    left: 861px;
+    text-align: right;
+}
+
+.page5 .jewelry3 {
+    top: 671px;
+left: 1051px;
+}
+
+.page5 .jewelry4 {
+    top: 671px;
+    left: 761px;
+}
+
+/*
+ * 往期回顾
+ */
+
+.history {
+    width: 423px;
+    overflow: hidden;
+    padding-top: 6px;
+    background: #444141;
+}
+
+.history-link {
+    text-align: center;
+}
+
+/* 链接颜色 */
+
+.clothes{ width:222px!important; }
+.page1 .jewelry1 a{ color:#aaa;}
+.page1 .jewelry2 a{ color:#aaa;}
+.page1 .jewelry3 a{ color:#000;}
+.page1 .jewelry4 a{ color:#000;}
+
+
+
+.page2 .jewelry1 a{ color:#aaa;}
+.page2 .jewelry2 a{ color:#aaa;}
+.page2 .jewelry3 a{ color:#000;}
+.page2 .jewelry4 a{ color:#000;}
+
+.page3 .jewelry1 a{ color:#aaa;}
+.page3 .jewelry2 a{ color:#aaa;}
+.page3 .jewelry3 a{ color:#000;}
+.page3 .jewelry4 a{ color:#000;}
+
+.page4 .jewelry1 a{ color:#aaa;}
+.page4 .jewelry2 a{ color:#aaa;}
+.page4 .jewelry3 a{ color:#000;}
+.page4 .jewelry4 a{ color:#000;}
+
+.page5 .jewelry1 a{ color:#aaa;}
+.page5 .jewelry2 a{ color:#aaa;}
+.page5 .jewelry3 a{ color:#000;}
+.page5 .jewelry4 a{ color:#000;}
 
