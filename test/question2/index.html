@@ -116,51 +116,69 @@
                 </div>
 				<!-- 结果 -->
 				<div class="page page8 down">
-					<div class="result result1">
-						<div class="result-main">
-							<img src="images/result-title1.png" />
-							<div class="content">
-								<p>是不是觉得自己的肌肤状况正在下降？虽然目前看来“并无大碍”，但黯沉、敏感等问题已初露端倪，肌肤抵御空气污染等外界影响已有点“力不从心”。现在的你不能对此“不闻不问”，而是需要在每日护肤时提高清洁意识，同时更加注重肌肤的日常防护工作。</p>
-								<div class="share">
-									<img class="share-left" src="images/cosmentic.png" />
-									<p class="share-right">
-									<img class="share-btn" src="images/share-btn.png" /><br />
-									分享结果至朋友圈，截图给健康之友官方微信，留下你的姓名和联系方式，20份<b>雅漾日间隔离乳</b>等你赢！
-									</p>
-								</div>
+					<div class="page-result page-result-1">
+						<div class="result-top result-text">
+							<img src="images/result-text-1.png" />
+						</div>
+						<div class="result-top result-text-line">
+							<img src="images/result-text-line-1.png" />
+						</div>
+						<div class="result-bottom result-logo">
+							<img src="images/result-logo.png" />
+						</div>
+						<div class="result-bottom result-btn">
+							<img src="images/result-btn.png" />
+						</div>
+						<div class="result-detail">
+							<div class="result-mask"></div>
+							<div class="result-win">
+								<div class="result-win-close"></div>
+								<div class="result-share share-btn"></div>
 							</div>
 						</div>
-                </div>
-				<div class="result result2 hide">
-                    <div class="result-main">
-                        <img src="images/result-title2.png" />
-                        <div class="content">
-                            <p>你的肌肤受到城市污染影像已较要严重，压力指数正在不断上升，肌肤敏感、痘痘频发等现象的背后是污染对造成的肌肤损伤，看似各不相关的小问题正是肌肤细胞在抱怨，现在的你应该施以援手：在确保每日防护、清洁功课做足的同时，增加对肌肤的深层修护，帮助肌肤降低城市压力。</p>
-                            <div class="share">
-                                <img class="share-left" src="images/cosmentic.png" />
-                                <p class="share-right">
-                                <img class="share-btn" src="images/share-btn.png" /><br />
-                                分享结果至朋友圈，截图给健康之友官方微信，留下你的姓名和联系方式，20份<b>雅漾日间隔离乳</b>等你赢！
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-				<div class="result result3 hide">
-                    <div class="result-main">
-                        <img src="images/result-title3.png" />
-                        <div class="content">
-                            <p>有没有发现自己许久没有见到肌肤通透无瑕的样子了？城市污染已严重影响了肌肤健康，甚至浓重彩妆也难以掩饰。毛孔堵塞、敏感发炎、失去弹性等问题已经出现，再不行动起来，当心不堪重负的肌肤“垮塌”下去！怎么办？除去多加重视日常隔离、肌肤深度清洁，同时也要对肌肤修护格外花费心思。让这些城市压力肌现象还没有造成更糟糕影响时及时制止。</p>
-                            <div class="share">
-                                <img class="share-left" src="images/cosmentic.png" />
-                                <p class="share-right">
-                                <img class="share-btn" src="images/share-btn.png" /><br />
-                                分享结果至朋友圈，截图给健康之友官方微信，留下你的姓名和联系方式，20份<b>雅漾日间隔离乳</b>等你赢！
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+					</div>
+				<div class="page-result page-result-2 hide">
+						<div class="result-top result-text">
+							<img src="images/result-text-2.png" />
+						</div>
+						<div class="result-top result-text-line">
+							<img src="images/result-text-line-2.png" />
+						</div>
+						<div class="result-bottom result-logo">
+							<img src="images/result-logo.png" />
+						</div>
+						<div class="result-bottom result-btn">
+							<img src="images/result-btn.png" />
+						</div>
+						<div class="result-detail">
+							<div class="result-mask"></div>
+							<div class="result-win">
+								<div class="result-win-close"></div>
+								<div class="result-share share-btn"></div>
+							</div>
+						</div>
+					</div>
+				<div class="page-result page-result-3 hide">
+						<div class="result-top result-text">
+							<img src="images/result-text-3.png" />
+						</div>
+						<div class="result-top result-text-line">
+							<img src="images/result-text-line-3.png" />
+						</div>
+						<div class="result-bottom result-logo">
+							<img src="images/result-logo.png" />
+						</div>
+						<div class="result-bottom result-btn">
+							<img src="images/result-btn.png" />
+						</div>
+						<div class="result-detail">
+							<div class="result-mask"></div>
+							<div class="result-win">
+								<div class="result-win-close"></div>
+								<div class="result-share share-btn"></div>
+							</div>
+						</div>
+					</div>
 				<div class="share-prompt">
                     </div>
                 
@@ -198,6 +216,22 @@
             });
         }, false);  
         function onShareComplete(res) {}
+
+		/*
+			结果页弹出层
+		*/
+
+		$('.result-btn img').click(function () {
+			var root = $(this).parents('.page-result');
+			root.find('.result-text').hide();
+			root.find('.result-detail').fadeIn();
+		});
+
+		$('.result-win-close').click(function () {
+			var root = $(this).parents('.page-result');
+			root.find('.result-text').show();
+			root.find('.result-detail').fadeOut();
+		});
     </script>
    </body>
 </html>  
