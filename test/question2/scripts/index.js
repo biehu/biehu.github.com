@@ -117,7 +117,7 @@ var  page = function () {
             $.post("admin/insert.php", data, function () {
                 
             });
-			$('.result').hide();
+			$('.page-result').hide();
 			$('.result' + data.result).show();
 
        };
