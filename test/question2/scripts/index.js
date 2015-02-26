@@ -331,13 +331,15 @@ var music = function () {
 
 	var resultWin = function () {
 
-		$('.result-btn img').on('touchstart', function () {
+		$('.result-btn img').on('touchstart click', function () {
+			alert(1);
 			var root = $(this).parents('.page-result');
 			root.find('.result-text').hide();
 			root.find('.result-detail').fadeIn();
 		});
 
-		$('.result-win-close').on('touchstart', function () {
+		$('.result-win-close').on('touchstart click', function () {
+			alert(2);
 			var root = $(this).parents('.page-result');
 			root.find('.result-text').show();
 			root.find('.result-detail').fadeOut();
