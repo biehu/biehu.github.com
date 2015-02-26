@@ -325,6 +325,26 @@ var music = function () {
 	};
 
 
+	/*
+		结果页弹出层
+	*/
+
+	var resultWin = function () {
+
+		$('.result-btn img').click(function () {
+			var root = $(this).parents('.page-result');
+			root.find('.result-text').hide();
+			root.find('.result-detail').fadeIn();
+		});
+
+		$('.result-win-close').click(function () {
+			var root = $(this).parents('.page-result');
+			root.find('.result-text').show();
+			root.find('.result-detail').fadeOut();
+		});
+	};
+
+
 $(function () {
 	loading();
     page();
@@ -333,4 +353,5 @@ $(function () {
 	setHeight();
 	iosAutoPlay();
 	music();
+	resultWin();
 });
