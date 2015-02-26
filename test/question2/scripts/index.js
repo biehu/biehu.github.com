@@ -252,6 +252,9 @@ var loading = (function () {
                 "http://biehu.me/test/question2/images/bg.jpg",
                 "http://biehu.me/test/question2/images/cover-title2.png",
                 "http://biehu.me/test/question2/images/cover-bg.jpg",
+				"http://biehu.me/test/question2/images/result-win-1.png",
+				"http://biehu.me/test/question2/images/result-win-2.png",
+				"http://biehu.me/test/question2/images/result-win-3.png",
                 "http://biehu.me/test/question2/images/cloud.jpg"
             ];
             var index = 0;
@@ -332,14 +335,12 @@ var music = function () {
 	var resultWin = function () {
 
 		$('.result-btn img').on('touchstart click', function () {
-			alert(1);
 			var root = $(this).parents('.page-result');
 			root.find('.result-text').hide();
 			root.find('.result-detail').fadeIn();
 		});
 
 		$('.result-win-close').on('touchstart click', function () {
-			alert(2);
 			var root = $(this).parents('.page-result');
 			root.find('.result-text').show();
 			root.find('.result-detail').fadeOut();
