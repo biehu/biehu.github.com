@@ -377,7 +377,7 @@ body,
 }
 
 /*
-	ÐÂ½á¹ûÒ³
+	ï¿½Â½ï¿½ï¿½Ò³
 */
 
 .page-result,
@@ -408,19 +408,29 @@ body,
 	position: absolute;
 	top: 0;
 	left: 0;
+    text-align: center;
+}
+
+.result-top img {
+    width: 90%;
 }
 
 .result-bottom img {
-	width: 80%;
+	width: 92%;
 }
 
 .result-product img {
-	width: 70%;
+	width: 80%;
 	margin-left: 20px;
 }
 
 .result-logo {
-	bottom: 20px;
+	bottom: 96px;
+    left: -17%;
+}
+
+.result-logo img {
+	width: 50%;
 }
 
 .result-mask {
