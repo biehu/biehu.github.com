@@ -416,6 +416,11 @@ body,
 
 .result-product img {
 	width: 70%;
+	margin-left: 20px;
+}
+
+.result-logo {
+	bottom: 20px;
 }
 
 .result-mask {
