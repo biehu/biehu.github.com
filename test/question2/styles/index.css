@@ -400,6 +400,10 @@ body,
 	text-align: right;
 }
 
+.result-product {
+	text-align: left;
+}
+
 .result-top {
 	position: absolute;
 	top: 0;
@@ -408,6 +412,10 @@ body,
 
 .result-bottom img {
 	width: 80%;
+}
+
+.result-product img {
+	width: 70%;
 }
 
 .result-mask {
