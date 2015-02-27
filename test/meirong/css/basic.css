@@ -37,7 +37,16 @@ h2.title{position:absolute; font-weight: normal; font-size: 32px; color: #000000
 .star img{ display: inline; float: left;  margin-right: 7px;}
 .ping_1{ position: absolute; }
 .ping_2{ position: absolute; }
-.tips_1{color: #000000; font-size: 15px; line-height: 25px; padding: 10px 0 0 30px; position: absolute; width: 145px; height: 60px; background: url(../img/tipsBg_1.png) 0 0 no-repeat;}
+.tips_1{
+	color: #000000;
+	font-size: 15px;
+	line-height: 25px;
+	padding: 10px 0 0 17px;
+	position: absolute;
+	width: 183px;
+	height: 60px;
+	background: url(../img/tipsBg_1.png) 0 0 no-repeat;
+}
 .tips_2{color: #000000; font-size: 15px; line-height: 25px; padding: 10px 0 0 30px; position: absolute; width: 145px; height: 60px; background: url(../img/tipsBg_1.png) 0 0 no-repeat;}
 
 /*part_1*/
@@ -51,7 +60,10 @@ h2.title{position:absolute; font-weight: normal; font-size: 32px; color: #000000
 .part_1 .tuijian{top: 200px; left: 985px;}
 .part_1 .ping_1{left: 60px; top: 215px;}
 .part_1 .ping_2{left: 695px; top: 170px;}
-.part_1 .tips_1{left: 950px; top: 345px; }
+.part_1 .tips_1{
+	left: 954px;
+	top: 345px;
+}
 
 /*part_2*/
 .part_2 div.num{right: -40px; top:5px;}
@@ -105,7 +117,7 @@ h2.title{position:absolute; font-weight: normal; font-size: 32px; color: #000000
 .part_5 .titleIntro{top: 35px; left: 790px;}
 .part_5 .tuijian{top: 190px; right: 30px;}
 .part_5 .ping_1{left: 25px; top: 245px;}
-.part_5 .ping_2{left: 725px; top: 100px;}
+.part_5 .ping_2{left: 705px; top: 126px;}
 .part_5 .tips_1{left: 585px; top: 275px; background: url(../img/tipsBg_4.png) 0 0 no-repeat; width: 170px; padding: 25px 20px 0 0px; height: 65px; text-align: center;}
 .part_5 .tips_2{right: -15px; top: 290px; background: url(../img/tipsBg_5.png) 0 0 no-repeat; width: 190px; padding: 30px 0 0 10px; height: 65px; text-align: center;}
 
@@ -141,9 +153,6 @@ h2.title{position:absolute; font-weight: normal; font-size: 32px; color: #000000
 .bot .team ul{display: inline; float: left; padding:30px 0 0 20px; }
 .bot .team ul li{ display: inline; float: left; font-size: 13px; color: #373737; margin-right: 20px;}
 
-
-
-
-
-
-
+.cSlide a:hover img {
+	margin-top: 10px;
+}
