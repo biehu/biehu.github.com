@@ -388,7 +388,7 @@ body,
 }
 
 .page-result {
-	background: url(../images/result-1.jpg) no-repeat;
+	background: #fff url(../images/result-1.jpg) no-repeat;
 	background-size: 100%;
 }
 
