@@ -1,0 +1,506 @@
+* {
+    margin:0;
+    padding:0;
+}
+
+ul {
+    list-style:none;
+}
+
+img {
+    vertical-align:bottom;
+}
+
+a img {
+    border:none;
+}
+
+a {
+    text-decoration:none;
+}
+
+.clear {
+    clear:both;
+}
+.header {
+    height:506px;
+    background:url(../images/header.jpg) center top no-repeat;
+    text-align: center;
+    color: #fff;
+    font-family: "微软雅黑";
+}
+
+.header strong {
+    display: block;
+    padding-top: 426px;
+    font-weight: normal;
+    font-size: 57px;
+    
+}
+
+.header .sub-text {
+	color: #57899f;
+    font-size: 14px;
+    line-height: 21px;
+}
+
+.nav{
+    position: relative;
+    z-index: 10000;
+    background-color:#9cdaf7;
+    width: 100%;
+    height:112px;
+}
+.section1{
+    height:627px;
+    background:url(../images/section1.jpg) center top no-repeat;
+}
+.section2{
+    overflow: hidden;
+    background:url(../images/section2.jpg) center top repeat-y;
+}
+
+.nav ul {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.nav li {
+    float: left;
+    margin: 0 29px;
+}
+
+.nav li a {
+    display: block;
+    width: 103px;
+    height: 112px;
+    background: url(../images/nav1.jpg) no-repeat;
+    text-align: center;
+}
+
+.nav li a i {
+   display: none;
+   position: relative;
+   top: 80px;
+   width: 81px;
+   height: 55px;
+   background: url(../images/hd.png) no-repeat;
+}
+
+.nav li a.on,
+.nav li a:hover {
+    background-image: url(../images/nav2.jpg);
+}
+
+.nav li a.on i,
+.nav li a:hover i {
+    display: inline-block;
+}
+
+.nav li .nav1 {
+    background-position: -65px;
+}
+
+.nav li .nav2 {
+    background-position: -224px;
+}
+
+
+.nav li .nav3 {
+    background-position: -376px;
+}
+
+
+.nav li .nav4 {
+    background-position: -528px;
+}
+
+
+.nav li .nav5 {
+    background-position: -680px;
+}
+
+
+.nav li .nav6 {
+    background-position: -832px;
+}
+
+.inner {
+    width: 1000px;
+    margin:0 auto;
+}
+
+.section1-left,
+.section1-right {
+    float: left;
+}
+
+.section1-left li {
+    width: 274px;
+    height: 298px;
+    margin: 0 2px 2px 0;
+}
+
+.question i {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.question .title {
+	text-align: center;
+    color: #fff;
+    font-size: 25px;
+    line-height: 30px;
+}
+
+.section1 {
+    padding-top: 30px;
+}
+
+.section1-left .question1 {
+    background-color: #9cdaf7;
+    background-position-y:0;
+}
+
+.section1-left .question2 {
+    background-color: #ffed97;
+    color: #cc2337;
+}
+
+.section1-left .question2 .title {
+	padding-top: 52px;
+}
+
+.section1-left .question3 {
+    background-color: #e0e0e0;
+    background-position-y:bottom;
+}
+
+.section1-product-pic {
+	position: absolute;
+	top: 32px;
+	left: 140px;
+}
+
+.section1-product-bg {
+	margin-right: 1px;
+}
+
+.section1-product {
+	position: relative;
+	margin-bottom: 1px;
+}
+
+.question2 .title,
+.question3 .title {
+    color: #cc2337;
+}
+
+.wrap {
+    font-family: "微软雅黑";
+}
+
+.section1-right {
+    width: 724px;
+}
+
+.section1-text {
+    height: 97px;
+    padding: 10px 15px 0;
+    background: #fcc4cb;
+}
+
+.section3-text,
+.section2-text,
+.section1-text {
+    color: #57899f;
+    font-size: 15px;
+    line-height: 22px;
+}
+
+.section2-left-text {
+    color: #000;
+}
+
+
+.mark {
+    display: inline-block;
+    width: 22px;
+    height: 20px;
+}
+
+.mark-start {
+    display: block;
+    margin-bottom: 5px;
+    background: url(../images/blue-mark-start.png) no-repeat;
+}
+
+.mark-end {
+    position: relative;
+    top: 11px;
+    background: url(../images/blue-mark-end.png) no-repeat;
+}
+
+.section2 .inner {
+    position: relative;
+    width: 1001px;
+    height: 520px;
+}
+
+.section2-left,
+.section2-right {
+    position: absolute;
+    width: 501px;
+}
+
+.section2-left:hover,
+.section2-right:hover {
+    width: 100%;
+    z-index: 1000;
+}
+
+.section2-right {
+    left: 500px;
+}
+
+.section2-right:hover {
+    left: 0;
+}
+
+.section2-product {
+	position: relative;
+    text-align: left;
+}
+
+.section2-product-pic {
+	position: absolute;
+	top: 130px;
+	left: 305px;
+}
+
+.section2-product-bg {
+	position: relative;
+}
+
+.section2-left {
+    background: #9cdaf7;
+}
+
+.section2-right {
+    background: #fcc4cb;
+}
+
+.default-pic,
+.hover-pic {
+	position: relative;
+}
+
+.default-pic-demo {
+	position: absolute;
+	top: 143px;
+	right: 292px;
+}
+
+.section2 .questions-wrap {
+    width: 500px;
+}
+
+.section3 .mark-start,
+.section2-left .mark-start {
+    background-image: url(../images/black-mark-start.png);
+}
+
+.section3 .mark-end,
+.section2-left .mark-end {
+    background-image: url(../images/black-mark-end.png);
+}
+
+.section2-text {
+    position: relative;
+    width: 461px;
+    height: 140px;
+    padding-left: 20px;
+}
+
+.section3 .inner {
+    width: 1003px;
+}
+
+.section3-left,
+.section3-center,
+.section3-right {
+    float: left;
+    width: 333px;
+    background: #ffffff;
+    margin-right: 1px;
+}
+
+.section3 {
+    overflow: hidden;
+    padding-top: 30px;
+	height: 852px;
+    background: url(../images/section3.jpg) no-repeat center top;
+}
+
+.section3 p {
+    color: #000;
+}
+
+.section3-text {
+    height: 160px;
+    padding: 0 15px;
+    background: url(../images/section3-text-bottom.jpg) no-repeat left bottom;
+}
+
+.section3-product {
+    height: 527px;
+}
+
+.answer {
+    padding: 10px 15px;
+    color: #57899f;
+    font-size: 13px;
+    line-height: 22px;
+}
+
+.question:hover {
+    background: #cc2337!important;
+}
+
+.section3-left:hover .questions,
+.section3-center:hover .questions,
+.section3-right:hover .questions {
+    display: block;
+}
+
+.questions {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.questions i {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #ff8695;
+    opacity: .8;
+}
+
+.questions ul {
+    position: absolute;
+    bottom: 30px;
+    z-index: 1;
+}
+
+.questions ul li {
+    margin: 0 30px;
+}
+.section3 .inner > div {
+    position: relative;
+}
+
+.questions .question {
+    height: 198px;
+}
+
+.questions .question:hover {
+    background: #cc2337;
+}
+
+.section3-center .questions .question1:hover {
+    height: 260px;
+}
+
+.questions .question:hover .answer {
+    color: #fff;
+}
+
+.questions .question1 {
+    background: #ffed97 url(../images/index.png) no-repeat center top;
+}
+
+.questions .question2 {
+    background: #aeaeae url(../images/q2.png) no-repeat center top;
+}
+
+.question1  .title {
+    color: #fe4c62;
+}
+
+.question2  .title {
+    color: #fe4c62;
+}
+
+.section2 .question2  .title {
+    color: #fff;
+}
+
+.section2 .questions {
+    right: 90px;
+    left: auto;
+    width: 347px;
+}
+
+.section2-right-product {
+    float: right;
+    width:501px;
+}
+
+.section2-right .questions {
+    left: 90px;
+    right: auto;
+}
+
+.section2-right .questions-wrap {
+    display: none;
+}
+
+.section2-right:hover .questions-wrap,
+.section2-right:hover .questions
+ {
+    display: block;
+}
+
+.section2-left:hover .questions {
+    display: block;
+}
+
+.section2 .questions .question1 {
+    background: #ff8695;
+}
+
+.section2-right .questions .question1 {
+    background: #ffed97;
+}
+
+
+
+.section2-right:hover .default-pic {
+    display: none;
+}
+
+.section2-right .hover-pic {
+    display: none;
+}
+
+.section2-right:hover .hover-pic {
+    display: block;
+}
+
+.section2-right:hover .section2-right-text {
+    border-color: #ff8695;
+}
+
+
+.after {
+    clear: both;
+}
+
+.section3 .question2 .title {
+	color: #fff;
+}
