@@ -32,8 +32,29 @@ var nav = function () {
     });
 };
 
+/*
+ * 滑动改变背景色
+ */
+
+var changeBg = function () {
+    var root = $('.section2');
+    
+    $('.section2-left').hover(function () {
+        root.addClass('blue');
+    }, function () {
+        root.removeClass('blue');
+    });
+    
+    $('.section2-right').hover(function () {
+        root.addClass('red');
+    }, function () {
+        root.removeClass('red');
+    });
+};
+
 $(function () {
     windowScrollHandler();
     nav();
+    changeBg();
 });
 
