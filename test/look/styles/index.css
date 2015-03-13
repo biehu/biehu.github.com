@@ -157,5 +157,8 @@ a {
 	top: 32px;
 }
 
-
-
+.after {
+	
+	background: #000;
+	text-align: center;
+}
