@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8" />
@@ -22,7 +22,7 @@
 		<div id="banner_wrap" class="banner_wrap0">
 			<div class="banner">
 				<div class="banner_change"> 
-					<img src="images/banner_img.gif" /><img src="images/banner_img.gif" /><img src="images/banner_img.gif" /><img src="images/banner_img.gif" />
+					<img src="images/banner_img.gif" /><img src="images/banner_img1.gif" /><img src="images/banner_img2.gif" /><img src="images/banner_img3.gif" />
 				</div> 
 			</div>
 		</div>
@@ -36,11 +36,10 @@
             </div>
             <div class="intro">
                 <img  src="images/arrow1.png" />
-                <p>上衣：Charlotte Olympia</p>
-                <p>包：Charlotte Olympia</p>
-                <p>格子裙：Charlotte Olympia</p>
-                <p>风衣：Charlotte Olympia</p>
-                <p>鞋：Charlotte Olympia</p>
+                <p>外套：Sandro</p>
+                <p>上衣：Sandro</p>
+                <p>百褶短裙：Sandro</p>
+                <p>高跟鞋：D:FUSE</p>
             </div>
             <div class="choice">
                 <img  src="images/choice.png" />
@@ -120,6 +119,9 @@
         </div>
     </div>
 </div>
+<div class="after">
+	<img src="images/after.jpg" />
+</div>
 <div class="page_footer">
 <!--#include virtual="/section/717.html"-->
 </div>
@@ -138,7 +140,8 @@ var pics = [
 var onBannerClick = function () {
 	var index = $(this).index();
 	var bannerWrap = $('#banner_wrap');
-	bannerWrap.fadeOut().
+	bannerWrap.
+		removeClass().
 		addClass('banner_wrap' + index).
 		fadeIn();
 };

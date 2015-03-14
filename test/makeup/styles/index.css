@@ -1,0 +1,280 @@
+* {
+    margin:0;
+    padding:0;
+}
+
+ul {
+    list-style:none;
+}
+
+img {
+    vertical-align:bottom;
+}
+
+a img {
+    border:none;
+}
+
+a {
+    text-decoration:none;
+}
+
+.clear {
+    clear:both;
+}
+
+.container img{position:absolute;}
+.banner{
+	background: url(../images/banner.jpg) center top no-repeat;
+	height: 482px;
+}
+.section1_wrap{
+	background: url(../images/section1.jpg) center top no-repeat;
+	height: 559px;
+}
+.section1,.section2,.section3,.section4,.section5{
+	margin: 0 auto;
+	position: relative;
+	width: 1202px;
+	font-family: "微软雅黑";
+}
+.section1_left{
+	position: absolute;
+	left: 96px;
+	top: 57px;
+}
+.section1_right{
+	position: absolute;
+	left: 696px;
+	top: 57px;
+}
+.section1_text{
+	position:absolute;
+	font-size: 14px;
+	color: #010101;
+	line-height: 35px;
+}
+.section1_text1{
+	top:210px;
+	left:136px;
+}
+.section1_text2{
+	top:210px;
+	left:345px;
+}
+.section1_text3{
+	top:224px;
+	left:726px;
+}
+.section1_num{
+	top:234px;
+	left:661px;
+	position: absolute;
+}
+
+.section2_wrap{
+	background-color: #fff;
+}
+
+.night_section2{
+	background: url(../images/section2.jpg) no-repeat;
+	height: 658px;
+}
+.section2 img{
+	position: absolute;
+}
+.night_tip1{
+	top:41px;
+	left:107px;
+}
+.night_tip2{
+	left:204px;
+	top:244px;
+}
+.night_tip3{
+	left:97px;
+	top:447px;
+}
+.day_section2{
+	background: url(../images/section2_day.jpg) no-repeat;
+	height: 658px;
+}
+.day_tip1{
+	top:58px;
+	left:711px;
+}
+.day_tip2{
+	left:556px;
+	top:247px;
+}
+.day_tip3{
+	left:681px;
+	top:437px;
+}
+.section2_btn li{
+	width: 137px;
+	height: 129px;
+}
+.night{
+	position: absolute;
+	left: 1065px;
+	top:108px;
+	background: url(../images/night.png) no-repeat;
+}
+
+.day{
+	position: absolute;
+	left: 1065px;
+	top:-13px;
+	background: url(../images/day.png) no-repeat;
+}
+.day.on,
+.day:hover{
+	background: url(../images/day_on.png) no-repeat;
+}
+.night.on,
+.night:hover{
+	background: url(../images/night_on.png) no-repeat;
+}
+.section3_wrap{
+	background: url(../images/section3.jpg) center top no-repeat;
+	height: 749px;
+}
+.section3_text{
+	width: 355px;
+	left:293px;
+	top:375px;
+	position: absolute;
+}
+.section3 h3{
+	font-size: 26px;
+	line-height: 36px;
+}
+.section3_detail{
+	font-size: 14px;
+	line-height: 30px;
+	text-indent: -25px;
+	margin-top: 10px;
+}
+.section3_detail a{
+	color:#FF5B68;
+}
+.mark{
+	width: 22px;
+	height: 21px;
+	display: inline-block;
+}
+.mark-start{
+	position: relative;
+	background: url(../images/mark-start.png) no-repeat;
+}
+.mark-end{
+	position: relative;
+	background: url(../images/mark-end.png) no-repeat;
+	left:20px;
+}
+.section3_product{
+	position: absolute;
+	left: 680px;
+	top: 280px;
+}
+.section4_wrap{
+	background: url(../images/section4.jpg) center top no-repeat;
+	height:694px;
+}
+.section4{
+	padding-top: 142px;
+}
+.section4 li{
+	float: left;
+	width: 256px;
+	margin-left: 117px;
+	display: inline;
+}
+.section4_img{
+	width: 245px;
+	height: 293px;
+}
+.section4_text{
+	width: 235px;
+	font-size: 13px;
+	line-height: 22px;
+}
+.section4_text a{
+	color:#FF5B68;
+}
+
+
+.section5_wrap{
+	background-color: #F6F6F5;
+	height: 567px;
+}
+.work{
+	position: absolute;
+	left: 96px;
+	top: 15px;
+}
+.huigu{
+	position: absolute;
+	left: 700px;
+	top: 15px;
+}
+.section5_ad{
+	position: absolute;
+	left: 716px;
+	top: 80px;
+}
+.section5_text{
+	position: absolute;
+	left: 200px;
+	top: 162px;
+	text-align: center;
+	width: 214px;
+}
+
+.section4_left,
+.section4_middle {
+    position: relative;
+}
+
+.product-pretty {
+    position: absolute;
+}
+
+.section4_left .product-pretty {
+    top: 80px;
+    left: 210px;
+}
+
+.section4_middle .product-pretty {
+    top: 80px;
+    left: 210px;
+}
+
+.section4_img:hover .product-pretty{animation:huang .8s ease-out infinite;
+    -ms-animation:huang .8s ease-out infinite;
+    -webkit-animation:huang .3s ease-out infinite;
+    -moz-animation:huang .8s ease-out infinite;
+    -0-animation:huang .8s ease-out infinite;
+    -webkit-animation-iteration-count:3;
+}
+
+@-webkit-keyframes huang{
+    0%{
+        -webkit-transform:rotate(-5deg);
+    }
+    50%{
+        -webkit-transform:rotate(5deg);
+    }
+    
+}
+
+.scroll {
+    opacity: 0;
+    filter:alpha(opacity=0);
+}
+
+.scroll.on {
+    opacity: 1;
+    filter:alpha(opacity=100);
+}
