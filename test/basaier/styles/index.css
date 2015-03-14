@@ -1,0 +1,318 @@
+* {
+    margin:0;
+    padding:0;
+}
+
+ul {
+    list-style:none;
+}
+
+img {
+    vertical-align:bottom;
+}
+
+a img {
+    border:none;
+}
+
+a {
+    text-decoration:none;
+}
+
+.clear {
+    clear:both;
+}
+
+.hide {
+    display: none;
+}
+
+.container {
+    font-family: "微软雅黑";
+}
+
+.banner {
+	height: 625px;
+	background: url(../images/header.jpg) no-repeat center top;
+}
+
+.content {
+    position: relative;
+    width: 1180px;
+    margin: 0 auto 39px;
+}
+
+.section-wrap {
+    overflow: hidden;
+}
+
+.section-left {
+    float: left;
+    width: 814px;
+    overflow: hidden;
+    padding: 20px 0 0 30px;
+}
+
+.section-right {
+    float: right;
+    width: 300px;
+}
+
+.section-title {
+    margin-bottom: 15px;
+    font-size: 25px;
+    font-family: "宋体";
+} 
+
+.section-title p {
+    margin-top: 5px;
+}
+
+.section {
+    width: 1180px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.section.on {
+    display: block;
+}
+
+.tab{
+    position: absolute;
+    top: 40px;
+    right: -200px;
+}
+.tab li{
+    height: 35px;
+    border:3px solid #E0DED9;
+    line-height: 35px;
+    color: #B1ADA7;
+    font-size: 25px;
+    width: 165px;
+    text-align: center;
+    margin-top: -3px;
+    font-family: "微软雅黑";
+    background: #fff;
+}
+.tab li.on,
+.tab li:hover{
+    background: #000;
+    color: #fff;
+}
+
+.section-btn  {
+    position: absolute;
+    left: 50%;
+    z-index: 1;
+    width: 74px;
+    height: 62px;
+    margin-left: -37px;
+}
+
+.section-prev-btn {
+    background: url(../images/prev.png) no-repeat;
+}
+
+.section-next-btn {
+    bottom: -42px;
+    background: url(../images/next-1.png) no-repeat;
+}
+
+/* 右侧图文 */
+
+.have-des-img {
+    padding: 0 30px;
+}
+
+.top-have-des-img {
+    padding-top: 20px;
+    background: #f2f2f2 url(../images/line-1.jpg) no-repeat left bottom;
+}
+
+.new-test .top-have-des-img {
+   background: #f2f2f2 url(../images/line-3.jpg) no-repeat left bottom; 
+}
+
+.bottom-have-des-img {
+    padding-top: 30px;
+    background: #e7e7e7 url(../images/line-2.jpg) no-repeat left bottom;
+}
+
+.have-des-img span {
+    display: block;
+    padding: 30px 0 50px;
+    word-wrap: break-word;
+    font-size: 13px;
+    line-height: 22px;
+}
+
+.have-des-img span b {
+    display: block;
+    font-weight: normal;
+    font-size: 18px;
+}
+
+.top-have-des-img-1 {
+    position: relative;
+    left: -15px;
+    margin-bottom: 50px;
+}
+
+.code {
+	text-align: center;
+}
+
+/* 焦点图 */
+
+.focus {
+    position: relative;
+}
+
+.unforget .focus {
+    margin-top: 50px;
+}
+
+.focus-next {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    width: 63px;
+    height: 63px;
+    background: url(../images/next.png) no-repeat;
+}
+
+.swipe {
+    overflow: hidden;
+    visibility: hidden;
+    position: relative;
+}
+.swipe-wrap {
+    overflow: hidden;
+    position: relative;
+}
+.swipe-wrap > div {
+    float: left;
+    width: 100%;
+    position: relative;
+}
+
+/* 文章 */
+
+.article {
+    width: 820px;
+    overflow: hidden;
+}
+
+.article ul li {
+    overflow: hidden;
+    font-size: 14px;
+    line-height: 30px;
+}
+
+.first-trip .article ul li {
+    margin-bottom: 50px;
+}
+
+.article ul li strong {
+    display: block;
+    margin: 5px 0 30px 0;
+    font-weight: normal;
+    font-size: 25px;
+    font-family: "宋体";
+}
+
+.start-trip .article ul li {
+   float: left;
+   width: 256px; 
+   margin: 25px 23px 0 0;
+}
+
+.start-trip .article ul .article-last-col {
+    margin-right: 0;
+}
+
+.article .more {
+    color: #e90000;
+}
+
+.article span {
+    background: #feff16;
+}
+
+sup {
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    background: url(../images/sup-1.png) no-repeat;
+}
+
+.sup-2 {
+    background: url(../images/sup-2.png) no-repeat;
+}
+
+.article-pic {
+    float: left;
+    margin-right: 20px;
+}
+
+.new-test .article ul li p {
+    margin-bottom: 30px;
+}
+
+.new-test .article ul li p img {
+    margin-right: 27px;
+}
+
+.new-test .article ul li p .last-article-pic {
+    margin-right: 0;
+}
+
+/* 问题  */
+
+.main{
+    width: 1220px;
+    background: url(../images/page4_bg.jpg) no-repeat;
+    margin: 0 auto;
+    padding-top: 320px;
+    overflow: hidden;
+    position: relative;
+}
+.question{
+    overflow: hidden;
+}
+.question li{
+    width: 550px;
+    margin: 0 0 60px 56px;
+    background: url(../images/qa_bg.png) no-repeat;
+    height: 138px;
+    font-family: "微软雅黑";
+    float: left;
+    display: inline;
+}
+.question h3{
+    font-size: 25px;
+    color: #807D78;
+    line-height: 69px;
+    height: 70px;
+    margin-left: 75px;
+    width: 405px;
+    font-weight: normal;
+}
+.question p{
+    font-size: 18px;
+    color: #66645F;
+    line-height: 30px;
+    height: 67px;
+    padding-left: 32px;
+    width: 390px;
+}
+.more{
+    color: #FF4B49;
+    font-size: 13px;
+    float: right;
+    font-weight: bold;
+    margin-right: 63px;
+    display: inline;
+}
+
