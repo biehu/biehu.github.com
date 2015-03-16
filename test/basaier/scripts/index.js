@@ -73,7 +73,7 @@ var scroll = function (id, scale, leftSelector, rightSelector) {
 
 		right.click(function () {
 			if (index === $(swipe).find('ul').length - 5) {
-				return false;
+				index = 0;
 			}
 
 			animate(swipe, 
@@ -84,10 +84,10 @@ var scroll = function (id, scale, leftSelector, rightSelector) {
 			changeOpa();
 			 return false;
 		});
-
 		left.click(function () {
+
 			if (index === 0) {
-				return false; 
+				index = $(swipe).find('ul').length - 5;
 			}
 
 			animate(swipe, 
@@ -184,7 +184,7 @@ var scroll2 = function (id, scale, leftSelector, rightSelector) {
 
 		right.click(function () {
 			if (index === $(swipe).find('ul').length - 5) {
-				return false;
+				index = 0;
 			}
 
 			animate(swipe, 
@@ -196,8 +196,9 @@ var scroll2 = function (id, scale, leftSelector, rightSelector) {
 			 return false;
 		});
 		left.click(function () {
+
 			if (index === 0) {
-				return false; 
+				index = $(swipe).find('ul').length - 5;
 			}
 
 			animate(swipe, 
