@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+<title></title>
+<link rel="stylesheet" href="styles/animate.css" />
+<link rel="stylesheet" href="styles/index.css" />
+</head>
+<body>
+	<div class="container">
+		<section class="page page-1 active">
+			<div class="bg"></div>
+			<div class="pic-1"></div>
+			<div class="pic-2"></div>
+			<div class="pic-3"></div>
+			<div class="pic-4"></div>
+			<div class="pic-5"></div>
+			<span class="go"></span>
+		</section>
+
+		<section class="page page-2 down">
+			<div class="bg"></div>
+			<div class="pic-1"></div>
+			<div class="pic-2"></div>
+			<div class="pic-3"></div>
+			<div class="pic-4"></div>
+
+			<div class="pic-5 win"></div>
+			<div class="pic-6 win"></div>
+			<div class="pic-7 win"></div>
+
+			<div class="pic-8"></div>
+
+			<span class="link link-1" data-win=".pic-5"></span>
+			<span class="link link-2" data-win=".pic-6"></span>
+			<span class="link link-3" data-win=".pic-7"></span>
+
+
+
+			<span class="go"></span>
+		</section>
+
+		<section class="page page-3 down">
+			<div class="bg"></div>
+			<div class="pic-1"></div>
+			<div class="pic-2"></div>
+
+			<div class="pic-3"></div>
+
+			<span class="go"></span>
+		</section>
+	</div>
+	<script src="scripts/jquery.js"></script>
+	<script>
+		(function () {
+
+		   /*
+            * 翻页
+            */
+		   var yStart, yEnd;
+           var index = 0;
+           var allNum = 3;
+           var isAnimate = false;
+           var isModal = false;
+           
+           var slide = function (el, num) {
+                el.css('WebkitTransitionDuration', '.5s');
+                el.css('webkitTransform', 'translateY(' + num +　')');
+           };
+           
+           var setPage = function (dir,page) {
+               
+                isAnimate = true;
+                
+                if(dir === 1){
+                    $(".page-"+(page+1)).addClass('active').removeClass('up');
+                    $(".page-"+(page+2)).removeClass('active').addClass('down');
+                    
+                }
+                else{
+                    $(".page-"+page).removeClass('active').addClass('up');
+                    $(".page-"+(page+1)).addClass('active').removeClass('down');
+                }
+               
+                // 翻页
+                setTimeout(function(){
+                    if (isAnimate) {
+                        isAnimate = false;
+                    }
+                },750);
+            };
+            
+            var bindTouchPageUp = function(){
+            
+                $(document).bind("touchstart", function(e){
+                    var touch = e.originalEvent.touches[0];
+                    yStart = touch.pageY;
+                });
+                $(document).bind("touchmove", function(e){
+                    event.preventDefault();
+                    var touch = e.originalEvent.touches[0];
+                    yEnd = touch.pageY;
+                    if (isAnimate || isModal) 
+                        return false;
+                    if (yEnd - 100 > yStart & yEnd > yStart) { //down
+                        if (index === 0)
+                            return false;
+                        setPage(1, --index);
+                    }
+                    else 
+                        if (yEnd + 100 < yStart & yEnd < yStart) { //up
+                            if (index === (allNum - 1)) 
+                                return false;
+                            setPage(0, ++index);
+                        }
+                });
+                
+            };
+
+            
+           var bindPageUp = function () {
+               $(".next").bind('click', function(e){
+                   e.preventDefault();
+                   if (index == (allNum - 1)) {
+                       return;
+                   }
+                   
+                   if (isAnimate) {
+                       isAnimate = false;
+                   }
+                   
+                   setPage(0, ++index);
+               });
+           };
+
+		   var init = function () {
+//			   bindPageUp();
+			   bindTouchPageUp();
+		   };
+
+		   init();
+        }());
+
+		// win
+		
+		var win = function () {
+			var link = $('.link');
+
+			link.click(function () {
+				var winSelector = $(this).attr('data-win');
+				$(winSelector).addClass('show');
+			});
+
+			$(document).on('click', '.show', function () {
+				$(this).removeClass('show');
+			});
+		};
+
+
+		win();
+		</script>
+</body>
+</html>

@@ -1,0 +1,540 @@
+* {
+    margin:0;
+    padding:0;
+}
+
+ul {
+    list-style:none;
+}
+
+img {
+    vertical-align:bottom;
+}
+
+a img {
+    border:none;
+}
+
+a {
+    text-decoration:none;
+	cursor: pointer;
+}
+
+.clear {
+    clear:both;
+}
+
+.hide {
+    display: none;
+}
+
+strong {
+	font-weight: normal;
+}
+
+.container {
+    font-family: "微软雅黑";
+}
+
+.banner {
+	height: 457px;
+	background: url(../images/decoration-banner.jpg) no-repeat center top;
+}
+
+/* 日期切换 */
+
+.days {
+	height: 673px;
+	background: url(../images/section-top.jpg) no-repeat center top;
+	color: #fff;
+}
+
+.days a {
+    color: #fff;
+}
+
+.days > strong {
+	display: block;
+	text-align: center;
+	font-size: 30px;
+	line-height: 72px;
+}
+
+.day-tab {
+	text-align: center;
+}
+
+.day-tab a {
+	display: inline-block;
+	width: 125px;
+	height: 38px;
+	margin: 0 4px;
+	background: url(../images/day-tab.png) no-repeat right top;
+	text-align: center;
+	font-size: 18px;
+	line-height: 38px;
+}
+
+.day-tab a:hover,
+.day-tab .on {
+	background-position: left top;
+}
+
+.day-tab-header {
+	position: absolute;
+	top: 37px;
+	width: 255px;
+	height: 255px;
+	padding: 30px;
+	background: #223b5b;
+}
+
+.day-tab-date {
+	font-size: 20px;
+	font-family: Arial;
+}
+
+.day-tab-index {
+	height: 100px;
+	padding-left: 10px;
+	background: url(../images/day.png) no-repeat;
+	font-weight: lighter;
+	font-size: 82px;
+	font-family: Arial;
+}
+
+.day-tab-author {
+	font-size: 15px;
+}
+
+.day-tab-desc {
+	font-size: 20px;
+}
+
+.day-tab-header p {
+	margin-bottom: 18px;
+}
+
+.day-tab-content {
+	position: relative;
+	width: 1300px;
+	margin: 0 auto;
+}
+
+.day-tab-con-left {
+	position: absolute;
+	top: 25px;
+	left: 335px;
+	width: 200px;
+	font-size: 15px;
+}
+
+.day-tab-con-text strong {
+	font-family: Arial;
+}
+
+.day-tab-con-text p {
+	margin: 5px 0 10px 0;
+}
+
+.day-tab-con-text span {
+	font-size: 13px;
+}
+
+.day-tab-con-img {
+	margin-top: 40px;
+} 
+
+.day-tab-con-img-desc {
+	border-top: 1px solid #5a5a5a;
+	line-height: 34px;
+}
+
+.day-tab-con-right {
+	position: absolute;
+	top: 65px;
+	left: 568px;
+}
+
+.focus li {
+	float: left;
+	padding: 0 3px 3px;
+	margin-right: 15px;
+}
+
+.focus-line {
+	height: 0;
+	margin-bottom: 10px;
+	border-top: 1px solid #5a5a5a;
+}
+
+.focus-img,
+.focus-video {
+	padding: 3px;
+}
+
+.focus li:hover .focus-img,
+.focus li:hover .focus-video {
+	background: #737373;
+}
+
+.focus li span {
+	display: block;
+	padding: 5px;
+	margin-bottom: 5px;
+}
+
+.focus-video span img {
+	margin-right: 5px;
+	vertical-align: middle;
+}
+
+.day-tab-con-bottom {
+	position: absolute;
+	top: 446px;
+	left: 231px;
+	font-size: 12px;
+}
+
+.day-tab-con-date {
+	position: absolute;
+	top: 27px;
+	left: 19px;
+	width: 500px;
+}
+
+.day-tab-con-time {
+	position: absolute;
+	top: 45px;
+	left: 15px;
+	width: 1000px;
+}
+
+.day-tab-con-time li {
+	float: left;
+	width: 93px;
+}
+
+.focus-scroll {
+	width: 840px;
+	margin-left: 15px;
+}
+
+.ui-slider { position:relative; text-align:left;}
+.ui-slider .ui-slider-handle {position:absolute; z-index:2; width:13px; height:60px; cursor: default; background:url(../images/slide-btn.png) no-repeat }
+.ui-slider .ui-slider-range {position:absolute; z-index:1; display:block; border:0;}
+.ui-slider-horizontal {height:10px; }
+.ui-slider-horizontal .ui-slider-handle {top:10px; margin-left:0; }
+.ui-slider-horizontal .ui-slider-range {top:20px; height:4px; }
+.ui-slider-horizontal .ui-slider-range-min {left:0; }
+.ui-slider-horizontal .ui-slider-range-max {right:0; }
+
+.swipe {
+  overflow: hidden;
+  visibility: hidden;
+  position: relative;
+}
+.swipe-wrap {
+  overflow: hidden;
+  position: relative;
+}
+.swipe-wrap ul {
+  float:left;
+  position: relative;
+}
+
+.day-tab-con-right .swipe {
+	visibility: visible;
+	width: 760px;
+}
+
+.day-tab-con-right .swipe ul {
+	float: left;
+	width: 760px;
+}
+
+.day-tab-item {
+	display: none;
+}
+
+.day-tab-item.on {
+	display: block;
+}
+
+
+/* 嘉人对话 产品新趋势 */
+
+.says{
+	height: 192px;
+	background: url(../images/say.jpg) no-repeat center top;
+}
+.says a {
+    color: #000;
+}
+.say_main{
+	width: 1180px;
+	position: relative;
+	margin: 0 auto;
+}
+.swipe-control a{
+	position: absolute;
+	top: 85px;
+}
+.swipe-left{
+	left: 154px;
+}
+.swipe-right{
+	left: 1115px;
+}
+
+.says .swipe{
+	position: absolute;
+	left: 208px;
+	top: 32px;
+	width: 910px;
+	overflow: hidden;
+}
+.says .swipe li{
+	float: left;
+	width: 454px;
+	font-size: 13px;
+	line-height: 22px;
+	overflow: hidden;
+}
+.says .swipe strong{
+	display: block;
+	margin-bottom: 5px;
+	font-size: 18px;
+}
+.says .swipe p{
+	float: left;
+	width: 263px;
+	margin: 20px 0 0 20px;
+}
+.says .swipe img{
+	float: left;
+	border: 5px solid #fff;
+}
+.trend_wrap{
+	height: 607px;
+	background: url(../images/trend.jpg) no-repeat center top;
+}
+.product-trend{
+	width: 1180px;
+    margin: 0 auto;
+	position: relative;
+}
+.watch a,
+.trend-tab-item a {
+    color: #000;
+}
+.trend_tit{
+	position: absolute;
+	left: 500px;
+	top: 50px;
+}
+.trend-tab{
+	position: absolute;
+	left: 990px;
+	top: 147px;
+}
+.trend-tab li{
+	background: url(../images/section1_btn.png) no-repeat;
+	width: 142px;
+	height: 44px;
+	margin-bottom: 10px;
+	line-height: 44px;
+	text-align: center;
+	font-size: 20px;
+	color: #fff;
+}
+.trend-tab li.on ,
+.trend-tab li:hover{
+	background: url(../images/section1_btn1.png) no-repeat;
+	cursor: pointer;
+}
+.trend-control a{
+	position: absolute;
+	top: 272px;
+}
+.trend-left{
+	left: 80px;
+}
+.trend-right{
+	left: 537px;
+}
+.trend-swipe{
+	position: absolute;
+	top: 135px;
+}
+.trend-swipe p{
+	height: 60px;
+	line-height: 60px;
+	font-size: 15px;
+	text-align: center;
+	background-color: #fff;
+}
+.trend-tab-demo-desc{
+	position: absolute;
+	left: 603px;
+	top: 147px;
+	width: 335px;
+}
+.trend-tab-demo-desc strong{
+	font-size: 20px;
+	line-height: 25px;
+}
+.trend-tab-demo-desc p{
+	font-size: 15px;
+	line-height: 22px;
+	margin-top: 30px;
+}
+.more-choice{
+	left: 990px;
+	top: 540px;
+	position: absolute;
+}
+
+.watch_wrap{
+	background: url(../images/last.jpg) center top no-repeat;
+	height: 778px;
+}
+.watch,
+.after{
+	width: 1180px;
+	position: relative;
+	margin: 0 auto;
+}
+.watch_left{
+	left: 220px;
+	background: url(../images/section3_left.png) no-repeat;
+}
+.watch_right{
+	left: 955px;
+	background: url(../images/section3_right.png) no-repeat;
+}
+.watch_btn{
+	position: absolute;
+	z-index: 2;
+	width: 17px;
+	height: 32px;
+	top: 330px;
+	display: block;
+}
+.watch_product{
+	overflow: hidden;
+	position: absolute;
+	left: 0;
+	top: 30px;
+}
+.watch_product li{
+	float: left;
+	width: 236px;
+	text-align: center;
+}
+.watch p{
+	font-size: 13px;
+	line-height: 18px;
+	text-align: center;
+	background: url(../images/text-bottom-line.png) center bottom no-repeat;
+	height: 65px;
+	padding-top: 27px;
+	margin-bottom: 10px;
+}
+.watch_team{
+	position: absolute;
+	left: 288px;
+	top: 123px;
+	font-size: 14px;
+	line-height: 30px;
+	text-align: center;
+	color: #848282;
+}
+.watch_team span{
+	margin-left: 25px;
+}
+
+.trend-slide  {
+	width: 376px;
+}
+
+.trend-slide .swipe-wrap {
+	height: 655px;
+}
+
+.trend-slide {
+	position: absolute;
+	left: 146px;
+}
+
+.watch .swipe {
+	visibility: visible;
+}
+
+.watch .opa {
+	opacity: .5;
+}
+
+.trend-tab-item {
+	display: none
+}
+
+.trend-tab-item.on {
+	display: block;
+}
+
+.watch {
+	display: none;
+}
+
+.watch.on {
+	display: block;
+}
+
+.watch .swipe-wrap {
+	height: 570px;
+}
+
+.watch .swipe-wrap li:hover {
+	background: #fff;
+	border: 1px solid #e7e7e7;
+}
+
+.side-nav-wrap {
+	position: relative;
+	width: 1180px;
+	height: 0;
+	margin: 0 auto;
+}
+
+.side-nav {
+	position: absolute;
+	top: 95px;
+	right: -107px;
+	width: 107px;
+	height: 327px;
+	background: url(../images/side.png) no-repeat;
+	text-align: center;
+	font-size: 15px;
+	line-height: 40px;
+	font-family: "微软雅黑";
+}
+
+.side-nav ul {
+	position: absolute;
+	bottom: 156px;
+	width: 100%;
+}
+
+.side-nav a {
+	display: block;
+	color: #000;
+}
+
+.side-nav a.on,
+.side-nav a:hover {
+	background: #000;
+	filter:alpha(opacity=60);
+	opacity: .6;
+	color: #fff;
+}
