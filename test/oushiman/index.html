@@ -26,11 +26,15 @@
 			<div class="pic-3"></div>
 			<div class="pic-4"></div>
 
-			<div class="pic-5 win"></div>
-			<div class="pic-6 win"></div>
-			<div class="pic-7 win"></div>
-
-			<div class="pic-8"></div>
+			<div class="pic-5 win">
+				<img src="images/logo.png" />
+			</div>
+			<div class="pic-6 win">
+				<img src="images/logo.png" />
+			</div>
+			<div class="pic-7 win">
+				<img src="images/logo.png" />
+			</div>
 
 			<span class="link link-1" data-win=".pic-5"></span>
 			<span class="link link-2" data-win=".pic-6"></span>
@@ -150,10 +154,14 @@
 			link.click(function () {
 				var winSelector = $(this).attr('data-win');
 				$(winSelector).addClass('show');
+				$('.pic-1').css('opacity', 0);
+				$('.pic-2, .pic-3, .pic-4').hide();
 			});
 
 			$(document).on('click', '.show', function () {
 				$(this).removeClass('show');
+				$('.pic-1').css('opacity', 1);
+				$('.pic-2, .pic-3, .pic-4').show();
 			});
 		};
 
