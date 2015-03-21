@@ -101,21 +101,21 @@ Copyright (c) 2015 Daniel Eden
 
 @-webkit-keyframes flash {
   0%, 50%, 100% {
-    opacity: 0;
+    opacity: 1;
   }
 
   25%, 75% {
-    opacity: 1;
+    opacity: 0;
   }
 }
 
 @keyframes flash {
   0%, 50%, 100% {
-    opacity: 0;
+    opacity: 1;
   }
 
   25%, 75% {
-    opacity: 1;
+    opacity: 0;
   }
 }
 
