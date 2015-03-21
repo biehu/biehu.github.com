@@ -8,6 +8,8 @@
 <link rel="stylesheet" href="styles/index.css" />
 </head>
 <body>
+
+	<div class="loading">加载中...</div>
 	<div class="container">
 		<section class="page page-1 active">
 			<div class="bg"></div>
@@ -47,10 +49,12 @@
 
 		<section class="page page-3 down">
 			<div class="bg"></div>
+			<div class="pic-4"></div>
 			<div class="pic-1"></div>
 			<div class="pic-2"></div>
 
 			<div class="pic-3"></div>
+			
 
 			<span class="go"></span>
 		</section>
@@ -93,6 +97,13 @@
                         isAnimate = false;
                     }
                 },750);
+
+				if (page === 2) {
+					$('.go').hide();
+				}
+				else {
+					$('.go').show();
+				}
             };
             
             var bindTouchPageUp = function(){
@@ -146,6 +157,7 @@
 		   init();
         }());
 
+
 		// win
 		
 		var win = function () {
@@ -167,6 +179,14 @@
 
 
 		win();
+
+		// 加载
+
+		$('.page').hide();
+		window.onload = function () {
+			$('.loading').hide();
+			$('.page').show();
+		};
 		</script>
 </body>
 </html>
