@@ -171,7 +171,7 @@
 				$('.pic-2, .pic-3, .pic-4').hide();
 			});
 
-			win.click(function () {
+			win.on('touchstart', function () {
 				$(this).removeClass('show');
 				$('.pic-1').css('opacity', 1);
 				$('.pic-2, .pic-3, .pic-4').show();
@@ -182,12 +182,12 @@
 		win();
 
 		// 加载
-
-		$('.page').hide();
-		window.onload = function () {
-			$('.loading').hide();
-			$('.page').show();
-		};
+//
+//		$('.page').hide();
+//		window.onload = function () {
+//			$('.loading').hide();
+//			$('.page').show();
+//		};
 		</script>
 </body>
 </html>
