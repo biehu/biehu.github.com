@@ -260,10 +260,12 @@ body,
 }
 
 .page-3 .pic-1 {
+	z-index: 10;
 	background-image: url(../images/curtain-left.png);
 }
 
 .page-3 .pic-2 {
+	z-index: 10;
 	background-image: url(../images/curtain-right.png);
 }
 
