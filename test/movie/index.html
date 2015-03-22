@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title></title>
+<link rel="stylesheet" type="text/css" href="scripts/jquery.tzineClock/jquery.tzineClock.css" />
+<link rel="stylesheet" href="styles/common.css" />
+<link rel="stylesheet" href="styles/index.css" />
+</head>
+<body>
+    
+<div class="container">
+	<div class="header_wrap">
+		<div class="header">
+			<input class="search" type="text" placeholder="搜索" />
+			<a class="login" href="">登录</a>
+			<a class="reg" href="">注册</a>
+		</div>
+	</div>
+	<div class="nav_wrap">
+		<ul class="nav">
+			<li><a class="on" href="#">首页</a></li>
+			<li><a href="#">微赛事</a></li>
+			<li><a href="#">发起比赛</a></li>
+			<li><a href="#">论坛</a></li>
+			<li><a href="#">影片</a></li>
+		</ul>
+	</div>
+	<div class="main">
+		<div class="focus">
+			<div id="slider" class="swipe">
+				<div class="swipe-wrap">
+					<p><img src="images/focus_map.jpg" /></p>
+					<p><img src="images/focus_map.jpg" /></p>
+					<p><img src="images/focus_map.jpg" /></p>
+				</div>
+			</div>
+			<ul id="focus_position" class="focus_btn">
+				<li class="on"></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+		<div class="contest">
+			<div class="contest_left">
+				<h3>热门大赛</h3>
+				<div class="contest_movie">
+					<img class="movie_img" src="images/movie_img.jpg" />
+					<div class="movie_text">
+						<div class="contest_name">珠影国际微电影大赛<img class="state" src="images/start.png" /></div>
+						<p>首届珠影国际微电影大赛是由珠江电影集团主办的珠影青年创投计划下的跨年度微电
+	影（短片）大赛。大赛主要面向全国乃至国际的青年电影创作人，征集、评大赛主要
+	面向全国乃至国际的青年电影创作人</p>
+						<p class="middle_text">主办方：珠江电影集团<br />报名时间：2014-12-19 ~ 2015-06-01</p>
+						<p>报名费：<strong>￥888</strong></p>
+					</div>
+				</div>
+			</div>
+			<div class="contest_right">
+			    <div class="date">距报名结束还有<strong>66</strong>天</div>
+				<div class="last-time">
+					<div id="fancyClock"></div>
+				</div>
+                <a class="bm" href="">我要报名</a>
+                <p class="already">已有<strong>101</strong>部作品参赛</p>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="works">
+			<div class="famous_works">
+				<div class="famous_tit">人气作品</div>
+				<ul class="famous">
+					<li>
+						<a href="#">
+							<div class="famous_movie">
+								<img class="famous_img" src="images/famous_img.jpg" />
+								<div class="movie_btn"></div>
+							</div>
+							<div class="famous_text">《作品名称》<span>1234455票</span></div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<div class="famous_movie">
+								<img class="famous_img" src="images/famous_img.jpg" />
+								<div class="movie_btn"></div>
+							</div>
+							<div class="famous_text">《作品名称》<span>1234455票</span></div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<div class="famous_movie">
+								<img class="famous_img" src="images/famous_img.jpg" />
+								<div class="movie_btn"></div>
+							</div>
+							<div class="famous_text">《作品名称》<span>1234455票</span></div>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="new_works">
+				<div class="new_tit">最新作品</div>
+				<ul class="news">
+					<li>
+						<span><i>19</i>小时前</span>
+						·<a href="#">泉声</a>
+					</li>
+					<li>
+						<span><i>19</i>小时前</span>
+						·<a href="#">微电影《花生》</a>
+					</li>
+					<li>
+						<span><i>19</i>小时前</span>
+						·<a href="#">微电影《愿得一个家》</a>
+					</li>
+					<li>
+						<span><i>19</i>小时前</span>
+						·<a href="#">一个观众的剧场</a>
+					</li>
+					<li>
+						<span><i>1</i>天前</span>
+						·<a href="#">泉声</a>
+					</li>
+					<li>
+						<span><i>19</i>小时前</span>
+						·<a href="#">泉声</a>
+					</li>
+				</ul>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+	<div class="footer_wrap">
+		<div class="footer">
+			<ul class="footer_btn">
+				<li>
+					<a class="about" href=""></a>
+					关于我们
+				</li>
+				<li>
+					<a class="contact" href=""></a>
+					联系我们
+				</li>
+				<li>
+					<a class="clause" href=""></a>
+					用户条款
+				</li>
+			</ul>
+			<p>© 2014 毫米网|micmovie|毫米赛事网, all rights reserved 京ICP备14049338号-2</p>
+		</div>
+	</div>
+</div>
+<script src="scripts/jquery.js"></script>
+<script src="scripts/jquery.tzineClock/jquery.tzineClock.js"></script>
+<script src="scripts/swipe.js"></script>
+<script src="scripts/index.js"></script>
+
+</body>
+</html>

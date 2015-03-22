@@ -1,0 +1,172 @@
+* {
+    margin:0;
+    padding:0;
+}
+
+ul {
+    list-style:none;
+}
+
+img {
+    vertical-align:bottom;
+}
+
+a img {
+    border:none;
+}
+
+a {
+    text-decoration:none;
+}
+
+.clear {
+    clear:both;
+}
+
+.hide {
+    display: none;
+}
+
+strong {
+	font-weight: normal;
+}
+
+.container {
+    font-family: "微软雅黑";
+    color: #666;
+}
+
+.container a {
+	color: #666;
+}
+
+/* 顶部条 */
+.header_wrap{
+	height: 34px;
+	border-bottom: 3px solid #3a9473;
+	background-color: #4c4c4c;
+	padding-top: 7px;
+}
+.header {
+	width: 1180px;
+	padding-right: 20px;
+	margin: 0 auto;
+	text-align: right;
+}
+.search{
+	background: url(../images/ss_default.png) no-repeat;
+	padding-left: 30px;
+	width: 100px;
+	height: 27px;
+	display: inline-block;
+	border: none;
+	color: #333;
+	font-size: 14px;
+	font-family: "微软雅黑";
+	vertical-align: middle;
+}
+.search:focus {
+	background: url(../images/ss.png) no-repeat;
+}
+a.login{
+	font-size: 14px;
+	color: #999;
+	margin: 0 20px;
+}
+a.reg{
+	width: 45px;
+	height: 27px;
+	line-height: 27px;
+	text-align: center; 
+	color:#333;
+	background: url(../images/reg.png) no-repeat;
+	display: inline-block;
+	font-size: 14px;
+}
+
+/* 导航 */
+.nav_wrap {
+	border-bottom: 1px solid #ededed;
+	
+}
+.nav{
+	width: 970px;
+	height: 63px;
+	margin: 0 auto;
+	background: url(../images/nav.png) left top no-repeat;
+	padding: 22px 0 0 230px;
+	overflow: hidden;
+}
+.nav li{
+	float: left;
+	margin-left: 20px;
+	display: inline;
+	color: #4f9c7f;
+	font-size: 16px;
+	
+}
+.nav li a {
+	display: inline-block;
+	height: 37px;
+	line-height: 37px;
+	padding: 0 15px;
+	color: #4f9c7f;
+	font-size: 18px;
+}
+.nav li a.on,
+.nav li a:hover {
+	color: #fff;
+	background-color: #3a9473;
+}
+
+/* 公共尾 */
+.footer_wrap{
+	height: 175px;
+	background-color: #f7f7f7;
+	border-top: 1px solid #ededed;
+}
+.footer{
+	width: 475px;
+	margin: 0 auto;
+	padding-top: 25px;
+}
+.footer_btn{
+	overflow: hidden;
+}
+.footer_btn li{
+	width: 150px;
+	text-align: center;
+	float: left;
+	color: #3a9473;
+	font-size: 18px;
+	line-height: 44px;
+}
+.footer_btn a{
+	width: 55px;
+	height: 55px;
+	display: block;
+	margin: 0 auto;
+}
+.about{
+	background: url(../images/about.png) no-repeat;
+}
+.about:hover{
+	background: url(../images/about_on.png) no-repeat;
+}
+.contact{
+	background: url(../images/contact.png) no-repeat;
+}
+.contact:hover{
+	background: url(../images/contact_on.png) no-repeat;
+}
+.clause{
+	background: url(../images/clause.png) no-repeat;
+}
+.clause:hover{
+	background: url(../images/clause_on.png) no-repeat;
+}
+.footer p{
+	font-size: 12px;
+	color: #828282;
+	margin-top: 15px;
+}
