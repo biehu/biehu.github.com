@@ -1,0 +1,83 @@
+
+.main{
+	width: 860px;
+	margin: 0 auto;
+	padding: 70px 0 110px;
+	color: #666666;
+}
+.left{
+	float: left;
+	width: 505px;
+}
+h3{
+	font-size: 24px;
+}
+.mail_box,.cipher_box{
+	border-bottom: 1px solid #e5e5e5;
+	width: 355px;
+	height: 45px;
+	line-height: 45px;
+	padding-left: 45px;
+}
+.mail_box{
+	background:url(../images/login_1.png) 0 10px no-repeat;
+	margin-top: 35px;
+}
+.cipher_box{
+	background:url(../images/login_1.png) 0 -132px no-repeat;
+	margin-top: 23px;
+}
+.mail_box input,.cipher_box input{
+	border: none;
+	background-color: none;
+	font-size: 18px;
+	width: 350px;
+	height: 43px;
+	line-height: 43px;
+}
+.forget{
+	font-size: 14px;
+	color: #3a9473;
+	margin-left: 335px;
+	line-height: 35px;
+}
+.login_btn1{
+	width: 220px;
+	height: 50px;
+	background:url(../images/login_2.png) no-repeat;
+	display: block;
+	line-height: 50px;
+	text-align: center;
+	font-size: 20px;
+	color: #fff;
+	font-weight: bold;
+	margin: 20px 0 15px;
+}
+.left p{
+	font-size: 16px;
+	color: #adadad;
+}
+.register{
+	color: #81b4a0;
+}
+.right{
+	float: left;
+	width: 300px;
+	background: #f7f7f7;
+	padding: 48px 0 86px 55px;
+	font-size: 16px;
+	color: #adadad;
+}
+.login_btn2{
+	width: 240px;
+	height: 50px;
+	background:url(../images/login_3.png) no-repeat;
+	display: block;
+	margin: 40px 0 30px;
+}
+.login_btn3{
+	width: 240px;
+	height: 50px;
+	background:url(../images/login_3.png) 0 -80px no-repeat;
+	display: block;
+}
