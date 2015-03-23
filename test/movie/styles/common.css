@@ -89,12 +89,19 @@ a.reg{
 	border-bottom: 1px solid #ededed;
 	
 }
-.nav{
-	width: 970px;
+.nav {
+	width: 1200px;
+	margin: 0 auto;
+}
+.nav h1 {
+	float: left;
+	margin: 20px 40px 0 0;
+}
+.nav ul {
 	height: 63px;
 	margin: 0 auto;
-	background: url(../images/nav.png) left top no-repeat;
-	padding: 22px 0 0 230px;
+	background: url(../images/nav.png) right top no-repeat;
+	padding-top: 22px;
 	overflow: hidden;
 }
 .nav li{
