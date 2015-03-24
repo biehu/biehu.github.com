@@ -199,6 +199,7 @@ a.bm {
 	line-height: 30px;
 	width: 335px;
 	height: 30px;
+	overflow: hidden;
 }
 .news li a {
 	margin-left: 10px;

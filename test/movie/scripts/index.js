@@ -1,7 +1,33 @@
 $(document).ready(function(){
 	// µπº∆ ±
-	$('#fancyClock').tzineClock();
-
+	$('#countdown').ClassyCountdown({
+		theme: "white",
+		end: $.now() + 10000,
+		style: {
+			hours: {
+				gauge: {
+					thickness: .08,
+					bgColor: "rgba(210,210,210,1)",
+					fgColor: "#3A9473"
+				}
+			},
+			minutes: {
+				gauge: {
+					thickness: .08,
+					bgColor: "rgba(210,210,210,1)",
+					fgColor: "#3A9473"
+				}
+			},
+			seconds: {
+				gauge: {
+					thickness: .08,
+					bgColor: "rgba(210,210,210,1)",
+					fgColor: "#3A9473"
+				}
+			}
+		}
+	});
+		
 	// Ωπµ„Õº
 	var slide = function () {
 		var slider =

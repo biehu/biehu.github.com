@@ -6,6 +6,7 @@
 <link rel="stylesheet" type="text/css" href="scripts/jquery.tzineClock/jquery.tzineClock.css" />
 <link rel="stylesheet" href="styles/common.css" />
 <link rel="stylesheet" href="styles/index.css" />
+<link rel="stylesheet" href="styles/jquery.classycountdown.css" />
 </head>
 <body>
     
@@ -58,12 +59,11 @@
 						<p>报名费：<strong>￥888</strong></p>
 					</div>
 				</div>
+
 			</div>
 			<div class="contest_right">
 			    <div class="date">距报名结束还有<strong>66</strong>天</div>
-				<div class="last-time">
-					<div id="fancyClock"></div>
-				</div>
+				<div id="countdown" class="coutdown"></div>
                 <a class="bm" href="">我要报名</a>
                 <p class="already">已有<strong>101</strong>部作品参赛</p>
 			</div>
@@ -155,7 +155,9 @@
 	</div>
 </div>
 <script src="scripts/jquery.js"></script>
-<script src="scripts/jquery.tzineClock/jquery.tzineClock.js"></script>
+<script src="scripts/jquery.knob.js"></script>
+<script src="scripts/jquery.throttle.js"></script>
+<script src="scripts/jquery.classycountdown.js"></script>
 <script src="scripts/swipe.js"></script>
 <script src="scripts/index.js"></script>
 
