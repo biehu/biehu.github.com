@@ -3,7 +3,6 @@
 <head>
 <meta charset="utf-8" />
 <title></title>
-<link rel="stylesheet" type="text/css" href="scripts/jquery.tzineClock/jquery.tzineClock.css" />
 <link rel="stylesheet" href="styles/common.css" />
 <link rel="stylesheet" href="styles/index.css" />
 <link rel="stylesheet" href="styles/jquery.classycountdown.css" />
@@ -49,9 +48,9 @@
 			<div class="contest_left">
 				<h3>热门大赛</h3>
 				<div class="contest_movie">
-					<img class="movie_img" src="images/movie_img.jpg" />
+					<a href="#"><img class="movie_img" src="images/movie_img.jpg" /></a>
 					<div class="movie_text">
-						<div class="contest_name">珠影国际微电影大赛<img class="state" src="images/start.png" /></div>
+						<div class="contest_name"><a href="#">电影大赛</a><i class="movie_time movie_time_ing"></i><i class="movie_time movie_time_start"></i><i class="movie_time movie_time_end"></i></div>
 						<p>首届珠影国际微电影大赛是由珠江电影集团主办的珠影青年创投计划下的跨年度微电
 	影（短片）大赛。大赛主要面向全国乃至国际的青年电影创作人，征集、评大赛主要
 	面向全国乃至国际的青年电影创作人</p>
@@ -62,7 +61,7 @@
 
 			</div>
 			<div class="contest_right">
-			    <div class="date">距报名结束还有<strong>66</strong>天</div>
+			    <div class="date">距报名结束还有<strong id="coutdownDay"></strong>天</div>
 				<div id="countdown" class="coutdown"></div>
                 <a class="bm" href="">我要报名</a>
                 <p class="already">已有<strong>101</strong>部作品参赛</p>

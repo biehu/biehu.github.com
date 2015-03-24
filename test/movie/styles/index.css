@@ -56,6 +56,9 @@
 	line-height: 90px;
 	color: #000;
 }
+.contest_name a {
+	color: #000;
+}
 .movie_text p{
 	font-size: 14px;
 	line-height: 24px;
@@ -176,6 +179,9 @@ a.bm {
     width: 252px;
     overflow: hidden;
 }
+.famous_text a {
+	background-color: #f4f4f4;
+}
 .famous_text span{
     font-size:12px;
     float: right;
@@ -246,3 +252,20 @@ a.bm {
 	width: 100%;
 	position: relative;
 }
+
+.movie_time {
+	display: inline-block;
+	width: 112px;
+	height: 41px;
+	margin-left: 5px;
+	vertical-align: -5px;
+}
+.movie_time_ing {
+	background: url(../images/in.png) no-repeat left bottom;
+} 
+.movie_time_start {
+	background: url(../images/start.png) no-repeat left bottom;
+} 
+.movie_time_end {
+	background: url(../images/end.png) no-repeat left bottom;
+} 

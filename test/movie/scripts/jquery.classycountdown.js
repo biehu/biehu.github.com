@@ -94,30 +94,32 @@
                         '<span class="ClassyCountdown-value"><div></div><span></span></span>' +
                     '</div>' +
                 '</div>');
-            element.find('.ClassyCountdown-days input').knob($.extend({
-                width: '100%',
-                displayInput: false,
-                readOnly: true,
-                max: 365
-            }, settings.style.days.gauge));
-            element.find('.ClassyCountdown-hours input').knob($.extend({
-                width: '100%',
-                displayInput: false,
-                readOnly: true,
-                max: 24
-            }, settings.style.hours.gauge));
-            element.find('.ClassyCountdown-minutes input').knob($.extend({
-                width: '100%',
-                displayInput: false,
-                readOnly: true,
-                max: 60
-            }, settings.style.minutes.gauge));
-            element.find('.ClassyCountdown-seconds input').knob($.extend({
-                width: '100%',
-                displayInput: false,
-                readOnly: true,
-                max: 60
-            }, settings.style.seconds.gauge));
+			if (document.createElement('canvas').getContext) {
+				element.find('.ClassyCountdown-days input').knob($.extend({
+					width: '100%',
+					displayInput: false,
+					readOnly: true,
+					max: 365
+				}, settings.style.days.gauge));
+				element.find('.ClassyCountdown-hours input').knob($.extend({
+					width: '100%',
+					displayInput: false,
+					readOnly: true,
+					max: 24
+				}, settings.style.hours.gauge));
+				element.find('.ClassyCountdown-minutes input').knob($.extend({
+					width: '100%',
+					displayInput: false,
+					readOnly: true,
+					max: 60
+				}, settings.style.minutes.gauge));
+				element.find('.ClassyCountdown-seconds input').knob($.extend({
+					width: '100%',
+					displayInput: false,
+					readOnly: true,
+					max: 60
+				}, settings.style.seconds.gauge));
+			}
             element.find('.ClassyCountdown-wrapper > div').attr("style", settings.style.element);
             element.find('.ClassyCountdown-days .ClassyCountdown-value').attr('style', settings.style.days.textCSS);
             element.find('.ClassyCountdown-hours .ClassyCountdown-value').attr('style', settings.style.hours.textCSS);
@@ -130,7 +132,7 @@
                 element.find(".ClassyCountdown-seconds .ClassyCountdown-value > span").html(settings.labelsOptions.lang.seconds);
                 element.find(".ClassyCountdown-value > span").attr("style", settings.labelsOptions.style);
             }
-            secondsLeft = settings.end - settings.now;
+            secondsLeft = (settings.end - settings.now) / 1000;
             secondsToDHMS();
         }
         
@@ -158,21 +160,17 @@
             element.find('.ClassyCountdown-hours input').val(24 - HoursLeft).trigger('change');
             element.find('.ClassyCountdown-minutes input').val(60 - MinutesLeft).trigger('change');
             element.find('.ClassyCountdown-seconds input').val(60 - SecondsLeft).trigger('change');
-            element.find('.ClassyCountdown-days .ClassyCountdown-value > div').html(DaysLeft);
+            $('#coutdownDay').html(DaysLeft);
             element.find('.ClassyCountdown-hours .ClassyCountdown-value > div').html(HoursLeft);
             element.find('.ClassyCountdown-minutes .ClassyCountdown-value > div').html(MinutesLeft);
             element.find('.ClassyCountdown-seconds .ClassyCountdown-value > div').html(SecondsLeft);
 
-			console.log(DaysLeft);
         }
         
         function doResponsive() {
             element.find('.ClassyCountdown-wrapper > div').each(function() {
                 $(this).css('height', $(this).width() + 'px');
             });
-            if (settings.style.textResponsive) {
-                element.find('.ClassyCountdown-value').css('font-size', Math.floor(element.find('> div').eq(0).width() * settings.style.textResponsive / 10) + 'px');
-            }
             $(window).trigger('resize');
             $(window).resize($.throttle(50, onResize));
         }
@@ -181,9 +179,6 @@
             element.find('.ClassyCountdown-wrapper > div').each(function() {
                 $(this).css('height', $(this).width() + 'px');
             });
-            if (settings.style.textResponsive) {
-                element.find('.ClassyCountdown-value').css('font-size', Math.floor(element.find('> div').eq(0).width() * settings.style.textResponsive / 10) + 'px');
-            }
             element.find('.ClassyCountdown-days input').trigger('change');
             element.find('.ClassyCountdown-hours input').trigger('change');
             element.find('.ClassyCountdown-minutes input').trigger('change');
@@ -198,37 +193,26 @@
                         style: {
                             element: '',
                             textResponsive: 0.5,
-                            days: {
-                                gauge: {
-                                    thickness: 0.01,
-                                    bgColor: "rgba(0,0,0,0.05)",
-                                    fgColor: "#1abc9c"
-                                },
-                                textCSS: 'font-family:\'Open Sans\';font-weight:300;color:#34495e;'
-                            },
                             hours: {
                                 gauge: {
                                     thickness: 0.01,
                                     bgColor: "rgba(0,0,0,0.05)",
                                     fgColor: "#2980b9"
-                                },
-                                textCSS: 'font-family:\'Open Sans\';font-weight:300;color:#34495e;'
+                                }
                             },
                             minutes: {
                                 gauge: {
                                     thickness: 0.01,
                                     bgColor: "rgba(0,0,0,0.05)",
                                     fgColor: "#8e44ad"
-                                },
-                                textCSS: 'font-family:\'Open Sans\';font-weight:300;color:#34495e;'
+                                }
                             },
                             seconds: {
                                 gauge: {
                                     thickness: 0.01,
                                     bgColor: "rgba(0,0,0,0.05)",
                                     fgColor: "#f39c12"
-                                },
-                                textCSS: 'font-family:\'Open Sans\';font-weight:300;color:#34495e;'
+                                }
                             }
                         }
                     };
@@ -525,37 +509,29 @@
                         style: {
                             element: '',
                             textResponsive: 0.5,
-                            days: {
-                                gauge: {
-                                    thickness: 0.03,
-                                    bgColor: "rgba(255,255,255,0.05)",
-                                    fgColor: "#fff"
-                                },
-                                textCSS: 'font-family:\'Open Sans\';font-weight:300;color:#fff;'
-                            },
                             hours: {
                                 gauge: {
                                     thickness: 0.03,
                                     bgColor: "rgba(255,255,255,0.05)",
                                     fgColor: "#fff"
-                                },
-                                textCSS: 'font-family:\'Open Sans\';font-weight:300;color:#fff;'
+                                }
+
                             },
                             minutes: {
                                 gauge: {
                                     thickness: 0.03,
                                     bgColor: "rgba(255,255,255,0.05)",
                                     fgColor: "#fff"
-                                },
-                                textCSS: 'font-family:\'Open Sans\';font-weight:300;color:#fff;'
+                                }
+								
                             },
                             seconds: {
                                 gauge: {
                                     thickness: 0.03,
                                     bgColor: "rgba(255,255,255,0.05)",
                                     fgColor: "#fff"
-                                },
-                                textCSS: 'font-family:\'Open Sans\';font-weight:300;color:#fff;'
+                                }
+								
                             }
                         }
                     };
@@ -686,4 +662,5 @@
             }
         }
     };
+
 })(jQuery);

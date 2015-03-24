@@ -399,7 +399,12 @@ function Swipe(container, options) {
     },
     slide: function(to, speed) {
 
+		// cancel slideshow
+      stop();
+
       slide(to, speed);
+
+	  interval = setInterval(next, options.auto);
 
     },
     prev: function() {
