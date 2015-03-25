@@ -1,31 +1,7 @@
 $(document).ready(function(){
 	// µπº∆ ±
-	$('#countdown').ClassyCountdown({
-		theme: "white",
-		end: (new Date(2015,4,25)).getTime(),
-		style: {
-			hours: {
-				gauge: {
-					thickness: .08,
-					bgColor: "rgba(210,210,210,1)",
-					fgColor: "#3A9473"
-				}
-			},
-			minutes: {
-				gauge: {
-					thickness: .08,
-					bgColor: "rgba(210,210,210,1)",
-					fgColor: "#3A9473"
-				}
-			},
-			seconds: {
-				gauge: {
-					thickness: .08,
-					bgColor: "rgba(210,210,210,1)",
-					fgColor: "#3A9473"
-				}
-			}
-		}
+	$('.countdown').each(function () {
+		$(this).ClassyCountdown();
 	});
 		
 	// Ωπµ„Õº

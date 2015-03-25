@@ -27,14 +27,6 @@ h3{
 	background:url(../images/login_1.png) 0 -132px no-repeat;
 	margin-top: 23px;
 }
-.mail_box input,.cipher_box input{
-	border: none;
-	background-color: none;
-	font-size: 18px;
-	width: 350px;
-	height: 43px;
-	line-height: 43px;
-}
 .forget{
 	font-size: 14px;
 	color: #3a9473;

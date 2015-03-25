@@ -14,8 +14,9 @@
         var DaysLeft, HoursLeft, MinutesLeft, SecondsLeft;
         var secondsLeft;
         var isFired = false;
+		var timeArr = element.attr('data-time').split('-');
         var settings = {
-            end: undefined,
+            end: (new Date(Number(timeArr[0]), Number(timeArr[1]), Number(timeArr[2]))).getTime(),
             now: $.now(),
             labels: true,
             labelsOptions: {
@@ -40,39 +41,31 @@
                     textCSS: ''
                 },
                 hours: {
-                    gauge: {
-                        thickness: 0.02,
-                        bgColor: 'rgba(0, 0, 0, 0)',
-                        fgColor: 'rgba(0, 0, 0, 1)',
-                        lineCap: 'butt'
-                    },
-                    textCSS: ''
-                },
-                minutes: {
-                    gauge: {
-                        thickness: 0.02,
-                        bgColor: 'rgba(0, 0, 0, 0)',
-                        fgColor: 'rgba(0, 0, 0, 1)',
-                        lineCap: 'butt'
-                    },
-                    textCSS: ''
-                },
-                seconds: {
-                    gauge: {
-                        thickness: 0.02,
-                        bgColor: 'rgba(0, 0, 0, 0)',
-                        fgColor: 'rgba(0, 0, 0, 1)',
-                        lineCap: 'butt'
-                    },
-                    textCSS: ''
-                }
+					gauge: {
+						thickness: .08,
+						bgColor: "rgba(210,210,210,1)",
+						fgColor: "#3A9473"
+					}
+				},
+				minutes: {
+					gauge: {
+						thickness: .08,
+						bgColor: "rgba(210,210,210,1)",
+						fgColor: "#3A9473"
+					}
+				},
+				seconds: {
+					gauge: {
+						thickness: .08,
+						bgColor: "rgba(210,210,210,1)",
+						fgColor: "#3A9473"
+					}
+				}
             },
             onEndCallback: function() {
             }
         };
-        if (options.theme) {
-            settings = $.extend(true, settings, getPreset(options.theme));
-        }
+       
         settings = $.extend(true, settings, options);
         prepare();
         doTick();
@@ -160,7 +153,7 @@
             element.find('.ClassyCountdown-hours input').val(24 - HoursLeft).trigger('change');
             element.find('.ClassyCountdown-minutes input').val(60 - MinutesLeft).trigger('change');
             element.find('.ClassyCountdown-seconds input').val(60 - SecondsLeft).trigger('change');
-            $('#coutdownDay').html(DaysLeft);
+            element.parent().find('.coutdownDay').html(DaysLeft);
             element.find('.ClassyCountdown-hours .ClassyCountdown-value > div').html(HoursLeft);
             element.find('.ClassyCountdown-minutes .ClassyCountdown-value > div').html(MinutesLeft);
             element.find('.ClassyCountdown-seconds .ClassyCountdown-value > div').html(SecondsLeft);
@@ -500,38 +493,6 @@
                                     lineCap: 'round'
                                 },
                                 textCSS: 'font-family:\'Open Sans\';font-weight:300;color:#34495e;'
-                            }
-                        }
-                    };
-                case 'white':
-                    return {
-                        labels: true,
-                        style: {
-                            element: '',
-                            textResponsive: 0.5,
-                            hours: {
-                                gauge: {
-                                    thickness: 0.03,
-                                    bgColor: "rgba(255,255,255,0.05)",
-                                    fgColor: "#fff"
-                                }
-
-                            },
-                            minutes: {
-                                gauge: {
-                                    thickness: 0.03,
-                                    bgColor: "rgba(255,255,255,0.05)",
-                                    fgColor: "#fff"
-                                }
-								
-                            },
-                            seconds: {
-                                gauge: {
-                                    thickness: 0.03,
-                                    bgColor: "rgba(255,255,255,0.05)",
-                                    fgColor: "#fff"
-                                }
-								
                             }
                         }
                     };

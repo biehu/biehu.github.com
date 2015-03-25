@@ -1,28 +1,6 @@
-
-
 .main{
 	width: 1200px;
-	margin: 0 auto;
-}
-.focus{
-	padding-top: 20px;
-	position: relative;
-}
-.focus_btn{
-	position: absolute;
-	left: 1090px;
-	top: 340px;
-	overflow: hidden;
-}
-.focus_btn li{
-	background: url(../images/focus.png) no-repeat;
-	width: 15px;
-	height: 15px;
-	float: left;
-	margin-right: 12px;
-}
-.focus_btn li.on{
-	background: url(../images/focus_on.png) no-repeat;
+	margin: 0 auto 48px;
 }
 .contest_left{
 	float: left;
@@ -50,6 +28,22 @@
 	width: 545px;
 	padding-left: 36px;
 }
+.movie_time {
+	display: inline-block;
+	width: 112px;
+	height: 41px;
+	margin-left: 5px;
+	vertical-align: -5px;
+}
+.movie_time_ing {
+	background: url(../images/in.png) no-repeat left bottom;
+} 
+.movie_time_start {
+	background: url(../images/start.png) no-repeat left bottom;
+} 
+.movie_time_end {
+	background: url(../images/end.png) no-repeat left bottom;
+} 
 .contest_name{
 	font-size: 24px;
 	height: 90px;
@@ -69,6 +63,12 @@
 .state{
 	margin-left: 5px;
 	vertical-align: -5px;
+}
+.movie_text em {
+	margin-right: 10px;
+	font-style: normal;
+	font-size: 18px;
+	color: #3a9473;
 }
 .movie_text strong{
 	font-size: 30px;
@@ -190,7 +190,6 @@ a.bm {
 }
 .works{
 	color: #828282;
-	padding-bottom: 48px;
 }
 .famous a {
 	display: block;
@@ -238,6 +237,26 @@ a.bm {
 }
 
 /* 焦点图 */
+.focus{
+	padding-top: 20px;
+	position: relative;
+}
+.focus_btn{
+	position: absolute;
+	left: 1090px;
+	top: 340px;
+	overflow: hidden;
+}
+.focus_btn li{
+	background: url(../images/focus.png) no-repeat;
+	width: 15px;
+	height: 15px;
+	float: left;
+	margin-right: 12px;
+}
+.focus_btn li.on{
+	background: url(../images/focus_on.png) no-repeat;
+}
 .swipe {
 	overflow: hidden;
 	visibility: hidden;
@@ -252,20 +271,3 @@ a.bm {
 	width: 100%;
 	position: relative;
 }
-
-.movie_time {
-	display: inline-block;
-	width: 112px;
-	height: 41px;
-	margin-left: 5px;
-	vertical-align: -5px;
-}
-.movie_time_ing {
-	background: url(../images/in.png) no-repeat left bottom;
-} 
-.movie_time_start {
-	background: url(../images/start.png) no-repeat left bottom;
-} 
-.movie_time_end {
-	background: url(../images/end.png) no-repeat left bottom;
-} 

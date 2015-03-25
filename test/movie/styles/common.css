@@ -177,3 +177,25 @@ a.reg{
 	color: #828282;
 	margin-top: 15px;
 }
+
+/* 表单 */
+.form_box {
+	position: relative;
+}
+.form_box input {
+	border: none;
+	background-color: none;
+	font-size: 18px;
+	width: 350px;
+	height: 43px;
+	line-height: 43px;
+}
+.form_box .unhappyMessage {
+	position: absolute;
+	right: 0;
+	height: 43px;
+	padding-left: 20px;
+	background: url(../images/error.png) no-repeat left center;
+	color: #ffae00;
+	font-size: 12px;
+}

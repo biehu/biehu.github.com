@@ -30,13 +30,13 @@
 	left: 0;
 }
 
-.coutdown {
+.countdown {
 	position: relative;
 	height: 130px;
 	padding-left: 25px;
 }
 
-.coutdown input {
+.countdown input {
 	display: none;
 }
 

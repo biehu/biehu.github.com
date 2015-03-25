@@ -3,14 +3,6 @@
 <head>
 <meta charset="utf-8" />
 <title></title>
-<!-- 公共样式及统计代码 -->
-<!--#include virtual="/section/716.html"-->
-<style>
-.page_footer .footer {
-    margin-top: 0;
-    background: #000;
-}
-</style>
 <link rel="stylesheet" href="styles/login.css" />
 <link rel="stylesheet" href="styles/common.css" />
 </head>
@@ -32,14 +24,14 @@
 	<div class="main">
 		<div class="left">
 			<h3>欢迎来到毫米网，请先登录</h3>
-			<div class="mail_box">
-				<input type="text" />
+			<div class="form_box mail_box">
+				<input id="email" type="text" />
 			</div>
-			<div class="cipher_box">
-				<input type="password" />
+			<div class="form_box cipher_box">
+				<input id="password" type="password" />
 			</div>
 			<a class="forget" href="">忘记密码？</a>
-			<a class="login_btn1" href="">登&nbsp;&nbsp;录</a>
+			<a id="login_btn" class="login_btn1" href="">登&nbsp;&nbsp;录</a>
 			<p>还没有毫米网账号？<a class="register" href="">立即注册</a></p>
 		</div>
 		<div class="right">
@@ -70,6 +62,8 @@
 	</div>
 </div>
 <script type="text/javascript" src="scripts/jquery.js"></script>
-
+<script src="scripts/happy.js"></script>
+<script src="scripts/happy.methods.js"></script>
+<script src="scripts/form.js"></script>
 </body>
 </html>
