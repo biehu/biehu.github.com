@@ -47,11 +47,11 @@
         }
         function processField(opts, selector) {
             var field = $(selector);
-            var error = {
+            var errorInfo = {
                 message: opts.message || '',
                 id: selector.slice(1) + '_unhappy'
             };
-            var errorEl = $(error.id).length > 0 ? $(error.id) : getError(error);
+            var errorEl = $(errorInfo.id).length > 0 ? $(errorInfo.id) : getError(errorInfo);
             var handleBlur = function handleBlur() {
                 if (!pauseMessages) {
                     field.testValid(true);
@@ -62,7 +62,7 @@
 
             fields.push(field);
             field.testValid = function testValid(submit) {
-                var val, gotFunc, temp;
+                var val, temp;
                 var el = $(this);
                 var errorTarget = (opts.errorTarget && $(opts.errorTarget)) || el;
                 var error = false;
@@ -70,6 +70,23 @@
                 var password = (field.attr('type') === 'password');
                 var arg = isFunction(opts.arg) ? opts.arg() : opts.arg;
                 var fieldErrorClass = config.classes && config.classes.field || 'unhappy';
+				var valid = function () {
+					// get the value
+					var gotFunc = ((val.length > 0 || required === 'sometimes') && isFunction(opts.test));
+					
+					// check if we've got an error on our hands
+					if (submit === true && required === true && val.length === 0) {
+						error = true;
+					} else if (gotFunc) {
+						error = !opts.test(val, arg);
+					}
+
+					if (!error && opts.next) {
+						opts.test = opts.next.test;
+						errorEl.html(opts.next.message);
+						valid();
+					}
+				};
 
                 // handle control groups (checkboxes, radio)
                 if (el.length > 1) {
@@ -92,15 +109,7 @@
                   el.val(val);
                 }
 
-                // get the value
-                gotFunc = ((val.length > 0 || required === 'sometimes') && isFunction(opts.test));
-
-                // check if we've got an error on our hands
-                if (submit === true && required === true && val.length === 0) {
-                    error = true;
-                } else if (gotFunc) {
-                    error = !opts.test(val, arg);
-                }
+				valid();
 
                 if (error) {
                     errorTarget.addClass(fieldErrorClass).after(errorEl);

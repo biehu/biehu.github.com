@@ -195,7 +195,7 @@ a.reg{
 	right: 0;
 	height: 43px;
 	padding-left: 20px;
-	background: url(../images/error.png) no-repeat left center;
+	background: #fff url(../images/error.png) no-repeat left center;
 	color: #ffae00;
 	font-size: 12px;
 }
