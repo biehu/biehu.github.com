@@ -149,10 +149,10 @@
                 MinutesLeft = 0;
                 SecondsLeft = 0;
             }
-            element.find('.ClassyCountdown-days input').val(365 - DaysLeft).trigger('change');
-            element.find('.ClassyCountdown-hours input').val(24 - HoursLeft).trigger('change');
-            element.find('.ClassyCountdown-minutes input').val(60 - MinutesLeft).trigger('change');
-            element.find('.ClassyCountdown-seconds input').val(60 - SecondsLeft).trigger('change');
+            element.find('.ClassyCountdown-days input').val(DaysLeft).trigger('change');
+            element.find('.ClassyCountdown-hours input').val(HoursLeft).trigger('change');
+            element.find('.ClassyCountdown-minutes input').val(MinutesLeft).trigger('change');
+            element.find('.ClassyCountdown-seconds input').val(SecondsLeft).trigger('change');
             element.parent().find('.coutdownDay').html(DaysLeft);
             element.find('.ClassyCountdown-hours .ClassyCountdown-value > div').html(HoursLeft);
             element.find('.ClassyCountdown-minutes .ClassyCountdown-value > div').html(MinutesLeft);
