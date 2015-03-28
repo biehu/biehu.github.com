@@ -94,7 +94,7 @@ body,
 
 
 /*
-	��һҳ
+	第一页
 */
 
 .page-1.active .pic-1,
@@ -146,7 +146,7 @@ body,
 
 
 /*
-	�ڶ�ҳ
+	第二页
 */
 
 .win img {
@@ -160,7 +160,13 @@ body,
 .page-2.active .pic-2,
 .page-2.active .pic-4,
 .page-2.active .pic-3 {
+    top: -50px;
+    height: auto;
 	-webkit-animation-name: flash;
+}
+
+.page-2.active div img {
+    width: 100%;
 }
 
 .page-2 .bg {
@@ -175,21 +181,18 @@ body,
 	-webkit-animation-duration: 8s;
 	-webkit-animation-iteration-count: infinite;
 	-webkit-animation-delay: .5s;
-	background-image: url(../images/second-text-1.png);
 }
 
 .page-2 .pic-3 {
 	-webkit-animation-duration: 8s;
 	-webkit-animation-iteration-count: infinite;
 	-webkit-animation-delay: 1s;
-	background-image: url(../images/second-text-2.png);
 }
 
 .page-2 .pic-4 {
 	-webkit-animation-duration: 8s;
 	-webkit-animation-iteration-count: infinite;
 	-webkit-animation-delay: 1.5s;
-	background-image: url(../images/second-text-3.png);
 }
 
 .page-2 .pic-5 {
@@ -221,27 +224,29 @@ body,
 
 .link {
 	position: absolute;
-	width: 30.8%;
-	height: 17.8%;
+    bottom: 0;
+	width: 43%;
 }
 
 .link-1 {
-	top: 23.2%;
-	left: 34.7%;
+    left: 50%;
+	height: 54%;
+    margin-left: -21%;
 }
 
 .link-2 {
-	top: 46.2%;
-	left: 59.1%;
+    height: 34%;
+    right: 0;
 }
 
 .link-3 {
-	top: 69.1%;
-	left: 34.2%;
+    left: 50%;
+	height: 25%;
+    margin-left: -21%;
 }
 
 /*
-	����ҳ
+	第三页
 */
 
 
@@ -257,6 +262,10 @@ body,
 
 .page-3 .bg {
 	background-image: url(../images/last.jpg);
+}
+
+.page-3 .logo img {
+	width: 100%;
 }
 
 .page-3 .pic-1 {
@@ -282,7 +291,10 @@ body,
 	background-position-y: -50px;
 }
 
-.page-3 .pic-3,
+.page-3 .pic-3 {
+	background-position-y: -25px;
+}
+
 .page .bg {
 	background-position-y: 0;
 }
@@ -295,6 +307,103 @@ body,
 .page-3 .pic-4 {
 	background-position-y: -30px;
 }
+
+/*
+	压力重重
+*/
+
+.pressure .bg {
+    background-image: url(../images/index-bg.jpg);
+}
+
+.pressure > div {
+    background-position-y: -20px;
+}
+
+.pressure .pic-1 {
+    background-image: url(../images/first-text.png);
+}
+
+.pressure .pic-2 {
+    background-image: url(../images/first-t-1.png);
+	-webkit-animation-delay: .1s;
+}
+
+.pressure .pic-3 {
+    background-image: url(../images/first-t-2.png);
+	-webkit-animation-delay: .5s;
+}
+
+.pressure .pic-4 {
+    background-image: url(../images/first-t-3.png);
+	-webkit-animation-delay: .9s;
+}
+
+.pressure .pic-5 {
+    background-image: url(../images/first-t-4.png);
+	-webkit-animation-delay: 1.3s;
+}
+
+.pressure .pic-6 {
+    background-image: url(../images/first-t-5.png);
+	-webkit-animation-delay: 1.7s;
+}
+
+.pressure .pic {
+    -webkit-animation-name: shake;
+    -webkit-animation-duration: 20s;
+	-webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+
+}
+
+/*
+ * CC女神如何应对
+ */
+
+.cc.active .pic-1 {
+    -webkit-animation-name: fadeIn;
+    -webkit-animation-duration: 2s;
+}
+
+.cc .bg {
+    background-image: url(../images/index-bg.jpg);
+}
+
+.cc .pic-1 {
+    background-image: url(../images/cc.png);
+}
+
+/*
+ * 代言人
+ */
+
+.spokesman.active .pic-1 {
+	-webkit-animation-name: fadeInLeft;
+}
+
+.spokesman.active .pic-2 {
+	-webkit-animation-name: fadeInRight;
+	-webkit-animation-delay: .5s;
+}
+.spokesman .bg {
+    background-image: url(../images/last.jpg);
+}
+
+.spokesman .logo img {
+	width: 100%;
+}
+
+.spokesman .pic-1 {
+	background-image: url(../images/lulu.png);
+	background-position-y: 0;
+}
+
+.spokesman .pic-2 {
+	background-image: url(../images/lulu-text.png);
+	background-position-y: -20px;
+}
+
 
 /*iphone4 */
 @media screen and (max-width: 320px) and (max-height:480px) {

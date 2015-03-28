@@ -11,7 +11,7 @@
 
 	<div class="loading">加载中...</div>
 	<div class="container">
-		<section class="page page-1 active">
+		<section class="page page-1 active p1">
 			<div class="bg"></div>
 			<div class="pic-1"></div>
 			<div class="pic-2"></div>
@@ -21,34 +21,64 @@
 			<span class="go"></span>
 		</section>
 
-		<section class="page page-2 down">
+		<section class="page pressure down p2">
+            <div class="bg"></div>
+            <div class="pic-1"></div>
+            <div class="pic pic-2"></div>
+            <div class="pic pic-3"></div>
+            <div class="pic pic-4"></div>
+            <div class="pic pic-5"></div>
+            <div class="pic pic-6"></div>
+            <span class="go"></span>
+        </section>
+
+		<section class="page cc down p3">
+            <div class="bg"></div>
+            <div class="pic-1"></div>
+            <span class="go"></span>
+        </section>
+
+		<section class="page page-2 down p4">
 			<div class="bg"></div>
 			<div class="pic-1"></div>
-			<div class="pic-2"></div>
-			<div class="pic-3"></div>
-			<div class="pic-4"></div>
-
-			<div class="pic-5 win">
-				<img src="images/logo.png" />
-			</div>
-			<div class="pic-6 win">
-				<img src="images/logo.png" />
-			</div>
-			<div class="pic-7 win">
-				<img src="images/logo.png" />
-			</div>
-
-			<span class="link link-1" data-win=".pic-5"></span>
-			<span class="link link-2" data-win=".pic-6"></span>
-			<span class="link link-3" data-win=".pic-7"></span>
-
-
+            
+            <div class="pic-5 win">
+                <img src="images/logo.png" />
+            </div>
+            <div class="pic-6 win">
+                <img src="images/logo.png" />
+            </div>
+            <div class="pic-7 win">
+                <img src="images/logo.png" />
+            </div>
+			
+			<div class="pic-4">
+			    <img src="images/second-text-3.png" />
+                <span class="link link-3" data-win=".pic-7"></span>
+            </div>
+            <div class="pic-3">
+                <img src="images/second-text-2.png" />
+                <span class="link link-2" data-win=".pic-6"></span>
+            </div>
+            <div class="pic-2">
+                <img src="images/second-text-1.png" />
+                <span class="link link-1" data-win=".pic-5"></span>
+            </div>
 
 			<span class="go"></span>
 		</section>
 
-		<section class="page page-3 down">
+		<section class="page spokesman down p5">
+            <div class="bg"></div>
+            <div class="logo"><img src="images/logo.png" /></div>
+            <div class="pic-1"></div>
+            <div class="pic-2"></div>
+            <span class="go"></span>
+        </section>
+
+		<section class="page page-3 down p6">
 			<div class="bg"></div>
+			<div class="logo"><img src="images/logo.png" /></div>
 			<div class="pic-4"></div>
 			<div class="pic-1"></div>
 			<div class="pic-2"></div>
@@ -63,12 +93,11 @@
 	<script>
 		(function () {
 
-		   /*
-            * 翻页
-            */
+		   
+		   // 翻页
 		   var yStart, yEnd;
            var index = 0;
-           var allNum = 3;
+           var allNum = $('.page').length;
            var isAnimate = false;
            var isModal = false;
            
@@ -82,16 +111,15 @@
                 isAnimate = true;
                 
                 if(dir === 1){
-                    $(".page-"+(page+1)).addClass('active').removeClass('up');
-                    $(".page-"+(page+2)).removeClass('active').addClass('down');
+                    $(".p"+(page+1)).addClass('active').removeClass('up');
+                    $(".p"+(page+2)).removeClass('active').addClass('down');
                     
                 }
                 else{
-                    $(".page-"+page).removeClass('active').addClass('up');
-                    $(".page-"+(page+1)).addClass('active').removeClass('down');
+                    $(".p"+page).removeClass('active').addClass('up');
+                    $(".p"+(page+1)).addClass('active').removeClass('down');
                 }
                
-                // 翻页
                 setTimeout(function(){
                     if (isAnimate) {
                         isAnimate = false;
@@ -183,11 +211,13 @@
 
 		// 加载
 
-		$('.page').hide();
-		window.onload = function () {
-			$('.loading').hide();
-			$('.page').show();
-		};
+//		$('.page').hide();
+//		window.onload = function () {
+//			$('.loading').hide();
+//			$('.page').show();
+//		};
+
+$('.page').show();
 		</script>
 </body>
 </html>
