@@ -92,6 +92,10 @@ body,
 	-webkit-transform: translate(0px, -100%);
 }
 
+.page img {
+	width: 100%;
+}
+
 
 /*
 	第一页
@@ -110,7 +114,7 @@ body,
 
 
 .page-1 .bg {
-	background-image: url(../images/index-bg.jpg);
+	background-image: url(../images/bg.jpg);
 }
 
 .page-1 .pic-1 {
@@ -170,7 +174,7 @@ body,
 }
 
 .page-2 .bg {
-	background-image: url(../images/second-bg.jpg);
+	background-image: url(../images/last.jpg);
 }
 
 .page-2 .pic-1 {
@@ -313,7 +317,7 @@ body,
 */
 
 .pressure .bg {
-    background-image: url(../images/index-bg.jpg);
+    background-image: url(../images/bg.jpg);
 }
 
 .pressure > div {
@@ -367,7 +371,7 @@ body,
 }
 
 .cc .bg {
-    background-image: url(../images/index-bg.jpg);
+    background-image: url(../images/bg.jpg);
 }
 
 .cc .pic-1 {
