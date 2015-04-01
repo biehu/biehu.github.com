@@ -10,6 +10,7 @@
 <body>
 
 	<div class="loading">加载中...</div>
+	<div id="music" class="music"></div>
 	<div class="container">
 		<section class="page page-1 active p1">
 			<div class="bg"><img src="images/logo.png" /></div>
@@ -192,23 +193,46 @@
 		var win = function () {
 			var link = $('.link');
 			var win = $('.win');
+			var root = link.parents('.page');
 
 			link.on('touchstart', function () {
 				var winSelector = $(this).attr('data-win');
 				$(winSelector).addClass('show');
-				$('.pic-1').css('opacity', 0);
-				$('.pic-2, .pic-3, .pic-4').hide();
+				root.find('.pic-1').css('opacity', 0);
+				root.find('.pic-2, .pic-3, .pic-4').hide();
 			});
 
 			win.on('touchstart', function () {
 				$(this).removeClass('show');
-				$('.pic-1').css('opacity', 1);
-				$('.pic-2, .pic-3, .pic-4').show();
+				root.find('.pic-1').css('opacity', 1);
+				root.find('.pic-2, .pic-3, .pic-4').show();
 			});
 		};
 
 
 		win();
+
+		// 音乐	
+		var music = function () {
+			var isPlay = true;
+			$("#music").on("touchstart", function(){
+				var audio = $('#audio_music')[0];
+				var that = $(this);
+				if (isPlay) {
+					audio.pause();
+					isPlay = false;
+					that.addClass('on');
+				}
+				else {
+					audio.play();
+					isPlay = true;
+					that.removeClass('on');
+				}
+				return false;
+			});
+
+		};
+		music();
 
 		// 加载
 
