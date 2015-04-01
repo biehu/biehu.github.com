@@ -58,6 +58,11 @@ body,
 	 animation-fill-mode: both;
 }
 
+.spokesman .go {
+	background: url(../images/arrow_1.png) no-repeat;
+	background-size: 100%;
+}
+
 .go {
 	-webkit-animation-delay: 1s;
 	-webkit-animation-name: goAndUp;
@@ -92,6 +97,10 @@ body,
 	-webkit-transform: translate(0px, -100%);
 }
 
+.page img {
+	width: 100%;
+}
+
 
 /*
 	第一页
@@ -110,7 +119,7 @@ body,
 
 
 .page-1 .bg {
-	background-image: url(../images/index-bg.jpg);
+	background-image: url(../images/bg.jpg);
 }
 
 .page-1 .pic-1 {
@@ -170,7 +179,7 @@ body,
 }
 
 .page-2 .bg {
-	background-image: url(../images/second-bg.jpg);
+	background-image: url(../images/last.jpg);
 }
 
 .page-2 .pic-1 {
@@ -264,6 +273,10 @@ body,
 	background-image: url(../images/last.jpg);
 }
 
+.page-3 .logo img {
+	width: 100%;
+}
+
 .page-3 .pic-1 {
 	z-index: 10;
 	background-image: url(../images/curtain-left.png);
@@ -287,7 +300,10 @@ body,
 	background-position-y: -50px;
 }
 
-.page-3 .pic-3,
+.page-3 .pic-3 {
+	background-position-y: -25px;
+}
+
 .page .bg {
 	background-position-y: 0;
 }
@@ -306,7 +322,7 @@ body,
 */
 
 .pressure .bg {
-    background-image: url(../images/index-bg.jpg);
+    background-image: url(../images/bg.jpg);
 }
 
 .pressure > div {
@@ -324,22 +340,22 @@ body,
 
 .pressure .pic-3 {
     background-image: url(../images/first-t-2.png);
-	-webkit-animation-delay: .3s;
+	-webkit-animation-delay: .5s;
 }
 
 .pressure .pic-4 {
     background-image: url(../images/first-t-3.png);
-	-webkit-animation-delay: .5s;
+	-webkit-animation-delay: .9s;
 }
 
 .pressure .pic-5 {
     background-image: url(../images/first-t-4.png);
-	-webkit-animation-delay: .7s;
+	-webkit-animation-delay: 1.3s;
 }
 
 .pressure .pic-6 {
     background-image: url(../images/first-t-5.png);
-	-webkit-animation-delay: .9s;
+	-webkit-animation-delay: 1.7s;
 }
 
 .pressure .pic {
@@ -360,7 +376,7 @@ body,
 }
 
 .cc .bg {
-    background-image: url(../images/index-bg.jpg);
+    background-image: url(../images/bg.jpg);
 }
 
 .cc .pic-1 {
@@ -370,9 +386,30 @@ body,
 /*
  * 代言人
  */
+.spokesman.active .pic-1 {
+	-webkit-animation-name: fadeInLeft;
+}
 
+.spokesman.active .pic-2 {
+	-webkit-animation-name: fadeInRight;
+	-webkit-animation-delay: .5s;
+}
 .spokesman .bg {
     background-image: url(../images/last.jpg);
+}
+
+.spokesman .logo img {
+	width: 100%;
+}
+
+.spokesman .pic-1 {
+	background-image: url(../images/lulu.png);
+	background-position-y: 0;
+}
+
+.spokesman .pic-2 {
+	background-image: url(../images/lulu-text.png);
+	background-position-y: -20px;
 }
 
 /*iphone4 */

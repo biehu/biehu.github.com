@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
-<title></title>
+<title>欧诗漫珍珠CC霜</title>
 <link rel="stylesheet" href="styles/animate.css" />
 <link rel="stylesheet" href="styles/index.css" />
 </head>
@@ -11,33 +11,8 @@
 
 	<div class="loading">加载中...</div>
 	<div class="container">
-	    <section class="page pressure down">
-            <div class="bg"></div>
-            <div class="pic-1"></div>
-            <div class="pic pic-2"></div>
-            <div class="pic pic-3"></div>
-            <div class="pic pic-4"></div>
-            <div class="pic pic-5"></div>
-            <div class="pic pic-6"></div>
-            <span class="go"></span>
-        </section>
-        
-        <section class="page cc down">
-            <div class="bg"></div>
-            <div class="pic-1"></div>
-            <span class="go"></span>
-        </section>
-        
-        <section class="page spokesman active">
-            <div class="bg"></div>
-            <div class="logo"><img src="images/logo.png" /></div>
-            <div class="pic-1"></div>
-            <div class="pic-2"></div>
-            <span class="go"></span>
-        </section>
-        
-		<section class="page page-1 down">
-			<div class="bg"></div>
+		<section class="page page-1 active p1">
+			<div class="bg"><img src="images/logo.png" /></div>
 			<div class="pic-1"></div>
 			<div class="pic-2"></div>
 			<div class="pic-3"></div>
@@ -46,8 +21,25 @@
 			<span class="go"></span>
 		</section>
 
-		<section class="page page-2 down">
-			<div class="bg"></div>
+		<section class="page pressure down p2">
+            <div class="bg"><img src="images/logo.png" /></div>
+            <div class="pic-1"></div>
+            <div class="pic pic-2"></div>
+            <div class="pic pic-3"></div>
+            <div class="pic pic-4"></div>
+            <div class="pic pic-5"></div>
+            <div class="pic pic-6"></div>
+            <span class="go"></span>
+        </section>
+
+		<section class="page cc down p3">
+            <div class="bg"><img src="images/logo.png" /></div>
+            <div class="pic-1"></div>
+            <span class="go"></span>
+        </section>
+
+		<section class="page page-2 down p4">
+			<div class="bg"><img src="images/logo.png" /></div>
 			<div class="pic-1"></div>
             
             <div class="pic-5 win">
@@ -76,8 +68,17 @@
 			<span class="go"></span>
 		</section>
 
-		<section class="page page-3 down">
+		<section class="page spokesman down p5">
+            <div class="bg"></div>
+            <div class="logo"><img src="images/logo.png" /></div>
+            <div class="pic-1"></div>
+            <div class="pic-2"></div>
+            <span class="go"></span>
+        </section>
+
+		<section class="page page-3 down p6">
 			<div class="bg"></div>
+			<div class="logo"><img src="images/logo.png" /></div>
 			<div class="pic-4"></div>
 			<div class="pic-1"></div>
 			<div class="pic-2"></div>
@@ -88,16 +89,16 @@
 			<span class="go"></span>
 		</section>
 	</div>
+	<audio id="audio_music" src="images/music.mp3" autoplay loop></audio>
 	<script src="scripts/jquery.js"></script>
 	<script>
 		(function () {
 
-		   /*
-            * 翻页
-            */
+		   
+		   // 翻页
 		   var yStart, yEnd;
            var index = 0;
-           var allNum = 3;
+           var allNum = $('.page').length;
            var isAnimate = false;
            var isModal = false;
            
@@ -111,23 +112,22 @@
                 isAnimate = true;
                 
                 if(dir === 1){
-                    $(".page-"+(page+1)).addClass('active').removeClass('up');
-                    $(".page-"+(page+2)).removeClass('active').addClass('down');
+                    $(".p"+(page+1)).addClass('active').removeClass('up');
+                    $(".p"+(page+2)).removeClass('active').addClass('down');
                     
                 }
                 else{
-                    $(".page-"+page).removeClass('active').addClass('up');
-                    $(".page-"+(page+1)).addClass('active').removeClass('down');
+                    $(".p"+page).removeClass('active').addClass('up');
+                    $(".p"+(page+1)).addClass('active').removeClass('down');
                 }
                
-                // 翻页
                 setTimeout(function(){
                     if (isAnimate) {
                         isAnimate = false;
                     }
                 },750);
 
-				if (page === 2) {
+				if (page === ($('.page').length - 1)) {
 					$('.go').hide();
 				}
 				else {
@@ -193,7 +193,7 @@
 			var link = $('.link');
 			var win = $('.win');
 
-			link.click(function () {
+			link.on('touchstart', function () {
 				var winSelector = $(this).attr('data-win');
 				$(winSelector).addClass('show');
 				$('.pic-1').css('opacity', 0);
@@ -212,13 +212,17 @@
 
 		// 加载
 
-//		$('.page').hide();
-//		window.onload = function () {
-//			$('.loading').hide();
-//			$('.page').show();
-//		};
+		$('.page').hide();
+		window.onload = function () {
+			$('.loading').hide();
+			$('.page').show();
+		};
 
-$('.page').show();
+
+		$(document.body).dblclick(function () {
+			return false;
+		});
+
 		</script>
 </body>
 </html>
