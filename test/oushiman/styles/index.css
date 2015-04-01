@@ -58,6 +58,11 @@ body,
 	 animation-fill-mode: both;
 }
 
+.spokesman .go {
+	background: url(../images/arrow_1.png) no-repeat;
+	background-size: 100%;
+}
+
 .go {
 	-webkit-animation-delay: 1s;
 	-webkit-animation-name: goAndUp;

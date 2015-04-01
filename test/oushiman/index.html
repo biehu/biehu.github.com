@@ -89,6 +89,7 @@
 			<span class="go"></span>
 		</section>
 	</div>
+	<audio id="audio_music" src="images/music.mp3" autoplay loop></audio>
 	<script src="scripts/jquery.js"></script>
 	<script>
 		(function () {
@@ -192,7 +193,7 @@
 			var link = $('.link');
 			var win = $('.win');
 
-			link.click(function () {
+			link.on('touchstart', function () {
 				var winSelector = $(this).attr('data-win');
 				$(winSelector).addClass('show');
 				$('.pic-1').css('opacity', 0);
