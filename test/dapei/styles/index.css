@@ -1,0 +1,202 @@
+* {
+    margin:0;
+    padding:0;
+}
+
+ul {
+    list-style:none;
+}
+
+img {
+    vertical-align:bottom;
+}
+
+a img {
+    border:none;
+}
+
+a {
+    text-decoration:none;
+}
+
+.clear {
+    clear:both;
+}
+
+.section1_wrap{
+	background: url(../images/section1_wrap.jpg) center top no-repeat;
+	height: 1161px;
+}
+.section1,.section2,.section3,.section4{
+	margin: 0 auto;
+	position: relative;
+	width: 1180px;
+	font-family: "微软雅黑";
+	color: #000;
+}
+.section1 p{
+	position: absolute;
+	left: 292px;
+	top: 325px;
+	font-size: 15px;
+	text-align: center;
+}
+.vedio{
+	position: absolute;
+	left: 30px;
+	top: 428px;
+}
+.section1_text{
+	position: absolute;
+	left: 108px;
+	top: 909px;
+}
+.section2_wrap{
+	background: #f1f1f1;
+	padding:40px 0 72px;
+}
+.section2{
+	background: url(../images/section2.jpg) no-repeat;
+	height: 765px;
+}
+.section2 a{
+	position: absolute;
+	z-index: 1;
+	display: block;
+	text-align: center;
+	line-height: 42px;
+	color: #fff;
+	font-size: 20px;
+}
+.section2 a.on {
+	font-size: 22px;
+}
+.left_btn{
+	width: 119px;
+	height: 119px;
+	left: 0;
+	top: 287px;
+	background: url(../images/left_btn.png) no-repeat;
+}
+.right_btn{
+	width: 119px;
+	height: 119px;
+	right: 0;
+	top: 287px;
+	background: url(../images/right_btn.png) no-repeat;
+}
+.red_btn{
+	width: 151px;
+	height: 40px;
+	background: url(../images/red_btn.png) no-repeat;
+	left: 1038px;
+	top: 33px;
+}
+.violet_btn{
+	width: 152px;
+	height: 44px;
+	background: url(../images/violet_btn.png) no-repeat;
+	left: 1038px;
+	top: 87px;
+}
+.green_btn{
+	width: 152px;
+	height: 40px;
+	background: url(../images/green_btn.png) no-repeat;
+	left: 1038px;
+	top: 146px;
+}
+.yellow_btn{
+	width: 152px;
+	height: 42px;
+	background: url(../images/yellow_btn.png) no-repeat;
+	left: 1038px;
+	top: 200px;
+}
+.section3_wrap{
+	background: #fff;
+}
+h2{
+	font-size: 50px;
+	border-bottom: 8px solid #000;
+	text-align: center;
+	margin: 0 auto;
+	width: 202px;
+}
+.section3_tit,.section4_tit{
+	height: 75px;
+	border-bottom: 1px solid #000;
+	padding-top: 25px;
+}
+.section3_top{
+	padding: 28px 0 0 20px;
+}
+.section3_2,.section3_3,.section3_4,.section3_5{
+	margin-right: 1px;
+}
+.section3_bottom{
+	background: url(../images/section3.jpg) no-repeat;
+	height: 746px;
+}
+.section3_bottom p{
+	width: 255px;
+	position: absolute;
+	left: 470px;
+	top:1013px;
+	font-size: 14px;
+	line-height: 24px;
+}
+.section4_wrap{
+	background: #eeeeee;
+}
+.section4_main{
+	padding-top: 30px;
+}
+.section4 ul {
+	overflow: hidden;
+}
+.section4 li{
+	float: left;
+	margin-right: 1px;
+}
+.team{
+	color: #848282;
+    font-size: 14px;
+    text-align: center;
+    line-height: 30px;
+    height: 95px;
+    padding-top: 30px
+}
+.team span{
+	margin-right: 20px;
+}
+
+/* 焦点图 */
+.focus {
+	overflow: hidden;
+}
+.focus strong {
+	cursor: pointer;
+}
+.focus strong, .focus p {
+	float: left;
+}
+.focus p {
+	display: none;
+	width: 0;
+}
+
+.swipe {
+	overflow: hidden;
+	visibility: hidden;
+	position: relative;
+}
+.swipe-wrap {
+	overflow: hidden;
+	position: relative;
+}
+.swipe-wrap > p {
+	float: left;
+	width: 100%;
+	position: relative;
+}
