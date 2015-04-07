@@ -167,7 +167,6 @@
             var top = (document.body.scrollTop || document.documentElement.scrollTop) + window.innerHeight;
             var i, l;
             for (i = 2, l = tops.length; i < l; i += 1) {
-                console.log(top, tops[i]);
                 if (top > tops[i]) {
                     stylePage(i);
                 }

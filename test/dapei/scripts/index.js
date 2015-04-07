@@ -10,7 +10,7 @@ var slide = function () {
             }
         );
         self.next("p:hidden").show().animate({width: "689px"},function(){
-            self.siblings('strong:hidden').show();
+            self.siblings('strong:hidden').width(113).fadeIn();
         });
     });
 };

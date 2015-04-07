@@ -293,6 +293,7 @@ body,
 
 .page-3 .pic-4 {
 	background-image: url(../images/last-product.png);
+	-webkit-transform: scale(.9);
 }
 
 
@@ -314,7 +315,7 @@ body,
 }
 
 .page-3 .pic-4 {
-	background-position-y: -20px;
+	background-position-y: -30px;
 }
 
 /*
