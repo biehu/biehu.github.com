@@ -39,26 +39,50 @@
     </div>
     <div class="section2_wrap">
         <div class="section2">
-            <div class="lesson1" style="display:none;">
+            <div class="lesson1">
                 <img class="tip1" src="images/tip1.png" />
                 <img class="tip2" src="images/tip2.png" />
                 <img class="tip3" src="images/tip3.png" />
                 <a class="left_btn" href=""></a>
                 <a class="right_btn" href=""></a>
-                <ul class="step">
-                    <li class="step1"><img class="tip3" src="images/section3_1.png" /></li>
-                    <li class="step2 step_text"><span>STEP2</span><br />
-以眉心为始，分别沿45度角向两边发际轻推各8~10次</li>
-                </ul>
+                <div id="slider" class="swipe step ">
+                    <div class="swipe-wrap">
+                        <ul>
+                            <li class="step_text">
+                                <span>STEP2</span><br />
+        以眉心为始，分别沿45度角向两边发际轻推各8~10次
+                                <img src="images/section3_1.png" />
+                            </li>
+                            <li class="step_text">
+                                <span>STEP2</span><br />
+        以眉心为始，分别沿45度角向两边发际轻推各8~10次
+                                <img src="images/section3_1.png" />
+                            </li>
+                            
+                        </ul>
+                        <ul>
+                            <li class="step_text">
+                                <span>STEP2</span><br />
+        以眉心为始，分别沿45度角向两边发际轻推各8~10次
+                                <img src="images/section3_1.png" />
+                            </li>
+                            <li class="step_text">
+                                <span>STEP2</span><br />
+        以眉心为始，分别沿45度角向两边发际轻推各8~10次
+                                <img src="images/section3_1.png" />
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div class="lesson2">
+            <div class="lesson2" style="display:none;">
                 <img class="tip1  scroll" src="images/tip4.png" />
                 <img class="tip2  scroll" src="images/tip3_3.png" />
                 <img class="tip3" src="images/tip_img.png" />
             </div> 
             <ul class="section2_btn tab">
-                <li class="lesson1_btn">LESSON1理论课</li>
-                <li class="lesson2_btn on">LESSON2实践课</li>
+                <li class="lesson1_btn on">LESSON1理论课</li>
+                <li class="lesson2_btn">LESSON2实践课</li>
             </ul>
         </div>
     </div>
@@ -122,12 +146,13 @@
             <!--#include virtual="/section/717.html"-->
         </div>
 <script src="scripts/jquery.js"></script>
+<script src="scripts/swipe.js"></script>
 <script>
     // 切换
     
     var tab = function () {
         var btn = $('.tab li');
-        var content = $('.section2_wrap > div');
+        var content = $('.section2 > div');
         
         var show = function () {
             var index = $(this).index();
@@ -165,7 +190,6 @@
             var top = (document.body.scrollTop || document.documentElement.scrollTop) + window.innerHeight;
             var i, l;
             for (i = 2, l = tops.length; i < l; i += 1) {
-                console.log(top, tops[i]);
                 if (top > tops[i]) {
                     stylePage(i);
                 }
@@ -189,9 +213,24 @@
         bindScroll();
     };
     
+    // 滚动
+    var play = function () {
+        var slider = Swipe(document.getElementById('slider'));
+        $('.left_btn').click(function () {
+            slider.prev();
+            return false;
+        });
+        $('.right_btn').click(function () {
+            slider.next();
+            return false;
+        });
+        
+    };
+    
     
     tab();
     srcoll();
+    play();
 </script>
 </body>
 </html>

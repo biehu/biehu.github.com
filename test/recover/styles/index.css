@@ -117,7 +117,7 @@ top: 230px;
 	font-weight: bold;
 	text-align: center;
 }
-
+.section2_btn li.on,
 .section2_btn li:hover{
 	background: url(../images/tab_on.png) no-repeat;
 	color: #5babaa;
@@ -157,6 +157,7 @@ top: 230px;
 	width: 47px;
 	height: 70px;
 	position: absolute;
+    z-index: 1000;
 	display: block;
 	top: 454px;
 }
@@ -293,7 +294,7 @@ top: 230px;
     }
     
 }
-
+`
 .scroll {
     opacity: 0;
     filter:alpha(opacity=0);
@@ -309,4 +310,29 @@ top: 230px;
 .section4_right .product-pretty  {
 	top: 80px;
 	left: 210px;
+}
+.step li {
+    position: relative;
+}
+.step li:hover img {
+   display: none; 
+}
+.step img {
+    top: 8px;
+    left: 7px;
+}
+.swipe {
+    width: 360px;
+    overflow: hidden;
+    visibility: hidden;
+    position: relative;
+}
+.swipe-wrap {
+    overflow: hidden;
+    position: relative;
+}
+.swipe-wrap > ul {
+    float: left;
+    width: 100%;
+    position: relative;
 }
