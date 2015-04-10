@@ -1,0 +1,175 @@
+* {
+    margin:0;
+    padding:0;
+}
+body {
+    background: #000;
+}
+ul {
+    list-style:none;
+}
+
+img {
+    vertical-align:bottom;
+    border: none;
+}
+
+a img {
+    border:none;
+}
+
+a {
+    text-decoration:none;
+}
+
+.clear {
+    clear:both;
+}
+
+.container {
+	overflow: hidden;
+}
+
+.section1{
+	background: url(../images/section1.jpg) no-repeat;
+	width: 482px;
+}
+.section1 p{
+	text-align: center;
+	width: 381px;
+	line-height: 22px;
+	font-size: 13px;
+	position: absolute;
+	left: 50px;
+	top: 410px;
+}
+.section1,.section2,.section3,.section4,.section5{
+	position: relative;
+	height: 715px;
+	font-family: "微软雅黑";
+	float: left;
+}
+.section2{
+	width: 3155px;
+}
+.circle{
+	position: absolute;
+}
+.circle1{
+	left: 74px;
+	top: 139px;
+}
+.circle2{
+	left: 317px;
+	top: 93px;
+}
+.circle3{
+	left: 642px;
+	top: 249px;
+}
+.circle4{
+	left: 969px;
+	top: 113px;
+}
+.circle5{
+	left: 1248px;
+	top: 209px;
+}
+.circle6{
+	left: 1564px;
+	top: 131px;
+}
+.circle7{
+	left: 1837px;
+	top: 273px;
+}
+.circle8{
+	left: 2120px;
+	top: 88px;
+}
+.circle9{
+	left: 2428px;
+	top: 160px;
+}
+.circle10{
+	left: 2757px;
+	top: 177px;
+}
+.section3{
+	width: 650px;
+}
+.qtab{
+	left: 145px;
+	top: 24px;
+	position: absolute;
+}
+.section4{
+	background: url(../images/section4.jpg) no-repeat;
+	width: 820px;
+}
+.figure{
+	width: 160px;
+	height: 54px;
+	font-size: 15px;
+	line-height: 22px;
+	overflow: hidden;
+	position: absolute;
+}
+.head{
+	float: left;
+}
+.figure p{
+	float: right;
+}
+.figure1{
+	left: 80px;
+	top: 96px;
+}
+.figure2{
+	left: 310px;
+	top: 560px;
+}
+.figure3{
+	left: 525px;
+	top: 86px;
+}
+.product{
+	position: absolute;
+}
+.product1{
+	left: 103px;
+	top: 222px;
+}
+.product2{
+	left: 344px;
+	top: 125px;
+}
+.product3{
+	left: 553px;
+	top: 222px;
+}
+.section5{
+	background: url(../images/section5.jpg) no-repeat;
+	width: 922px;
+}
+.fs{
+	position: absolute;
+	left: 0;
+	top: 682px;
+}
+.product-info img {
+    display: none;
+}
+.tab-info img {
+    display: none;
+}
+.tab-info img.on {
+    display: block;
+}
+.product:hover {
+    margin-top: 10px;
+}
+.container {
+    height: 715px;
+    overflow: hidden;
+}

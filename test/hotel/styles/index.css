@@ -1,0 +1,256 @@
+* {
+    margin:0;
+    padding:0;
+}
+body{
+    background: #000;
+}
+ul {
+    list-style:none;
+}
+img {
+    vertical-align:bottom;
+}
+a img {
+    border:none;
+}
+a {
+    text-decoration:none;
+}
+.clear {
+    clear:both;
+}
+.hide {
+    display: none;
+}
+.container{
+	background: url(../images/bg.jpg) center top no-repeat;
+    height: 825px;
+}
+.main{
+    width: 1198px;
+    margin: 0 auto;
+    position: relative;
+}
+.life{
+    left: 0;
+    top: 0;
+}
+.xingz a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.xingz li{
+    position: absolute;
+    width: 236px;
+    height: 236px;
+}
+.box1{
+    left: 246px;
+    top: 312px;
+    background: url(../images/1.png) no-repeat;
+}
+.box1:hover{
+     background: url(../images/1_1.png) no-repeat;
+}
+.box2{
+    left: 482px;
+    top: 312px;
+    background: url(../images/2.png) no-repeat;
+}
+.box2:hover{
+     background: url(../images/2_2.png) no-repeat;
+}
+.box3{
+    left: 717px;
+    top: 312px;
+    background: url(../images/3.png) no-repeat;
+}
+.box3:hover{
+     background: url(../images/3_3.png) no-repeat;
+}
+.box4{
+    left: 128px;
+    top: 430px;
+    background: url(../images/4.png) no-repeat;
+}
+.box4:hover{
+     background: url(../images/4_4.png) no-repeat;
+}
+.box5{
+    left: 364px;
+    top: 430px;
+    background: url(../images/5.png) no-repeat;
+}
+.box5:hover{
+     background: url(../images/5_5.png) no-repeat;
+}
+.box6{
+    left: 599px;
+    top: 430px;
+    background: url(../images/6.png) no-repeat;
+}
+.box6:hover{
+     background: url(../images/6_6.png) no-repeat;
+}
+.box7{
+    left: 835px;
+    top: 430px;
+    background: url(../images/7.png) no-repeat;
+}
+.box7:hover{
+     background: url(../images/7_7.png) no-repeat;
+}
+.box8{
+    left: 10px;
+    top: 548px;
+    background: url(../images/8.png) no-repeat;
+}
+.box8:hover{
+     background: url(../images/8_8.png) no-repeat;
+}
+.box9{
+    left: 246px;
+    top: 548px;
+    background: url(../images/9.png) no-repeat;
+}
+.box9:hover{
+     background: url(../images/9_9.png) no-repeat;
+}
+.box10{
+    left: 481px;
+    top: 548px;
+    background: url(../images/10.png) no-repeat;
+}
+.box10:hover{
+     background: url(../images/10_10.png) no-repeat;
+}
+.box11{
+    left: 717px;
+    top: 548px;
+    background: url(../images/11.png) no-repeat;
+}
+.box11:hover{
+     background: url(../images/11_11.png) no-repeat;
+}
+.box12{
+    left: 953px;
+    top: 548px;
+    background: url(../images/12.png) no-repeat;
+}
+.box12:hover{
+     background: url(../images/12_12.png) no-repeat;
+}
+
+.detail{
+    background: url(../images/detail_bg.jpg) center top no-repeat;
+    font-family: "微软雅黑";
+}
+.hotel{
+    position: absolute;
+    left: 514px;
+    top: 179px;
+}
+.left{
+    background: url(../images/left_btn.png) no-repeat;
+    left: 470px;
+    top: 430px;
+}
+.right{
+    background: url(../images/right_btn.png) no-repeat;
+    left: 1122px;
+    top: 430px;
+}
+.btn{
+    width: 93px;
+    height: 171px;
+    position: absolute;
+}
+.return{
+    width: 341px;
+    height: 175px;
+    top: 650px;
+    left: 871px;
+    background: url(../images/return.png) no-repeat;
+    position: absolute;
+}
+.reco{
+    position: absolute;
+    width: 292px;
+    font-size: 15px;
+    line-height: 22px;
+    color: #fff;
+    left: 294px;
+    top: 82px;
+}
+.reco a{
+    color: #94d5cb;
+}
+.message{
+    position: absolute;
+    left: 917px;
+    top: 110px;
+    font-size: 15px;
+    line-height: 23px;
+    color: #fff;
+}
+.message p{
+    padding-left: 26px;
+}
+.one{
+    background: url(../images/sign.png) no-repeat;
+}
+.two{
+    background: url(../images/sign.png) 0 -45px no-repeat;
+}
+.three{
+    background: url(../images/sign.png) 0 -93px no-repeat;
+}
+.four{
+    background: url(../images/sign.png) 0 -114px no-repeat;
+}
+
+.share {
+    position: relative;
+}
+.weixin_code {
+    display: none;
+}
+.share a {
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    width: 46px;
+    height: 46px;
+    background: #fff;
+    opacity: 0;
+    filter:alpha(opacity=0); 
+}
+.share .weixin {
+    top: 61px;
+    left: 121px;
+}
+.share .weibo {
+    top: 31px;
+    left: 161px;
+}
+.swipe {
+    overflow: hidden;
+    visibility: hidden;
+    width: 668px;
+}
+.swipe-wrap {
+    overflow: hidden;
+    position: relative;
+}
+.swipe-wrap > li {
+    float: left;
+    width: 100%;
+    position: relative;
+}
+.weixin_code {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
