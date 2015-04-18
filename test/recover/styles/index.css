@@ -153,7 +153,8 @@ top: 230px;
 	font-size: 18px;
 	line-height: 24px;
 }
-.section2 a{
+.section2 .left_btn,
+.section2 .right_btn {
 	width: 47px;
 	height: 70px;
 	position: absolute;
@@ -255,7 +256,9 @@ top: 230px;
 	top: 234px;
 	text-align: center;
 	width: 214px;
+    height: 350px;
     line-height: 24px;
+    color:#000;
 }
 
 .section4_left,

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+   <head>
+       <meta charset="utf-8" />
+       <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+       <title></title>
+       <link rel="stylesheet" href="styles/index.css" />
+   </head>
+   <body>
+		<div class="container">
+			<div class="p p-1 q q-1 ">
+				<div class="bg"></div>
+				<div class="logo"><img src="images/logo.png" /></div>
+				<div class="text">
+				    <img src="images/t-1.png" />
+					<span class="text-true" data-score="1"></span>
+                    <span class="text-false" data-score="0"></span>
+				</div>
+				<div class="next"></div>
+			</div>
+            <div class="p p-2 q q-2 down">
+                <div class="bg"></div>
+                <div class="logo"><img src="images/logo.png" /></div>
+                <div class="text">
+                    <img src="images/t-2.png" />
+                    <span class="text-true" data-score="1"></span>
+                    <span class="text-false" data-score="0"></span>
+                </div>
+                <div class="next"></div>
+            </div>
+            <div class="p p-3 q q-3 down">
+                <div class="bg"></div>
+                <div class="logo"><img src="images/logo.png" /></div>
+                <div class="text">
+                    <img src="images/t-3.png" />
+                    <span class="text-true" data-score="1"></span>
+                    <span class="text-false" data-score="0"></span>
+                </div>
+                <div class="next"></div>
+            </div>
+            <div class="p p-4 q q-4 down">
+                <div class="bg"></div>
+                <div class="logo"><img src="images/logo.png" /></div>
+                <div class="text">
+                    <img src="images/t-4.png" />
+                    <span class="text-true" data-score="1"></span>
+                    <span class="text-false" data-score="0"></span>
+                </div>
+                <div class="next"></div>
+            </div>
+            <div class="p p-5 down">
+                <div class="r r-1">
+                    <div class="bg"></div>
+                    <div class="logo"><img src="images/logo-1.png" /></div>
+                    <div class="text">
+                        <img src="images/success.png" />
+                        <span class="share"></span>
+                        <span class="pk"></span>
+                        <div class="look-other">
+                            <a href="#">点击文字，来看看看其他人的精彩人生吧</a>
+                        </div>
+                    </div>
+                    <div class="next"></div>
+                </div>
+                <div class="r r-2 hide">
+                    <div class="bg"></div>
+                    <div class="logo"><img src="images/logo-1.png" /></div>
+                    <div class="text">
+                        <img src="images/failure.png" />
+                        <span class="share"></span>
+                        <span class="pk"></span>
+                        <div class="look-other">
+                            <a href="#">点击文字，来看看看其他人的精彩人生吧</a>
+                        </div>
+                    </div>
+                    <div class="next"></div>
+                </div>
+            </div>
+		</div>
+        <div class="share-notice">
+            <img src="images/to-share.png" />
+        </div>
+        <script src="scripts/jquery.js"></script>
+        <script>
+            // 选题
+            var select = function () {
+                $('.text span').click(function () {
+                    var self = $(this);
+                    self.parent()[0].className = 'text ' + this.className + '-wrap';
+                });
+            };
+            select();
+            
+            // 翻页
+            var changePage = function () {
+
+               var index = 0;
+               var score = {};
+               var allNum = $('.p').length;
+               var isAnimate = false;
+               var yStart, yEnd;
+               
+               var slide = function (el, num) {
+                    el.css('WebkitTransitionDuration', '.5s');
+                    el.css('webkitTransform', 'translateY(' + num +　')');
+               };
+               
+               var showResult = function () {
+                   var scoreNum = 0;
+                   var i;
+                   for (i in score) {
+                       scoreNum += score[i].num;
+                   }
+                   
+                   $('.r').hide();
+                   if (scoreNum >= 4) {
+                       $('.r-1').show();
+                   }
+                   else {
+                       $('.r-2').show();
+                   }
+               };
+               
+               var setPage = function (dir,page) {
+                    isAnimate = true;
+                    
+                    if (index === allNum - 1) showResult();
+                    if(dir === 1){
+                        $(".p-"+(page+1)).removeClass('up');
+                        $(".p-"+(page+2)).addClass('down');
+                    }
+                    else{
+                        $(".p-"+page).addClass('up');
+                        $(".p-"+(page+1)).removeClass('down');
+                    }
+                   
+                    setTimeout(function(){
+                        if (isAnimate) isAnimate = false;
+                    },750);
+                };
+                
+                var bindTouchPageUp = function(){
+                
+                    $(document).bind("touchstart", function(e){
+                        var touch = e.originalEvent.touches[0];
+                        yStart = touch.pageY;
+                    });
+                    $(document).bind("touchmove", function(e){
+                        event.preventDefault();
+                        var touch = e.originalEvent.touches[0];
+                        yEnd = touch.pageY;
+                        if (isAnimate) return false;
+                        if (yEnd - 100 > yStart & yEnd > yStart) { //down
+                            if (index === 0) return false;
+                            setPage(1, --index);
+                        }
+                        else {
+                            if (yEnd + 100 < yStart & yEnd < yStart) { //up
+                                if (index === (allNum - 1)) return false;
+                                setPage(0, ++index);
+                            }
+                        }
+                            
+                    });
+                    
+                };
+              
+               var bindPageUp = function () {
+                   $(".text span").click(function(e){
+                       if (score[index] === undefined) score[index] = {};
+                       score[index].num = Number($(this).attr('data-score'));
+                   });
+               };
+            
+               var init = function () {
+                   bindPageUp();
+                   bindTouchPageUp();
+               };
+            
+               init();
+            };
+            changePage();
+            
+            // 分享提示
+            var shareNotice = function () {
+                var mask = $('.share-notice');
+                $('.share').click(function () {
+                    mask.fadeIn();
+                });
+                mask.click(function () {
+                    $(this).fadeOut();
+                })
+            };
+            shareNotice();
+            
+            
+            
+        </script>
+   </body>
+</html>  

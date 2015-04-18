@@ -1,0 +1,283 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    vertical-align: bottom;
+}
+
+a img {
+    border: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.clear {
+    clear: both;
+}
+
+.hide {
+    display: none;
+}
+
+img {
+    width: 100%;
+}
+
+html, body {
+    font-size: 10px;
+}
+
+html, body, .container > div, .container {
+    width: 100%;
+    height: 100%;
+}
+
+/*
+ * 翻页
+ */
+.p {
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    -webkit-transform: translate(0px, 0px);
+    -webkit-transition: -webkit-transform .5s;
+}
+
+.down {
+    -webkit-transform: translate(0px, 100%);
+}
+
+.up {
+    -webkit-transform: translate(0px, -100%);
+}
+
+
+/*
+ * 答题
+ */
+.q div.bg {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+}
+
+.q > div {
+    position: absolute;
+}
+
+.next {
+    bottom: 15px;
+    left: 50%;
+    width: 30px;
+    height: 23px;
+    margin-left: -15px;
+    background: url(../images/next.png) no-repeat;
+    background-size: 30px;
+    
+    -webkit-animation-name: topToDown;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-timing-function:linear;
+    -webkit-animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes topToDown {
+    0% {
+        -webkit-transform: translate(0, -40%);
+    }
+
+    100% {
+        -webkit-transform: translate(0, 50%);
+    }
+}
+
+.text {
+    bottom: 0;
+    z-index: 1;
+}
+
+.text span {
+    position: absolute;
+}
+
+.q-2 .text span, .q-1 .text span {
+    top: 1px;
+    left: 1px;
+    width: 24%;
+    height: 18%;
+}
+
+.q-2 .text .text-true, .q-1 .text .text-true {
+    top: 38.52459016393443%;left: 12.1875%;
+}
+
+.q-2 .text .text-false, .q-1 .text .text-false {
+    top: 38.52459016393443%;left: 36.25%;
+}
+
+.q-1 .text-true-wrap {
+    background: url(../images/t-1-true.png) no-repeat;
+    background-size: 100%;
+}
+
+.q-1 .text-false-wrap {
+    background: url(../images/t-1-false.png) no-repeat;
+    background-size: 100%;
+}
+
+.q-2 .text-true-wrap {
+    background: url(../images/t-2-true.png) no-repeat;
+    background-size: 100%;
+}
+
+.q-2 .text-false-wrap {
+    background: url(../images/t-2-false.png) no-repeat;
+    background-size: 100%;
+}
+
+.q-3 .text-true-wrap {
+    background: url(../images/t-3-true.png) no-repeat;
+    background-size: 100%;
+}
+
+.q-3 .text-false-wrap {
+    background: url(../images/t-3-false.png) no-repeat;
+    background-size: 100%;
+}
+
+.q-4 .text-true-wrap {
+    background: url(../images/t-4-true.png) no-repeat;
+    background-size: 100%;
+}
+
+.q-4 .text-false-wrap {
+    background: url(../images/t-4-false.png) no-repeat;
+    background-size: 100%;
+}
+
+.text-true-wrap img, .text-false-wrap img {
+    visibility: hidden;
+}
+
+.q-1 .bg {
+    background: url(../images/q-1.jpg) no-repeat;
+}
+
+.q-2 .bg {
+    background: url(../images/q-2.jpg) no-repeat;
+}
+
+.q-2 .text .text-true, .q-2 .text .text-false {
+    top: 36.93693693693694%;
+}
+
+.q-4 .text, .q-3 .text {
+    top: 0;
+    bottom: auto;
+}
+
+.q-3 .text span {
+    top: 1px;
+    left: 1px;
+    width: 29.7%;
+    height: 16.7%;
+}
+
+.q-3 .text .text-true {
+    top: 80%;left: 28.4375%;
+}
+
+.q-3 .text .text-false {
+    top: 80%;left: 59.06249999999999%;
+}
+
+.q-3 .bg {
+    background: url(../images/q-3.jpg) no-repeat;
+}
+
+.q-4 .text span {
+    top: 1px;
+    left: 1px;
+    width: 15.6%;
+    height: 8.4%;
+}
+
+.q-4 .text .text-true {
+     top: 85.62874251497006%;left: 15.312500000000002%;
+}
+
+.q-4 .text .text-false {
+    top: 85.62874251497006%;left: 31.25%;
+}
+
+.q-4 .bg {
+    background: url(../images/q-4.jpg) no-repeat;
+}
+
+/*
+ * 结果
+ */
+.r {
+    width: 100%;
+    height: 100%;
+}
+
+.r > div {
+    position: absolute;
+}
+
+.r .text {
+    top: 0;  
+}
+
+.r .text span {
+    width: 24.8%;
+    height: 5.8%;
+}
+
+.r .text .share {
+    top: 73.6%;
+    left: 20%;
+}
+
+.r .text .pk {
+    top: 73.6%;
+    left: 55.5%;
+}
+
+.share-notice {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .5);
+}
+
+.look-other {
+    text-align: center;
+    line-height: 30px;
+}
+
+.look-other a {
+    color: #fff;
+}
+
+.r-1 {
+    background: url(../images/success-bg.jpg) no-repeat;
+    background-size: cover;
+}
+
+.r-2 {
+    background: url(../images/failure-bg.jpg) no-repeat;
+    background-size: cover;
+}

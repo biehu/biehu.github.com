@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title></title>
+<!-- 公共样式及统计代码 -->
+<!--#include virtual="/section/716.html"-->
+<style>
+.page_footer .footer {
+    margin-top: 0;
+    background: #000;
+}
+</style>
+<link rel="stylesheet" href="styles/index.css" />
+</head>
+<body>
+     <!--#include virtual="/section/715.html"-->
+        <!--替换区域 开始-->
+<div class="container">
+    <div class="section1">
+        <p>你是不是尝试过N次美白后，依然失败呢？<br />你是不是也被卖家忽悠后，花了很多冤枉钱呢？<br />“非buy不可”帮你终结你的美白问题，经过2个月的海选&投票。<br />我们为你选出了最权威，最口碑的美白排行榜。<br />下面我们就看看今年<br />“非buy不可——美白大奖”的晋级选手吧！</p>
+    </div>
+    <div class="section2">
+        <div class="product-wrap">
+            <img src="images/section2.jpg" usemap="#Map" />
+            <map name="Map">
+              <area shape="rect" coords="119,182,288,596" href="#" alt="1">
+              <area shape="rect" coords="431,72,614,568" href="#" alt="2">
+              <area shape="rect" coords="774,250,914,663" href="#" alt="3">
+              <area shape="rect" coords="1078,123,1215,538" href="#" alt="4">
+              <area shape="rect" coords="1377,66,1542,655" href="#" alt="5">
+              <area shape="rect" coords="1677,216,1840,527" href="#" alt="6">
+              <area shape="rect" coords="1979,249,2152,706" href="#" alt="7">
+              <area shape="rect" coords="2259,50,2393,602" href="#" alt="8">
+              <area shape="rect" coords="2585,89,2717,563" href="#" alt="9">
+              <area shape="rect" coords="2885,66,3018,632" href="#" alt="10">
+            </map>
+        </div>
+        <div class="product-info">
+            <img class="circle circle1" src="images/circle1.png" />
+            <img class="circle circle2" src="images/circle2.png" />
+            <img class="circle circle3" src="images/circle3.png" />
+            <img class="circle circle4" src="images/circle4.png" />
+            <img class="circle circle5" src="images/circle5.png" />
+            <img class="circle circle6" src="images/circle6.png" />
+            <img class="circle circle7" src="images/circle7.png" />
+            <img class="circle circle8" src="images/circle8.png" />
+            <img class="circle circle9" src="images/circle9.png" />
+            <img class="circle circle10" src="images/circle10.png" />
+        </div>
+    </div>
+    <div class="section3">
+        <div class="tab">
+            <img src="images/qtab.jpg" usemap="#Map2" class="qtab" />
+            <map name="Map2">
+              <area shape="rect" coords="9,7,102,103" href="#">
+              <area shape="rect" coords="121,4,224,104" href="#">
+              <area shape="rect" coords="239,5,344,105" href="#">
+            </map>
+        </div>
+        <div class="tab-info">
+            <img class="on" src="images/section3.jpg" />
+            <img src="images/section3.jpg" />
+            <img src="images/section3.jpg" />
+        </div>
+    </div>
+    <div class="section4">
+        <div class="figure figure1"><img class="head" src="images/head.png" /><p>嘉人网美容编辑<br />
+李小萌</p></div>
+        <div class="figure figure2"><img class="head" src="images/head.png" /><p>嘉人网美容编辑<br />
+李小萌</p></div>
+        <div class="figure figure3"><img class="head" src="images/head.png" /><p>嘉人网美容编辑<br />
+李小萌</p></div>
+        <img class="product product1" src="images/product1.png" />
+        <img class="product product2" src="images/product2.png" />
+        <img class="product product3" src="images/product3.png" />
+     </div>   
+     <div class="section5">
+        <img class="fs" src="images/worker.png" />
+     </div>
+ </div>   
+ <div class="page_footer">
+             <!--替换区域 结束-->
+            <!--#include virtual="/section/717.html"-->
+        </div>
+<link rel="stylesheet" href="scripts/jquery.mCustomScrollbar.css" />
+<script src="scripts/jquery.js"></script>
+<script src="scripts/jquery.mCustomScrollbar.js"></script>
+<script>
+    var showProductInfo = function () {
+        var info = $('.product-info img');
+        $('.product-wrap area').on('mouseenter', function () {
+            info.eq($(this).index()).show();
+        });
+        $('.product-wrap area').on('mouseleave', function () {
+            info.eq($(this).index()).hide();
+        });
+        info.on('mouseenter', function () {
+            $(this).show();
+        });
+        info.on('mouseleave', function () {
+            $(this).hide();
+        });
+    };
+    
+    var questionTab = function () {
+        $('.tab area').click(function () {
+            $('.tab-info img').eq($(this).index()).addClass('on').
+                siblings().removeClass('on');
+            return false;
+        });
+    };
+    
+    var scrollAfterWorker = function () {
+        var worker = $('.fs');
+        worker.animate({top: 0}, 5000);
+    };
+    
+    var scrollPage = function () {
+        var isChange = true;
+        $(".container").mCustomScrollbar({
+            axis:"x",
+            scrollButtons:{enable:true},
+            theme:"dark-thin",
+            advanced:{autoExpandHorizontalScroll:true},
+            callbacks: {
+                whileScrolling: function () {
+                    if (this.mcs.draggerLeft > 840 && isChange) {
+                        scrollAfterWorker();
+                        isChange = false;
+                    }
+                }
+            }
+        });
+    };
+    
+    showProductInfo();
+    questionTab();
+    scrollPage();
+</script> 
+
+</body>
+</html>

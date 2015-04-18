@@ -39,10 +39,10 @@
     </div>
     <div class="section2_wrap">
         <div class="section2">
-            <div class="lesson1">
-                <img class="tip1" src="images/tip1.png" />
-                <img class="tip2" src="images/tip2.png" />
-                <img class="tip3" src="images/tip3.png" />
+            <div class="lesson1" style="display:none;">
+                <a href="http://www.mcchina.com/beauty/skincare/20150409-61869-pn-3.shtml"><img class="tip1" src="images/tip1.png" /></a>
+                <a href="http://www.mcchina.com/beauty/skincare/20150409-61869-pn-3.shtml"><img class="tip2" src="images/tip2.png" /></a>
+                <a href="http://www.mcchina.com/beauty/skincare/20150409-61869-pn-3.shtml"><img class="tip3" src="images/tip3.png" /></a>
                 <a class="left_btn" href=""></a>
                 <a class="right_btn" href=""></a>
                 <div id="slider" class="swipe step ">
@@ -56,7 +56,7 @@
                             <li class="step_text">
                                 <span>STEP2</span><br />
         以眉心为始，分别沿45度角向两边发际轻推各8~10次
-                                <img src="images/section3_1.png" />
+                                <img src="images/2.jpg" />
                             </li>
                             
                         </ul>
@@ -64,7 +64,7 @@
                             <li class="step_text">
                                 <span>STEP2</span><br />
         以眉心为始，分别沿45度角向两边发际轻推各8~10次
-                                <img src="images/section3_1.png" />
+                                <img src="images/3.png" />
                             </li>
                             <li class="step_text">
                                 <span>STEP2</span><br />
@@ -75,14 +75,14 @@
                     </div>
                 </div>
             </div>
-            <div class="lesson2" style="display:none;">
-                <img class="tip1  scroll" src="images/tip4.png" />
-                <img class="tip2  scroll" src="images/tip3_3.png" />
+            <div class="lesson2">
+                <a href="http://www.mcchina.com/beauty/skincare/20150409-61869-pn-2.shtml"><img class="tip1  scroll" src="images/tip4.png" /></a>
+                <a href="http://www.mcchina.com/beauty/skincare/20150409-61869-pn-2.shtml"><img class="tip2  scroll" src="images/tip3_3.png" /></a>
                 <img class="tip3" src="images/tip_img.png" />
             </div> 
             <ul class="section2_btn tab">
-                <li class="lesson1_btn on">LESSON1理论课</li>
-                <li class="lesson2_btn">LESSON2实践课</li>
+                <li class="lesson1_btn on" data-index="1">LESSON1理论课</li>
+                <li class="lesson2_btn"  data-index="0">LESSON2实践课</li>
             </ul>
         </div>
     </div>
@@ -136,8 +136,10 @@
     </div>
     <div class="section5_wrap">
         <div class="section5">
-            <img class="section5_ad" src="images/ad.jpg" />
-            <div class="section5_text">活动奖品<br />OLAY水感透白净瑕系列*<br />规格：正装<br />奖品数量：5套<br />活动时间:4月10日-4月20日</div>
+            <a href="http://www.mcchina.com/mini/201503beautyclass/"><img class="section5_ad" src="images/ad.jpg" /></a>
+            <a href="http://bbs.mcchina.com/thread-2185223-1-1.html">
+                <div class="section5_text">活动奖品<br />OLAY水感透白净瑕系列*<br />规格：正装<br />奖品数量：5套<br />活动时间:4月10日-4月20日</div>
+            </a>
         </div>
     </div>
 </div>
@@ -153,19 +155,24 @@
     var tab = function () {
         var btn = $('.tab li');
         var content = $('.section2 > div');
+        var is_play = true;
         
         var show = function () {
-            var index = $(this).index();
+            var index = $(this).attr('data-index');
             
             $(this).siblings().removeClass('on').end().addClass('on');
             content.hide().eq(index).show();
+            
+            if (index == 0 && is_play) {
+                play();
+                is_play = false;
+            }
         };
         
         btn.click(show);
     };
     
     // 滑动
-    
     var srcoll = function () {
         
         var elems = $('.scroll');
@@ -230,7 +237,6 @@
     
     tab();
     srcoll();
-    play();
 </script>
 </body>
 </html>
