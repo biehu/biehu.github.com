@@ -163,10 +163,6 @@ html, body, .container > div, .container {
     background-size: 100%;
 }
 
-.text-true-wrap img, .text-false-wrap img {
-    visibility: hidden;
-}
-
 .q-1 .bg {
     background: url(../images/q-1.jpg) no-repeat;
 }
