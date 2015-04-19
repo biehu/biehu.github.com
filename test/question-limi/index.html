@@ -7,6 +7,9 @@
        <link rel="stylesheet" href="styles/index.css" />
    </head>
    <body>
+       <div class="loading">
+           加载中...
+       </div>
 		<div class="container">
 			<div class="p p-1 q q-1 ">
 				<div class="bg"></div>
@@ -89,7 +92,6 @@
                     self.parent()[0].className = 'text ' + this.className + '-wrap';
                 });
             };
-            select();
             
             // 翻页
             var changePage = function () {
@@ -178,7 +180,6 @@
             
                init();
             };
-            changePage();
             
             // 分享提示
             var shareNotice = function () {
@@ -190,7 +191,14 @@
                     $(this).fadeOut();
                 })
             };
-            shareNotice();
+            
+            window.onload = function () {
+                $('.container').show();
+                
+                select();
+                changePage();
+                shareNotice();
+            };
             
             
             
