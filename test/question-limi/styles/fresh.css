@@ -1,0 +1,77 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    vertical-align: bottom;
+}
+
+a img {
+    border: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.clear {
+    clear: both;
+}
+
+.hide {
+    display: none;
+}
+
+img {
+    width: 100%;
+}
+
+html, body {
+    font-size: 10px;
+}
+
+/* 列表 */
+.container {
+    margin: 0 22px;
+}
+.list strong {
+    font-weight: normal;
+    font-size: 15px;
+}
+.list > div {
+    overflow: hidden;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #cacbcb;
+}
+.list .focus {
+    padding-bottom: 0;
+}
+.focus strong {
+    display: block;
+    margin-top: 5px;
+    text-align: center;
+    color: #00479d;
+    line-height: 22px;
+}
+.pic img {
+    float: left;
+    width: 70px;
+    margin-right: 5px;
+}
+.pic strong {
+    display: block;
+    margin:2px 0 5px 0;
+    color: #2f2725;
+}
+.pic p {
+    color: #666464;
+    line-height: 15px;
+}
+
+
