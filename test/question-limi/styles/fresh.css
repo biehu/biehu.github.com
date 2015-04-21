@@ -88,3 +88,43 @@ html, body {
     position: relative;
 }
 
+/* 详情页 */
+.detail {
+	padding-top: 10px;
+	color: #595757;
+	line-height: 22px;
+}
+.detail-header h1 {
+	text-align: center;
+	color: #00479d;
+	font-size: 17px;
+}
+.detail-header p {
+	text-align: center;
+}
+.detail-header p span {
+	margin-right: 10px;
+}
+.detail-content {
+	font-size: 13px;
+}
+.detail-content p {
+	text-indent: 2em;
+}
+.detail-content img {
+	margin-bottom: 5px;
+}
+.detail-footer {
+	padding: 10px 0;
+	text-align: center;
+}
+.share-notice {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .5);
+}
+

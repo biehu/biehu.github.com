@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+   <head>
+       <meta charset="utf-8" />
+       <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+       <title></title>
+       <link rel="stylesheet" href="styles/fresh.css" />
+   </head>
+   <body>
+        <div class="container">
+            <div class="detail">
+                <div class="detail-header">
+					<h1>2015青藏高原昆仑雪自驾寻缘之旅全国招募现已正式启动</h1>
+					<p><span>北京晚报</span><span>04-27 18:20</span></p>
+				</div>
+				<div class="detail-content">
+					
+					<img src="images/detail-img.png" />
+					
+					<p>
+						2015青藏高原昆仑雪自驾寻缘之旅全国招募现已正式启动2015青藏高原昆仑雪自驾寻缘之旅全国招募现已正式启动2015青藏高原昆仑雪自驾寻缘之旅全国招募现已正式启动2015青藏高原昆仑雪自驾寻缘之旅全国招募现已正式启动2015青藏高原昆仑雪自驾寻缘之旅全国招募现已正式启动2015青藏高原昆仑雪自驾寻缘之旅全国招募现已正式启动
+					</p>
+					<p>
+						2015青藏高原昆仑雪自驾寻缘之旅全国招募现已正式启动2015青藏高原昆仑雪自驾寻缘之旅全国招募现已正式启动2015青藏高原昆仑雪自驾寻缘之旅全国招募现已正式启动2015青藏高原昆仑雪自驾寻缘之旅全国招募现已正式启动2015青藏高原昆仑雪自驾寻缘之旅全国招募现已正式启动2015青藏高原昆仑雪自驾寻缘之旅全国招募现已正式启动
+					</p>
+					<p>
+						2015青藏高原昆仑雪自驾寻缘之旅全国招募现已正式启动2015青藏高原昆仑雪自驾寻缘之旅全国招募现已正式启动2015青藏高原昆仑雪自驾寻缘之旅全国招募现已正式启动2015青藏高原昆仑雪自驾寻缘之旅全国招募现已正式启动2015青藏高原昆仑雪自驾寻缘之旅全国招募现已正式启动2015青藏高原昆仑雪自驾寻缘之旅全国招募现已正式启动
+					</p>
+					<p>
+						2015青藏高原昆仑雪自驾寻缘之旅全国招募现已正式启动2015青藏高原昆仑雪自驾寻缘之旅全国招募现已正式启动2015青藏高原昆仑雪自驾寻缘之旅全国招募现已正式启动2015青藏高原昆仑雪自驾寻缘之旅全国招募现已正式启动2015青藏高原昆仑雪自驾寻缘之旅全国招募现已正式启动2015青藏高原昆仑雪自驾寻缘之旅全国招募现已正式启动
+					</p>
+				</div>
+				<div class="detail-footer">
+					<button class="share">分享到朋友圈</button>
+				</div>
+            </div>
+        </div>
+		<div class="share-notice">
+            <img src="images/share.png" />
+        </div>
+        <script src="scripts/jquery.js"></script>
+        <script src="scripts/swipe.js"></script>
+        <script>
+			// 焦点图
+            var slider = Swipe(document.getElementById('slider'));
+
+			// 分享提示
+            var shareNotice = function () {
+                var mask = $('.share-notice');
+				var offsetHeight = document.body.scrollHeight;
+                $('.share').click(function () {
+					window.scrollTo(0, 0);
+                    mask.height(offsetHeight).fadeIn();
+                });
+                mask.click(function () {
+                    mask.fadeOut();
+                })
+            };
+
+			window.onload = function () {
+				shareNotice();
+			};
+        </script>
+   </body>
+</html>  
