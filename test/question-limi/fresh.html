@@ -9,8 +9,8 @@
    <body>
         <div class="container">
             <div class="list">
-                <div class="focus">
-                    <ul>
+                <div id="slider" class="focus swipe">
+                    <ul class="swipe-wrap">
                         <li>
                             <a href="#">
                                 <img src="images/focus.jpg" />
@@ -48,8 +48,9 @@
             </div>
         </div>
         <script src="scripts/jquery.js"></script>
+        <script src="scripts/swipe.js"></script>
         <script>
-            
+            var slider = Swipe(document.getElementById('slider'));
         </script>
    </body>
 </html>  
