@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+   <head>
+       <meta charset="utf-8" />
+       <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+       <title></title>
+       <link rel="stylesheet" href="styles/fresh.css" />
+   </head>
+   <body>
+        <div class="container">
+            <div class="detail">
+                <div class="detail-header">
+					<h1>昆仑山携手滴滴打车  跨界合作升级品质生活</h1>
+					<p><span>北京晚报</span><span>04-27 18:20</span></p>
+				</div>
+				<div class="detail-content">
+					
+					<img src="images/pic1.png" />
+					
+					<p>
+						4月15日，昆仑山雪山矿泉水与滴滴打车战略合作签约仪式在北京举办，正式宣布展开多元深度合作。作为各自领域的行业领导品牌，双方的深度合作不仅将在战略层面上实现资源最大化的无缝对接，更将全面提升双方的品牌影响力以及产品用户体验。除此之外，据加多宝品牌管理部副总经理王月贵介绍，昆仑山还将在“挑战6000——青藏高原昆仑雪山自驾寻源之旅”中与滴滴打车深度合作，邀请滴滴用户探秘昆仑雪山珍稀水源，打造年度行业跨界标杆案例。
+					</p>
+					<p>
+					<strong>
+						■ 昆仑山携滴滴 两巨头跨界联手升级用户体验
+					</strong>
+					</p>
+					<p>
+						作为国内高端水行业领导品牌，昆仑山雪山矿泉水凭借其来自青藏高原海拔6000米昆仑雪山，高海拔、零污染经过50年过滤和矿化而形成的珍贵雪山矿泉水品质，一直致力于推动升级大众健康饮水升级。而滴滴打车是国内打车软件“一哥”, 颠覆了传统打车方式，建立大移动互联网时代下用户现代化出行方式，滴滴专车的推出，更是升级了大众的出行体验。看似毫无关联的两个品牌，却秉承着“升级用户生活品质”的共同战略目标。此番携手，通过跨界合作的形式，无疑将更好地服务于消费者。
+					</p>
+					<p>
+						据了解，两大品牌强强联合的跨界合作，将覆盖线上并扩展到线下。昆仑山雪山矿泉水将作为滴滴专车用水，为用户提供雪山矿泉水的零距离体验，让他们亲身感受高海拔、零污染雪山矿泉水的珍贵，推广健康饮水概念。通过“牵手”昆仑山雪山矿泉水这一高端饮用水品牌，滴滴专车将实现在用户体验细节上质的跨越。
+					</p>
+					<p>
+					<strong>
+						■ 滴滴一下 挑战6000 探索跨界合作的无限可能 
+					</strong>
+					</p>
+					<p>
+						据加多宝品牌管理部副总经理王月贵透露，作为战略合作伙伴，滴滴还将重点在 “挑战6000——2015年青藏高原昆仑雪山自驾寻源之旅”项目上开展深度合作。昆仑雪山自驾寻源之旅是昆仑山已经持续多年的活动品牌，通过邀请媒体、消费者自驾探秘雪山珍稀水源地的形式，让消费者零距离感受雪山矿泉水的独特水源魅力，推动大众饮水理念升级。
+					</p>
+					<p>
+						青藏高原昆仑雪山自驾寻源之旅将从西宁出发，途径塔尔寺、青海湖、茶卡盐湖、格尔木、胡杨林、可可西里、海拔4115米的昆仑山工厂，最终到达海拔6000米昆仑雪山。滴滴打车服务体验中心总监李宁在接受采访时表示：”我们不仅将昆仑山雪山矿泉水这样的好水带给每一个滴滴专车的用户，更将作为见证者的一员，去探秘珍稀水源地，确保用户的饮水源头品质。更重要的是，滴滴打车希望通过与昆仑山的深度合作，告诉每一个消费者，滴滴打车致力于完善用户的出行体验，我们努力探索未知的提升空间，滴滴希望可以带你到达任何你想要去的地方“。
+					</p>
+					<p>
+						据了解，在挑战6000项目的合作上，滴滴将与昆仑山展开联合招募。除此之外，昆仑山还将在活动期间，通过滴滴打车平台发放5000万滴滴红包，推动大众出行座驾和饮水体验的双升级。
+
+					</p>
+				</div>
+				<div class="detail-footer">
+					<button class="share">分享到朋友圈</button>
+				</div>
+            </div>
+        </div>
+		<div class="share-notice">
+            <img src="images/share.png" />
+        </div>
+        <script src="scripts/jquery.js"></script>
+        <script src="scripts/swipe.js"></script>
+        <script>
+			// 焦点图
+            var slider = Swipe(document.getElementById('slider'));
+
+			// 分享提示
+            var shareNotice = function () {
+                var mask = $('.share-notice');
+				var offsetHeight = document.body.scrollHeight;
+                $('.share').click(function () {
+					window.scrollTo(0, 0);
+                    mask.height(offsetHeight).fadeIn();
+                });
+                mask.click(function () {
+                    mask.fadeOut();
+                })
+            };
+
+			window.onload = function () {
+				shareNotice();
+			};
+        </script>
+   </body>
+</html>  
