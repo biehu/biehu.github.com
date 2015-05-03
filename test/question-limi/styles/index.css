@@ -49,9 +49,8 @@ html, body, .container > div, .container {
     display: none;
 }
 
-/*
- * 翻页
- */
+/* -- 翻页 -- */
+
 .p {
     overflow: hidden;
     position: absolute;
@@ -69,10 +68,8 @@ html, body, .container > div, .container {
     -webkit-transform: translate(0px, -100%);
 }
 
+/* -- 答题 -- */
 
-/*
- * 答题
- */
 .q div.bg {
     width: 100%;
     height: 100%;
@@ -109,22 +106,20 @@ html, body, .container > div, .container {
 }
 
 .text {
-    bottom: 0;
+    top: 0;
     z-index: 1;
 }
 
-.text span {
-    position: absolute;
-}
-
-.q-2 .text span, .q-1 .text span {
+.q-2 .text span, 
+.q-1 .text span {
     top: 1px;
     left: 1px;
-    width: 24%;
-    height: 18%;
+    width: 45.8%;
+    height: 10.6%;
 }
 
-.q-2 .text .text-true, .q-1 .text .text-true {
+.q-2 .text .text-true,
+.q-1 .text .text-true {
     top: 38.52459016393443%;left: 12.1875%;
 }
 
@@ -227,9 +222,42 @@ html, body, .container > div, .container {
     background: url(../images/q-4.jpg) no-repeat;
 }
 
-/*
- * 结果
- */
+.q-5 .bg {
+    background: url(../images/q-5.jpg) no-repeat;
+}
+
+.q-5 .text-true-wrap {
+    background: url(../images/t-5-true.png) no-repeat;
+    background-size: 100%;
+}
+
+.q-5 .text-false-wrap {
+    background: url(../images/t-5-false.png) no-repeat;
+    background-size: 100%;
+}
+
+.q-6 .bg {
+    background: url(../images/q-6.jpg) no-repeat;
+}
+
+.q-6 .text-true-wrap {
+    background: url(../images/t-6-true.png) no-repeat;
+    background-size: 100%;
+}
+
+.q-6 .text-false-wrap {
+    background: url(../images/t-6-false.png) no-repeat;
+    background-size: 100%;
+}
+
+.q-6 .text {
+	top: auto;
+	bottom: 0;
+}
+
+
+/* -- 结果 -- */
+
 .r {
     width: 100%;
     height: 100%;
@@ -242,11 +270,6 @@ html, body, .container > div, .container {
 .r .text {
     top: 0;  
     width: 100%;
-}
-
-.r .text span {
-    width: 24.8%;
-    height: 5.8%;
 }
 
 .r .text .share {
@@ -286,4 +309,42 @@ html, body, .container > div, .container {
 .r-2 {
     background: url(../images/failure-bg.jpg) no-repeat;
     background-size: cover;
+}
+
+.r {
+	line-height: 18px;
+	color: #fff;
+}
+
+.r p,
+.r .result {
+	text-align: center;
+}
+
+.r strong {
+	display: inline-block;
+	margin: 3px 0;
+	border-bottom: 1px solid #fff;
+	line-height: 24px;
+	font-size: 25px;
+}
+
+.result-text {
+	margin-top: 33px;
+}
+
+.result-btn {
+	margin-top: 5px;
+	text-align: center;
+	line-height: normal;
+}
+
+.result-btn span {
+	display: inline-block;
+	margin: 0 20px;
+	padding: 3px 5px;
+	background: #fff;
+	-webkit-box-shadow: 1px 1px 1px #000;
+	font-weight: bold;
+	color: #003486;
 }

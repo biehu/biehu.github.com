@@ -13,11 +13,15 @@
         <div class="container">
             <div class="p p-1 q q-1 ">
                 <div class="bg"></div>
-                <div class="logo"><img src="images/logo.png" /></div>
+                <div class="logo"><img src="images/logo-0.png" /></div>
                 <div class="text">
-                    <img src="images/t-1.png" />
-                    <span class="text-true" data-score="1"></span>
-                    <span class="text-false" data-score="0"></span>
+                    <img src="images/t-1_01.png" />
+                    <span class="text-true" data-score="1">
+						<img src="images/t-1_02.png" />
+					</span>
+                    <span class="text-false" data-score="0">
+						<img src="images/t-1_03.png" />
+					</span>
                 </div>
                 <div class="next"></div>
             </div>
@@ -25,9 +29,13 @@
                 <div class="bg"></div>
                 <div class="logo"><img src="images/logo.png" /></div>
                 <div class="text">
-                    <img src="images/t-2.png" />
-                    <span class="text-true" data-score="1"></span>
-                    <span class="text-false" data-score="0"></span>
+                    <img src="images/t-2_01.png" />
+                    <span class="text-true" data-score="1">
+						<img src="images/t-2_02.png" />
+					</span>
+                    <span class="text-false" data-score="0">
+						<img src="images/t-2_03.png" />
+					</span>
                 </div>
                 <div class="next"></div>
             </div>
@@ -35,24 +43,61 @@
                 <div class="bg"></div>
                 <div class="logo"><img src="images/logo.png" /></div>
                 <div class="text">
-                    <img src="images/t-3.png" />
-                    <span class="text-true" data-score="1"></span>
-                    <span class="text-false" data-score="0"></span>
+                    <img src="images/t-3_01.png" />
+                    <span class="text-true" data-score="1">
+						<img src="images/t-3_02.png" />
+					</span>
+                    <span class="text-false" data-score="0">
+						<img src="images/t-3_03.png" />
+					</span>
                 </div>
                 <div class="next"></div>
             </div>
             <div class="p p-4 q q-4 down">
                 <div class="bg"></div>
-                <div class="logo"><img src="images/logo.png" /></div>
+                <div class="logo"><img src="images/logo-1.png" /></div>
                 <div class="text">
-                    <img src="images/t-4.png" />
-                    <span class="text-true" data-score="1"></span>
-                    <span class="text-false" data-score="0"></span>
+                    <img src="images/t-4_01.png" />
+                    <span class="text-true" data-score="1">
+						<img src="images/t-4_02.png" />
+					</span>
+                    <span class="text-false" data-score="0">
+						<img src="images/t-4_03.png" />
+					</span>
                 </div>
                 <div class="next"></div>
             </div>
-            <div class="p p-5 down">
-                <div class="r r-1">
+			<div class="p p-5 q q-5 down">
+                <div class="bg"></div>
+                <div class="logo"><img src="images/logo-1.png" /></div>
+                <div class="text">
+                    <img src="images/t-5_01.png" />
+                    <span class="text-true" data-score="1">
+						<img src="images/t-5_02.png" />
+					</span>
+                    <span class="text-false" data-score="0">
+						<img src="images/t-5_03.png" />
+					</span>
+                </div>
+                <div class="next"></div>
+            </div>
+			<div class="p p-6 q q-6 down">
+                <div class="bg"></div>
+                <div class="logo"><img src="images/logo.png" /></div>
+                <div class="text">
+                    <img src="images/t-6_01.png" />
+                    <span class="text-true" data-score="1">
+						<img src="images/t-6_02.png" />
+					</span>
+                    <span class="text-false" data-score="0">
+						<img src="images/t-6_03.png" />
+					</span>
+					<img src="images/t-6_04.png" />
+                </div>
+                <div class="next"></div>
+            </div>
+            <div class="p p-7 down">
+                <div class="r r-1 hide">
                     <div class="bg"></div>
                     <div class="logo"><img src="images/logo-1.png" /></div>
                     <div class="text">
@@ -65,16 +110,34 @@
                     </div>
                     <div class="next"></div>
                 </div>
-                <div class="r r-2 hide">
+                <div class="r r-2 ">
                     <div class="bg"></div>
                     <div class="logo"><img src="images/logo-1.png" /></div>
                     <div class="text">
-                        <img src="images/failure.png" />
+                        <img src="images/song.png" />
+						<!--
                         <span class="share"></span>
                         <span class="pk"></span>
                         <div class="look-other">
                             <a href="#">点击文字，来看看看其他人的精彩人生吧</a>
                         </div>
+						-->
+						<div class="result">
+							<p>Follow（从）Your Heart （心）<br />你做到了!!!</p>
+							<strong>第1040位挑战者</strong>
+							<p>你是第333位与挑战绝缘的小伙伴<br />
+								也许只有待在原地比较适合你</p>
+						</div>
+						<div class="result-text">
+							<p>人生就是需要不断升级的旅程<br />
+								不如刷新一下过去的自己<br />
+								告别犹豫，别再等待！<br />
+								升级你的Level</P>
+
+						</div>
+						<div class="result-btn">
+							<span>我要分享</span><span>我要挑战</span>
+						</div>
                     </div>
                     <div class="next"></div>
                 </div>
@@ -125,7 +188,7 @@
                var setPage = function (dir,page) {
                     isAnimate = true;
                     
-                    if (index === allNum - 1) showResult();
+                    //if (index === allNum - 1) showResult();
                     if(dir === 1){
                         $(".p-"+(page+1)).removeClass('up');
                         $(".p-"+(page+2)).addClass('down');
