@@ -38,6 +38,7 @@ html, body {
 html, body, .container > div, .container {
     width: 100%;
     height: 100%;
+	overflow: hidden;
 }
 
 .loading {
@@ -47,6 +48,11 @@ html, body, .container > div, .container {
 
 .container {
     display: none;
+}
+
+.cover {
+	background: url(../images/0.gif) no-repeat;
+	background-size: cover;
 }
 
 /* -- 翻页 -- */
@@ -241,12 +247,12 @@ html, body, .container > div, .container {
 }
 
 .q-6 .text-true-wrap {
-    background: url(../images/t-6-true.png) no-repeat;
+    background: url(../images/t-6-true.png) no-repeat left bottom;
     background-size: 100%;
 }
 
 .q-6 .text-false-wrap {
-    background: url(../images/t-6-false.png) no-repeat;
+    background: url(../images/t-6-false.png) no-repeat left bottom;
     background-size: 100%;
 }
 
@@ -270,16 +276,6 @@ html, body, .container > div, .container {
 .r .text {
     top: 0;  
     width: 100%;
-}
-
-.r .text .share {
-    top: 73.6%;
-    left: 20%;
-}
-
-.r .text .pk {
-    top: 73.6%;
-    left: 55.5%;
 }
 
 .share-notice {
@@ -334,7 +330,7 @@ html, body, .container > div, .container {
 }
 
 .result-btn {
-	margin-top: 5px;
+	margin-top: 10px;
 	text-align: center;
 	line-height: normal;
 }
@@ -347,4 +343,8 @@ html, body, .container > div, .container {
 	-webkit-box-shadow: 1px 1px 1px #000;
 	font-weight: bold;
 	color: #003486;
+}
+
+.r-1 .result-btn span {
+	color: #e34a00;
 }
