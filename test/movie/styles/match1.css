@@ -1,0 +1,33 @@
+.main{
+	width:1200px;
+	margin: 0 auto;
+	font-family: "微软雅黑";
+	padding-bottom: 180px;
+}
+.works{
+	height: 60px;
+	border-bottom: 1px solid #ededed;
+	font-size: 20px;
+	line-height: 80px;
+}
+.works span{
+	color: #a3a3a3;
+	font-size: 14px;
+}
+.no_upload{
+	font-size: 20px;
+	color: #a9a9a9;
+	text-align: center;
+	margin: 90px 0 35px;
+}
+.match1_btn{
+	width: 340px;
+	height: 60px;
+	background: #3a9473;
+	text-align: center;
+	line-height: 60px;
+	margin: 0 auto;
+	display: block;
+	color: #fff;
+	font-size: 24px;
+}

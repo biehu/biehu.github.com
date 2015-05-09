@@ -1,0 +1,449 @@
+.mt10 {
+  margin-top: 10px;
+}
+.mt15 {
+  margin-top: 15px;
+}
+.mt20 {
+  margin-top: 20px;
+}
+.mr10 {
+  margin-right: 10px;
+}
+.mr15 {
+  margin-right: 15px;
+}
+.mr20 {
+  margin-right: 20px;
+}
+.clearfix:after {
+  content: " ";
+  display: block;
+  clear: both;
+  height: 0;
+  overflow: hidden;
+}
+.ma {
+  margin-left: auto;
+  margin-right: auto;
+}
+.bbs-container {
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  padding-bottom: 60px;
+}
+.bbs-title {
+  height: 55px;
+  line-height: 55px;
+  font-size: 24px;
+  color: #666666;
+}
+.bbs-main {
+  overflow: hidden;
+}
+.bbs-main .bbs-left {
+  float: left;
+  width: 850px;
+}
+.bbs-main .bbs-right {
+  float: right;
+  width: 300px;
+}
+.tz-title {
+  position: relative;
+  padding-left: 30px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 18px;
+  background-color: #f7f7f7;
+  color: #333;
+}
+.tz-title .more {
+  font-size: 14px;
+  color: #999;
+  position: absolute;
+  right: 40px;
+  top: 0;
+  line-height: 40px;
+}
+.right-btn {
+  display: block;
+  height: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 50px;
+  text-align: center;
+  font-size: 20px;
+  color: #fff;
+  background-color: #f19149;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-bottom: 30px;
+}
+.right-hot .hot-title {
+  font-size: 18px;
+  line-height: 28px;
+}
+.right-hot .hot-list {
+  padding-top: 10px;
+}
+.right-hot .hot-list .hot-item {
+  margin-bottom: 20px;
+}
+.right-hot .hot-list .hot-item .hot-thumb {
+  width: 300px;
+  height: 169px;
+}
+.right-hot .hot-list .hot-item .hot-thumb a {
+  display: block;
+  width: 300px;
+  height: 169px;
+}
+.right-hot .hot-list .hot-item .hot-name {
+  color: #666666;
+  font-size: 14px;
+  line-height: 24px;
+}
+.right-hot .hot-list .hot-item .hot-name a {
+  color: #666666;
+}
+.right-hot .hot-list .hot-item .hot-desn {
+  line-height: 20px;
+  color: #666666;
+  font-size: 12px;
+}
+.tb-row {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px dashed #cccccc;
+  padding-left: 80px;
+  position: relative;
+}
+.tb-row.even .tb-title {
+  color: #333333;
+}
+.tb-row.even .tb-recount {
+  background-color: #3a9473;
+}
+.tb-row .tb-title {
+  font-size: 18px;
+  color: #3a9473;
+  line-height: 32px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.tb-row .tb-desn {
+  font-size: 12px;
+  color: #999999;
+  line-height: 22px;
+}
+.tb-row .tb-desn span {
+  margin-right: 20px;
+}
+.tb-row .tb-content {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #333333;
+  line-height: 26px;
+}
+.tb-row .tb-recount {
+  position: absolute;
+  left: 0;
+  top: 24px;
+  width: 60px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  color: #fff;
+  background-color: #aaaaaa;
+  font-size: 14px;
+}
+.green {
+  color: #3a9473;
+}
+.tz-list {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.tz-list .list-row {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px dashed #cccccc;
+}
+.tz-list .list-row:after {
+  content: " ";
+  display: block;
+  height: 0;
+  overflow: hidden;
+  clear: both;
+}
+.tz-list .list-row .clist-pic {
+  float: left;
+  width: 48px;
+  height: 48px;
+  margin-left: 2px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.tz-list .list-row .clist-box {
+  float: left;
+  width: 736px;
+  margin-left: 10px;
+  position: relative;
+}
+.tz-list .list-row .clist-box .title {
+  position: relative;
+  line-height: 48px;
+  height: 48px;
+}
+.tz-list .list-row .clist-box .title span {
+  color: #339a66;
+}
+.tz-list .list-row .clist-box .title strong {
+  top: 0;
+  right: 0;
+  color: #999999;
+  font-weight: normal;
+  font-size: 12px;
+  position: absolute;
+  height: 48px;
+  line-height: 48px;
+}
+.tz-list .list-row .clist-box .content {
+  line-height: 28px;
+}
+.tz-list .list-row .tz-name {
+  color: #333;
+  font-size: 18px;
+  line-height: 40px;
+  font-weight: bold;
+}
+.tz-list .list-row .tz-info {
+  font-size: 12px;
+  color: #999;
+}
+.tz-list .list-row .tz-content {
+  margin-top: 20px;
+  font-size: 14px;
+}
+.recomment .re-tool {
+  position: relative;
+  height: 40px;
+  line-height: 40px;
+  font-size: 12px;
+}
+.recomment .re-tool .re-ding {
+  position: absolute;
+  top: 0;
+  right: 40px;
+  padding-left: 26px;
+  font-size: 14px;
+  color: #f00;
+  background: url("../images/zan.png") 5px 13px no-repeat;
+}
+.recomment .re-tool .re-huifu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #339a66;
+}
+.recomment .re-tool .re-set {
+  float: right;
+  color: #339a66;
+  margin-left: 10px;
+}
+.recomment .re-main {
+  background-color: #f7f7f7;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding: 10px;
+}
+.recomment .re-main .re-row {
+  font-size: 12px;
+  line-height: 24px;
+}
+.recomment .re-main .name {
+  color: #339a66;
+}
+.recomment .re-main .gray {
+  color: #999;
+}
+.recomment .re-main .re-input {
+  width: 280px;
+  height: 24px;
+  border: 1px solid #dfdfdf;
+  border-radius: 3px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.recomment .re-main .re-submit {
+  height: 26px;
+  width: 50px;
+  display: inline-block;
+  text-align: center;
+  color: #fff;
+  background-color: #339a66;
+  border-radius: 3px;
+}
+.play-comment .comment-hd {
+  font-size: 16px;
+  line-height: 40px;
+  height: 40px;
+  color: #333333;
+}
+.play-comment .comment-hd span {
+  color: #ff6600;
+  font-weight: bold;
+}
+.play-comment .comment-bd {
+  margin-top: 5px;
+  background-color: #f7f7f7;
+  border: 1px solid #f2f2f2;
+  overflow: hidden;
+}
+.play-comment .comment-bd .comment-pic {
+  float: left;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  margin-left: 16px;
+  margin-top: 10px;
+}
+.play-comment .comment-bd .comment-box {
+  float: left;
+  margin-left: 10px;
+  width: 758px;
+  margin-top: 10px;
+}
+.play-comment .comment-bd .comment-box .comment-area {
+  width: 736px;
+  height: 128px;
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+  resize: none;
+  outline: none;
+  line-height: 22px;
+  font-size: 14px;
+  padding: 10px;
+}
+.play-comment .comment-bd .comment-box .comment-row {
+  overflow: hidden;
+  padding-bottom: 6px;
+}
+.play-comment .comment-bd .comment-box .comment-row .comment-biaoqing {
+  float: left;
+  overflow: hidden;
+  width: 23px;
+  height: 23px;
+  background: url("../images/biaoqing.png") no-repeat;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.play-comment .comment-bd .comment-box .comment-row .comment-submit {
+  float: right;
+  border-radius: 3px;
+  margin-top: 10px;
+  width: 70px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  color: #fff;
+  background-color: #339a66;
+}
+.bbs-form {
+  font-size: 16px;
+  padding-top: 30px;
+}
+.bbs-form .row {
+  margin-bottom: 20px;
+}
+.bbs-form .row:after {
+  content: " ";
+  display: block;
+  clear: both;
+  height: 0;
+  overflow: hidden;
+}
+.bbs-form .row .label {
+  text-align: right;
+  float: left;
+  width: 72px;
+  color: #333333;
+  line-height: 40px;
+}
+.bbs-form .row .span {
+  display: block;
+  margin-left: 78px;
+}
+.bbs-form .input {
+  height: 43px;
+  border: 1px solid #dddddd;
+  float: left;
+  width: 736px;
+  line-height: 40px \9;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 14px;
+  border-radius: 5px;
+}
+.bbs-form .new-btn {
+  display: block;
+  width: 160px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 20px;
+  color: #fff;
+  background-color: #3a9473;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.paging {
+  overflow: hidden;
+}
+.paging a {
+  float: left;
+  padding: 0 10px;
+  height: 28px;
+  font-size: 14px;
+  line-height: 28px;
+  border: 1px solid #e5e5e5;
+  color: #333;
+  margin-right: 5px;
+}
+.paging a.active {
+  color: #fff;
+  background-color: #3a9473;
+  border-color: #3a9473;
+}
+.paging a.prev {
+  padding-left: 26px;
+  background: url("../images/paging-prev.png");
+}
+.paging a.next {
+  padding-right: 26px;
+  background: url("../images/paging-next.png") top right;
+}
+
+.icon-b-jing,
+.icon-b-tu {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.icon-b-jing {
+  background: url("../images/pic_jing.png") no-repeat;
+}
+.icon-b-tu {
+  background: url("../images/pic_tu.png") no-repeat;
+}
+
+.tb-row .tb-title .icon-b-jing,
+.tb-row .tb-title .icon-b-tu{
+  margin-right: 5px;
+}

@@ -16,7 +16,7 @@
         var isFired = false;
 		var timeArr = element.attr('data-time').split('-');
         var settings = {
-            end: (new Date(Number(timeArr[0]), Number(timeArr[1]), Number(timeArr[2]))).getTime(),
+            end: (new Date(Number(timeArr[0]), Number(timeArr[1]) - 1, Number(timeArr[2]))).getTime(),
             now: $.now(),
             labels: true,
             labelsOptions: {
@@ -63,6 +63,7 @@
 				}
             },
             onEndCallback: function() {
+                element.parent().addClass('time-end');
             }
         };
        

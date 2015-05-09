@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>个人中心-我的赛事</title>
+    <link rel="stylesheet" href="styles/common.css" />
+    <link rel="stylesheet" href="styles/mic.css"/>
+    <link rel="stylesheet" href="styles/ucenter.css"/>
+    <style>
+       .slides-thumb-main h3{ margin-top: 30px}
+       .slides-thumb-main h3 .label{ font-size: 12px}
+       .slides-thumb-main .bmsj{ margin-top: 30px; font-size: 12px}
+       .slides-thumb-main .zbf{ margin-bottom: 30px; font-size: 12px}
+       .slides-thumb-main .cs{ margin-bottom: 10px}
+        .thumb-info-main { position: relative;}
+        .thumb-info-main h3 { font-size: 18px; font-weight: normal}
+       .thumb-info-main .imgs-shear { position: absolute; top: 25px; right: 0; bottom: 0; left: 170px; z-index: 2; padding: 8px 0 8px 8px; height: 50px; background-color: #fff}
+        .thumb-info-main .imgs-shear a,
+        .thumb-info-main .imgs-shear span { display: inline-block; vertical-align: middle; color: #333 }
+        .thumb-info-overlay { position: absolute; top: 0;right: 0; bottom: 0; left: 0; background-color: #000; opacity: .3}
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header_wrap">
+        <div class="header">
+            <input class="search" type="text" placeholder="搜索" />
+            <a class="login" href="">登录</a>
+            <a class="reg" href="">注册</a>
+        </div>
+    </div>
+    <div class="nav_wrap">
+        <div class="nav">
+            <h1><a href="#"><img src="images/logo.jpg" /></a></h1>
+            <ul>
+                <li><a class="on" href="#">首页</a></li>
+                <li><a href="#">微赛事</a></li>
+                <li><a href="#">发起比赛</a></li>
+                <li><a href="#">论坛</a></li>
+                <li><a href="#">影片</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="main">
+        <div class="uc-main">
+            <div class="uc-left">
+                <div class="section user-info">
+                    <div class="user-box"><img src="./images/pic2.png" alt=""></div>
+                    <div class="user-name">一个电影工作室</div>
+                    <div class="user-desn">导演，编剧</div>
+                    <div class="user-tag">微影新手</div>
+                    <div class="user-attr">
+                        <span>人气<br/>8888</span>
+                        <span>关注<br/>8888</span>
+                        <span style="border: 0;">粉丝<br/>8888</span>
+                    </div>
+                    <div class="user-cz">
+                        <a href="#" class="uc-gz mr10">＋ 关注</a>
+                        <a href="#" class="uc-sx">私信</a>
+                    </div>
+                </div>
+                <div class="section">
+                    <a class="uc-fb" href="#"><img src="./images/cama.png" alt=""/>发布作品</a>
+                </div>
+                <div class="section">
+                    <a class="uc-cd active" href="#">我的赛事</a>
+                    <a class="uc-cd" href="#">我的帖子</a>
+                    <a class="uc-cd" href="#">正在发生</a>
+                    <a class="uc-cd" href="#">作品集</a>
+                </div>
+            </div>
+            <div class="uc-right">
+
+                <div class="panel">
+                    <div class="panel-hd">
+                        <h3 class="panel-title">大赛进行时</h3>
+                    </div>
+                    <div class="panel-bd">
+                        <div class="slides">
+                            <div class="slides-main">
+                                <ul>
+                                    <li>
+                                        <div class="slides-item-container">
+                                            <a href="#"><img src="images/shides_item.png" alt=""/></a>
+                                            <div class="slides-item-caption">
+                                                <a href="#">毫米网 与 珠海集团签订了战略协议</a>
+                                            </div>
+                                        </div>
+                                        <div class="slides-item-content">
+                                            <p>毫米网主要在从事网络电影社区及赛事平台运营推广，通过赛事平台发掘、发现优秀作品、优秀人才进行引导开发，创造价值。珠影集团具有影视生产、资本运作、演艺培训等三大板块的综合性大型影视文化集团。毫米网与珠影集团达成全面战略合作关系，双方承诺利用各自资源优势，整合人才和社会资本，以发现、扶持、培育 及 后期经营 ...
+                                            </p>
+                                            <div class="more">
+                                                <a href="#" class="btn btn-orange">查看详情</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="current">
+                                        <div class="slides-item-container">
+                                            <a href="#"><img src="images/shides_item.png" alt=""/></a>
+                                            <div class="slides-item-caption">
+                                                <a href="#">毫米网 与 珠海集团签订了战略协议</a>
+                                            </div>
+                                        </div>
+                                        <div class="slides-item-content">
+                                            <div class="thumb">
+                                                <div class="thumb-main slides-thumb-main">
+                                                    <h3>
+                                                        <a href="#">珠影国际微电影大赛</a>
+                                                        <span class="label label-orange">进行中</span>
+                                                    </h3>
+                                                    <div class="bmsj">报名时间：2014/12/18~2015/03/31</div>
+                                                    <div class="zbf">主办方： 毫米网</div>
+                                                    <div class="cs">已有 <span class="text-orange">4</span> 部作品参赛</div>
+                                                    <a href="#" class="btn btn-orange">我要报名</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="slides-paging">
+                                <ul>
+                                    <li class="current"><a href="#">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#">4</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--panel-->
+                <div class="panel">
+                    <div class="panel-hd">
+                        <h3 class="panel-title">我主办的比赛</h3>
+                    </div>
+                    <div class="panel-bd">
+
+                        <div class="thumb-group">
+                            <div class="thumb-sponsor">
+                                <div class="thumb-image">
+                                    <a href="#"><img src="images/thumb_01.png" alt=""/></a>
+                                </div>
+                                <div class="thumb-main">
+                                    <h3><a href="#">珠影国际微电影大赛</a></h3>
+                                    <span class="label label-gray">已结束</span>
+
+                                    <ul>
+                                        <li>报名时间：2014/12/18~2015/03/31</li>
+                                        <li>主办方：毫米网</li>
+                                    </ul>
+                                    <p>已有 <span class="text-orange">4</span> 部作品参赛</p>
+
+                                    <a href="#" class="btn">管 理</a>
+                                </div>
+                            </div>
+                            <div class="thumb-sponsor">
+                                <div class="thumb-image">
+                                    <a href="#"><img src="images/thumb_01.png" alt=""/></a>
+                                </div>
+                                <div class="thumb-main">
+                                    <h3><a href="#">珠影国际微电影大赛</a></h3>
+                                    <span class="label label-gray">已结束</span>
+
+                                    <ul>
+                                        <li>报名时间：2014/12/18~2015/03/31</li>
+                                        <li>主办方：毫米网</li>
+                                    </ul>
+                                    <p>已有 <span class="text-orange">4</span> 部作品参赛</p>
+
+                                    <a href="#" class="btn">管 理</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!--panel-->
+                <div class="panel">
+                    <div class="panel-hd">
+                        <h3 class="panel-title">我参加的比赛</h3>
+                    </div>
+                    <div class="panel-bd">
+
+                        <div class="thumb thumb-h thumb-participant">
+                            <div class="thumb-image">
+                                <a href="#"><img src="images/thumb_01.png" alt=""/></a>
+                            </div>
+                            <div class="thumb-main">
+                                <h3>
+                                    <a href="#">珠影国际微电影大赛</a>
+                                    <span class="label label-orange">进行中</span>
+                                </h3>
+                                <ul>
+                                    <li>报名时间：2014/12/18~2015/03/31</li>
+                                    <li>主办方：毫米网</li>
+                                </ul>
+                                <p>已有 <span class="text-orange">4</span> 部作品参赛</p>
+                            </div>
+                            <div class="thumb-info">
+
+                                <div class="thumb-info-hd">我的参赛作品 <span>审核中</span></div>
+                                <div class="thumb-info-bd">
+                                    <a href="#"><img src="images/thumb_02.png" alt=""/></a>
+                                    <div class="thumb-info-overlay"></div>
+                                    <div class="thumb-info-main">
+                                        <h3>《心花怒放》</h3>
+                                        <ul>
+                                            <li>当前票数：0</li>
+                                            <li>票数排名：0</li>
+                                            <li>上一名票数差 0 票</li>
+                                        </ul>
+                                        <a href="#" class="btn btn-share">分享拉票</a>
+                                        <div class="imgs-shear">
+                                            <span>分享到：</span>
+                                            <a href="#"><img src="./images/share1.jpg" alt=""/></a>
+                                            <a href="#"><img src="./images/share2.jpg" alt=""/></a>
+                                            <a href="#"><img src="./images/share3.jpg" alt=""/></a>
+                                            <a href="#"><img src="./images/share4.jpg" alt=""/></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="divider divider-dashed"></div>
+
+                        <div class="thumb thumb-h thumb-participant">
+                            <div class="thumb-image">
+                                <a href="#"><img src="images/thumb_01.png" alt=""/></a>
+                            </div>
+                            <div class="thumb-main">
+                                <h3>
+                                    <a href="#">珠影国际微电影大赛</a>
+                                    <span class="label label-orange">进行中</span>
+                                </h3>
+                                <ul>
+                                    <li>报名时间：2014/12/18~2015/03/31</li>
+                                    <li>主办方：毫米网</li>
+                                </ul>
+                                <p>已有 <span class="text-orange">4</span> 部作品参赛</p>
+                            </div>
+                            <div class="thumb-info">
+
+                                <div class="placeholder">
+                                    <div class="placeholder-inner">
+                                        <p>信息不完善，请点击补全资料完成参赛</p>
+                                        <a href="#" class="btn">补全资料</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!--panel-->
+
+            </div>
+        </div>
+    </div>
+    <div class="footer_wrap">
+        <div class="footer">
+            <ul class="footer_btn">
+                <li>
+                    <a class="about" href=""></a>
+                    关于我们
+                </li>
+                <li>
+                    <a class="contact" href=""></a>
+                    联系我们
+                </li>
+                <li>
+                    <a class="clause" href=""></a>
+                    用户条款
+                </li>
+            </ul>
+            <p>© 2014 毫米网|micmovie|毫米赛事网, all rights reserved 京ICP备14049338号-2</p>
+        </div>
+    </div>
+</div>
+<script src="scripts/jquery.js"></script>
+<script src="scripts/jquery.knob.js"></script>
+<script src="scripts/jquery.throttle.js"></script>
+<script src="scripts/jquery.classycountdown.js"></script>
+<script src="scripts/swipe.js"></script>
+<script src="scripts/index.js"></script>
+
+</body>
+</html>

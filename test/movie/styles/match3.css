@@ -1,0 +1,200 @@
+.ll{
+	background: url(../images/ll.png) no-repeat;
+	padding-left: 26px;
+	display: inline-block;
+	width: 100px;
+	height: 26px;
+	margin-left: 20px;
+}
+.mail{
+	width: 20px;
+	height: 13px;
+	background: url(../images/mail.png) no-repeat;
+	display: inline-block;
+}
+.match3_tit{
+	margin: 0 auto;
+	height: 30px;
+	width: 1200px;
+	padding-top: 20px;
+}
+.match3_tit p{
+	width: 373px;
+	border-left: 3px solid #339a66;
+	font-size:18px;
+	margin-left: 27px;
+	height: 20px;
+	line-height: 17px;
+}
+.match3_tit span{
+	font-size: 12px;
+}
+.red{
+	color: #f00;
+	position: relative;
+	top:3px;
+}
+.tab_wrap{
+	background: none repeat scroll 0 0 #f7f7f7;
+    border-bottom: 1px solid #e6e6e6;
+}
+.tab{
+	margin: 0 auto;
+    overflow: hidden;
+    width: 690px;
+}
+.tab li{
+	color: #aeaeae;
+    display: inline;
+    float: left;
+    font-size: 20px;
+    height: 56px;
+    line-height: 56px;
+    margin-left: 90px;
+    text-align: center;
+}
+.tab li.on, .tab li:hover{
+	border-bottom: 2px solid #3a9473;
+    color: #5b5b5b;
+    height: 55px;
+}
+
+.main{
+	font-family: "微软雅黑";
+	color: #7d7d7d;
+    font-size: 14px;
+    margin: 0 auto;
+    padding: 40px 0 60px 50px;
+    width: 730px;
+}
+.prefix{
+	float: left;
+	text-align: right;
+	width: 152px;
+	margin-right: 20px;
+}
+.form_box{
+	line-height: 40px;
+    margin-bottom: 20px;
+}
+.form_box input{
+	padding-left: 10px;
+}
+.form_box input, 
+.form_box select, 
+.form_box textarea {
+	border-radius: 3px;
+    color: #333;
+    font-family: "微软雅黑";
+    font-size: 14px;
+    vertical-align: middle;
+}
+.unify{
+	border: 1px solid #dddddd;
+    height: 40px;
+    width: 460px;
+    line-height: 40px;
+}
+.special{
+	border: 1px solid #dddddd;
+    height: 40px;
+    width: 280px;
+    line-height: 40px;
+}
+.mar_15{
+	margin-left: 10px;
+}
+.main .red{
+	margin-right: 10px;
+}
+.third select{
+	margin-right: 10px;
+}
+.main select {
+	border: 1px solid #dddddd;
+    padding: 9px;
+    width: 170px;
+}
+.desc .prefix{
+	height: 100px;
+}
+.desc textarea {
+	border: 1px solid #dddddd;
+    height: 70px;
+    padding: 10px;
+    width: 450px;
+}
+.form_submit {
+    margin-left: 172px;
+}
+.form_submit p {
+    line-height: normal;
+    margin-top: 8px;
+}
+.match3_btn{
+	width: 200px;
+	height: 50px;
+	background: #3a9473;
+	text-align: center;
+	line-height: 50px;
+	display: block;
+	color: #fff;
+	font-size: 24px;
+	border-radius: 3px;
+}
+.notice {
+    margin: 0 20px 20px 145px;
+}
+.notice_info {
+    display: block;
+    padding-left: 30px;
+    background: url(../images/sign.png) no-repeat;
+    color: #ff931f;
+    line-height: 18px;
+    font-family: "宋体";
+}
+.form_box .unhappyMessage {
+    left: 650px;
+    right: auto;
+    width: 230px;
+}
+.film_category .unhappyMessage,
+.film_type .unhappyMessage,
+.film_box .unhappyMessage,
+.indentity_box .unhappyMessage,
+.sex_box .unhappyMessage {
+    left: auto;
+    margin-left: 10px;
+}
+.form_submit {
+    margin-bottom: 0;
+}
+.form_submit .unhappyMessage {
+    top: 0;
+    left: 210px;
+}
+.film_box select {
+    width: 78px;
+}
+.form_line {
+    float: left;
+    width: 472px;
+    line-height: 24px;
+}
+.film_label {
+    overflow: hidden;
+}
+.film_label .form_line {
+    margin-top: 7px;
+}
+.form_line_item {
+    float: left;
+}
+.form_submit b {
+    color: #3a9473;
+    font-weight: normal;
+}
+.form_know {
+    font-family: "宋体";
+}
+

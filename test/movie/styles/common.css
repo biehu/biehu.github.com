@@ -1,45 +1,51 @@
 * {
     margin:0;
     padding:0;
+    -webkit-text-size-adjust:none;
 }
-
 ul {
     list-style:none;
 }
-
 img {
     vertical-align:bottom;
 }
-
 a img {
     border:none;
 }
-
 a {
     text-decoration:none;
 }
-
+input,textarea,select,option {
+	outline: none;
+	border: none;
+}
 .clear {
     clear:both;
 }
-
 .hide {
     display: none;
 }
-
 strong {
 	font-weight: normal;
 }
-
 .container {
     font-family: "微软雅黑";
     color: #666;
 }
-
 a {
 	color: #666;
 }
 
+/* 常用值 */
+.mr_5 {
+    margin-right: 5px;
+}
+.mr_10 {
+    margin-right: 10px;
+} 
+.display_none {
+	display: none;
+}
 /* 顶部条 */
 .header_wrap{
 	height: 34px;
@@ -48,6 +54,7 @@ a {
 	padding-top: 7px;
 }
 .header {
+	position: relative;
 	width: 1180px;
 	padding-right: 20px;
 	margin: 0 auto;
@@ -82,6 +89,37 @@ a.reg{
 	background: url(../images/reg.png) no-repeat;
 	display: inline-block;
 	font-size: 14px;
+}
+.header span{
+    margin-left: 20px;
+    font-size: 14px;
+}
+.header span {
+    color: #9a9a9a;
+}
+.header span i {
+    display: inline-block;
+}
+.header span img {
+    margin-right: 5px;
+}
+.message_notice{
+    padding-left: 15px;
+    background: url(../images/mail.png) no-repeat left center;
+    display: inline-block;
+}
+.message_num {
+    width: 12px;
+    height: 12px;
+    background: url(../images/info_mark.png) no-repeat;
+    position: relative;
+    top: -7px;
+    text-align: center;
+    line-height: 12px;
+    color: #fff;
+    font-style: normal;
+    font-size: 10px;
+    font-family: Arial;
 }
 
 /* 导航 */
@@ -124,6 +162,37 @@ a.reg{
 .nav li a:hover {
 	color: #fff;
 	background-color: #3a9473;
+}
+.userinfo {
+	padding-right: 17px;
+	background: url(../images/nav_icon_showmore.png) no-repeat right center;
+}
+.select_nav {
+	display: none;
+	position: absolute;
+	top: 20px;
+	right: 18px;
+	padding: 15px 15px 0;
+	background: #4c4c4c;
+}
+.select_nav a {
+	display: block;
+	padding-left: 25px;
+	border-bottom: 1px dashed #707070;
+	text-align: left;
+	color: #fff;
+	font-size: 14px;
+	line-height: 42px;
+}
+.select_nav_set {
+	background: url(../images/nav_icon_set.png) no-repeat left center;
+}
+.select_nav_loginout {
+	background: url(../images/nav_icon_close.png) no-repeat left center;
+}
+.select_nav:hover,
+.userinfo:hover + ul {
+	display: block;
 }
 
 /* 公共尾 */
@@ -182,14 +251,6 @@ a.reg{
 .form_box {
 	position: relative;
 }
-.form_box input {
-	border: none;
-	background-color: none;
-	font-size: 18px;
-	width: 350px;
-	height: 43px;
-	line-height: 43px;
-}
 .form_box .unhappyMessage {
 	position: absolute;
 	right: 0;
@@ -198,4 +259,102 @@ a.reg{
 	background: #fff url(../images/error.png) no-repeat left center;
 	color: #ffae00;
 	font-size: 12px;
+	line-height: 43px;
+}
+.form_box .happyMessage {
+	position: absolute;
+	right: 0;
+	height: 43px;
+	padding-left: 20px;
+	background: #fff url(../images/right.png) no-repeat left center;
+	color: #86c440;
+	font-size: 12px;
+	line-height: 43px;
+}
+.code_box .unhappyMessage {
+	right: 87px;
+}
+.m_btn {
+	border-radius: 3px;
+}
+.radio {
+    margin-right: 5px;
+    vertical-align: -2px;
+}
+.checkbox {
+    margin-right: 5px;
+    vertical-align: -2px;
+}
+.form_line_item {
+    margin-right: 10px;
+}
+
+/* 弹出层 */
+.box_mask {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: #000;
+	opacity: .5;
+	filter:alpha(opacity=50);
+}
+.box{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 260px;
+	height: 162px;
+	margin: -81px 0 0 -130px;
+    background: #fff;
+    border:1px solid #4b4b4b;
+    font-family: "微软雅黑";
+    padding: 10px 20px 0;
+	border-radius: 6px;
+	box-shadow: 0px 7px 20px;
+}
+.box_top{
+	color: #434343;
+	font-size: 14px;
+}
+.box_top span{
+	float: right;
+	background:url(images/close.gif) no-repeat;
+	width: 12px;
+	height: 12px;
+	display: inline-block;
+}
+.box_text{
+	font-size: 18px;
+	color: #808080;
+	text-align: center;
+	margin: 30px auto;
+}
+.box_btn{
+	width: 100px;
+	height: 30px;
+	background: #3a9473;
+	font-size: 14px;
+	text-align: center;
+	color: #fff;
+	line-height: 30px;
+	display: block;
+	margin: 0 auto;
+}
+
+/*
+	回到顶部
+*/
+.main {
+	position: relative;
+}
+
+.page_side {
+	position: absolute;
+	right: -85px;
+	bottom: 0;
+}
+
+.page_side a {
+	display: block;
+	margin-top: 1px;
 }

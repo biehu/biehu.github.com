@@ -95,6 +95,7 @@ var happy = {
                 var required = !!el.get(0).attributes.getNamedItem('required') || opts.required;
                 var password = (field.attr('type') === 'password');
                 var fieldErrorClass = config.classes && config.classes.field || 'unhappy';
+				var validOpts = {};
 				var valid = function () {
 					// get the value
 					var gotFunc = ((val.length > 0 || required === 'sometimes') && isFunction(opts.test));
@@ -109,7 +110,10 @@ var happy = {
 
 					if (!error && opts.next) {
 						opts.test = opts.next.test;
+						opts.arg = opts.next.arg;
 						errorEl.html(opts.next.message);
+
+						opts.next = opts.next.next;
 						valid();
 					}
 				};
@@ -132,13 +136,23 @@ var happy = {
                   }
 
                   // write it back to the field
-                  el.val(val);
+				  try {
+					el.val(val);
+				  }
+				  catch (e) {
+				  }
                 }
 
 				valid();
 
                 if (error) {
-                    errorTarget.addClass(fieldErrorClass).after(errorEl);
+                    if (opts.errorParent) {
+						errorTarget.addClass(fieldErrorClass);
+						errorEl.appendTo(opts.errorParent);
+					}
+					else {
+						errorTarget.addClass(fieldErrorClass).after(errorEl);
+					}
                     return false;
                 } else {
                     temp = errorEl.get(0);
@@ -160,7 +174,10 @@ var happy = {
         $(config.submitButton || this).bind('mousedown', handleMouseDown);
 
         if (config.submitButton) {
-            $(config.submitButton).click(handleSubmit);
+            $(config.submitButton).click(function () {
+				handleSubmit();
+				return false;
+			});
         } else {
             this.bind('submit', handleSubmit);
         }

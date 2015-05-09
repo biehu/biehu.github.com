@@ -1,0 +1,108 @@
+
+.ll{
+	background: url(../images/ll.png) no-repeat;
+	padding-left: 26px;
+	display: inline-block;
+	width: 100px;
+	height: 26px;
+	margin-left: 20px;
+}
+.mail{
+	width: 20px;
+	height: 13px;
+	background: url(../images/mail.png) no-repeat;
+	display: inline-block;
+}
+.main{
+	width:1200px;
+	margin: 0 auto;
+	font-family: "微软雅黑";
+	padding-bottom: 65px;
+}
+.works{
+	height: 60px;
+	border-bottom: 1px solid #ededed;
+	font-size: 20px;
+	line-height: 80px;
+}
+.works span{
+	color: #a3a3a3;
+	font-size: 14px;
+}
+.sais{
+	height: 55px;
+	background: #fff8de;
+	text-align: center;
+	font-size: 16px;
+	color: #5d5b55;
+	width: 1200px;
+	line-height: 55px;
+	margin: 9px 0;
+}
+.sais span{
+	color: #3a9473;
+}
+.content{
+	overflow: hidden;
+	padding-bottom: 35px;
+	border-bottom: 1px solid #ededed;
+}
+.content li{
+	float: left;
+	position: relative;
+	border: 1px solid #fff;
+}
+.content img{
+	margin: 10px 9px 18px;
+}
+.movie_name{
+	width: 225px;
+	height: 75px;
+	line-height: 25px;
+	padding-left: 10px;
+}
+.green{
+	font-size: 12px;
+	color: #3a9473;
+}
+.circle{
+	width: 49px;
+	height: 49px;
+	display: block;
+	position: absolute;
+	left: 228px;
+	top: 187px;
+}
+.content li.partaking{
+	border: 1px solid #e5e5e5;
+}
+.partaking .circle{
+	background: url(../images/circle1.png) no-repeat;
+}
+.content li.partake_to{
+	border: 1px solid #3a9473;
+}
+.partake_to .circle{
+	background: url(../images/circle3.png) no-repeat;
+}
+.match2_btn{
+	width: 340px;
+	height: 60px;
+	background: #3a9473;
+	text-align: center;
+	line-height: 60px;
+	margin: 0 auto;
+	display: block;
+	color: #fff;
+	font-size: 24px;
+	margin: 20px auto;
+}
+.upload{
+	font-size: 14px;
+	color: #7d7d7d;
+	text-align: center;
+}
+.upload span{
+	color: #3a9473;
+	font-size: 16px;
+}

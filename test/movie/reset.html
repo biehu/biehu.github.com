@@ -22,17 +22,19 @@
 		</div>
 	</div>
 	<div class="main">
-		<h3>重设密码</h3>
-		<div class="mail_box">
-			<input type="text" />
-		</div>
-		<div class="cipher_box">
-			<input type="password" />
-		</div>
-		<div class="cipher_box">
-			<input type="password" />
-		</div>
-		<a class="reg_btn1" href="">注&nbsp;&nbsp;册</a>
+		<form id="reset_password">
+			<h3>重设密码</h3>
+			<div class="form_box mail_box">
+				<input id="email" type="text" />
+			</div>
+			<div class="form_box cipher_box">
+				<input id="password" type="password" />
+			</div>
+			<div class="form_box cipher_box">
+				<input id="repeat_password" type="password" />
+			</div>
+			<a id="reset_password_btn" class="reg_btn1" href="">注&nbsp;&nbsp;册</a>
+		</form>
 	</div>
 	<div class="footer_wrap">
 		<div class="footer">
@@ -55,6 +57,7 @@
 	</div>
 </div>
 <script type="text/javascript" src="scripts/jquery.js"></script>
-
+<script src="scripts/jquery.validate.js"></script>
+<script src="scripts/form.js"></script>
 </body>
 </html>

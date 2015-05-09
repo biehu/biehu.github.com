@@ -1,0 +1,49 @@
+
+.main{
+	width: 1200px;
+	margin: 30px auto 50px;
+	padding: 48px 0 72px 170px;
+	background: #f7f7f7;
+	color: #666666;
+}
+.prompt{
+	background:url(../images/sign.png) 0 22px no-repeat;
+	color: #9f9f9f;
+	padding-left: 27px;
+	line-height: 60px;
+}
+h3{
+	font-size: 24px;
+	font-weight: normal;
+	line-height: 36px;
+}
+.mail_text{
+	font-size: 18px;
+	line-height: 36px;
+}
+.yanz{
+	color: #6fab93;
+	border-bottom: 1px solid #eaeaea;
+	width: 878px;
+}
+.yanz a{
+	width: 210px;
+	height: 40px;
+	background:url(../images/go_test.png) no-repeat;
+	display:inline-block;
+	line-height: 40px;
+	text-align: center;
+	font-size: 16px;
+	color: #fff;
+	font-weight: bold;
+	margin: 32px 20px 30px 0;
+}
+.bell{
+	background:url(../images/bell.png) no-repeat;
+	width: 600px;
+	margin: 48px 0 0 125px;
+	padding-left: 30px;
+	height: 30px;
+	line-height: 30px;
+	color: #999999;
+}

@@ -21,6 +21,11 @@
 	width: 100%;
 }
 
+.time-end .ClassyCountdown-value div {
+    color: #b0b0b0;
+}
+
+
 .ClassyCountdown-value span {
 	color: #828282;
 	font-size: 14px;

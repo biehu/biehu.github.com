@@ -34,15 +34,41 @@
 			<li class="on">02.实名认证</li>
 		</ul>
 	</div>
-	<div class="main list_form">
-		<div class="list first"><span>真实姓名：</span><input type="text" /><i>请填写身份证姓名</i></div>
-		<div class="list second"><span>联系电话：</span><input type="text" /></div>
-		<div class="list third"><span>所在地区：</span><select><option>请选择省</option><option>北京市</option><option>山东省</option></select><select><option>请选择市</option><option>北京市</option><option>山东省</option></select><select><option>请选择区</option><option>北京市</option><option>山东省</option></select></div>
-		<div class="list forth"><span>职业：</span><select><option>请选择省</option><option>北京市</option><option>山东省</option></select></div>
-		<div class="list fifth"><span>认证描述：</span><textarea></textarea><br /><i>最多能输入30个字</i></div>
-		<div class="list sixth"><span>证明材料：</span><a class="upload_btn" href="">上传图片</a><br /><i>请上传名片照片或其他能证明你职业的材料</i></div>
-		<div class="list seventh"><span>入行年份：</span><select><option>请选择</option><option>2015年</option><option>2014年</option></select></div>
-		<div class="eighth"><a class="save_btn" href="">保&nbsp;&nbsp;存</a><a class="no" href="">暂不认证</a></div>
+	<div class="main">
+		<form id="list_form" class="list_form">
+			<div class="list first">
+				<span>真实姓名：</span><input id="indentity" type="text" /><i>请填写身份证姓名</i>
+			</div>
+			<div class="list second">
+				<span>联系电话：</span><input id="phone" type="text" />
+			</div>
+			<div class="list third">
+				<span>所在地区：</span><select id="province" name="province"></select><select id="city" name="city" ></select><select id="county" name="county"></select>
+			</div>
+			<div class="list forth">
+				<span>职业：</span><select id="work"><option value=''>请选择</option><option value="1">北京市</option><option value="2">山东省</option></select>
+			</div>
+			<div class="list fifth">
+				<span>认证描述：</span>
+				<textarea id="desc"></textarea>
+				<p><i>最多能输入30个字</i></p>
+			</div>
+			<div class="list sixth">
+				<span>证明材料：</span>
+				<div class="sixth_right">
+					<div class="file_box">
+						<input id="upload_img" class="upload_img" type="file" />
+						<a class="upload_btn" href="">上传图片</a>
+					</div>
+					<p><i>请上传名片照片或其他能证明你职业的材料</i></p>
+					<div id="preview" class="preview"></div>
+				</div>
+			</div>
+			<div class="list seventh">
+				<span>入行年份：</span><select id="work_time"><option value=''>请选择</option><option value="1">2015年</option><option value="1">2014年</option></select>
+			</div>
+			<div class="eighth"><a id="list_save" class="save_btn" href="">保 存</a><a class="no" href="">暂不认证</a></div>
+		</form>
 	</div>
 	<div class="footer_wrap">
 		<div class="footer">
@@ -65,6 +91,8 @@
 	</div>
 </div>
 <script type="text/javascript" src="scripts/jquery.js"></script>
-
+<script type="text/javascript" src="scripts/select_city.js"></script>
+<script type="text/javascript" src="scripts/jquery.validate.js"></script>
+<script type="text/javascript" src="scripts/form.js"></script>
 </body>
 </html>

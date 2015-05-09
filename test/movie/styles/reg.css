@@ -103,3 +103,11 @@ h3{
 	background:url(../images/login_3.png) 0 -80px no-repeat;
 	display: block;
 }
+.form_box input {
+    border: none;
+    background-color: none;
+    font-size: 18px;
+    width: 350px;
+    height: 43px;
+    line-height: 43px;
+}

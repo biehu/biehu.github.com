@@ -114,10 +114,14 @@
     color:#fff;
     line-height:50px;
     text-align:center;
-    background: url(../images/bm.png) no-repeat;
+    background: #3A9473;
+    border-radius: 3px;
     display:block;
     font-size:24px;
     margin-left:30px;
+}
+.time-end .bm {
+    background: #b0b0b0;
 }
 a.bm {
 	color: #fff;

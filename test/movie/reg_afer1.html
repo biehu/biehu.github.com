@@ -38,10 +38,13 @@
 		<div class="head">
 			<div class="head_left">头像：</div>
 			<div class="head_right">
-				<img src="images/wait.png" />
+				<div id="preview" class="preview"><img src="images/wait.png" /></div>
 				<div class="head_text">
 					<p>仅支持JPG，且文件小于1M</p>
-					<a class="head_btn" href="">点击上传</a>
+					<div class="file_box">
+						<input id="upload_img" class="upload_img" type="file" />
+						<a class="head_btn" href="">点击上传</a>
+					</div>
 				</div>
 			</div>
 			<div class="clear"></div>
@@ -49,28 +52,30 @@
 		<div class="status">
 			<div class="status_left">身份：</div>
 			<div class="status_right">
-				<ul >
-					<li><span class="zuo"></span><span class="zhong">导演</span><span class="you"></span></li>
-					<li><span class="zuo"></span><span class="zhong">编剧</span><span class="you"></span></li>
-					<li><span class="zuo"></span><span class="zhong">演员</span><span class="you"></span></li>
-					<li><span class="zuo"></span><span class="zhong">制片人</span><span class="you"></span></li>
-					<li><span class="zuo"></span><span class="zhong">模特</span><span class="you"></span></li>
-					<li><span class="zuo"></span><span class="zhong">摄影师</span><span class="you"></span></li>
-					<li><span class="zuo"></span><span class="zhong">剪辑师</span><span class="you"></span></li>
-					<li><span class="zuo"></span><span class="zhong">设计师</span><span class="you"></span></li>
-					<li><span class="zuo"></span><span class="zhong">特效师</span><span class="you"></span></li>
-					<li><span class="zuo"></span><span class="zhong">美术</span><span class="you"></span></li>
-					<li><span class="zuo"></span><span class="zhong">监制</span><span class="you"></span></li>
-					<li><span class="zuo"></span><span class="zhong">动画师</span><span class="you"></span></li>
-					<li><span class="zuo"></span><span class="zhong">灯光师</span><span class="you"></span></li>
-					<li><span class="zuo"></span><span class="zhong">主办方</span><span class="you"></span></li>
-					<li><span class="zuo"></span><span class="zhong">其他</span><span class="you"></span></li>
+				<ul id="indentity">
+					<li class="on">导演</li>
+					<li>编剧</li>
+					<li>演员</li>
+					<li>制片人</li>
+					<li>模特</li>
+					<li>摄影师</li>
+					<li>剪辑师</li>
+					<li>设计师</li>
+					<li>特效师</li>
+					<li>美术</li>
+					<li>监制</li>
+					<li>动画师</li>
+					<li>灯光师</li>
+					<li>主办方</li>
+					<li>其他</li>
 				</ul>
 				<p>最多选择两个身份</p>
-				<a class="next_btn" href="">下一步</a>
+				
 			</div>
 			<div class="clear"></div>
 		</div>
+		<div class="form_box"><span class="unhappyMessage"></span></div>
+		<a class="next_btn basic_next" href="">下一步</a>
 	</div>
 	<div class="footer_wrap">
 		<div class="footer">
@@ -93,6 +98,6 @@
 	</div>
 </div>
 <script type="text/javascript" src="scripts/jquery.js"></script>
-
+<script type="text/javascript" src="scripts/form.js"></script>
 </body>
 </html>

@@ -1,10 +1,10 @@
 $(document).ready(function(){
-	// µ¹¼ÆÊ±
+	// å€’è®¡æ—¶
 	$('.countdown').each(function () {
 		$(this).ClassyCountdown();
 	});
 		
-	// ½¹µãÍ¼
+	// ç„¦ç‚¹å›¾
 	var slide = function () {
 		var bullets = $('#focus_position li');
 		var bulletShow = function (pos) {
