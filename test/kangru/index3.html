@@ -2,7 +2,7 @@
 <html>
    <head>
        <meta charset="utf-8" />
-       <title>Untitled Document</title>
+       <title>康如</title>
 <!-- 公共样式及统计代码 -->
 <!--#include virtual="/section/716.html"-->
 <style>
@@ -15,7 +15,7 @@
        <link rel="stylesheet" href="styles/index.css" />
 	  
    </head>
-   <body><!--#include virtual="/section/715.html"-->
+   <body class="hide"><!--#include virtual="/section/715.html"-->
        <div class="wrap p3">
            <div class="wrap-change">
                <a class="wrap-change-left" href="index4.html"></a>
@@ -69,6 +69,8 @@
        <script src="scripts/jquery.mCustomScrollbar.concat.min.js"></script>
 
        <script>
+
+	   var scroll = function () {
            $(".video-text").mCustomScrollbar({
 
                     scrollInertia:600,
@@ -76,6 +78,15 @@
                     autoDraggerLength:false
 
                 });
+
+	   };
+
+ var img = new Image();
+		  img.onload = function () {
+			$('body').show();
+			scroll();
+		  };
+		  img.src = 'images/bg3.jpg';
 
 
        

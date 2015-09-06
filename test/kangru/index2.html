@@ -2,7 +2,7 @@
 <html>
    <head>
        <meta charset="utf-8" />
-       <title>Untitled Document</title>
+       <title>康如</title>
 <!-- 公共样式及统计代码 -->
 <!--#include virtual="/section/716.html"-->
 <style>
@@ -14,7 +14,7 @@
        <link rel="stylesheet" href="styles/index.css" />
 	  
    </head>
-   <body><!--#include virtual="/section/715.html"-->
+   <body class="hide"><!--#include virtual="/section/715.html"-->
        <div class="wrap p2">
            <div class="wrap-change">
                <a class="wrap-change-left" href="index.html"></a>
@@ -224,9 +224,16 @@
                 });
             };
            
-          orderShowOneByOne('.s1, .s2, .s3, .s4, .s5, .s6, .s7, .s8');
-          clickShowWin();
-          playVideo();
+          
+
+		  var img = new Image();
+		  img.onload = function () {
+			$('body').show();
+			orderShowOneByOne('.s1, .s2, .s3, .s4, .s5, .s6, .s7, .s8');
+			  clickShowWin();
+			  playVideo();
+		  };
+		  img.src = 'images/bg2.jpg';
        </script>
   <div class="page_footer">
              <!--替换区域 结束-->
