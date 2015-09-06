@@ -14,7 +14,7 @@
        <link rel="stylesheet" href="styles/index.css" />
 
    </head>
-   <body><!--#include virtual="/section/715.html"-->
+   <body class="hide"><!--#include virtual="/section/715.html"-->
        <div class="wrap p1">
            <div class="wrap-change">
                <a class="wrap-change-left" href="index3.html"></a>
@@ -56,8 +56,13 @@
                   $(this).delay(blankTime * i).animate({opacity: 1}, '2000');
               });
           };
-           
-          orderShowOneByOne('#label img');
+		  
+          var img = new Image();
+		  img.onload = function () {
+			$('body').show();
+			orderShowOneByOne('#label img');
+		  };
+		  img.src = 'images/bg1.jpg';
        </script>
   <div class="page_footer">
              <!--替换区域 结束-->
