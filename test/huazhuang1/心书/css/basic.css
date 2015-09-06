@@ -1,0 +1,119 @@
+﻿@charset "utf-8";
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td{margin:0;padding:0}
+html{color:#333333;overflow-y:auto;overflow:-moz-scrollbars-vertical ; font-size:100%;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;-webkit-text-size-adjust:none}
+body,button,input,select,textarea{font-size:12px; font-family:'方正兰亭细黑简体','微软雅黑','Microsoft Yahei', Helvetica, arial,'Hiragino Sans GB', '宋体', Tahoma, Arial, STHeiti;}
+h1,h2,h3,h4,h5,h6{font-size:100%}
+em{font-style:normal}
+small{font-size:12px}
+ul,ol{list-style:none}
+a{text-decoration:none;outline:none;-webkit-tap-highlight-color:rgba(255,255,255,0);}
+a:hover{text-decoration:none;}
+legend{color:#000}
+fieldset,img{border:0}
+button,input,select,textarea{font-size:100%; border:none 0; outline:none;}
+table{border-collapse:collapse;border-spacing:0}
+img{-ms-interpolation-mode:bicubic; vertical-align:top; border:0; pointer-events: none; -webkit-user-select: none; -moz-user-select: none;}
+textarea{resize:vertical; resize:none;}
+input:focus,textarea:focus{ outline:none;}
+input:-moz-placeholder , textarea:-moz-placeholder , select:-moz-placeholder{ color:#666666;}
+input:-ms-input-placeholder, textarea:-ms-input-placeholder , select:-ms-input-placeholder{ color:#666666;}
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder , select::-webkit-input-placeholder{ color:#666666;}
+/*清除浮动*/
+.clearfix{zoom:1}
+.clearfix:after{content:"";display:block;clear:both}
+.clear{ clear:both;}
+body{ background: #214358; overflow: hidden;}
+
+/*css3动画*/
+@-webkit-keyframes rotate360{0%{-webkit-transform:rotate(0deg);transform:rotate(0deg)}100%{-webkit-transform:rotate(-359deg);transform:rotate(-359deg)}}
+@keyframes rotate360{0%{-webkit-transform:rotate(0deg);-ms-transform:rotate(0deg);transform:rotate(0deg)}100%{-webkit-transform:rotate(-359deg);-ms-transform:rotate(-359deg);transform:rotate(-359deg)}}
+.rotate360{-webkit-animation-name:rotate360;animation-name:rotate360}
+
+@-webkit-keyframes flash{0%,50%,100%{opacity:1}25%,75%{opacity:0.2}}
+@keyframes flash{0%,50%,100%{opacity:1}25%,75%{opacity:0.2}}
+.flash{-webkit-animation-name:flash;animation-name:flash}
+
+@-webkit-keyframes pulse{0%{-webkit-transform:scale3d(1,1,1);transform:scale3d(1,1,1)}50%{-webkit-transform:scale3d(1.05,1.05,1.05);transform:scale3d(1.05,1.05,1.05)}100%{-webkit-transform:scale3d(1,1,1);transform:scale3d(1,1,1)}}
+@keyframes pulse{0%{-webkit-transform:scale3d(1,1,1);transform:scale3d(1,1,1)}50%{-webkit-transform:scale3d(1.05,1.05,1.05);transform:scale3d(1.05,1.05,1.05)}100%{-webkit-transform:scale3d(1,1,1);transform:scale3d(1,1,1)}}
+.pulse{-webkit-animation-name:pulse;animation-name:pulse}
+
+
+@-webkit-keyframes upDown{0%,100%{-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}50%{-webkit-transform:translate3d(0,90px,0);transform:translate3d(0,90px,0)}}
+@keyframes upDown{0%,100%{-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}50%{-webkit-transform:translate3d(0,90px,0);transform:translate3d(0,90px,0)}}
+.upDown{-webkit-animation-name:upDown;animation-name:upDown}
+
+/*home页面*/
+.main{margin: 0 auto; width: 640px; height: 1136px; overflow: hidden; position: relative;}
+.home_txt_hava{position: absolute; left: 50%; top: 80px; margin-left: -18px;}
+.home_txt_name{position: absolute; left: 155px; top: 295px;
+	-webkit-animation: pulse 3s linear infinite;
+	-moz-animation: pulse 3s linear infinite;
+	-o-animation: pulse 3s linear infinite;
+	animation: pulse 3s linear infinite;
+	-ms-animation: pulse 3s linear infinite;
+}
+.home_circle{border-radius:50%; position: absolute; left: 0; top: 150px;
+	-webkit-animation: rotate360 3s linear infinite;
+	-moz-animation: rotate360 3s linear infinite;
+	-o-animation: rotate360 3s linear infinite;
+	animation: rotate360 3s linear infinite;
+	-ms-animation: rotate360 3s linear infinite;
+}
+.home_txt_name_shadow_1{position: absolute; left: 130px; top: 270px;
+	-webkit-animation: flash 2s linear infinite;
+	-moz-animation: flash 2s linear infinite;
+	-o-animation: flash 2s linear infinite;
+	animation: flash 2s linear infinite;
+	-ms-animation: flash 2s linear infinite;
+}
+.home_txt_name_shadow_2{position: absolute; left: 240px; top: 370px;
+	-webkit-animation: flash 2.5s linear infinite;
+	-moz-animation: flash 2.5s linear infinite;
+	-o-animation: flash 2.5s linear infinite;
+	animation: flash 2.5s linear infinite;
+	-ms-animation: flash 2.5s linear infinite;
+}
+.home_txt_bg{position: absolute; left: 150px; top: 600px;}
+.home_txt_infro{position: absolute; left: 170px; top: 610px;}
+.home_slide{ position: absolute; left: 85px; bottom: 90px; width: 73px; height: 200px;}
+.home_slide_bg{position: absolute; left: 0; top: 0px;}
+.home_slide_Title{position: absolute; left: 0; top: 110px;}
+.home_slide_circle{position: absolute; left: 29px; top: 15px;
+	-webkit-animation: upDown 5s linear infinite;
+	-moz-animation: upDown 5s linear infinite;
+	-o-animation: upDown 5s linear infinite;
+	animation: upDown 5s linear infinite;
+	-ms-animation: upDown 5s linear infinite;
+}
+.home_bottom{position: absolute; left: 0; bottom: 0px; z-index: 10;}
+
+
+/*故事*/
+.story{ width: 640px; margin-left: -320px; bottom: -700px; left: 50%; position: fixed; z-index: 10;}
+.storyBox{ width: 496px; height: 800px;  margin: 0 auto; overflow:auto; position: relative; /* -webkit-overflow-scrolling: touch; */}
+.storyBox .in{overflow: hidden; position: absolute; left: 0px; top: 0px;}
+.storyBox .in img{ z-index: 22;}
+/*初心*/
+.chu_1{display:none; position: absolute; left: 108px; top: 140px;}
+.chu_2{position: absolute; right: -115px; top: 360px;}
+.chu_3{position: absolute; left: -120px; top: 650px;}
+.chu_10{position: absolute; right: -65px; top: 630px;}
+.chu_4{position: absolute; left: 130px; top: 1160px;}
+.chu_5{position: absolute; left: 175px; top: 2220px;}
+.chu_6{position: absolute; left: 108px; top: 3570px;}
+.chu_7{position: absolute; left: 140px; top: 4550px;}
+.chu_8{position: absolute; left: 170px; top: 3220px;}
+.brand{position: absolute; left: 108px; top: 4800px;}
+
+
+.footprintBox{overflow: hidden; position: absolute; left: 0px; top: 0px; width: 496px;}
+.footprintBox img{position: absolute; z-index: 1;}
+.footprintBox img:nth-child(1){left: 200px; top: 100px;}
+.footprintBox img:nth-child(2){left: 290px; top: 200px;}
+.footprintBox img:nth-child(3){left: 200px; top: 300px;}
+.footprintBox img:nth-child(4){left: 290px; top: 400px;}
+
+.footprint_btn{display:none; position: fixed; z-index: 22; left: 50%; bottom: 40px; margin-left: -68px;}
+.botBtn{display:none; position: fixed; z-index: 22; left: 50%; margin-left: -100px;}
+.back_btn{ bottom: 250px;}
+.invite{bottom: 200px;}

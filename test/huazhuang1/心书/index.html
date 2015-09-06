@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<meta HTTP-EQUIV="Expires" CONTENT="-1">
+<title>心书</title>
+<link type="text/css" rel="stylesheet" href="css/basic.css">
+<!--移动端版本兼容 -->
+<script type="text/javascript">
+	var phoneWidth =  parseInt(window.screen.width);
+	var phoneScale = phoneWidth/640;
+	var ua = navigator.userAgent;
+	if (/Android (\d+\.\d+)/.test(ua)){
+		var version = parseFloat(RegExp.$1);
+		if(version>2.3){
+			document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+		}else{
+			document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+		}
+	} else {
+		document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+	}
+</script>
+</head>
+<body>
+<!--初心-->
+<div class="main">
+	<img class="home_txt_hava" src="images/home_txt_hava.png" />
+	<img class="home_circle" src="images/home_circle.png" />
+	<img class="home_txt_name" src="images/home_txt_name.png" />
+	<img class="home_txt_name_shadow_1" src="images/home_txt_name_shadow.png" />
+	<img class="home_txt_name_shadow_2" src="images/home_txt_name_shadow.png" />
+	<img class="home_txt_bg" src="images/home_txt_bg.png" />
+	<img class="home_txt_infro" src="images/home_txt_infro.png" />
+	<div class="home_slide">
+		<img class="home_slide_bg" src="images/home_slide_bg.png" />
+		<img class="home_slide_Title" src="images/home_slide_Title.png" />
+		<img class="home_slide_circle" src="images/home_slide_circle.png" />
+	</div>
+	<img class="home_bottom" src="images/home_bottom.png" />
+</div>
+<div class="story">
+	<div class="storyBox">
+		<div class="in">
+			<img class="chu_1" src="images/chu_1.png" />
+			<img class="chu_2" src="images/chu_2.png" />
+			<img class="chu_3" src="images/chu_3.png" />
+			<img class="chu_10" src="images/chu_10.png" />
+			<img class="chu_4" src="images/chu_4.png" />
+			<img class="chu_5" src="images/chu_5.png" />
+			<img class="chu_6" src="images/chu_6.png" />
+			<img class="chu_7" src="images/chu_7.png" />
+			<img class="chu_8" src="images/chu_8.png" />
+			<img class="brand" src="images/brand.png" />
+
+			<img src="images/chu_bg_1.jpg" />
+			<img src="images/chu_bg_2.jpg" />
+			<img src="images/chu_bg_3.jpg" />
+			<img src="images/chu_bg_4.jpg" />
+			<img src="images/chu_bg_5.jpg" />
+			<img src="images/chu_bg_6.jpg" />
+			<img src="images/chu_bg_7.jpg" />
+		</div>
+
+		<!--脚印-->
+		<div class="footprintBox"></div>
+
+		<!--脚印按钮-->
+		<div class="footprint_btn"><img src="images/footprint_btn.png"></div>
+
+		<!--分享按钮-->
+		<div class="botBtn back_btn"><img src="images/back_btn.png" /></div>
+		<div class="botBtn invite"><img src="images/invite.png" /></div>
+
+	</div>
+</div>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/touch.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+</body>
+</html>

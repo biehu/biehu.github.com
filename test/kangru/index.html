@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+   <head>
+       <meta charset="utf-8" />
+       <title>Untitled Document</title>
+<!-- 公共样式及统计代码 -->
+<!--#include virtual="/section/716.html"-->
+<style>
+.page_footer .footer {
+    margin-top: 0;
+    background: #000;
+}
+</style>
+       <link rel="stylesheet" href="styles/index.css" />
+
+   </head>
+   <body><!--#include virtual="/section/715.html"-->
+       <div class="wrap p1">
+           <div class="wrap-change">
+               <a class="wrap-change-left" href="index3.html"></a>
+               <a class="wrap-change-right" href="index2.html"></a>
+           </div>
+           <div class="wrap-inner">
+               <div class="wrap-header">
+                   <h1><i class="logo"></i>法国进口 植萃护发</h1>
+                   <p>1965-2015 半个世纪的植萃专家</p>
+               </div>
+               <div class="content">
+                   <div class="video">
+                       <!-- <img src="images/temp/v1.jpg" /> -->
+                       <video width="489" height="333" controls="" name="media" poster="images/temp/v1.jpg" onclick="this.play()"><source src="http://hearstvideo.baomihua.com/hearst/mcchina/20150270.mp4" type="video/mp4"></video>
+                   </div>
+                   <div class="france">
+                       <img src="images/france.png" />
+                   </div>
+                   <div class="intro">
+                       <p>KLORANE 康如品牌隶属于法国皮尔法伯制药集团，于1965年在法国药房诞生，创始人为皮尔.法伯先生。</p>
+                       <p>康如拥有50年的“植萃护发”经验，本着尊重自然、保护环境的原则，将自然与科学完美融合。品牌汇聚植物学家、农学家及药剂师的专业团队共同研发，推出植萃护发理念：一种植物、一种功效。用植物能量温和呵护头发，缔造出创新、温和、有效的植萃护发配方。</p>
+                       <p>至今，康如已在全球64个国家销售。2015年9月，康如全新进驻中国，所有产品均为法国原装进口，并贴有原装正品标签，予以品质及安全的承诺。</p>
+                   </div>
+                   <div id="label" class="label">
+                       <img src="images/p1_03.png" />
+                       <img src="images/p1_04.png" />
+                       <img src="images/p1_05.png" />
+                       <img src="images/p1_06.png" />
+                   </div>
+               </div>
+           </div>
+       </div>
+       
+       <script src="scripts/jquery.js"></script>
+       <script>
+          var orderShowOneByOne = function (selector) {
+              var blankTime = 500;
+              $(selector).each(function (i) {
+                  $(this).delay(blankTime * i).animate({opacity: 1}, '2000');
+              });
+          };
+           
+          orderShowOneByOne('#label img');
+       </script>
+  <div class="page_footer">
+             <!--替换区域 结束-->
+            <!--#include virtual="/section/717.html"-->
+        </div>
+		
+  </body>
+</html>
