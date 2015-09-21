@@ -1,0 +1,283 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>购买现成</title>
+    
+<link type="text/css" rel="stylesheet" href="css/style.css" />
+    
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/my.js"></script>
+    	<script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
+
+	<script type="text/javascript">
+	$(function() {
+		$(window).scroll(function(event) {
+			var $num=$(document).scrollTop();  
+			if($num>=$("#top").height())
+			{
+				$("#nav").css({"position":"fixed","top":0,});
+				$("#main").css("padding-top",102);
+			}
+			else
+			{
+				$("#nav").css({"position":"static"});
+				$("#main").css("padding-top",20);
+			}
+		});
+	});
+	</script>
+    
+    	<script type="text/javascript">
+		$(function() {
+		    $(".demo2>li").hover(function() {
+		    	$(this).children('ul').stop().slideToggle();
+		    });
+
+		});
+	</script>
+    
+    <script type="text/javascript">
+	$(document).ready(function() {
+		$(".duoduo").click(function(event) {
+			$("#cang").show();
+			$(".duoduo").hide();
+		});
+		$(".duo1").click(function(event) {
+			$("#zai").show();
+			$(".duo1").hide();
+		});
+		$(".duo2").click(function(event) {
+			$("#tucang").show();
+			$(".duo2").hide();
+		});
+		
+	});
+	
+	
+	</script>
+
+	
+</head>
+<body>
+<div class="header" id="top">
+	<div class="left"><h1><img src="images/logo.jpg" width="340" height="52" /></h1>
+	</div>
+	<div class="right">
+    	<div class="r1">
+    		<ul>
+        	<li><a href="#">企业邮箱</a></li>
+        	<li><a href="#">简ENG</a></li>
+        </ul>
+    	</div>
+    	<div class="r2">
+    		<div id="boxx">
+		<ul class="demo2">
+			
+			<li style="background:url(images/huijiao.jpg) no-repeat 95px center;">
+				<a href="#">全部商品分类</a>
+				<ul>
+					<li><a href="#">兼职</a></li>
+					<li><a href="#">实习</a></li>
+					<li><a href="#">赞助</a></li>
+				</ul>
+
+			</li>
+		</ul>
+	</div>
+    	</div>
+        
+    </div>
+</div>
+    
+ <div id="nav_out">
+ 	<div id="nav1"> 
+		<div id="nav">
+			<ul>
+    	<li><a href="#">浏览首页</a></li>
+    	<li><a href="#">发现我们</a></li>
+    	<li><a href="#">能做什么</a></li>
+    	<li><a href="#">做过什么</a></li>
+    	<li><a href="#">购买现成</a></li>
+    	<li><a href="#">了解咨询</a></li>
+    	<li><a href="#">联系我们</a></li>
+    	<li class="quanquan"><input type="text" style=" float:left;width:138px; height:24px; border:1px solid #ccc; padding-right:20px; padding-left:5px; outline:none;" />
+        <span class="sousou"><a href="#"><img src="images/fangda.jpg" width="16" height="18" /></a></span></li>
+    </ul>
+	</div>
+	</div> 
+</div>   
+    
+ <div class="fabanner"><img src="images/faxianb.jpg" width="100%" height="303" /></div>
+ 
+<div class="gou1">
+	<h3>购买现成</h3>
+    <div class="zhuanli"><span>商标专利</span></div>
+	<div id="xianc">
+		<ul>
+			<li>
+				<img src="images/01.jpg"/>
+				<p>玩转黑白</p>
+			</li>
+			<li>
+				<img src="images/02.jpg"/>
+				<p>玩转黑白</p>
+			</li>
+			<li>
+				<img src="images/05.jpg"/>
+
+				<p>玩转黑白</p>
+			</li>
+			<li>
+				<img src="images/03.jpg"/>
+				<p>玩转黑白</p>
+			</li>
+			<li>
+				<img src="images/04.jpg"/>
+
+				<p>玩转黑白</p>
+			</li>
+
+		</ul>
+	</div>
+	<div id="cang">
+        <div id="xianc">
+            <ul>
+                <li>
+                    <img src="images/01.jpg"/>
+                    <p>玩转黑白</p>
+                </li>
+                <li>
+                    <img src="images/02.jpg"/>
+                    <p>玩转黑白</p>
+                </li>
+                <li>
+                    <img src="images/05.jpg"/>
+    
+                    <p>玩转黑白</p>
+                </li>
+                <li>
+                    <img src="images/03.jpg"/>
+                    <p>玩转黑白</p>
+                </li>
+                <li>
+                    <img src="images/04.jpg"/>
+    
+                    <p>玩转黑白</p>
+                </li>
+    
+            </ul>
+        </div>
+    </div>
+    <div class="duoduo"><a href="javascript:;"><span>加载更多产品</span><img src="images/more.jpg" width="24" height="24" /></a></div>
+    
+</div>
+
+<div class="gou2">
+    <div class="zhuanli"><span>包装专利</span></div>
+	<div id="hei">
+		<ul style="position:relative;">
+			<li><a href="#"><img src="images/zhuan1.jpg" alt="" /></a></li>
+           	<li><a href="#"><img src="images/zhuan2.jpg" alt="" /></a></li>
+            <li><a href="#"><img src="images/zhuan5.jpg" width="317" height="158" /></a></li>
+			<li class="ding"><a href="#"><img src="images/zhuan7.jpg" width="189" height="133" /></a></li>
+			<li class="ding1"><a href="#"><img src="images/zhuan3.jpg" width="189" height="133" /></a></li>
+			<li class="ding2"><a href="#"><img src="images/zhuan4.jpg" width="192" height="267" /></a></li>
+			<li class="ding3"><a href="#"><img src="images/zhuan6.jpg" width="317" height="266" /></a></li>
+		</ul>
+	</div>
+	
+    <div id="zai">
+  	  <div id="hei">
+		<ul style="position:relative;">
+			<li><a href="#"><img src="images/zhuan1.jpg" alt="" /></a></li>
+           	<li><a href="#"><img src="images/zhuan2.jpg" alt="" /></a></li>
+            <li><a href="#"><img src="images/zhuan5.jpg" width="317" height="158" /></a></li>
+			<li class="ding"><a href="#"><img src="images/zhuan7.jpg" width="189" height="133" /></a></li>
+			<li class="ding1"><a href="#"><img src="images/zhuan3.jpg" width="189" height="133" /></a></li>
+			<li class="ding2"><a href="#"><img src="images/zhuan4.jpg" width="192" height="267" /></a></li>
+			<li class="ding3"><a href="#"><img src="images/zhuan6.jpg" width="317" height="266" /></a></li>
+		</ul>
+	</div>
+    </div>
+
+    <div class="duo1"><a href="javascript:;"><span>加载更多产品</span><img src="images/more.jpg" width="24" height="24" /></a></div>
+    
+    
+</div>
+
+<div class="gou3">
+    <div class="zhuanli"><span>图片专区</span></div>
+    <div class="zhuanqu">
+    	<ul>
+        	<li><img src="images/t1.jpg" width="244" height="245" alt="图片"/></li>
+        	<li><img src="images/t2.jpg" width="199" height="245" alt="图片" /></li>
+            <li><img src="images/t3.jpg" width="368" height="245" alt="图片" /></li>
+            <li class="nomargin"><img src="images/t4.jpg" width="155" height="245" alt="图片" /></li>
+            <li><img src="images/t5.jpg" width="227" height="210" alt="图片" /></li>
+            <li><img src="images/t6.jpg" width="180" height="210" alt="图片" /></li>
+            <li><img src="images/t7.jpg" width="157" height="210" alt="图片"/></li>
+            <li><img src="images/t8.jpg" width="141" height="210" alt="图片"/></li>
+            <li class="nomargin"><img src="images/t9.jpg" width="253" height="210" alt="图片" /></li>
+        </ul>
+    	<ul id="tucang">
+        	<li><img src="images/t1.jpg" width="244" height="245" alt="图片"/></li>
+        	<li><img src="images/t2.jpg" width="199" height="245" alt="图片" /></li>
+            <li><img src="images/t3.jpg" width="368" height="245" alt="图片" /></li>
+            <li class="nomargin"><img src="images/t4.jpg" width="155" height="245" alt="图片" /></li>
+            <li><img src="images/t5.jpg" width="227" height="210" alt="图片" /></li>
+            <li><img src="images/t6.jpg" width="180" height="210" alt="图片" /></li>
+            <li><img src="images/t7.jpg" width="157" height="210" alt="图片" /></li>
+            <li><img src="images/t8.jpg" width="141" height="210" alt="图片" /></li>
+            <li class="nomargin"><img src="images/t9.jpg" width="253" height="210" alt="图片" /></li>
+        </ul>
+    </div>
+    
+    
+  <div class="duo2"><a href="javascript:;"><span>加载更多产品</span><img src="images/more.jpg" width="24" height="24" /></a></div>
+    
+</div>
+
+
+  
+  
+
+<div class="di_out">
+	<div class="di">
+    	<div class="left"><img src="images/dilogo.jpg" width="258" height="41" /></div>
+    	<div class="right">
+        	<ul>
+            	<li class="guan1"><a href="#">官方微博</a></li>
+            	<li class="guan2"><a href="#">官方微信</a></li>
+            	<li class="guan3"><a href="#">监察举报</a></li>
+            </ul>
+        
+        </div>
+    </div>
+
+</div>
+
+<div class="footer">
+	<div class="left">
+    	<a href="#">联系我们</a> |
+    	<a href="#">常见问题表达</a> |
+    	<a href="#">网站标签</a> | 
+    	<a href="#">网站地图</a> |
+    	<a href="#">技术支持</a>
+    
+    </div>
+	<div class="right">
+    	<a>Copyright©2015</a>
+    	<a>奥美斯文化传媒（北京）有限责任公司</a>
+    	<a>京ICP备0978543245号-28</a>
+    
+    </div>
+
+
+</div>
+
+
+
+
+</body>
+</html>

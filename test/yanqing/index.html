@@ -1,0 +1,591 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>首页</title>
+    
+<link type="text/css" rel="stylesheet" href="css/style.css" />
+    
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/my.js"></script>
+    	<script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
+
+	<script type="text/javascript">
+	$(function() {
+		$(window).scroll(function(event) {
+			var $num=$(document).scrollTop();  
+			if($num>=$("#top").height())
+			{
+				$("#nav").css({"position":"fixed","top":0,});
+				$("#main").css("padding-top",102);
+			}
+			else
+			{
+				$("#nav").css({"position":"static"});
+				$("#main").css("padding-top",20);
+			}
+		});
+	});
+	</script>
+    
+    	<script type="text/javascript">
+		$(function() {
+		    $(".demo2>li").hover(function() {
+		    	$(this).children('ul').stop().slideToggle();
+		    });
+
+		});
+	</script>
+    
+    <script type="text/javascript">
+	$(document).ready(function() {
+		$(".mm2").click(function(event) {
+			$(".xiayin").show();
+			$(".mm2").hide();
+		});
+		
+	});
+	</script>
+
+	
+</head>
+<body>
+<div class="header" id="top">
+	<div class="left"><h1><img src="images/logo.jpg" width="340" height="52" /></h1>
+	</div>
+	<div class="right">
+    	<div class="r1">
+    		<ul>
+        	<li><a href="#">企业邮箱</a></li>
+        	<li><a href="#">简ENG</a></li>
+        </ul>
+    	</div>
+    	<div class="r2">
+    		<div id="boxx">
+		<ul class="demo2">
+			
+			<li style="background:url(images/huijiao.jpg) no-repeat 95px center;">
+				<a href="#">全部商品分类</a>
+				<ul>
+					<li><a href="#">兼职</a></li>
+					<li><a href="#">实习</a></li>
+					<li><a href="#">赞助</a></li>
+					<li><a href="#">赞助</a></li>
+				</ul>
+
+			</li>
+		</ul>
+	</div>
+    	</div>
+        
+    </div>
+</div>
+    
+ <div id="nav_out">
+ 	<div id="nav1"> 
+		<div id="nav">
+			<ul>
+    	<li><a href="#">浏览首页</a></li>
+    	<li><a href="#">发现我们</a></li>
+    	<li><a href="#">能做什么</a></li>
+    	<li><a href="#">做过什么</a></li>
+    	<li><a href="#">购买现成</a></li>
+    	<li><a href="#">了解咨询</a></li>
+    	<li><a href="#">联系我们</a></li>
+    	<li class="quanquan"><input type="text" style=" float:left;width:138px; height:24px; border:1px solid #ccc; padding-right:20px; padding-left:5px; outline:none;" />
+        <span class="sousou"><a href="#"><img src="images/fangda.jpg" width="16" height="18" /></a></span></li>
+    </ul>
+	</div>
+	</div> 
+</div>   
+    
+    
+<div class="banner-box">
+	<div class="bd">
+        <ul>          	    
+            <li style="background:#F3E5D8;">
+                <div class="m-width">
+                <a href="javascript:void(0);"><img src="images/img1.jpg" /></a>
+                </div>
+            </li>
+            <li style="background:#B01415">
+                <div class="m-width">
+                <a href="javascript:void(0);"><img src="images/img2.jpg" /></a>
+                </div>
+            </li>
+            <li style="background:#C49803;">
+                <div class="m-width">
+                <a href="javascript:void(0);"><img src="images/img3.jpg" /></a>
+                </div>
+            </li>
+            <li style="background:#FDFDF5">
+                <div class="m-width">
+                <a href="javascript:void(0);"><img src="images/img4.jpg" /></a>
+                </div>
+            </li>  
+            <li style="background:#FDFDF5">
+                <div class="m-width">
+                <a href="javascript:void(0);"><img src="images/img4.jpg" /></a>
+                </div>
+            </li>  
+            <li style="background:#FDFDF5">
+                <div class="m-width">
+                <a href="javascript:void(0);"><img src="images/img4.jpg" /></a>
+                </div>
+            </li>  
+            <li style="background:#FDFDF5">
+                <div class="m-width">
+                <a href="javascript:void(0);"><img src="images/img4.jpg" /></a>
+                </div>
+            </li>  
+
+      </ul>
+    </div>
+    <div class="banner-btn">
+        <a class="prev" href="javascript:void(0);"></a>
+        <a class="next" href="javascript:void(0);"></a>
+        <div class="hd">
+			<ul>
+
+          </ul>
+
+        </div>
+    </div>
+</div>
+
+<div class="bankuai">
+	<dl>
+    	<dt><a href="#" title="品牌创造">品牌创造</br>Brand creation</a></dt>
+        <dd><a href="#" title="品牌创造"><img src="images/pin1.jpg" width="44" height="44" alt="品牌创造"/></a></dd>
+    </dl>
+	<dl class="pin2">
+   	  <dt><a href="#" title="品牌创造">品牌创造</br>Brand creation</a></dt>
+        <dd><a href="#" title="品牌创造"><img src="images/pin2.jpg" width="44" height="44" alt="品牌创造"/></a></dd>
+    </dl>
+	<dl class="pin3">
+    	<dt><a href="#" title="品牌创造">品牌创造</br>Brand creation</a></dt>
+        <dd><a href="#" title="品牌创造"><img src="images/pin3.jpg" width="44" height="44" alt="品牌创造"/></a></dd>
+    </dl>
+	<dl class="pin4">
+    	<dt><a href="#" title="品牌创造">品牌创造</br>Brand creation</a></dt>
+        <dd><a href="#" title="品牌创造"><img src="images/pin4.jpg" width="44" height="44" alt="品牌创造"/></a></dd>
+    </dl>
+</div>
+
+<div class="bankuai2">
+	<dl>
+    	<dt><a href="#" title="品牌创造">品牌创造</br>Brand creation</a></dt>
+        <dd><a href="#" title="品牌创造"><img src="images/pin5.jpg" width="44" height="44" alt="品牌创造"/></a></dd>
+    </dl>
+	<dl class="pin2">
+   	  <dt><a href="#" title="品牌创造">品牌创造</br>Brand creation</a></dt>
+        <dd><a href="#" title="品牌创造"><img src="images/pin6.jpg" width="44" height="44" alt="品牌创造"/></a></dd>
+    </dl>
+	<dl class="pin3">
+    	<dt><a href="#" title="品牌创造">品牌创造</br>Brand creation</a></dt>
+        <dd><a href="#" title="品牌创造"><img src="images/pin7.jpg" width="44" height="44" alt="品牌创造"/></a></dd>
+    </dl>
+	<dl class="pin4">
+    	<dt><a href="#" title="品牌创造">品牌创造</br>Brand creation</a></dt>
+        <dd><a href="#" title="品牌创造"><img src="images/pin8.jpg" width="44" height="44" alt="品牌创造"/></a></dd>
+    </dl>
+</div>
+
+<div class="faxian">
+	<dl>
+    	<dt><a href="#" title="品牌创造"><img src="images/faxian.jpg" width="338" height="248" alt="品牌创造"/></a></dt>
+        <dd>
+        	<h3><a href="#">发现我们</a></h3>
+        	<p><a href="#">奥美斯奥美斯奥美斯奥美斯奥美斯奥美斯奥美斯奥美斯奥美斯奥美斯奥美斯奥美斯奥美斯奥美斯奥美斯奥美斯奥美斯奥美斯奥美斯奥美斯奥美斯奥美斯奥美斯奥美斯奥美斯奥美斯奥美斯奥美斯奥美斯奥美斯</a></p>
+        	<p><a href="#">奥美斯奥美斯奥美斯奥美斯奥美斯奥美斯奥美斯奥美斯奥美斯奥美斯奥美斯奥美斯奥美斯奥美斯奥美斯奥美斯奥美斯奥美斯奥美斯奥美斯奥美斯奥美斯奥美斯奥美斯奥美斯奥美斯奥美斯奥美斯奥美斯奥美斯</a></p>
+        
+        </dd>
+    </dl>
+
+
+</div>
+
+<div class="nengzuo">
+	<h3>能做什么<span><a href="#"><img src="images/more.jpg" width="24" height="24" /></a></span></h3>
+	<dl>
+    	<dt><a href="#"><img src="images/b1.jpg" width="86" height="86" /></a></dt>
+        <dd><a href="#">标志设计</a></dd>
+    </dl>
+	<dl>
+    	<dt><a href="#"><img src="images/b2.jpg" width="86" height="86" /></a></dt>
+        <dd><a href="#">标志设计</a></dd>
+    </dl>
+	<dl>
+    	<dt><a href="#"><img src="images/b3.jpg" width="86" height="86" /></a></dt>
+        <dd><a href="#">标志设计</a></dd>
+    </dl>
+	<dl>
+    	<dt><a href="#"><img src="images/b4.jpg" width="86" height="86" /></a></dt>
+        <dd><a href="#">标志设计</a></dd>
+    </dl>
+	<dl>
+    	<dt><a href="#"><img src="images/b5.jpg" width="86" height="86" /></a></dt>
+        <dd><a href="#">标志设计</a></dd>
+    </dl>
+	<dl>
+    	<dt><a href="#"><img src="images/b6.jpg" width="86" height="86" /></a></dt>
+        <dd><a href="#">标志设计</a></dd>
+    </dl>
+	<dl>
+    	<dt><a href="#"><img src="images/b7.jpg" width="86" height="86" /></a></dt>
+        <dd><a href="#">标志设计</a></dd>
+    </dl>
+	<dl>
+    	<dt><a href="#"><img src="images/b8.jpg" width="86" height="86" /></a></dt>
+        <dd><a href="#">标志设计</a></dd>
+    </dl>
+	<dl>
+    	<dt><a href="#"><img src="images/b9.jpg" width="86" height="86" /></a></dt>
+        <dd><a href="#">标志设计</a></dd>
+    </dl>
+	<dl class="nomargin">
+    	<dt><a href="#"><img src="images/b10.jpg" width="86" height="86" /></a></dt>
+        <dd><a href="#">标志设计</a></dd>
+    </dl>
+	<dl>
+    	<dt><a href="#"><img src="images/b11.jpg" width="86" height="86" /></a></dt>
+        <dd><a href="#">标志设计</a></dd>
+    </dl>
+	<dl>
+    	<dt><a href="#"><img src="images/b12.jpg" width="86" height="86" /></a></dt>
+        <dd><a href="#">标志设计</a></dd>
+    </dl>
+	<dl>
+    	<dt><a href="#"><img src="images/b13.jpg" width="86" height="86" /></a></dt>
+        <dd><a href="#">标志设计</a></dd>
+    </dl>
+	<dl>
+    	<dt><a href="#"><img src="images/b14.jpg" width="86" height="86" /></a></dt>
+        <dd><a href="#">标志设计</a></dd>
+    </dl>
+	<dl>
+    	<dt><a href="#"><img src="images/b15.jpg" width="86" height="86" /></a></dt>
+        <dd><a href="#">标志设计</a></dd>
+    </dl>
+	<dl>
+    	<dt><a href="#"><img src="images/b16.jpg" width="86" height="86" /></a></dt>
+        <dd><a href="#">标志设计</a></dd>
+    </dl>
+	<dl>
+    	<dt><a href="#"><img src="images/b17.jpg" width="86" height="86" /></a></dt>
+        <dd><a href="#">标志设计</a></dd>
+    </dl>
+	<dl>
+    	<dt><a href="#"><img src="images/b18.jpg" width="86" height="86" /></a></dt>
+        <dd><a href="#">标志设计</a></dd>
+    </dl>
+	<dl>
+    	<dt><a href="#"><img src="images/b19.jpg" width="86" height="86" /></a></dt>
+        <dd><a href="#">标志设计</a></dd>
+    </dl>
+	<dl class="nomargin">
+    	<dt><a href="#"><img src="images/b20.jpg" width="86" height="86" /></a></dt>
+        <dd><a href="#">标志设计</a></dd>
+    </dl>
+	<dl>
+    	<dt><a href="#"><img src="images/b21.jpg" width="86" height="86" /></a></dt>
+        <dd><a href="#">标志设计</a></dd>
+    </dl>
+	<dl>
+    	<dt><a href="#"><img src="images/b22.jpg" width="86" height="86" /></a></dt>
+        <dd><a href="#">标志设计</a></dd>
+    </dl>
+	<dl>
+    	<dt><a href="#"><img src="images/b23.jpg" width="86" height="86" /></a></dt>
+        <dd><a href="#">标志设计</a></dd>
+    </dl>
+	<dl>
+    	<dt><a href="#"><img src="images/b24.jpg" width="86" height="86" /></a></dt>
+        <dd><a href="#">标志设计</a></dd>
+    </dl>
+	<dl>
+    	<dt><a href="#"><img src="images/b25.jpg" width="86" height="86" /></a></dt>
+        <dd><a href="#">标志设计</a></dd>
+    </dl>
+	<dl>
+    	<dt><a href="#"><img src="images/b26.jpg" width="86" height="86" /></a></dt>
+        <dd><a href="#">标志设计</a></dd>
+    </dl>
+	<dl>
+    	<dt><a href="#"><img src="images/b27.jpg" width="86" height="86" /></a></dt>
+        <dd><a href="#">标志设计</a></dd>
+    </dl>
+	<dl>
+    	<dt><a href="#"><img src="images/b28.jpg" width="86" height="86" /></a></dt>
+        <dd><a href="#">标志设计</a></dd>
+    </dl>
+	<dl>
+    	<dt><a href="#"><img src="images/b29.jpg" width="86" height="86" /></a></dt>
+        <dd><a href="#">标志设计</a></dd>
+    </dl>
+	<dl class="nomargin">
+    	<dt><a href="#"><img src="images/b30.jpg" width="86" height="86" /></a></dt>
+        <dd><a href="#">标志设计</a></dd>
+    </dl>
+	<dl>
+    	<dt><a href="#"><img src="images/b31.jpg" width="86" height="86" /></a></dt>
+        <dd><a href="#">标志设计</a></dd>
+    </dl>
+	<dl>
+    	<dt><a href="#"><img src="images/b32.jpg" width="86" height="86" /></a></dt>
+        <dd><a href="#">标志设计</a></dd>
+    </dl>
+	<dl>
+    	<dt><a href="#"><img src="images/b33.jpg" width="86" height="86" /></a></dt>
+        <dd><a href="#">标志设计</a></dd>
+    </dl>
+	<dl>
+    	<dt><a href="#"><img src="images/b34.jpg" width="86" height="86" /></a></dt>
+        <dd><a href="#">标志设计</a></dd>
+    </dl>
+	<dl>
+    	<dt><a href="#"><img src="images/b35.jpg" width="86" height="86" /></a></dt>
+        <dd><a href="#">标志设计</a></dd>
+    </dl>
+	<dl>
+    	<dt><a href="#"><img src="images/b36.jpg" width="86" height="86" /></a></dt>
+        <dd><a href="#">标志设计</a></dd>
+    </dl>
+	<dl>
+    	<dt><a href="#"><img src="images/b37.jpg" width="86" height="86" /></a></dt>
+        <dd><a href="#">标志设计</a></dd>
+    </dl>
+	<dl>
+    	<dt><a href="#"><img src="images/b38.jpg" width="86" height="86" /></a></dt>
+        <dd><a href="#">标志设计</a></dd>
+    </dl>
+	<dl>
+    	<dt><a href="#"><img src="images/b39.jpg" width="86" height="86" /></a></dt>
+        <dd><a href="#">标志设计</a></dd>
+    </dl>
+	<dl class="nomargin">
+    	<dt><a href="#"><img src="images/b40.jpg" width="86" height="86" /></a></dt>
+        <dd><a href="#">标志设计</a></dd>
+    </dl>
+
+</div>
+
+<div class="zuoguo">
+	<div class="neng">
+    	<h3><a href="#">做过什么</a></h3>
+    	<div class="xuxian"></div>
+        <div class="duo"><a href="#"><img src="images/more.jpg" width="24" height="24" /></a></div>
+  </div>
+
+
+	<div id="hongtou">
+		<ul>
+			<li>
+				<a href="#" title="中国联合水泥"><img src="images/z1.jpg" width="240" height="175" alt="中国联合水泥" /></a>
+				<dl>
+                	<dt><a href="#" title="中国联合水泥">中国联合水泥</a></dt>
+                    <dd><a href="#" title="中国联合水泥">2012</a></dd>
+                    <dd><a href="#" title="中国联合水泥">品牌架构梳理</a></dd>
+                
+                </dl>
+			</li>
+			<li>
+				<a href="#" title="中国联合水泥"><img src="images/z1.jpg" width="240" height="175" alt="中国联合水泥" /></a>
+				<dl>
+                	<dt><a href="#" title="中国联合水泥">中国联合水泥</a></dt>
+                    <dd><a href="#" title="中国联合水泥">2012</a></dd>
+                    <dd><a href="#" title="中国联合水泥">品牌架构梳理</a></dd>
+                
+                </dl>
+			</li>
+			<li>
+				<a href="#" title="中国联合水泥"><img src="images/z1.jpg" width="240" height="175" alt="中国联合水泥" /></a>
+				<dl>
+                	<dt><a href="#" title="中国联合水泥">中国联合水泥</a></dt>
+                    <dd><a href="#" title="中国联合水泥">2012</a></dd>
+                    <dd><a href="#" title="中国联合水泥">品牌架构梳理</a></dd>
+                
+                </dl>
+			</li>
+			<li class="nomargin">
+				<a href="#" title="中国联合水泥"><img src="images/z1.jpg" width="240" height="175" alt="中国联合水泥" /></a>
+				<dl>
+                	<dt><a href="#" title="中国联合水泥">中国联合水泥</a></dt>
+                    <dd><a href="#" title="中国联合水泥">2012</a></dd>
+                    <dd><a href="#" title="中国联合水泥">品牌架构梳理</a></dd>
+                </dl>
+			</li>
+
+			<li>
+				<a href="#" title="中国联合水泥"><img src="images/z1.jpg" width="240" height="175" alt="中国联合水泥" /></a>
+				<dl>
+                	<dt><a href="#" title="中国联合水泥">中国联合水泥</a></dt>
+                    <dd><a href="#" title="中国联合水泥">2012</a></dd>
+                    <dd><a href="#" title="中国联合水泥">品牌架构梳理</a></dd>
+                
+                </dl>
+			</li>
+			<li>
+				<a href="#" title="中国联合水泥"><img src="images/z1.jpg" width="240" height="175" alt="中国联合水泥" /></a>
+				<dl>
+                	<dt><a href="#" title="中国联合水泥">中国联合水泥</a></dt>
+                    <dd><a href="#" title="中国联合水泥">2012</a></dd>
+                    <dd><a href="#" title="中国联合水泥">品牌架构梳理</a></dd>
+                
+                </dl>
+			</li>
+			<li>
+				<a href="#" title="中国联合水泥"><img src="images/z1.jpg" width="240" height="175" alt="中国联合水泥" /></a>
+				<dl>
+                	<dt><a href="#" title="中国联合水泥">中国联合水泥</a></dt>
+                    <dd><a href="#" title="中国联合水泥">2012</a></dd>
+                    <dd><a href="#" title="中国联合水泥">品牌架构梳理</a></dd>
+                
+                </dl>
+			</li>
+			<li class="nomargin">
+				<a href="#" title="中国联合水泥"><img src="images/z1.jpg" width="240" height="175" alt="中国联合水泥" /></a>
+				<dl>
+                	<dt><a href="#" title="中国联合水泥">中国联合水泥</a></dt>
+                    <dd><a href="#" title="中国联合水泥">2012</a></dd>
+                    <dd><a href="#" title="中国联合水泥">品牌架构梳理</a></dd>
+                
+                </dl>
+			</li>
+
+			<li>
+				<a href="#" title="中国联合水泥"><img src="images/z1.jpg" width="240" height="175" alt="中国联合水泥" /></a>
+				<dl>
+                	<dt><a href="#" title="中国联合水泥">中国联合水泥</a></dt>
+                    <dd><a href="#" title="中国联合水泥">2012</a></dd>
+                    <dd><a href="#" title="中国联合水泥">品牌架构梳理</a></dd>
+                
+                </dl>
+			</li>
+			<li>
+				<a href="#" title="中国联合水泥"><img src="images/z1.jpg" width="240" height="175" alt="中国联合水泥" /></a>
+				<dl>
+                	<dt><a href="#" title="中国联合水泥">中国联合水泥</a></dt>
+                    <dd><a href="#" title="中国联合水泥">2012</a></dd>
+                    <dd><a href="#" title="中国联合水泥">品牌架构梳理</a></dd>
+                
+                </dl>
+			</li>
+			<li>
+				<a href="#" title="中国联合水泥"><img src="images/z1.jpg" width="240" height="175" alt="中国联合水泥" /></a>
+				<dl>
+                	<dt><a href="#" title="中国联合水泥">中国联合水泥</a></dt>
+                    <dd><a href="#" title="中国联合水泥">2012</a></dd>
+                    <dd><a href="#" title="中国联合水泥">品牌架构梳理</a></dd>
+                
+                </dl>
+			</li>
+			<li class="nomargin">
+				<a href="#" title="中国联合水泥"><img src="images/z1.jpg" width="240" height="175" alt="中国联合水泥" /></a>
+				<dl>
+                	<dt><a href="#" title="中国联合水泥">中国联合水泥</a></dt>
+                    <dd><a href="#" title="中国联合水泥">2012</a></dd>
+                    <dd><a href="#" title="中国联合水泥">品牌架构梳理</a></dd>
+                
+                </dl>
+
+			</li>
+
+
+		</ul>
+	</div>
+
+</div>
+
+<div class="lianbo">
+	<div class="biao"><a href="#">新闻联播：中法中法中法中法中法</a></div>
+    <p>新闻联播新闻联播新闻联播新闻联播新闻联播新闻联播新闻联播新闻联播新闻联播新闻联播新闻联播新闻联播新闻联播新闻联播新闻联播新闻联播新闻联播新闻联播新闻联播新闻联播新闻联播新闻联播新闻联播新闻联播新闻联播新闻联播新闻联播新闻联播新闻联播新闻联播新闻联播新闻联播新闻联播新闻联播新闻联播新闻联播新闻联播新闻联播新闻联播</p>
+    <div class="mm"><a href="#"><img src="images/more.jpg" width="24" height="24" /></a></div>
+
+</div>
+
+
+<div class="liebiao">
+  <div class="left">
+    	<ul>
+          <li><a href="#">国家品牌标准制定者国家品牌标准制定者</a><span>[2015-09-05]</span></li>
+       	  <li><a href="#">国家品牌标准制定者国家品牌标准制定者</a><span>[2015-09-05]</span></li>
+       	  <li><a href="#">国家品牌标准制定者国家品牌标准制定者</a><span>[2015-09-05]</span></li>
+       	  <li><a href="#">国家品牌标准制定者国家品牌标准制定者</a><span>[2015-09-05]</span></li>
+       	  <li><a href="#">国家品牌标准制定者国家品牌标准制定者</a><span>[2015-09-05]</span></li>
+       	  <li><a href="#">国家品牌标准制定者国家品牌标准制定者</a><span>[2015-09-05]</span></li>
+       	  <li><a href="#">国家品牌标准制定者国家品牌标准制定者</a><span>[2015-09-05]</span></li>
+       	  <li><a href="#">国家品牌标准制定者国家品牌标准制定者</a><span>[2015-09-05]</span></li>
+       	  <li><a href="#">国家品牌标准制定者国家品牌标准制定者</a><span>[2015-09-05]</span></li>
+       	  <li><a href="#">国家品牌标准制定者国家品牌标准制定者</a><span>[2015-09-05]</span></li>
+
+     </ul>
+    	<ul class="xiayin">
+          <li><a href="#">国家品牌标准制定者国家品牌标准制定者</a><span>[2015-09-05]</span></li>
+       	  <li><a href="#">国家品牌标准制定者国家品牌标准制定者</a><span>[2015-09-05]</span></li>
+       	  <li><a href="#">国家品牌标准制定者国家品牌标准制定者</a><span>[2015-09-05]</span></li>
+       	  <li><a href="#">国家品牌标准制定者国家品牌标准制定者</a><span>[2015-09-05]</span></li>
+       	  <li><a href="#">国家品牌标准制定者国家品牌标准制定者</a><span>[2015-09-05]</span></li>
+       	  <li><a href="#">国家品牌标准制定者国家品牌标准制定者</a><span>[2015-09-05]</span></li>
+       	  <li><a href="#">国家品牌标准制定者国家品牌标准制定者</a><span>[2015-09-05]</span></li>
+       	  <li><a href="#">国家品牌标准制定者国家品牌标准制定者</a><span>[2015-09-05]</span></li>
+       	  <li><a href="#">国家品牌标准制定者国家品牌标准制定者</a><span>[2015-09-05]</span></li>
+       	  <li><a href="#">国家品牌标准制定者国家品牌标准制定者</a><span>[2015-09-05]</span></li>
+          <li><a href="#">国家品牌标准制定者国家品牌标准制定者</a><span>[2015-09-05]</span></li>
+       	  <li><a href="#">国家品牌标准制定者国家品牌标准制定者</a><span>[2015-09-05]</span></li>
+       	  <li><a href="#">国家品牌标准制定者国家品牌标准制定者</a><span>[2015-09-05]</span></li>
+       	  <li><a href="#">国家品牌标准制定者国家品牌标准制定者</a><span>[2015-09-05]</span></li>
+       	  <li><a href="#">国家品牌标准制定者国家品牌标准制定者</a><span>[2015-09-05]</span></li>
+       	  <li><a href="#">国家品牌标准制定者国家品牌标准制定者</a><span>[2015-09-05]</span></li>
+       	  <li><a href="#">国家品牌标准制定者国家品牌标准制定者</a><span>[2015-09-05]</span></li>
+       	  <li><a href="#">国家品牌标准制定者国家品牌标准制定者</a><span>[2015-09-05]</span></li>
+       	  <li><a href="#">国家品牌标准制定者国家品牌标准制定者</a><span>[2015-09-05]</span></li>
+       	  <li><a href="#">国家品牌标准制定者国家品牌标准制定者</a><span>[2015-09-05]</span></li>
+
+     </ul>
+    	
+        <div class="mm2"><a href="javascript:;"><img src="images/more.jpg" width="24" height="24" /></a></div>
+    </div>
+	<div class="right"><img src="images/new.jpg" width="500" height="320" /></div>
+
+</div>
+
+<div class="di_out">
+	<div class="di">
+    	<div class="left"><img src="images/dilogo.jpg" width="258" height="41" /></div>
+    	<div class="right">
+        	<ul>
+            	<li class="guan1"><a href="#">官方微博</a></li>
+            	<li class="guan2"><a href="#">官方微信</a></li>
+            	<li class="guan3"><a href="#">监察举报</a></li>
+            </ul>
+        
+        </div>
+    </div>
+
+</div>
+
+<div class="footer">
+	<div class="left">
+    	<a href="#">联系我们</a> |
+    	<a href="#">常见问题表达</a> |
+    	<a href="#">网站标签</a> | 
+    	<a href="#">网站地图</a> |
+    	<a href="#">技术支持</a>
+    
+    </div>
+	<div class="right">
+    	<a>Copyright©2015</a>
+    	<a>奥美斯文化传媒（北京）有限责任公司</a>
+    	<a>京ICP备0978543245号-28</a>
+    
+    </div>
+
+
+</div>
+
+
+
+
+</body>
+</html>

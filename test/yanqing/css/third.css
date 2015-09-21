@@ -1,0 +1,202 @@
+.pic-box {
+    position: relative;
+}
+.pic-box span {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: #000;
+    opacity: .7;
+    line-height: 30px;
+    text-indent: 1em;
+    color: #fff;
+}
+
+/* 做过什么展示 */
+.side {
+    float: left;
+    width: 286px;
+    padding-right: 40px;
+    margin-right: 40px;
+    border-right: 1px solid #b5b5b6;
+}
+.side .column {
+    margin-bottom: 10px;
+}
+.side .column strong {
+    display: block;
+    margin-bottom: 10px;
+    color: #000;
+    font-size: 14px;
+}
+.service .column-content  {
+    padding: 20px;
+    background: #dadada;
+    text-align: center;
+    color: #000;
+}
+.service .column-content dt {
+    margin-bottom: 10px;
+    font-size: 34px;
+}
+.service .column-content dd {
+    font-size: 14px;
+}
+.content h2 {
+    color: #000;
+    font-weight: normal;
+    font-size: 25px;
+}
+.change-font-size {
+    padding: 10px 0;
+    text-align: right;
+}
+.change-font-size img {
+    margin-left: 5px;
+}
+.article {
+    height: 17em;
+    overflow: hidden;
+    line-height: 25px;
+}
+.article p {
+    margin-bottom: 10px;
+}
+.look-more {
+    margin-top: 10px;
+    text-align: right;
+    cursor: pointer;
+    color: #fbb03b;
+}
+.look-more img {
+    margin-right: 5px;
+    vertical-align: middle;
+}
+.share {
+    margin-top: 10px;
+    text-align: right;
+}
+.slide {
+   text-align: center;
+}
+.slide p {
+   margin: 5px 0;
+}
+.related-demo {
+    border-top: 1px solid #b5b5b6;
+}
+.related-demo-content {
+    width: 943px;
+    margin: 0 auto;
+}
+.related-demo-content  img {
+    border: 1px solid #ccc;
+}
+.related-demo {
+    margin-top: 20px;
+}
+.related-demo strong {
+    display: block;
+    line-height: 40px;
+}
+.related-demo strong img {
+    margin-right: 5px;
+    vertical-align: -1px;
+    
+}
+.related-demo strong {
+    font-size: 14px;
+}
+.more-pic {
+    margin-top: 5px;
+    text-align: right;
+}
+.more-pic img  {
+    vertical-align: -5px;
+}
+/*banner*/
+.slide-item {
+    FLOAT: left
+}
+.slide-item img{display:block; height:320px;}
+#flash2 {
+    HEIGHT:350px; margin-top:3px;
+}
+.slide {
+    WIDTH: 99991px
+}
+.slide IMG {
+    MARGIN: 8px 5px 2px 5px; DISPLAY: inline
+}
+.slide-page-nav {
+    MARGIN-TOP: 17px; WIDTH: 500px; FLOAT: left; margin-left:165px;
+}
+.slide-page-nav SPAN {
+    POSITION: relative
+}
+.slide-page-nav SPAN.slide-page-no {
+    TEXT-INDENT: -9999px; WIDTH: 20px; DISPLAY: block; BACKGROUND:url(../images/index_out.png) no-repeat left center; FLOAT: left; CURSOR: pointer
+}
+.slide-page-nav SPAN.slide-page-no-focused {
+    TEXT-INDENT: -9999px; WIDTH: 20px; DISPLAY: block; BACKGROUND: url(../images/index_on.png) no-repeat left center; FLOAT: left; CURSOR: pointer
+}
+/*视频*/
+.video {
+    padding: 15px;
+    background: #000;
+    text-align: center;
+}
+
+/*三级链接*/
+.content h2 {
+    float: left;
+    font-size: 25px;
+}
+.content h3 {
+    margin: 7px 0;
+    color: #e71f19;
+    font-weight: normal;
+    font-size: 24px;
+}
+.content-header .share {
+    float: right;
+    margin-top: 0;
+    margin-bottom:5px;
+}
+.content-header {
+    overflow: hidden;
+    border-bottom: 1px dotted #ccc;
+}
+.content-intro {
+    margin: 20px 0;
+    text-indent: 2em;
+    line-height: 25px;
+    color: #b5b5b6;
+    font-size: 14px;
+}
+.work-left {
+    float: left;
+}
+.work-right {
+    float: right;
+}
+.work-left, .work-right {
+    width: 434px;
+    line-height: 25px;
+    color: #b5b5b6;
+}
+.work-content  {
+    padding-top: 20px;
+    border-top: 1px dotted #ccc;
+}
+.work .title2 {
+    color: #000;
+}
+.work .title1 {
+    color: #727171;
+}
+.work .con1 p {
+    text-indent: 2em;
+}
+
+
