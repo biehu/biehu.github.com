@@ -199,4 +199,123 @@
     text-indent: 2em;
 }
 
+/*了解资讯*/
+.article-wrap h2 {
+   margin-top: 55px;
+   border-top: 1px dotted #ccc;
+   line-height: 54px;
+   text-align: center;
+   color: #000;
+   font-weight: normal;
+   font-size: 28px;
+}
+.article-content {
+   padding: 20px 0;
+   margin-top: 20px;
+   border-top: 1px dotted #ccc;
+}
+.article-wrap .share {
+   text-align: left;
+}
+.article-wrap .share img {
+   vertical-align: middle;
+}
+
+/*购买*/
+.buy {
+    width: 1024px;
+    margin: 0 auto;
+    font-family: "微软雅黑";
+}
+.work_detail {
+   float: left;
+   margin-right: 15px;
+   color: #898989;
+   font-size: 14px;
+   width: 166px;
+   border: 1px  solid #c1e0f9;
+}
+.work_detail .line {
+   height: 0;
+   overflow: hidden;
+   margin: 5px 0 10px 0;
+   border-bottom: 1px solid #c1e0f9;
+} 
+.work_detail h2 {
+   background: #d1e9fe;
+   text-align: center;
+   line-height: 40px;
+   color: #092683;
+   font-weight: normal;
+   font-size: 18px;
+}
+.work_detail_content {
+   padding: 10px;
+   background: #eaf5ff;
+   line-height: 24px;
+}
+.buy_area .download {
+   display: block;
+   padding-top: 5px;
+}
+.buy_qrcode {
+   float: left;
+   margin-right: 5px;
+}
+.buy_money strong {
+   font-weight: normal;
+   font-size: 16px;
+}
+.buy_money span {
+   letter-spacing: -2px;
+}
+.buy_money {
+   color: #d01876;
+   font-size: 24px;
+}
+
+.other_work ul {
+    width: 1000px;
+}
+.other_work {
+    width: 841px;
+    overflow: hidden;
+}
+.other_work h2 {
+    margin-top: 22px;
+    margin-bottom: 10px;
+    color: #d01876;
+    font-weight: normal;
+    font-size: 18px;
+}
+.other_work a {
+    position: relative;
+}
+.other_work li {
+    float: left;
+    padding: 5px;
+    margin-right: 14px;
+    margin-bottom: 15px;
+    border: 1px solid #e5e5e5;
+}
+
+.other_work li span {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #000;
+    opacity: .6;
+    line-height: 20px;
+    text-align: center;
+    color: #fff;
+    font-size: 12px;
+    
+}
+.load_more_work .more-pic {
+    margin-top: 0;
+    padding-bottom: 10px;
+    color: #898989;
+    font-size: 14px;
+}
 
