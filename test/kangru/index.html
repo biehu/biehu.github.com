@@ -5,17 +5,33 @@
        <title>康如</title>
 <!-- 公共样式及统计代码 -->
 <!--#include virtual="/section/716.html"-->
+<link href="styles/jquery.mCustomScrollbar.css" rel="stylesheet" />
+       <link rel="stylesheet" href="styles/index.css" />
 <style>
 .page_footer .footer {
     margin-top: 0;
     background: #000;
 }
+.days {
+	text-align: center;
+}
+.p4 .stars .star5 {
+  top: 505px;
+  left: 677px;
+}
+.p4 .stars .star2 {
+  top: 324px;
+  left: 804px;
+}
+
+.p2, .p3, .p4, .p5 {
+	display: none;
+}
 </style>
-       <link rel="stylesheet" href="styles/index.css" />
 
    </head>
-   <body class="hide"><!--#include virtual="/section/715.html"-->
-       <div class="wrap p1">
+   <body><!--#include virtual="/section/715.html"-->
+       <div class="wrap p1" data-p="1">
            <div class="wrap-change">
                <a class="wrap-change-left" href="index3.html"></a>
                <a class="wrap-change-right" href="index2.html"></a>
@@ -47,8 +63,366 @@
                </div>
            </div>
        </div>
+
+	     <div class="wrap p2" data-p="2">
+           <div class="wrap-change">
+               <a class="wrap-change-left" href="index.html"></a>
+               <a class="wrap-change-right" href="index4.html"></a>
+           </div>
+           <div class="product-bg s4"></div>
+           <!--柔润倍护免洗喷雾-->
+           <div id="win1" class="win win1 hide">
+               <div class="win-decorate">
+                   <img src="images/tree.png" />
+               </div>
+               <div class="win-close">
+                   <img src="images/win-close.jpg" />
+               </div>
+               <div class="desc">
+                   <div class="desc-img"><img src="images/win_03.jpg" /></div>
+                   <div class="desc-text" >
+                       <strong>柔润倍护免洗喷雾</strong>
+                       <p class="price"><img src="images/win_06.jpg" />150ml / 98 RMB</p>
+                       <dl>
+                           <dt>产品功效</dt>
+                           <dd>-无需用水，快速清洁头发，倍感自然清爽<br />
+-有效提升发丝支撑力，秀发恢复蓬松轻盈<br />
+-稻米淀粉及其天然吸收微粒，有效去除头皮及头发的污垢，油脂及异味</dd>
+                       </dl>
+                       <dl>
+                           <dt>随时随地 球场利器</dt>
+                           <dd>
+                               <img src="images/win_09.jpg" />
+                           </dd>
+                       </dl>
+                       <dl>
+                           <dt>使用方法</dt>
+                           <dd>使用前摇晃至均匀，在距离秀发30厘米处将产品喷于发根处。<br />
+静置2分钟后，梳理秀发至喷雾完全被吸收。避免吸入喷雾，防止入眼。</dd>
+                       </dl>
+                   </div>
+               </div>
+               <div class="use">
+                   <img src="images/win_13.jpg" />
+               </div>
+               <div class="advantage">
+                   <img src="images/win_04.jpg" />
+               </div>
+           </div>
+           <!--柔润倍护护发素-->
+           <div id="win2" class="win win2 hide">
+               <div class="win-decorate">
+                   <img src="images/tree.png" />
+               </div>
+               <div class="win-close">
+                   <img src="images/win-close.jpg" />
+               </div>
+               <div class="desc">
+                   <div class="desc-img"><img src="images/product.jpg" /></div>
+                   <div class="desc-text" >
+                       <strong>柔润倍护护发素</strong>
+                       <p class="price"><img src="images/win_06.jpg" />150ml / 98 RMB</p>
+                       <dl>
+                           <dt>产品功效</dt>
+                           <dd>-秀发重获光泽，轻盈的同时更增添发质丰盈感。<br />
+-丝滑乳液质地，令头发易于梳理。无硅油。<br />
+-一款百搭型护发素，可与任意系列搭配使用</dd>
+                       </dl>
+                       <dl>
+                           <dt>使用方法</dt>
+                           <dd>使用完洗发乳后，将本品均匀涂抹于拭干的头发上，保留2-3分钟后用水洗净。</dd>
+                       </dl>
+                   </div>
+               </div>
+               <div class="advantage">
+                   <img src="images/win_04.jpg" />
+               </div>
+           </div>
+           <!--柔润倍护洗发乳-->
+           <div id="win3" class="win win3 hide">
+               <div class="win-decorate">
+                   <img src="images/tree.png" />
+               </div>
+               <div class="win-close">
+                   <img src="images/win-close.jpg" />
+               </div>
+               <div class="desc">
+                   <div class="desc-img"><img src="images/product2.jpg" /></div>
+                   <div class="desc-text" >
+                       <strong>柔润倍护洗发乳</strong>
+                       <p class="price"><img src="images/win_06.jpg" />400ml / 128 RMB</p>
+                       <dl>
+                           <dt>产品功效</dt>
+                           <dd>-弱酸性PH值，极其温和清洁头发及头皮， 令秀发倍感滋润柔滑及蓬松。<br />
+-安全倍护秀发的同时，秀发柔顺易梳理，维护头皮与头发的自然平衡状态，更散发健康光泽。<br />
+-一款百搭型洗发乳，可与任意洗发乳交替使用。</dd>
+                       </dl>
+                       <dl>
+                           <dt>使用方法</dt>
+                           <dd>将本品涂抹于湿发上，轻柔按摩至产生泡沫，用水洗净后，涂抹适量<br />
+护发素，完成洗护步骤。<br />
+绝佳拍档：柔润倍护护发素，强化滋润柔滑效果。</dd>
+                       </dl>
+                   </div>
+               </div>
+               <div class="advantage">
+                   <img src="images/win_04.jpg" />
+               </div>
+           </div>
+           <div class="wrap-inner">
+               <div class="wrap-header">
+                   <h1><i class="logo"></i>法国进口 植萃护发</h1>
+                   <p>燕麦·柔润倍护——适合全家洗护</p>
+               </div>
+               <div class="content">
+                   <div class="content-left">
+                       <div class="intro s1">
+                           <strong>植萃简介 - 燕麦 </strong>
+                           <div class="intro-text">
+                               <dl>
+                                   <dt>植物描述</dt>
+                                   <dd>燕麦是一年生草本植物，在夏末收获。它可以长到2至5英尺高。根系发达，茎微微弯曲，茎的顶端有小花。</dd>
+                               </dl>
+                               <dl>
+                                   <dt>传统用途</dt>
+                                   <dd>燕麦一直以来被用于刺激人体食欲，缓解喉咙痛，并对失眠或神经疲劳具有良好的缓解作用。燕麦可用于减轻皮肤瘙痒、 湿疹、肿痛和干燥。</dd>
+                               </dl>
+                           </div>
+                           <img src="images/intro-img.jpg" />
+                       </div>
+                       <div class="country s2">
+                           <img src="images/country.jpg" />
+                       </div>
+                   </div>
+                   <div class="content-right">
+                       <div class="show s3">
+                           <div class="show-text">康如精选法国西南部的有机种植燕麦，富含脂类及维他命，具有柔滑、保护及滋润发质的功效。 康如采用“燕麦不磨碎，整粒萃取”的植物萃取技术，完好的保存燕麦的有效成分燕麦萃取精华维护头皮与头发的自然平衡，令头发更强韧，散发自然光泽。非常适合全家使用。</div>
+                       </div>
+                       <div class="product">
+                           <div class="plus-btn plus-btn1 s5" data-win=".win2">
+                               <img src="images/btn_03.png" />
+                           </div>
+                           <div class="plus-btn plus-btn2 s6" data-win=".win1">
+                               <img src="images/btn_07.png" />
+                           </div>
+                           <div class="plus-btn plus-btn3 s7" data-win=".win3">
+                               <img src="images/btn_11.png" />
+                           </div>
+                           
+                           <div id="j_play" class="play-btn s8">
+                               <img src="images/btn_15.png" />
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+       
+       <!-- 视频 -->
+            <div class="zhezhao1">
+                <div class="zhezhao_m">
+                     <a class="closes"></a>
+                     <div class="vedio">
+                     <video width="1000" height="570" controls="" name="media"><source src="http://hearstvideo.baomihua.com/hearst/mcchina/20150271.mp4" type="video/mp4"></video>
+                    </div>
+                </div>
+            </div>
+            <!-- 视频 END -->
+
+       
+      <div class="wrap p3" data-p="4">
+           <div class="wrap-change">
+               <a class="wrap-change-left" href="index4.html"></a>
+               <a class="wrap-change-right" href="index.html"></a>
+           </div>
+           
+           <div class="wrap-inner">
+               <div class="wrap-header">
+                   <h1><i class="logo"></i>法国进口 植萃护发</h1>
+                   <p>霍思燕、杜江全家倾情代言</p>
+               </div>
+               <div class="content">
+                   <div class="video">
+                        <img src="images/temp/v2.jpg" /> 
+                   </div>
+                   <div class="video-text-bar">
+                       <img src="images/scrollbar.png" />
+                   </div>
+                   <div class="video-text content_3">
+                       <dl>
+                           <dt>
+                               <span>Q</span> 霍思燕全家此次受康如品牌的邀请担任形象大使，全家人都已经抢先试用了康如的明星系列—燕麦柔润倍护系列，这里也想请你们俩跟大家分享一下?
+                           </dt>
+                           <dd>
+                               <span>A</span> 燕麦给我的感觉就是纯天然，很健康。白色牛奶状的质地，温和柔润，没有硅油，细腻的泡沫，很容易冲洗，淡淡的燕麦味道，真的让我一试即爱。洗好后发质柔顺有光泽，头皮非常舒服，无负担。
+                           </dd>
+                       </dl>
+                       <dl>
+                           <dt>
+                               <span>Q</span> 杜江,我们大家都想知道你平时是如何打理自己的头发的呢？
+                           </dt>
+                           <dd>
+                               <span>A</span> 我理想的洗发水是质地温和，洗的干净，不会对头皮和头发造成伤害，可以每天都使用。洗完后觉得头皮很清爽，不痒，去屑温和，感觉发质有质感，更易造型。燕麦的味道也很不错，全家男女都适用。
+                           </dd>
+                       </dl>
+                       <dl>
+                           <dt>
+                               <span>Q</span> 《爸爸回来了》火热上映，相信不少人都被霍思燕和杜江的萌宝嗯哼秒杀了，宝贝一举一动都萌翻全场，宝宝很爱动，头发出汗了，如何护理宝宝娇嫩的头发呢？
+                           </dt>
+                           <dd>
+                               <span>A</span> 我们关爱造就孩子健康的头发，一定会给孩子选择洗发水时考虑的是天然纯植物配方，温和无刺激，不能伤害到孩子的头皮和眼睛。这款康如燕麦洗发水极其温和，白色的柔滑质地，起了很多泡沫，闻起来也是淡淡香味，也容易冲干净。我们特别喜欢孩子的头发，觉得抚摸对孩子来讲是一种爱！
+                           </dd>
+                       </dl>
+                   </div>
+              
+               </div>
+           </div>
+       </div>
+      
+
+
+	   <div class="wrap p4" data-p="3">
+           <div class="wrap-change">
+               <a class="wrap-change-left" href="index2.html"></a>
+               <a class="wrap-change-right" href="index3.html"></a>
+           </div>
+           <div  class="win hide win4 ">
+               <div class="win-close">
+                   <img src="images/win-close.jpg" />
+               </div>
+               <div class="days">
+                   <img src="images/sy.jpg" />
+               </div>
+			   <!-- 沈阳 -->
+               <div class="days-text">
+                   <strong>28岁年轻妈妈 </strong>
+                  发质可以说比之前的好多了，头皮没有痒，很轻松，淡淡的香味，摸起来也很顺滑，很自然，感觉很清晰，舒服。确实改善了我的发质和头皮。
+
+               </div>
+           </div>
+           
+           <div  class="win hide win5 ">
+               <div class="win-close">
+                   <img src="images/win-close.jpg" />
+               </div>
+               <div class="days">
+                   <img src="images/bj.jpg" />
+               </div>
+               <!-- 北京 -->
+               <div class="days-text">
+                   <strong>年轻夫妇</strong>
+                   和老公一起使用了，他使用了两次， 我是几乎每天使用，差不多一周使用6次。老公觉得蛮好的！说很去油，因为他头发油脂比较多，头屑没有什么。这个味道很香。
+               </div>
+           </div>
+           
+           <div  class="win hide win6 ">
+               <div class="win-close">
+                   <img src="images/win-close.jpg" />
+               </div>
+               <div class="days">
+                   <img src="images/sh.jpg" />
+               </div>
+               <!-- 上海 -->
+               <div class="days-text">
+                   <strong>20岁大学在读女生</strong>
+                   这款燕麦洗发水质地温和，清洁度强。护发素确实很润，洗完之后感觉头发真的有吸收进去，没有原来的滑腻感. 吹干头发后,看上去就比较润、有光泽。真的很喜欢。用了一周感觉头发柔顺、滋润很多,更有光泽感了.
+
+               </div>
+           </div>
+           
+           <div  class="win hide win7 ">
+               <div class="win-close">
+                   <img src="images/win-close.jpg" />
+               </div>
+               <div class="days">
+                   <img src="images/wh.jpg" />
+               </div>
+               <!-- 武汉 -->
+               <div class="days-text">
+                   <strong>干性毛糙发质</strong>
+                   在用水冲洗的过程中觉得头发变软了不再像之前那样发硬。用毛巾擦干后觉得头发有一点干涩，但是摸起来却很柔软，发梢看起来比之前水润了。总体来说这款产品的功效还是非常不错的，因为只洗了两次头发感觉头发就比以前水润了。
+
+               </div>
+           </div>
+           
+           <div  class="win hide win8 ">
+               <div class="win-close">
+                   <img src="images/win-close.jpg" />
+               </div>
+               <div class="days">
+                   <img src="images/cq.jpg" />
+               </div>
+               <!-- 重庆 -->
+               <div class="days-text">
+                   <strong>60岁老奶奶</strong>
+                 乳白色，味道很好闻，很舒服，第一次不易起泡沫，第二次到是有泡沫，易冲洗，头皮也舒服，味道挺好闻。易梳理，头发柔顺。
+               </div>
+           </div>
+           
+           <div  class="win hide win9 ">
+               <div class="win-close">
+                   <img src="images/win-close.jpg" />
+               </div>
+               <div class="days">
+                   <img src="images/effect5.png" />
+               </div>
+               <!-- 广州 -->
+               <div class="days-text">
+                   <strong>油性发质</strong>
+                   头发并不显得太油腻，而以往用其他洗发水的时候第二天就会有点油了. 头屑现象有好转，并且令我很满意的是第二天头发也有淡淡的奶香味.整个过程头皮和头发都觉得舒适无刺激。
+
+
+               </div>
+           </div>
+           
+           <div class="wrap-inner">
+               <div class="wrap-header">
+                   <h1><i class="logo"></i>百人证言 燕麦·柔润倍护系列 </h1>
+                   <p>120名真实消费者   6大城市   2周亲身实</p>
+               </div>
+               <div class="content">
+                   <div class="scale">
+                       <img src="images/scale.png" />
+                   </div>
+                   <div class="stars">
+                       <a class="star1" data-win=".win4" href="#"><img src="images/star_new_03.png" /></a>
+                       <a class="star2" data-win=".win5" href="#"><img src="images/star_06.png" /></a>
+                       <a class="star3" data-win=".win6" href="#"><img src="images/star_new_07.png" /></a>
+                       <a class="star4" data-win=".win7" href="#"><img src="images/star_new_10.png" /></a>
+                       <a class="star5" data-win=".win8" href="#"><img src="images/star_new_13.png" /></a>
+                       <a class="star6" data-win=".win9" href="#"><img src="images/star_20.png" /></a>
+                   </div>
+                    <!--焦点图-->                
+                    <div class="wraper slides">
+                        <div id="slides">
+                    
+                                <div class="slides_container">
+                                    <div class="slide">
+                                        <img src="images/stars.png" />
+                                    </div>
+                                    <div class="slide">
+                                        <img src="images/stars1.png" />
+                                    </div>
+                                    <div class="slide">
+                                        <img src="images/stars2.png" />
+                                    </div>
+                                    <div class="slide">
+                                        <img src="images/stars3.png" />
+                                    </div>
+                                </div>
+                           
+                            <a href="#" class="prev"><img src="images/play-left.png"></a>
+                            <a href="#" class="next"><img src="images/play-right.png"></a>
+                            
+                             </div>
+                        </div>
+                    </div>
+           </div>
+       </div>
+      
        
        <script src="scripts/jquery.js"></script>
+	    <script src="scripts/jquery.mCustomScrollbar.concat.min.js"></script>
        <script>
           var orderShowOneByOne = function (selector) {
               var blankTime = 500;
@@ -56,13 +430,128 @@
                   $(this).delay(blankTime * i).animate({opacity: 1}, '2000');
               });
           };
-		  
-          var img = new Image();
-		  img.onload = function () {
-			$('body').show();
-			orderShowOneByOne('#label img');
+		  var hideOneByOne = function (selector) {
+			$(selector).css('opacity', 0);
 		  };
-		  img.src = 'images/bg1.jpg';
+			
+
+
+			
+          var clickShowWin = function () {
+              var show = function () {
+                  var win = $(this.getAttribute('data-win'));
+                  win.show();
+              };
+              var hide = function () {
+                  $(this).parents('.win').hide();
+              };
+              $('.plus-btn').click(show);
+              $('.win-close').click(hide);
+          };
+          
+          var playVideo = function () {
+                var widths=$(window).width();
+                $(".zhezhao1").css({width:widths,left:-widths,display:"none"});
+                $("#j_play").click(function(){
+                    $(".zhezhao1").stop().animate({
+                        top: document.body.scrollTop ? document.body.scrollTop : document.documentElement.scrollTop + 'px', 
+                        left:"0px",zIndex:"999"},500).css({display:"block"});
+                        
+                    $('.zhezhao1 video')[0].play();
+                    return false;
+                });
+                $(".closes").click(function(){
+                    $(".zhezhao1").css({zIndex:"9"}).stop().animate({left:-widths},500,function(){
+                        $(".zhezhao1").css({display:"none"});
+                        $('.zhezhao1 video')[0].pause();
+                    });
+                });
+            };
+           
+          
+			  clickShowWin();
+			  playVideo();
+
+
+
+
+			  
+	   var scroll = function () {
+           $(".video-text").mCustomScrollbar({
+
+                    scrollInertia:600,
+
+                    autoDraggerLength:false
+
+                });
+
+	   };
+
+	  
+       </script>
+	    <script src="scripts/jquery.slides.js"></script>
+       <script src="scripts/jquery.easing.min.js"></script>
+       <script>
+          
+          var clickShowWin1 = function () {
+              var show = function () {
+                  var win = $(this.getAttribute('data-win'));
+                  win.show();
+                  return false;
+              };
+              var hide = function () {
+                  $(this).parents('.win').hide();
+              };
+              $('.stars a').click(show);
+              $('.win-close').click(hide);
+          };
+
+
+			clickShowWin1();
+
+			//焦点图
+               $('#slides').slides({
+                    preload: true,
+                    play: 5000,
+                    pause: 2500,
+                    hoverPause: true
+                });
+
+
+
+
+
+
+				var nowPageNum = 1;
+				var isScroll = true;
+				var changePage = function () {
+					if (nowPageNum === 0) nowPageNum = 4;
+					if (nowPageNum === 5) nowPageNum = 1;
+					$('.wrap').hide();
+					hideOneByOne('#label img, .s1, .s2, .s3, .s4, .s5, .s6, .s7, .s8');
+					$('.wrap video')[0].pause();
+					$('[data-p=' + nowPageNum + ']').show();
+					if (nowPageNum === 1) orderShowOneByOne('#label img');
+					if (nowPageNum === 2) orderShowOneByOne('.s1, .s2, .s3, .s4, .s5, .s6, .s7, .s8');
+					if (nowPageNum === 4 && isScroll) {
+						scroll();
+						isScroll = false;
+					}
+				};
+				$('.wrap-change-left').click(function () {
+					nowPageNum--;
+					changePage();
+					return false;
+				});
+
+				$('.wrap-change-right').click(function () {
+					nowPageNum++;
+					changePage();
+					return false;
+				});
+				changePage();
+           
+          
        </script>
   <div class="page_footer">
              <!--替换区域 结束-->
