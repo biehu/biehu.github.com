@@ -20,6 +20,7 @@ img {
 }
 .wrap {
     position: relative;
+    max-width: 1600px;
 }
 .hide {
     display: none;
@@ -565,31 +566,15 @@ left: 225px;
 }
 
 
-@media (max-width:800px) { 
 	.wrap-change-left {
-		left: 0;
+		left: 5%;
 		background: url(../images/page_left_btn.png) no-repeat;
 	}
 	.wrap-change-right {
-		right: 0;
-		background: url(../images/page_right_btn.png) no-repeat;
-	}
-
-}
-
-@media (min-width:800px) { 
-	.wrap-change-left {
-		left: 50%;
-		margin-left: -650px;
-		background: url(../images/page_left_btn.png) no-repeat;
-	}
-	.wrap-change-right {
-		left: 50%;
-		margin-left: 590px;
+		right: 5%;
 		background: url(../images/page_right_btn.png) no-repeat;
 	}
 	html, body {
     overflow-x: hidden;
-}
 }
 
