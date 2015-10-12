@@ -1,7 +1,7 @@
 @charset "utf-8";
 /* CSS Document */
 body,div,span,a,img,p,h1,h2,h3,h4,h5,ul,li,ol,dl,dt,dd,input{ margin:0; padding:0; border:0; list-style:none;}
-body{ color:#646464; font-size:12px; font-family:"宋体";}
+body{ color:#646464; font-size:12px; font-family:"微软雅黑";}
 a{ color:#666; text-decoration:none;}
 a:hover{ text-decoration:underline;}
 
@@ -25,22 +25,32 @@ a:hover{ text-decoration:underline;}
 
 .banner-box{min-width:1210px;height:450px;position:relative;overflow:hidden;}
 .banner-box .bd{ width:100% !important;}
-.banner-box .bd li .m-width {width:1210px;margin:0 auto;overflow:hidden;}
+.banner-box .bd li .m-width {margin:0 auto;overflow:hidden;}
 .banner-box .bd li{width:100% !important;height:450px;}
 .banner-box .bd li a{display:block;background-size:auto;}
+.banner-box .bd li img {
+	height: 450px;
+}
 
-.banner-btn{width:1210px;position:absolute;top:120px;left:50%;margin-left:-605px;}
+.banner-btn{
+	width: 1210px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -605px;
+	margin-top: -62px;
+}
 .banner-btn a{display:block;width:49px;height:104px;position:absolute;top:0;filter:alpha(opacity=40);-moz-opacity:0.4;-khtml-opacity:0.4;opacity:0.4;}
 .banner-btn a.prev{left:20px;background:url(../images/foot.png) no-repeat 0 0;} 
 .banner-btn a.next{right:20px;background:url(../images/foot.png) no-repeat -49px 0;}
 
-.banner-box .hd {position:absolute;top:280px;left:537px;}
-.banner-box .hd ul li{width:34px;height:34px;margin-right:20px;background:#ff9899;float:left;cursor:pointer; text-align:center; line-height:34px; color:#fff;}
+.banner-box .hd {position:absolute;bottom: -270px;left: 853px;}
+.banner-box .hd ul li{width:34px;height:34px;margin-left:2px;background:#ff9899;float:left;cursor:pointer; text-align:center; line-height:34px; color:#fff;}
 .banner-box .hd ul li.on{background:#ed6a00;}
 
-.bankuai{ width:1000px; margin:auto; overflow:hidden; clear:both;}
+.bankuai{ width:1000px; margin:auto; overflow:hidden; clear:both;line-height: 14px;font-size:14px;}
 .bankuai dl{float:left; width:250px; padding:10px 0 20px 0; border-bottom:1px dashed #959595; border-top:5px solid #00477f;}
-.bankuai dl dt{float:left; height:40px; padding-left:15px; font-weight:bold; color:#000000; padding-top:10px; border-left:1px solid #00477f;}
+.bankuai dl dt{float:left; height:40px; padding-left:15px; color:#000000; padding-top:10px; border-left:1px solid #00477f;}
 .bankuai dl dd{float:right; padding-right:15px; width:44px;}
 .bankuai dl dt a{ color:#000;}
 .bankuai .pin2{border-top:5px solid #009fd9;}
@@ -52,9 +62,9 @@ a:hover{ text-decoration:underline;}
 
 
 
-.bankuai2{ width:1000px; margin:auto; overflow:hidden; clear:both;}
+.bankuai2{ width:1000px; margin:auto; overflow:hidden; clear:both; line-height: 14px;font-size: 14px;}
 .bankuai2 dl{float:left; width:250px; padding:20px 0 10px 0; border-top:1px dashed #959595; border-bottom:5px solid #00477f;}
-.bankuai2 dl dt{float:right; height:40px; padding-right:15px; font-weight:bold; color:#000000; padding-top:10px;border-right:1px solid #00477f; }
+.bankuai2 dl dt{float:right; height:40px; padding-right:15px;  color:#000000; padding-top:10px;border-right:1px solid #00477f; }
 .bankuai2 dl dt a{ color:#000;}
 .bankuai2 dl dd{float:left; padding-left:15px; width:44px;}
 
@@ -76,12 +86,12 @@ a:hover{ text-decoration:underline;}
 .nengzuo{ width:1000px; margin:auto; clear:both; overflow:hidden; padding:20px 0;}
 .nengzuo h3{color:#000; font-size:20px; margin-bottom:10px;}
 .nengzuo h3 span{ float:right;}
-.nengzuo dl{ float:left; margin-top:15px; margin-right:11px;}
+.nengzuo dl{ float:left; margin-top:12px; margin-right:11px;}
 .nengzuo .nomargin{ margin-right:0px;}
 .nengzuo dt{ width:90px; height:90px;}
 .nengzuo dt img:hover{ width:90px; height:90px;}
-.nengzuo dd{ width:86px; text-align:center; margin-top:10px;}
-.nengzuo dd a{ color:#000000;}
+.nengzuo dd{ width:86px; text-align:center; margin-top:2px;}
+.nengzuo dd a{ color:#000000; font-size: 14px;}
 .nengzuo dd a:hover{ color:#ed6a00;}
 
 
@@ -97,7 +107,7 @@ a:hover{ text-decoration:underline;}
 	#hongtou li{float: left;width:240px; height: 175px; margin:0 13px 10px 0; position: relative;overflow: hidden; }
 	#hongtou .nomargin{ margin-right:0;}
 	#hongtou li div,#hongtou li dl{width: 100%;height: 175px; background-color:red; position: absolute;bottom:-175px;left:0;}
-	#hongtou li dl{text-align: center; line-height: 25px;color:white;font-size: 14px; background:url(images/bg.png) no-repeat 5px 0;/* z-index: 999; */ }
+	#hongtou li dl{text-align: center; line-height: 25px;color:white;font-size: 14px; background:url(../images/bg.png) no-repeat 5px 0;/* z-index: 999; */ }
 #hongtou li dl dt{font-weight:bold; font-size:20px; float:right; overflow:hidden; clear:both; padding-top:40px; padding-right:20px;}
 #hongtou li dl dt a{ color:#fff}
 #hongtou li dl dd a{ color:#fff}
@@ -201,7 +211,7 @@ a:hover{ text-decoration:underline;}
 #nnn li{float: left;width:240px; height: 175px; margin:0 13px 10px 0; position: relative;overflow: hidden; }
 #nnn .nomargin{ margin-right:0;}
 #nnn li div,#nnn li dl{width: 100%;height: 175px; background-color:red; position: absolute;bottom:-175px;left:0;}
-#nnn li dl{text-align: center; line-height: 25px;color:white;font-size: 14px; background:url(images/bg.png) no-repeat 5px 0;/* z-index: 999; */ }
+#nnn li dl{text-align: center; line-height: 25px;color:white;font-size: 14px; background:url(../images/bg.png) no-repeat 5px 0;/* z-index: 999; */ }
 #nnn li dl dt{font-weight:bold; font-size:20px; float:right; overflow:hidden; clear:both; padding-top:40px; padding-right:20px;}
 #nnn li dl dt a{ color:#fff}
 #nnn li dl dd a{ color:#fff}
@@ -219,7 +229,7 @@ a:hover{ text-decoration:underline;}
 #xianc{width:1000px;height: auto;overflow: hidden;}
 #xianc li{float: left; position: relative;overflow: hidden; }
 #xianc li div,#xianc li p{width: 100%;height: 25px; background-color: black; position: absolute;bottom:-25px;left:0;}
-#xianc li p{text-align: center; line-height: 25px;color:white;font-size: 14px; background:url(images/bg.png) no-repeat 5px 0;/* z-index: 999; */}
+#xianc li p{text-align: center; line-height: 25px;color:white;font-size: 14px; background:url(../images/bg.png) no-repeat 5px 0;/* z-index: 999; */}
 
 .gou1 h3 {height: 50px;line-height: 50px;font-size: 18px;color: #000;}
 .gou1 .zhuanli{ border:1px dashed #ccc; border-left:none; border-right:none; clear:both; overflow:hidden; padding:4px 0; margin-bottom:10px;}
@@ -313,6 +323,93 @@ a:hover{ text-decoration:underline;}
 /*往日荣誉*/
 .wangri{ width:1000px; margin:50px auto;}
 .wangri h3{ font-size:16px; color:#000;}
+
+/*能做什么树*/
+.cando {
+    overflow: hidden;
+    padding-bottom: 30px;
+    margin-top: 20px;
+    border-bottom: 2px solid #ccc;
+    font-family: "微软雅黑";
+    font-size: 20px;
+}
+.cando dl {
+    float: left;
+    width: 229px;
+    height: 445px;
+    margin-right: 25px;
+}
+.cando .col_4 {
+    margin-right: 0;
+}
+.cando dt {
+    padding: 10px 0;
+    text-align: center;
+    color: #fff;
+    font-size: 22px;
+}
+.cando dd {
+    font-size: 20px;
+}
+.cando ul li strong {
+    background: url(../images/point.png) no-repeat 20px 15px;
+    cursor: pointer;
+    color: #000;
+}
+.cando ul strong, .cando ul li ul li {
+    display: block;
+    padding-left: 70px;
+    border-bottom: 1px solid #fff;
+    line-height: 35px;
+    color: #7d7d7d;
+    font-weight: normal;
+}
+.cando ul li ul {
+    display: none;
+}
+.cando ul li ul li {
+    background: url(../images/point2.png) no-repeat 35px 15px;
+}
+.cando .col_1 {
+    background: #e5edf3;
+    border: 1px solid #b7ccdd;
+}
+.cando .col_1 dt {
+    background: #004a86;
+}
+.cando .col_1 strong {
+    background-color: #b7ccdd ;
+}
+.cando .col_2 {
+    background: #cceefa;
+    border: 1px solid #a3e0f6;
+}
+.cando .col_2 dt {
+    background: #00aae8;
+}
+.cando .col_2 strong {
+    background-color: #a3e0f6 ;
+}
+.cando .col_3 {
+    background: #e1f1d5;
+    border: 1px solid #c9e6b4;
+}
+.cando .col_3 dt {
+    background: #68b92e;
+}
+.cando .col_3 strong {
+    background-color: #c9e6b4 ;
+}
+.cando .col_4 {
+    background: #fcebd0;
+    border: 1px solid #f9dbaa;
+}
+.cando .col_4 dt {
+    background: #ef9c12;
+}
+.cando .col_4 strong {
+    background-color: #f9dbaa ;
+}
 
 
 

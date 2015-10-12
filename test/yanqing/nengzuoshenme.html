@@ -33,6 +33,13 @@
 		    $(".demo2>li").hover(function() {
 		    	$(this).children('ul').stop().slideToggle();
 		    });
+            
+            var showMenu = function () {
+                var title = $(this);
+                title.parents('ul').find('ul').hide();
+                title.next('ul').show();
+            };
+            $('.cando strong').click(showMenu);
 
 		});
 	</script>
@@ -94,6 +101,104 @@
  
 <div class="shenme">
 	<h3> 能做什么</h3>
+	<div class="cando">
+        <dl class="col_1">
+            <dt>品牌创造</dt>
+            <dd>
+                <ul>
+                    <li>
+                        <strong>品牌规划</strong>
+                        <ul>
+                            <li>品牌规划1</li>
+                            <li>品牌规划2</li>
+                            <li>品牌规划3</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>品牌建设</strong>
+                        <ul>
+                            <li>品牌建设1</li>
+                            <li>品牌建设2</li>
+                            <li>品牌建设3</li>
+                            <li>品牌建设4</li>  
+                        </ul>
+                    </li>
+                </ul>
+            </dd>
+        </dl>
+        <dl class="col_2">
+            <dt>发展策略</dt>
+            <dd>
+                <ul>
+                    <li>
+                        <strong>品牌规划</strong>
+                        <ul>
+                            <li>品牌规划1</li>
+                            <li>品牌规划2</li>
+                            <li>品牌规划3</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>品牌建设</strong>
+                        <ul>
+                            <li>品牌建设1</li>
+                            <li>品牌建设2</li>
+                            <li>品牌建设3</li>
+                            <li>品牌建设4</li>  
+                        </ul>
+                    </li>
+                </ul>
+            </dd>
+        </dl>
+        <dl class="col_3">
+            <dt>营销策划</dt>
+            <dd>
+                <ul>
+                    <li>
+                        <strong>品牌规划</strong>
+                        <ul>
+                            <li>品牌规划1</li>
+                            <li>品牌规划2</li>
+                            <li>品牌规划3</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>品牌建设</strong>
+                        <ul>
+                            <li>品牌建设1</li>
+                            <li>品牌建设2</li>
+                            <li>品牌建设3</li>
+                            <li>品牌建设4</li>  
+                        </ul>
+                    </li>
+                </ul>
+            </dd>
+        </dl>
+        <dl class="col_4 ">
+            <dt>视觉设计</dt>
+            <dd>
+                <ul>
+                    <li>
+                        <strong>品牌规划</strong>
+                        <ul>
+                            <li>品牌规划1</li>
+                            <li>品牌规划2</li>
+                            <li>品牌规划3</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>品牌建设</strong>
+                        <ul>
+                            <li>品牌建设1</li>
+                            <li>品牌建设2</li>
+                            <li>品牌建设3</li>
+                            <li>品牌建设4</li>  
+                        </ul>
+                    </li>
+                </ul>
+            </dd>
+        </dl>
+	</div>
 </div>
 
 <div class="dongtai">
