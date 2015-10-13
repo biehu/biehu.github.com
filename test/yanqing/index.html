@@ -3,12 +3,12 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 	<title>首页</title>
-    
-<link type="text/css" rel="stylesheet" href="css/style.css" />
+    <link type="text/css" rel="stylesheet" href="css/common.css" />
+	<link type="text/css" rel="stylesheet" href="css/style.css" />
     
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/my.js"></script>
-    	<script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
+    <script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
 
 	<script type="text/javascript">
 	$(function() {
@@ -27,8 +27,7 @@
 		});
 	});
 	</script>
-    
-    	<script type="text/javascript">
+    <script type="text/javascript">
 		$(function() {
 		    $(".demo2>li").hover(function() {
 		    	$(this).children('ul').stop().slideToggle();
@@ -36,7 +35,6 @@
 
 		});
 	</script>
-    
     <script type="text/javascript">
 	$(document).ready(function() {
 		$(".mm2").click(function(event) {
@@ -46,10 +44,56 @@
 		
 	});
 	</script>
+	<script>
+$(function () {
+	var focus = function () {
+		var wrap = $('.slide');
+		var items = wrap.find('.item');
+		var now = 0;
+
+		var move = function () {
+			items.hide();
+			items.eq(now).fadeIn();
+		};
+
+		var toLeft = function () {
+			now--;
+			if (now < 0) {
+				now = items.length - 1;
+			}
+			move();
+		};
+
+		var toRight = function () {
+			now++;
+			if (now > items.length - 1) {
+				now = 0;
+			}
+			move();
+		};
+
+		$('.slide .carousel-control.left').click(toLeft);
+		$('.slide .carousel-control.right').click(toRight);
+	};
+	focus();
+
+	var goTop = function () {
+
+		var toTop = function () {
+			window.scrollTo(0, 0);
+		};
+	
+		$('.go_top').click(toTop);
+	};
+	goTop();
+
+});
+</script>
 
 	
 </head>
 <body>
+<!-- 头部 -->
 <div class="header" id="top">
 	<div class="left"><h1><img src="images/logo.jpg" width="340" height="52" /></h1>
 	</div>
@@ -159,34 +203,34 @@
         <dd><a href="#" title="品牌创造"><img src="images/pin1.jpg" width="44" height="44" alt="品牌创造"/></a></dd>
     </dl>
 	<dl class="pin2">
-   	  <dt><a href="#" title="品牌创造">品牌创造</br>Brand creation</a></dt>
+   	  <dt><a href="#" title="品牌创造">发展策略</br>Development strategy</a></dt>
         <dd><a href="#" title="品牌创造"><img src="images/pin2.jpg" width="44" height="44" alt="品牌创造"/></a></dd>
     </dl>
 	<dl class="pin3">
-    	<dt><a href="#" title="品牌创造">品牌创造</br>Brand creation</a></dt>
+    	<dt><a href="#" title="品牌创造">营销策划</br>Marketing Planning</a></dt>
         <dd><a href="#" title="品牌创造"><img src="images/pin3.jpg" width="44" height="44" alt="品牌创造"/></a></dd>
     </dl>
 	<dl class="pin4">
-    	<dt><a href="#" title="品牌创造">品牌创造</br>Brand creation</a></dt>
+    	<dt><a href="#" title="品牌创造">视觉设计</br>Visual design</a></dt>
         <dd><a href="#" title="品牌创造"><img src="images/pin4.jpg" width="44" height="44" alt="品牌创造"/></a></dd>
     </dl>
 </div>
 
 <div class="bankuai2">
 	<dl>
-    	<dt><a href="#" title="品牌创造">品牌创造</br>Brand creation</a></dt>
+    	<dt><a href="#" title="品牌创造">易物</br>Barter</a></dt>
         <dd><a href="#" title="品牌创造"><img src="images/pin5.jpg" width="44" height="44" alt="品牌创造"/></a></dd>
     </dl>
 	<dl class="pin2">
-   	  <dt><a href="#" title="品牌创造">品牌创造</br>Brand creation</a></dt>
+   	  <dt><a href="#" title="品牌创造">变革</br>Change</a></dt>
         <dd><a href="#" title="品牌创造"><img src="images/pin6.jpg" width="44" height="44" alt="品牌创造"/></a></dd>
     </dl>
 	<dl class="pin3">
-    	<dt><a href="#" title="品牌创造">品牌创造</br>Brand creation</a></dt>
+    	<dt><a href="#" title="品牌创造">整合</br>Integration</a></dt>
         <dd><a href="#" title="品牌创造"><img src="images/pin7.jpg" width="44" height="44" alt="品牌创造"/></a></dd>
     </dl>
 	<dl class="pin4">
-    	<dt><a href="#" title="品牌创造">品牌创造</br>Brand creation</a></dt>
+    	<dt><a href="#" title="品牌创造">创新</br>Innovation</a></dt>
         <dd><a href="#" title="品牌创造"><img src="images/pin8.jpg" width="44" height="44" alt="品牌创造"/></a></dd>
     </dl>
 </div>
@@ -204,169 +248,336 @@
 
 
 </div>
-
+<!-- 能做什么 -->
 <div class="nengzuo">
 	<h3>能做什么<span><a href="#"><img src="images/more.jpg" width="24" height="24" /></a></span></h3>
+	<!--
+	 ['标志设计','书籍设计',' 画册设计',' 海报设计',' 包装设计',' 环境标识','  展览设计',' 户外广告','期刊杂志',' UI设计','店面设计','市场调研',' 产品构建',' 营销渠道',' 线上营销',' 线下营销',' 品牌战略',' 包装策略','产品概念',' 产品定位','营销策略','产品运营',' 产品规划',' 价格策略',' 形象策略',' 公关策略',' 传播策略',' 品牌调研','诊断评估','品牌梳理','品牌规划','品牌命名',' 品牌口号',' 品牌管理',' CIS构建','   企业咨询','品牌诊断',' 形象提升','广告摄影',' 视频拍摄']
+	 -->
+
+	<div class="nengzuo_inner">
 	<dl>
-    	<dt><a href="#"><img src="images/b1.jpg" width="86" height="86" /></a></dt>
-        <dd><a href="#">标志设计</a></dd>
+        <dt>
+            <a href="#"><img src="images/b1.jpg" width="86" height="86" /></a>
+        </dt>
+        <dd>
+            <a href="#">标志设计</a>
+        </dd>
     </dl>
-	<dl>
-    	<dt><a href="#"><img src="images/b2.jpg" width="86" height="86" /></a></dt>
-        <dd><a href="#">标志设计</a></dd>
+    <dl>
+        <dt>
+            <a href="#"><img src="images/b2.jpg" width="86" height="86" /></a>
+        </dt>
+        <dd>
+            <a href="#">书籍设计</a>
+        </dd>
     </dl>
-	<dl>
-    	<dt><a href="#"><img src="images/b3.jpg" width="86" height="86" /></a></dt>
-        <dd><a href="#">标志设计</a></dd>
+    <dl>
+        <dt>
+            <a href="#"><img src="images/b3.jpg" width="86" height="86" /></a>
+        </dt>
+        <dd>
+            <a href="#">画册设计</a>
+        </dd>
     </dl>
-	<dl>
-    	<dt><a href="#"><img src="images/b4.jpg" width="86" height="86" /></a></dt>
-        <dd><a href="#">标志设计</a></dd>
+    <dl>
+        <dt>
+            <a href="#"><img src="images/b4.jpg" width="86" height="86" /></a>
+        </dt>
+        <dd>
+            <a href="#">海报设计</a>
+        </dd>
     </dl>
-	<dl>
-    	<dt><a href="#"><img src="images/b5.jpg" width="86" height="86" /></a></dt>
-        <dd><a href="#">标志设计</a></dd>
+    <dl>
+        <dt>
+            <a href="#"><img src="images/b5.jpg" width="86" height="86" /></a>
+        </dt>
+        <dd>
+            <a href="#">包装设计</a>
+        </dd>
     </dl>
-	<dl>
-    	<dt><a href="#"><img src="images/b6.jpg" width="86" height="86" /></a></dt>
-        <dd><a href="#">标志设计</a></dd>
+    <dl>
+        <dt>
+            <a href="#"><img src="images/b6.jpg" width="86" height="86" /></a>
+        </dt>
+        <dd>
+            <a href="#">环境标识</a>
+        </dd>
     </dl>
-	<dl>
-    	<dt><a href="#"><img src="images/b7.jpg" width="86" height="86" /></a></dt>
-        <dd><a href="#">标志设计</a></dd>
+    <dl>
+        <dt>
+            <a href="#"><img src="images/b7.jpg" width="86" height="86" /></a>
+        </dt>
+        <dd>
+            <a href="#">展览设计</a>
+        </dd>
     </dl>
-	<dl>
-    	<dt><a href="#"><img src="images/b8.jpg" width="86" height="86" /></a></dt>
-        <dd><a href="#">标志设计</a></dd>
+    <dl>
+        <dt>
+            <a href="#"><img src="images/b8.jpg" width="86" height="86" /></a>
+        </dt>
+        <dd>
+            <a href="#">户外广告</a>
+        </dd>
     </dl>
-	<dl>
-    	<dt><a href="#"><img src="images/b9.jpg" width="86" height="86" /></a></dt>
-        <dd><a href="#">标志设计</a></dd>
+    <dl>
+        <dt>
+            <a href="#"><img src="images/b9.jpg" width="86" height="86" /></a>
+        </dt>
+        <dd>
+            <a href="#">期刊杂志</a>
+        </dd>
     </dl>
-	<dl class="nomargin">
-    	<dt><a href="#"><img src="images/b10.jpg" width="86" height="86" /></a></dt>
-        <dd><a href="#">标志设计</a></dd>
+    <dl>
+        <dt>
+            <a href="#"><img src="images/b10.jpg" width="86" height="86" /></a>
+        </dt>
+        <dd>
+            <a href="#">UI设计</a>
+        </dd>
     </dl>
-	<dl>
-    	<dt><a href="#"><img src="images/b11.jpg" width="86" height="86" /></a></dt>
-        <dd><a href="#">标志设计</a></dd>
+    <dl>
+        <dt>
+            <a href="#"><img src="images/b11.jpg" width="86" height="86" /></a>
+        </dt>
+        <dd>
+            <a href="#">店面设计</a>
+        </dd>
     </dl>
-	<dl>
-    	<dt><a href="#"><img src="images/b12.jpg" width="86" height="86" /></a></dt>
-        <dd><a href="#">标志设计</a></dd>
+    <dl>
+        <dt>
+            <a href="#"><img src="images/b12.jpg" width="86" height="86" /></a>
+        </dt>
+        <dd>
+            <a href="#">市场调研</a>
+        </dd>
     </dl>
-	<dl>
-    	<dt><a href="#"><img src="images/b13.jpg" width="86" height="86" /></a></dt>
-        <dd><a href="#">标志设计</a></dd>
+    <dl>
+        <dt>
+            <a href="#"><img src="images/b13.jpg" width="86" height="86" /></a>
+        </dt>
+        <dd>
+            <a href="#">产品构建</a>
+        </dd>
     </dl>
-	<dl>
-    	<dt><a href="#"><img src="images/b14.jpg" width="86" height="86" /></a></dt>
-        <dd><a href="#">标志设计</a></dd>
+    <dl>
+        <dt>
+            <a href="#"><img src="images/b14.jpg" width="86" height="86" /></a>
+        </dt>
+        <dd>
+            <a href="#">营销渠道</a>
+        </dd>
     </dl>
-	<dl>
-    	<dt><a href="#"><img src="images/b15.jpg" width="86" height="86" /></a></dt>
-        <dd><a href="#">标志设计</a></dd>
+    <dl>
+        <dt>
+            <a href="#"><img src="images/b15.jpg" width="86" height="86" /></a>
+        </dt>
+        <dd>
+            <a href="#">线上营销</a>
+        </dd>
     </dl>
-	<dl>
-    	<dt><a href="#"><img src="images/b16.jpg" width="86" height="86" /></a></dt>
-        <dd><a href="#">标志设计</a></dd>
+    <dl>
+        <dt>
+            <a href="#"><img src="images/b16.jpg" width="86" height="86" /></a>
+        </dt>
+        <dd>
+            <a href="#">线下营销</a>
+        </dd>
     </dl>
-	<dl>
-    	<dt><a href="#"><img src="images/b17.jpg" width="86" height="86" /></a></dt>
-        <dd><a href="#">标志设计</a></dd>
+    <dl>
+        <dt>
+            <a href="#"><img src="images/b17.jpg" width="86" height="86" /></a>
+        </dt>
+        <dd>
+            <a href="#">品牌战略</a>
+        </dd>
     </dl>
-	<dl>
-    	<dt><a href="#"><img src="images/b18.jpg" width="86" height="86" /></a></dt>
-        <dd><a href="#">标志设计</a></dd>
+    <dl>
+        <dt>
+            <a href="#"><img src="images/b18.jpg" width="86" height="86" /></a>
+        </dt>
+        <dd>
+            <a href="#">包装策略</a>
+        </dd>
     </dl>
-	<dl>
-    	<dt><a href="#"><img src="images/b19.jpg" width="86" height="86" /></a></dt>
-        <dd><a href="#">标志设计</a></dd>
+    <dl>
+        <dt>
+            <a href="#"><img src="images/b19.jpg" width="86" height="86" /></a>
+        </dt>
+        <dd>
+            <a href="#">产品概念</a>
+        </dd>
     </dl>
-	<dl class="nomargin">
-    	<dt><a href="#"><img src="images/b20.jpg" width="86" height="86" /></a></dt>
-        <dd><a href="#">标志设计</a></dd>
+    <dl>
+        <dt>
+            <a href="#"><img src="images/b20.jpg" width="86" height="86" /></a>
+        </dt>
+        <dd>
+            <a href="#">产品定位</a>
+        </dd>
     </dl>
-	<dl>
-    	<dt><a href="#"><img src="images/b21.jpg" width="86" height="86" /></a></dt>
-        <dd><a href="#">标志设计</a></dd>
+    <dl>
+        <dt>
+            <a href="#"><img src="images/b21.jpg" width="86" height="86" /></a>
+        </dt>
+        <dd>
+            <a href="#">营销策略</a>
+        </dd>
     </dl>
-	<dl>
-    	<dt><a href="#"><img src="images/b22.jpg" width="86" height="86" /></a></dt>
-        <dd><a href="#">标志设计</a></dd>
+    <dl>
+        <dt>
+            <a href="#"><img src="images/b22.jpg" width="86" height="86" /></a>
+        </dt>
+        <dd>
+            <a href="#">产品运营</a>
+        </dd>
     </dl>
-	<dl>
-    	<dt><a href="#"><img src="images/b23.jpg" width="86" height="86" /></a></dt>
-        <dd><a href="#">标志设计</a></dd>
+    <dl>
+        <dt>
+            <a href="#"><img src="images/b23.jpg" width="86" height="86" /></a>
+        </dt>
+        <dd>
+            <a href="#">产品规划</a>
+        </dd>
     </dl>
-	<dl>
-    	<dt><a href="#"><img src="images/b24.jpg" width="86" height="86" /></a></dt>
-        <dd><a href="#">标志设计</a></dd>
+    <dl>
+        <dt>
+            <a href="#"><img src="images/b24.jpg" width="86" height="86" /></a>
+        </dt>
+        <dd>
+            <a href="#">价格策略</a>
+        </dd>
     </dl>
-	<dl>
-    	<dt><a href="#"><img src="images/b25.jpg" width="86" height="86" /></a></dt>
-        <dd><a href="#">标志设计</a></dd>
+    <dl>
+        <dt>
+            <a href="#"><img src="images/b25.jpg" width="86" height="86" /></a>
+        </dt>
+        <dd>
+            <a href="#">形象策略</a>
+        </dd>
     </dl>
-	<dl>
-    	<dt><a href="#"><img src="images/b26.jpg" width="86" height="86" /></a></dt>
-        <dd><a href="#">标志设计</a></dd>
+    <dl>
+        <dt>
+            <a href="#"><img src="images/b26.jpg" width="86" height="86" /></a>
+        </dt>
+        <dd>
+            <a href="#">公关策略</a>
+        </dd>
     </dl>
-	<dl>
-    	<dt><a href="#"><img src="images/b27.jpg" width="86" height="86" /></a></dt>
-        <dd><a href="#">标志设计</a></dd>
+    <dl>
+        <dt>
+            <a href="#"><img src="images/b27.jpg" width="86" height="86" /></a>
+        </dt>
+        <dd>
+            <a href="#">传播策略</a>
+        </dd>
     </dl>
-	<dl>
-    	<dt><a href="#"><img src="images/b28.jpg" width="86" height="86" /></a></dt>
-        <dd><a href="#">标志设计</a></dd>
+    <dl>
+        <dt>
+            <a href="#"><img src="images/b28.jpg" width="86" height="86" /></a>
+        </dt>
+        <dd>
+            <a href="#">品牌调研</a>
+        </dd>
     </dl>
-	<dl>
-    	<dt><a href="#"><img src="images/b29.jpg" width="86" height="86" /></a></dt>
-        <dd><a href="#">标志设计</a></dd>
+    <dl>
+        <dt>
+            <a href="#"><img src="images/b29.jpg" width="86" height="86" /></a>
+        </dt>
+        <dd>
+            <a href="#">诊断评估</a>
+        </dd>
     </dl>
-	<dl class="nomargin">
-    	<dt><a href="#"><img src="images/b30.jpg" width="86" height="86" /></a></dt>
-        <dd><a href="#">标志设计</a></dd>
+    <dl>
+        <dt>
+            <a href="#"><img src="images/b30.jpg" width="86" height="86" /></a>
+        </dt>
+        <dd>
+            <a href="#">品牌梳理</a>
+        </dd>
     </dl>
-	<dl>
-    	<dt><a href="#"><img src="images/b31.jpg" width="86" height="86" /></a></dt>
-        <dd><a href="#">标志设计</a></dd>
+    <dl>
+        <dt>
+            <a href="#"><img src="images/b31.jpg" width="86" height="86" /></a>
+        </dt>
+        <dd>
+            <a href="#">品牌规划</a>
+        </dd>
     </dl>
-	<dl>
-    	<dt><a href="#"><img src="images/b32.jpg" width="86" height="86" /></a></dt>
-        <dd><a href="#">标志设计</a></dd>
+    <dl>
+        <dt>
+            <a href="#"><img src="images/b32.jpg" width="86" height="86" /></a>
+        </dt>
+        <dd>
+            <a href="#">品牌命名</a>
+        </dd>
     </dl>
-	<dl>
-    	<dt><a href="#"><img src="images/b33.jpg" width="86" height="86" /></a></dt>
-        <dd><a href="#">标志设计</a></dd>
+    <dl>
+        <dt>
+            <a href="#"><img src="images/b33.jpg" width="86" height="86" /></a>
+        </dt>
+        <dd>
+            <a href="#">品牌口号</a>
+        </dd>
     </dl>
-	<dl>
-    	<dt><a href="#"><img src="images/b34.jpg" width="86" height="86" /></a></dt>
-        <dd><a href="#">标志设计</a></dd>
+    <dl>
+        <dt>
+            <a href="#"><img src="images/b34.jpg" width="86" height="86" /></a>
+        </dt>
+        <dd>
+            <a href="#">品牌管理</a>
+        </dd>
     </dl>
-	<dl>
-    	<dt><a href="#"><img src="images/b35.jpg" width="86" height="86" /></a></dt>
-        <dd><a href="#">标志设计</a></dd>
+    <dl>
+        <dt>
+            <a href="#"><img src="images/b35.jpg" width="86" height="86" /></a>
+        </dt>
+        <dd>
+            <a href="#">CIS构建</a>
+        </dd>
     </dl>
-	<dl>
-    	<dt><a href="#"><img src="images/b36.jpg" width="86" height="86" /></a></dt>
-        <dd><a href="#">标志设计</a></dd>
+    <dl>
+        <dt>
+            <a href="#"><img src="images/b36.jpg" width="86" height="86" /></a>
+        </dt>
+        <dd>
+            <a href="#">企业咨询</a>
+        </dd>
     </dl>
-	<dl>
-    	<dt><a href="#"><img src="images/b37.jpg" width="86" height="86" /></a></dt>
-        <dd><a href="#">标志设计</a></dd>
+    <dl>
+        <dt>
+            <a href="#"><img src="images/b37.jpg" width="86" height="86" /></a>
+        </dt>
+        <dd>
+            <a href="#">品牌诊断</a>
+        </dd>
     </dl>
-	<dl>
-    	<dt><a href="#"><img src="images/b38.jpg" width="86" height="86" /></a></dt>
-        <dd><a href="#">标志设计</a></dd>
+    <dl>
+        <dt>
+            <a href="#"><img src="images/b38.jpg" width="86" height="86" /></a>
+        </dt>
+        <dd>
+            <a href="#">形象提升</a>
+        </dd>
     </dl>
-	<dl>
-    	<dt><a href="#"><img src="images/b39.jpg" width="86" height="86" /></a></dt>
-        <dd><a href="#">标志设计</a></dd>
+    <dl>
+        <dt>
+            <a href="#"><img src="images/b39.jpg" width="86" height="86" /></a>
+        </dt>
+        <dd>
+            <a href="#">广告摄影</a>
+        </dd>
     </dl>
-	<dl class="nomargin">
-    	<dt><a href="#"><img src="images/b40.jpg" width="86" height="86" /></a></dt>
-        <dd><a href="#">标志设计</a></dd>
+    <dl>
+        <dt>
+            <a href="#"><img src="images/b40.jpg" width="86" height="86" /></a>
+        </dt>
+        <dd>
+            <a href="#">视频拍摄</a>
+        </dd>
     </dl>
+
+	</div>
 
 </div>
 
@@ -546,12 +757,43 @@
     	
         <div class="mm2"><a href="javascript:;"><img src="images/more.jpg" width="24" height="24" /></a></div>
     </div>
-	<div class="right"><img src="images/new.jpg" width="500" height="320" /></div>
+	<div class="right">
+	<!-- 焦点图 -->
+	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <img src="images/new.jpg" width="500" height="320">
+      <div class="carousel-caption">
+        标题标题标题
+      </div>
+    </div>
+    <div class="item">
+      <img src="images/logo.jpg" width="500" height="320">
+      <div class="carousel-caption">
+        标题标题标题
+      </div>
+    </div>
+  </div>
+
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only"><</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">></span>
+  </a>
+</div>
+	</div>
 
 </div>
-
+<!-- 底部 -->
 <div class="di_out">
 	<div class="di">
+		<div class="go_top">
+            <a href="#go_top"><img src="images/top.jpg"></a>
+        </div>
     	<div class="left"><img src="images/dilogo.jpg" width="258" height="41" /></div>
     	<div class="right">
         	<ul>

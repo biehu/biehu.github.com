@@ -64,7 +64,7 @@ a:hover{ text-decoration:underline;}
 
 .bankuai2{ width:1000px; margin:auto; overflow:hidden; clear:both; line-height: 14px;font-size: 14px;}
 .bankuai2 dl{float:left; width:250px; padding:20px 0 10px 0; border-top:1px dashed #959595; border-bottom:5px solid #00477f;}
-.bankuai2 dl dt{float:right; height:40px; padding-right:15px;  color:#000000; padding-top:10px;border-right:1px solid #00477f; }
+.bankuai2 dl dt{float:right; height:40px; padding-right:15px; text-align: right;  color:#000000; padding-top:10px;border-right:1px solid #00477f; }
 .bankuai2 dl dt a{ color:#000;}
 .bankuai2 dl dd{float:left; padding-left:15px; width:44px;}
 
@@ -93,6 +93,9 @@ a:hover{ text-decoration:underline;}
 .nengzuo dd{ width:86px; text-align:center; margin-top:2px;}
 .nengzuo dd a{ color:#000000; font-size: 14px;}
 .nengzuo dd a:hover{ color:#ed6a00;}
+.nengzuo_inner {
+	width: 1010px;
+}
 
 
 .zuoguo .neng{ overflow:hidden; clear:both; margin-bottom:20px;}
@@ -100,6 +103,7 @@ a:hover{ text-decoration:underline;}
 .zuoguo .neng h3 a{color:#000;}
 .zuoguo .neng .xuxian{ width:880px; height:23px; border-bottom:1px dashed #959595; float:left;}
 .zuoguo .neng .duo{ float:right; margin-top:8px;}
+
 
 
 .zuoguo{width:1000px; margin:auto; clear:both; overflow:hidden; padding:20px 0;border-bottom:1px dashed #959595;}
@@ -414,3 +418,55 @@ a:hover{ text-decoration:underline;}
 
 
 
+/* 焦点图 */
+.slide {
+	position: relative;
+	width: 500px;
+	height: 320px;
+}
+.slide .carousel-control span {
+	float: none;
+}
+.slide .carousel-control {
+	position: absolute;
+	top: 50%;
+	margin-top: -27px;
+	font-size: 43px;
+	font-family: "宋体";
+	width: 54px;
+	height: 54px;
+	background: #000;
+	display: block;
+	text-align: center;
+	line-height: 54px;
+	text-decoration: none;
+	color: #fff;
+	opacity: .5;
+}
+.slide .carousel-control.left {
+	left: 0;
+}
+.slide .carousel-control.right {
+	right: 0;
+}
+.slide .item {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 500px;
+	height: 320px;
+}
+.slide .item.active {
+	display: block;
+}
+.carousel-caption {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	background: #000;
+	opacity: .8;
+	line-height: 30px;
+	text-indent: 15px;
+	color: #fff;
+}
