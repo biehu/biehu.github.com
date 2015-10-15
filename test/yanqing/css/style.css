@@ -118,9 +118,8 @@ a:hover{ text-decoration:underline;}
 /*简介*/
 .jainjie{ width:1000px; margin:auto;}
 .jainjie .title{ height:50px; line-height:50px; border-bottom:1px dotted #ccc; font-size:18px; font-weight:bold; color:#000;}
-.jainjie .fenxiang{ line-height:40px; height:40px; padding-top:10px; float:right; clear:both; overflow:hidden;}
 
-.jainjie .fenxiang span, .jainjie .fenxiang a img { vertical-align: middle; line-height:26px;}
+
 .jainjie .jian1 .shang{ padding-top: 10px;overflow:hidden; clear:both; line-height: 25px; font-size: 14px;}
 .jainjie .jian1 .shang dt{ float:left; width:579px; height:334px;}
 .jainjie .jian1 .shang dd{ float:right; line-height:26px;}
@@ -159,6 +158,8 @@ a:hover{ text-decoration:underline;}
 	font-size: 12px;
 }
 .jainjie .rongyu dd {
+text-align:justify;
+       text-justify:inter-ideograph;
 	font-size: 14px;
 }
 .jainjie .rongyu dd h4 a {
@@ -167,7 +168,7 @@ a:hover{ text-decoration:underline;}
 .jainjie .jian1 .rongyu dd h4 {
 font-family: "宋体";
 color: #000;
-	  font-size: 24px;
+	  font-size: 22px;
   line-height: 34px;
   color: #231917;
   font-weight: normal;
