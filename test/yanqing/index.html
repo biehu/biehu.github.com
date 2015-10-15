@@ -62,6 +62,7 @@ $(function () {
 				now = items.length - 1;
 			}
 			move();
+			return false;
 		};
 
 		var toRight = function () {
@@ -70,6 +71,7 @@ $(function () {
 				now = 0;
 			}
 			move();
+			return false;
 		};
 
 		$('.slide .carousel-control.left').click(toLeft);

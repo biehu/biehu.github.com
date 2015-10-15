@@ -117,15 +117,15 @@ a:hover{ text-decoration:underline;}
 
 /*简介*/
 .jainjie{ width:1000px; margin:auto;}
-.jainjie .title{ height:50px; line-height:50px; border-bottom:1px dashed #ccc; font-size:18px; font-weight:bold; color:#000;}
+.jainjie .title{ height:50px; line-height:50px; border-bottom:1px dotted #ccc; font-size:18px; font-weight:bold; color:#000;}
 .jainjie .fenxiang{ line-height:40px; height:40px; padding-top:10px; float:right; clear:both; overflow:hidden;}
 
-.jainjie .fenxiang span{ float:left; line-height:26px;}
-.jainjie .jian1 .shang{ overflow:hidden; clear:both;}
+.jainjie .fenxiang span, .jainjie .fenxiang a img { vertical-align: middle; line-height:26px;}
+.jainjie .jian1 .shang{ padding-top: 10px;overflow:hidden; clear:both; line-height: 25px; font-size: 14px;}
 .jainjie .jian1 .shang dt{ float:left; width:579px; height:334px;}
 .jainjie .jian1 .shang dd{ float:right; line-height:26px;}
 .jainjie .jian1 .shang dd p{ text-indent:2em;}
-.jainjie .jian1 .xia{ clear:both; overflow:hidden; padding:20px 0 60px 0; border-bottom:1px dashed #ccc;}
+.jainjie .jian1 .xia{ clear:both; overflow:hidden; padding:20px 0 60px 0; border-bottom:1px dotted #ccc;}
 .jainjie .jian1 .xia .j1{ float:left;}
 .jainjie .jian1 .xia .j2{ float:right;}
 .jainjie .rongyu h3{ height:38px; font-size:16px; line-height:60px; color:#000;}
@@ -138,14 +138,16 @@ a:hover{ text-decoration:underline;}
 .jainjie .rongyu .rongyi dd .rongduo .zuo{ float:left; width:710px; border-bottom:1px solid #ccc; padding-bottom:4px; }
 .jainjie .rongyu .rongyi dd .rongduo .you { float:right; width:24px; margin-top:4px;}
 .jainjie .rongyu .rongyi dd .rongduo span{ background:#bababa; color:#fff; display:inline-block; padding:2px 6px; margin-left:20px; float:right;}
+.jainjie .rongyu dd {position: relative;}
+.jainjie .rongyu dd .rongduo {position: absolute; bottom: 0; padding-bottom: 0!important;}
 
 
 
 .jainjie .rongyu .ronger dt{ float:right; width:228px; }
-.jainjie .rongyu .ronger dd{ float:left;width:760px; height:170px;}
+.jainjie .rongyu .ronger dd{ position: relative; float:left;width:760px; height:170px;}
 .jainjie .rongyu .ronger dd h4{ font-size:18px; line-height:26px; color:#231917;}
 .jainjie .rongyu .ronger dd p{ line-height:26px; color:#585858; text-indent:2em;}
-.jainjie .rongyu .ronger dd .rongduo{ width:740px;padding:4px 0; overflow:hidden; clear:both;}
+.jainjie .rongyu .ronger dd .rongduo{ position: absolute; bottom: 0;width:740px;padding:4px 0 0; overflow:hidden; clear:both;}
 .jainjie .rongyu .ronger dd .rongduo .zuo{ float:left; width:710px; border-bottom:1px solid #ccc; padding-bottom:4px; }
 .jainjie .rongyu .ronger dd .rongduo .you { float:right; width:24px; margin-top:4px;}
 .jainjie .rongyu .ronger dd .rongduo span{ background:#bababa; color:#fff; display:inline-block; padding:2px 6px; margin-left:20px; float:right;}
