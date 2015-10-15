@@ -60,26 +60,18 @@ $(document).ready(function(){
 
 //购买现成
 	$(function() {
-		$("#xianc p").before("<div></div>");  
-		$("#xianc div").stop().fadeTo(0,0.5);
+		$("#xianc p, .gou2 p").before("<div></div>");  
+		$("#xianc div, .gou2 a div").stop().fadeTo(0,0.5);
 		$("#xianc p").each(function(index, el) {
 			var $num=-index*25; 
 			$(el).css("background-position","5px "+$num+"px");
 		});
-		$("#xianc li").hover(function() { 
-			$(this).children('div,p').stop().animate({"bottom":0},500)
+		$("#xianc li a, .gou2 li a").hover(function() { 
+			$(this).children('div,p').stop().
+                animate({"bottom":0},500)
 		}, function() {  
-			$(this).children('div,p').stop().animate({"bottom":-25},500)
-		});
-	});
-	
-	
-
-	$(function() {
-		$("#hei li").mouseenter(function(event) {
-			$(this).siblings().stop().fadeTo(500,0.5);  /*它的兄弟变暗，自己不变*/
-		}).mouseleave(function(event) {
-			$("#hei li").stop().fadeTo(500,1);
+			$(this).children('div,p').stop().
+                animate({"bottom":-25},500)
 		});
 	});
 
