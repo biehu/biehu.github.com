@@ -154,6 +154,24 @@ a:hover{ text-decoration:underline;}
 
 #zhanyu{ height:30px; font-size:16px; line-height:30px; text-align:center; color:#fa4832; background:url(../images/xia.jpg) no-repeat 554px center ;}
 #zhanyu a{ color:#fa4832;}
+.jainjie .rongyu  dd span {
+	font-size: 12px;
+}
+.jainjie .rongyu dd {
+	font-size: 14px;
+}
+.jainjie .rongyu dd h4 a {
+	color: #000;
+}
+.jainjie .jian1 .rongyu dd h4 {
+font-family: "宋体";
+color: #000;
+	  font-size: 24px;
+  line-height: 34px;
+  color: #231917;
+  font-weight: normal;
+  margin-bottom: 10px;
+}
 
 /*做过什么*/
 .shenme{width: 1000px;margin: auto;}
