@@ -124,7 +124,8 @@ a:hover{ text-decoration:underline;}
 .jainjie .jian1 .shang{ padding-top: 10px;overflow:hidden; clear:both; line-height: 25px; font-size: 14px;}
 .jainjie .jian1 .shang dt{ float:left; width:579px; height:334px;}
 .jainjie .jian1 .shang dd{ float:right; line-height:26px;}
-.jainjie .jian1 .shang dd p{ text-indent:2em;}
+.jainjie .jian1 .shang dd p{ text-indent:2em;text-align:justify;
+       text-justify:inter-ideograph;}
 .jainjie .jian1 .xia{ clear:both; overflow:hidden; padding:20px 0 60px 0; border-bottom:1px dotted #ccc;}
 .jainjie .jian1 .xia .j1{ float:left;}
 .jainjie .jian1 .xia .j2{ float:right;}
