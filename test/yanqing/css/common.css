@@ -4,7 +4,7 @@ a img {border: none}
 img {vertical-align: bottom;}
 
 body,div,span,a,img,p,h1,h2,h3,h4,h5,ul,li,ol,dl,dt,dd,input{ margin:0; padding:0; border:0; list-style:none;}
-body{ color:#646464; font-size:12px; font-family:"����";}
+body{ color:#646464; font-size:12px; font-family:"微软雅黑";}
 a{ color:#666; text-decoration:none;}
 a:hover{ text-decoration:underline;}
 
@@ -12,6 +12,12 @@ a:hover{ text-decoration:underline;}
     clear: both;
 }
 
+.mt20 {
+    margin-top: 20px;
+}
+.mb20 {
+    margin-bottom: 20px;
+}
 .header{ width:1000px; height:60px; margin:auto; padding-top:20px;}
 .header .left{ float:left;}
 .header .right{ float:right;}

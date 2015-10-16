@@ -49,8 +49,53 @@
 			$("#yewula2").show();
 			$(".dianji2").hide();
 		});
+
+
+		var Focus = function (wrapSelector) {
+			this.wrap = $(wrapSelector);
+			this.items = this.wrap.find('.item');
+			this.now = 0;
+
+			this.init();
+		};
+
+		Focus.prototype = {
+			init: function () {
+				var self = this;
+				this.wrap.find('.carousel-control.left').click(function () {
+					self.toLeft();return false; });
+				this.wrap.find('.carousel-control.right').click(function () {
+					self.toRight();return false; });
+			},
+			move: function () {
+				this.items.hide();
+				this.items.eq(this.now).fadeIn();
+			},
+			toLeft: function () {
+				this.now--;
+				if (this.now < 0) {
+					this.now = this.items.length - 1;
+				}
+				this.move();
+			},
+			toRight: function () {
+				this.now++;
+				if (this.now > this.items.length - 1) {
+					this.now = 0;
+				}
+				this.move();
+			}
+		};
+
+	    new Focus('.slide1');
+		new Focus('.slide2');
+		new Focus('.slide3');
+		new Focus('.slide4');
 		
 	});
+
+
+	
 	</script>
 
 
@@ -125,7 +170,7 @@
                	    
                     
                     <!-- 焦点图 -->
-                        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                        <div id="carousel-example-generic" class="carousel slide slide1" data-ride="carousel">
                     
                       <div class="carousel-inner" role="listbox">
                         <div class="item active">
@@ -151,6 +196,7 @@
                         <span class="sr-only">></span>
                       </a>
                     </div>
+                    <!-- 焦点图 END -->
                	</div>
                	<div class="right">
                 	<div class="ye1">
@@ -202,7 +248,37 @@
            </ul>
           <ul>
                <div class="yewu">
-               	<div class="left"></div>
+               	<div class="left">
+               	     <!-- 焦点图 -->
+                        <div id="carousel-example-generic" class="carousel slide slide2" data-ride="carousel">
+                    
+                      <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                          <img src="images/new.jpg" width="666" height="353">
+                          <div class="carousel-caption">
+                            标题标题标题
+                          </div>
+                        </div>
+                        <div class="item">
+                          <img src="images/logo.jpg" width="666" height="353">
+                          <div class="carousel-caption">
+                            标题标题标题
+                          </div>
+                        </div>
+                      </div>
+                    
+                      <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only"><</span>
+                      </a>
+                      <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">></span>
+                      </a>
+                    </div>
+                    <!-- 焦点图 END -->
+                    
+               	</div>
                	<div class="right">
                 	<div class="ye1">
                         <a href="#"><h3>2222222222</h3>
@@ -227,7 +303,38 @@
           </ul>
           <ul>
                <div class="yewu">
-               	<div class="left"></div>
+               	<div class="left">
+               	    
+                    
+                     <!-- 焦点图 -->
+                        <div id="carousel-example-generic" class="carousel slide slide3" data-ride="carousel">
+                    
+                      <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                          <img src="images/new.jpg" width="666" height="353">
+                          <div class="carousel-caption">
+                            标题标题标题
+                          </div>
+                        </div>
+                        <div class="item">
+                          <img src="images/logo.jpg" width="666" height="353">
+                          <div class="carousel-caption">
+                            标题标题标题
+                          </div>
+                        </div>
+                      </div>
+                    
+                      <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only"><</span>
+                      </a>
+                      <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">></span>
+                      </a>
+                    </div>
+                    <!-- 焦点图 END -->
+               	</div>
                	<div class="right">
                 	<div class="ye1">
                         <a href="#"><h3>2222222222</h3>
@@ -252,7 +359,37 @@
           </ul>
           <ul>
                <div class="yewu">
-               	<div class="left"></div>
+               	<div class="left">
+               	    
+                     <!-- 焦点图 -->
+                        <div id="carousel-example-generic" class="carousel slide slide4" data-ride="carousel">
+                    
+                      <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                          <img src="images/new.jpg" width="666" height="353">
+                          <div class="carousel-caption">
+                            标题标题标题
+                          </div>
+                        </div>
+                        <div class="item">
+                          <img src="images/logo.jpg" width="666" height="353">
+                          <div class="carousel-caption">
+                            标题标题标题
+                          </div>
+                        </div>
+                      </div>
+                    
+                      <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only"><</span>
+                      </a>
+                      <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">></span>
+                      </a>
+                    </div>
+                    <!-- 焦点图 END -->
+               	</div>
                	<div class="right">
                 	<div class="ye1">
                         <a href="#"><h3>2222222222</h3>
