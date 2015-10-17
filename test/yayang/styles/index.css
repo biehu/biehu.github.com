@@ -1,0 +1,122 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    overflow: hidden;
+}
+img {
+    width: 100%;
+    vertical-align: bottom;
+}
+.wrap > div,
+.wrap > div > div {
+    position: absolute;
+    width: 100%;
+}
+.p {
+    height: 100%;
+    -webkit-transform: translate(0px, 0px);
+    -webkit-transition: -webkit-transform .5s;
+}
+.next {
+    bottom: 20px;
+}
+
+/* 翻页 */
+@-webkit-keyframes arrowUpDown {
+    0% {bottom: 10px;}
+    100% {bottom: 20px;}
+}
+.next {
+    -webkit-animation-name: arrowUpDown;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    -webkit-animation-timing-function: linear;
+}
+.down {
+    -webkit-transform: translate(0px, 100%);
+}
+
+.up {
+    -webkit-transform: translate(0px, -100%);
+}
+
+@-webkit-keyframes light {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@-webkit-keyframes zoom-in {
+    0% {
+        -webkit-transform: scale(0);
+    }
+    100% {
+        -webkit-transform: scale(1);
+    }
+}
+
+
+/*2*/
+.active .fade-in {
+   -webkit-animation-name: light;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-delay: .8s;
+    -webkit-animation-iteration-count: 1;
+   -webkit-animation-fill-mode: both;
+}
+
+/*3*/
+.active .light-to-light {
+    -webkit-animation-name: light;
+    -webkit-animation-duration: .8s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-delay: .8s;
+    -webkit-animation-iteration-count: infinite ;
+    -webkit-animation-direction: alternate;
+    -webkit-animation-fill-mode: none;
+}
+
+/*4*/
+.active .zoom-in {
+    -webkit-animation-name: zoom-in;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-delay: 1.5s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-direction: alternate;
+    -webkit-animation-fill-mode: both;
+}
+
+/*5*/
+.tab-title p {
+    position: relative;
+}
+.tab-title p .link {
+    position: absolute;
+    right: 0;
+    width: 43%;
+}
+.tab-title p img:nth-child(2) {
+    top: 0;
+}
+.tab-title p img:nth-child(3) {
+    bottom: 0;
+}
+.tab-title p:nth-child(3) .link {
+    width: 37.5%;
+}
+.tab p {
+    display: none;
+}
+.tab .on {
+    display: block;
+}
+
+
+
