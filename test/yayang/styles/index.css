@@ -80,6 +80,9 @@ img {
 }
 
 /*3*/
+.wrap .p3 .light-to-light {
+    width: 100%;
+}
 .active .light-to-light {
     -webkit-animation-name: light;
     -webkit-animation-duration: .8s;
@@ -91,6 +94,19 @@ img {
 }
 
 /*4*/
+@-webkit-keyframes ball-scale{
+    0%{opacity:1;-webkit-transform:scale(1);}
+    100%{opacity:0;-webkit-transform:scale(1.5);}
+}
+.active .ball-scale {
+    -webkit-animation-name: ball-scale;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-delay: 2.5s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    -webkit-animation-fill-mode: both;
+}
 .active .zoom-in {
     -webkit-animation-name: zoom-in;
     -webkit-animation-duration: 1s;
