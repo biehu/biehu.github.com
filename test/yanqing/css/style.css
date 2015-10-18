@@ -189,11 +189,11 @@ text-align:justify;
 .nengzuo2 h3{height: 50px;line-height: 50px;font-size: 18px;color: #000;}
 
 .noticen{overflow:hidden; width:1000px;}
-.noticen-hd{height:26px; width:1000px;  }
-.noticen-hd .sous{ float:left; height:16px; width:17px; border:1px solid #ccc; border-left:none; padding:5px;}
-.noticen-hd ul{height:26px; border:1px dashed #ccc; padding:0 10px; width:829px; border-right:none; float:left; }
+.noticen-hd{height:26px; width:1000px;  overflow: hidden;border-top: 1px dotted #ccc;border-bottom: 1px dotted #ccc;}
+.noticen-hd .sous{ float:left; height: 14px; width:17px; border:1px solid #ccc; border-left:none; border-left: 0; padding: 4px 5px 6px 5px;}
+.noticen-hd ul{height:26px; /* border:1px dashed #ccc; */ padding:0 10px; width:829px; border-right:none; float:left; }
 .noticen-hd span{ float:right; line-height:26px; }
-.noticen-hd li {float:left; height:26px;line-height:26px; width:148px;}
+.noticen-hd li {float:left; height:26px;line-height:26px; font-size: 14px;width:148px;}
 .noticen-hd li.current{ background-color:#fff;font-weight:700; font-size:14px;}
 .noticen-hd li.current a{ color:#ee6b01;}
 .noticen-bd{margin-top:20px;}
