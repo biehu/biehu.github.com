@@ -9,6 +9,9 @@ img {
     width: 100%;
     vertical-align: bottom;
 }
+.wrap {
+    overflow: hidden;
+}
 .wrap > div,
 .wrap > div > div {
     position: absolute;
