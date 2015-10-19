@@ -38,7 +38,7 @@ a:hover{ text-decoration:underline;}
 #nav1{background:#fff; margin:auto;}
 #nav{width:100%; line-height:46px; z-index:9999; background:#FFF;}
 #nav ul{ clear:both; overflow:hidden; width:1000px; margin:auto;}
-#nav li{ float:left; margin-right:45px;font-size:16px; color:#000000;}
+#nav li{ float:left; margin-right:45px;font-size:16px; color:#000000; font-family:"微软雅黑"}
 #nav li.quanquan { margin-right: 0; float: right; }
 #nav li a{ color:#010101; }
 #nav li a:hover{ color:#ed6a00;}
