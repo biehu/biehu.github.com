@@ -12,7 +12,7 @@
     color: #fff;
 }
 
-/* 做过什么展示 */
+/* åšè¿‡ä»€ä¹ˆå±•ç¤º */
 .side {
     float: left;
     width: 286px;
@@ -140,14 +140,14 @@
 .slide-page-nav SPAN.slide-page-no-focused {
     TEXT-INDENT: -9999px; WIDTH: 20px; DISPLAY: block; BACKGROUND: url(../images/index_on.png) no-repeat left center; FLOAT: left; CURSOR: pointer
 }
-/*视频*/
+/*è§†é¢‘*/
 .video {
     padding: 15px;
     background: #000;
     text-align: center;
 }
 
-/*三级链接*/
+/*ä¸‰çº§é“¾æŽ¥*/
 .content h2 {
     float: left;
     font-size: 25px;
@@ -171,8 +171,9 @@
     margin: 20px 0;
     text-indent: 2em;
     line-height: 25px;
-    color: #b5b5b6;
+    /* color: #b5b5b6; */
     font-size: 14px;
+    color: #000;
 }
 .work-left {
     float: left;
@@ -183,23 +184,25 @@
 .work-left, .work-right {
     width: 434px;
     line-height: 25px;
-    color: #b5b5b6;
+    /* color: #b5b5b6; */
 }
 .work-content  {
     padding-top: 20px;
     border-top: 1px dotted #ccc;
+    color: #000;
+    font-size: 14px;
 }
 .work .title2 {
     color: #000;
 }
 .work .title1 {
-    color: #727171;
+    /* color: #727171; */
 }
 .work .con1 p {
     text-indent: 2em;
 }
 
-/*了解资讯*/
+/*äº†è§£èµ„è®¯*/
 .article-wrap h2 {
    margin-top: 55px;
    border-top: 1px dotted #ccc;
@@ -221,11 +224,11 @@
    vertical-align: middle;
 }
 
-/*购买*/
+/*è´­ä¹°*/
 .buy {
     width: 1024px;
     margin: 0 auto;
-    font-family: "微软雅黑";
+    font-family: "å¾®è½¯é›…é»‘";
 }
 .work_detail {
    float: left;
