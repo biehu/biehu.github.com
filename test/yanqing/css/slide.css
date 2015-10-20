@@ -18,8 +18,8 @@ a:hover{color:#fff;text-decoration:underline}
 .picbox small{display:block;background:url(http://i0.letvimg.com/img/201112/06/home/tv.png) no-repeat;_background:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://i0.letvimg.com/img/201112/06/home/tv.png');position:absolute;left:-8px;top:-7px;width:110px;height:110px;}
 .picbox .tv{display:none;}
 .picbox img{height:350px;}
-.picLI .bg{background:#000000;opacity:0.5;filter:Alpha(opacity=50);position:absolute;left:0;top:255px;height:95px;width:970px;}
-.picLI .info{position:absolute;left:0;top:255px;height:88px;overflow:hidden;width:388px;padding-left:20px;margin-top:7px;}
+.picLI .bg{background:#000000;opacity:0.5;filter:Alpha(opacity=50);position:absolute;left:0;top: 235px;height:95px;width:970px;}
+.picLI .info{position:absolute;left:0;top: 235px;height:88px;overflow:hidden;width:388px;padding-left:20px;margin-top:7px;}
 .picLI  h2{font-size:16px;font-family:"微软雅黑";height:35px;line-height:35px;overflow:hidden;}
 .picLI  p{line-height:20px;}
 .picLI a:hover{text-decoration:none;}
@@ -30,7 +30,7 @@ a:hover{color:#fff;text-decoration:underline}
 .pre a{width:27px;height:26px;display:block;background-position:-84px -10px;}
 .next a{width:27px;height:26px;display:block;background-position:-123px -10px;}
 .pre i{display:block;}
-.infobtn{position:absolute;right:10px;top:258px;width:420px;}
+.infobtn{position:absolute;right:10px;top: 238px;width:420px;}
 .smallbox{width:10000px;}
 .smallbox img{width:55px;height:55px;border:3px solid #999999;}
 .smallbox a{display:block;float:left;width:70px;text-align:center;outline:none;position:relative;z-index:10;}
@@ -102,6 +102,6 @@ a:hover{color:#fff;text-decoration:underline}
 
 .focus {
 	width: 841px;
-	height: 340px;
+	height: 320px;
 	overflow: hidden;
 }
