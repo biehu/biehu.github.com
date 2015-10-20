@@ -17,6 +17,19 @@ var tab = function () {
 tab();
 
 
+var showText = function () {
+    
+    var show = function () {
+        var text = $(this).attr('data-text');
+        $('.' + text).show();
+    };
+    
+    $('.text-link-btn').click(show);
+};
+
+showText();
+
+
 (function () {
 
    /*
