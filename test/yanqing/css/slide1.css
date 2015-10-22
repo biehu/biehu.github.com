@@ -1,0 +1,238 @@
+@charset "utf-8";
+* {
+	margin:0;
+	padding:0;
+}
+ul, li {
+	list-style:none;
+}
+img {
+	border:none;
+}
+.slider-container {
+	margin: 0 auto;
+	width:960px;
+	overflow:hidden;
+	position:relative;
+	background: #e1e1e1;
+	border-bottom: 9px solid #d9d9d9;
+	height:390px;
+	overflow:hidden;
+	z-index:9;
+	min-width:960px
+}
+.slider-wrap {
+	width:5100px;
+	height:360px;
+	font-size:0;
+	position:absolute;
+	left:49%;
+	top:0;
+	margin-left:-1275px;
+	overflow:hidden
+}
+.slider {
+	width:100%;
+	height:100%;
+	float:left
+}
+.slider-container ul {
+}
+#_slide li {
+	width:1000px;
+	height:360px;
+	float:left;
+	position:relative;
+	text-align: center;
+}
+.slider-container .pic {
+	width:1000px;
+	height:350px;
+	display:block;
+	position: relative;
+}
+.slider-container dl {
+	width:830px;
+	height:350px;
+	overflow: hidden;
+	margin:0 auto;
+}
+.slider-container dl .pic {
+	margin:0;
+}
+.slider-container #ad1, .slider-container #ad1 .pic {
+	width:359px;
+	height:350px
+}
+.slider-container #ad2, .slider-container #ad2 .pic, .slider-container #ad3, .slider-container #ad3 .pic, .slider-container #ad4, .slider-container #ad4 .pic {
+	width:156px;
+	height:350px
+}
+.slider-container dd {
+	float:left;
+	display:inline;
+	overflow: hidden;
+}
+.slider-container #ad2, .slider-container #ad3, .slider-container #ad4 {
+	margin-left:1px;
+}
+.slider-container #ad1 .pic img {
+	width:359px;
+	height:350px;
+	display:block;
+	border:0 none;
+}
+.slider-container #ad2 .pic img, .slider-container #ad3 .pic img, .slider-container #ad4 .pic img {
+	width:156px;
+	height:350px;
+	display:block;
+	border:0 none;
+}
+.slider-container .slide_thumb {
+	display:none;
+}
+.slide_Bg {
+	width:1000px;
+	height:350px;
+	position:absolute;
+	top:0;
+	background:#fff;
+	filter:alpha(opacity=30);
+	opacity:0.5;
+}
+.cur .slide_Bg {
+	display:none
+}
+#slide_list {
+	position:absolute;
+	left:0
+}
+#topPic {
+	display:none
+}
+.slider-container li .domo {
+	position:relative;
+    width: 100%!important;
+}
+.slider-container li p {
+	width:100%;
+	height:50px;
+	line-height: 50px;
+	font-family: "微软雅黑", "黑体";
+	font-size: 21px;
+	color: #fff;
+	position:absolute;
+	bottom:0;
+	left:0;
+	z-index:100;
+	display:none;
+	background:rgba(0, 0, 0, 0.6);
+filter: progid:DXImageTransform.Microsoft.gradient( GradientType = 0, startColorstr = "#60000000", endColorstr = "#60000000") 6
+}
+.slider-container li dd p {
+	font-size:16px;
+}
+.cur .st_ty {
+	display:block;
+}
+#focus_dot {
+	width: 120px;
+	height: 13px;
+	position: absolute;
+	top: 365px;
+	left: 50%;
+	margin-left: -60px;
+}
+#focus_dot li {
+	width: 13px;
+	height: 13px;
+	float: left;
+	text-indent: -999em;
+	overflow: hidden;
+	cursor: pointer;
+	display: inline;
+	margin-right: 10px;
+	background: url(http://mat1.gtimg.com/ent/mc/picture2013/bg_ico.png) -23px -129px no-repeat;
+}
+#focus_dot li.current {
+	background-position: 0 -129px;
+}
+.slider-container .pic:hover, .twC3 a:hover, .gqsjMod .bd a:hover {
+	text-decoration:none;
+}
+.st_ty {
+	cursor:pointer;
+}
+.slide_Bg {
+	width:1000px;
+	height:350px;
+	position:absolute;
+    z-index: 999;
+	top:0;
+	background:#fff;
+	filter:alpha(opacity=70);
+	opacity: 0.7;
+}
+#focusMain li .text {
+	display: block;
+	width:100%;
+	height:80px;
+	position:absolute;
+	bottom:20px;
+	background:rgba(255, 255, 255, 0.8);
+filter: progid:DXImageTransform.Microsoft.gradient( GradientType = 0, startColorstr = "#ccffffff", endColorstr = "#ccffffff");
+}
+.gqsjMod .bd a:hover p {
+	background:rgba(3, 107, 170, 0.6);
+filter: progid:DXImageTransform.Microsoft.gradient( GradientType = 0, startColorstr = "#99036baa", endColorstr = "#99036baa")
+}
+.twC3 .pic {
+	text-align:center;
+}
+#cardBody1 .tabBody {
+	overflow:hidden;
+	zoom:1;
++padding-bottom:20px;
+}
+.mrjxMod .ft a p {
+	text-align:center;
+}
+.slider-wrap {
+	  width: 5100px;
+  height: 360px;
+  font-size: 0;
+  position: absolute;
+  left: 50%;
+  margin-left: -1501px;
+  top: 0;
+  verflow: hidden;
+}
+.hzlxMod .hd h2 {
+	background-position:left -6px;
+}
+.slider-btn {
+	position:absolute;
+	top:148px;
+	width: 41px;
+  height: 68px;
+	background:url(../images/lrbtn.png);
+	cursor:pointer;
+}
+.slider-btn-l {
+	left:0;
+}
+.slider-btn-r {
+    z-index: 1000;
+	right:0;
+}
+.slider-btn-l {
+	left:50%;
+	margin-left:-566px;
+	background-position:0px 0px;
+    z-index: 1000;
+}
+.slider-btn-r {
+	right:50%;
+	margin-right:-566px;
+	background-position:-41px 0px;
+}

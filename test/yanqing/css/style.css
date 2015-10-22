@@ -242,6 +242,7 @@ text-align:justify;
 
     #hei{width:1000px;overflow: hidden;}
     #hei li{position: relative;float: left;margin-right: 1px;}
+    #hei li:hover p {display: block;}
     #hei li.ding{position:absolute; left: 296px;top:159px;}
     #hei li.ding1{position:absolute; left: 296px;top: 293px;}
     #hei li.ding2{position:absolute; left: 486px;top:159px;}
@@ -464,4 +465,8 @@ text-align:justify;
 .liaojie-bd .slide {
     width: 666px;
     height: 353px;
+}
+
+.pic-col {
+    float: left;
 }

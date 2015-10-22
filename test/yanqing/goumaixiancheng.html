@@ -6,10 +6,12 @@
     
 <link type="text/css" rel="stylesheet" href="css/common.css" />
 <link type="text/css" rel="stylesheet" href="css/style.css" />
+<link type="text/css" rel="stylesheet" href="css/slide1.css" />
     
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/my.js"></script>
     	<script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
+                <script type="text/javascript" src="js/slide1.js"></script>
 
 	<script type="text/javascript">
 	$(function() {
@@ -182,7 +184,7 @@
 </div>
 
 <div class="gou3">
-    <div class="zhuanli"><span>其它原创产品</span></div>
+    <div class="zhuanli"><span>图片专利</span></div>
     <div class="zhuanqu">
     	<ul>
         	<li><img src="images/t1.jpg" width="244" height="245" alt="图片"/></li>
@@ -210,6 +212,65 @@
     
     
 </div>
+
+
+<div class="gou2">
+    <div class="zhuanli"><span>其它原创产品</span></div>
+    
+ </div>
+ 
+<!-- 焦点图 -->
+<div class="slider-container" id="slide" style="width: 100%; height: 480px;">
+  <div id="_slide" class="slider-wrap">
+    <ul id="slide_list">
+         <li bosszone="Jdt"> <a href="#" class="pic"> <img class='domo' src="images/demo2.jpg" width="830" height="350" border="0">
+        <p class="st_ty">林志玲捞金鱼尾纹再现 遭男子摸背熊抱尴尬挤笑</p>
+        </a>
+        <div class="slide_Bg"></div>
+      </li>
+      <li bosszone="Jdt"> 
+      
+      <p class="pic">
+        <span class="pic-col"><a href="#"><img src="images/f_4.jpg" /></a></span>
+        <span class="pic-col">
+            <a href="#"><img src="images/f_2.jpg" /></a>
+            <a href="#"><img src="images/f_3.jpg" /></a>
+        </span>
+       <span clas="pic-col"> <a href="#"><img src="images/f_1.jpg" /></a></span>
+
+      </p>
+        <div class="slide_Bg"></div>
+      </li>
+     
+      <li  bosszone="Jdt"> <a href="#" class="pic"> <img class='domo' src="images/demo3.jpg" width="830" height="350" border="0">
+        <p class="st_ty">芙蓉姐姐大摆S型秀瘦腰长腿 调戏记者：想追求我？</p>
+        </a>
+        <div class="slide_Bg"></div>
+      </li>
+      <li  bosszone="Jdt"> <a href="#" title="" class="pic"> <img class='domo' src="images/demo4.jpg" width="830" height="350" border="0">
+        <p class="st_ty">柳岩：消费我 你们在我胸前也看不出一朵花来</p>
+        </a>
+        <div class="slide_Bg"></div>
+      </li>
+    </ul>
+  </div>
+  <a href="javascript:void(0);" class="slider-btn slider-btn-l" id="sliderL" bosszone="photoPre"></a> <a href="javascript:void(0);" class="slider-btn slider-btn-r" id="sliderR" bosszone="photoNext"></a>
+</div>
+<script>
+var $ = function(s){
+        return document.getElementById(s);
+    }
+//参数配置
+slide.init({
+    //width: 100%,              // 焦点图宽度（非必须，默认值自适应）
+    height: 320,            // 焦点图高度（非必须，默认值自适应）
+    auto: false,            // 是否自动切换（非必须，默认值 false）
+    interval: 5000,         // 切换间隔时间（非必须，默认值 3000，当 auto 为 true 时有效）
+    targetId: 'slide',      // html 对应的焦点图 ID（必须）
+    data: $('_slide').getElementsByTagName('li').length// 焦点图数据（必须）
+});
+</script> 
+<!-- 焦点图 END -->
 
 
   
