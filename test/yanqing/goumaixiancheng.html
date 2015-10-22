@@ -11,7 +11,7 @@
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/my.js"></script>
     	<script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
-                <script type="text/javascript" src="js/slide1.js"></script>
+	<script type="text/javascript" src="js/slide1.js"></script>
 
 	<script type="text/javascript">
 	$(function() {
@@ -213,11 +213,10 @@
     
 </div>
 
-
 <div class="gou2">
     <div class="zhuanli"><span>其它原创产品</span></div>
-    
- </div>
+</div>
+ 
  
 <!-- 焦点图 -->
 <div class="slider-container" id="slide" style="width: 100%; height: 480px;">
@@ -257,6 +256,7 @@
   <a href="javascript:void(0);" class="slider-btn slider-btn-l" id="sliderL" bosszone="photoPre"></a> <a href="javascript:void(0);" class="slider-btn slider-btn-r" id="sliderR" bosszone="photoNext"></a>
 </div>
 <script>
+    (function () {
 var $ = function(s){
         return document.getElementById(s);
     }
@@ -269,11 +269,10 @@ slide.init({
     targetId: 'slide',      // html 对应的焦点图 ID（必须）
     data: $('_slide').getElementsByTagName('li').length// 焦点图数据（必须）
 });
+
+})();
 </script> 
-<!-- 焦点图 END -->
-
-
-  
+<!-- 焦点图 END --> 
   
 
 <div class="di_out">
