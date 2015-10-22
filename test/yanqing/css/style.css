@@ -472,5 +472,5 @@ text-align:justify;
 }
 
 .pic-col img {
-    float: left;
+    display: block;
 }
