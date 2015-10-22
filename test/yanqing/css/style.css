@@ -470,3 +470,7 @@ text-align:justify;
 .pic-col {
     float: left;
 }
+
+.pic-col img {
+    float: left;
+}
