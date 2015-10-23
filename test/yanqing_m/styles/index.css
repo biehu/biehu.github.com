@@ -5,6 +5,7 @@
 img {
     width: 100%;
 }
+table{border-collapse:collapse; border-spacing:0;}
 .notice_text {
     height: 70px;
     line-height: 70px;
@@ -17,6 +18,9 @@ img {
     font-size: 12px;
 }
 
+.reg {
+    padding-bottom: 20px;
+}
 .reg_title {
     text-align: center;
 }
@@ -32,10 +36,13 @@ img {
     margin: 0 34px;
     border: 1px solid #d6d6d6;
 }
+.reg_row textarea {
+    vertical-align: top;
+}
 .reg_row textarea,
 .reg_row input {
     width: 100%;
-    margin-right: 10px;
+    border: none;
 }
 .reg_row_title h4 {
     display: block;
@@ -43,14 +50,67 @@ img {
     text-align: center;
 }
 .reg_row label {
-    width: 90px;
-    margin-left: 10px;
+    width: 65px;
+    padding-left: 10px;
 }
 .reg_row {
-    display: flex;
+    display: table;
+    width: 100%;
     padding: 5px 0;
     border-bottom: 1px solid #d6d6d6;
 }
+.reg_row p {
+    display: table-cell;
+}
 .reg label {
+    display: table-cell;
     color: #d6d6d6;
+}
+
+.accept {
+    padding: 0;
+}
+.accept label {
+    padding: 5px 5px 5px 10px;
+}
+.accept p {
+    vertical-align: middle;
+    border-left:  1px solid #d6d6d6;
+}
+.accept button.on {
+    background: #f29a55;
+}
+.accept button {
+    width: 40px;
+    height: 100%;
+    background: #ffffff;
+    border: none;
+    color: #d6d6d6;
+}
+
+.phone label {
+    padding-right: 0;
+}
+.phone .phone_input {
+    border: none;
+}
+.phone button {
+    width: 81px;
+    background: #d6d6d6;
+    color: #fff;
+}
+
+.btns p button {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 5px 0;
+    text-align: center;
+    color: #000;
+}
+.btns .submit {
+    background: #d6d6d6;
+}
+.btns p {
+    border: none;
 }
