@@ -75,7 +75,7 @@ table{border-collapse:collapse; border-spacing:0;}
 }
 .accept p {
     vertical-align: middle;
-    border-left:  1px solid #d6d6d6;
+    text-align: right;
 }
 .accept button.on {
     background: #f29a55;
@@ -85,13 +85,14 @@ table{border-collapse:collapse; border-spacing:0;}
     height: 100%;
     background: #ffffff;
     border: none;
+    border-left:  1px solid #d6d6d6;
     color: #d6d6d6;
 }
 
 .phone label {
     padding-right: 0;
 }
-.phone .phone_input {
+.phone .phone_input button {
     border: none;
 }
 .phone button {
@@ -111,6 +112,6 @@ table{border-collapse:collapse; border-spacing:0;}
 .btns .submit {
     background: #d6d6d6;
 }
-.btns p {
+.btns p button {
     border: none;
 }
