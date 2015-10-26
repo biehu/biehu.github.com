@@ -37,7 +37,7 @@ showText();
     */
    var yStart, yEnd;
    var index = 0;
-   var allNum = $('.wrap').find('.p').length;
+   var allNum = $('.wrap .p').length;
    var isAnimate = false;
    var isModal = false;
    
