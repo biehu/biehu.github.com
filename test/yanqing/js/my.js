@@ -66,11 +66,11 @@ $(document).ready(function(){
 			var $num=-index*25; 
 			$(el).css("background-position","5px "+$num+"px");
 		});
-		$("#xianc li a, .gou2 li a").hover(function() { 
-			$(this).children('div,p').stop().
+		$("#xianc li a, .gou2 li a, .gou3 li a, #slide_list .pic a").hover(function() { 
+			$(this).children('div,p,b').stop().
                 animate({"bottom":0},500)
 		}, function() {  
-			$(this).children('div,p').stop().
+			$(this).children('div,p,b').stop().
                 animate({"bottom":-25},500)
 		});
 	});
