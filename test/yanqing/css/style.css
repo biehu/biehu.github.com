@@ -358,6 +358,9 @@ text-align:justify;
     cursor: pointer;
     color: #000;
 }
+.cando ul li strong:hover {
+	text-decoration: underline;
+}
 .cando ul strong, .cando ul li ul li {
     display: block;
     padding-left: 70px;
@@ -484,4 +487,17 @@ text-align:justify;
 #slide_list .pic a {
     display: block;
     position: relative;
+}
+
+.contact_phone {
+	width: 488px;
+}
+.contact_phone_back {
+	display: none;
+}
+.contact_phone:hover .contact_phone_font {
+	display: none;
+}
+.contact_phone:hover .contact_phone_back {
+	display: block;
 }
