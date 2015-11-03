@@ -29,21 +29,21 @@ var focus = function () {
     
      var handleSlide = function () {
          var slide = $(this).attr('data-slide');
-         clearInterval(interval);
+        // clearInterval(interval);
          if (slide === 'prev') {
              toLeft();
          }
          else {
              toRight();
          }
-         interval = setInterval(function () {
-            toRight();
-         }, 3000);
+        // interval = setInterval(function () {
+         //   toRight();
+        // }, 3000);
      };
     
-    interval = setInterval(function () {
-        toRight();
-    }, 3000);
+    //interval = setInterval(function () {
+      //  toRight();
+   // }, 3000);
 
     $('.slide .carousel-control.left, .slide .carousel-control.right').click(handleSlide);
 };
