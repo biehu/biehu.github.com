@@ -48,3 +48,17 @@ var focus = function () {
     $('.slide .carousel-control.left, .slide .carousel-control.right').click(handleSlide);
 };
 focus();
+
+
+var changeSection2Bg = function () {
+    var root = $('.section2');
+    $('.tip_link').hover(
+        function () {
+           root.addClass($(this).attr('data-bg'));
+        },
+        function () {
+           root.removeClass($(this).attr('data-bg'));
+        });
+};
+
+changeSection2Bg();
