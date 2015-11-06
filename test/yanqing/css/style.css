@@ -27,11 +27,11 @@ a:hover{ text-decoration:underline;}
 .banner-btn a.next{right:20px;background:url(../images/foot.png) no-repeat -49px 0;}
 
 .banner-box .hd {position:absolute;bottom: -270px;left: 853px;}
-.banner-box .hd ul li{width:34px;height:34px;margin-left:2px;background:#ff9899;float:left;cursor:pointer; text-align:center; line-height:34px; color:#fff;}
+.banner-box .hd ul li{width:34px;height:34px;margin-left:2px;background:#ff9899;float:left;cursor:pointer; text-align:center; line-height:34px; color:#fff;opacity: .4}
 .banner-box .hd ul li.on{background:#ed6a00;}
 
 .bankuai{ width:1000px; margin:auto; overflow:hidden; clear:both;line-height: 14px;font-size:14px;}
-.bankuai dl{float:left; width:250px; padding:10px 0 20px 0; border-bottom:1px dashed #959595; border-top:5px solid #00477f;}
+.bankuai dl{float:left; width:250px; padding:10px 0 20px 0; /* border-bottom:1px dashed #959595; */ border-top:5px solid #00477f;}
 .bankuai dl dt{float:left; height:40px; padding-left:15px; color:#000000; padding-top:10px; border-left:1px solid #00477f;}
 .bankuai dl dd{float:right; padding-right:15px; width:44px;}
 .bankuai dl dt a{ color:#000;}
@@ -44,8 +44,8 @@ a:hover{ text-decoration:underline;}
 
 
 
-.bankuai2{ width:1000px; margin:auto; overflow:hidden; clear:both; line-height: 14px;font-size: 14px;}
-.bankuai2 dl{float:left; width:250px; padding:20px 0 10px 0; border-top:1px dashed #959595; border-bottom:5px solid #00477f;}
+.bankuai2{ width:1000px; margin:auto; overflow:hidden; clear:both; line-height: 14px;font-size: 14px; border-top: 1px dotted #959595;}
+.bankuai2 dl{float:left; width:250px; padding:20px 0 10px 0; /* border-top:1px dashed #959595; */ border-bottom:5px solid #00477f;}
 .bankuai2 dl dt{float:right; height:40px; padding-right:15px; text-align: right;  color:#000000; padding-top:10px;border-right:1px solid #00477f; }
 .bankuai2 dl dt a{ color:#000;}
 .bankuai2 dl dd{float:left; padding-left:15px; width:44px;}
@@ -63,7 +63,7 @@ a:hover{ text-decoration:underline;}
 .faxian dd{ float:right; width:650px;}
 .faxian dd h3{ color:#000; font-size:20px; margin-bottom:10px;}
 .faxian dd h3 a{ color:#000;}
-.faxian dd p{ text-indent:2em; line-height:24px;}
+.faxian dd p{ text-indent:2em; line-height:24px;text-align: justify;text-justify:inter-ideograph;}
 
 .nengzuo{ width:1000px; margin:auto; clear:both; overflow:hidden; padding:20px 0;}
 .nengzuo h3{color:#000; font-size:20px; margin-bottom:10px;}
@@ -134,12 +134,12 @@ a:hover{ text-decoration:underline;}
 .jainjie .rongyu .rongyi dd{ float:right;width:760px; height:170px;}
 .jainjie .rongyu .rongyi dd h4{ font-size:18px; line-height:26px; color:#231917;}
 .jainjie .rongyu .rongyi dd p{ line-height:26px; color:#585858; text-indent:2em;}
-.jainjie .rongyu .rongyi dd .rongduo{ width:740px;padding:4px 0; overflow:hidden; clear:both;}
+.jainjie .rongyu .rongyi dd .rongduo{ width:740px; /* padding:4px 0; */ overflow:hidden; clear:both;}
 .jainjie .rongyu .rongyi dd .rongduo .zuo{ float:left; width:710px; border-bottom:1px solid #ccc; padding-bottom:4px; }
 .jainjie .rongyu .rongyi dd .rongduo .you { float:right; width:24px; margin-top:4px;}
 .jainjie .rongyu .rongyi dd .rongduo span{ background:#bababa; color:#fff; display:inline-block; padding:2px 6px; margin-left:20px; float:right;}
 .jainjie .rongyu dd {position: relative;}
-.jainjie .rongyu dd .rongduo {position: absolute; bottom: 0; padding-bottom: 0!important;}
+.jainjie .rongyu dd .rongduo {position: absolute; bottom: -4px; padding-bottom: 0!important;}
 
 
 
@@ -246,7 +246,7 @@ text-align:justify;
 .gou2 .zhuanli span{ float:left; }
 
     #hei{width:1000px;overflow: hidden;}
-    #hei li{position: relative;float: left;margin-right: 1px;}
+    #hei li{position: relative;float: left;margin-right: 1px;overflow:hidden;}
     #hei li:hover p {display: block;}
     #hei li.ding{position:absolute; left: 296px;top:159px;}
     #hei li.ding1{position:absolute; left: 296px;top: 293px;}
@@ -359,7 +359,7 @@ text-align:justify;
     color: #000;
 }
 .cando ul li strong:hover {
-	text-decoration: underline;
+    text-decoration: underline;
 }
 .cando ul strong, .cando ul li ul li {
     display: block;
@@ -490,21 +490,21 @@ text-align:justify;
 }
 
 .contact_phone {
-	width: 488px;
+    width: 488px;
 }
 .contact_phone_back {
-	display: none;
+    display: none;
 }
 .contact_phone:hover .contact_phone_font {
-	display: none;
+    display: none;
 }
 .contact_phone:hover .contact_phone_back {
-	display: block;
+    display: block;
 }
 
 .recommend_article {
-	line-height: 26px;
+    line-height: 26px;
 }
 .recommend_article h3 {
-	font-size: 16px;
+    font-size: 16px;
 }

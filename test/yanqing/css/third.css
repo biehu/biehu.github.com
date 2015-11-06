@@ -12,7 +12,6 @@
     color: #fff;
 }
 
-/* åšè¿‡ä»€ä¹ˆå±•ç¤º */
 .side {
     float: left;
     width: 286px;
@@ -31,8 +30,7 @@
 }
 .service .column-content  {
     padding: 20px;
-    background: #dadada;
-    text-align: center;
+    text-align: left;
     color: #000;
 }
 .service .column-content dt {
@@ -323,5 +321,9 @@
     padding-bottom: 10px;
     color: #898989;
     font-size: 14px;
+}
+
+.slider1 .slide {
+    height: auto;
 }
 

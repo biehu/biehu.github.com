@@ -41,7 +41,7 @@ a:hover{ text-decoration:underline;}
 #nav li{ float:left; margin-right:45px;font-size:16px; color:#000000; font-family:"微软雅黑"}
 #nav li.quanquan { margin-right: 0; float: right; }
 #nav li a{ color:#010101; }
-#nav li a:hover{ color:#ed6a00;}
+#nav li a:hover, #nav li a.on{ color:#ed6a00;}
 #boxx .select_nav ul li {
 	line-height: 30px;
 }
@@ -96,6 +96,12 @@ a:hover{ text-decoration:underline;}
 .di_out .di .left{ float:left; padding-top:8px;}
 .di_out .di .right{ float:right;}
 .di_out .di .right li{ height:52px; line-height:52px;float:left; background:url(../images/g1.jpg) no-repeat 0 center; padding-left:30px; margin-left:40px;}
+.di_out .di .right .guan2 {
+    background:url(../images/g2.jpg) no-repeat 0 center;
+}
+.di_out .di .right .guan3  {
+    background:url(../images/g3.jpg) no-repeat 0 center;
+}
 .di_out .di .right guan2{background:url(../images/g2.jpg) no-repeat 0 center; padding-left:30px;}
 .di_out .di .right guan3{background:url(../images/g3.jpg) no-repeat 0 center; padding-left:30px; margin-right:0;}
 .di_out .di .right li a{ color:#fff;}

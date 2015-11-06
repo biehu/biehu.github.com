@@ -84,14 +84,16 @@ table{border-collapse:collapse; border-spacing:0;}
 }
 .accept button.on {
     background: #f29a55;
+    color: #fff;
 }
 .accept button {
     width: 40px;
     height: 100%;
     background: #ffffff;
-    border: none;
+    /* border: none; */
     border-left:  1px solid #d6d6d6;
     color: #d6d6d6;
+    border-width: 1px;
 }
 
 .phone label {
@@ -104,6 +106,7 @@ table{border-collapse:collapse; border-spacing:0;}
     width: 80px;
     background: #d6d6d6;
     color: #fff;
+    background: #f29a55;
 }
 
 .btns p button {
@@ -118,7 +121,7 @@ table{border-collapse:collapse; border-spacing:0;}
     background: #d6d6d6;
 }
 .btns p button {
-    border: none;
+    /* border: none; */
 }
 
 /* 关于我们 */
