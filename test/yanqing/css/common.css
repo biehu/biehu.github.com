@@ -94,7 +94,7 @@ a:hover{ text-decoration:underline;}
 .di_out{ height:52px; margin-top: 20px;background:#ffad00;clear: both;}
 .di_out .di{ position: relative; width:1000px; margin:auto;}
 .di_out .di .left{ float:left; padding-top:8px;}
-.di_out .di .right{ float:right;}
+.di_out .di .right{ float:right; background: #ffad00;}
 .di_out .di .right li{ height:52px; line-height:52px;float:left; background:url(../images/g1.jpg) no-repeat 0 center; padding-left:30px; margin-left:40px;}
 .di_out .di .right .guan2 {
     background:url(../images/g2.jpg) no-repeat 0 center;
@@ -146,8 +146,9 @@ a:hover{ text-decoration:underline;}
 }
 .contact_bar {
     position: fixed;
-    top: 200px;
+    top: 125px;
     right: 0;
+	z-index: 11;
     padding: 20px 5px 5px 5px;
     background: #fff;
     border: 1px solid #ccc;
@@ -158,12 +159,14 @@ a:hover{ text-decoration:underline;}
 }
 .contact_bar_close {
     position: absolute;
-    right: -4px;
-    top: -5px;
+    right: 0;
+    top: 0;
     line-height: normal;
     cursor: pointer;
     color: #ccc;
     font-size: 20px;
+    font-family: Arial;
+    line-height: normal;
 }
 
 .wrapper {
@@ -233,3 +236,8 @@ left: 85px;
 .clear {clear:both;}
 .fenxiang{  padding-top:15px; float:right; overflow:hidden;}
 .fenxiang .jiathis_style > span { vertical-align: middle; float: left;vertical-align: middle;margin-right: 9px;}
+
+.article-content {
+	font-size: 14px;
+line-height: 30px;
+}

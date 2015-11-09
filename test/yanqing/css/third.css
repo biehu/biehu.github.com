@@ -4,6 +4,7 @@
 .pic-box span {
     position: absolute;
     bottom: 0;
+    left: 0;
     width: 100%;
     background: #000;
     opacity: .7;
@@ -138,14 +139,14 @@
 .slide-page-nav SPAN.slide-page-no-focused {
     TEXT-INDENT: -9999px; WIDTH: 20px; DISPLAY: block; BACKGROUND: url(../images/index_on.png) no-repeat left center; FLOAT: left; CURSOR: pointer
 }
-/*è§†é¢‘*/
+/*Ã¨Â§â€ Ã©Â¢â€˜*/
 .video {
     padding: 15px;
     background: #000;
     text-align: center;
 }
 
-/*ä¸‰çº§é“¾æŽ¥*/
+/*Ã¤Â¸â€°Ã§ÂºÂ§Ã©â€œÂ¾Ã¦Å½Â¥*/
 .content h2 {
     float: left;
     font-size: 25px;
@@ -200,7 +201,7 @@
     text-indent: 2em;
 }
 
-/*äº†è§£èµ„è®¯*/
+/*Ã¤Âºâ€ Ã¨Â§Â£Ã¨Âµâ€žÃ¨Â®Â¯*/
 .article-wrap h2 {
    margin-top: 55px;
    border-top: 1px dotted #ccc;
@@ -222,11 +223,11 @@
    vertical-align: middle;
 }
 
-/*è´­ä¹°*/
+/*Ã¨Â´Â­Ã¤Â¹Â°*/
 .buy {
     width: 1024px;
     margin: 0 auto;
-    font-family: "å¾®è½¯é›…é»‘";
+    font-family: "Ã¥Â¾Â®Ã¨Â½Â¯Ã©â€ºâ€¦Ã©Â»â€˜";
 }
 .work_detail {
    float: left;
@@ -327,3 +328,19 @@
     height: auto;
 }
 
+.siji_xgal h4 img {
+	margin-right: 5px;
+vertical-align: -1px;
+}
+ .siji_xgal h4{ font-size:14px;line-height: 40px;background: url(../images/siji_bgimg.gif) no-repeat left center; padding-left:10px;}
+.blk_18 {overflow:hidden;zoom:1;font-size:14px;	width: 1000px;margin-top:18px; display:block; height:156px; float:left;}
+.blk_18 .pcont {width: 945px;float:left;overflow:hidden; margin-left: 10px; display:inline;}
+.blk_18 .ScrCont_img {width:32766px;zoom:1;}
+#List1_1, .blk_18 #List2_1 {float:left;}
+.blk_18 .LeftBotton, .blk_18 .RightBotton {width:16px; height:77px; float:left; display:inline;}
+.blk_18 .LeftBotton{background: url(../images/play-left.jpg) no-repeat;}
+.blk_18 .RightBotton{background: url(../images/play-right.jpg) no-repeat;float:right;}
+.blk_18 .pl {width: 111px;float:left;text-align:center;margin: 0px 5px; display:inline;}
+.blk_18 .pl p{ display:block; text-align:center;line-height:24px;  margin-top:6px;width:115px; height:24px; overflow:hidden;}
+.blk_18 a{color:#262626;}
+.blk_18 .pl img{display:block; float:left; border:1px solid #ccc;width: 109px!important;}

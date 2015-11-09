@@ -62,3 +62,5 @@ var demoShowInit = function () {
     bannerPlay();
     focusPicPlay();
 };
+
+demoShowInit();

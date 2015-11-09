@@ -5,7 +5,7 @@ body{ color:#646464; font-size:12px; font-family:"微软雅黑";}
 a{ color:#666; text-decoration:none;}
 a:hover{ text-decoration:underline;}
 
-.banner-box{min-width:1210px;height:450px;position:relative;overflow:hidden;}
+.banner-box{height:450px;position:relative;overflow:hidden;}
 .banner-box .bd{ width:100% !important;}
 .banner-box .bd li .m-width {margin:0 auto;overflow:hidden;}
 .banner-box .bd li{width:100% !important;height:450px;}
@@ -15,7 +15,6 @@ a:hover{ text-decoration:underline;}
 }
 
 .banner-btn{
-    width: 1210px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -77,6 +76,13 @@ a:hover{ text-decoration:underline;}
 .nengzuo dd a:hover{ color:#ed6a00;}
 .nengzuo_inner {
     width: 1010px;
+}
+
+@media screen and (max-width: 1000px){
+    body{
+        width: 1000px;
+		overflow: hidden;
+    }
 }
 
 
@@ -503,8 +509,13 @@ text-align:justify;
 }
 
 .recommend_article {
-    line-height: 26px;
+    line-height: 30px;
+    font-size: 14px;
+    border-top: 1px dotted #ccc;
+    padding-top: 10px;
+    margin-top: 20px;
 }
 .recommend_article h3 {
     font-size: 16px;
+    color: #000;
 }
