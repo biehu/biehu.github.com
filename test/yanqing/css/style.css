@@ -2,8 +2,11 @@
 /* CSS Document */
 body,div,span,a,img,p,h1,h2,h3,h4,h5,ul,li,ol,dl,dt,dd,input{ margin:0; padding:0; border:0; list-style:none;}
 body{ color:#646464; font-size:12px; font-family:"微软雅黑";}
-a{ color:#666; text-decoration:none;}
-a:hover{ text-decoration:underline;}
+.header {
+	font-family:"微软雅黑";
+}
+body a{ color:#666; text-decoration:none;}
+body a:hover{ color:#666;text-decoration:underline;}
 
 .banner-box{height:450px;position:relative;overflow:hidden;}
 .banner-box .bd{ width:100% !important;}
@@ -18,15 +21,17 @@ a:hover{ text-decoration:underline;}
     position: absolute;
     top: 50%;
     left: 50%;
-    margin-left: -605px;
-    margin-top: -62px;
+    /* margin-left: -605px; */
+    /* margin-top: -62px; */
+    width: 0px;
+    height: 450px;
 }
 .banner-btn a{display:block;width:49px;height:104px;position:absolute;top:0;filter:alpha(opacity=40);-moz-opacity:0.4;-khtml-opacity:0.4;opacity:0.4;}
-.banner-btn a.prev{left:20px;background:url(../images/foot.png) no-repeat 0 0;} 
-.banner-btn a.next{right:20px;background:url(../images/foot.png) no-repeat -49px 0;}
+.banner-btn a.prev{left: -560px;background:url(../images/foot.png) no-repeat 0 0;} 
+.banner-btn a.next{right: -560px;background:url(../images/foot.png) no-repeat -49px 0;}
 
-.banner-box .hd {position:absolute;bottom: -270px;left: 853px;}
-.banner-box .hd ul li{width:34px;height:34px;margin-left:2px;background:#ff9899;float:left;cursor:pointer; text-align:center; line-height:34px; color:#fff;opacity: .4}
+.banner-box .hd {/* position:absolute; *//* bottom: 1px; *//* left: 853px; *//* width: 260px; */width: 1000px;text-align: right;position: absolute;z-index: 2343545;height: 34px;/* right: 0; *//* left: 6px; */left: 50%;margin-top: 170px;margin-left: -500px;}
+.banner-box .hd ul li{width:34px;height:34px;margin-left:2px;background:#ff9899;/* float:left; */cursor:pointer; text-align:center; display: inline-block;line-height:34px; color:#fff;opacity: .4}
 .banner-box .hd ul li.on{background:#ed6a00;}
 
 .bankuai{ width:1000px; margin:auto; overflow:hidden; clear:both;line-height: 14px;font-size:14px;}
@@ -256,8 +261,8 @@ text-align:justify;
     #hei li:hover p {display: block;}
     #hei li.ding{position:absolute; left: 296px;top:159px;}
     #hei li.ding1{position:absolute; left: 296px;top: 293px;}
-    #hei li.ding2{position:absolute; left: 486px;top:159px;}
-    #hei li.ding3{position:absolute; left:679px;top:159px;}
+    #hei li.ding2{position:absolute; left: 487px;top:159px;}
+    #hei li.ding3{position:absolute; left: 681px;top:159px;}
 
 .gou2 .duo1{ height:30px; line-height:30px; float:left; margin-top: 5px;}
 .gou2 .duo1 span{ float:left; margin-right:4px;}

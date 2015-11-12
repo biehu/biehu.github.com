@@ -54,7 +54,51 @@
 			$(".xiayin").show();
 			$(".mm2").hide();
 		});
-		
+
+
+        var getImgDisplaySize = function(img, root){
+            var rootW = root.width();
+            var rootH = root.height();
+            var imgW = img.width();
+            var imgH = img.height();
+            var rootS = rootW / rootH;
+            var imgS = imgW / imgH;
+            var imgDisplayW;
+            var imgDisplayH;
+            
+            // console.log(rootW, rootH, imgW, imgH);
+            if (imgW < rootW) {
+                if (imgH < rootH) {
+                    imgDisplayW = imgW;
+                    imgDisplayH = imgH;
+                }
+                else {
+                    imgDisplayW = rootH * imgW / imgH;
+                    imgDisplayH = rootH;
+                }
+            }
+            else {
+                if (imgH < rootH) {
+                    imgDisplayW = rootW;
+                    imgDisplayH = rootW * imgH / imgW;
+                }
+                else {
+                    if (rootS > imgS) {
+                        imgDisplayW = rootH * imgS;
+                        imgDisplayH = rootH;
+                    }
+                    else {
+                        imgDisplayW = rootW;
+                        imgDisplayH = rootW / imgS;
+                    }
+                }
+            }
+            
+            return {
+                w: imgDisplayW,
+                h: imgDisplayH
+            };
+        };
 	});
 	</script>
 
