@@ -46,9 +46,9 @@ a:hover{color:#fff;text-decoration:underline}
 .smallbox b{background-position:-60px -10px;display:block;zoom:1;overflow:hidden;width:10px;height:8px;position:absolute;left:30px;top:-7px;}
 
 
-#j-focusPic{position:relative;overflow:hidden;width:970px;height: 700px;}
-#j-focusPic .j-slider{position:absolute;width:1000000px;height: 700px;}
-#j-focusPic .j-item{display:block;float:left;width:970px;height: 700px;overflow:hidden;}
+#j-focusPic{position:relative;overflow:hidden;width:970px;/* height: 700px; */}
+#j-focusPic .j-slider{/* position:absolute; */width:1000000px;/* height: 700px; */}
+#j-focusPic .j-item{display:block;float:left;width:970px;/* height: 700px; */overflow:hidden;}
 #j-focusPic .j-info{height:85px;}
 #j-focusPic	.j-infocontainer{display:none;}
 #j-focusBtns .j-container{position:relative;height:70px;width:350px;padding:0px;padding-top:10px;}
@@ -108,6 +108,13 @@ a:hover{color:#fff;text-decoration:underline}
 
 .focus {
 	width: 841px;
-	height: 700px;
+	/* height: 700px; */
 	overflow: hidden;
+}
+.picLI .info {
+	width: 100%;
+}
+#j-focusPic .j-slider,
+#j-focusPic .j-item {
+	width: auto;
 }
