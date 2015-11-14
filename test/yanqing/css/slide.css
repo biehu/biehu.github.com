@@ -43,12 +43,11 @@ a:hover{color:#fff;text-decoration:underline}
 .smallbox a b{display:none;}
 .smallbox a.on img{border:3px solid #c21f22;}
 .smallbox a.on b{display:block;}
-.smallbox b{background-position:-60px -10px;display:block;zoom:1;overflow:hidden;width:10px;height:8px;position:absolute;left:30px;top:-7px;}
-
-
+'
+34e热R4rrftggtgty
 #j-focusPic{position:relative;overflow:hidden;width: 842px;/* height: 700px; */}
 #j-focusPic .j-slider{/* position:absolute; *//* width:1000000px; */display: table;/* height: 700px; */}
-#j-focusPic .j-item{display:block;width: 842px;text-align: center;/* float:left; *//* width: 838px; */display: table-cell;vertical-align: middle;height: 700px;overflow:hidden;/* border: 1px solid #ddd; */overflow: hidden;}
+#j-focusPic .j-item{display:block;width: 842px;text-align: center;/* float:left; *//* width: 838px; */display: table-cell;vertical-align: middle;height: 560px;overflow:hidden;/* border: 1px solid #ddd; */overflow: hidden;}
 #j-focusPic .j-info{height:85px;}
 #j-focusPic	.j-infocontainer{display:none;}
 #j-focusBtns .j-container{position:relative;height:70px;width:350px;padding:0px;padding-top:10px;}

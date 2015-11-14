@@ -139,14 +139,14 @@
 .slide-page-nav SPAN.slide-page-no-focused {
     TEXT-INDENT: -9999px; WIDTH: 20px; DISPLAY: block; BACKGROUND: url(../images/index_on.png) no-repeat left center; FLOAT: left; CURSOR: pointer
 }
-/*ÃƒÂ¨Ã‚Â§Ã¢â‚¬Â ÃƒÂ©Ã‚Â¢Ã¢â‚¬Ëœ*/
+/*ÃƒÆ’Ã‚Â¨Ãƒâ€šÃ‚Â§ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â©Ãƒâ€šÃ‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‹Å“*/
 .video {
     padding: 15px;
     background: #000;
     text-align: center;
 }
 
-/*ÃƒÂ¤Ã‚Â¸Ã¢â‚¬Â°ÃƒÂ§Ã‚ÂºÃ‚Â§ÃƒÂ©Ã¢â‚¬Å“Ã‚Â¾ÃƒÂ¦Ã…Â½Ã‚Â¥*/
+/*ÃƒÆ’Ã‚Â¤Ãƒâ€šÃ‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â°ÃƒÆ’Ã‚Â§Ãƒâ€šÃ‚ÂºÃƒâ€šÃ‚Â§ÃƒÆ’Ã‚Â©ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œÃƒâ€šÃ‚Â¾ÃƒÆ’Ã‚Â¦Ãƒâ€¦Ã‚Â½Ãƒâ€šÃ‚Â¥*/
 .content h2 {
     float: left;
     font-size: 25px;
@@ -201,7 +201,7 @@
     text-indent: 2em;
 }
 
-/*ÃƒÂ¤Ã‚ÂºÃ¢â‚¬Â ÃƒÂ¨Ã‚Â§Ã‚Â£ÃƒÂ¨Ã‚ÂµÃ¢â‚¬Å¾ÃƒÂ¨Ã‚Â®Ã‚Â¯*/
+/*ÃƒÆ’Ã‚Â¤Ãƒâ€šÃ‚ÂºÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÆ’Ã‚Â¨Ãƒâ€šÃ‚Â§Ãƒâ€šÃ‚Â£ÃƒÆ’Ã‚Â¨Ãƒâ€šÃ‚ÂµÃƒÂ¢Ã¢â€šÂ¬Ã…Â¾ÃƒÆ’Ã‚Â¨Ãƒâ€šÃ‚Â®Ãƒâ€šÃ‚Â¯*/
 .article-wrap h2 {
    margin-top: 55px;
    border-top: 1px dotted #ccc;
@@ -223,11 +223,11 @@
    vertical-align: middle;
 }
 
-/*ÃƒÂ¨Ã‚Â´Ã‚Â­ÃƒÂ¤Ã‚Â¹Ã‚Â°*/
+/*ÃƒÆ’Ã‚Â¨Ãƒâ€šÃ‚Â´Ãƒâ€šÃ‚Â­ÃƒÆ’Ã‚Â¤Ãƒâ€šÃ‚Â¹Ãƒâ€šÃ‚Â°*/
 .buy {
     width: 1024px;
     margin: 0 auto;
-    font-family: "ÃƒÂ¥Ã‚Â¾Ã‚Â®ÃƒÂ¨Ã‚Â½Ã‚Â¯ÃƒÂ©Ã¢â‚¬ÂºÃ¢â‚¬Â¦ÃƒÂ©Ã‚Â»Ã¢â‚¬Ëœ";
+    font-family: "ÃƒÆ’Ã‚Â¥Ãƒâ€šÃ‚Â¾Ãƒâ€šÃ‚Â®ÃƒÆ’Ã‚Â¨Ãƒâ€šÃ‚Â½Ãƒâ€šÃ‚Â¯ÃƒÆ’Ã‚Â©ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂºÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦ÃƒÆ’Ã‚Â©Ãƒâ€šÃ‚Â»ÃƒÂ¢Ã¢â€šÂ¬Ã‹Å“";
 }
 .work_detail {
    float: left;
@@ -277,16 +277,14 @@
 }
 
 .other_work ul {
-    width: 1000px;
+    width: 1133px;
 }
 .other_work {
-    width: 841px;
+    /* width: 841px; */
     overflow: hidden;
-    margin-left: 190px;
 }
 .other_work h2 {
-    margin-top: 22px;
-    margin-bottom: 10px;
+    margin: 10px 0 5px 0;
     color: #d01876;
     font-weight: normal;
     font-size: 18px;
@@ -299,7 +297,7 @@
 .other_work li {
     float: left;
     padding: 5px;
-    margin-right: 14px;
+    margin-right: 16px;
     margin-bottom: 15px;
     border: 1px solid #e5e5e5;
     position: relative;
@@ -345,3 +343,12 @@ vertical-align: -1px;
 .blk_18 .pl p{ display:block; text-align:center;line-height:24px;  margin-top:6px;width:115px; height:24px; overflow:hidden;}
 .blk_18 a{color:#262626;}
 .blk_18 .pl img{display:block; float:left; border:1px solid #ccc;width: 109px!important;}
+
+.other_work .blk_18 {
+	width: 838px;
+	height: auto;
+	margin-top: 0;
+}
+.other_work .blk_18 .pcont {
+	width: 786px;
+}
