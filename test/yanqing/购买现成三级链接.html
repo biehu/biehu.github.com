@@ -50,12 +50,25 @@
 	</script>
     <script type="text/javascript">
 
+	
+	$(document).ready(function() {
+		$(".mm2").click(function(event) {
+			$(".xiayin").show();
+			$(".mm2").hide();
+		});
+
+
+        
+
+
+	});
+	</script>
+
+	<script>
 	var loadImg = function (imgSrc, root) {
 		var img = new Image();
 		img.onload = function () {
-			console.log(this.width, this.height);
 			var size = getImgDisplaySize(this.width, this.height, root);
-			console.log(size);
 			this.width = size.w;
 			this.height = size.h;
 
@@ -111,24 +124,14 @@
                 h: imgDisplayH
             };
         };
-	$(document).ready(function() {
-		$(".mm2").click(function(event) {
-			$(".xiayin").show();
-			$(".mm2").hide();
-		});
-
-
-        
-
-
-	});
+	
 	</script>
 
 	
 </head>
 <body>
 <div class="header" id="top">
-	<div class="left"><h1><img src="images/logo.jpg" width="340" height="52" /></h1>
+	<div class="left"><h1><img src="images/logo.jpg"  /></h1>
 	</div>
 	<div class="right">
     	<div class="r1">
@@ -226,6 +229,7 @@
 				<span class="j-item">
 				
 				<script>
+
 					loadImg('http://www.ooms.com.cn/uploadfile/2015/1113/20151113125155952.jpg', $('.j-item'));
 				</script>
 				
