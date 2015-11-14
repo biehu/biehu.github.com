@@ -139,14 +139,14 @@
 .slide-page-nav SPAN.slide-page-no-focused {
     TEXT-INDENT: -9999px; WIDTH: 20px; DISPLAY: block; BACKGROUND: url(../images/index_on.png) no-repeat left center; FLOAT: left; CURSOR: pointer
 }
-/*Ã¨Â§â€ Ã©Â¢â€˜*/
+/*ÃƒÂ¨Ã‚Â§Ã¢â‚¬Â ÃƒÂ©Ã‚Â¢Ã¢â‚¬Ëœ*/
 .video {
     padding: 15px;
     background: #000;
     text-align: center;
 }
 
-/*Ã¤Â¸â€°Ã§ÂºÂ§Ã©â€œÂ¾Ã¦Å½Â¥*/
+/*ÃƒÂ¤Ã‚Â¸Ã¢â‚¬Â°ÃƒÂ§Ã‚ÂºÃ‚Â§ÃƒÂ©Ã¢â‚¬Å“Ã‚Â¾ÃƒÂ¦Ã…Â½Ã‚Â¥*/
 .content h2 {
     float: left;
     font-size: 25px;
@@ -201,7 +201,7 @@
     text-indent: 2em;
 }
 
-/*Ã¤Âºâ€ Ã¨Â§Â£Ã¨Âµâ€žÃ¨Â®Â¯*/
+/*ÃƒÂ¤Ã‚ÂºÃ¢â‚¬Â ÃƒÂ¨Ã‚Â§Ã‚Â£ÃƒÂ¨Ã‚ÂµÃ¢â‚¬Å¾ÃƒÂ¨Ã‚Â®Ã‚Â¯*/
 .article-wrap h2 {
    margin-top: 55px;
    border-top: 1px dotted #ccc;
@@ -223,11 +223,11 @@
    vertical-align: middle;
 }
 
-/*Ã¨Â´Â­Ã¤Â¹Â°*/
+/*ÃƒÂ¨Ã‚Â´Ã‚Â­ÃƒÂ¤Ã‚Â¹Ã‚Â°*/
 .buy {
     width: 1024px;
     margin: 0 auto;
-    font-family: "Ã¥Â¾Â®Ã¨Â½Â¯Ã©â€ºâ€¦Ã©Â»â€˜";
+    font-family: "ÃƒÂ¥Ã‚Â¾Ã‚Â®ÃƒÂ¨Ã‚Â½Ã‚Â¯ÃƒÂ©Ã¢â‚¬ÂºÃ¢â‚¬Â¦ÃƒÂ©Ã‚Â»Ã¢â‚¬Ëœ";
 }
 .work_detail {
    float: left;
@@ -282,6 +282,7 @@
 .other_work {
     width: 841px;
     overflow: hidden;
+    margin-left: 190px;
 }
 .other_work h2 {
     margin-top: 22px;
