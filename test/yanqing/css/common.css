@@ -240,4 +240,14 @@ left: 85px;
 .article-content {
 	font-size: 14px;
 line-height: 30px;
+width: 1000px;
+text-align:justify;
+       text-justify:inter-ideograph;
+
+}
+
+
+.article-content * {
+	font-size: 14px!important;
+line-height: 30px!important;
 }
