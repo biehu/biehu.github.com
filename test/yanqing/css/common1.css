@@ -245,23 +245,3 @@ text-align:justify;
        text-justify:inter-ideograph;
 
 }
-
-
-.article-content * {
-	font-size: 14px!important;
-line-height: 30px!important;
-}
-
-.friend-links p {
-		margin-left: 60px;
-	}
-	.friend-links {
-		line-height: 20px;
-		width: 360px;
-		float: right;
-		margin-top: 5px;
-	}				
-	.friend-links strong {
-		float: left;
-		font-weight: normal;
-	}
