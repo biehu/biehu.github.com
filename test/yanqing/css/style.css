@@ -524,3 +524,25 @@ text-align:justify;
     font-size: 16px;
     color: #000;
 }
+
+ /*了解资讯*/
+.article-wrap h1 {
+   margin-top: 55px;
+   border-top: 1px dotted #ccc;
+   line-height: 54px;
+   text-align: center;
+   color: #000;
+   font-weight: normal;
+   font-size: 28px;
+}
+.article-content {
+   padding: 20px 0;
+   margin-top: 20px;
+   border-top: 1px dotted #ccc;
+}
+.article-wrap .share {
+   text-align: left;
+}
+.article-wrap .share img {
+   vertical-align: middle;
+}

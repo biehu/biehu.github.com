@@ -100,10 +100,9 @@ a:hover{ text-decoration:underline;}
     background:url(../images/g2.jpg) no-repeat 0 center;
 }
 .di_out .di .right .guan3  {
-    background:url(../images/g3.jpg) no-repeat 0 center;
+	padding-left:25px;
+    background:url(../images/g3.png) no-repeat 0 center;
 }
-.di_out .di .right guan2{background:url(../images/g2.jpg) no-repeat 0 center; padding-left:30px;}
-.di_out .di .right guan3{background:url(../images/g3.jpg) no-repeat 0 center; padding-left:30px; margin-right:0;}
 .di_out .di .right li a{ color:#fff;}
 
 .footer {
@@ -123,6 +122,7 @@ a:hover{ text-decoration:underline;}
 .footer .left{ 
 	overflow: hidden;
 	line-height: 20px;
+	padding-top: 10px;
 }
 .footer .left dl {
 	float: left;
@@ -132,6 +132,7 @@ a:hover{ text-decoration:underline;}
 }
 .footer .left dl.last {
 	border-right: none;
+	width: 350px;
 }
 .footer .left dt {
 	margin-bottom: 5px;
