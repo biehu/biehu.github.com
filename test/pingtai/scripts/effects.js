@@ -98,8 +98,7 @@ var scrollTop = function () {
 var Focus = function (wrapId) {
     if (typeof wrapId === 'String') {
         this.wrap = $('#' + wrapId);
-    }
-    else {
+    } else {
         this.wrap = wrapId;
     }
     
