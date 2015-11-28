@@ -460,31 +460,19 @@ a {
 .plan_btn{
     float:right;
 }
+.plan_btn i,
 .plan_btn span{
     display:inline-block;
-    margin-left:8px;
 }
-.plan_btn1{
+.plan_btn .bullets {
+    margin-right: 5px;
+}
+.plan_btn_prev{
     background:url(../images/btn1.png) no-repeat;
     width:13px;
     height:13px;
 }
-.plan_btn2{
-    background:url(../images/dot9.png) no-repeat;
-    width:7px;
-    height:7px;
-    position:relative;
-    top:-2px;
-}
-.plan_btn span.plan_btn3{
-    background:url(../images/dot9.png) no-repeat;
-    width:7px;
-    height:7px;
-    margin-left:5px;
-    position:relative;
-    top:-2px;
-}
-.plan_btn span.plan_btn4{
+.plan_btn i.plan_btn_default{
     background:url(../images/dot10.png) no-repeat;
     width:7px;
     height:7px;
@@ -492,10 +480,18 @@ a {
     position:relative;
     top:-2px;
 }
-.plan_btn5{
+.plan_btn_next{
     background:url(../images/btn2.png) no-repeat;
     width:13px;
     height:13px;
+}
+.plan_btn i.active {
+    background:url(../images/dot9.png) no-repeat;
+    width:7px;
+    height:7px;
+    margin-left:5px;
+    position:relative;
+    top:-2px;
 }
 .plan_list{
     padding-top:10px;
@@ -1186,3 +1182,35 @@ a {
 #slide_1 {
     height: 460px;
 }
+
+
+/* Tiny Carousel */
+#slider1 .buttons {
+    z-index: 1;
+    cursor: pointer;
+}
+#slider1 {
+    overflow: hidden;
+    position: relative;
+}
+
+#slider1 .viewport {
+    height: 248px;
+    overflow: hidden;
+    position: relative;
+}
+
+#slider1 .disable {
+    visibility: hidden;
+}
+
+#slider1 .overview {
+    list-style: none;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    width: 240px;
+    left: 0;
+    top: 0;
+}
+

@@ -163,6 +163,10 @@ Focus.prototype.init = function () {
 for (var i = 0; i < $('.slide').length; i++) {
     new Focus($('.slide').eq(i));
 }
+$('#slider1').tinycarousel({
+    bullets  : true
+});
+
 
 searchSelect();
 closeAd();
