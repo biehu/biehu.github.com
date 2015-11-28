@@ -143,15 +143,18 @@ Focus.prototype.move = function () {
          this.now = slide;
          this.move();
          
-         this.interval = setInterval(function () {
+         this.interval = setInterval(
+         function () {
             _this.toRight();
          }, 3000);
      };
 Focus.prototype.init = function () {
     var _this = this;
-    this.interval = setInterval(function () {
+    this.interval = setInterval(
+    function () {
        _this.toRight();
-    }, 3000);
+    }, 
+    3000);
 
     this.pointLinks.click(
     function () {

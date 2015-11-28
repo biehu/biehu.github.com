@@ -663,13 +663,13 @@ a {
 }
 .section5_left{
     float:left;
-    height:525px;
+    height: 520px;
     font-family:"微软雅黑";
 }
 .section5_right{
     float:left;
     width:222px;
-    height:560px;
+    /* height:560px; */
     position:relative;
 }
 .solve a{
@@ -746,9 +746,11 @@ a {
     line-height:60px;
     padding-left:50px;
 }
+.know_list_wrap {
+    padding: 0 17px;
+}
 .know_list{
     line-height:22px;
-    padding:0 10px 0 17px;
 }
 .know_list span{
     color:#005FB3;
