@@ -969,6 +969,7 @@ a {
 .sort .sort-detail {
     position: absolute;
     left: 240px;
+    z-index: 1;
     height: 457px;
     top: 1px;
     width: 715px;
