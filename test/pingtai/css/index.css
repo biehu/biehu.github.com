@@ -194,9 +194,11 @@ a {
     display: none;
 }
 .code .code_hover {
+    position: absolute;
     right: 0;
     display: none;
-    
+    width: 150px;
+    height: 150px;
 }
 .code{
     float:right;
