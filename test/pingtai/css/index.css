@@ -1462,6 +1462,7 @@ a {
     line-height:20px;
     margin:0 6px 0 10px;
     text-align:center;
+	color: #52524F;
 }
 .list_page .section2_list1 .unlimit{
     margin-top:50px;
@@ -1470,6 +1471,9 @@ a {
     float:right;
     overflow:hidden;
     margin:6px 180px 0 0 ;
+}
+.list_page .section2_list2 .qd a {
+	color: #52524F;
 }
 .list_page .section2_list2 .qd a,
 .list_page .section2_list2 .qd input{
