@@ -162,16 +162,81 @@ Focus.prototype.init = function () {
     });
 };
 
-for (var i = 0; i < $('.slide').length; i++) {
-    new Focus($('.slide').eq(i));
+// 展开分类
+var startMenu = function () {
+    var menu  = $('.menu');
+    
+    $('.nav_all').hover(
+        function () {
+            menu.show();
+        },
+        function () {
+            menu.hide();
+        });
+    
+    menu.hover(
+        function () {
+            $(this).show();
+        },
+        function () {
+            $(this).hide();
+        });
+    
+};
+
+// 显示特定区域
+var toggleShowArea = function () {
+    
+    $('.show_btn').click(function () {
+        $(this).toggleClass('on');
+        if ($($(this).attr('data-show'))) {
+            $($(this).attr('data-show')).toggleClass('hide');
+        }
+        return false;
+    });
+};
+
+// select
+var selectSearch = function () {
+    $('.select_btn_wrap').on('click', 'table a, p span', function () {
+        var wrap = $(this).parents('.select_btn_wrap');
+    
+        if (wrap.find('.select_more_btn').is('.on')) {
+            $(this).toggleClass('on');
+        } else {
+            if (wrap.has(".on").length > 0) {
+                $(this).removeClass('on');
+                return false;
+            }
+            $(this).toggleClass('on');
+        }
+        
+        return false;
+    })
+};
+
+
+if ($('.list_page').length) {
+    menu();
+    startMenu();
+    searchSelect();
+    toggleShowArea();
+    selectSearch();
 }
-$('#slider1').tinycarousel({
-    bullets  : true
-});
+if ($('.main_page').length) {
 
+    for (var i = 0; i < $('.slide').length; i++) {
+        new Focus($('.slide').eq(i));
+    }
+    $('#slider1').tinycarousel({
+        bullets  : true
+    });
+    
+    
+    searchSelect();
+    closeAd();
+    menu();
+    tab();
+    scrollTop();
 
-searchSelect();
-closeAd();
-menu();
-tab();
-scrollTop();
+}
