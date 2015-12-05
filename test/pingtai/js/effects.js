@@ -110,44 +110,44 @@ var Focus = function (wrapId) {
     this.init();
 };
 Focus.prototype.move = function () {
-        this.pointLinks.removeClass('active');
-        this.pointLinks.eq(this.now).addClass('active');
-        
-        this.items.fadeOut();
-        this.items.eq(this.now).fadeIn(1000);
-    };
-
-    Focus.prototype.toLeft = function () {
-        this.now--;
-        if (this.now < 0) {
-            this.now = this.items.length - 1;
-        }
-        this.move();
-        return false;
-    };
-
-    Focus.prototype.toRight = function () {
-        this.now++;
-        if (this.now > this.items.length - 1) {
-            this.now = 0;
-        }
-        this.move();
-        return false;
-    };
+    this.pointLinks.removeClass('active');
+    this.pointLinks.eq(this.now).addClass('active');
     
-     Focus.prototype.handleSlide = function (link) {
-         var _this = this;
-         var slide = $(link).attr('data-slide-to');
-         clearInterval(this.interval);
-         
-         this.now = slide;
-         this.move();
-         
-         this.interval = setInterval(
-         function () {
-            _this.toRight();
-         }, 3000);
-     };
+    this.items.fadeOut();
+    this.items.eq(this.now).fadeIn(1000);
+};
+
+Focus.prototype.toLeft = function () {
+    this.now--;
+    if (this.now < 0) {
+        this.now = this.items.length - 1;
+    }
+    this.move();
+    return false;
+};
+
+Focus.prototype.toRight = function () {
+    this.now++;
+    if (this.now > this.items.length - 1) {
+        this.now = 0;
+    }
+    this.move();
+    return false;
+};
+
+ Focus.prototype.handleSlide = function (link) {
+     var _this = this;
+     var slide = $(link).attr('data-slide-to');
+     clearInterval(this.interval);
+     
+     this.now = slide;
+     this.move();
+     
+     this.interval = setInterval(
+     function () {
+        _this.toRight();
+     }, 3000);
+ };
 Focus.prototype.init = function () {
     var _this = this;
     this.interval = setInterval(
@@ -184,38 +184,141 @@ var startMenu = function () {
     
 };
 
+var toggleShowAreaFuncs = {
+    setMaySelected: function () {
+        $('.brands').addClass('brands_selected');
+    }
+    
+};
+
 // 显示特定区域
 var toggleShowArea = function () {
     
     $('.show_btn').click(function () {
+        
         $(this).toggleClass('on');
-        if ($($(this).attr('data-show'))) {
+        if ($(this).attr('data-show')) {
             $($(this).attr('data-show')).toggleClass('hide');
         }
+        
         return false;
     });
 };
 
 // select
 var selectSearch = function () {
-    $('.select_btn_wrap').on('click', 'table a, p span', function () {
-        var wrap = $(this).parents('.select_btn_wrap');
+    $('.brands .select_more_btn').click(function () {
+        
+        $('.brands').addClass('brands_selected');
+        
+        $(this).hide();
+        $('.more_brands_btn').hide();
+        
+        $('.more_brands_labels').removeClass('hide');
+        return false;
+    });
     
-        if (wrap.find('.select_more_btn').is('.on')) {
-            $(this).toggleClass('on');
-        } else {
-            if (wrap.has(".on").length > 0) {
-                $(this).removeClass('on');
-                return false;
-            }
-            $(this).toggleClass('on');
-        }
+    $('.brands .cancel_btn').click(function () {
+        $('.brands').removeClass('brands_selected');
+        
+        $('.more_brands_btn, .select_more_btn').show();
+        $('.more_brands_labels').addClass('hide');
+        
+        $('.brands table a').removeClass('on');
+        $('.brands .submit_btn').addClass('disabled_btn');
         
         return false;
-    })
+    });
+    
+    $('.brands table a').click(function () {
+        
+        if ($('.brands_selected').length ===0) return;
+        
+        var submitBtn = $('.brands .submit_btn');
+        
+        $(this).toggleClass('on');
+        
+        if ($('.brands table a.on').length > 0) {
+            submitBtn.removeClass('disabled_btn');
+        }
+        return false;
+    });
+    
+    $('.brands .submit_btn').click(function () {
+        var hrefParams = [];
+        $('.brands table a').each(function () {
+            if ($(this).hasClass('on')) {
+                hrefParams.push($(this).attr('data-val'));
+            }
+        });
+        
+        location.href = $(this).attr('href') + '?imgData=' + hrefParams.join();
+        
+        return false;
+    });
+    
+    $('.checkbox_list .submit_btn').click(function () {
+        var hrefParams = [];
+        $('.brands table a').each(function () {
+            if ($(this).hasClass('on')) {
+                hrefParams.push($(this).attr('data-val'));
+            }
+        });
+        
+        location.href = $(this).attr('href') + '?imgData=' + hrefParams.join();
+        
+        return false;
+    });
+    
+    
+    $('.checkbox_more_btn').click(function () {
+        $(this).hide();
+        $('.checkbox_list').addClass(' checkbox_selected');
+        $('.checkbox_list').find('.control_btns').show();
+        
+        $('.checkbox_list .submit_btn').addClass('disabled_btn');
+        
+        return false;
+    });
+    
+    
+    $('.checkbox_list input').click(function () {
+        
+        if ($('.checkbox_list input:checked').length > 0) {
+            $('.checkbox_list .submit_btn').removeClass('disabled_btn');
+        }
+    });
+    $('.checkbox_list .cancel_btn').click(function () {
+        $('.checkbox_list input').prop('checked', false);
+        
+        $('.checkbox_more_btn').show();
+        $('.checkbox_list').removeClass(' checkbox_selected');
+        $('.checkbox_list').find('.control_btns').hide();
+        
+        return false;
+    });
 };
 
+/*
+ * 表单
+ */
 
+var focusInput = function () {
+    var inputs = $('.focus');
+    inputs.focus(function () {
+        $(this).parent().addClass('input_focus');
+    });
+    inputs.blur(function () {
+        $(this).parent().removeClass('input_focus');
+    });
+};
+
+/*
+ * 初始化
+ */
+if ($('.login_page, .log2_page').length) {
+    focusInput();
+}
 if ($('.list_page').length) {
     menu();
     startMenu();
