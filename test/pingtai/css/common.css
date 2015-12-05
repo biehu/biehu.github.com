@@ -381,16 +381,16 @@ a {
 }
 
 
-.nav{
+.small_nav{
     margin:0 auto 30px;
     width:1078px;
 }
-.nav_logo{
+.small_nav .nav_logo{
     float:left;
     width:252px;
     padding-top:10px;
 }
-.nav_text{
+.small_nav .nav_text{
     float:left; 
     height:60px;
     border-left:1px solid #E4E1DE;
