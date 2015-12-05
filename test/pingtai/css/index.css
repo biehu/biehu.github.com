@@ -193,7 +193,7 @@
     font-size:16px;
     color:#000;
 }
-.section2_ad,.section3_ad,.section4_ad{
+.section_ad{
     width:1210px;
     margin:0 auto;
     padding-top:20px;
@@ -260,7 +260,6 @@
     overflow: hidden;
     height:320px;
     width:210px;
-    background:url(../img/list1.jpg) no-repeat;
     position:relative;
 }
 .section3_list1,.section4_list1{
@@ -1628,3 +1627,12 @@
     margin-right: 5px;
     vertical-align: -2px;
 }
+
+.floor_2 .section3_left_top {
+                   background: url(../img/signal.gif) 0 3px no-repeat;
+                height: 35px;
+                font-size: 18px;
+                color: #00DCB0;
+                font-family: "微软雅黑";
+                padding-left: 40px;
+               }
