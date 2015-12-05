@@ -252,20 +252,20 @@ var selectSearch = function () {
             }
         });
         
-        location.href = $(this).attr('href') + '?imgData=' + hrefParams.join();
+        location.href = $(this).attr('data-href') + '?imgData=' + hrefParams.join();
         
         return false;
     });
     
     $('.checkbox_list .submit_btn').click(function () {
         var hrefParams = [];
-        $('.brands table a').each(function () {
-            if ($(this).hasClass('on')) {
-                hrefParams.push($(this).attr('data-val'));
+        $('input[name="list_val"]').each(function () {
+            if ($(this).prop('checked')) {
+                hrefParams.push($(this).val());
             }
         });
         
-        location.href = $(this).attr('href') + '?imgData=' + hrefParams.join();
+        location.href = $(this).attr('data-href') + '?data=' + hrefParams.join();
         
         return false;
     });
