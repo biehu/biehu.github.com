@@ -1,7 +1,7 @@
 .main_page{
     font-size:12px;
     color:#52524F;
-    font-family:"宋体";
+    font-family:"微软雅黑";
 }
 .section1_middle{
     float:left;
@@ -435,7 +435,7 @@
 }
 .circle .message a {
     color: #3093D8;
-    font-family: "黑体";
+    font-family: "é»‘ä½“";
     display: inline-block;
     margin-left: 112px;
 }
@@ -635,7 +635,7 @@
 }
 
 
-/* 分类导航 */
+/* åˆ†ç±»å¯¼èˆª */
 .menu_wrap .menu {
     position: absolute;
     display: none;
@@ -923,11 +923,11 @@
 }
 
 
-/* 列表 */
+/* åˆ—è¡¨ */
 .list_page{
     font-size:12px;
     color:#52524F;
-    font-family:"宋体";
+    font-family:"å®‹ä½“";
 }
 .list_page .nav_wrap{
     border-bottom:3px solid #0094E4;
@@ -997,7 +997,6 @@
     width:1210px;
 }
 .list_page .section2_top{
-    float: left;
     width:1208px;
     background: #F2F1EF;
     border:1px solid #E8E7E4;
@@ -1006,13 +1005,13 @@
     height:33px;
     line-height:35px;
 }
-.list_page .product_selected_types span i{
+.list_page .product_selected_types span i {
     float: right;
-    width: 27px;
-    line-height: 27px;
+    width: 20px;
+    line-height: 20px;
     text-align: center;
     font-style: normal;
-    font-size: 18px;
+    font-size: 14px;
     color: #636363;
     cursor: pointer;
 }
@@ -1027,15 +1026,32 @@
 .list_page .product_selected_types span {
     display: inline-block;
     width: 137px;
-    height: 27px;
-    line-height: 27px;
+    height: 20px;
+    line-height: 20px;
+    margin-bottom: 5px;
     padding-left: 5px;
     background: #f5f5f5;
     border: 1px solid #c1c1c1;
     color: #4595e6;
+    vertical-align: -1px;
+}
+.list_page .product_selected_types_con {
+    margin-left: 90px;
+}
+.list_page .product_selected_types strong {
+    float: left;
+    width: 88px;
+    line-height: 20px;
+    text-align: right;
+    font-weight: normal;
 }
 .list_page .product_selected_types {
+    padding-top: 10px;
+    padding-bottom: 5px;
     font-size: 12px;
+    border-left: 1px solid #E8E7E4;
+    border-right: 1px solid #E8E7E4;
+    border-bottom:1px dashed #E6E3E0;
 }
 .list_page .section2_title {
     float: left;
@@ -1623,7 +1639,7 @@
     float:right;
     color:#93908B;
     font-size:12px;
-    font-family:"宋体";
+    font-family:"å®‹ä½“";
     margin-right:5px;
     display:inline;
 }
@@ -1665,10 +1681,10 @@
 }
 
 .floor_2 .section3_left_top {
-                   background: url(../img/signal.gif) 0 3px no-repeat;
-                height: 35px;
-                font-size: 18px;
-                color: #00DCB0;
-                font-family: "微软雅黑";
-                padding-left: 40px;
-               }
+   background: url(../img/signal.gif) 0 3px no-repeat;
+height: 35px;
+font-size: 18px;
+color: #00DCB0;
+font-family: "微软雅黑";
+padding-left: 40px;
+}
