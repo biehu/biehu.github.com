@@ -3,6 +3,13 @@
     color:#52524F;
     font-family:"微软雅黑";
 }
+.section1_wrap{
+    background:#007ACF;
+}
+.section1{
+    margin:0 auto;
+    width:1210px;
+}
 .section1_middle{
     float:left;
     width:720px;

@@ -357,7 +357,7 @@ button {
     background:url(../img/form/shopping.jpg) no-repeat;
     width:199px;
     height:370px;
-	color: #838383;
+    color: #838383;
 }
 .reg1_page .shop_tit{
     color:#fff;
@@ -380,7 +380,7 @@ button {
     font-size:14px;
     font-family:"微软雅黑";
     padding-left:5px;
-	padding-top: 7px;
+    padding-top: 7px;
 }
 .reg1_page .main .switch,.reg2_page .main .switch{
     position:absolute;
@@ -398,8 +398,8 @@ button {
     background:#EBEBEB;
     line-height:30px;
     text-align:center;
-	color: #838383;
-	font-size: 14px;
+    color: #838383;
+    font-size: 14px;
 }
 .reg1_page .main .switch li.on,.reg2_page .main .switch li.on{
     width:146px;
@@ -409,8 +409,8 @@ button {
     border-top:1px solid #E7E4E1;
     border-bottom:none;
     background:#fff;
-	color: #008bf2;
-	font-weight: bold;
+    color: #008bf2;
+    font-weight: bold;
 }
 .reg1_page .reg_ul li{
     height:37px;
@@ -423,11 +423,11 @@ button {
     text-align:right;
     padding-right:15px;
     float:left;
-	color: #999;
-	font-size: 14px;
+    color: #999;
+    font-size: 14px;
 }
 .reg1_page .phone_code_info {
-	color: #636363;
+    color: #636363;
 }
 .reg1_page .reg_ul_left span{
     color:#FF0000;
@@ -449,24 +449,25 @@ button {
     line-height:35px;
     border:none;
     padding-left:10px;
+    /* padding-right: 28px; */
 }
-.reg1_page .reg_input span{
-    position:absolute;
-    height:37px;
-    line-height:37px;
-    width:248px;
-    left:10px;
-    top:0;
-    color:#D1CBC6;
-    background:url(../img/form/log7.png) 222px 8px no-repeat;
-    display:inline-block;
+.reg1_page .reg_input span {
+    position: absolute;
+    height: 35px;
+    line-height: 37px;
+    width: 27px;
+    right: 0;
+    top: 0;
+    color: #D1CBC6;
+    background: #fff url(../img/form/log7.png) 2px 8px no-repeat;
+    display: inline-block;
 }
 .reg1_page .reg_ul .red{
     color:#bd000e;
     margin-left:15px;
 }
 .reg1_page .reg_ul_2 span,.reg1_page .reg_ul_3 span,.reg1_page .reg_ul_4 span{
-    background:url(../img/form/log8.png) 222px 8px no-repeat;
+    background:url(../img/form/log8.png) 2px 8px no-repeat;
 }
 .reg1_page .reg_ul_5 input,.reg1_page .reg_ul_6 input{
     width:148px;
@@ -508,6 +509,19 @@ button {
     font-family:"微软雅黑";
     display:block;
     margin-top:8px;
+}
+.reg_input span {
+    background: #fff url("../img/form/log7.png") no-repeat scroll 2px 8px;
+    color: #d1cbc6;
+    display: inline-block;
+    height: 35px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 27px;
+}
+.reg_ul_2 span, .reg_ul_3 span, .reg_ul_4 span {
+    background: #fff url("../img/form/log8.png") no-repeat scroll 2px 8px;
 }
 .reg2_page .main {
     background: #fff none repeat scroll 0 0;
@@ -566,8 +580,14 @@ button {
 }
 .reg2_page .section3 .reg_ul_2 select {
     border: medium none;
-    margin-right: 10px;
-    padding: 0 20px;
+    padding: 0 7px;
+    color: #d1cbc6;
+}
+.reg2_page .reg_ul_5 input {
+    border: 1px solid #9a9691;
+    height: 35px;
+    margin-right: 15px;
+    width: 148px;
 }
 .reg2_page .section3 .reg_ul_5 .re{
     border: 1px solid #9a9691;
@@ -578,22 +598,31 @@ button {
     width: 95px;
 } 
 .reg2_page .section3 .reg_ul_and{
-    padding-left:182px;
+    padding-left:171px;
     height:22px;
     line-height:22px;
     margin:0;
+}
+.reg2_page .reg_btn {
+    background: #0092ea none repeat scroll 0 0;
+    color: #fff;
+    display: block;
+    font-family: "微软雅黑";
+    font-size: 14px;
+    height: 39px;
+    line-height: 39px;
+    margin-top: 15px;
+    text-align: center;
+    width: 191px;
+}
+.reg2_bom .agree {
+    color: #0093e4;
 }
 .reg2_page .section3 .reg_ul_6{
     margin:0;
 }
 .reg2_page .section4 {
     height: 696px;
-}
-.reg2_page .section4 .reg_ul_2 select {
-    border:1px solid #9A9691;
-    margin-right: 10px;
-    padding: 0 10px;
-    height:35px;
 }
 .reg2_page .section4 .reg_ul_4 .use{
    margin:0 20px 0 3px; 
@@ -626,22 +655,31 @@ button {
   color: #9A9691;
 }
 .reg2_page .reg_ul_left span {
-  color: #ff0000;
+  color: #f00;
   font-size: 16px;
   margin-right: 10px;
   position: relative;
   top: 2px;
 }
 .reg2_page .reg_ul .red {
-  color: #f00;
+  color: #bd000e;
   margin-left: 15px;
 }
+.reg2_page .reg_select,
 .reg2_page .reg_input {
   border: 1px solid #9a9691;
   float: left;
   height: 35px;
   position: relative;
   width: 258px;
+}
+.reg2_page .reg_select {
+    width: auto;
+}
+.reg2_page .reg_select select {
+    border: medium none;
+    padding: 0 7px;
+    color: #d1cbc6;
 }
 .reg2_page .reg_input input {
   border: medium none;
@@ -816,7 +854,8 @@ button {
 
 .foot {
     line-height: 18px;
-    margin: 0 auto 50px;
+    margin: 0 auto;
+    padding-bottom:  50px;
     text-align: center;
     width: 1078px;
 }

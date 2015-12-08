@@ -41,6 +41,10 @@ a {
     cursor: pointer;
 }
 
+.ml_10 {
+    margin-left:10px;
+}
+
 /* 公共头 */
 .header_wrap{
     background:#F6F5F4;
@@ -256,13 +260,6 @@ a {
 }
 
 
-.section1_wrap{
-    background:#007ACF;
-}
-.section1{
-    margin:0 auto;
-    width:1210px;
-}
 .menu{
     width:240px;
     float:left;
