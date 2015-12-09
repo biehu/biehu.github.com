@@ -60,7 +60,7 @@ var isSameToFirstPassword = function(val, firstPasswordSelector){
 };
 
 var isCheckboxSelected = function(val) {
-    console.log(val);
+    return !!val;
 };
 
 var personalReg = function () {
@@ -165,12 +165,9 @@ var companyReg = function () {
                 required: true,
                 message: '公司名称不能为空'
             },
-            '#province': {
-                required: true,
-                message: '公司所在地不能为空'
-            },
             '#city': {
                 required: true,
+                when: 'submit',
                 message: '公司所在地不能为空'
             },
             '#company_address': {
@@ -178,19 +175,21 @@ var companyReg = function () {
                 message: '公司地址不能为空'
             },
             '.buy_type': {
-                message: '公司地址不能为空',
+                message: '购买用途/类型不能为空',
                 test: isCheckboxSelected,
-                when: 'submit'
+                errorParent: '.section4 .reg_ul_4',
+                when: 'submit',
+                required: 'sometimes',
             },
             '#code': {
                 required: true,
-                errorParent: '.reg_ul_5',
+                errorParent: '.section4 .reg_ul_5',
                 message: '验证码不能为空'
                 
             },
             '#phone_code': {
                 required: true,
-                errorParent: '.reg_ul_5',
+                errorParent: '.section3 .reg_ul_5',
                 message: '短信验证码不能为空'
                 
             },

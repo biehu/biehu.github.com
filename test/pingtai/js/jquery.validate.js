@@ -102,7 +102,7 @@ var happy = {
 					var arg = isFunction(opts.arg) ? opts.arg() : opts.arg;
 					
 					// check if we've got an error on our hands
-					if (submit === true && required === true && val.length === 0) {
+					if (submit === true && required === true && (!!val || val.length === 0)) {
 						error = true;
 					} else if (gotFunc) {
 						error = !opts.test(val, arg);
@@ -122,6 +122,7 @@ var happy = {
                 if (el.length > 1) {
                   val = [];
                   el.each(function(i,obj) {
+                    if (obj.type == 'checkbox' && !$(obj).prop('checked')) return;
                     val.push($(obj).val());
                   });
                   val = val.join(',');
@@ -144,7 +145,7 @@ var happy = {
                 }
 
 				valid();
-
+                
                 if (error) {
                     if (opts.errorParent) {
 						errorTarget.addClass(fieldErrorClass);
