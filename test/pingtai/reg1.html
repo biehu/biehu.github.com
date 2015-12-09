@@ -42,41 +42,43 @@
                         <div class="shop_bom">IT采购从此不再复杂</div>
                     </div>
                     <div class="reg1_log">我已经注册，现在就<a href="">登录</a></div>
-                    <ul class="reg_ul">
-                       <li class="reg_ul_1">
-                           <div class="reg_ul_left"><span>*</span>用户名:</div>
-                           <div class="reg_input"><input type="text" placeholder="请输入邮箱/手机号/用户名"><span></span></div>
-                           <span class="red">!用户名重复</span>
-                       </li>
-                       <li class="reg_ul_2">
-                           <div class="reg_ul_left"><span>*</span>请设置密码:</div>
-                           <div class="reg_input"><input type="text" placeholder="6-20位字母"><span></span></div>
-                       </li>
-                       <li class="reg_ul_3">
-                           <div class="reg_ul_left"><span>*</span>请确认密码:</div>
-                           <div class="reg_input"><input type="text"><span></span></div>
-                           <span class="red">!输入密码不一致</span>
-                       </li>
-                       <li class="reg_ul_4">
-                           <div class="reg_ul_left"><span>*</span>验证手机:</div>
-                           <div class="reg_input"><input type="text"><span></span></div>
-                           <span class="red">!非法手机号</span>
-                       </li>
-                       <li class="reg_ul_5">
-                           <div class="reg_ul_left"><span>*</span>验证码:</div>
-                           <input type="text"><img src="img/form/log4.gif" />
-                           <a class="another" href="">看不清？换一张</a>
-                       </li>
-                       <li class="reg_ul_6">
-                           <div class="reg_ul_left"><span>*</span>短信验证码:</div>
-                           <input type="text"><span class="re">117秒后重新获取</span>
-                       </li>
-                    </ul>
-                    <div class="reg1_bom">
-                        <p class="phone_code_info">验证码已发送，请查收短信</p>
-                        <input type="checkbox">我已阅读并同意<a class="agree" href="">《B2B用户注册协议》</a>
-                        <a class="reg_btn" href="">立即注册</a>
-                    </div>
+					<div id="personal_reg_form">
+						<form>
+							<ul class="reg_ul">
+							   <li class="reg_ul_1">
+								   <div class="reg_ul_left"><span>*</span>用户名:</div>
+								   <div class="reg_input"><input id="username" type="text" placeholder="请输入邮箱/手机号/用户名"><span></span></div>
+							   </li>
+							   <li class="reg_ul_2">
+								   <div class="reg_ul_left"><span>*</span>请设置密码:</div>
+								   <div class="reg_input"><input id="password" type="password" placeholder="6-20位字母"><span></span></div>
+							   </li>
+							   <li class="reg_ul_3">
+								   <div class="reg_ul_left"><span>*</span>请确认密码:</div>
+								   <div class="reg_input"><input id="password_2" type="password"><span></span></div>
+							   </li>
+							   <li class="reg_ul_4">
+								   <div class="reg_ul_left"><span>*</span>验证手机:</div>
+								   <div class="reg_input"><input id="phone" type="text"><span></span></div>
+							   </li>
+							   <li class="reg_ul_5">
+								   <div class="reg_ul_left"><span>*</span>验证码:</div>
+								   <input id="code" type="text"><img src="img/form/log4.gif" />
+								   <a class="another" href="">看不清？换一张</a>
+							   </li>
+							   <li class="reg_ul_6">
+								   <div class="reg_ul_left"><span>*</span>短信验证码:</div>
+								   <input id="phone_code" type="text"><span class="re">117秒后重新获取</span>
+							   </li>
+							</ul>
+							
+							<div class="reg1_bom">
+								<p class="phone_code_info">验证码已发送，请查收短信</p>
+								<input type="checkbox">我已阅读并同意<a class="agree" href="">《B2B用户注册协议》</a>
+								<a class="reg_btn submit" href="">立即注册</a>
+							</div>
+						</form>
+					</div>
                 </div>
             </div>
             <!-- 尾 -->
@@ -100,5 +102,7 @@
        
        <script src="js/jquery.js"></script>
        <script src="js/effects.js"></script>
+       <script src="js/jquery.validate.js"></script>
+	   <script src="js/form_check.js"></script>
    </body>
 </html>

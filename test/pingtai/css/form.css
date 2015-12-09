@@ -4,7 +4,7 @@ button {
 .form_row {
     position: relative;
 }
-.form_row i {
+.unhappyMessage {
     position: absolute;
     color:#D60000;
     line-height:40px;

@@ -1,6 +1,6 @@
 var happy = {
     phone: function (val) {
-        return /^\(?(\d{3})\)?[\- ]?\d{3}[\- ]?\d{4}$/.test(val);
+        return /^1[3|4|5|7|8][0-9]\d{4,8}$/.test(val);
     },
 
     // matches mm/dd/yyyy (requires leading 0's (which may be a bit silly, what do you think?)
@@ -112,7 +112,7 @@ var happy = {
 						opts.test = opts.next.test;
 						opts.arg = opts.next.arg;
 						errorEl.html(opts.next.message);
-
+                        
 						opts.next = opts.next.next;
 						valid();
 					}

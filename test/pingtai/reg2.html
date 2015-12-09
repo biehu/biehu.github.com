@@ -60,160 +60,172 @@
                             <div class="detail">场景采购<br/>随心定制</div>
                         </li>    
                     </ul>
-                    <div class="section2">
-                        <div class="section2_tit">账号信息</div>
-                        <ul class="reg_ul">
-                           <li class="reg_ul_1">
-                               <div class="reg_ul_left"><span>*</span>用户名:</div>
-                               <div class="reg_input"><input type="text" placeholder="请输入邮箱/手机号/用户名"><span></span></div>
-                               <span class="red">!用户名重复</span>
-                           </li>
-                           <li class="reg_ul_2">
-                               <div class="reg_ul_left"><span>*</span>请设置密码:</div>
-                               <div class="reg_input"><input type="text" placeholder="6-20位字母"><span></span></div>
-                           </li>
-                           <li class="reg_ul_3">
-                               <div class="reg_ul_left"><span>*</span>请确认密码:</div>
-                               <div class="reg_input"><input type="text"><span></span></div>
-                               <span class="red">!输入密码不一致</span>
-                           </li>
-                       </ul>
-                    </div>
-                    <div class="section3">
-                        <div class="section3_tit">联系人信息</div>
-                        <ul class="reg_ul">
-                           <li class="reg_ul_1">
-                               <div class="reg_ul_left"><span>*</span>联系人姓名:</div>
-                               <div class="reg_input"><input type="text" placeholder="请输入邮箱/手机号/用户名"></div>
-                           </li>
-                           <li class="reg_ul_2">
-                               <div class="reg_ul_left"><span>*</span>所在部门:</div>
-                               <div class="reg_select">
-                                   <select>
-                                       <option>请选择</option>
-                                   </select>
-                               </div>
-                           </li>
-                           <li class="reg_ul_3">
-                               <div class="reg_ul_left"><span>*</span>联系电话:</div>
-                               <div class="reg_input"><input type=""></div>
-                           </li>
-                           <li class="reg_ul_4">
-                               <div class="reg_ul_left"><span>*</span>验证手机:</div>
-                               <div class="reg_input"><input type="text"></div>
-                               <span class="red">!非法手机号</span>
-                           </li>
-                           <li class="reg_ul_5">
-                           <div class="reg_ul_left"><span>*</span>短信验证码:</div>
-                           <input type="text"><span class="re">117秒后重新获取</span>
-                       </li>
-                       <li class="reg_ul_and">验证码已发送，请查收短信</li>
-                       <li class="reg_ul_6">
-                               <div class="reg_ul_left"><span>*</span>联系人邮箱:</div>
-                               <div class="reg_input"><input type=""></div>
-                           </li>
-                       </ul>
-                    </div>
-                    <div class="section4">
-                        <div class="section4_tit">公司信息</div>
-                        <ul class="reg_ul">
-                           <li class="reg_ul_1">
-                               <div class="reg_ul_left"><span>*</span>公司名称:</div>
-                               <div class="reg_input"><input placeholder="请输入邮箱/手机号/用户名" type="text"></div>
-                           </li>
-                           <li class="reg_ul_2">
-                               <div class="reg_ul_left"><span>*</span>公司所在地:</div>
-                               <div class="reg_select">
-                                   <select id="province" name="province">
-                                       <option value="-1">选择省份</option>
-                                       <option value="bj">北京市 </option>
-                                       <option value="广东省">广东省 </option>
-                                       <option value="上海市">上海市 </option>
-                                       <option value="天津市">天津市 </option>
-                                       <option value="重庆市">重庆市 </option>
-                                       <option>辽宁省</option>
-                                       <option>江苏省</option>
-                                       <option>湖北省</option>
-                                       <option>四川省</option>
-                                       <option>陕西省</option>
-                                       <option>河北省</option>
-                                       <option>山西省</option>
-                                       <option>河南省</option>
-                                       <option>吉林省</option>
-                                       <option>黑龙江</option>
-                                       <option>内蒙古</option>
-                                       <option>山东省</option>
-                                       <option>安徽省</option>
-                                       <option>浙江省</option>
-                                       <option>福建省</option>
-                                       <option>湖南省</option>
-                                       <option>广西省</option>
-                                       <option>江西省</option>
-                                       <option>贵州省</option>
-                                       <option>云南省</option>
-                                       <option>西藏</option>
-                                       <option>海南省</option>
-                                       <option>甘肃省</option>
-                                       <option>宁夏</option>
-                                       <option>青海省</option>
-                                       <option>新疆</option>
-                                       <option>香港</option>
-                                       <option>澳门</option>
-                                       <option>台湾</option>
-                                       <option>海外</option>
-                                       <option>其他</option>
-                                   </select>                
-                               </div>
-                               <div class="reg_select ml_10">
-                                   <select id="city" name="city">
-                                       <option value="-1">市</option>
-                                   </select>
-                               </div>
-                           </li>
-                           <li class="reg_ul_3">
-                               <div class="reg_ul_left"><span>*</span>公司地址:</div>
-                               <div class="reg_input"><input type="text"></div>
-                           </li>
-                           <li class="reg_ul_4">
-                               <div class="reg_ul_left"><span>*</span>购买用途/类型:</div>
-                               <input type="checkbox"><span class="use">IT设备</span><input type="checkbox"><span class="use">数码通讯</span><input type="checkbox"><span class="use">I办公用品耗材</span><input type="checkbox"><span class="use">大家电</span><input type="checkbox"><span class="use">项目合作-政府采购</span><input type="checkbox"><span class="use">礼品</span><input type="checkbox"><span class="use">商旅（机票/酒店等）</span> </li>
-                           <li class="reg_ul_3">
-                               <div class="reg_ul_left">负责销售:</div>
-                               <div class="reg_input"><input type="text"></div>
-                           </li>
-                           <li class="reg_ul_2">
-                               <div class="reg_ul_left">企业人数:</div>
-                               <div class="reg_select">
-                                   <select>
-                                       <option>请选择</option>
-                                   </select>
-                               </div>
-                           </li>
-                           <li class="reg_ul_2">
-                               <div class="reg_ul_left">企业人数:</div>
-                               <div class="reg_select">
-                                   <select>
-                                       <option>请选择</option>
-                                   </select>
-                               </div>
-                           </li>
-                           <li class="reg_ul_2">
-                               <div class="reg_ul_left">企业人数:</div>
-                               <div class="reg_select">
-                                   <select>
-                                       <option>请选择</option>
-                                   </select>
-                               </div>
-                           </li>
-                           <li class="reg_ul_5">
-                               <div class="reg_ul_left"><span>*</span>验证码</div>
-                               <input type="text"><img src="img/form/log4.gif" />
-                               <a class="another" href="">看不清？换一张</a>
-                           </li>
-                        </ul>
-                        <div class="reg2_bom">
-                            <input type="checkbox">我已阅读并同意<a class="agree" href="">《B2B用户注册协议》</a>
-                            <a class="reg_btn" href="">立即注册</a>
+                    
+                    <div id="company_reg_form">
+                        <form>
+                            <div class="section2">
+                                <div class="section2_tit">账号信息</div>
+                                <ul class="reg_ul">
+                                   <li class="reg_ul_1">
+                                       <div class="reg_ul_left"><span>*</span>用户名:</div>
+                                       <div class="reg_input"><input id="username" type="text" placeholder="请输入邮箱/手机号/用户名"><span></span></div>
+                                   </li>
+                                   <li class="reg_ul_2">
+                                       <div class="reg_ul_left"><span>*</span>请设置密码:</div>
+                                       <div class="reg_input"><input id="password" type="password" placeholder="6-20位字母"><span></span></div>
+                                   </li>
+                                   <li class="reg_ul_3">
+                                       <div class="reg_ul_left"><span>*</span>请确认密码:</div>
+                                       <div class="reg_input"><input id="password_2" type="password"><span></span></div>
+                                   </li>
+                               </ul>
+                            </div>
+                            <div class="section3">
+                                <div class="section3_tit">联系人信息</div>
+                                <ul class="reg_ul">
+                                   <li class="reg_ul_1">
+                                       <div class="reg_ul_left"><span>*</span>联系人姓名:</div>
+                                       <div class="reg_input"><input id="contact_name" type="text" placeholder="请输入邮箱/手机号/用户名"></div>
+                                   </li>
+                                   <li class="reg_ul_2">
+                                       <div class="reg_ul_left"><span>*</span>所在部门:</div>
+                                       <div class="reg_select">
+                                           <select id="department">
+                                               <option value="0">请选择</option>
+                                               <option value="市场部">市场部</option>
+                                           </select>
+                                       </div>
+                                   </li>
+                                   <li class="reg_ul_3">
+                                       <div class="reg_ul_left"><span>*</span>联系电话:</div>
+                                       <div class="reg_input"><input id="phone" type="text"></div>
+                                   </li>
+                                   <li class="reg_ul_4">
+                                       <div class="reg_ul_left"><span>*</span>验证手机:</div>
+                                       <div class="reg_input"><input id="mobile" type="text"></div>
+                                   </li>
+                                   <li class="reg_ul_5">
+                                   <div class="reg_ul_left"><span>*</span>短信验证码:</div>
+                                   <input id="phone_code" type="text"><span class="re">117秒后重新获取</span>
+                               </li>
+                               <li class="reg_ul_and">验证码已发送，请查收短信</li>
+                               <li class="reg_ul_6">
+                                       <div class="reg_ul_left"><span>*</span>联系人邮箱:</div>
+                                       <div class="reg_input"><input id="email" type="text"></div>
+                                   </li>
+                               </ul>
+                            </div>
+                            <div class="section4">
+                                <div class="section4_tit">公司信息</div>
+                                <ul class="reg_ul">
+                                   <li class="reg_ul_1">
+                                       <div class="reg_ul_left"><span>*</span>公司名称:</div>
+                                       <div class="reg_input"><input id="company_name" placeholder="请输入邮箱/手机号/用户名" type="text"></div>
+                                   </li>
+                                   <li class="reg_ul_2">
+                                       <div class="reg_ul_left"><span>*</span>公司所在地:</div>
+                                       <div class="reg_select">
+                                           <select id="province" name="province">
+                                               <option value="0">选择省份</option>
+                                               <option value="bj">北京市 </option>
+                                               <option value="广东省">广东省 </option>
+                                               <option value="上海市">上海市 </option>
+                                               <option value="天津市">天津市 </option>
+                                               <option value="重庆市">重庆市 </option>
+                                               <option>辽宁省</option>
+                                               <option>江苏省</option>
+                                               <option>湖北省</option>
+                                               <option>四川省</option>
+                                               <option>陕西省</option>
+                                               <option>河北省</option>
+                                               <option>山西省</option>
+                                               <option>河南省</option>
+                                               <option>吉林省</option>
+                                               <option>黑龙江</option>
+                                               <option>内蒙古</option>
+                                               <option>山东省</option>
+                                               <option>安徽省</option>
+                                               <option>浙江省</option>
+                                               <option>福建省</option>
+                                               <option>湖南省</option>
+                                               <option>广西省</option>
+                                               <option>江西省</option>
+                                               <option>贵州省</option>
+                                               <option>云南省</option>
+                                               <option>西藏</option>
+                                               <option>海南省</option>
+                                               <option>甘肃省</option>
+                                               <option>宁夏</option>
+                                               <option>青海省</option>
+                                               <option>新疆</option>
+                                               <option>香港</option>
+                                               <option>澳门</option>
+                                               <option>台湾</option>
+                                               <option>海外</option>
+                                               <option>其他</option>
+                                           </select>                
+                                       </div>
+                                       <div class="reg_select ml_10">
+                                           <select id="city" name="city">
+                                               <option value="0">市</option>
+                                           </select>
+                                       </div>
+                                   </li>
+                                   <li class="reg_ul_3">
+                                       <div class="reg_ul_left"><span>*</span>公司地址:</div>
+                                       <div class="reg_input"><input id="company_address" type="text"></div>
+                                   </li>
+                                   <li class="reg_ul_4">
+                                       <div class="reg_ul_left">
+                                           <span>*</span>购买用途/类型:
+                                       </div>
+                                       <input class="buy_type" type="checkbox"><span class="use">IT设备</span>
+                                       <input class="buy_type" type="checkbox"><span class="use">数码通讯</span>
+                                       <input class="buy_type" type="checkbox"><span class="use">I办公用品耗材</span>
+                                       <input class="buy_type" type="checkbox"><span class="use">大家电</span>
+                                       <input class="buy_type" type="checkbox"><span class="use">项目合作-政府采购</span>
+                                       <input class="buy_type" type="checkbox"><span class="use">礼品</span>
+                                       <input class="buy_type" type="checkbox"><span class="use">商旅（机票/酒店等）</span>
+                                   </li>
+                                   <li class="reg_ul_3">
+                                       <div class="reg_ul_left">负责销售:</div>
+                                       <div class="reg_input"><input type="text"></div>
+                                   </li>
+                                   <li class="reg_ul_2">
+                                       <div class="reg_ul_left">企业人数:</div>
+                                       <div class="reg_select">
+                                           <select>
+                                               <option>请选择</option>
+                                           </select>
+                                       </div>
+                                   </li>
+                                   <li class="reg_ul_2">
+                                       <div class="reg_ul_left">企业人数:</div>
+                                       <div class="reg_select">
+                                           <select>
+                                               <option>请选择</option>
+                                           </select>
+                                       </div>
+                                   </li>
+                                   <li class="reg_ul_2">
+                                       <div class="reg_ul_left">企业人数:</div>
+                                       <div class="reg_select">
+                                           <select>
+                                               <option>请选择</option>
+                                           </select>
+                                       </div>
+                                   </li>
+                                   <li class="reg_ul_5">
+                                       <div class="reg_ul_left"><span>*</span>验证码</div>
+                                       <input id="code" type="text"><img src="img/form/log4.gif" />
+                                       <a class="another" href="">看不清？换一张</a>
+                                   </li>
+                                </ul>
+                                <div class="reg2_bom">
+                                    <input type="checkbox">我已阅读并同意<a class="agree" href="">《B2B用户注册协议》</a>
+                                    <button class="reg_btn submit" type="submit">立即注册</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -241,5 +253,7 @@
        <script src="js/jquery.js"></script>
        <script src="js/effects.js"></script>
        <script src="js/select_city.js"></script>
+       <script src="js/jquery.validate.js"></script>
+       <script src="js/form_check.js"></script>
    </body>
 </html>
