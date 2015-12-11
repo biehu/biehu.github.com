@@ -429,12 +429,13 @@ button {
 .reg1_page .phone_code_info {
     color: #636363;
 }
-.reg1_page .reg_ul_left span{
+.reg1_page .reg_ul_left b{
     color:#FF0000;
     font-size:16px;
     position:relative;
     top:2px;
     margin-right:10px;
+    font-weight: normal;
 }
 .reg1_page .reg_input{
     width:258px;
@@ -508,7 +509,7 @@ button {
     font-size:14px;
     font-family:"微软雅黑";
     display:block;
-    margin-top:8px;
+    margin-top:15px;
 }
 .reg_input span {
     background: #fff url("../img/form/log7.png") no-repeat scroll 2px 8px;
@@ -536,9 +537,6 @@ button {
     padding-top:33px;
     overflow:hidden;
     padding-left:75px;
-}
-.reg2_page .section1 .section1_2 p{
-    margin-top:0;
 }
 .reg2_page .section1 li{
     width:185px;
@@ -654,12 +652,13 @@ button {
   width: 160px;
   color: #9A9691;
 }
-.reg2_page .reg_ul_left span {
+.reg2_page .reg_ul_left b {
   color: #f00;
   font-size: 16px;
   margin-right: 10px;
   position: relative;
   top: 2px;
+  font-weight: normal;
 }
 .reg2_page .reg_ul .red {
   color: #bd000e;
