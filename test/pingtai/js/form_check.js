@@ -209,6 +209,97 @@ var companyReg = function () {
     });
 };
 
+var lookForPass1 = function () {
+	if ($('#lookfor_pass_form_1').length === 0 ) {
+		return;
+	}
+
+	$('#lookfor_pass_form_1').isHappy({
+		submitButton: '.submit', 
+		fields: {
+			'#username': {
+				required: true,
+				message: '账户名不能为空'
+			},
+			'#code': {
+				required: true,
+				errorParent: '.zh_ul2',
+				message: '验证码不能为空'
+				
+			}
+		},
+		happy: function () {
+			alert('success');
+		}
+	});
+
+};
+
+
+var lookForPass2 = function () {
+	if ($('#lookfor_pass_form_2').length === 0 ) {
+		return;
+	}
+
+	$('#lookfor_pass_form_2').isHappy({
+		submitButton: '.submit', 
+		fields: {
+			'#phone': {
+				required: true,
+				message: '手机不能为空',
+                next: {
+                    message: '手机格式不正确',
+                    test: happy.phone
+                }
+			},
+			'#phone_code': {
+				required: true,
+				message: '验证码不能为空'
+				
+			}
+		},
+		happy: function () {
+			alert('success');
+		}
+	});
+
+};
+
+
+var lookForPass3 = function () {
+	if ($('#lookfor_pass_form_3').length === 0 ) {
+		return;
+	}
+
+	$('#lookfor_pass_form_3').isHappy({
+		submitButton: '.submit', 
+		fields: {
+			'#password': {
+				required: true,
+				message: '密码不能为空',
+				errorParent: '.step3_ul1'
+					
+			},
+			'#password_2': {
+				required: true,
+				message: '确认密码不能为空',
+				errorParent: '.step3_ul2',
+                next: {
+                    message: '两次输入的密码不一致',
+                    test: isSameToFirstPassword,
+                    arg: '#password'
+                }
+				
+			}
+		},
+		happy: function () {
+			alert('success');
+		}
+	});
+
+};
+
+
 
 
 login();
@@ -216,4 +307,8 @@ thirdLogin();
 
 personalReg();
 companyReg();
+
+lookForPass1();
+lookForPass2();
+lookForPass3();
 	

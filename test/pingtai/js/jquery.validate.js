@@ -102,7 +102,7 @@ var happy = {
 					var arg = isFunction(opts.arg) ? opts.arg() : opts.arg;
 					
 					// check if we've got an error on our hands
-					if (submit === true && required === true && (!!val || val.length === 0)) {
+					if (submit === true && required === true && (!val || val.length === 0)) {
 						error = true;
 					} else if (gotFunc) {
 						error = !opts.test(val, arg);

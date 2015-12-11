@@ -14,7 +14,7 @@ button {
 }
 
 
-.login_page,.log2_page,.reg1_page,.reg2_page{
+body{
     font-size:12px;
     color:#52524F;
     font-family:"宋体";
@@ -329,7 +329,7 @@ button {
 .reg1_page,.reg2_page{
     background:#F6F6F5;
 }
-.reg1_page .header_wrap,.reg2_page .header_wrap{
+.header_wrap{
     border:1px solid #E7E4E1;   
 }
 .reg1_page .small_nav,.reg2_page .small_nav{
@@ -429,12 +429,13 @@ button {
 .reg1_page .phone_code_info {
     color: #636363;
 }
-.reg1_page .reg_ul_left span{
+.reg1_page .reg_ul_left b{
     color:#FF0000;
     font-size:16px;
     position:relative;
     top:2px;
     margin-right:10px;
+    font-weight: normal;
 }
 .reg1_page .reg_input{
     width:258px;
@@ -508,7 +509,7 @@ button {
     font-size:14px;
     font-family:"微软雅黑";
     display:block;
-    margin-top:8px;
+    margin-top:15px;
 }
 .reg_input span {
     background: #fff url("../img/form/log7.png") no-repeat scroll 2px 8px;
@@ -536,9 +537,6 @@ button {
     padding-top:33px;
     overflow:hidden;
     padding-left:75px;
-}
-.reg2_page .section1 .section1_2 p{
-    margin-top:0;
 }
 .reg2_page .section1 li{
     width:185px;
@@ -654,12 +652,13 @@ button {
   width: 160px;
   color: #9A9691;
 }
-.reg2_page .reg_ul_left span {
+.reg2_page .reg_ul_left b {
   color: #f00;
   font-size: 16px;
   margin-right: 10px;
   position: relative;
   top: 2px;
+  font-weight: normal;
 }
 .reg2_page .reg_ul .red {
   color: #bd000e;
@@ -689,6 +688,84 @@ button {
   width: 248px;
 }
 
+.foot {
+    line-height: 18px;
+    margin: 0 auto;
+    padding-bottom:  50px;
+    text-align: center;
+    width: 1078px;
+}
+.foot a {
+    color: #666460;
+}
+.foot_1 {
+    margin: 20px 0 10px;
+}
+.foot_2 {
+    margin: 0 auto 10px;
+    width: 860px;
+}
+.foot_3 img {
+    margin-left: 15px;
+}
+
+
+
+.tk_wrap{
+    background:#CFCBC6;
+    padding:5px;
+    width:433px;
+    height:292px;
+}
+.tk{
+    border:1px solid #BCB8B2;
+    width:432px;
+    height:291px;
+    background:#fff;
+}
+.tk_1{
+    text-align:right;
+    height:30px;
+    padding:5px 8px 0 0;
+   
+}
+.tk_2{
+    height:75px;
+    border-bottom:2px dotted #C9C9C3;
+    background:url("../img/form/tk1.png") 34px 9px no-repeat; 
+    width:207px;
+    font-size:15px;
+    color:#FF852C;
+    margin:0 auto;
+    line-height:95px;
+    padding-left:108px;
+    font-family:"宋体";
+    font-weight:bold;
+}
+.tk_3{
+    width:325px;
+    margin:25px  auto 45px;
+    font-size:14px;
+}
+.tk_3 span{
+    color:#0581CC;
+}
+.tk_3 a{
+    color:#0581CC;
+    font-weight:bold;
+}
+.tk_btn{
+    width:111px;
+    height:37px;
+    text-align:center;
+    line-height:37px;
+    margin:0 auto;
+    display:block;
+    color:#fff;
+    background:#0090E5;
+	font-size: 16px;
+}
+
 
 .pwd_page .main{
     height:415px;
@@ -712,7 +789,7 @@ button {
 }
 .pwd_page .step span{
     color:#fff;
-    width:164px;
+    width:163px;
     background:url("../img/form/step1.png") no-repeat;
     height:29px;
     display:block;
@@ -751,19 +828,23 @@ button {
     height:35px;
     margin-right:15px;
 }
-.zh_ul1 input{
-    border:1px solid #0093E4;
+.zh_ul input:focus{
+    border-color:#0093E4;
 }
-.zh_ul1 .re,.step3_ul2 .re{
+.zh_ul .unhappyMessage{
     height:26px;
-    width:216px;
     display:inline-block;
     background:url("../img/form/pwd1.png") no-repeat;
     padding-left:40px;
+	padding-right: 20px;
     line-height:26px;
     color:#f00;
+	background-color: #ffebeb;
+    border: 1px solid #e4393c;
+	margin-top: 5px;
 }
-.zh_ul2 input{
+.zh_ul input{
+	padding-left: 5px;
     border:1px solid #9A9691;
 }
 .zh_btn,.sf_btn,.step3_btn{
@@ -782,16 +863,21 @@ button {
 }
 .sf_ul li input{
     height:35px;
+	padding-left: 5px;
     border:1px solid #9A9691;
 }
+.sf_ul_text a {
+	color: #0858ba;
+}
 .sf_ul_text{
+	color: #999;
     padding-left:396px;
 }
 .sf_ul1 input{
     width:185px;
 }
 .sf_ul2 input{
-    width:115px;
+    width:110px;
 }
 
 .sf_ul .hq a{
@@ -802,6 +888,7 @@ button {
     text-align:center;
     background:url("../img/form/pwd2.png") no-repeat;
     margin:10px 0 10px 396px;
+	color: #666;
 }
 .step4 .gx{
     background:url("../img/form/pwd3.png") 0 10px no-repeat;
@@ -841,8 +928,11 @@ button {
 }
 .step3_input input{
     border:none;
+	  width: 155px;
+  line-height: 35px;
+	padding-left: 5px;
 }
-.step3_ul1 .step3_input{
+.step3_ul .input_focus  {
     border:1px solid #0093E4;
 }
 .step3_ul2{
@@ -852,32 +942,18 @@ button {
     margin:5px 0 0 20px;
 }
 
-.foot {
-    line-height: 18px;
-    margin: 0 auto;
-    padding-bottom:  50px;
-    text-align: center;
-    width: 1078px;
+.pwd_page {
+  background: #f6f6f5 none repeat scroll 0 0;
 }
-.foot a {
-    color: #666460;
-}
-.foot_1 {
-    margin: 20px 0 10px;
-}
-.foot_2 {
-    margin: 0 auto 10px;
-    width: 860px;
-}
-.foot_3 img {
-    margin-left: 15px;
+.pwd_page .main {
+  background: #fff none repeat scroll 0 0;
+  border: 1px solid #e7e4e1;
+  padding-top: 28px;
+  position: relative;
+  width: 1078px;
 }
 
-    
-    
-    
-    
-    
-    
-    
-    
+.tk_close {
+	font-size: 18px;
+	font-weight: bold;
+}

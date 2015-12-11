@@ -316,7 +316,8 @@ var focusInput = function () {
 /*
  * 初始化
  */
-if ($('.login_page, .log2_page').length) {
+if ($('.login_page, .log2_page').length ||
+	$('.step3').length) {
     focusInput();
 }
 if ($('.list_page').length) {
