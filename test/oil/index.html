@@ -318,26 +318,30 @@
 	var showStylePos = function (elem) {
 		return elem.offset().top + elem.height() / 2;
 	};
-
-	$(window).scroll(function () {
-		var pos = $(window).height() + (document.body.scrollTop ?  document.body.scrollTop : document.documentElement.scrollTop);
+    
+    var styles = function () {
         
-		if (pos > showStylePos($('.section1_3')) && !mark.section1Style) {
-			section1Style();
-			mark.section1Style = true;
-		}
+        var pos = $(window).height() + (document.body.scrollTop ?  document.body.scrollTop : document.documentElement.scrollTop);
+        
+        if (pos > showStylePos($('.section1_3')) && !mark.section1Style) {
+            section1Style();
+            mark.section1Style = true;
+        }
 
-		if (pos > showStylePos($('.section2_con_1')) && !mark.section2_1Style) {
-			section2_1Style();
-			mark.section2_1Style = true;
-		}
+        if (pos > showStylePos($('.section2_con_1')) && !mark.section2_1Style) {
+            section2_1Style();
+            mark.section2_1Style = true;
+        }
 
-		if (pos > showStylePos($('.section2_con_2')) && !mark.section2_2Style) {
-			section2_2Style();
-			mark.section2_2Style = true;
-		}
+        if (pos > showStylePos($('.section2_con_2')) && !mark.section2_2Style) {
+            section2_2Style();
+            mark.section2_2Style = true;
+        }
+    };
+    
+    styles();
 
-	});
+	$(window).scroll(styles);
     
     $('#slider1').tinycarousel({
         bullets  : true
