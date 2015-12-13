@@ -272,7 +272,7 @@ a {
 
 .section5_wrap {
     height: 1056px;
-    background: url(../images/section_06.jpg) center top;
+    background: url(../images/section_06.jpg) no-repeat center top;
 }
 .section5_text {
     width: 800px;
