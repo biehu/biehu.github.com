@@ -36,9 +36,12 @@
             <div class="section2">
                 <div class="section2_text1">从第一瓶百洛油诞生开始，这一瓶神奇的百用油已经风靡91个国家和地区，收货了百项国际大奖，照料、修护了千万人的肌肤。这口碑佳品的神奇“油”物到底是怎么样吸引人们目光，让众人对它怎么爱都爱不完的？让我们大K老师和Gin老师一同为你揭秘这其中万赞理由吧！
 </div>
-                <img class="section2_1" src="images/section2_1.png" />
-                <img class="section2_2" src="images/section2_2.jpg" />
+                
             </div>
+            
+            <div class="section2_con_1"></div>
+            <div class="section2_con_2"></div>
+            
         </div>
         <div class="section3_wrap">
             <div class="section3">
@@ -297,15 +300,17 @@
 
 
 	var section2_1Style = function () {
-		$('.section2_1').animate({
-			left: '35px'
-		}, 500);
+		$('.section2_con_1').animate({
+			left: '0',
+            opacity: 1
+		}, 800);
 	};
 
 	var section2_2Style = function () {
-		$('.section2_2').animate({
-			left: '35px'
-		}, 500);
+		$('.section2_con_2').animate({
+			left: '0',
+            opacity: 1
+		}, 800);
 	};
 
 	var mark = {};
@@ -322,12 +327,12 @@
 			mark.section1Style = true;
 		}
 
-		if (pos > showStylePos($('.section2_1')) && !mark.section2_1Style) {
+		if (pos > showStylePos($('.section2_con_1')) && !mark.section2_1Style) {
 			section2_1Style();
 			mark.section2_1Style = true;
 		}
 
-		if (pos > showStylePos($('.section2_2')) && !mark.section2_2Style) {
+		if (pos > showStylePos($('.section2_con_2')) && !mark.section2_2Style) {
 			section2_2Style();
 			mark.section2_2Style = true;
 		}

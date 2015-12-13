@@ -85,6 +85,7 @@ a {
     top:870px;
 }
 .section2_wrap{
+    position: relative;
     background:url(../images/section_03.jpg) center top no-repeat;
 }
 .section2{
@@ -93,6 +94,22 @@ a {
     margin:0 auto;
     position:relative;
     overflow: hidden;
+}
+.section2_con_1 {
+    opacity: 0;
+    left: 1500px;
+    height: 465px;
+    background: url(../images/section2_con_02.jpg) no-repeat center top;
+}
+.section2_con_2 {
+    opacity: 0;
+    left: -1500px;
+    height: 456px;
+    background: url(../images/section2_con_03.jpg) no-repeat center top;
+}
+.section2_con_1, .section2_con_2 {
+    position: absolute;
+    width: 100%;
 }
 .section2_text1{
     width:930px;
@@ -103,16 +120,10 @@ a {
     font-family:"微软雅黑";
     position:absolute;
 }
-.section2_1{
-    position:absolute;
-    /*left:35px;*/
-    left: 1200px;
+.section2_con_1{
     top:150px;
 }
-.section2_2{
-    position:absolute;
-    /*left:35px;*/
-    left: -1200px;
+.section2_con_2{
     top:628px;
 }
 .section3_wrap{
