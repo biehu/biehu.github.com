@@ -207,59 +207,12 @@ var toggleShowArea = function () {
 
 // select
 var selectSearch = function () {
-    $('.brands .select_more_btn').click(function () {
-        
-        $('.brands').addClass('brands_selected');
-        
-        $(this).hide();
-        $('.more_brands_btn').hide();
-        
-        $('.more_brands_labels').removeClass('hide');
-        return false;
-    });
-    
-    $('.brands .cancel_btn').click(function () {
-        $('.brands').removeClass('brands_selected');
-        
-        $('.more_brands_btn, .select_more_btn').show();
-        $('.more_brands_labels').addClass('hide');
-        
-        $('.brands table a').removeClass('on');
-        $('.brands .submit_btn').addClass('disabled_btn');
-        
-        return false;
-    });
-    
-    $('.brands table a').click(function () {
-        
-        if ($('.brands_selected').length ===0) return;
-        
-        var submitBtn = $('.brands .submit_btn');
-        
-        $(this).toggleClass('on');
-        
-        if ($('.brands table a.on').length > 0) {
-            submitBtn.removeClass('disabled_btn');
-        }
-        return false;
-    });
-    
-    $('.brands .submit_btn').click(function () {
-        var hrefParams = [];
-        $('.brands table a').each(function () {
-            if ($(this).hasClass('on')) {
-                hrefParams.push($(this).attr('data-val'));
-            }
-        });
-        
-        location.href = $(this).attr('data-href') + '?imgData=' + hrefParams.join();
-        
-        return false;
-    });
     
     $('.checkbox_list .submit_btn').click(function () {
+        var list = $(this).parents('.checkbox_list');
         var hrefParams = [];
-        $('input[name="list_val"]').each(function () {
+        
+        list.find('input[name="list_val"]').each(function () {
             if ($(this).prop('checked')) {
                 hrefParams.push($(this).val());
             }
@@ -271,12 +224,15 @@ var selectSearch = function () {
     });
     
     
-    $('.checkbox_more_btn').click(function () {
-        $(this).hide();
-        $('.checkbox_list').addClass(' checkbox_selected');
-        $('.checkbox_list').find('.control_btns').show();
+    $('.checkbox_list .checkbox_more_btn').click(function () {
+        var list = $(this).parents('.checkbox_list');
         
-        $('.checkbox_list .submit_btn').addClass('disabled_btn');
+        $(this).hide();
+        
+        list.addClass('checkbox_selected');
+        list.find('.control_btns').show();
+        
+        list.find('.submit_btn').addClass('disabled_btn');
         
         return false;
     });

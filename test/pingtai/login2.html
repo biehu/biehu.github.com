@@ -32,17 +32,17 @@
                               <span class="log2_text">手机号码</span>
                               <div class="sr">
                                   <label>+86</label>
-                                  <input id="phone" class="focus" type="text" placeholder="请输入您的手机号">
+                                  <input id="phone" class="focus last_time_phone" type="text" placeholder="请输入您的手机号">
                               </div>
                           </div>
                           <div class="log2_list log2_2 form_row">
                               <span class="log2_text">校验码</span>
                               <div class="phone_code">
                                   <input id="code" type="text">
-                                  <span>117秒后重新获取</span>
+                                  <span class="last_time_btn" data-num="10">发送手机验证码</span>
                               </div>
                           </div>
-                          <div class="log2_3">验证码已发送，请查收短信</div>
+                          <div class="log2_3 last_time_info">验证码已发送，请查收短信</div>
                           <div class="log2_list log2_4 form_row">
                               <span class="log2_text">设置登录密码</span>
                               <input id="password" type="text">
@@ -85,5 +85,6 @@
        <script src="js/effects.js"></script>
        <script src="js/jquery.validate.js"></script>
        <script src="js/form_check.js"></script>
+	   <script src="js/last_time.js"></script>
    </body>
 </html>
