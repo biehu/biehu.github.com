@@ -2,27 +2,21 @@
     margin:0;
     padding:0;
 }
-
 ul {
     list-style:none;
 }
-
 img {
     vertical-align:bottom;
 }
-
 a  img {
     border:none;
 }
-
 a {
     text-decoration:none;
 }
-
 .clear {
     clear:both;
 }
-
 .hide {
     display: none;
 }
@@ -37,15 +31,25 @@ a {
   *+height:1%;
 }
 
+body {
+    font-size: 12px;
+    font-family: "Microsoft Yahei";
+}
 .tab_t {
     cursor: pointer;
 }
-
 .ml_10 {
     margin-left:10px;
 }
 
+.hand {
+    cursor: pointer;
+}
+
 /* 公共头 */
+.common_nav_wrap {
+    border-bottom: 3px solid #0094E4;
+}
 .header_wrap{
     background:#F6F5F4;
 }

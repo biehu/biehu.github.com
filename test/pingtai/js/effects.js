@@ -184,13 +184,6 @@ var startMenu = function () {
     
 };
 
-var toggleShowAreaFuncs = {
-    setMaySelected: function () {
-        $('.brands').addClass('brands_selected');
-    }
-    
-};
-
 // 显示特定区域
 var toggleShowArea = function () {
     
@@ -255,6 +248,53 @@ var selectSearch = function () {
     });
 };
 
+
+var showBigPic = function () {
+    // 详情页显示图片
+    
+    var detailImg = $('.detail_img');
+    var links = detailImg.find(' .overview li');
+    
+    links.hover(function () {
+        links.removeClass('on')
+        $(this).addClass('on');
+        
+        detailImg.find('.big img').attr('src', $(this).attr('data-pic'));
+    });
+};
+
+var changeNum = function () {
+    // 详情页增加减少数量
+    
+    var root = $('.change_num');
+    var lessBtn = root.find('.change_less');
+    var moreBtn = root.find('.change_more');
+    var valInput = root.find('input');
+    
+    var defautlNum = parseInt(valInput.val(), 10);
+    
+    if (isNaN(defautlNum)) return;
+    
+    lessBtn.click(function () {
+        if (defautlNum > 1) defautlNum--;
+        valInput.val(defautlNum);
+    });
+    
+    moreBtn.click(function () {
+        defautlNum++;
+        valInput.val(defautlNum);
+    });
+};
+
+var backService = function () {
+    var root = $('.back_service');
+    
+    root.find('span').click(function () {
+        root.find('span').removeClass('on');
+        $(this).addClass('on')
+    });
+};
+
 /*
  * 表单
  */
@@ -273,8 +313,25 @@ var focusInput = function () {
  * 初始化
  */
 if ($('.login_page, .log2_page').length ||
-	$('.step3').length) {
+    $('.step3').length) {
     focusInput();
+}
+if ($('.detail_page').length) {
+    $('#detail_slide').tinycarousel({
+        bullets  : true,
+        animationTime : 500
+    });
+    $('#more_shops').tinycarousel({
+        bullets  : true,
+        axis   : 'y',
+        animationTime : 500
+    });
+    
+    showBigPic();
+    changeNum();
+    backService();
+    tab();
+    
 }
 if ($('.list_page').length) {
     menu();
