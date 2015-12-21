@@ -1749,13 +1749,14 @@ padding-left: 40px;
     float:left;
 }
 .detail_page .section1_buy select{
-    margin:0 20px 15px 0;
+    margin:0 15px 15px 0;
     width:80px;
     height:23px;
 }
 .detail_page .section1_buy input{
-    width:115px;
+    width:105px;
     height:20px;
+    padding: 0 5px;
 }
 .buy_list2 .list_right span{
     height:20px;
