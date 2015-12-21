@@ -1940,3 +1940,62 @@ padding-left: 40px;
 .list_page .section5 {
     margin-bottom: 20px;
 }
+
+/*售后保障*/
+.detail_page .service{
+    border:1px solid #E8E7E4;
+    color:#93908B;
+    width:978px;
+}
+.detail_page .service_top{
+    height:33px;
+    border-bottom:1px solid #E8E7E4;
+    font-size:16px;
+    font-family:"微软雅黑";
+    padding-left:8px;
+    line-height:35px;
+}
+.detail_page .service_text{
+    padding:40px 35px 38px;
+    line-height:20px;
+}
+.detail_page .service_text p{
+    width:865px;
+}
+.detail_page .service_tit{
+    height:35px;
+    border-bottom:1px solid #D6D3CE;
+    margin:5px 0 10px;
+}
+.detail_page .service_tit span{
+    border-bottom:2px solid #0094E4;
+    height:34px;
+    width:68px;
+    display:inline-block;
+    line-height:42px;
+    
+}
+
+.detail_page .service_text2 .service_tit span{
+    color:#E20000;
+}
+.detail_page .service_tit span{
+    color:#000;
+}
+.detail_page .service_text p b {
+    font-weight: normal;
+    display: block;
+    margin-left: 20px;
+}
+.detail_page .service_text p span{
+    /* display:inline-block; */
+    width:15px;
+    float: left;
+    height:13px;
+    text-align:center;
+    line-height:13px;
+    color:#fff;
+    background:#0094E4;
+    margin-right:5px;
+    margin-top: 4px;
+}
