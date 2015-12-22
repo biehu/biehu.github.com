@@ -1999,3 +1999,34 @@ padding-left: 40px;
     margin-right:5px;
     margin-top: 4px;
 }
+
+/* 规格说明 */
+.procon-param {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #EEEDEB;
+    border-top: none;
+}
+table{border-collapse:collapse;border-spacing:0}
+.pro-para-tbl{width:100%;margin-bottom:15px;border:1px solid #ddd}
+.pro-para-tbl th{height:30px;background:#f0f0f0;text-align:left;vertical-align:middle;text-indent:5px}
+.pro-para-tbl td{padding:3px 5px;border:1px solid #ddd;color:#666}
+.pro-para-tbl .name{width:176px}
+.pro-para-tbl .name-inner{position:relative;z-index:10}
+.pro-para-tbl .name span{vertical-align:middle}
+
+.buy_write_title {
+    display: inline-block;
+    margin-bottom: 2px;
+    padding-right: 20px;
+    background: url(../img/icon_pencil.gif) no-repeat right center;
+    font-size: 14px;
+}
+.buy_write {
+    margin-bottom: -15px;
+}
+.buy_write textarea {
+    width: 430px;
+    height: 120px;
+    padding: 10px;
+}
