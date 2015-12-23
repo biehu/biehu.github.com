@@ -229,8 +229,8 @@ body {
    background:url(../img/main_nav_default.png) no-repeat;
 }
 .main_nav{
-   background:url(../img/main_nav.png) no-repeat;
-   height:73px;
+   background: url(../img/main_nav.png) no-repeat;
+   height: 52px;
    overflow:hidden;
 }
 .main_nav li{
@@ -238,7 +238,7 @@ body {
     font-size:18px;
     width:135px;
     text-align:center;
-    line-height:73px;
+    line-height: 52px;
     font-family:"微软雅黑";
 }
 .main_nav li a:hover,
@@ -250,10 +250,21 @@ body {
 }
 .main_nav li.nav_all i {
     position: absolute;
-    top: 35px;
+    top: 25px;
     right: 38px;
     width: 13px;
     height: 7px;
+}
+.main_page .main_nav li.nav_all:after {
+    content: "" ;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: url(../img/main_nav.png) no-repeat left bottom;
+     
+    height: 14px;
+     
 }
 .main_nav li.nav_all{
     position: relative;
