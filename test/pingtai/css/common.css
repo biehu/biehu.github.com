@@ -158,7 +158,7 @@ body {
     background: #0094e4 none repeat scroll 0 0;
     color: #fff;
     display: inline-block;
-    font-family: "微软雅黑";
+    font-family: "å¾®è½¯é›…é»‘";
     font-size: 16px;
     height: 34px;
     line-height: 34px;
@@ -227,7 +227,7 @@ body {
 }
 .main_nav li {
     float: left;
-    font-family: "微软雅黑";
+    font-family: "å¾®è½¯é›…é»‘";
     font-size: 18px;
     line-height: 52px;
     text-align: center;
@@ -380,7 +380,7 @@ body {
 .small_nav .nav_text {
     border-left: 1px solid #e4e1de;
     float: left;
-    font-family: "微软雅黑";
+    font-family: "å¾®è½¯é›…é»‘";
     font-size: 18px;
     height: 60px;
     line-height: 60px;
@@ -439,28 +439,28 @@ body {
 }
 .price_left1 {
     /* left: 2px; */
-    top: 190px;
+    bottom: 250px;
     background: url(../img/pagebar/1.png) no-repeat center center;
 }
 .price_left2 {
     /* left: 6px; */
-    top: 240px;
+    bottom: 200px;
     background: url(../img/pagebar/2.png) no-repeat center center;
 }
 .price_left3 {
     /* left: 10px; */
-    bottom: 230px;
+    bottom: 60px;
     background: url(../img/pagebar/3.png) no-repeat center center;
 }
 .price_left4 {
     /* left: 7px; */
-    bottom: 190px;
+    bottom: 20px;
     background: url(../img/pagebar/4.png) no-repeat center center;
 }
 .price_top {
     background: rgba(0, 0, 0, 0) url("../img/pagebar/price1.gif") no-repeat scroll 0 0;
     color: #0093e4;
-    font-family: "宋体";
+    font-family: "å®‹ä½“";
     font-size: 12px;
     height: 49px;
     line-height: 49px;
@@ -482,7 +482,7 @@ body {
 .parity {
     background: #fff none repeat scroll 0 0;
     border: 1px solid #cbc7c2;
-    font-family: "宋体";
+    font-family: "å®‹ä½“";
     height: 270px;
     margin: 10px;
     padding: 7px 0 0 8px;
@@ -529,7 +529,7 @@ body {
 }
 .quote_top {
     border-bottom: 2px dotted #cfcbc6;
-    font-family: "微软雅黑";
+    font-family: "å¾®è½¯é›…é»‘";
     font-size: 14px;
     height: 20px;
     margin-left: 10px;
@@ -546,7 +546,7 @@ body {
 .quote {
     background: #fff none repeat scroll 0 0;
     color: #4a4949;
-    font-family: "微软雅黑";
+    font-family: "å¾®è½¯é›…é»‘";
     margin: 0 10px;
 }
 .quote li {
@@ -617,7 +617,7 @@ body {
     background: #0093e4 none repeat scroll 0 0;
     color: #fff;
     display: block;
-    font-family: "宋体";
+    font-family: "å®‹ä½“";
     height: 18px;
     line-height: 18px;
     margin-top: 3px;
@@ -649,7 +649,7 @@ body {
     color: #fff;
 }
 .paging .last i {
-    font-family: "宋体";
+    font-family: "å®‹ä½“";
     font-style: normal;
     margin-left: 5px;
 }
@@ -660,7 +660,7 @@ body {
     background: #0093e4 none repeat scroll 0 0;
     color: #fff;
     display: block;
-    font-family: "宋体";
+    font-family: "å®‹ä½“";
     font-size: 14px;
     height: 32px;
     letter-spacing: 8px;
