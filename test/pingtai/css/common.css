@@ -391,9 +391,11 @@ body {
 
 .price_list {
 	position: fixed;
-	top: 293px;
+	top: 0;
 	right: -508px;
 	z-index: 10;
+    height: 100%;
+    min-height: 590px;
 }
 .price_list .price_left span {
 	right: 36px;
@@ -414,7 +416,6 @@ body {
 .price_list .price_left {
     background: #0070ba none repeat scroll 0 0;
     float: left;
-    height: 822px;
     position: relative;
     width: 36px;
 }
@@ -426,6 +427,9 @@ body {
     height: 821px;
     width: 508px;
 }
+.price_left {
+    height: 100%;
+}
 .price_left a {
     position: absolute;
     height: 34px;
@@ -435,22 +439,22 @@ body {
 }
 .price_left1 {
     /* left: 2px; */
-    top: 253px;
+    top: 190px;
     background: url(../img/pagebar/1.png) no-repeat center center;
 }
 .price_left2 {
     /* left: 6px; */
-    top: 301px;
+    top: 240px;
     background: url(../img/pagebar/2.png) no-repeat center center;
 }
 .price_left3 {
     /* left: 10px; */
-    top: 690px;
+    bottom: 230px;
     background: url(../img/pagebar/3.png) no-repeat center center;
 }
 .price_left4 {
     /* left: 7px; */
-    top: 727px;
+    bottom: 190px;
     background: url(../img/pagebar/4.png) no-repeat center center;
 }
 .price_top {
