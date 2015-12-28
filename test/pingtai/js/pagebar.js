@@ -67,6 +67,25 @@
         window.scrollTo(0, 0);
         return false;
     });
+
+
+	// 内容滚动条
+
+	var setPriceTabConHeight = function () {
+		var btn = $('.price_btn_wrap');
+		var con = $('.price_tab_main');
+
+		var winHeight = $(window).height();
+
+		con.height(winHeight - btn.height());
+	};
+
+	window.onload = function () {
+	
+	setPriceTabConHeight();
+	
+	};
+
     
     
 })();
