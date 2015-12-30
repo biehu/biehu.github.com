@@ -694,11 +694,10 @@ body {
     background:#CFCBC6;
     padding:5px;
     width:433px;
-    height:292px;
+	margin: 30px auto 0;
 }
 .tk{
     border:1px solid #BCB8B2;
-    height:291px;
     background:#fff;
 }
 .tk_1{
@@ -733,17 +732,70 @@ body {
     font-weight:bold;
 }
 .tk_btn{
-    width:111px;
-    height:37px;
-    text-align:center;
-    line-height:37px;
-    margin:0 auto;
-    display:block;
-    color:#fff;
-    background:#0090E5;
+    height: 37px;
+	text-align: center;
+	line-height: 37px;
+	margin: 0 5px;
+	display: inline-block;
+	color: #fff;
+	background: #0090E5;
 	font-size: 16px;
+	padding: 0 30px;
 }
 .tk_close {
 	font-size: 24px;
 	font-weight: bold;
+}
+.tk_3 {
+	text-align: center;
+}
+.tk {
+	padding-bottom: 50px;
+}
+.win_btns {
+	text-align: center;
+}
+.win_wrap, .win_back {
+	display: none;
+}
+.win_wrap {
+	overflow: hidden;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1050;
+}
+.win_back { 
+	filter: alpha(opacity=50);
+	opacity: .5;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1040;
+	background-color: #000;
+
+}
+
+.change_num span{
+    height:20px;
+    width:25px;
+    line-height: 18px;
+    border:1px solid #ADACAC;
+    display:inline-block;
+    text-align:center;
+    font-size: 16px;
+    vertical-align: -1px;
+    cursor: pointer;
+}
+.change_num input{
+    /* position:relative; */
+    /* top: 2px; */
+    width:70px;
+    height: 18px;
+    margin: 0 5px;
+    text-align: center;
 }

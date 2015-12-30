@@ -158,7 +158,6 @@
     border-bottom:1px solid #EAE9E6;
     border-left:1px solid #EAE9E6;
     border-right:1px solid #EAE9E6;
-    height:1008px;
 }
 .plan_page .section4_top{
     border-bottom:1px solid #E8E7E4;
@@ -331,7 +330,7 @@
     color:#f00;
 }
 .plan_page .section4_main6{
-    height:128px;
+    height:105px;
 }
 .plan_page .section4_main6 a{
     width:375px;
@@ -349,4 +348,12 @@
 }
 .plan_page .count_all {
     margin-left: 15px;
+}
+
+.config_list .change_num input {
+	margin: 0;
+	height: 20px;
+	border: 1px solid #ADACAC;
+	border-left: none;
+	border-right: none;
 }

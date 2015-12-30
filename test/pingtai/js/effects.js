@@ -310,6 +310,67 @@ var focusInput = function () {
 };
 
 /*
+
+	方案批量删除
+*/
+var deleteList = function () {
+	var checkAllElem = $('.config_list_check_all');
+	var deleteElem = $('.config_list_delete');
+
+	var listItem = $('.config_list_check');
+
+	if (!checkAllElem.length || !deleteElem.length) return;
+
+	var checkAll = function (isTrue) {
+		listItem.prop('checked', isTrue);
+	};
+
+	checkAllElem.on('change', function () {
+		checkAll(this.checked);
+	});
+
+	deleteElem.on('click', function () {
+		listItem.each(function () {
+			if (this.checked) $('.win_wrap, .win_back').show();
+		});
+		return false;
+	});
+
+
+	var close =  $('.win_close');
+	var done = $('.win_done');
+	var deleteOne = $('.config_list_delete_item');
+
+	close.on('click', function () {
+		$('.win_wrap, .win_back').hide();
+		return false;
+	});
+
+	done.on('click', function () {
+		listItem.each(function () {
+			if (this.checked) $(this).parents('li').remove();
+		});
+
+		$('.win_wrap, .win_back').hide();
+		return false;
+	});
+
+	deleteOne.on('click', function () {
+
+		$('.win_wrap, .win_back').show();
+		listItem.prop('checked', false);
+		$(this).parents('li').find('.config_list_check').prop('checked', true);
+
+		return false;
+	});
+
+
+
+};
+
+
+
+/*
  * 初始化
  */
 if ($('.login_page, .log2_page').length ||
@@ -356,4 +417,9 @@ if ($('.main_page').length) {
     tab();
     scrollTop();
 
+}
+
+if ($('.plan_page').length) {
+	deleteList();
+	changeNum();
 }
