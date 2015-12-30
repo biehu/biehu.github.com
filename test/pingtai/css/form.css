@@ -703,64 +703,6 @@ body{
     margin-left: 15px;
 }
 
-
-
-.tk_wrap{
-    background:#CFCBC6;
-    padding:5px;
-    width:433px;
-    height:292px;
-}
-.tk{
-    border:1px solid #BCB8B2;
-    width:432px;
-    height:291px;
-    background:#fff;
-}
-.tk_1{
-    text-align:right;
-    height:30px;
-    padding:5px 8px 0 0;
-   
-}
-.tk_2{
-    height:75px;
-    border-bottom:2px dotted #C9C9C3;
-    background:url("../img/form/tk1.png") 34px 9px no-repeat; 
-    width:207px;
-    font-size:15px;
-    color:#FF852C;
-    margin:0 auto;
-    line-height:95px;
-    padding-left:108px;
-    font-family:"宋体";
-    font-weight:bold;
-}
-.tk_3{
-    width:325px;
-    margin:25px  auto 45px;
-    font-size:14px;
-}
-.tk_3 span{
-    color:#0581CC;
-}
-.tk_3 a{
-    color:#0581CC;
-    font-weight:bold;
-}
-.tk_btn{
-    width:111px;
-    height:37px;
-    text-align:center;
-    line-height:37px;
-    margin:0 auto;
-    display:block;
-    color:#fff;
-    background:#0090E5;
-	font-size: 16px;
-}
-
-
 .pwd_page .main_wrap{
     background:url("../img/form/password.jpg") center top no-repeat;  
     padding-top:295px; 
@@ -954,7 +896,4 @@ body{
     top:442px;
     left:143px;
 }
-.tk_close {
-	font-size: 18px;
-	font-weight: bold;
-}
+

@@ -6,6 +6,9 @@
      /* border-top:3px solid #0094E4; */   
      height:40px;
 }
+.plan_page .section1_top a {
+	color: #000;
+}
 .plan_page .section1_top{
     width:1210px;
     margin:0 auto;
@@ -277,6 +280,9 @@
 .plan_page .fh .section4_7 a{
     color:#0099FF;
     margin: 0 5px;    
+}
+.plan_page .section4_main5 a {
+	color: #000;
 }
 .plan_page .section4_main5{
     height:95px;
