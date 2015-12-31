@@ -51,9 +51,12 @@
 }
 .plan_page .section1_second{
     background:#fff;
-    padding:0 0 52px 22px;
+    padding:10px 0 52px 22px;
 }
-.plan_page .section1_second p{
+.plan_page .section1_second_con {
+	text-align: center;
+}
+.plan_page .section1_second p {
     height: 60px;
     line-height: 60px;
     margin-bottom: 10px;
