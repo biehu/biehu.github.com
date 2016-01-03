@@ -466,6 +466,7 @@ body {
     line-height: 49px;
     padding-left: 12px;
     width: 495px;
+    position: relative;
 }
 .price_top1 {
     font-size: 14px;
@@ -477,7 +478,9 @@ body {
 .price_top3 {
     color: #63625d;
     font-size: 12px;
-    margin-left: 214px;
+    right: 14px;
+    position: absolute;
+    top: 0;
 }
 .parity {
     background: #fff none repeat scroll 0 0;
@@ -822,4 +825,23 @@ body {
     height: 18px;
     /* margin: 0 5px; */
     text-align: center;
+}
+
+.loading {
+	display: inline-block;
+	width: 22px;
+	height: 24px;
+	background: url(../img/loading.gif) no-repeat -14px -5px;
+	vertical-align: -5px;
+	margin-right: 5px;
+	margin-top: 4px;
+}
+
+.price_header .price_top1 {
+	padding: 3px 20px;
+	background: #4694e6;
+	font-weight: normal;
+	color: #fff;
+	font-family: SimSun;
+	border-radius: 2px;
 }
