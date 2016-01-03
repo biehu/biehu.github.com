@@ -266,23 +266,19 @@ var showBigPic = function () {
 var changeNum = function () {
     // 详情页增加减少数量
     
-    var root = $('.change_num');
-    var lessBtn = root.find('.change_less');
-    var moreBtn = root.find('.change_more');
-    var valInput = root.find('input');
-    
-    var defautlNum = parseInt(valInput.val(), 10);
-    
-    if (isNaN(defautlNum)) return;
+    var lessBtn = $('.change_less');
+    var moreBtn = $('.change_more');
     
     lessBtn.click(function () {
-        if (defautlNum > 1) defautlNum--;
-        valInput.val(defautlNum);
+        var num = $(this).parents('.change_num').find('input');
+		var numVal = Number(num.val()) - 1;
+        num.val(numVal ? numVal : 1);
     });
     
     moreBtn.click(function () {
-        defautlNum++;
-        valInput.val(defautlNum);
+		var num = $(this).parents('.change_num').find('input');
+		var numVal = Number(num.val()) + 1;
+        num.val(numVal);
     });
 };
 

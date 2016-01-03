@@ -512,6 +512,25 @@ body {
 .parity li:hover .parity_close {
     display: block;
 }
+.parity_text .change_num span {
+	width: 17px;
+	height: 17px;
+	background: #f0f0f0;
+	border: none;
+	line-height: 14px;
+}
+.parity_text .change_num input {
+	width: 26px;
+	height:13px;
+	/* overflow: hidden; */
+}
+.parity_text .change_num {
+	float: left;
+	margin-left: 20px;
+}
+.parity_text2, .parity_text1 {
+	float: left;
+}
 .parity_text2 {
     color: #ff2324;
     margin-left: 20px;
@@ -658,19 +677,23 @@ body {
 .paging .last {
     width: 54px;
 }
+.price_btn img {
+	vertical-align: middle;
+}
 .price_btn {
-    background: #0093e4 none repeat scroll 0 0;
+    background: #4694e6 none repeat scroll 0 0;
     color: #fff;
     display: block;
     font-family: "Microsoft Yahei";
-    font-size: 14px;
+    font-size: 16px;
     height: 32px;
-    letter-spacing: 8px;
     line-height: 32px;
-    padding-left: 8px;
+    overflow: hidden;
     text-align: center;
     width: 258px;
 	margin: 10px auto;
+    border-bottom: 3px solid #1662b6;
+    border-radius: 2px;
 }
 .price_tab {
 	position: relative;
@@ -689,7 +712,7 @@ body {
     overflow-y: auto;
 }
 
-/* 弹框 */
+/* Ã¥Â¼Â¹Ã¦Â¡â€  */
 .tk_wrap{
     background:#CFCBC6;
     padding:5px;
@@ -716,7 +739,7 @@ body {
     margin:0 auto;
     line-height:95px;
     padding-left:108px;
-    font-family:"宋体";
+    font-family:"Ã¥Â®â€¹Ã¤Â½â€œ";
     font-weight:bold;
 }
 .tk_3{
@@ -788,7 +811,7 @@ body {
     display:inline-block;
     text-align:center;
     font-size: 16px;
-    vertical-align: -1px;
+    /* vertical-align: -1px; */
     cursor: pointer;
 }
 .change_num input{
@@ -796,6 +819,6 @@ body {
     /* top: 2px; */
     width:70px;
     height: 18px;
-    margin: 0 5px;
+    /* margin: 0 5px; */
     text-align: center;
 }
