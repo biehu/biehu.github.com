@@ -28,6 +28,8 @@
     };
     
     $('.price_left2').click(function () {
+		setPriceTabConHeight();
+
         if (isShow('.price_tab')) {
             root.animate({right: pos}, '500', function () {
                  clearBar();
@@ -45,6 +47,8 @@
         return false;
     });
     $('.price_left1').click(function () {
+	
+		setPriceTabConHeight();
         
         if (isShow('.service_tab')) {
             root.animate({right: pos}, '500', function () {
@@ -80,12 +84,4 @@
 		con.height(winHeight - btn.height());
 	};
 
-	window.onload = function () {
-	
-	setPriceTabConHeight();
-	
-	};
-
-    
-    
 })();
