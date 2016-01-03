@@ -523,6 +523,7 @@ body {
 	width: 26px;
 	height:13px;
 	/* overflow: hidden; */
+	font-size: 12px;
 }
 .parity_text .change_num {
 	float: left;
@@ -811,7 +812,7 @@ body {
     display:inline-block;
     text-align:center;
     font-size: 16px;
-    /* vertical-align: -1px; */
+    vertical-align: -1px;
     cursor: pointer;
 }
 .change_num input{
