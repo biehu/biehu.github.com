@@ -80,8 +80,14 @@
 		var con = $('.price_tab_main');
 
 		var winHeight = $(window).height();
+		console.log(winHeight - btn.height());
 
 		con.height(winHeight - btn.height());
+	};
+
+
+	window.onresize = function () {
+		if ($('.price_list').css('right') == '0px') setPriceTabConHeight();
 	};
 
 })();

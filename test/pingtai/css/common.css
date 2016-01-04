@@ -33,6 +33,7 @@ a {
 body {
     font-family: "Microsoft Yahei";
     font-size: 12px;
+	overflow-x: hidden;
 }
 .tab_t {
     cursor: pointer;
@@ -458,7 +459,7 @@ body {
     background: url(../img/pagebar/4.png) no-repeat center center;
 }
 .price_top {
-    background: rgba(0, 0, 0, 0) url("../img/pagebar/price1.gif") no-repeat scroll 0 0;
+    background: #d9ecff;
     color: #0093e4;
     font-family: "Microsoft Yahei";
     font-size: 12px;
@@ -525,6 +526,7 @@ body {
 .parity_text .change_num input {
 	width: 26px;
 	height:13px;
+	line-height: 13px;
 	/* overflow: hidden; */
 	font-size: 12px;
 }
@@ -706,9 +708,6 @@ body {
 .price_btn_wrap {
 	  height: 50px;
 	  background: #f5f4f3;
-	  position: absolute;
-	  bottom: 0;
-	  left: 0;
 	  width: 100%;
 }
 .price_tab_main {
