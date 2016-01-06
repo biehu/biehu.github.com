@@ -17,7 +17,7 @@ button {
 body{
     font-size:12px;
     color:#52524F;
-    font-family:"宋体";
+    font-family:"Microsoft Yahei";
 }
 
 
@@ -43,7 +43,7 @@ body{
     line-height:40px;
     overflow:hidden;
     font-size:18px;
-    font-family:"微软雅黑";
+    font-family:"Microsoft Yahei";
 }
 .login_top .reg{
     float:right;
@@ -139,7 +139,7 @@ body{
     line-height:40px;
     color:#fff;
     font-size:18px;
-    font-family:"微软雅黑";
+    font-family:"Microsoft Yahei";
     display:inline-block;
     border: none;
 }
@@ -287,7 +287,7 @@ body{
     line-height:40px;
     color:#fff;
     font-size:18px;
-    font-family:"微软雅黑";
+    font-family:"Microsoft Yahei";
     display:inline-block;
     margin:15px 0 0 370px;
 }
@@ -364,7 +364,7 @@ body{
 .reg1_page .shop_tit{
     color:#fff;
     font-size:16px;
-    font-family:"微软雅黑";
+    font-family:"Microsoft Yahei";
     height:35px;
     line-height:35px;
     padding-left:5px;
@@ -380,7 +380,7 @@ body{
 .reg1_page .shopping .shop_bom{
     color:#0093E4;
     font-size:14px;
-    font-family:"微软雅黑";
+    font-family:"Microsoft Yahei";
     padding-left:5px;
 }
 .reg1_page .main .switch,.reg2_page .main .switch{
@@ -535,7 +535,7 @@ body{
 .reg2_page .section1 li{
     width:185px;
     text-align:center;
-    font-family:"微软雅黑";
+    font-family:"Microsoft Yahei";
     font-size:12px;
     float:left;
 }
@@ -551,7 +551,7 @@ body{
     height: 258px;
 }
 .reg2_page .section2_tit, .reg2_page .section3_tit, .reg2_page .section4_tit{
-    font-family: "微软雅黑";
+    font-family: "Microsoft Yahei";
     font-size: 13px;
     height: 30px;
     line-height: 28px;
@@ -599,7 +599,7 @@ body{
     background:url("../img/form/reg_btn.png") no-repeat;
     color: #fff;
     display: block;
-    font-family: "微软雅黑";
+    font-family: "Microsoft Yahei";
     font-size: 16px;
     height: 43px;
     line-height: 39px;
@@ -897,3 +897,247 @@ body{
     left:143px;
 }
 
+
+
+
+
+
+.make_page{
+    font-size:12px;
+    font-family:"Microsoft Yahei";
+}
+.make_page .section1_top_wrap{
+     /* border-top:3px solid #0094E4; */   
+     height:40px;
+}
+.make_page .section1_top a {
+    color: #000;
+}
+.make_page .section1_top{
+    width:1210px;
+    margin:0 auto;
+   line-height:35px;
+   font-size:12px;
+}
+.make_page .section1_wrap{
+    background:url(../img/form/make.jpg) center top no-repeat;
+}
+.make_page .section1{
+    margin:0 auto;
+    width:1210px;
+}
+.make_page .section1_text{
+    height:202px;
+    color:#3F4040;
+    padding-left:15px;
+    padding-top:90px;
+    font-family: "Microsoft Yahei";
+}
+.make_page .section1_text h3{
+    font-size:48px;
+    font-weight:normal;
+}
+.make_page .section1_text p{
+    font-size:18px;
+    margin-top: 25px;
+}
+.make_page .section1_first{
+    padding-top:75px;
+    background:#fff;
+    padding-left:22px;
+}
+.make_page .section1_first p,.make_page .section1_second p{
+    font-size:20px;
+    font-family: "Microsoft Yahei";
+    color:#424242;
+}
+.make_page .section1_first img{
+    margin-top:43px;
+}
+.make_page .section1_second{
+    background:#fff;
+    padding:50px 0 72px 22px;
+}
+.make_page .section1_second_con {
+    text-align: center;
+}
+.make_page .section1_second p {
+    height: 60px;
+    line-height: 60px;
+    margin-bottom: 10px;
+}
+.make_page .section2{
+    width:1210px;
+    margin:0 auto;
+    position:relative;
+}
+.make_page .section2_top{
+    height:35px;
+    background:#F6F5F4;
+    color:#0094E4;
+    line-height:35px;
+    padding-left:10px;
+    font-size:17px;
+    border:1px solid #E8E7E4;
+    font-family:"Microsoft Yahei";
+}
+.make_page .section2_main{
+    border-bottom:1px solid #EAE9E6;
+    border-left:1px solid #EAE9E6;
+    border-right:1px solid #EAE9E6;
+    padding: 12px 0;
+}
+.make_page .section2_main li{
+    line-height:32px;
+    overflow:hidden;
+    margin-bottom:20px;
+}
+.make_ul_left{
+    float:left;
+    color:#63625D;
+    padding-right:10px;
+    text-align:right;
+    width:217px;
+}
+.make_ul_left b{
+    color:#f00;
+    margin-right:7px;
+    font-weight:normal;
+}
+.make_page .make_input,.make_page .make_select{
+    background:none;
+    border:1px solid #D8D5D0;
+    float:left;
+    height:30px;
+    width:218px;
+    overflow:hidden;
+}
+.make_page .make_input input{
+    border:none;
+    height:30px;
+    padding-left:10px;
+    width:208px;
+    line-height:30px;
+}
+.make_page .ff{
+    color:#D60000;
+    margin-left:12px;
+}
+.make_page .make_select select{
+	width:  213px;
+    border: medium none;
+    color: #d1cbc6;
+    padding-left: 7px;
+	line-height: 30px;
+height: 30px;
+}
+.make_page .section2_main li.make_ul_7{
+    height:224px;
+    line-height:20px;
+}
+.make_ul_7 .make_input{
+    border:1px solid #d8d5d0;
+    float:left;
+    width:810px;
+    height:222px;
+}
+.make_ul_7 .make_input input{
+    border:none;
+    height:222px;
+    width:800px;
+    padding-left:10px;
+}
+.make_page .section2 .make_ul_11{
+    height:180px;
+}
+.make_ul_right{
+    float:left;
+    width:395px;
+    height:175px;
+}
+.make_ul_right .fj{
+    height:277px;
+}
+.make_ul_right .fj_left {
+    float: left;
+    border: 1px solid #DAD7D2;
+    margin-right: 15px;
+}
+.make_ul_right .fj_right{
+    float:left;
+     border:1px solid #DAD7D2;
+}
+.make_ul_right .fj a{
+    height:28px;
+    width:125px;
+    background:#67B3E4;
+    color:#fff;
+    text-align:center;
+    line-height:28px;
+    display:block;
+}
+.make_page .section2_bom{
+    padding: 35px 0 24px 312px;
+}
+.make_page .agree{
+    color:#0093e4;
+}
+.make_page .make_btn{
+     width:424px;
+    height:59px;
+    color:#fff;
+    fongt-size:18px;
+    font-family:"Microsoft Yahei";
+    background:url(../img/form/make_btn.png) no-repeat;
+    display:inline-block;
+    
+     margin-top: 20px;
+    text-align:center;
+    font-size:18px;
+    font-family:"Microsoft Yahei";
+    line-height:59px;
+}
+.make_page .section2_bom .fh{
+    background:#FFEFD0;
+    display:inline-block;
+    width:236px;
+    height:40px;
+    line-height:18px;
+    padding:3px 0 0 10px;
+}
+.make_page .section2_bom input{
+    position:relative;
+    top:2px;
+    margin-right:8px;
+}
+.make_page .section2 .zy{
+    position:absolute;
+    top:88px;
+    left:670px;
+    background:url(../img/form/make3.jpg) no-repeat;
+    width:481px;
+    height:166px;
+}
+.make_page .section2 .zy p{
+    width:345px;
+    line-height:23px;
+    margin:25px 0 0 132px;
+}
+.make_page .upload_info {
+    color: #9b9b9b;
+    font-size: 12px;
+}
+.make_page textarea {
+    width: 787px;
+    height: 200px;
+    border: none;
+    padding: 10px;
+}
+.make_page .make_time input {
+	width: 178px;
+}
+.make_page .make_time {
+	width: 188px;
+	padding-right: 30px;
+	background: url(../img/form/time.gif) no-repeat right center;
+}
