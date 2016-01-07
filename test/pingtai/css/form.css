@@ -451,7 +451,7 @@ body{
     line-height:35px;
     border:none;
     padding-left:10px;
-    /* padding-right: 28px; */
+    vertical-align: top;
 }
 .reg1_page .reg_input span {
     position: absolute;
@@ -918,6 +918,7 @@ body{
     margin:0 auto;
    line-height:35px;
    font-size:12px;
+   font-family:"宋体";
 }
 .make_page .section1_wrap{
     background:url(../img/form/make.jpg) center top no-repeat;
@@ -1024,12 +1025,13 @@ body{
     margin-left:12px;
 }
 .make_page .make_select select{
-	width:  213px;
+	width:  218px;
     border: medium none;
     color: #d1cbc6;
     padding-left: 7px;
 	line-height: 30px;
-height: 30px;
+    height: 30px;
+    vertical-align: top;
 }
 .make_page .section2_main li.make_ul_7{
     height:224px;
@@ -1054,6 +1056,23 @@ height: 30px;
     float:left;
     width:395px;
     height:175px;
+}
+.upload_pic input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    filter:alpha(opacity=0);
+    opacity: 0;
+}
+.upload_pic {
+    position: relative;
+    width: 125px;
+    height: 80px;
+}
+.make_ul_right .fj_left, .make_ul_right .fj_right {
+    width: 125px;
 }
 .make_ul_right .fj{
     height:277px;
@@ -1096,6 +1115,7 @@ height: 30px;
     font-size:18px;
     font-family:"Microsoft Yahei";
     line-height:59px;
+    margin-right: 10px;
 }
 .make_page .section2_bom .fh{
     background:#FFEFD0;
@@ -1140,4 +1160,7 @@ height: 30px;
 	width: 188px;
 	padding-right: 30px;
 	background: url(../img/form/time.gif) no-repeat right center;
+}
+#plan_form .unhappyMessage {
+    line-height: 32px;
 }

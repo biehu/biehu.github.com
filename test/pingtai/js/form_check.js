@@ -299,6 +299,42 @@ var lookForPass3 = function () {
 
 };
 
+var addPlan = function () {
+    var btn = $('#plan_form');
+    if (btn.length === 0) return;
+    
+    btn.isHappy({
+        submitButton: '.submit', 
+        fields: {
+            '#company': {
+                required: true,
+                message: '公司名称不能为空'
+                    
+            },
+            '#phone': {
+                required: true,
+                message: '手机不能为空',
+                next: {
+                    message: '手机格式不正确',
+                    test: happy.phone
+                }
+            },
+            '#email': {
+                required: true,
+                message: '邮箱不能为空',
+                next: {
+                    message: '邮箱格式不正确',
+                    test: happy.email
+                }
+                
+            }
+        },
+        happy: function () {
+            alert('success');
+        }
+    });
+};
+
 
 
 
@@ -311,4 +347,6 @@ companyReg();
 lookForPass1();
 lookForPass2();
 lookForPass3();
+
+addPlan();
 	
