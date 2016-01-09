@@ -557,6 +557,7 @@
     font-weight: normal;
     width: 60px;
     display: inline-block;
+    vertical-align: 1px;
 }
 .parity_page .left1_ul1{
     overflow:hidden;
@@ -589,6 +590,10 @@
     line-height:28px;
     text-align:center;
     margin-left:5px;
+    vertical-align: top;
+}
+.parity_page .left1_ul1 li.last strong {
+    vertical-align: middle;
 }
 .parity_page .left1_ul1 li.last{
     margin-top:8px;
@@ -622,14 +627,14 @@
     margin:0 17px;
 }
 .parity_page .left2_ul li .xy{
-    float:left;
+    float: right;
     width:58px;
     height:28px;
     line-height:28px;
     text-align:center;
     color:#fff;
     background:#0094e4;
-    margin:38px 0 0 54px;
+    margin: 38px 0 0 0;
 }
 .parity_page .left2_ul li dt{
     color:#0094E4;

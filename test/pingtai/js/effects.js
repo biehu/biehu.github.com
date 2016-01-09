@@ -390,7 +390,7 @@ var configMore = function () {
     });
     
     $(document.body).click(function () {
-        if (!wrap.length) return;
+        if (!wrap || !wrap.length) return;
         
         var html = '';
         var inputs = wrap.find('select, input');
