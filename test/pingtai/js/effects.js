@@ -341,7 +341,7 @@ var deleteList = function () {
 		$('.win_wrap, .win_back').hide();
 		return false;
 	});
-
+	
 	done.on('click', function () {
 		listItem.each(function () {
 			if (this.checked) $(this).parents('li').remove();
@@ -362,6 +362,51 @@ var deleteList = function () {
 
 
 
+};
+
+
+var selectProduct = function () {
+	$('.product span').click(function () {
+		$(this).addClass('on').siblings().removeClass('on');	
+	});
+};
+
+var configMore = function () {
+    var configs = $('.config_more');
+    
+    var wrap, wrapInfo;
+    
+    $('.config_more_show').click(function () {
+        wrap = $(this).parents('li').find('.config_more');
+        wrapInfo = $(this).parents('li').find('.config_more_info');
+        
+        configs.addClass('hide');
+        wrap.removeClass('hide');
+        return false;
+    });
+    
+    $('.config_more').click(function () {
+        return false;
+    });
+    
+    $(document.body).click(function () {
+        if (!wrap.length) return;
+        
+        var html = '';
+        var inputs = wrap.find('select, input');
+        
+        var i;
+        
+        for (i = 0; i < inputs.length;  i++) {
+            if (inputs.eq(i).val() != '') html += inputs.eq(i).val() + ' ';
+        }
+        
+        wrap.addClass('hide');
+        
+        wrapInfo.html(html);
+        
+        
+    });
 };
 
 
@@ -418,4 +463,12 @@ if ($('.main_page').length) {
 if ($('.plan_page').length) {
 	deleteList();
 	changeNum();
+}
+
+if ($('.parity_page').length) {
+	selectProduct();
+	toggleShowArea();
+	changeNum();
+	deleteList();
+    configMore();
 }
