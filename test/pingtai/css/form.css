@@ -920,9 +920,6 @@ body{
    font-size:12px;
    font-family:"宋体";
 }
-.make_page .section1_wrap{
-    background:url(../img/form/make.jpg) center top no-repeat;
-}
 .make_page .section1{
     margin:0 auto;
     width:1210px;

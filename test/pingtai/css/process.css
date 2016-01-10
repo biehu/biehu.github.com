@@ -917,3 +917,31 @@
     position: absolute;
     z-index: 100;
 }
+
+.make_inner {
+    background: url(../img/form/make.jpg) center top no-repeat;
+}
+.make_service {
+    width: 1172px;
+    margin: 30px auto 0;
+}
+.make_service_title {
+    height: 49px;
+    line-height: 37px;
+    background: url(../img/process/make_title_bg.png) center top no-repeat;
+    font-size: 28px;
+    padding-left: 57px;
+    color: #23201a;
+}
+.make_service_con {
+    text-align: center;
+}
+
+.make_line {
+    line-height: 40px;
+    margin-top: 15px;
+}
+.make_line strong {
+    font-weight: normal;
+    color: #4595e6;
+}
