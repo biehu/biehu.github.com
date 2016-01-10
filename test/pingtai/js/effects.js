@@ -338,7 +338,12 @@ var deleteList = function () {
 	var deleteOne = $('.config_list_delete_item');
 
 	close.on('click', function () {
-		$('.win_wrap, .win_back').hide();
+		var win = $('.win_wrap, .win_back');
+
+		win.hide();
+		
+		if (win.data('oneItem')) win.data('oneItem').find('input').prop('checked', false);
+
 		return false;
 	});
 	
@@ -353,7 +358,8 @@ var deleteList = function () {
 
 	deleteOne.on('click', function () {
 
-		$('.win_wrap, .win_back').show();
+		$('.win_wrap, .win_back').show().data('oneItem', $(this).parents('li'));
+
 		listItem.prop('checked', false);
 		$(this).parents('li').find('.config_list_check').prop('checked', true);
 

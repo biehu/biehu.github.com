@@ -636,6 +636,7 @@
     background:#0094e4;
     margin: 38px 0 0 0;
 }
+.parity_page .left2_ul li dt a,
 .parity_page .left2_ul li dt{
     color:#0094E4;
 }
@@ -803,6 +804,7 @@
 }    
 .parity_page .right_ul .fh .fx{
     position:absolute;
+	z-index: 1;
     left:10px;
     top: 14px;
 }
@@ -810,9 +812,6 @@
     margin-left:18px;
 }
 .parity_page .right_ul .fh .red{
-    /* position:absolute; */
-    /* left:84px; */
-    /* top:48px; */
     color:#FF4B51;
 }
 .parity_page .fh .box{
