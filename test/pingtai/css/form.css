@@ -918,7 +918,7 @@ body{
     margin:0 auto;
    line-height:35px;
    font-size:12px;
-   font-family:"宋体";
+   font-family:"å®‹ä½“";
 }
 .make_page .section1{
     margin:0 auto;
@@ -1093,7 +1093,10 @@ body{
     display:block;
 }
 .make_page .section2_bom{
-    padding: 35px 0 24px 312px;
+    padding: 35px 0 30px 0;
+    width: 425px;
+    position: relative;
+    margin: 0 auto;
 }
 .make_page .agree{
     color:#0093e4;
@@ -1121,6 +1124,10 @@ body{
     height:40px;
     line-height:18px;
     padding:3px 0 0 10px;
+    position: absolute;
+    /* top: 0; */
+    bottom: 45px;
+    left: 431px;
 }
 .make_page .section2_bom input{
     position:relative;

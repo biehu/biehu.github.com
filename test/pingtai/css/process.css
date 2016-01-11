@@ -712,6 +712,9 @@
     left:10px;
     top:15px;
 }
+.parity_page .right_ul_2 a{
+	color: #63625d;
+}
 .parity_page .right_ul_2{
     float:left;
     width:122px;
@@ -830,6 +833,7 @@
     text-align:center;
     line-height:34px;
     color: #636363;
+	cursor: pointer;
 }
 .parity_page .right_ul .all{
     height:68px;

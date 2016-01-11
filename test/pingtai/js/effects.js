@@ -291,6 +291,15 @@ var backService = function () {
     });
 };
 
+var addFhLast = function () {
+	var btn = $('.fh_last_add');
+	var addArea = $('.fh_last');
+
+	btn.click(function () {
+		addArea.after(addArea.clone());
+	});
+};
+
 /*
  * 表单
  */
@@ -477,4 +486,5 @@ if ($('.parity_page').length) {
 	changeNum();
 	deleteList();
     configMore();
+	addFhLast();
 }
