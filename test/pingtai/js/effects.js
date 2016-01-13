@@ -488,3 +488,7 @@ if ($('.parity_page').length) {
     configMore();
 	addFhLast();
 }
+
+if ($('.hall_page').length) {
+	toggleShowArea();
+}
