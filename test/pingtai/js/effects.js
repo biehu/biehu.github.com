@@ -424,6 +424,26 @@ var configMore = function () {
     });
 };
 
+var shopShowBigPic = function () {
+
+	var btn = $('.show_big');
+	var wrap = $('.show_pic');
+	var win = $('.win_wrap, .win_back');
+
+	btn.click(function () {
+		wrap.html($(this).find('.big_pic').clone().show());
+		win.show();
+	});
+
+
+	var close =  $('.win_close');
+
+	close.on('click', function () {
+		win.hide();
+		return false;
+	});
+};
+
 
 
 /*
@@ -491,4 +511,10 @@ if ($('.parity_page').length) {
 
 if ($('.hall_page').length) {
 	toggleShowArea();
+}
+
+if ($('.shop_page').length) {
+	new Focus($('.section1_focus'));
+	tab();
+	shopShowBigPic();
 }
