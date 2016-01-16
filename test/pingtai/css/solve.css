@@ -1,0 +1,270 @@
+
+.solve_page{
+    font-size:12px;
+    font-family:"å®‹ä½“";
+}
+.solve_page .section1_top_wrap{
+     /* border-top:3px solid #0094E4; */   
+     height:40px;
+}
+.solve_page .section1_top a {
+    color: #000;
+}
+.solve_page .section1_top{
+    width:1210px;
+    margin:0 auto;
+   line-height:35px;
+   font-size:12px;
+}
+.solve_page .section1_wrap{
+    background:url(../img/solve/solve_bg.jpg) center top no-repeat;
+}
+.solve_page .section1{
+    margin:0 auto;
+    width:1210px;
+    height:397px;
+    position:relative;
+}
+.solve_page .section1_text{
+    color:#fff;
+    padding-top:90px;
+    font-family: "Microsoft Yahei";
+    width:740px;
+}
+
+.solve_page .section1_text p{
+    font-size:18px;
+    margin-top: 15px;
+    padding-left:15px;
+}
+.solve_page .section1_box{
+    position:absolute;
+    right:115px;
+    top:0;
+    height:330px;
+    background:#005EA3;
+    width:345px;
+    padding-top:67px;
+    color:#fff;
+    font-family:"Microsoft Yahei";
+    text-align:center;
+}
+.solve_page .section1_box p{
+    font-size:32px;
+    letter-spacing:2px;
+}
+.solve_page .section1_btn{
+    background:url(../img/solve/solve2.png) no-repeat;
+    width:248px;
+    height:55px;
+    text-align:center;
+    color:#fff;
+    font-size:21px;
+    display:block;
+    line-height:55px;
+    margin:25px auto 35px;
+}
+.solve_page .section1_box .cg{
+    font-size:16px;
+}
+.solve_page .section1_box span{
+    color:#f00;
+    font-size:18px;
+    width:24px;
+    height:23px;
+    border:1px solid #B2C4CE;
+    background:#fff;
+    display:inline-block;
+    margin-left:5px;
+}
+.solve_page .section2{
+    width:1210px;
+    margin:0 auto;
+    padding-top:27px;
+}
+.solve_page .section2_top{
+    width:1198px;
+    background:#F6F5F4;
+    border:1px solid #E8E7E4;
+    color:#0094E4;
+    line-height:35px;
+    height:33px;
+    font-size:24px;
+    font-family:"Microsoft Yahei";
+    padding-left:10px;
+}
+.solve_page .section2_main{
+    padding:15px 0 18px;
+    color: #636363;
+}
+.solve_page .section2_main li{
+    /* height:32px; */
+    line-height:32px;
+    margin-bottom:10px;
+    font-size:14px;
+}
+.solve_page .section2_main li p{
+    margin-left: 133px;
+}
+.solve_page .section2_main li span{
+    float: left;
+    width:108px;
+    display:inline-block;
+    background:#DDDAD6;
+    text-align:right;
+    font-family:"Microsoft Yahei";
+    font-size:18px;
+    margin-right:25px;
+}
+.solve_page .section3_top{
+    width:220px;
+    background:#Fff;
+    border:2px solid #E8E7E4;
+    color:#0094E4;
+    line-height:44px;
+    height:44px;
+    font-size:21px;
+    font-family:"Microsoft Yahei";
+    padding-left:16px;
+    border-radius:3px;
+}
+.solve_page .section3,.solve_page .section4{
+    width:1210px;
+    margin:0 auto;
+}
+.solve_page .section4{
+    position:relative;
+}
+.solve_page .section4_top{
+    width:1210px;
+    background:#0093E4;
+    overflow:hidden;
+}
+.solve_page .section4_top li{
+    float:left;
+    width:116px;
+    text-align:center;
+    height:45px;
+    line-height:45px;
+    color:#fff;
+    font-size:18px;
+    font-family:"Microsoft Yahei";
+}
+.solve_page .section4_top li.on{
+    background:#EFEEEC;
+    color:#0093E4;
+}
+.solve_page .section4_list {
+    float: left;
+    width: 1210px;
+    overflow: hidden;
+}
+.solve_page .section4_main{
+    width: 1240px;
+    padding-top:15px;
+    overflow:hidden;
+}
+.solve_page .section4_main li{
+    background:#EFEEEC;
+    height:322px;
+    width:389px;
+    position:relative;
+    float:left;
+    margin-right:20px;
+}
+.solve_page .section4_main li .al{
+    width:247px;
+    background:url(../img/solve/solve4.png) 10px 8px no-repeat;
+    height:37px;
+    line-height:37px;
+    display:inline-block;
+    padding-left:38px;
+    color:#424342;
+    font-size:14px;
+}
+.solve_page .section4_main li a:hover .yy{
+	display: block;
+}
+.solve_page .section4_main li .yy{
+	display: none;
+    position:absolute;
+    top:258px;
+    background:url(../img/solve/solve7.png) no-repeat;
+    width:379px;
+    height:25px;
+    line-height:25px;
+    color:#fff;
+    font-size:15px;
+    padding-left:10px;
+}
+.solve_page .section4_main li .qd{
+    position:absolute;
+    top:285px;
+    background:url(../img/solve/solve8.png) 0 5px no-repeat;
+    width:70px;
+    height:37px;
+    line-height:37px;
+    color:#424342;
+    font-size:14px;
+    left:292px;
+    padding-left:26px;
+}
+.solve_page .section4_main li .qd:hover{
+    background:url(../img/solve/solve3.png) 0 5px no-repeat;
+    color:#FF2B2D;
+}
+.solve_page .section4_left{
+    position:absolute;
+    width:42px;
+    height:83px;
+    background:url(../img/solve/solve5.png) no-repeat;
+    display:block;
+    left:0;
+    top:313px;
+}
+.solve_page .section4_right{
+    position:absolute;
+    width:42px;
+    height:83px;
+    background:url(../img/solve/solve6.png) no-repeat;
+    display:block;
+    right: 2px;
+    top:313px;
+}
+.solve_page .section4_btn{
+    background:url(../img/solve/solve9.png) no-repeat;
+    color:#fff;
+    font-size:18px;
+    font-family:"Microsoft Yahei";
+    display:block;
+    width:370px;
+    height:59px;
+    line-height:59px;
+    text-align:center;
+    margin:50px auto;
+    letter-spacing:2px;
+}
+
+.solve_page .viewport {
+    height: 663px;
+    overflow: hidden;
+    position: relative;
+}
+
+.solve_page .slide {
+    position: relative;
+}
+.solve_page .overview {
+    list-style: none;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+.slide.hide {
+    display: block;
+    height: 0;
+    overflow: hidden;
+}
