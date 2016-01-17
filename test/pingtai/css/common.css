@@ -33,7 +33,7 @@ a {
 body {
     font-family: "Microsoft Yahei";
     font-size: 12px;
-	overflow-x: hidden;
+    overflow-x: hidden;
 }
 .tab_t {
     cursor: pointer;
@@ -391,28 +391,28 @@ body {
 }
 
 .price_list {
-	position: fixed;
-	top: 0;
-	right: -525px;
-	z-index: 10;
+    position: fixed;
+    top: 0;
+    right: -525px;
+    z-index: 10;
     height: 100%;
     min-height: 590px;
 }
 .price_list .price_left span {
-	right: 36px;
-	position: absolute;
-	background-color: #4694e6;
-	white-space: nowrap;
-	padding: 0 10px;
-	display: none;
+    right: 36px;
+    position: absolute;
+    background-color: #4694e6;
+    white-space: nowrap;
+    padding: 0 10px;
+    display: none;
 }
 .price_list .price_left a:hover span {
-	/* width: 123px; */
-	display: block;
-	
+    /* width: 123px; */
+    display: block;
+    
 }
 .price_list .price_left a:hover, .price_list .price_left .on {
-	background-color: #4694e6;
+    background-color: #4694e6;
 }
 .price_list .price_left {
     background: #0070ba none repeat scroll 0 0;
@@ -435,8 +435,8 @@ body {
     position: absolute;
     height: 34px;
     width: 100%;
-	color: #fff;
-	line-height: 34px;
+    color: #fff;
+    line-height: 34px;
 }
 .price_left1 {
     /* left: 2px; */
@@ -517,25 +517,25 @@ body {
     display: block;
 }
 .parity_text .change_num span {
-	width: 17px;
-	height: 17px;
-	background: #f0f0f0;
-	border: none;
-	line-height: 14px;
+    width: 17px;
+    height: 17px;
+    background: #f0f0f0;
+    border: none;
+    line-height: 14px;
 }
 .parity_text .change_num input {
-	width: 26px;
-	height:13px;
-	line-height: 13px;
-	/* overflow: hidden; */
-	font-size: 12px;
+    width: 26px;
+    height:13px;
+    line-height: 13px;
+    /* overflow: hidden; */
+    font-size: 12px;
 }
 .parity_text .change_num {
-	float: left;
-	margin-left: 20px;
+    float: left;
+    margin-left: 20px;
 }
 .parity_text2, .parity_text1 {
-	float: left;
+    float: left;
 }
 .parity_text2 {
     color: #ff2324;
@@ -567,7 +567,7 @@ body {
 }
 .quote_top span b {
     color: #ff2324;
-	font-weight: normal;
+    font-weight: normal;
 }
 .quote {
     background: #fff none repeat scroll 0 0;
@@ -684,7 +684,7 @@ body {
     width: 54px;
 }
 .price_btn img {
-	vertical-align: middle;
+    vertical-align: middle;
 }
 .price_btn {
     background: #4694e6 none repeat scroll 0 0;
@@ -697,30 +697,30 @@ body {
     overflow: hidden;
     text-align: center;
     width: 258px;
-	margin: 10px auto;
+    margin: 10px auto;
     border-bottom: 3px solid #1662b6;
     border-radius: 2px;
 }
 .price_tab {
-	position: relative;
-	height: 100%;
+    position: relative;
+    height: 100%;
 }
 .price_btn_wrap {
-	  height: 50px;
-	  background: #f5f4f3;
-	  width: 100%;
+      height: 50px;
+      background: #f5f4f3;
+      width: 100%;
 }
 .price_tab_main {
-	position: relative;
+    position: relative;
     overflow-y: auto;
 }
 
-/* Ã¥Â¼Â¹Ã¦Â¡â€  */
+/* ÃƒÂ¥Ã‚Â¼Ã‚Â¹ÃƒÂ¦Ã‚Â¡Ã¢â‚¬Â  */
 .tk_wrap{
     background:#CFCBC6;
     padding:5px;
     width:433px;
-	margin: 30px auto 0;
+    margin: 30px auto 0;
 }
 .tk{
     border:1px solid #BCB8B2;
@@ -742,7 +742,7 @@ body {
     margin:0 auto;
     line-height:95px;
     padding-left:108px;
-    font-family:"Ã¥Â®â€¹Ã¤Â½â€œ";
+    font-family:"ÃƒÂ¥Ã‚Â®Ã¢â‚¬Â¹ÃƒÂ¤Ã‚Â½Ã¢â‚¬Å“";
     font-weight:bold;
 }
 .tk_3{
@@ -759,50 +759,50 @@ body {
 }
 .tk_btn{
     height: 37px;
-	text-align: center;
-	line-height: 37px;
-	margin: 0 5px;
-	display: inline-block;
-	color: #fff;
-	background: #0090E5;
-	font-size: 16px;
-	padding: 0 30px;
+    text-align: center;
+    line-height: 37px;
+    margin: 0 5px;
+    display: inline-block;
+    color: #fff;
+    background: #0090E5;
+    font-size: 16px;
+    padding: 0 30px;
 }
 .tk_close {
-	font-size: 24px;
-	font-weight: bold;
+    font-size: 24px;
+    font-weight: bold;
 }
 .tk_3 {
-	text-align: center;
+    text-align: center;
 }
 .tk {
-	padding-bottom: 50px;
+    padding-bottom: 50px;
 }
 .win_btns {
-	text-align: center;
+    text-align: center;
 }
 .win_wrap, .win_back {
-	display: none;
+    display: none;
 }
 .win_wrap {
-	overflow: hidden;
-	position: fixed;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	z-index: 1050;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1050;
 }
 .win_back { 
-	filter: alpha(opacity=50);
-	opacity: .5;
-	position: fixed;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	z-index: 1040;
-	background-color: #000;
+    filter: alpha(opacity=50);
+    opacity: .5;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1040;
+    background-color: #000;
 
 }
 
@@ -827,26 +827,26 @@ body {
 }
 
 .loading {
-	display: inline-block;
-	width: 22px;
-	height: 24px;
-	background: url(../img/loading.gif) no-repeat -14px -5px;
-	vertical-align: -5px;
-	margin-right: 5px;
-	margin-top: 4px;
+    display: inline-block;
+    width: 22px;
+    height: 24px;
+    background: url(../img/loading.gif) no-repeat -14px -5px;
+    vertical-align: -5px;
+    margin-right: 5px;
+    margin-top: 4px;
 }
 
 .price_header .price_top1 {
-	padding: 3px 20px;
-	background: #4694e6;
-	font-weight: normal;
-	color: #fff;
-	font-family: SimSun;
-	border-radius: 2px;
+    padding: 3px 20px;
+    background: #4694e6;
+    font-weight: normal;
+    color: #fff;
+    font-family: SimSun;
+    border-radius: 2px;
 }
 
 
-/*评论*/
+/*è¯„è®º*/
 .evaluate_top{
     height:130px;
     
@@ -860,7 +860,7 @@ body {
     font-size:43px;
     color:#E60000;
     padding-top:30px;
-	font-family: "Microsoft Yahei";
+    font-family: "Microsoft Yahei";
 }
 .evaluate_top1 .figure span{
     font-size:24px;
@@ -904,7 +904,7 @@ body {
 }
 .evaluate_top4{
     float:left;
-    font-family:"微软雅黑";
+    font-family:"å¾®è½¯é›…é»‘";
     padding-top:40px;
 }
 .evaluate_top3 .box{
@@ -958,7 +958,7 @@ body {
     width:88px;
 }
 .page_part a.last span{
-    font-family:"宋体";
+    font-family:"å®‹ä½“";
     color:#0094E4;
     font-size:14px;
 }
@@ -1214,4 +1214,18 @@ td.com-i-column .user-item-pop div.comment-tooltips em {
 .comment_header {
     border-left: 1px solid #EEEDEB;
     border-right: 1px solid #EEEDEB;
+}
+
+.page_pos {
+    height: 40px;
+    line-height: 36px;
+    font-family: 宋体;
+    color: #636363;
+}
+.page_pos a {
+    color: #636363;
+}
+.page_inner {
+    width: 1210px;
+    margin:  0 auto;
 }

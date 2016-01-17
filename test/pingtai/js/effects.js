@@ -441,6 +441,38 @@ var shopShowBigPic = function () {
 	});
 };
 
+var comparePriceAddPrice = function () {
+    var btn = $('.p_select');
+    
+    if (!btn.length) return;
+    
+    var getElemNumVal = function (elem) {
+        return elem[0].nodeName === 'INPUT' ? Number(elem.val()) : Number(elem.html());
+    };
+    
+    btn.click(function () {
+        var thisBtn = $(this);
+        
+        var wrap = thisBtn.parents('.p_list');
+        var itemWrap = thisBtn.parents('li');
+        
+        var allNum = wrap.find('.p_all_num');
+        var allPrice = wrap.find('.p_all_price');
+        
+        var num = itemWrap.find('.p_num');
+        var price = itemWrap.find('.p_price');
+        
+        
+        if ($(this).prop('checked')) {
+            allNum.html(getElemNumVal(allNum) + getElemNumVal(num));
+            allPrice.html(getElemNumVal(allPrice) + getElemNumVal(num) * getElemNumVal(price));
+        } else {
+            allNum.html(getElemNumVal(allNum) - getElemNumVal(num));
+            allPrice.html(getElemNumVal(allPrice) - getElemNumVal(num) * getElemNumVal(price));
+        }
+    });
+};
+
 
 
 /*
@@ -519,4 +551,9 @@ if ($('.shop_page').length) {
 if ($('.solve_page').length) {
     tab();
     $('.slide').tinycarousel();
+}
+
+if ($('.child_page').length) {
+    changeNum();
+    comparePriceAddPrice();
 }

@@ -1,7 +1,7 @@
 
 .solve_page{
     font-size:12px;
-    font-family:"å®‹ä½“";
+    font-family:"ÃƒÂ¥Ã‚Â®Ã¢â‚¬Â¹ÃƒÂ¤Ã‚Â½Ã¢â‚¬Å“";
 }
 .solve_page .section1_top_wrap{
      /* border-top:3px solid #0094E4; */   
@@ -183,10 +183,10 @@
     font-size:14px;
 }
 .solve_page .section4_main li a:hover .yy{
-	display: block;
+    display: block;
 }
 .solve_page .section4_main li .yy{
-	display: none;
+    display: none;
     position:absolute;
     top:258px;
     background:url(../img/solve/solve7.png) no-repeat;
@@ -267,4 +267,254 @@
     display: block;
     height: 0;
     overflow: hidden;
+}
+
+.child_page {
+    padding-bottom: 30px;
+}
+.child_page .section1 {
+    height: 724px;
+    background: url(../img/solve/child.jpg) no-repeat center top;
+}
+.child_page .section2,.child_page .section3{
+    width:1210px;
+    margin:0 auto;
+}
+.child_page .section2_top,.child_page .section3_top{
+    background: url(../img/solve/child1.jpg) no-repeat;
+    height:64px;
+    font-size:26px;
+    font-family:"Microsoft Yahei";
+    line-height:64px;
+    padding-left:10px;
+    margin:10px 0;
+    color: #4b4b4b;
+}
+.child_page .section2_top span,.child_page .section3_top span{
+    font-size:15px;
+}
+.child_page .section2_main1{
+    width:240px;
+    height:335px;
+    border:1px solid #ECEAE8;
+    padding:10px 0 0 5px;
+    float:left;
+    position:relative;
+    text-align: center;
+}
+.child_page .section2_main1 .main1_btn,.child_page .section3_main1 .main1_btn{
+    position:absolute;
+    top: 278px;
+    left:160px;
+    background:#FF3723;
+    color:#fff;
+    font-size:14px;
+    text-align:center;
+    line-height:24px;
+    width:76px;
+    height:24px;
+}
+.child_page .section2_main1 .main1_jh,.child_page .section3_main1 .main1_jh{
+    position:absolute;
+    top:125px;
+    left:228px;
+    background: url(../img/solve/child2.png) no-repeat;
+    width:52px;
+    height:51px;
+    
+}
+    
+.child_page .section2_main1 p,.child_page .section3_main1 p{
+    line-height:20px;
+    font-family:"Microsoft Yahei";
+}
+.child_page .red, .child_page .red .p_all_price{
+    color:#f00;
+    font-size:13px;
+    font-weight: normal;
+ }
+
+.child_page .section2_text2{
+    margin-top:35px;
+
+    text-align: left;
+    padding-left: 27px;
+}
+.child_page .section2_main2{
+    border:1px solid #ECEAE8;
+    float:left;
+    overflow:hidden;
+    margin-left:20px;
+    display:inline;
+}
+.child_page .section2_main2 li,.child_page .section3_main2 li{
+    width:244px;
+    padding: 10px 0 0 0;
+    float:left;
+    height:335px;
+    text-align: center;
+}
+.child_page .section2_main2 .change_less,.child_page .section3_main2 .change_less{
+    cursor: pointer;
+    display: inline-block;
+    font-size: 13px;
+    height: 21px;
+    line-height: 18px;
+    text-align: center;
+    width: 20px;
+    border: none;
+    border-bottom: 1px solid #adacac;
+    border-top: 1px solid #adacac;
+    border-left: 1px solid #adacac;
+    background:#EAE9E6;
+    vertical-align: middle;
+}
+.child_page .section2_main2 .change_more,.child_page .section3_main2 .change_more{
+    cursor: pointer;
+    display: inline-block;
+    font-size: 13px;
+    height: 21px;
+    line-height: 18px;
+    text-align: center;
+    width: 20px;
+    border: none;
+    border-top: 1px solid #adacac;
+    border-bottom: 1px solid #adacac;
+    border-right: 1px solid #adacac;
+    background:#EAE9E6;
+    vertical-align: middle;
+}
+.child_page .section2_main2 .sr,.child_page .section3_main2 .sr{
+    border: 1px solid #adacac;
+    height: 21px;
+    text-align: center;
+    width: 30px;
+    vertical-align: middle;
+    display:inline-block;
+    line-height: 21px;
+}
+.child_page .section2_main2 p,.child_page .section3_main2 p{
+    line-height:20px;
+    font-family:"Microsoft Yahei";
+    padding-left:27px;
+}
+.child_page .red b{
+    font-weight: normal;
+}
+.child_page .section2_main2 p .red,.child_page .section3_main2 p .red{
+    color:#f00;
+    font-size:13px;
+    /* margin-left:20px
+ */}
+.child_page .section2_main2 label,.child_page .section3_main2 label{
+   vertical-align: -1px; 
+}
+.child_page .section2_main2 .xz,.child_page .section3_main2 .xz{
+    margin: 0 5px 0 10px;
+    vertical-align: middle;
+}
+.child_page .section2_main3{
+    float:left;
+    width: 208px;
+    height:343px;
+    border-right: 1px solid #ECEAE8;
+    border-top: 2px solid #ECEAE8;
+    border-bottom: 2px solid #ECEAE8;
+    background:#F6F5F4;
+    position: relative;
+    color: #636363;
+}
+.child_page .main3_content{
+    color:#63625D;
+    font-family:"Microsoft Yahei";   
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    margin-top: -100px;
+}
+.child_page .main3_content h3{
+    width:142px;
+    /* height:45px; */
+    border-bottom:1px solid #B3AFA9;
+    margin: 0 auto;
+    font-size:24px;
+    text-align:center;
+    font-weight:normal;
+    line-height: 48px;
+}
+.child_page .main3_content p b {
+    color: #2d2d2d;
+    font-weight: normal;
+}
+.child_page .main3_content p{
+    line-height:24px;
+    padding-left: 41px;
+    margin-top:10px;
+}
+.child_page .main3_btn{
+    width:132px;
+    height:36px;
+    text-align:center;
+    line-height:36px;
+    margin: 25px auto 15px;
+    background: url(../img/solve/child1.png) no-repeat;
+    display: block;
+    font-size:17px;
+    color:#fff;
+}
+.child_page .main3_last{
+    /* padding-left:10px; */
+    text-align: center;
+}
+.child_page .main3_last a{
+    color:#FF8A00;
+}
+.child_page .section3_left{
+    float:left;
+    width: 1000px;
+}
+.child_page .section3_right{
+    float:left;
+    width: 208px;
+    height:710px;
+    border-right: 1px solid #ECEAE8;
+    border-top: 2px solid #ECEAE8;
+    border-bottom: 2px solid #ECEAE8;
+    background:#F6F5F4;
+    position: relative;
+}
+.child_page .section3_main2{
+    float:left;
+}
+.child_page .section3_left1 .section3_main2{
+    border-left:1px solid #ECEAE8;
+    border-right:1px solid #ECEAE8;
+    border-top:1px solid #ECEAE8;
+    float:left;
+    overflow:hidden;
+    margin-left:19px;
+    display:inline;
+}
+.child_page .section3_left .section3_left2{
+    margin:0;
+    border-left:1px solid #ECEAE8;
+    border-right:1px solid #ECEAE8;
+    border-bottom:1px solid #ECEAE8;
+    overflow:hidden;
+    padding-bottom:20px;
+}
+.child_page .section3_left .section3_left2 .first{
+    padding-left:22px;
+    border-top:1px solid #ECEAE8;
+}
+.child_page .section3_main1{
+    width:240px;
+    height:335px;
+    border-left:1px solid #ECEAE8;
+    border-right:1px solid #ECEAE8;
+    border-top:1px solid #ECEAE8;
+    padding:10px 0 0 5px;
+    float:left;
+    position:relative;
+    text-align: center;
 }
