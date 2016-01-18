@@ -265,14 +265,22 @@ var changeNum = function () {
     
     var lessBtn = $('.change_less');
     var moreBtn = $('.change_more');
+
+	var isDisabledClick = function (btn) {
+		return btn.parents('.change_num').attr('data-disabled') === 'true';
+	};
     
     lessBtn.click(function () {
+		if (isDisabledClick($(this))) return;
+
         var num = $(this).parents('.change_num').find('input');
 		var numVal = Number(num.val()) - 1;
         num.val(numVal ? numVal : 1);
     });
     
     moreBtn.click(function () {
+		if (isDisabledClick($(this))) return;
+
 		var num = $(this).parents('.change_num').find('input');
 		var numVal = Number(num.val()) + 1;
         num.val(numVal);
@@ -461,19 +469,25 @@ var comparePriceAddPrice = function () {
         
         var num = itemWrap.find('.p_num');
         var price = itemWrap.find('.p_price');
+
+		var changeNum = itemWrap.find('.change_num');
         
         
         if ($(this).prop('checked')) {
             allNum.html(getElemNumVal(allNum) + getElemNumVal(num));
             allPrice.html(getElemNumVal(allPrice) + getElemNumVal(num) * getElemNumVal(price));
+
+			changeNum.attr('data-disabled', true);
         } else {
             allNum.html(getElemNumVal(allNum) - getElemNumVal(num));
             allPrice.html(getElemNumVal(allPrice) - getElemNumVal(num) * getElemNumVal(price));
+
+			changeNum.attr('data-disabled', false);
         }
     });
 };
 
-
+	
 
 /*
  * 初始化
