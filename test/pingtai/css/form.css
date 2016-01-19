@@ -472,10 +472,13 @@ body{
     background:url(../img/form/log8.png) 2px 8px no-repeat;
 }
 .reg1_page .reg_ul_5 input,.reg1_page .reg_ul_6 input{
-    width:148px;
+    width: 138px;
     height:35px;
     border:1px solid #9A9691;
     margin-right:15px;
+    vertical-align: top;
+    padding-left: 10px;
+    line-height: 35px;
 }
 .reg_ul_6 .re{
     width:106px;
@@ -492,7 +495,7 @@ body{
 .reg1_bom p{
     line-height:24px;
 }
-.reg1_bom input{
+.reg1_bom input, .reg2_bom input{
     position:relative;
     top:3px;
     margin-right:4px;
@@ -579,7 +582,10 @@ body{
     border: 1px solid #9a9691;
     height: 35px;
     margin-right: 15px;
-    width: 148px;
+    width: 138px;
+	vertical-align: top;
+    padding-left: 10px;
+    line-height: 35px;
 }
 .reg2_page .section3 .reg_ul_5 .re{
     border: 1px solid #9a9691;
@@ -665,6 +671,7 @@ body{
   height: 35px;
   position: relative;
   width: 258px;
+  /* overflow-x: hidden; */
 }
 .reg2_page .reg_select {
     width: auto;
@@ -680,6 +687,7 @@ body{
   line-height: 35px;
   padding-left: 10px;
   width: 248px;
+  vertical-align: top;
 }
 
 .foot {
@@ -918,7 +926,7 @@ body{
     margin:0 auto;
    line-height:35px;
    font-size:12px;
-   font-family:"å®‹ä½“";
+   font-family:"Ã¥Â®â€¹Ã¤Â½â€œ";
 }
 .make_page .section1{
     margin:0 auto;
@@ -1167,4 +1175,8 @@ body{
 }
 #plan_form .unhappyMessage {
     line-height: 32px;
+}
+#company_reg_form {
+	height: 1398px;
+	overflow: hidden;
 }

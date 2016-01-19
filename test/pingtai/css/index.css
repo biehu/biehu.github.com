@@ -308,6 +308,9 @@
 .section3_tab li.on,.section4_tab li.on{
     border-bottom:3px solid #0094E4;
 }
+.sample a {
+    color: #52524f;
+}
 
 .sample{
     width:244px;
@@ -498,7 +501,7 @@
     color:#454645;
     font-size:20px;
     display:inline-block;
-    width:200px;
+    width: 208px;
     padding-left:90px;
     font-family:"Microsoft YaHei";
 }
@@ -1164,7 +1167,7 @@
     float:left;
 }
 .list_page .section2_list p span:hover {
-    text-decoration: underline;
+    cursor:pointer;
 }
 .list_page .checkbox_list input {
     display: none;

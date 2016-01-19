@@ -102,13 +102,13 @@
                                    </li>
                                    <li class="reg_ul_4">
                                        <div class="reg_ul_left"><b>*</b>验证手机:</div>
-                                       <div class="reg_input"><input id="mobile" type="text"></div>
+                                       <div class="reg_input"><input id="mobile" type="text" class="last_time_phone"></div>
                                    </li>
                                    <li class="reg_ul_5">
                                    <div class="reg_ul_left"><b>*</b>短信验证码:</div>
-                                   <input id="phone_code" type="text"><span class="re">117秒后重新获取</span>
+                                   <input id="phone_code" type="text"><span class="re last_time_btn" data-num="10">发送手机验证码</span>
                                </li>
-                               <li class="reg_ul_and">验证码已发送，请查收短信</li>
+                               <li class="reg_ul_and last_time_info">验证码已发送，请查收短信</li>
                                <li class="reg_ul_6">
                                        <div class="reg_ul_left"><b>*</b>联系人邮箱:</div>
                                        <div class="reg_input"><input id="email" type="text"></div>
@@ -255,5 +255,6 @@
        <script src="js/select_city.js"></script>
        <script src="js/jquery.validate.js"></script>
        <script src="js/form_check.js"></script>
+	    <script src="js/last_time.js"></script>
    </body>
 </html>

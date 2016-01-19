@@ -256,7 +256,8 @@ var showBigPic = function () {
         links.removeClass('on')
         $(this).addClass('on');
         
-        detailImg.find('.big img').attr('src', $(this).attr('data-pic'));
+        detailImg.find('#origin_img img').attr('src', $(this).attr('data-pic'));
+		detailImg.find('#zoom_img img').attr('src', $(this).attr('data-zoom-pic'));
     });
 };
 

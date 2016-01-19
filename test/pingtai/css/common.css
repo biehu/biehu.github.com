@@ -13,7 +13,18 @@ a img {
     border: medium none;
 }
 a {
-    text-decoration: none;
+    text-decoration: none!important;
+}
+.foot a:hover,
+.list_page .section2_list2 .qd a:hover,
+.section7 li a:hover,
+.list_page .section3_right .page_btn a:hover,
+.header_right a:hover,
+a:hover {
+	color: #008bf2;
+}
+select {
+	outline: none;
 }
 .clear {
     clear: both;
@@ -116,7 +127,7 @@ body {
     cursor: pointer;
 }
 .search_box_1 strong {
-    background: rgba(0, 0, 0, 0) url("../img/sj.gif") no-repeat scroll right 15px;
+    background:  url("../img/sj.gif") no-repeat right 15px;
     display: block;
     font-weight: normal;
     margin-right: 5px;
@@ -141,6 +152,7 @@ body {
     display: none;
     position: relative;
     text-align: center;
+	z-index: 1;
 }
 .nav_more {
     display: inline;
@@ -165,6 +177,8 @@ body {
     line-height: 34px;
     text-align: center;
     width: 120px;
+    border: none;
+    cursor: pointer;
 }
 .search_line {
     overflow: hidden;
@@ -715,7 +729,7 @@ body {
     overflow-y: auto;
 }
 
-/* ÃƒÂ¥Ã‚Â¼Ã‚Â¹ÃƒÂ¦Ã‚Â¡Ã¢â‚¬Â  */
+/* ÃƒÆ’Ã‚Â¥Ãƒâ€šÃ‚Â¼Ãƒâ€šÃ‚Â¹ÃƒÆ’Ã‚Â¦Ãƒâ€šÃ‚Â¡ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â  */
 .tk_wrap{
     background:#CFCBC6;
     padding:5px;
@@ -742,7 +756,7 @@ body {
     margin:0 auto;
     line-height:95px;
     padding-left:108px;
-    font-family:"ÃƒÂ¥Ã‚Â®Ã¢â‚¬Â¹ÃƒÂ¤Ã‚Â½Ã¢â‚¬Å“";
+    font-family:"ÃƒÆ’Ã‚Â¥Ãƒâ€šÃ‚Â®ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¹ÃƒÆ’Ã‚Â¤Ãƒâ€šÃ‚Â½ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œ";
     font-weight:bold;
 }
 .tk_3{
@@ -814,7 +828,7 @@ body {
     display:inline-block;
     text-align:center;
     font-size: 16px;
-    vertical-align: -1px;
+    vertical-align: middle;
     cursor: pointer;
 }
 .change_num input{
@@ -846,7 +860,7 @@ body {
 }
 
 
-/*è¯„è®º*/
+/*Ã¨Â¯â€žÃ¨Â®Âº*/
 .evaluate_top{
     height:130px;
     
@@ -904,7 +918,7 @@ body {
 }
 .evaluate_top4{
     float:left;
-    font-family:"å¾®è½¯é›…é»‘";
+    font-family:"Ã¥Â¾Â®Ã¨Â½Â¯Ã©â€ºâ€¦Ã©Â»â€˜";
     padding-top:40px;
 }
 .evaluate_top3 .box{
@@ -958,7 +972,7 @@ body {
     width:88px;
 }
 .page_part a.last span{
-    font-family:"å®‹ä½“";
+    font-family:"Ã¥Â®â€¹Ã¤Â½â€œ";
     color:#0094E4;
     font-size:14px;
 }
@@ -1219,7 +1233,7 @@ td.com-i-column .user-item-pop div.comment-tooltips em {
 .page_pos {
     height: 40px;
     line-height: 36px;
-    font-family: 宋体;
+    font-family: å®‹ä½“;
     color: #636363;
 }
 .page_pos a {

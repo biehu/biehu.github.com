@@ -59,7 +59,7 @@
 							   </li>
 							   <li class="reg_ul_4">
 								   <div class="reg_ul_left"><b>*</b>验证手机:</div>
-								   <div class="reg_input"><input id="phone" type="text"><span></span></div>
+								   <div class="reg_input"><input id="phone" type="text" class="last_time_phone"><span></span></div>
 							   </li>
 							   <li class="reg_ul_5">
 								   <div class="reg_ul_left"><b>*</b>验证码:</div>
@@ -68,12 +68,12 @@
 							   </li>
 							   <li class="reg_ul_6">
 								   <div class="reg_ul_left"><b>*</b>短信验证码:</div>
-								   <input id="phone_code" type="text"><span class="re">117秒后重新获取</span>
+								   <input id="phone_code" type="text"><span class="re last_time_btn" data-num="10">发送手机验证码</span>
 							   </li>
 							</ul>
 							
 							<div class="reg1_bom">
-								<p class="phone_code_info">验证码已发送，请查收短信</p>
+								<p class="phone_code_info last_time_info">验证码已发送，请查收短信</p>
 								<input type="checkbox">我已阅读并同意<a class="agree" href="">《B2B用户注册协议》</a>
 								<a class="reg_btn submit" href="">立即注册</a>
 							</div>
@@ -104,5 +104,6 @@
        <script src="js/effects.js"></script>
        <script src="js/jquery.validate.js"></script>
 	   <script src="js/form_check.js"></script>
+	   <script src="js/last_time.js"></script>
    </body>
 </html>
