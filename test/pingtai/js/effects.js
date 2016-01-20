@@ -386,8 +386,8 @@ var deleteList = function () {
 };
 
 
-var selectProduct = function () {
-	$('.product span').click(function () {
+var selectItem = function (selector) {
+	$(selector).click(function () {
 		$(this).addClass('on').siblings().removeClass('on');	
 	});
 };
@@ -488,6 +488,30 @@ var comparePriceAddPrice = function () {
     });
 };
 
+
+var productSelect = function () {
+	var btn = $('.product_select');
+
+	btn.click(function () {
+		var service = $(this).parents('li').find('.install_service');
+
+		if (service.find('.on').length === 0) {
+			service.addClass('on');
+		}
+
+		return false;
+	});
+
+	$('.install_service_close').click(function () {
+		$(this).parents('.install_service').removeClass('on');
+	});
+
+	$('.install_service a').click(function () {
+		$(this).parents('.install_service').removeClass('on');
+		return false;
+	});
+};
+
 	
 
 /*
@@ -545,12 +569,14 @@ if ($('.plan_page').length) {
 }
 
 if ($('.parity_page').length) {
-	selectProduct();
+	selectItem('.product span');
+	selectItem('.install_service a');
 	toggleShowArea();
 	changeNum();
 	deleteList();
     configMore();
 	addFhLast();
+	productSelect();
 }
 
 if ($('.hall_page').length) {
