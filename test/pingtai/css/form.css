@@ -933,7 +933,7 @@ body{
     width:1210px;
 }
 .make_page .section1_text{
-    height:202px;
+    height: 173px;
     color:#3F4040;
     padding-left:15px;
     padding-top:90px;
@@ -962,7 +962,7 @@ body{
 }
 .make_page .section1_second{
     background:#fff;
-    padding:50px 0 72px 22px;
+    padding: 0 0 42px 22px;
 }
 .make_page .section1_second_con {
     text-align: center;
@@ -970,7 +970,7 @@ body{
 .make_page .section1_second p {
     height: 60px;
     line-height: 60px;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
 }
 .make_page .section2{
     width:1210px;
@@ -992,6 +992,7 @@ body{
     border-left:1px solid #EAE9E6;
     border-right:1px solid #EAE9E6;
     padding: 12px 0;
+	font-family: SimSun;
 }
 .make_page .section2_main li{
     line-height:32px;

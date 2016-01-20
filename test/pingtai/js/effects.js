@@ -517,6 +517,11 @@ var productSelect = function () {
 /*
  * 初始化
  */
+menu();
+startMenu();
+searchSelect();
+
+
 if ($('.login_page, .log2_page').length ||
     $('.step3').length) {
     focusInput();
@@ -539,9 +544,6 @@ if ($('.detail_page').length) {
     
 }
 if ($('.list_page').length) {
-    menu();
-    startMenu();
-    searchSelect();
     toggleShowArea();
     selectSearch();
 }
