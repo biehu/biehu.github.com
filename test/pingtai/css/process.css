@@ -476,9 +476,11 @@
     cursor: pointer;
     border: 1px solid #0092E9;
 }
+.install_service .on,
 .parity_page .product span.on{
     background:#fff url("../img/detail2.gif") no-repeat right bottom;
     color:#0092E9;
+    border: 1px solid #0092E9;
 }
 .parity_page .section3{
     margin:20px auto 0;
@@ -598,6 +600,51 @@
 }
 .parity_page .left1_ul1 li.last{
     margin-top:8px;
+}
+.install_service_close {
+    display: none;
+    cursor:pointer;
+      font-style: normal;
+  font-weight: bold;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  background: #fff;
+  color: #1d91e8;
+  padding: 2px 5px;
+}
+.install_service_info {
+    display: none;
+      font-weight: normal;
+  color: #1d91e8;
+  float: right;
+  margin-top: 20px;
+  margin-right: 5px;
+}
+.install_service a {
+      display: inline-block;
+}
+.install_service.on {
+    padding-top: 7px;
+  padding-bottom: 7px;
+    border: 1px solid #0092E9;
+}
+.install_service.on .install_service_info, .install_service.on .install_service_close {
+    display: block;
+}
+.install_service {
+        position: relative;
+  clear: both;
+  margin-left: 150px;
+  padding-left: 7px;
+  
+  width: 368px;
+  overflow: hidden;
+}
+.install_service a.on {
+    margin-right: 15px;
+    padding: 2px 10px;
+    color: #636363;
 }
 .parity_page .left2_ul{
     padding:0 10px;
