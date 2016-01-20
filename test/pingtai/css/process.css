@@ -643,9 +643,10 @@
 }
 .install_service a {
 	margin-right: 15px;
+	padding: 2px 10px;
+	border: 1px solid #abadb3;
 }
 .install_service a.on {
-    padding: 2px 10px;
     color: #636363;
 }
 .parity_page .left2_ul{
