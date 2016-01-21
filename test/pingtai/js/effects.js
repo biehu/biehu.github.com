@@ -162,6 +162,8 @@ Focus.prototype.init = function () {
 // 展开分类
 var startMenu = function () {
     var menu  = $('.menu');
+
+	if ($('.nav_all').parents('.main_page').length) return;
     
     $('.nav_all').hover(
         function () {
