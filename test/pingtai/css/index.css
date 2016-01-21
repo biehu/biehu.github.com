@@ -125,8 +125,8 @@
     padding-left:25px;
 }
 .plan{
-    width:970px;
-    float:left;
+    /* width:970px; */
+    /* float:left; */
     height:287px;
     position:relative;
 }
@@ -179,13 +179,15 @@
     opacity: .9;
 }
 .plan_list{
-    padding-top:10px;
+	float: left;
+    
+	/* padding-top:10px; */
     overflow:hidden;
 }
 .plan_list li{
-    width:175px;
+    width: 179px;
     border-left:1px solid #DBD8D3;
-    padding:20px 0 0 18px;
+    padding: 30px 0 0 22px;
     height:218px;
     float:left;
 }
@@ -203,7 +205,7 @@
 .section_ad{
     width:1210px;
     margin:0 auto;
-    padding-top:20px;
+    padding-top: 15px;
     }
 .left_btn{
     width:31px;
@@ -218,7 +220,8 @@
     height:61px;
     position:absolute;
     top:108px;
-    left:940px;
+    /* left:940px; */
+    right: 0;
     background:url(../img/right_btn.png) no-repeat;
 } 
  
@@ -917,6 +920,7 @@
     height: 248px;
     overflow: hidden;
     position: relative;
+    border-right: 1px solid #DBD8D3;
 }
 
 #slider1 .disable {
@@ -928,7 +932,6 @@
     position: absolute;
     padding: 0;
     margin: 0;
-    width: 240px;
     left: 0;
     top: 0;
 }

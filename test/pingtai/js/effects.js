@@ -563,7 +563,7 @@ if ($('.main_page').length) {
     closeAd();
     menu();
     tab();
-    scrollTop();
+//    scrollTop();
 
 }
 

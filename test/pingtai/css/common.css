@@ -19,8 +19,7 @@ a {
 .list_page .section2_list2 .qd a:hover,
 .section7 li a:hover,
 .list_page .section3_right .page_btn a:hover,
-.header_right a:hover,
-a:hover {
+.header_right a:hover {
 	color: #008bf2;
 }
 select {
@@ -95,7 +94,7 @@ body {
     width: 1210px;
 }
 .close {
-    background: rgba(0, 0, 0, 0) url("..//close.gif") no-repeat scroll 0 0;
+    background: url("../img/close.gif") no-repeat 0 0;
     display: block;
     height: 19px;
     position: absolute;
