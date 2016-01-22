@@ -392,6 +392,11 @@ var parity = function () {
     var selectedList = $('.selected_list');
     var selectedListBlank = $('.selected_list_control_blank');
     
+    var allPrice = $('.product_all_price');
+    var allNum = $('.product_all_num');
+    
+    // 删除
+    
     var deleteItem = function () {
         $(this).parents('li').remove();
         return false;
@@ -406,6 +411,120 @@ var parity = function () {
     $(document.body).on('click', '.config_list_delete_item', deleteItem);
     
     deleteAllBtn.click(deleteAll);
+    
+    // 选用
+    
+    var getRightItemHtml = function (html) {
+          return  '<li class="right_ul1 fh">\
+                       ' + html + '\
+                   </li>';
+    };
+    
+    var handleSelected = function (btn) {
+        var itemWrap = btn.parents('li');
+        
+        var productInfo = itemWrap.find('.left_product_selected');
+        var selectedList = $('.selected_list');
+        var blank = $('.selected_list_control_blank');
+        var itemSelectedHtml, lastRightItem, leftId;
+        
+        if (!selectedList.find('li').length && !blank.is(':visible')) return;
+        
+        itemSelectedHtml = getRightItemHtml(productInfo.html());
+        if (blank.is(':visible')) {
+            blank.hide();
+            
+            leftToRightChangePrice(itemWrap);
+        } else {
+            lastRightItem = selectedList.find('li').last();
+            
+            leftId = lastRightItem.find('.product_pic').attr('data-to-left');
+            clearSelected($('#' + leftId));
+            
+            leftToRightChangePrice($('#' + leftId), 
+                true, 
+                Number(lastRightItem.find('.change_num').find('input').val()),
+                Number(lastRightItem.find('.product_right_price').text()));
+            
+            lastRightItem.remove();
+            
+            
+        }
+        
+        selectedList.append(itemSelectedHtml);
+    };
+    
+    var leftToRightChangePrice = function (itemWrap, isRemove, r_num, r_price) {
+         var left_price = Number(itemWrap.find('.product_price').attr('data-num'));
+         var left_num = 1;
+         
+         if (allPrice.text() == '') allPrice.text(0);
+         if (allNum.text() == '') allNum.text(0);
+         
+         var allPriceVal = Number(allPrice.text());
+         var allNumVal = Number(allNum.text());
+
+         if (isRemove) {
+             allPriceVal = allPriceVal - r_price * r_num;
+             allNumVal = allNumVal - r_num;
+         } 
+         
+         allPrice.text(allPriceVal + left_price);
+         allNum.text(allNumVal + 1);
+         
+    };
+    
+    var clearSelected = function (li) {
+        if (!li.length) return;
+        
+        li.removeClass('on');
+        li.find('.product_select').html('选用');
+        li.find('.install_service .on').removeClass('on');
+    };
+    
+    var setSelected = function (btn) {
+        var itemWrap = btn.parents('li');
+        
+        itemWrap.addClass('on');
+        btn.html('已选用');
+    };
+    
+    var isSelected = function (btn) {
+        return btn.parents('li').is('.on');
+    };
+    
+    var productSelect = function () {
+    
+        $(document.body).on('click', '.product_select', function () {
+            if (isSelected($(this))) return false;
+            
+            var service = $(this).parents('li').find('.install_service');
+    
+            if (service.find('.on').length === 0) {
+                service.addClass('on');
+            } else {
+                setSelected($(this));
+                handleSelected($(this));
+                
+            }
+    
+            return false;
+        });
+    
+        $(document.body).on('click', '.install_service_close', function () {
+            $(this).parents('.install_service').removeClass('on');
+        });
+    
+        $(document.body).on('click', '.install_service a', function () {
+            if (isSelected($(this))) return false;
+            
+            $(this).addClass('on').siblings().removeClass('on');
+            $(this).parents('.install_service').removeClass('on');
+            return false;
+        });
+    };
+    
+    productSelect();
 };
 
 var selectItem = function (selector) {
@@ -511,31 +630,6 @@ var comparePriceAddPrice = function () {
 };
 
 
-var productSelect = function () {
-	var btn = $('.product_select');
-
-	btn.click(function () {
-		var service = $(this).parents('li').find('.install_service');
-
-		if (service.find('.on').length === 0) {
-			service.addClass('on');
-		}
-
-		return false;
-	});
-
-	$('.install_service_close').click(function () {
-		$(this).parents('.install_service').removeClass('on');
-	});
-
-	$('.install_service a').click(function () {
-		$(this).parents('.install_service').removeClass('on');
-		return false;
-	});
-};
-
-	
-
 /*
  * 初始化
  */
@@ -594,12 +688,10 @@ if ($('.plan_page').length) {
 
 if ($('.parity_page').length) {
 	selectItem('.product span');
-	selectItem('.install_service a');
 	toggleShowArea();
 	changeNum();
     configMore();
 	addFhLast();
-	productSelect();
     parity();
 }
 
