@@ -266,14 +266,11 @@ var showBigPic = function () {
 var changeNum = function () {
     // 详情页增加减少数量
     
-    var lessBtn = $('.change_less');
-    var moreBtn = $('.change_more');
-
 	var isDisabledClick = function (btn) {
 		return btn.parents('.change_num').attr('data-disabled') === 'true';
 	};
     
-    lessBtn.click(function () {
+    $(document.body).on('click', '.change_less', function () {
 		if (isDisabledClick($(this))) return;
 
         var num = $(this).parents('.change_num').find('input');
@@ -281,7 +278,7 @@ var changeNum = function () {
         num.val(numVal ? numVal : 1);
     });
     
-    moreBtn.click(function () {
+    $(document.body).on('click', '.change_more', function () {
 		if (isDisabledClick($(this))) return;
 
 		var num = $(this).parents('.change_num').find('input');
@@ -383,10 +380,33 @@ var deleteList = function () {
 		return false;
 	});
 
-
-
 };
 
+
+/*
+ * 综合比价
+ */
+var parity = function () {
+    var deleteAllBtn = $('.config_list_delete');
+    
+    var selectedList = $('.selected_list');
+    var selectedListBlank = $('.selected_list_control_blank');
+    
+    var deleteItem = function () {
+        $(this).parents('li').remove();
+        return false;
+    };
+    
+    var deleteAll = function () {
+        selectedList.remove();
+        selectedListBlank.remove();
+        return false;
+    };
+    
+    $(document.body).on('click', '.config_list_delete_item', deleteItem);
+    
+    deleteAllBtn.click(deleteAll);
+};
 
 var selectItem = function (selector) {
 	$(selector).click(function () {
@@ -399,7 +419,7 @@ var configMore = function () {
     
     var wrap, wrapInfo;
     
-    $('.config_more_show').click(function () {
+    $(document.body).on('click', '.config_more_show', function () {
         wrap = $(this).parents('li').find('.config_more');
         wrapInfo = $(this).parents('li').find('.config_more_info');
         
@@ -408,7 +428,7 @@ var configMore = function () {
         return false;
     });
     
-    $('.config_more').click(function () {
+    $(document.body).on('click', '.config_more', function () {
         return false;
     });
     
@@ -577,10 +597,10 @@ if ($('.parity_page').length) {
 	selectItem('.install_service a');
 	toggleShowArea();
 	changeNum();
-	deleteList();
     configMore();
 	addFhLast();
 	productSelect();
+    parity();
 }
 
 if ($('.hall_page').length) {

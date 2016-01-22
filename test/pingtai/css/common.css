@@ -28,6 +28,9 @@ select {
 .clear {
     clear: both;
 }
+.overflowhidden {
+    overflow: hidden;
+}
 .hide {
     display: none;
 }
