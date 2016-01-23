@@ -775,7 +775,6 @@ if ($('.main_page').length) {
     });
     
     
-    searchSelect();
     closeAd();
     menu();
     tab();
