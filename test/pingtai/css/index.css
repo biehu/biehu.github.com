@@ -1910,12 +1910,50 @@ padding-left: 40px;
     padding: 10px 10px 0;
 }
 
-#origin_img { /* width:304px; */ /* height:222px; */ position:relative; /* margin:30px auto 0px; */ /* padding: 10px; */} 
-#origin_img img{/* width:304px; */ /* height:222px; */} 
-#origin_img span { width:100px; height:100px; background:red; left:0px;top:0px; position:absolute; display:none; filter:alpha(opacity:20); opacity:0.2;} 
-.show { width:100%; height:100%; /* background:red; */ position:absolute; z-index:10px; filter:alpha(opacity:10); opacity:0.1; left:0px; top:0px; } 
-#zoom_img {display: none;width: 400px; height: 400px; position: absolute; top: 10px;left: 405px;display:none; overflow:hidden; margin:0px auto 0px;} 
-#zoom_img #img1 { position:absolute;} 
+#origin_img { /* width:304px; */ /* height:222px; */
+    position: relative; /* margin:30px auto 0px; */ /* padding: 10px; */
+}
+
+#origin_img span {
+    width: 100px;
+    height: 100px;
+    background: red;
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    z-index: 1;
+    display: none;
+    filter: alpha(opacity: 20);
+    opacity:0.2;
+}
+
+.show {
+    width: 100%;
+    height: 100%; 
+    background: blue;
+    filter: alpha(opacity: 0);
+    opacity:0;
+    position: absolute;
+    z-index: 10;
+    left:0px;
+    top:0px;
+}
+
+#zoom_img {
+    display: none;
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    top: 10px;
+    left: 405px;
+    display: none;
+    overflow: hidden;
+    margin: 0px auto 0px;
+}
+
+#zoom_img #img1 {
+    position: absolute;
+}
 
 .more_shops .overview {
     position: absolute;

@@ -61,7 +61,7 @@ body {
     border-bottom: 3px solid #0094e4;
 }
 .header_wrap {
-    background: #f6f5f4 none repeat scroll 0 0;
+    background: #f6f5f4 none repeat  0 0;
 }
 .header {
     height: 30px;
@@ -88,7 +88,7 @@ body {
     color: #52524f;
 }
 .header_ad_wrap {
-    background: #411696 none repeat scroll 0 0;
+    background: #411696 none repeat  0 0;
 }
 .header_ad {
     height: 80px;
@@ -144,13 +144,13 @@ body {
     width: 70px;
 }
 .search_box_hover strong {
-    background: rgba(0, 0, 0, 0) url("../img/sj_hover.gif") no-repeat scroll right 15px;
+    background: url("../img/sj_hover.gif") no-repeat  right 15px;
 }
 .search_box_hover .select_list {
     display: block;
 }
 .select_list {
-    background: #fff none repeat scroll 0 0;
+    background: #fff none repeat  0 0;
     display: none;
     position: relative;
     text-align: center;
@@ -170,7 +170,7 @@ body {
     width: 412px;
 }
 .search_btn {
-    background: #0094e4 none repeat scroll 0 0;
+    background: #0094e4 none repeat 0 0;
     color: #fff;
     display: inline-block;
     font-family: "Microsoft Yahei";
@@ -235,10 +235,10 @@ body {
     color: #52524f;
 }
 .menu_wrap .main_nav {
-    background: rgba(0, 0, 0, 0) url("../img/main_nav_default.png") no-repeat scroll 0 0;
+    background:  url("../img/main_nav_default.png") no-repeat 0 0;
 }
 .main_nav {
-    background: rgba(0, 0, 0, 0) url("../img/main_nav.png") no-repeat scroll 0 0;
+    background:  url("../img/main_nav.png") no-repeat 0 0;
     height: 52px;
     overflow: hidden;
 }
@@ -255,7 +255,7 @@ body {
     color: #008bf2;
 }
 .main_nav li.nav_all .mark_down {
-    background: rgba(0, 0, 0, 0) url("../img/menu_down.png") repeat scroll 0 0;
+    background: url("../img/menu_down.png") repeat 0 0;
 }
 .main_nav li.nav_all i {
     height: 7px;
@@ -265,7 +265,7 @@ body {
     width: 13px;
 }
 .main_page .main_nav li.nav_all::after {
-    background: rgba(0, 0, 0, 0) url("../img/main_nav.png") no-repeat scroll left bottom;
+    background: url("../img/main_nav.png") no-repeat left bottom;
     bottom: 0;
     content: "";
     height: 14px;
@@ -294,30 +294,30 @@ body {
     background: #0070ba none repeat scroll 0 0;
 }
 .menu .cate_1 {
-    background: rgba(0, 0, 0, 0) url("../img/dot1.png") no-repeat scroll 8px 12px;
+    background: url("../img/dot1.png") no-repeat scroll 8px 12px;
     border-top: 1px solid #0070ba;
 }
 .menu .cate_2 {
-    background: rgba(0, 0, 0, 0) url("../img/dot2.png") no-repeat scroll 8px 12px;
+    background: url("../img/dot2.png") no-repeat scroll 8px 12px;
 }
 .menu .cate_3 {
-    background: rgba(0, 0, 0, 0) url("../img/dot3.png") no-repeat scroll 8px 12px;
+    background: url("../img/dot3.png") no-repeat scroll 8px 12px;
 }
 .menu .cate_4 {
-    background: rgba(0, 0, 0, 0) url("../img/dot4.png") no-repeat scroll 8px 12px;
+    background: url("../img/dot4.png") no-repeat scroll 8px 12px;
 }
 .menu .cate_5 {
-    background: rgba(0, 0, 0, 0) url("../img/dot5.png") no-repeat scroll 8px 12px;
+    background: url("../img/dot5.png") no-repeat scroll 8px 12px;
 }
 .menu .cate_6 {
-    background: rgba(0, 0, 0, 0) url("../img/dot6.png") no-repeat scroll 8px 12px;
+    background: url("../img/dot6.png") no-repeat scroll 8px 12px;
     border-bottom: medium none;
 }
 .menu .on, .menu .on a {
     color: #008bf2;
 }
 .menu .on .zk_dot {
-    background: rgba(0, 0, 0, 0) url("../img/dot7.png") no-repeat scroll 0 0;
+    background: url("../img/dot7.png") no-repeat scroll 0 0;
 }
 .menu .cate_1.on {
     background: #f7f7f6 url("../img/dot1_1.png") no-repeat scroll 8px 12px;
@@ -352,7 +352,7 @@ body {
     line-height: 35px;
 }
 .zk_dot {
-    background: rgba(0, 0, 0, 0) url("../img/dot8.png") no-repeat scroll 0 0;
+    background: url("../img/dot8.png") no-repeat scroll 0 0;
     height: 9px;
     position: absolute;
     right: 13px;
@@ -841,6 +841,7 @@ body {
     height: 18px;
     /* margin: 0 5px; */
     text-align: center;
+    vertical-align: middle;
 }
 
 .loading {
@@ -1148,7 +1149,7 @@ td.com-i-column .p-operate .reply {
     margin-right: 20px;
 }
 td.com-i-column .grade-star {
-    background: rgba(0, 0, 0, 0) url("../img/comment_icons.png") no-repeat scroll -183px -239px;
+    background: url("../img/comment_icons.png") no-repeat -183px -239px;
     height: 14px;
     width: 75px;
     margin-left: 7px;
