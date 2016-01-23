@@ -263,7 +263,7 @@ var showBigPic = function () {
     });
 };
 
-var changeNum = function () {
+var changeNum = function (callback) {
     // 详情页增加减少数量
     
 	var isDisabledClick = function (btn) {
@@ -275,7 +275,14 @@ var changeNum = function () {
 
         var num = $(this).parents('.change_num').find('input');
 		var numVal = Number(num.val()) - 1;
-        num.val(numVal ? numVal : 1);
+        
+        if (numVal) {
+            num.val(numVal);
+            if (callback) callback(num, -1);
+        } else {
+            num.val(1);
+        }
+        
     });
     
     $(document.body).on('click', '.change_more', function () {
@@ -284,6 +291,8 @@ var changeNum = function () {
 		var num = $(this).parents('.change_num').find('input');
 		var numVal = Number(num.val()) + 1;
         num.val(numVal);
+        
+        if (callback) callback(num, 1);
     });
 };
 
@@ -296,14 +305,6 @@ var backService = function () {
     });
 };
 
-var addFhLast = function () {
-	var btn = $('.fh_last_add');
-	var addArea = $('.fh_last');
-
-	btn.click(function () {
-		addArea.after(addArea.clone());
-	});
-};
 
 /*
  * 表单
@@ -395,22 +396,91 @@ var parity = function () {
     var allPrice = $('.product_all_price');
     var allNum = $('.product_all_num');
     
+    var blank = $('.selected_list_control_blank');
+    
     // 删除
     
-    var deleteItem = function () {
-        $(this).parents('li').remove();
+    var deleteChangePrice = function (itemWrap) {
+        
+         var allinfo = getAllInfo();
+         var allPriceVal = allinfo[0];
+         var allNumVal = allinfo[1];
+        
+        if (itemWrap) {
+            var right_price = Number(itemWrap.find('.product_right_price').text());
+            var right_num = Number(itemWrap.find('.change_num').find('input').val());
+            
+            allPrice.text(allPriceVal - right_price * right_num);
+            allNum.text(allNumVal - right_num);
+        } else {
+            allPrice.text(0);
+            allNum.text(0);
+        }
+    };
+    
+    var deleteItem = function (itemWrap) {
+        
+        deleteChangePrice(itemWrap);
+        
+        var leftId = itemWrap.find('.product_pic').attr('data-to-left');
+        clearSelected($('#' + leftId));
+        
+        itemWrap.remove();
+        
         return false;
     };
     
     var deleteAll = function () {
-        selectedList.remove();
-        selectedListBlank.remove();
+        
+        selectedList.find('li').each(function () {
+            deleteItem($(this));
+        });
+        
+        selectedListBlank.hide();
         return false;
     };
     
-    $(document.body).on('click', '.config_list_delete_item', deleteItem);
+    $(document.body).on('click', '.config_list_delete_item', function () {
+        deleteItem($(this).parents('li'));
+        return false;
+    });
     
     deleteAllBtn.click(deleteAll);
+    
+    // 数量加减
+    
+    changeNumChangePrice = function (num, type) {
+        var itemWrap = num.parents('li');
+        
+        var right_price = Number(itemWrap.find('.product_right_price').text());
+        var right_num = 1; 
+        
+         var allinfo = getAllInfo();
+         var allPriceVal = allinfo[0];
+         var allNumVal = allinfo[1];
+        
+        if (type > 0) {
+            allPrice.text(allPriceVal + right_price);
+            allNum.text(allNumVal + 1);
+        } else {
+            allPrice.text(allPriceVal - right_price);
+            allNum.text(allNumVal - 1);
+        }
+    };
+  
+    changeNum(changeNumChangePrice);
+    
+    // 添加空白
+    
+    var addFhLast = function () {
+        var btn = $('.fh_last_add');
+    
+        btn.click(function () {
+            blank.show();
+        });
+    };
+    
+    addFhLast();
     
     // 选用
     
@@ -424,11 +494,7 @@ var parity = function () {
         var itemWrap = btn.parents('li');
         
         var productInfo = itemWrap.find('.left_product_selected');
-        var selectedList = $('.selected_list');
-        var blank = $('.selected_list_control_blank');
         var itemSelectedHtml, lastRightItem, leftId;
-        
-        if (!selectedList.find('li').length && !blank.is(':visible')) return;
         
         itemSelectedHtml = getRightItemHtml(productInfo.html());
         if (blank.is(':visible')) {
@@ -454,15 +520,25 @@ var parity = function () {
         selectedList.append(itemSelectedHtml);
     };
     
-    var leftToRightChangePrice = function (itemWrap, isRemove, r_num, r_price) {
-         var left_price = Number(itemWrap.find('.product_price').attr('data-num'));
-         var left_num = 1;
-         
+    
+    var getAllInfo = function () {
          if (allPrice.text() == '') allPrice.text(0);
          if (allNum.text() == '') allNum.text(0);
          
          var allPriceVal = Number(allPrice.text());
          var allNumVal = Number(allNum.text());
+         
+         return [allPriceVal, allNumVal];
+    };
+    
+    
+    var leftToRightChangePrice = function (itemWrap, isRemove, r_num, r_price) {
+         var left_price = Number(itemWrap.find('.product_price').attr('data-num'));
+         var left_num = 1;
+         
+         var allinfo = getAllInfo();
+         var allPriceVal = allinfo[0];
+         var allNumVal = allinfo[1];
 
          if (isRemove) {
              allPriceVal = allPriceVal - r_price * r_num;
@@ -480,6 +556,11 @@ var parity = function () {
         li.removeClass('on');
         li.find('.product_select').html('选用');
         li.find('.install_service .on').removeClass('on');
+        
+        var moreInfo = li.find('.config_more_info');
+        var moreInfoText = moreInfo.attr('data-old-info');
+        moreInfo.attr('data-default-info', moreInfoText);
+        moreInfo.text(moreInfoText);
     };
     
     var setSelected = function (btn) {
@@ -493,6 +574,14 @@ var parity = function () {
         return btn.parents('li').is('.on');
     };
     
+    var isHasBlank = function () {
+        if (!selectedList.find('li').length && !blank.is(':visible')) {
+            return false;
+        } else {
+            return true;
+        }
+    };
+    
     var productSelect = function () {
     
         $(document.body).on('click', '.product_select', function () {
@@ -503,6 +592,11 @@ var parity = function () {
             if (service.find('.on').length === 0) {
                 service.addClass('on');
             } else {
+                if (!isHasBlank()) {
+                    alert('请从右边添加占位！');
+                    return false;
+                }
+                
                 setSelected($(this));
                 handleSelected($(this));
                 
@@ -518,8 +612,16 @@ var parity = function () {
         $(document.body).on('click', '.install_service a', function () {
             if (isSelected($(this))) return false;
             
+            var itemWrap = $(this).parents('li');
+            
             $(this).addClass('on').siblings().removeClass('on');
             $(this).parents('.install_service').removeClass('on');
+            
+            var moreInfo = itemWrap.find('.config_more_info');
+            var moreInfoText = moreInfo.attr('data-default-info');
+            moreInfo.attr('data-default-info', moreInfoText + ' ' + $(this).html());
+            moreInfo.html(moreInfoText + ' ' + $(this).html());
+            
             return false;
         });
     };
@@ -560,12 +662,12 @@ var configMore = function () {
         var i;
         
         for (i = 0; i < inputs.length;  i++) {
-            if (inputs.eq(i).val() != '') html += inputs.eq(i).val() + ' ';
+            if (inputs.eq(i).val() != '') html +=  ' ' + inputs.eq(i).val();
         }
         
         wrap.addClass('hide');
         
-        wrapInfo.html(html);
+        wrapInfo.html(wrapInfo.attr('data-default-info') + html);
         
         
     });
@@ -689,9 +791,7 @@ if ($('.plan_page').length) {
 if ($('.parity_page').length) {
 	selectItem('.product span');
 	toggleShowArea();
-	changeNum();
     configMore();
-	addFhLast();
     parity();
 }
 
