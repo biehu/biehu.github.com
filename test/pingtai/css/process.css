@@ -491,7 +491,7 @@
     border-top:2px solid #0091e7;
 }
 .parity_page .section3_right{
-    float:left;
+    float:right;
     width:507px;
     border-top:2px solid #0091e7;
     margin-left:17px;
@@ -1014,7 +1014,6 @@
     margin: 30px auto 0;
 }
 .shop_page{
-    padding-bottom: 50px;
     font-size:12px;
     font-family:"ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¥ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â®ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¹ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¤ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â½ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œ";
 }
@@ -1490,8 +1489,6 @@ padding: 10px 0 10px 50px;
 }
 .hall_page .message_list{
     border:1px solid #E8E8E8;
-    width:100%;
-    /* height:156px; */
     padding-top:30px;
     margin-bottom:13px;
     overflow: hidden;
@@ -1708,4 +1705,209 @@ padding: 10px 0 10px 50px;
 .hall_list_bot {
     margin-top: 5px;
     color: #939393;
+}
+
+.direct_parity_page .message_list{
+    border:1px solid #E8E8E8;
+    padding-top:30px;
+    margin-bottom:13px;
+    overflow: hidden;
+    padding-bottom: 10px;
+}
+.direct_parity_page .message_list .message_list1{
+    float:left;
+    width: 170px;
+    text-align: center;
+}
+.direct_parity_page .message_list .message_list2{
+    width:490px;
+    float:left;
+    font-size:14px;
+}
+
+.direct_parity_page .message_list .message_list2 .bt{
+    font-weight:bold;
+    color:#4A4A4A;
+}
+.direct_parity_page .message_list .message_list2 p{
+    color: #93908b;
+    font-size: 12px;
+    line-height: 20px;
+    margin-top: 5px;
+}
+.direct_parity_page .message_list2 .box_btn a{
+    border-radius: 3px;
+    display: inline-block;
+    height: 27px;
+    line-height: 27px;
+    margin-top: 10px; 
+    text-align: center;
+    width: 84px;
+    font-size:12px;
+}
+.direct_parity_page .message_list2 .box_btn1{
+    background:#ec1928;
+    color: #fff;
+}
+.direct_parity_page .message_list2 .box_btn2{
+    background:#EDEDED;
+    color:#636363;
+    margin-left:5px;
+}
+.direct_parity_page .quote_img{
+    margin-left:3px;
+}
+.direct_parity_page .message_list .message_list3{
+    float:left;
+    width:245px;
+    color:#93908B;
+}
+.direct_parity_page .message_list .score span{
+    display:inline-block;
+    width:55px;
+    text-align:center;
+}
+.direct_parity_page .message_list .score .zh{
+    width:75px;
+    font-weight:bold;
+}
+.direct_parity_page .message_list .score .zh e{
+    color:#f00;
+    font-weight:normal;
+}
+.direct_parity_page .message_list .score e{
+    font-family:"Microsoft YaHei";
+}
+.direct_parity_page .message_list .score img{
+    margin:0 0 2px 2px;
+}
+.direct_parity_page .message_list .message_list3 {
+    width: auto;
+    margin-left: 70px;
+}
+.direct_parity_page  .message_list .score img {
+    margin-left: 10px;
+    vertical-align: middle;
+}
+.direct_parity_page  .message_list .score e {
+    margin-left: 5px;
+}
+.direct_parity_page  .message_list .score {
+    line-height: 25px;
+}
+.direct_parity_page  .message_list .score .zh {
+    width: auto;
+    text-align: left;
+    color: #848484;
+    font-size: 14px;
+}
+.direct_parity_page .message_list .score span {
+    display: block;
+    width: auto;
+}
+.direct_parity_page .section1_wrap {
+    background: none;
+}
+.direct_parity_page .section2 .message_list {
+    margin-top: 15px;
+}
+.direct_parity_page .message_list4 {
+    float: left;
+    margin-left: 160px;
+}
+.direct_parity_page .message_list4 .box_btn2 {
+    background: #4595e6;
+}
+.direct_parity_page .message_list4 .box_btn1 {
+    background: #ec1928;
+}
+.direct_parity_page .message_list4 .box_btn a {
+    border-radius: 3px;
+    display: block;
+    height: 27px;
+    line-height: 27px;
+    margin-top: 13px;
+    text-align: center;
+    width: 84px;
+    font-size: 13px;
+    color: #fff;
+    font-family: "Microsoft Yahei";
+}
+
+.direct_parity_page .section_tab li:hover,
+.direct_parity_page .section_tab li.on {
+    background: none;
+    color: #4595e6;
+    font-weight: bold;
+}
+.direct_parity_page .section_tab li {
+    float: left;
+    width: 145px;
+    height: 38px;
+    margin-right: 5px;
+    line-height: 38px;
+    background: #eeeeee;
+    border: 1px solid #EAE9E6;
+    border-bottom: none;
+    text-align: center;
+}
+.direct_parity_page .section_tab {
+    overflow: hidden;
+    width: 1210px;
+    margin: 0 auto;
+    border-bottom: 1px solid #EAE9E6;
+}
+.direct_parity_page .section3 {
+    margin-top: 0;
+}
+.direct_parity_page .section2_main {
+    margin-top: 0;
+    margin-bottom: -1px;
+}
+.direct_parity_page .section2_main {
+    border-top: none;
+}
+
+.config_list {
+    overflow: hidden;
+    margin: 20px;
+    border: 1px solid #eeeeee;
+}
+.config_info li {
+    float: left;
+    margin: 0 20px;
+}
+.config_info {
+    overflow: hidden;
+    line-height: 40px;
+    background: #eee;
+}
+.config_con table td {
+    height: 30px;
+    border-bottom: 1px solid #e1e1e1;
+    text-align: center;
+}
+.config_con table {
+    width: 790px;
+    border: 1px solid #e1e1e1;
+    border-collapse:collapse;
+}
+.config_btn {
+    margin-top: 75px;
+}
+.config_btn a {
+    display: inline-block;
+    font-size: 14px;
+    color: #fff;
+    width: 107px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    background: #4595e6;
+    border-radius: 2px;
+    font-family: "Microsoft Yahei";
+}
+.config_con {
+    float: left;
+    margin: 30px 80px;
 }

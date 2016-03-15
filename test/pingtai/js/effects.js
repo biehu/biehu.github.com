@@ -47,6 +47,7 @@ var menu = function () {
         $(this).removeClass('on');
         list.eq($(this).index()).hide();
     });
+
     list.hover(function () {
         $(this).show();
         menuLinks.eq($(this).index() - 1).addClass('on');
@@ -776,7 +777,6 @@ if ($('.main_page').length) {
     
     
     closeAd();
-    menu();
     tab();
 //    scrollTop();
 
@@ -792,6 +792,10 @@ if ($('.parity_page').length) {
 	toggleShowArea();
     configMore();
     parity();
+}
+
+if ($('.direct_parity_page').length) {
+    tab();
 }
 
 if ($('.hall_page').length) {
