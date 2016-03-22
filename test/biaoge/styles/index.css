@@ -1,0 +1,235 @@
+.design{
+    overflow:hidden;
+    margin-top: 55px;
+}
+.design li{
+    width: 318px;
+    float:left;
+    font-family:"微软雅黑";
+    margin-right:28px;
+    height: 191px;
+    background:#fff;
+    padding:20px 30px 0 30px;
+    border: 1px solid #f8f8f8;
+}
+.design li h3,.design_list h3,.staff h3{
+    font-size:18px;
+    color:#000;
+    font-weight:normal;
+    height:45px;
+    line-height:45px;  
+}
+.design  li:hover, .design_list > div:hover, .we:hover, .team:hover {
+	border: 1px solid #22aed1;
+}
+.design li p{
+    color:#666460;
+    line-height: 20px;
+    margin-bottom:20px;
+}
+.design li.last{
+    margin-right:0;
+}
+.design li a,.design_list a{
+    color:#00A9CB;
+}
+
+.design_list{
+    margin:15px 0 20px;
+}
+.course,.info{
+    width: 523px;
+    height: 193px;
+    float:left;
+    font-family:"å¾®è½¯é›…é»‘";
+    margin-right:24px;
+    background:#fff;
+    padding:20px 30px 0 30px;
+    border: 1px solid #f8f8f8;
+}
+.design_list ul{
+    margin-bottom:20px;
+}
+.design_list li{
+    line-height: 20px;
+    overflow:hidden;
+}
+.design_list li a{
+    color:#666460;
+}
+.design_list li .time{
+    float:right;
+}
+.design_list .info{
+    margin-right:0;
+    width: 525px;
+    height:193px;
+}
+
+.staff {
+    margin-bottom: 20px;
+}
+.we{
+    width: 409px;
+    height: 213px;
+    float:left;
+    font-family:"å¾®è½¯é›…é»‘";
+    margin-right:24px;
+    background:#fff;
+    padding: 20px 0px 0 30px;
+    border: 1px solid #f8f8f8;
+}
+.we .tell{
+    height:35px;
+    line-height:35px;
+    margin: 8px 0 8px;
+}
+.we .tell1{
+    background:url(../images/small_logo.png) 0 3px no-repeat;
+    width:135px;
+    padding-left:35px;
+    font-size:16px;
+    display:inline-block;
+    height:35px;
+    color:#000;
+}
+.we .tell2{
+    background:url(../images/small_logo.png) -170px 3px no-repeat;
+    width:135px;
+    padding-left:35px;
+    font-size:16px;
+    display:inline-block;
+    height:35px;
+    color:#000;
+}
+.we ul{
+    overflow:hidden;
+}
+.we li i {
+    display: inline-block;
+    width: 23px;
+    height: 21px;
+    vertical-align: -5px;
+    margin-right: 3px;
+}
+.we li{
+    float:left;
+    width: 204px;
+    /* padding-left:25px; */
+    line-height:22px;
+    color:#000;
+    margin-top: 5px;
+}
+.we .i_one{
+    background:url(../images/small_logo.png) 3px -44px no-repeat;
+}
+.we .i_two{
+    background:url(../images/small_logo.png) -158px -44px no-repeat;
+}
+.we .i_three{
+    background:url(../images/small_logo.png) 3px -68px no-repeat;
+    font-size:8.5px;
+}
+.we .i_four{
+    background:url(../images/small_logo.png) -158px -68px no-repeat;
+}
+.we .i_five{
+    background:url(../images/small_logo.png) 3px -90px no-repeat;
+    font-size:8.5px;
+}
+.team{
+    width: 668px;
+    height: 213px;
+    /* float:left; */
+    font-family:"å¾®è½¯é›…é»‘";
+    margin-right:0;
+    background:#fff;
+    padding:20px 30px 0 30px;
+    margin-left: 465px;
+    border: 1px solid #f8f8f8;
+}
+.team p{
+    line-height: 20px;
+}
+
+
+
+
+.jiaocheng_wrap{
+   background:#F8F8F7 url(../images/main_top.jpg) no-repeat; 
+}
+.jiaocheng{
+    width:1196px;
+    margin:0 auto;
+    font-size:12px;
+    font-family:"å¾®è½¯é›…é»‘";
+}
+.jiaocheng_left{
+    width:345px;
+    float:left;
+    background:#fff;
+    padding: 20px 0 20px 20px;}
+.jiaocheng_left h3{
+    font-size:18px;
+    color:#000;
+    font-weight:normal;
+    height:45px;
+    line-height:45px;
+    padding-right:30px;
+    overflow:hidden;
+}
+.jiaocheng_left h3 a{
+    float:right;
+    color:#00B5D2;
+    font-size:12px;
+}
+.left_title{
+    margin-left:20px;
+    display:inline-block;
+}
+.jiaocheng_left ul{
+    margin-bottom:5px;
+}
+.jiaocheng_left li{
+    font-size:12px;
+    line-height:19px;
+}
+.jiaocheng_left li a{
+    color:#6F6D68;
+}
+.jiaocheng_left .more{
+    color:#00A9CB;
+}
+.jiaocheng_right a.more {
+    float: right;
+    margin-top: 20px;
+    color:#00A9CB;
+    
+}
+.jiaocheng_share {
+    margin: 5px 0;
+}
+.jiaocheng_info p {
+    margin-top: 2px;
+}
+.jiaocheng_right{
+    float:left;
+    width: 746px;  
+    margin-left:24px;
+    display:inline; 
+    padding: 30px;
+    background:#fff;
+}
+.jiaocheng_right h2{
+    font-size:24px;
+    text-align:center;
+    font-weight:normal;
+}
+.jiaocheng_right .tit_from{
+    text-align:center;
+    color:#666460;
+}
+.jiaocheng_right .care{
+    font-size:10px;
+    text-align:center;
+}
