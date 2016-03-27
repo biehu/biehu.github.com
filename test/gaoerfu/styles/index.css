@@ -1,0 +1,41 @@
+* {
+    margin:0;
+    padding:0;
+}
+
+ul {
+    list-style:none;
+}
+
+img {
+    vertical-align:bottom;
+}
+
+a img {
+    border:none;
+}
+
+a {
+    text-decoration:none;
+}
+
+.clear {
+    clear:both;
+}
+
+.inner {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.banner {
+    height: 676px;
+    background: url(../images/banner.jpg) no-repeat center top;
+}
+.s_title {
+    padding: 38px 0;
+}
+.publish .s_title {
+    padding-top: 10px;
+}
+
