@@ -23,6 +23,29 @@ a {
     clear:both;
 }
 
+.page_wrap {
+    line-height: 26px;
+    font-size: 16px;
+    font-family: Microsoft YaHei;
+}
+
+.section {
+    overflow: hidden;   
+    clear:both; 
+}
+.s_con_l {
+    float: left;
+}
+.s_con_r {
+    float: right;
+}
+.publish .s_con_r {
+    width: 425px;
+}
+.guest .s_con_r {
+    width: 580px;
+}
+
 .inner {
     width: 1000px;
     margin: 0 auto;
@@ -33,9 +56,213 @@ a {
     background: url(../images/banner.jpg) no-repeat center top;
 }
 .s_title {
-    padding: 38px 0;
+    padding: 50px 0;
 }
 .publish .s_title {
     padding-top: 10px;
 }
 
+.carousel-inner {
+    overflow: hidden;
+    position: relative;
+    height: 402px;
+}
+.carousel-indicators {
+    position: absolute;
+    bottom: 26px;
+    left: 50%;
+    z-index: 15;
+    width: 60%;
+    padding-left: 0;
+    margin-left: -30%;
+    text-align: center;
+    list-style: none
+}
+
+.carousel-indicators li {
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    margin: 1px;
+    background: url(../images/focus_num.png) no-repeat -20px 0;
+    text-indent: -999px;
+    cursor: pointer;
+}
+
+.carousel-indicators .active {
+    background: url(../images/focus_num.png) no-repeat -1px 0;
+}
+
+.carousel {
+    position: relative;
+    width: 574px;
+    height: 472px;
+}
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    margin-top: -29px;
+    width: 58px;
+    height: 100px;
+}
+.item_text {
+   position: absolute;
+   bottom: 0;
+   width: 100%;
+   line-height: 58px;
+   background: #000;
+   opacity: .8;
+   text-align: center;
+   color: #fff;
+   font-size: 20px;
+    
+}
+
+.publish_text {
+    background: url(../images/gaoerfu_07.jpg) no-repeat right top;
+}
+.publish_text p strong {
+    font-size: 37px;
+    font-weight: normal;
+}
+.publish_text p {
+    padding: 60px 24px 0;
+}
+
+.guest {
+    padding-bottom: 75px;
+    background: #d2b198;
+}
+.guest ul li.last {
+    margin-right: 0;
+}
+.guest p img {
+    margin: 20px 0;
+}
+.guest .tab.on {
+	display: block;
+}
+.guest .tab {
+	display: none;
+	height: 390px;
+}
+.guest ul {
+	height: 140px;
+}
+.guest ul li  {
+    width: 140px;
+    height: 140px;
+    overflow: hidden;
+    background: #000;
+}
+.guest ul .on a {
+    display: block;
+    margin: 8px;
+    width: 124px;
+    height: 124px;
+    overflow: hidden;
+}
+.guest ul li {
+    float: left;
+    margin-right: 5px;
+}
+
+.trip {
+    height: 735px;
+    background: url(../images/video_bg.jpg) no-repeat center top;
+}
+.video {
+    position: relative;
+    width: 823px;
+    height: 463px;
+    margin-left: 90px;
+    background: url(../images/video.jpg) no-repeat;
+}
+.video_btn:hover {
+    background-position: right top;
+}
+.video_title {
+    position: absolute;
+    bottom: -65px;
+    width: 100%;
+    text-align: center;
+}
+.video_btn {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 122px;
+    height: 122px;
+    margin: -61px 0 0 -61px;
+    background: url(../images/video_play.png) no-repeat left top;
+}
+
+.history_col {
+    position: absolute;
+}
+.history_col p em,
+.history_col p span {
+    float: left;
+}
+.history_col p span {
+    padding-left: 23px;
+    position: relative;
+    left: -20px;
+    background: url(../images/time_mask.png) no-repeat left top;
+}
+.history_col p em {
+    color: #999999;
+    font-style: normal;
+    font-size: 38px;
+    font-family: simsun;
+}
+.history_col p {
+    overflow: hidden;
+    line-height: 54px;
+    margin-top: 5px;
+    padding: 0 5px;
+    background: #fff;
+}
+.history .s_con {
+    position: relative;
+}
+.history .inner {
+    height: 1628px;
+    background: url(../images/line.png) no-repeat center 140px;
+}
+.history {
+    height: 1628px;
+    background: #cecece url(../images/history_bg.jpg) no-repeat center bottom;
+}
+.history .s_title {
+    padding-bottom: 0;
+}
+
+.history_col_7 {
+    top: 1145px;
+    left: 83px;
+}
+.history_col_6 {
+    top: 946px;
+    left: 538px;
+}
+.history_col_5 {
+    top: 802px;
+    left: 8px;
+}
+.history_col_4 {
+    top: 550px;
+    left: 538px;
+}
+.history_col_3 {
+    top: 460px;
+    left: 83px;
+}
+.history_col_2 {
+    top: 156px;
+    left: 538px;
+}
+.history_col_1 {
+    top: 60px;
+    left: 8px;
+}
