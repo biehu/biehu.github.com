@@ -23,6 +23,29 @@ a {
     clear:both;
 }
 
+.page_wrap {
+    line-height: 26px;
+    font-size: 16px;
+    font-family: Microsoft YaHei;
+}
+
+.section {
+    overflow: hidden;   
+    clear:both; 
+}
+.s_con_l {
+    float: left;
+}
+.s_con_r {
+    float: right;
+}
+.publish .s_con_r {
+    width: 425px;
+}
+.guest .s_con_r {
+    width: 580px;
+}
+
 .inner {
     width: 1000px;
     margin: 0 auto;
@@ -39,3 +62,97 @@ a {
     padding-top: 10px;
 }
 
+.carousel-inner {
+    overflow: hidden;
+    position: relative;
+    height: 402px;
+}
+.carousel-indicators {
+    position: absolute;
+    bottom: 26px;
+    left: 50%;
+    z-index: 15;
+    width: 60%;
+    padding-left: 0;
+    margin-left: -30%;
+    text-align: center;
+    list-style: none
+}
+
+.carousel-indicators li {
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    margin: 1px;
+    background: url(../images/focus_num.png) no-repeat -20px 0;
+    text-indent: -999px;
+    cursor: pointer;
+}
+
+.carousel-indicators .active {
+    background: url(../images/focus_num.png) no-repeat -1px 0;
+}
+
+.carousel {
+    position: relative;
+    width: 574px;
+    height: 472px;
+}
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    margin-top: -29px;
+    width: 58px;
+    height: 100px;
+}
+.item_text {
+   position: absolute;
+   bottom: 0;
+   width: 100%;
+   line-height: 58px;
+   background: #000;
+   opacity: .8;
+   text-align: center;
+   color: #fff;
+   font-size: 20px;
+    
+}
+
+.publish_text {
+    background: url(../images/gaoerfu_07.jpg) no-repeat right top;
+}
+.publish_text p strong {
+    font-size: 37px;
+    font-weight: normal;
+}
+.publish_text p {
+    padding: 60px 24px 0;
+}
+
+.guest {
+    padding-bottom: 75px;
+    background: #d2b198;
+}
+.guest ul li.last {
+    margin-right: 0;
+}
+.guest p img {
+    margin: 20px 0;
+}
+.guest ul li  {
+    width: 140px;
+    height: 140px;
+    overflow: hidden;
+    background: #000;
+}
+.guest ul .on a {
+    display: block;
+    margin: 8px;
+    width: 124px;
+    height: 124px;
+    overflow: hidden;
+}
+.guest ul li {
+    float: left;
+    margin-right: 5px;
+}
