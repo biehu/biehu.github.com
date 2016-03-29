@@ -169,7 +169,7 @@ a {
 
 .trip {
     height: 735px;
-    background: url(../images/video_bg.jpg) no-repeat center top;
+    background: #cecece url(../images/video_bg.jpg) no-repeat center top;
 }
 .video {
     position: relative;
