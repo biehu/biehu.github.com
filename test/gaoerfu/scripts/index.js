@@ -166,9 +166,71 @@ playVideo();
 //	photoShow();
 //};
 
+//var photoShowSet = function () {
+//
+//    var blank = $('.blank');
+//    blank.each(function () {
+//                
+//                $(this)
+//                    .data({
+//                        width: $(this).width(),
+//                        height: $(this).height()
+//                    })
+//                    .css({
+//                        top: parseInt($(this).css('top')) + $(this).height() / 2,
+//                        left: parseInt($(this).css('left')) + $(this).width() / 2,
+//                    })
+//                    .css({
+//                        width: 0,
+//                        height: 0
+//                    });
+//            });
+//    
+//};
+//
+//photoShowSet();
+//
+//var photoShow = function () {
+//            var blank = $('.blank');
+//            
+//            
+//            
+//            var goIndex = 0;
+//            var go = function () {
+//                
+//                blank.eq(goIndex).animate({
+//                    top: parseInt(blank.eq(goIndex).css('top')) - blank.eq(goIndex).data('width') / 2,
+//                    left: parseInt(blank.eq(goIndex).css('left')) - blank.eq(goIndex).data('height') / 2,
+//                    width: blank.eq(goIndex).data('width'),
+//                    height: blank.eq(goIndex).data('height')
+//                }, 'fast');
+//                
+//                if (goIndex < blank.length) {
+//                    goIndex++;
+//                    setTimeout(go, goIndex % 2 === 0 ? 300 : 0);
+//                }
+//            };
+//            
+//            $(window).scroll(function () {
+//                var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+//                if (scrollTop + $(window).height() > $('.your_trip').offset().top) {
+//                    go();
+//                    $(window).off('scroll');
+//                }
+//            });
+//            
+//            
+//            
+//    
+//};
+//
+//
+//    photoShow();
+
+
 var photoShowSet = function () {
 
-    var blank = $('.blank');
+    var blank = $('.blank img');
     blank.each(function () {
                 
                 $(this)
@@ -177,10 +239,8 @@ var photoShowSet = function () {
                         height: $(this).height()
                     })
                     .css({
-                        top: parseInt($(this).css('top')) + $(this).height() / 2,
-                        left: parseInt($(this).css('left')) + $(this).width() / 2,
-                    })
-                    .css({
+                        marginLeft: $(this).width() / 2,
+                        marginTop: $(this).height() / 2,
                         width: 0,
                         height: 0
                     });
@@ -191,7 +251,7 @@ var photoShowSet = function () {
 photoShowSet();
 
 var photoShow = function () {
-            var blank = $('.blank');
+            var blank = $('.blank img');
             
             
             
@@ -199,8 +259,8 @@ var photoShow = function () {
             var go = function () {
                 
                 blank.eq(goIndex).animate({
-                    top: parseInt(blank.eq(goIndex).css('top')) - blank.eq(goIndex).data('width') / 2,
-                    left: parseInt(blank.eq(goIndex).css('left')) - blank.eq(goIndex).data('height') / 2,
+                    marginLeft: 0,
+                    marginTop: 0,
                     width: blank.eq(goIndex).data('width'),
                     height: blank.eq(goIndex).data('height')
                 }, 'fast');
