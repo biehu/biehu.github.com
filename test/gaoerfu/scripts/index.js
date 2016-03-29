@@ -242,7 +242,8 @@ var photoShowSet = function () {
                         marginLeft: $(this).width() / 2,
                         marginTop: $(this).height() / 2,
                         width: 0,
-                        height: 0
+                        height: 0,
+                        opacity: 0
                     });
             });
     
@@ -259,6 +260,7 @@ var photoShow = function () {
             var go = function () {
                 
                 blank.eq(goIndex).animate({
+                    opacity: 1,
                     marginLeft: 0,
                     marginTop: 0,
                     width: blank.eq(goIndex).data('width'),
@@ -267,7 +269,7 @@ var photoShow = function () {
                 
                 if (goIndex < blank.length) {
                     goIndex++;
-                    setTimeout(go, goIndex % 2 === 0 ? 300 : 0);
+                    setTimeout(go, goIndex % 2 === 0 ? 700 : 0);
                 }
             };
             
