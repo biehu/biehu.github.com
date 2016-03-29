@@ -152,5 +152,7 @@ var photoShow = function () {
 	
 };
 
+window.onload = function () {
 	photoShow();
+};
 
