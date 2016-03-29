@@ -104,26 +104,88 @@ var playVideo = function () {
 
 playVideo();
 
+//var photoShowSet = function () {
+//
+//	var blank = $('.blank');
+//	blank.each(function () {
+//                
+//                $(this)
+//                    .data({
+//                        top: $(this).css('top'),
+//                        left: $(this).css('left'),
+//						width: $(this).width(),
+//						height: $(this).height()
+//                    })
+//                    .css({
+//                        top: '50%',
+//                        left: '50%',
+//						width: 0,
+//						height: 0
+//                    });
+//            });
+//	
+//};
+//
+//photoShowSet();
+//
+//var photoShow = function () {
+//            var blank = $('.blank');
+//            
+//            
+//            
+//            var goIndex = 0;
+//            var go = function () {
+//                
+//                blank.eq(goIndex).animate({
+//                    top: blank.eq(goIndex).data('top'),
+//                    left: blank.eq(goIndex).data('left'),
+//                    width: blank.eq(goIndex).data('width'),
+//                    height: blank.eq(goIndex).data('height')
+//                });
+//                
+//                if (goIndex < blank.length) {
+//                    goIndex++;
+//                    setTimeout(go, 500);
+//                }
+//            };
+//			
+//			$(window).scroll(function () {
+//				var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+//				if (scrollTop + $(window).height() > $('.your_trip').offset().top) {
+//					go();
+//					$(window).off('scroll');
+//				}
+//			});
+//            
+//            
+//            
+//	
+//};
+//
+//window.onload = function () {
+//	photoShow();
+//};
+
 var photoShowSet = function () {
 
-	var blank = $('.blank');
-	blank.each(function () {
+    var blank = $('.blank');
+    blank.each(function () {
                 
                 $(this)
                     .data({
-                        top: $(this).css('top'),
-                        left: $(this).css('left'),
-						width: $(this).width(),
-						height: $(this).height()
+                        width: $(this).width(),
+                        height: $(this).height()
                     })
                     .css({
-                        top: '50%',
-                        left: '50%',
-						width: 0,
-						height: 0
+                        top: parseInt($(this).css('top')) + $(this).height() / 2,
+                        left: parseInt($(this).css('left')) + $(this).width() / 2,
+                    })
+                    .css({
+                        width: 0,
+                        height: 0
                     });
             });
-	
+    
 };
 
 photoShowSet();
@@ -137,32 +199,33 @@ var photoShow = function () {
             var go = function () {
                 
                 blank.eq(goIndex).animate({
-                    top: blank.eq(goIndex).data('top'),
-                    left: blank.eq(goIndex).data('left'),
+                    top: parseInt(blank.eq(goIndex).css('top')) - blank.eq(goIndex).data('width') / 2,
+                    left: parseInt(blank.eq(goIndex).css('left')) - blank.eq(goIndex).data('height') / 2,
                     width: blank.eq(goIndex).data('width'),
                     height: blank.eq(goIndex).data('height')
-                });
+                }, 'fast');
                 
                 if (goIndex < blank.length) {
                     goIndex++;
-                    setTimeout(go, 500);
+                    setTimeout(go, goIndex % 2 === 0 ? 300 : 0);
                 }
             };
-			
-			$(window).scroll(function () {
-				var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
-				if (scrollTop + $(window).height() > $('.your_trip').offset().top) {
-					go();
-					$(window).off('scroll');
-				}
-			});
+            
+            $(window).scroll(function () {
+                var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+                if (scrollTop + $(window).height() > $('.your_trip').offset().top) {
+                    go();
+                    $(window).off('scroll');
+                }
+            });
             
             
             
-	
+    
 };
 
 window.onload = function () {
-	photoShow();
+    photoShow();
 };
+
 
