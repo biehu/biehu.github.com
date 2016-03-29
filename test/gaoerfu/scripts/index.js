@@ -150,7 +150,8 @@ var photoShow = function () {
             };
 			
 			$(window).scroll(function () {
-				if (document.body.scrollTop + $(window).height() > $('.your_trip').offset().top) {
+				var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+				if (scrollTop + $(window).height() > $('.your_trip').offset().top) {
 					go();
 					$(window).off('scroll');
 				}
