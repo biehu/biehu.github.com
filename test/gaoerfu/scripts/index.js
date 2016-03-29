@@ -83,3 +83,73 @@ var tab = function () {
 };
 
 tab();
+
+var playVideo = function () {
+    var widths=$(window).width() + 30;
+    $(".zhezhao1").css({width:widths,left:-widths,display:"none"});
+    $("#j_play").click(function(){
+        $(document.body).css('overflow', 'hidden');
+        $(".zhezhao1").stop().animate({
+            top: document.body.scrollTop ? document.body.scrollTop : document.documentElement.scrollTop + 'px', 
+            left:"0px",zIndex:"999"},500).css({display:"block"});
+        return false;
+    });
+    $(".closes").click(function(){
+        $(".zhezhao1").css({zIndex:"9"}).stop().animate({left:-widths},500,function(){
+            $(document.body).css('overflow', 'auto');
+            $(".zhezhao1").css({display:"none"});
+        });
+    });
+};
+
+playVideo();
+
+var photoShow = function () {
+            var blank = $('.blank');
+            
+            blank.each(function () {
+                
+                $(this)
+                    .data({
+                        top: $(this).css('top'),
+                        left: $(this).css('left'),
+						width: $(this).width(),
+						height: $(this).height()
+                    })
+                    .css({
+                        top: '50%',
+                        left: '50%',
+						width: 0,
+						height: 0
+                    });
+            });
+            
+            var goIndex = 0;
+            var go = function () {
+                
+                blank.eq(goIndex).animate({
+                    top: blank.eq(goIndex).data('top'),
+                    left: blank.eq(goIndex).data('left'),
+                    width: blank.eq(goIndex).data('width'),
+                    height: blank.eq(goIndex).data('height')
+                });
+                
+                if (goIndex < blank.length) {
+                    goIndex++;
+                    setTimeout(go, 500);
+                }
+            };
+			
+			$(window).scroll(function () {
+				if (document.body.scrollTop > $('.your_trip').offset().top) {
+					go();
+					$(window).off('scroll');
+				}
+			});
+            
+            
+            
+	
+};
+
+photoShow();

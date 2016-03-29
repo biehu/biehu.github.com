@@ -140,14 +140,14 @@ a {
     margin: 20px 0;
 }
 .guest .tab.on {
-	display: block;
+    display: block;
 }
 .guest .tab {
-	display: none;
-	height: 390px;
+    display: none;
+    height: 390px;
 }
 .guest ul {
-	height: 140px;
+    height: 140px;
 }
 .guest ul li  {
     width: 140px;
@@ -196,6 +196,46 @@ a {
     margin: -61px 0 0 -61px;
     background: url(../images/video_play.png) no-repeat left top;
 }
+.zhezhao1 {
+    display:none;
+    position: absolute;
+    z-index:3;
+    top: 0;
+    width: 100%;
+    height: 781px;
+    left: 0;
+    background: url(../images/bg_grey1.png) repeat;
+}
+
+.zhezhao_m {
+    width: 1000px;
+    height: 601px;
+    margin: 0 auto;
+    margin-top: 70px;
+    color: #fff;
+    background: #000;
+    position: relative;
+}
+
+.closes {
+    display: block;
+    cursor: pointer;
+    background: url(../images/video_close.png) no-repeat;
+    width: 64px;
+    height: 31px;
+    position: absolute;
+    top: -31px;
+    right: 80px;
+}
+
+.vedio {
+    position: absolute;
+    top: 31px;
+    left: 0;
+    width: 1000px;
+    height: 570px;
+    background: #000
+}
 
 .history_col {
     position: absolute;
@@ -218,7 +258,7 @@ a {
 }
 .history_col p {
     overflow: hidden;
-    line-height: 54px;
+    line-height: 50px;
     margin-top: 5px;
     padding: 0 5px;
     background: #fff;
@@ -265,4 +305,56 @@ a {
 .history_col_1 {
     top: 60px;
     left: 8px;
+}
+
+.your_trip .s_con {
+	position: relative;
+	height: 374px;
+}
+.blank_6 {
+	top: 255px;
+	left: 448px;
+}
+.blank_5 {
+	top: 205px;
+	left: 319px;
+}
+.blank_4 {
+	top: 181px;
+	left: 559px;
+}
+.blank_3 {
+	top: 93px;
+	left: 388px;
+}
+.blank_2 {
+	top: 52px;
+	left: 515px;
+}
+.blank_1 {
+	top: 20px;
+	left: 670px;
+}
+.blank_0 {
+	top: 0;
+	left: 206px;
+}
+.blank {
+	position: absolute;
+	overflow: hidden;
+}
+.your_trip .inner {
+	position: relative;
+}
+.your_trip_shadow {
+	position: absolute;
+	width: 100%;
+	text-align: center;
+}
+.your_trip .s_bottom {
+	padding: 0 55px 55px;
+}
+.your_trip_subtitle {
+	margin-bottom: 10px;
+	text-align: center;
 }
