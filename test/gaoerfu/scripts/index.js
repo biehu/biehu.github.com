@@ -104,10 +104,10 @@ var playVideo = function () {
 
 playVideo();
 
-var photoShow = function () {
-            var blank = $('.blank');
-            
-            blank.each(function () {
+var photoShowSet = function () {
+
+	var blank = $('.blank');
+	blank.each(function () {
                 
                 $(this)
                     .data({
@@ -123,6 +123,15 @@ var photoShow = function () {
 						height: 0
                     });
             });
+	
+};
+
+photoShowSet();
+
+var photoShow = function () {
+            var blank = $('.blank');
+            
+            
             
             var goIndex = 0;
             var go = function () {
