@@ -152,4 +152,7 @@ var photoShow = function () {
 	
 };
 
-photoShow();
+window.onload = function () {
+	photoShow();
+};
+

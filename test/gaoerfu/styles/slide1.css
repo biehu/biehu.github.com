@@ -216,7 +216,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( GradientType = 0, startColor
 }
 .slider-btn {
     position:absolute;
-    top:148px;
+    top: 190px;
     width: 54px;
   
     height: 77px;
