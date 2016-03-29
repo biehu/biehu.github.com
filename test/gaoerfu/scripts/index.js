@@ -265,11 +265,11 @@ var photoShow = function () {
                     marginTop: 0,
                     width: blank.eq(goIndex).data('width'),
                     height: blank.eq(goIndex).data('height')
-                }, 'fast');
+                }, 500);
                 
                 if (goIndex < blank.length) {
                     goIndex++;
-                    setTimeout(go, goIndex % 2 === 0 ? 700 : 0);
+                    setTimeout(go, goIndex % 2 === 0 ? 300 : 0);
                 }
             };
             
