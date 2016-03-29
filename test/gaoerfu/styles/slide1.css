@@ -205,7 +205,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( GradientType = 0, startColor
   position: absolute;
   left: 50%;
   
-      margin-left: -901px;
+      margin-left: -957px;
   top: 0;
   verflow: hidden;
 }
@@ -233,7 +233,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( GradientType = 0, startColor
 }
 .slider-btn-l {
     left:50%;
-    margin-left: -328px;
+    margin-left: -383px;
     background-position:0px 0px;
     z-index: 1000;
 }
@@ -242,7 +242,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( GradientType = 0, startColor
 }
 .slider-btn-r {
     right:50%;
-    margin-right: -441px;
+    margin-right: -383px;
     /* background-position:-41px 0px; */
     background: url(../images/video_next.jpg);
 }
