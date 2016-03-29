@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Untitled Document</title>
+        
+        <style>
+            .wrap {
+                position: relative;
+                width: 1000px;
+                height: 500px;
+                border: 1px solid #ccc;
+            }
+            .blank {
+                position: absolute;
+            }
+            .blank_1 {
+                top: 70px;
+                left: 150px;
+                width: 50px;
+                height: 50px;
+                background: #ccc;
+            }
+            .blank_2 {
+                top: 200px;
+                left: 100px;
+                width: 100px;
+                height: 100px;
+                background: #f00;
+            }
+        </style>
+	</head>
+	<body>
+	    <div class="wrap">
+	        
+            <div class="blank blank_1"></div>
+            <div class="blank blank_2"></div>
+            
+	    </div>
+	    
+        <script src="jquery.js"></script>
+        <script>
+            var wrap = $('.wrap');
+            var blank = $('.blank');
+            
+            blank.each(function () {
+                
+                $(this)
+                    .data({
+                        top: $(this).css('top'),
+                        left: $(this).css('left')
+                    })
+                    .css({
+                        top: '50%',
+                        left: '50%',
+                        marginLeft: -$(this).width / 2,
+                        marginTop: -$(this).height / 2
+                    });
+            });
+            
+            var goIndex = 0;
+            var go = function () {
+                
+                blank.eq(goIndex).animate({
+                    top: blank.eq(goIndex).data('top'),
+                    left: blank.eq(goIndex).data('left'),
+                    marginLeft: 0,
+                    marginTop: 0
+                });
+                
+                if (goIndex < blank.length) {
+                    goIndex++;
+                    setTimeout(go, 1000);
+                }
+            };
+            
+            go();
+            
+        </script>
+	</body>
+</html>

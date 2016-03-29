@@ -56,7 +56,7 @@ a {
     background: url(../images/banner.jpg) no-repeat center top;
 }
 .s_title {
-    padding: 38px 0;
+    padding: 50px 0;
 }
 .publish .s_title {
     padding-top: 10px;
@@ -139,6 +139,16 @@ a {
 .guest p img {
     margin: 20px 0;
 }
+.guest .tab.on {
+    display: block;
+}
+.guest .tab {
+    display: none;
+    height: 390px;
+}
+.guest ul {
+    height: 140px;
+}
 .guest ul li  {
     width: 140px;
     height: 140px;
@@ -155,4 +165,144 @@ a {
 .guest ul li {
     float: left;
     margin-right: 5px;
+}
+
+.trip {
+    height: 735px;
+    background: url(../images/video_bg.jpg) no-repeat center top;
+}
+.video {
+    position: relative;
+    width: 823px;
+    height: 463px;
+    margin-left: 90px;
+    background: url(../images/video.jpg) no-repeat;
+}
+.video_btn:hover {
+    background-position: right top;
+}
+.video_title {
+    position: absolute;
+    bottom: -65px;
+    width: 100%;
+    text-align: center;
+}
+.video_btn {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 122px;
+    height: 122px;
+    margin: -61px 0 0 -61px;
+    background: url(../images/video_play.png) no-repeat left top;
+}
+.zhezhao1 {
+    display:none;
+    position: absolute;
+    z-index:3;
+    top: 0;
+    width: 100%;
+    height: 781px;
+    left: 0;
+    background: url(../images/bg_grey1.png) repeat;
+}
+
+.zhezhao_m {
+    width: 1000px;
+    height: 601px;
+    margin: 0 auto;
+    margin-top: 70px;
+    color: #fff;
+    background: #000;
+    position: relative;
+}
+
+.closes {
+    display: block;
+    cursor: pointer;
+    background: url(../images/video_close.png) no-repeat;
+    width: 64px;
+    height: 31px;
+    position: absolute;
+    top: -31px;
+    right: 80px;
+}
+
+.vedio {
+    position: absolute;
+    top: 31px;
+    left: 0;
+    width: 1000px;
+    height: 570px;
+    background: #000
+}
+
+.history_col {
+    position: absolute;
+}
+.history_col p em,
+.history_col p span {
+    float: left;
+}
+.history_col p span {
+    padding-left: 23px;
+    position: relative;
+    left: -20px;
+    background: url(../images/time_mask.png) no-repeat left top;
+}
+.history_col p em {
+    color: #999999;
+    font-style: normal;
+    font-size: 38px;
+    font-family: simsun;
+}
+.history_col p {
+    overflow: hidden;
+    line-height: 50px;
+    margin-top: 5px;
+    padding: 0 5px;
+    background: #fff;
+}
+.history .s_con {
+    position: relative;
+}
+.history .inner {
+    height: 1628px;
+    background: url(../images/line.png) no-repeat center 140px;
+}
+.history {
+    height: 1628px;
+    background: #cecece url(../images/history_bg.jpg) no-repeat center bottom;
+}
+.history .s_title {
+    padding-bottom: 0;
+}
+
+.history_col_7 {
+    top: 1145px;
+    left: 83px;
+}
+.history_col_6 {
+    top: 946px;
+    left: 538px;
+}
+.history_col_5 {
+    top: 802px;
+    left: 8px;
+}
+.history_col_4 {
+    top: 550px;
+    left: 538px;
+}
+.history_col_3 {
+    top: 460px;
+    left: 83px;
+}
+.history_col_2 {
+    top: 156px;
+    left: 538px;
+}
+.history_col_1 {
+    top: 60px;
+    left: 8px;
 }
