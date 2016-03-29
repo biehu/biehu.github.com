@@ -253,7 +253,7 @@ var slide = (function() {
             dotN = config.curImg;
         }
 //        dotList[dotN].className = "current";
-        slideList[config.curImg].getElementsByTagName("p")[0].style.display = 'block';
+      //  slideList[config.curImg].getElementsByTagName("p")[0].style.display = 'block';
         config._index = config.curImg;
     }
 
