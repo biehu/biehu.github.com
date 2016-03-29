@@ -53,7 +53,7 @@ a {
 
 .banner {
     height: 676px;
-    background: url(../images/banner.jpg) no-repeat center top;
+    background: url(../images/banner.jpg) no-repeat center top fixed;
 }
 .s_title {
     padding: 50px 0;
