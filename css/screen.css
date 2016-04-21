@@ -18,7 +18,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    margin: 1em 0;
+    margin-bottom: 1em;
 }
 
 p {
@@ -133,7 +133,7 @@ ul.posts span {
 #post pre {
     border: 1px solid #ddd;
     background-color: #eef;
-    padding: 0 .4em;
+    padding: 0.7em;
 }
 
 #post ul, #post ol {
@@ -172,7 +172,7 @@ ul.posts span {
 
 .title {
     text-align: center;
-    border-bottom: 4px solid #eee;
+    border-bottom: 2px solid #eee;
     font-size: 2.4em;
 }
 
