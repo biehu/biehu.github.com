@@ -1,0 +1,139 @@
+ <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="keywords" content="前端, 前端开发, 开发, 前端资源, CSS, JavaScript, Ajax, jQuery, html,html5,css3,浏览器兼容" />
+        <meta name="description" content="刀客K！，不断探索尝试前端新技术，前端架构" />
+        <title>前端自动化工具GRUNT</title>
+        <link rel="icon" type="image/x-icon" href="img/title.ico" />
+        <link rel="stylesheet" href="css/screen.css" />
+        <link rel="stylesheet" href="css/syntax.css" />
+    </head>
+    <body>
+        <div class="site header">
+            <div class="title">
+                <p>
+                    <a href="/">___刀客K!___</a>
+                </p>
+            </div>
+            <div id="post">
+                <h1>前端自动化工具GRUNT</h1>
+                <p>
+                    grunt需要配置的包含两个文件，项目配置文件 Gruntfile.js 和 包配置文件 package.json
+                </p>
+                <h2>包配置文件 package.json</h2>
+                <pre><code>{
+  "name": "project",
+  "version": "1.0.0",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-compass": "~0.2.0",
+    "grunt-contrib-watch": "~0.4.3",
+    "grunt-contrib-jshint": "~0.6.4",
+    "grunt-contrib-requirejs": "~0.4.1"
+  }
+}
+</code></pre>
+                <p>
+                    cd 进入项目目录
+                    npm install
+                    会自动下载包配置文件中的包
+                </p>
+                <h2>项目配置文件 Gruntfile.js</h2>
+                <pre><code>module.exports = function(grunt) {
+  grunt.initConfig({
+
+    jshint: {// js 语法检查
+
+    files: ['../js/*.js'],
+    options: {
+        curly: true, // 强制if for while等加上大括号
+        eqeqeq: true,// 强制使用 === 或 !==
+        newcap: true,// 强制构造函数名字首个字母大写
+        plusplus: true// 强制不使用 ++ --
+    }
+    },
+
+    watch: {// sass 即时编译
+
+    css: {
+      files: ['../sass/*.scss'],
+      tasks: ['compass']
+    }
+    },
+
+    compass: {// sass编译
+
+      compile: {
+      options: {
+          sassDir: '../sass',
+          cssDir: '../css',
+//              environment: 'production' // 加上会压缩代码
+      }
+      }
+
+    },
+
+    requirejs: { // js合并
+    compile: {
+        options: {
+        name: 'main',
+        baseUrl: '../js/',
+        findNestedDependencies: true,
+        mainConfigFile: '../js/main.js',
+//                optimize: 'uglify2', 
+optimize: 'none',
+        out: '../js/build.js'
+        }
+    }
+    }
+
+  });
+
+  grunt.loadNpmTasks('grunt-contrib-compass');
+  grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-contrib-requirejs');
+
+
+}
+</code></pre>
+            </div>
+            <div id="related">
+                <h2>Related Posts</h2>
+                <ul class="posts">
+                    <li>
+                        <span>16 May 2014</span>
+                        &raquo; <a href="/blog/jekyll/update/2014/05/16/welcome-to-jekyll.html">Welcome to Jekyll!</a>
+                    </li>
+                    <li>
+                        <span>11 Nov 2013</span>
+                        &raquo; <a href="/2013/11/11/socketIO%E7%AE%80%E6%98%93%E8%81%8A%E5%A4%A9%E5%AE%A4.html">socketIO简易聊天室</a>
+                    </li>
+                    <li>
+                        <span>05 Nov 2013</span>
+                        &raquo; <a href="/2013/11/05/Express%E5%88%86%E9%A1%B5.html">Express分页</a>
+                    </li>
+                </ul>
+            </div>
+            <div id="disqus_thread">
+            </div>
+            <script type="text/javascript">
+                /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+                var disqus_shortname = 'biehu'; // required: replace example with your forum shortname
+                /* * * DON'T EDIT BELOW THIS LINE * * */
+                (function(){
+                    var dsq = document.createElement('script');
+                    dsq.type = 'text/javascript';
+                    dsq.async = true;
+                    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            </script>
+            <noscript>
+                Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+            </noscript>
+            <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+    </body>
+</html>

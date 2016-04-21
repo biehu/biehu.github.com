@@ -1,0 +1,154 @@
+ <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="keywords" content="前端, 前端开发, 开发, 前端资源, CSS, JavaScript, Ajax, jQuery, html,html5,css3,浏览器兼容" />
+        <meta name="description" content="刀客K！，不断探索尝试前端新技术，前端架构" />
+        <title>socketIO简易聊天室</title>
+        <link rel="icon" type="image/x-icon" href="img/title.ico" />
+        <link rel="stylesheet" href="css/screen.css" />
+        <link rel="stylesheet" href="css/syntax.css" />
+    </head>
+    <body>
+        <div class="site header">
+            <div class="title">
+                <p>
+                    <a href="/">___刀客K!___</a>
+                </p>
+            </div>
+            <div id="post">
+                <h1>socketIO简易聊天室</h1>
+                <h2>安装</h2>
+                <p>
+                    首先安装 socket.io
+                    $ npm install socket.io
+                </p>
+                <h2>案例</h2>
+                <h3>server端</h3>
+                <pre><code>var server = http.createServer(app).listen(app.get('port'), function(){
+  console.log('Express server listening on port ' + app.get('port'));
+});
+
+var io = require('socket.io').listen(server);
+
+io.sockets.on('connection', function (socket) {
+    socket.emit('message', {
+    message: '哈哈 很好 成功了！！'
+    });
+
+    socket.on('send', function (data) {
+    io.sockets.emit('message', data);
+    });
+});
+</code></pre>
+                <h3>web端</h3>
+                <pre><code>&lt;input id="username" type="text" /&gt;
+    &lt;textarea id="field"&gt;&lt;/textarea&gt;
+
+    &lt;button id="btn"&gt;发送&lt;/button&gt;
+    &lt;div id="content"&gt;&lt;/div&gt;
+
+    &lt;script src="/socket.io/socket.io.js"&gt;&lt;/script&gt;
+
+    &lt;script&gt;
+
+
+
+    var socket = io.connect('http://localhost:3000'),
+        messages = [],
+
+        content = $('#content'),
+        field = $('#field'),
+        username = $('#username'),  
+
+        btn = $('#btn');
+
+    socket.on('message', function (data) {
+
+        if (data.message) {
+        messages.push(data);
+        var html = '',
+            i,
+            len = messages.length,
+            str;
+
+
+
+        for (i = 0; i &lt; len; i += 1) {
+            str = '';
+             if (messages[i].username) {
+            str += messages[i].message + messages[i].username;
+            }
+
+            else {
+            str += messages[i].message;
+            }
+            html += str + '&lt;br /&gt;';
+        }
+
+        content.html(html);
+        }
+
+        else {
+        console.log('出错了！！！');
+        }
+
+    });
+
+    btn.click(function () {
+
+        if (username.val() == '') {
+        alert('姓名不能为空！！！');
+        }
+        socket.emit('send', {
+        message: field.val(),
+        username: username.val()
+        });
+    });
+
+
+
+
+
+
+    &lt;/script&gt;
+</code></pre>
+            </div>
+            <div id="related">
+                <h2>Related Posts</h2>
+                <ul class="posts">
+                    <li>
+                        <span>16 May 2014</span>
+                        &raquo; <a href="/blog/jekyll/update/2014/05/16/welcome-to-jekyll.html">Welcome to Jekyll!</a>
+                    </li>
+                    <li>
+                        <span>05 Nov 2013</span>
+                        &raquo; <a href="/2013/11/05/Express%E5%88%86%E9%A1%B5.html">Express分页</a>
+                    </li>
+                    <li>
+                        <span>28 Oct 2013</span>
+                        &raquo; <a href="/2013/10/28/Express%E5%85%A5%E9%97%A8.html">Express 入门</a>
+                    </li>
+                </ul>
+            </div>
+            <div id="disqus_thread">
+            </div>
+            <script type="text/javascript">
+                /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+                var disqus_shortname = 'biehu'; // required: replace example with your forum shortname
+                /* * * DON'T EDIT BELOW THIS LINE * * */
+                (function(){
+                    var dsq = document.createElement('script');
+                    dsq.type = 'text/javascript';
+                    dsq.async = true;
+                    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            </script>
+            <noscript>
+                Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+            </noscript>
+            <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+    </body>
+</html>

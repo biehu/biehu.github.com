@@ -1,0 +1,165 @@
+ <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="keywords" content="前端, 前端开发, 开发, 前端资源, CSS, JavaScript, Ajax, jQuery, html,html5,css3,浏览器兼容" />
+        <meta name="description" content="刀客K！，不断探索尝试前端新技术，前端架构" />
+        <title>Express分页</title>
+        <link rel="icon" type="image/x-icon" href="img/title.ico" />
+        <link rel="stylesheet" href="css/screen.css" />
+        <link rel="stylesheet" href="css/syntax.css" />
+    </head>
+    <body>
+        <div class="site header">
+            <div class="title">
+                <p>
+                    <a href="/">___刀客K!___</a>
+                </p>
+            </div>
+            
+            <div id="post">
+                <h1>Express分页</h1>
+                <h2>安装</h2>
+                <p>
+                    首先安装 mongoose
+                    $ npm install mongoose
+                </p>
+                <h2>案例</h2>
+                <p>
+                    建一个models文件，在这里面写入表的模型 和 建立数据库连接
+                </p>
+                <pre><code>var mongoose = require('mongoose'),
+    Schema = mongoose.Schema,
+    User = new Schema({
+    email: String,
+    name: String
+    });
+
+mongoose.connect('mongodb://localhost/emailName');
+
+exports.User = mongoose.model('User', User);
+</code></pre>
+                <p>
+                    app.js里面 加入此模块，定义模型变量
+                </p>
+                <pre><code>var mondels = require('./mondels');
+var User = mondels.User;
+</code></pre>
+                <p>
+                    app.js 添加 路由 和 操作
+                </p>
+                <pre><code>app.get('/add',function (req, res) {
+
+    // 加入数据
+
+    var i,
+    len = 100,
+    user;
+
+    for (i = 0; i &lt; len; i += 1) {
+    user = new User({
+        email: i + '@qq.com',
+        name: 'freewind-' + i
+    });
+    user.save();
+    }
+
+
+    res.send('数据加入成功了！！');
+});
+
+var totalPageNum,
+    onePageNum = 10;
+
+app.get('/list/:id',
+
+function (req, res, next) {
+
+    // 获得总页数
+
+    User.find({}, function (err, items) {
+    totalPageNum = Math.ceil(items.length / onePageNum);
+    next();
+    });
+},
+
+
+ function (req, res) {
+
+   // 输出分页数据
+
+   var currentPageNum = parseInt(req.params.id);
+
+   if (currentPageNum &lt; 1) {
+       currentPageNum = 1;
+   }
+
+   if (currentPageNum &gt; totalPageNum) {
+      currentPageNum = totalPageNum; 
+   }
+
+   User
+    .find({})
+    .skip((currentPageNum - 1) * onePageNum)  
+    .limit(onePageNum)
+   .exec(function (err, items) {
+      res.set('Content-Type', 'text/html');
+
+    var i,
+        len = items.length,
+        str = '';
+
+    for (i = 0; i &lt; len; i += 1) {
+        str += '&lt;h2&gt;' + items[i].name + '&lt;/h2&gt;';
+        str += '&lt;p&gt;' + items[i].email + '&lt;/p&gt;';
+    }
+
+     str += '&lt;p&gt;&lt;a href="/list/' + (currentPageNum - 1) + 
+    '"&gt;上一页&lt;/a&gt; &lt;a href="/list/' + (currentPageNum + 1) + 
+    '"&gt;下一页&lt;/a&gt; ' + currentPageNum + '/' + totalPageNum  + '&lt;/p&gt;';
+
+      res.send(str);
+   });   
+
+
+});
+</code></pre>
+            </div>
+            <div id="related">
+                <h2>Related Posts</h2>
+                <ul class="posts">
+                    <li>
+                        <span>16 May 2014</span>
+                        &raquo; <a href="/blog/jekyll/update/2014/05/16/welcome-to-jekyll.html">Welcome to Jekyll!</a>
+                    </li>
+                    <li>
+                        <span>11 Nov 2013</span>
+                        &raquo; <a href="/2013/11/11/socketIO%E7%AE%80%E6%98%93%E8%81%8A%E5%A4%A9%E5%AE%A4.html">socketIO简易聊天室</a>
+                    </li>
+                    <li>
+                        <span>28 Oct 2013</span>
+                        &raquo; <a href="/2013/10/28/Express%E5%85%A5%E9%97%A8.html">Express 入门</a>
+                    </li>
+                </ul>
+            </div>
+            <div id="disqus_thread">
+            </div>
+            <script type="text/javascript">
+                /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+                var disqus_shortname = 'biehu'; // required: replace example with your forum shortname
+                /* * * DON'T EDIT BELOW THIS LINE * * */
+                (function(){
+                    var dsq = document.createElement('script');
+                    dsq.type = 'text/javascript';
+                    dsq.async = true;
+                    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            </script>
+            <noscript>
+                Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+            </noscript>
+            <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+    </body>
+</html>

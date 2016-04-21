@@ -1,0 +1,173 @@
+ <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="keywords" content="前端, 前端开发, 开发, 前端资源, CSS, JavaScript, Ajax, jQuery, html,html5,css3,浏览器兼容" />
+        <meta name="description" content="刀客K！，不断探索尝试前端新技术，前端架构" />
+        <title>Express 入门</title>
+        <link rel="icon" type="image/x-icon" href="img/title.ico" />
+        <link rel="stylesheet" href="css/screen.css" />
+        <link rel="stylesheet" href="css/syntax.css" />
+    </head>
+    <body>
+        <div class="site header">
+            <div class="title">
+                <p>
+                    <a href="/">___刀客K!___</a>
+                </p>
+            </div>
+            <div id="post">
+                <h1>Express 入门</h1>
+                <h2>安装</h2>
+                <p>
+                    首先安装 express
+                    $ npm install express -g
+                </p>
+                <p>
+                    新建项目
+                    $ express test -e
+                    $ cd test
+                    $ npm install
+                    -e 使用 ejs 模板, 默认是 jade 模板
+                </p>
+                <h2>案例</h2>
+                <ol>
+                    <li>
+                        <p>
+                            hello world
+                        </p>
+                        <p>
+                            app.get('/', function (req, res) {
+                            res.send('Hello, world');
+                            });
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            mongodb 增查改删
+                        </p>
+                        <p>
+                            var mongoose = require( 'mongoose' );
+                            var Todo     = mongoose.model( 'Todo' );
+                        </p>
+                        <p>
+                            exports.index = function ( req, res, next ){
+                        </p>
+                        <pre><code> Todo.find(function ( err, todos ){
+   if( err ) return next( err );
+
+   res.render( 'index', {
+   title : 'Express Todo Example',
+   todos : todos
+   });
+ });
+</code></pre>
+                        <p>
+                            };
+                        </p>
+                        <p>
+                            exports.create = function ( req, res, next ){
+                        </p>
+                        <pre><code> var todo = new Todo({
+   content    : req.body.content,
+   updated_at : Date.now()
+});
+</code></pre>
+                        <p>
+                            todo.save( function ( err, todo, count ){
+                            if( err ) return next( err );
+                        </p>
+                        <pre><code> res.redirect( '/' );
+</code></pre>
+                        <p>
+                            });
+                            };
+                        </p>
+                        <p>
+                            exports.destroy = function ( req, res, next ){
+                            Todo.findById( req.params.id, function ( err, todo ){
+                        </p>
+                        <pre><code> todo.remove( function ( err, todo ){
+   if( err ) return next( err );
+
+   res.redirect( '/' );
+ });
+</code></pre>
+                        <p>
+                            });
+                            };
+                        </p>
+                        <p>
+                            exports.edit = function( req, res, next ){
+                        </p>
+                        <p>
+                            Todo.find( function ( err, todos ){
+                            if( err ) return next( err );
+                        </p>
+                        <pre><code>   res.render( 'edit', {
+ title   : 'Express Todo Example',
+ todos   : todos,
+ current : req.params.id
+   });
+ });
+</code></pre>
+                        <p>
+                            };
+                        </p>
+                        <p>
+                            exports.update = function( req, res, next ){
+                            Todo.findById( req.params.id, function ( err, todo ){
+                        </p>
+                        <pre><code> todo.content    = req.body.content;
+ todo.updated_at = Date.now();
+ todo.save( function ( err, todo, count ){
+   if( err ) return next( err );
+
+   res.redirect( '/' );
+ });
+</code></pre>
+                        <p>
+                            });
+                            };
+                        </p>
+                    </li>
+                </ol>
+            </div>
+            <div id="related">
+                <h2>Related Posts</h2>
+                <ul class="posts">
+                    <li>
+                        <span>16 May 2014</span>
+                        &raquo; <a href="/blog/jekyll/update/2014/05/16/welcome-to-jekyll.html">Welcome to Jekyll!</a>
+                    </li>
+                    <li>
+                        <span>11 Nov 2013</span>
+                        &raquo; <a href="/2013/11/11/socketIO%E7%AE%80%E6%98%93%E8%81%8A%E5%A4%A9%E5%AE%A4.html">socketIO简易聊天室</a>
+                    </li>
+                    <li>
+                        <span>05 Nov 2013</span>
+                        &raquo; <a href="/2013/11/05/Express%E5%88%86%E9%A1%B5.html">Express分页</a>
+                    </li>
+                </ul>
+            </div>
+            <div id="disqus_thread">
+            </div>
+            <script type="text/javascript">
+                /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+                var disqus_shortname = 'biehu'; // required: replace example with your forum shortname
+                /* * * DON'T EDIT BELOW THIS LINE * * */
+                (function(){
+                    var dsq = document.createElement('script');
+                    dsq.type = 'text/javascript';
+                    dsq.async = true;
+                    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            </script>
+            <noscript>
+                Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+            </noscript>
+            <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+    </body>
+</html>
