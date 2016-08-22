@@ -1,0 +1,294 @@
+.sidebar .sidebar-on,
+.sidebar a:hover {
+    color: #efb24a;
+}
+.sidebar-group span {
+    display: block;
+    line-height: 34px;
+}
+.sidebar-group p {
+    padding: 15px 0;
+}
+.sidebar-group {
+    padding: 10px 0;
+    font-size: 16px;
+}
+.sidebar-group-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+.sidebar .sidebar-disabled {
+    cursor: default;
+    color: #666666;
+}
+.sidebar-line:before {
+    background: #303436;
+}
+.sidebar-line:after {
+    background: #1a1f23;
+}
+.sidebar-line:after,
+.sidebar-line:before {
+    content: '';
+    display: block;
+    overflow: hidden;
+    height: 1px;
+}
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 220px;
+    height: 100%;
+    background: #1e2529;
+    text-align: center;
+    color: #fff;
+}
+.sidebar a {
+    color: #fff;
+}
+.logo h1 {
+    line-height: 106px;
+    font-size: 22px;
+}
+
+.main {
+    margin-left: 220px;
+}
+.main-header {
+    position: relative;
+    padding: 16px 35px;
+    background: #e4e5e5;
+    /* font-size: 18px; */
+}
+.user-nophoto {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: #eeeeee;
+    border: 1px solid #e4e4e4;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    font-style:normal;
+    font-size: 18px;
+}
+.user-home {
+    display: inline-block;
+    padding-left: 20px;
+    background: url(../images/home.png) no-repeat left center;
+}
+.user-list .username {
+    margin-left: 10px;
+}
+.user-list p .btn {
+    display: block;
+    text-align: center;
+}
+.user-list p {
+    padding: 10px;
+}
+.user-list li {
+    padding: 10px;
+    border-bottom: 1px solid #edf0f4;
+    line-height: normal;
+}
+.user-list {
+    position: absolute;
+    width: 220px;
+    top: 64px;
+    right: 0;
+    z-index: 10;
+    background: #fff;
+    border: 1px solid #e1e3e5;
+    border-radius: 3px;
+    box-shadow: 0px 0px 6px 0px #e1e3e5;
+    /* font-size: 12px; */
+}
+.user-photo em {
+    background: #de4752;
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    text-align: center;
+    color: #fff;
+    border-radius: 10px;
+    min-width: 14px;
+    height: 14px;
+    padding: 2px;
+    text-indent: 0;
+    font-size: 10px;
+    font-style: normal;
+    line-height: 14px;
+}
+.user-photo {
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    position: relative;
+    top: 7px;
+    margin: 0 5px;
+    background: url(../images/user-photo.png) no-repeat;
+}
+.main-header .user {
+    float: left;
+    margin-left: 10px;
+    position: relative;
+}
+.main-header-links {
+    float: left;
+}
+.main-header-links a {
+    display: inline-block;
+    padding: 0 20px;
+    background: #1d2528;
+    border-radius: 8px;
+    color: #fff;
+    margin: 0 5px;
+}
+.main-header {
+    line-height: 35px;
+}
+.main-header-right {
+    float: right;
+}
+.main-header-left {
+    float: left;
+}
+.main-content-links ul li:last-child {
+    border-right: none;
+}
+.main-content-links td {
+    width: 24%;
+    height: 145px;
+    border: 1px solid #edeef1;
+}
+.main-content-links table {
+    width: 100%;
+    background: #fff;
+    border: 1px solid #edeef1;
+}
+.main-content .todos {
+    margin-top: 20px;
+}
+.main-content .todos table {
+    width: 100%;
+}
+.main-content .todo-ching {
+    background: #51e4c8;
+}
+.main-content .todo-purple {
+    background: #a351e4;
+}
+.main-content .todo-blue {
+    background: #51bde4;
+}
+.main-content .todo-yellow {
+    background: #ffb131;
+}
+.main-content .todo-green {
+    background: #78bc4f;
+}
+.main-content .todo-palm {
+    background: #ed6c44;
+}
+.main-content .todos .todo-num {
+    display: block;
+    width: 58px;
+    height: 58px;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 58px;
+    color: #fff;
+    font-size: 20px;
+}
+.main-content .todos strong {
+    display: block;
+    margin-bottom: 5px;
+    padding-left: 15px;
+    font-weight: normal;
+    font-size: 16px;
+}
+.main-content .todos .todo-content {
+    padding: 15px;
+    background: #fff;
+    border: 1px solid #edeef1;
+    text-align: center;
+}
+.main-content .list {
+    margin-top: 30px;
+}
+.main-content .list .list-content table {
+    margin-bottom: 10px;
+}
+.main-content .list .list-content .todo-status {
+    display: inline-block;
+    width: 8px;
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 5px;
+    vertical-align: middle;
+}
+.main-content .list .list-content {
+    margin-top: 5px;
+}
+.main-content .list .list-content table td {
+    padding: 24px 0;
+    background: #fff;
+    border: none;
+}
+.main-content .list table td {
+    padding: 12px 0;
+    border: 1px solid #e5e5e5;
+    /* font-size: 16px; */
+}
+.main-content .list table {
+    width: 100%;
+    border: 1px solid #e5e5e5;
+    text-align: center; 
+}
+.main-content .list-page a {
+    padding: 5px 10px;
+    background: #fff;
+    border: 1px solid #edeef1;
+    border-radius: 5px;
+    color: #d8d7c3;
+}
+.main-content-links td {
+    vertical-align: middle;
+}
+.main-content-links {
+    text-align: center;
+}
+.main-content-links a {
+    padding-top: 50px;
+    font-size: 16px;
+    display: inline-block;
+}
+.main-content-links .customer {
+    background: url(../images/customer.png) no-repeat center top;
+}
+.main-content-links .cleaner {
+    background: url(../images/cleaner.png) no-repeat center top;
+}
+.main-content-links .member {
+    background: url(../images/member.png) no-repeat center top;
+}
+.main-content-links .servicer {
+    background: url(../images/servicer.png) no-repeat center top;
+}
+.main-content .list-page .list-page-on {
+    color: #fff;
+}
+.main-content .list-page {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 14px;
+}
+.main-content {
+    padding: 55px 20px;
+    background: #f8f8f8;
+}

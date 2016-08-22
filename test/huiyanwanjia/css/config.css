@@ -1,0 +1,90 @@
+.config{
+    font-size:12px;
+    color:#9C9A9B;
+}
+.config .progress-wrap{
+    background:#F8F8F8;
+}
+.config-top{
+    padding: 0 20px;
+    line-height: 40px;
+    background: #ffffff;
+    border-bottom:1px solid #EEF0F3;
+}
+.config-top span{
+    margin:0 10px;
+    letter-spacing:-5px;
+}
+.config .progress-wrap {
+    width: 820px;
+    margin: 0 auto;
+}
+.config .form {
+    width: 530px;
+    margin: 0 auto;
+}
+.config .form strong {
+    display: block;
+    border-bottom: 1px solid #dcdcdc;
+    line-height: 30px;
+    color: #333;
+}
+
+.add-servicer-success p {
+    margin-top: 30px;
+    font-size: 14px;
+}
+.add-servicer-success strong {
+    font-weight: normal;
+}
+.add-servicer-success {
+    margin: 80px 0;
+    padding-top: 100px;
+    background: url(../images/smile.png) no-repeat center top;
+    text-align: center;
+    font-size: 26px;
+    color: #333;
+}
+.add-servicer-btns {
+    margin-bottom: 50px;
+    text-align: center;
+}
+.add-servicer-btns .btn {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.add-servicer .add {
+    display: block;
+    width: 60px;
+    margin: 20px auto 80px;
+    padding-left: 28px;
+    background: url(../images/add.png) no-repeat;
+    line-height: 26px;
+    font-size: 14px;
+}
+.add-servicer {
+    width: 648px;
+    margin: 0 auto;
+    color: #333;
+}
+.add-servicer ul {
+    overflow: auto;
+}
+.add-servicer ul li {
+    float: left;
+    padding: 0 10px;
+    text-align: center;
+}
+.add-servicer .input-title {
+    display: block;
+    padding: 10px;
+}
+.add-servicer input {
+    padding: 10px;
+}
+.add-servicer strong {
+    display: block;
+    margin: 40px 0;
+    text-align: center;
+    font-size: 14px;
+}
