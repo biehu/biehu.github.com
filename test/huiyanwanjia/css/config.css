@@ -17,7 +17,7 @@
 }
 .config .progress-wrap {
     width: 820px;
-    margin: 0 auto;
+    margin: 0 auto 10px;
 }
 .config .form {
     width: 530px;

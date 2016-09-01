@@ -295,3 +295,29 @@
     border: 1px solid #e1e6ed;
     background: #fff;
 }
+
+.info-bar .photo-mask {
+	display: none;
+}
+.info-bar input {
+	display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+.info-bar:hover .photo-mask {
+	display: block;
+}
+.info-bar {
+	position: relative;
+	width: 48px;
+	height: 48px;
+	border-radius: 50%;
+	overflow: hidden;
+}
+.info-bar .photo {
+	
+}

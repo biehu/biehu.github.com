@@ -9,7 +9,7 @@ a {
 body {
     font-family: "Microsoft YaHei";
     font-size: 14px;
-    overflow-x: hidden;
+	background: #f8f8f8;
 }
 h1 {
     font-weight: normal;
@@ -42,6 +42,12 @@ table {
     width: 100%;
     background: #fff;
     border: 1px solid #edeef1;
+}
+
+html,
+body,
+.wrap {
+	height: 100%;
 }
 
 .progress-3 td {
@@ -106,7 +112,7 @@ table {
 }
 
 .orange-bg {
-    background: #FF5206!important;
+    background: #FF9C00!important;
 }
 .gray-bg {
     background: #C3C3C3!important;
@@ -117,8 +123,16 @@ table {
 .blue-bg {
     background: #51bde4!important;
 }
+button.blue-bg:hover,
+a.blue-bg:hover {
+    background: #50a8e5!important;
+}
+button.yellow-bg:hover,
+a.yellow-bg:hover {
+	background: #ff7e00!important;
+}
 .yellow-bg {
-    background: #FF9E00!important;
+    background: #FF9C00!important;
 }
 
 .padding-3 {
@@ -128,16 +142,23 @@ table {
 .btn {
     display: inline-block;
     margin: 0 2px;
-    padding: 6px 15px;
+    padding: 5px 15px;
     border-radius: 5px;
     line-height: normal;
     color: #fff;
 }
 
+.wrap:after {
+    content: '';
+    display: block;
+    height: 0;
+    overflow: hidden;
+    clear: both;
+}
 .wrap {
     position: relative;
-    overflow: auto;
     background: #f8f8f8;
+	min-width: 1200px;
 }
 
 .alert-content li {
@@ -194,7 +215,7 @@ table {
     padding: 10px 5px 10px 10px;
 }
 .alert-mask {
-    position: fixed;
+    position: absolute;
     left: 0px;
     top: 0px;
     /* opacity: 0.5; */
@@ -204,9 +225,9 @@ table {
     height: 100%;
 }
 .alert {
-    position: fixed;
+    position: absolute;
     left: 50%;
-    top: 120px;
+    top: 50px;
     visibility: visible;
     width: 620px;
     opacity: 1;
@@ -218,7 +239,7 @@ table {
 }
 
 .section {
-    margin: 20px;
+    /* padding: 20px; */
     border: 1px solid #e1e6ed;
     background: #fff;
     font-size: 14px;
@@ -265,7 +286,17 @@ table {
 .form li {
     margin-top: 15px;
 }
-.form input {
+.form input[type="radio"]:first-child {
+    margin-left: 0;
+}
+.form input[type="radio"] {
+    margin-left: 15px;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+.form select,
+.form input[type="text"],
+.form input[type="password"] {
     border: 1px solid #dcdcdc;
     background: #fff;
     padding: 12px;
