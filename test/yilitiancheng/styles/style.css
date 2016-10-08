@@ -344,6 +344,7 @@
 }
 .course-item {
     float: left;
+    /* position: relative; */
     width: 224px;
     min-height: 172px;
     box-sizing: border-box;
@@ -358,9 +359,28 @@
 .guess-like .course-studying {
     float: right;
 }
-.course-price {
+.course-time {
+    background: url(../images/icon_13.png) no-repeat left center;
+    padding-left: 18px;
+}
+.course-update {
+    background: url(../images/icon_10.png) no-repeat left center;
+    padding-left: 21px;
+}
+.course-update, .course-time {
     float: left;
-    color: #f01414;
+}
+.course-item-like, .course-item-liking {
+    position: absolute;
+    width: 25px;
+    height: 27px;
+    right: 0;
+}
+.course-item-liking {
+    background: url(../images/icon_05.png) no-repeat 0 -3px;
+}
+.course-item-like {
+    background: url(../images/icon_03.png) no-repeat 1px -3px;
 }
 
 .course-section:nth-child(odd) {
@@ -411,6 +431,12 @@
 .course-section-type a, .course-section-type a:hover {
     color: #fff;
 }
+.course-section-3 .course-section-type {
+    background: url(../images/pic_17.jpg) no-repeat;
+}
+.course-section-2 .course-section-type {
+    background: url(../images/pic_09.jpg) no-repeat;
+}
 .course-section-type {
     width: 195px;
     height: 237px;
@@ -424,6 +450,12 @@
 }
 .course-setion-hot ul {
     padding: 14px 20px;
+}
+.course-section-3 .course-setion-hot {
+    background: url(../images/pic_21.jpg) no-repeat;
+}
+.course-section-2 .course-setion-hot {
+    background: url(../images/pic_15.jpg) no-repeat;
 }
 .course-setion-hot {
     height: 87px;
@@ -450,7 +482,15 @@
 .course-tab-hot p a, .course-tab-hot p a:hover {
     color: #fff;
 }
+.course-tab-hot p a {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
 .course-tab-hot p {
+    position : relative;
     -webkit-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
     box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
@@ -466,6 +506,8 @@
     text-align: center;
     line-height: 172px;
     overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .course-tab-other .course-item {
     float: none;

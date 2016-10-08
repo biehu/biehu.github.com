@@ -10,7 +10,7 @@
         this.pointLinks = this.wrap.find('.play-index span');
         this.prevLink = this.wrap.find('.play-prev');
         this.nextLink = this.wrap.find('.play-next');
-        this.wrapClassName = this.wrap[0].className;
+        this.wrapClassName = 'banner';
         this.now = 0;
         this.interval; 
         
@@ -23,7 +23,7 @@
         this.items.fadeOut();
         this.items.eq(this.now).fadeIn(1000);
         
-        this.wrap[0].className = this.wrapClassName + ' bg-' + (this.now + 1);
+        this.wrap[0].className = this.wrapClassName + ' bg-' + (+this.now + 1);
     };
     
     Focus.prototype.toLeft = function () {
