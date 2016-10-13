@@ -13,6 +13,9 @@
         this.wrapClassName = 'banner';
         this.now = 0;
         this.interval; 
+
+		this.isGoodShow = 'transition' in document.createElement('div').style ||
+			'-ms-transition' in document.createElement('div').style;
         
         this.init();
     };
@@ -20,8 +23,8 @@
         this.pointLinks.removeClass('hover');
         this.pointLinks.eq(this.now).addClass('hover');
         
-        this.items.fadeOut();
-        this.items.eq(this.now).fadeIn(1000);
+        this.items.fadeOut(this.isGoodShow ? 1000 : 0);
+        this.items.eq(this.now).fadeIn(this.isGoodShow ? 1000 : 0);
         
         this.wrap[0].className = this.wrapClassName + ' bg-' + (+this.now + 1);
     };

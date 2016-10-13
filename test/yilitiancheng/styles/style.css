@@ -336,9 +336,6 @@
     -moz-box-shadow: 0 5px 20px rgba(0,0,0,0.3) !important;
     box-shadow: 0 5px 20px rgba(0,0,0,0.3) !important;
 }
-.hot-course .course-item:last-child {
-    margin-right: 0;
-}
 .hot-course .course-item:first-child {
     margin-left: 0;
 }
@@ -349,7 +346,7 @@
     min-height: 172px;
     box-sizing: border-box;
     overflow: hidden;
-    margin: 0 10px 10px 10px;
+    margin: 0 0 10px 20px;
     background-color: #fff;
     -webkit-box-shadow: 0 5px 10px 0 rgba(0,0,0,0.1);
     -moz-box-shadow: 0 5px 10px 0 rgba(0,0,0,0.1);
@@ -385,6 +382,11 @@
 
 .course-section:nth-child(odd) {
     margin-top: 45px;
+    padding-bottom: 45px;
+    background: #f3f5f7;
+}
+.course-section.odd {
+	margin-top: 45px;
     padding-bottom: 45px;
     background: #f3f5f7;
 }
@@ -463,8 +465,8 @@
     background: url(../images/temp/section-text-bg-1.jpg) no-repeat;
     line-height: 28px;
 }
-.course-section-col:last-child {
-    margin-right: 0;
+.course-section-col:first-child {
+    margin-left: 0;
 }
 .course-tab-con-item.hover {
     display: block;
@@ -472,9 +474,9 @@
 .course-tab-con-item {
     display: none;
 }
-.course-section-col, .course-tab-con {
-    float: left;
-    margin-right: 19px;
+.course-tab-con ,.course-section-col {
+	float: left;
+    margin-left: 19px;
 }
 .course-tab-hot p:first-child, .course-tab-other .course-item:first-child {
     margin-top: 0;
@@ -550,19 +552,19 @@
     height: 172px;
     position: relative;
 }
-.course-section-2 .course-tab-other .course-item:last-child {
-    margin-right: 0;
+.course-section-2 .course-tab-other .course-item:first-child {
+    margin-left: 0;
 }
 .course-section-2 .course-tab-other .course-item {
     float: left;
-    margin: 20px 20px 0 0;
+    margin: 20px 0 0 20px;
 }
 .course-section-2 .course-tab-hot p {
     width: 712px;
 }
 .course-section-2 .course-tab-con .course-section-col {
     float: none;
-    margin-right: 0;
+    margin-left: 0;
 }
 .course-section-3 .course-tab-hot p a {
     display: block;
@@ -580,12 +582,12 @@
     background: #f3f5f7;
     padding-bottom: 40px;
 }
-.course-section-4 .course-item:last-child {
+.course-section-4 .course-item:first-child {
     margin: 0;
 }
 .course-section-4 .course-item {
     float: left;
-    margin: 0 20px 0 0;
+    margin: 0 0 0 20px;
 }
 .course-section-4 .course-section-type {
     height: 142px;

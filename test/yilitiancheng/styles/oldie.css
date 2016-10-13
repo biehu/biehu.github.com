@@ -1,0 +1,7 @@
+.subnav, .hot-link {
+	background: rgb(60, 106, 152);
+}
+.subnav-title li {
+	border-bottom: 1px solid #6783A0;
+}
+

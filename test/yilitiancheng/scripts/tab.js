@@ -10,3 +10,5 @@ $('.course-tab-title a').click(function () {
     
     return false;
 });
+
+$('.course-section:nth-child(odd)').addClass('odd');
