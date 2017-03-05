@@ -1,14 +1,13 @@
 
 var handleChangeStyle = function (num) {
-    console.log(num);
     $('.page-' + num)
+    .data('isShow', true)
     .find('[es]')
+    .css('opacity', 1)
     .each(function (p, i) {
         var css = {};
         var cssKey = $(this).attr('es') === 'right' ? 'left' : $(this).attr('es');
         css[cssKey] = $(this).data(cssKey) === 'auto' ? 0 : $(this).data(cssKey);
-        console.log(css);
-        
         
         $(this).delay(500).animate(css, 1000);
         
@@ -22,11 +21,11 @@ var scroll = function (type) {
 
     for (var i = 0; i < $('.page').length; i++) {
         var current = $('.page').eq(i);
-        if (current.offset().top < top + height ) {
+        if (current.offset().top < top + height && !current.data('isShow')) {
             handleChangeStyle(i);
         }
         
-        if (current.offset().top + current.height() < top) {
+        if (current.offset().top + current.height() < top  && current.data('isShow')) {
              clear(i);
         }
     }
@@ -41,6 +40,8 @@ var clear = function (num) {
     } else {
         parent = $('body');
     }
+    
+    parent.data('isShow', false);
     
     parent.find('[es="left"]')
     .css('left', -$('body').width());
