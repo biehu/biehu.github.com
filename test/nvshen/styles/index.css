@@ -1,0 +1,196 @@
+* {
+    margin:0;
+    padding:0;
+}
+ul {
+    list-style:none;
+}
+img {
+    vertical-align:bottom;
+}
+a img {
+    border:none;
+}
+a {
+    text-decoration:none;
+}
+.clear {
+    clear:both;
+}
+
+body {
+    font-family: "微软雅黑";
+    font-size: 14px;
+    line-height: 22px;
+    overflow-x: hidden;
+}
+
+
+.inner {
+    position: relative;
+    width: 1200px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+.more {
+    height: 20px;
+}
+
+.head {
+    height: 841px;
+    background: url(../images/head-bg.jpg) no-repeat center top;
+}
+.head-wrap {
+    position: relative;
+    width: 1200px;
+    margin: 0 auto;
+}
+.head-left {
+    top: 20px;
+}
+.head-right {
+    left: 916px;
+    top: 74px;
+}
+.head-center {
+    width: 553px;
+    left: 340px;
+    
+}
+.head-hack {
+    position: absolute;
+    z-index: 1;
+    left: 155px;
+    top: 662px;
+}
+.head-text {
+    top: 392px;
+    left: 400px;
+    width: 433px;
+    line-height: 22px;
+    font-size: 15px;
+}
+.head .inner {
+    height: 765px;
+}
+.head .inner  p {
+	position: absolute;
+}
+
+.section1 > div {
+    background: url(../images/section_01.png) no-repeat center top;
+}
+.section1 .inner {
+    height: 782px;
+}
+.section1 .text {
+    position: absolute;
+    width: 256px;
+    left: 100px;
+    top: 350px;
+}
+.section1 .more {
+    position: absolute;
+    left: 120px;
+    top: 680px;
+    width: 170px;
+}
+
+.section2 .inner {
+    height: 782px;
+}
+.section2 .text {
+    position: absolute;
+    width: 256px;
+    left: 850px;
+    top: 380px;
+}
+.section2 .more {
+    position: absolute;
+    left: 930px;
+    top: 697px;
+    width: 170px;
+}
+
+.section3 .inner {
+    height: 782px;
+}
+.section3 .text {
+    position: absolute;
+    width: 256px;
+    left: 100px;
+    top: 382px;
+}
+.section3 .more {
+    position: absolute;
+    left: 120px;
+    top: 691px;
+    width: 170px;
+}
+
+.section-wrap > div{
+    height: 1606px;
+    background: url(../images/section_02.png) no-repeat center top;
+}
+.section4 .inner {
+    height: 2034px;
+    background: url(../images/section_03.png) no-repeat center top;
+}
+.section4 {
+    background: url(../images/section_03_bg.png) no-repeat center top;
+}
+.section4 .text {
+    position: absolute;
+    top: 280px;
+    width: 100%;
+    text-align: center;
+}
+
+.alert-body {
+    position: relative;
+    padding: 45px;
+    width: 358px;
+}
+.alert-bg {
+    background: #000;
+    opacity: .7;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.alert-close {
+    margin-top: 10px;
+    text-align: center;
+}
+.alert-close i {
+    display: inline-block;
+    width: 26px;
+    height: 24px;
+    background: url(../images/win_14.png) no-repeat;
+}
+.alert p {
+    margin-top: 20px;
+}
+.alert {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    color: #fff;
+}
+
+.section5 .support {
+    line-height: 24px;
+    margin: 40px 0;
+}
+.section5 .blank {
+    margin-right: 20px;
+}
+.section5 p a {
+    display: inline-block;
+    margin-right: 15px;
+}
+.section5 {
+    margin-top: 20px;
+    text-align: center;
+}
