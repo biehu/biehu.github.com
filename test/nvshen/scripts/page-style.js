@@ -15,7 +15,7 @@ var handleChangeStyle = function (num) {
     });
 };
     
-var scroll = function (type) { 
+var scroll = function (type) {
     var top = (document.body.scrollTop || document.documentElement.scrollTop);
     var height = $(window).height();
 
