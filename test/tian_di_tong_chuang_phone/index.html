@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+   <head>
+       <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+        <script type="text/javascript">
+            function viewport(){ var phoneWidth = parseInt(window.screen.width); var phoneScale = phoneWidth / 640; var ua = navigator.userAgent; if (/Android (\d+\.\d+)/.test(ua)) { var version = parseFloat(RegExp.$1); if (ua.toLowerCase().indexOf("qq") > -1) { document.write('<meta name="viewport" content="width=640, minimum-scale = ' + phoneScale + ', maximum-scale = ' + phoneScale + ', target-densitydpi=320">'); return; } if (version > 2.3) { document.write('<meta name="viewport" content="width=640, minimum-scale = ' + phoneScale + ', maximum-scale = ' + phoneScale + ', target-densitydpi=device-dpi">'); } else { document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">'); } } else { document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">'); } }  viewport();
+        </script>
+       <title></title>
+       <link rel="stylesheet" href="styles/index.css" />
+   </head>
+   <body>
+       <div class="wrap">
+           <div class="header clearfix">
+               <h1><a href="#">天地同创商务咨询(北京)有限公司</a></h1>
+               <div class="header_right">
+                   <a class="search_btn" href="#"></a>
+                   <a class="links_btn" href="#"></a>
+                   <div class="header_links ">
+                       <a href="#">首页</a>
+                       <a href="#">大事件</a>
+                       <a class="active" href="#">项目</a>
+                       <a href="#">公司介绍</a>
+                       <a href="#">招聘</a>
+                   </div>
+                   <div class="header_search ">
+                       <form>
+                           <input type="search" />
+                       </form>
+                   </div>
+               </div>
+           </div>
+           
+           <div class="content">
+               <div id="waterfall" class="waterfall">
+               </div>
+           </div>
+           
+       </div>
+       
+       <div id="alert" class="alert">
+           <div class="alert_mask">
+               <table>
+                   <tr>
+                       <td>
+                           <a class="alert_close"></a><br/>
+                           <span class="alert_content">
+                               <img src="" />
+                           </span>
+                       </td>
+                   </tr>
+               </table>
+           </div>
+       </div>
+       
+       <script type="text/x-handlebars-template" id="waterfall-tpl">
+           {{#result}}
+           <div class="waterfall_item" data-pic="{{originPic}}">
+               <strong>{{title}}</strong>
+               <img src="{{image}}" width="{{width}}" height="{{height}}" />
+               <p>
+                   <span>{{project}}</span>
+               </p>
+           </div>
+           {{/result}}
+       </script>
+       <script src="scripts/jquery.js">
+       </script>
+       <script src="scripts/handlebars.js">
+       </script>
+       <script src="scripts/waterfall.js">
+       </script>
+       <script>
+           $('#waterfall').waterfall({
+               itemCls: 'waterfall_item',
+               colWidth: 290,
+               gutterWidth: 10,
+               gutterHeight: 25,
+               minCol: 2,
+               isFadeIn: true,
+               checkImagesLoaded: false,
+               callbacks: {
+                    loadingFinished: function($loading, isBeyondMaxPage) {
+                        if ( !isBeyondMaxPage ) {
+                            $loading.fadeOut();
+                        } else {
+                            $loading.hide();
+                        }
+                    },
+                    renderData: function (data, dataType) {
+                        var tpl,
+                            template,
+                            resultNum = data.result.length;
+            
+                        if ( resultNum < 20) {
+                            $('#waterfall').waterfall('pause', function() {
+                                $('#waterfall-message').html('<p style="color:#666;">没有数据了...</p>')
+                                //alert('no more data');
+                            });
+                        }
+            
+                        if ( dataType === 'json' ||  dataType === 'jsonp'  ) { // json or jsonp format
+                            tpl = $('#waterfall-tpl').html();
+                            template = Handlebars.compile(tpl);
+            
+                            return template(data);
+                        } else { // html format
+                            return data;
+                        }
+                    }
+                },
+               path: function(page){
+                   return 'scripts/data/data1.json?page=' + page;
+               }
+           });
+           
+           function closeOriginPic() {
+                $('body').removeClass('alert_open');
+           }
+           function showOriginPic(){
+               var pic = $(this).attr('data-pic');
+               $('#alert').find('.alert_content img').attr('src', pic);
+               $('body').addClass('alert_open');
+           }
+           $('#waterfall').on('click', '.waterfall_item', showOriginPic);
+           $('.alert_close').on('click', closeOriginPic);
+           
+           function showSearch() {
+               $('.header_search').toggleClass('active');
+           }
+           $('.search_btn').on('click', showSearch);
+           
+           function showLinks() {
+               $('.header_links').toggleClass('active');
+           }
+           $('.links_btn').on('click', showLinks);
+           
+           
+       </script>
+   </body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+   <head>
+       <meta charset="utf-8" />
+       <title></title>
+       <link rel="stylesheet" href="styles/index.css" />
+   </head>
+   <body>
+       <div class="wrap">
+           <div class="header">
+               <h1><a href="#"><img src="images/img_03.jpg" /></a></h1>
+               <div class="header_right">
+                   <div class="header_links">
+                       <a href="#">首页</a>
+                       <a href="#">大事件</a>
+                       <a class="active" href="#">项目</a>
+                       <a href="#">公司介绍</a>
+                       <a href="#">招聘</a>
+                   </div>
+                   <div class="header_search">
+                       <form>
+                           <input type="text" />
+                           <button type="submit"></button>
+                       </form>
+                   </div>
+               </div>
+           </div>
+           
+           <div class="content">
+               <div class="project">
+                   <div class="project_tab_titles">
+                       <a class="active" href="#">车辆售后维修资料和用户手册开发（动态发布或视频APP）及维修信息平台建设</a>
+                       <a href="#">AR增强现实应用和开发</a>
+                       <a href="#">售后服务活动企划和运营</a>
+                       <a href="#">品牌活动策划及运营</a>
+                   </div>
+                   <div class="project_tab_contents">
+                       <div class="active">
+                           <strong>车辆售后维修资料 ( 动态发布 )1</strong>
+                           <ul>
+                               <li><a href="#" data-pic="{{originPic}}">一汽奔腾全系车型</a></li>
+                               <li><a href="#">一汽奔腾全系车型</a></li>
+                               <li><a href="#">一汽奔腾全系车型</a></li>
+                           </ul>
+                           <strong>车辆售后维修资料 ( 动态发布 )1</strong>
+                           <ul>
+                               <li><a href="#">一汽奔腾全系车型</a></li>
+                               <li><a href="#">一汽奔腾全系车型</a></li>
+                               <li><a href="#">一汽奔腾全系车型</a></li>
+                           </ul>
+                       </div>
+                       <div>
+                           <strong>车辆售后维修资料 ( 动态发布 )2</strong>
+                           <ul>
+                               <li><a href="#">一汽奔腾全系车型</a></li>
+                               <li><a href="#">一汽奔腾全系车型</a></li>
+                               <li><a href="#">一汽奔腾全系车型</a></li>
+                           </ul>
+                       </div>
+                       <div>
+                           <strong>车辆售后维修资料 ( 动态发布 )3</strong>
+                           <ul>
+                               <li><a href="#">一汽奔腾全系车型</a></li>
+                               <li><a href="#">一汽奔腾全系车型</a></li>
+                               <li><a href="#">一汽奔腾全系车型</a></li>
+                           </ul>
+                       </div>
+                       <div>
+                           <strong>车辆售后维修资料 ( 动态发布 )4</strong>
+                           <ul>
+                               <li><a href="#">一汽奔腾全系车型</a></li>
+                               <li><a href="#">一汽奔腾全系车型</a></li>
+                               <li><a href="#">一汽奔腾全系车型</a></li>
+                           </ul>
+                       </div>
+                   </div>
+               </div>
+           </div>
+            
+           <div class="footer">
+               <div class="inner">
+                   <div class="footer_logo">
+                       <img src="images/img_10.jpg" />
+                   </div>
+                   <div class="footer_section">
+                       <strong>联系我们</strong>
+                       <ul>
+                           <li>电话：010-65266599 65268011  邮编：100022</li>
+                           <li>地址：北京市朝阳区建外SOHO东区5号楼1005</li>
+                       </ul>
+                   </div>
+               </div>
+           </div>
+           
+       </div>
+       
+       <div id="alert" class="alert">
+           <div class="alert_mask">
+               <table>
+                   <tr>
+                       <td>
+                           <span class="alert_content">
+                               <img src="" />
+                           </span>
+                           <a class="alert_close"></a>
+                       </td>
+                   </tr>
+               </table>
+           </div>
+       </div>
+       
+       
+       <script src="scripts/jquery.js">
+       </script>
+       <script>
+           $('.project_tab_titles a').click(function () {
+              var currentContent = $('.project_tab_contents > div').eq($(this).index());
+              $(this).add(currentContent).addClass('active').siblings().removeClass('active'); 
+           });
+           
+           function closeOriginPic() {
+                $('body').removeClass('alert_open');
+           }
+           function showOriginPic(){
+               var pic = $(this).attr('data-pic');
+               $('#alert').find('.alert_content img').attr('src', pic);
+               $('body').addClass('alert_open');
+               return false;
+           }
+           $('.project_tab_contents').on('click', 'a', showOriginPic);
+           $('.alert_close').on('click', closeOriginPic);
+       </script>
+       
+   </body>
+</html>

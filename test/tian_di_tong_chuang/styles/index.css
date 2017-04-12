@@ -1,0 +1,274 @@
+* {
+    margin:0;
+    padding:0;
+}
+ul {
+    list-style:none;
+}
+img {
+    vertical-align:bottom;
+}
+a img {
+    border:none;
+}
+a {
+    text-decoration:none;
+    cursor: pointer;
+}
+.clear {
+    clear:both;
+}
+
+.alert_open .alert {
+    display: block;
+}
+.alert_open {
+    overflow: hidden!important;
+}
+
+.wrap {
+    max-width: 1920px;
+    margin: 0 auto;
+    font-size: 12px;
+    font-family: "Microsoft Yahei";
+}
+.wrap, 
+.wrap a {
+    color: #000;
+}
+.content {
+    overflow: hidden;
+    padding-bottom: 50px;
+}
+
+.header, 
+.about,
+.waterfall,
+.project, 
+.content .inner, 
+.footer .inner {
+    width: 1200px;
+    margin: 0 auto;
+}
+.header {
+    overflow: hidden;
+    padding: 35px 0;
+    font-size: 14px;
+}
+.header h1, 
+.header_search, 
+.header_links  {
+    float: left;
+}
+.header_right {
+    float: right;
+    margin-top: 24px;
+}
+.header_links {
+    margin-right: 25px;
+}
+.header_links a {
+    float: left;
+    margin-right: 1px;
+    padding: 5px 15px;
+    /* background: #217fc4; */
+}
+.header_links a:hover, 
+.header_links .active {
+    background: #217fc4;
+    color: #fff;
+}
+
+.header_search button, 
+.header_search input {
+    vertical-align: middle;
+}
+.header_search button {
+    width: 24px;
+    height: 24px;
+    background: url(../images/img_06.jpg) no-repeat;
+    border: none;
+    cursor: pointer;
+}
+.header_search {
+    margin-top: 3px;
+}
+.header_search input {
+    width: 170px;
+    padding: 0 5px;
+    line-height: 20px;
+}
+
+.waterfall_item p span {
+    display: inline-block;
+    margin-right: 1px;
+    padding: 3px 15px;
+    background: #217fc4;
+    color: #fff;
+}
+.waterfall_item p {
+    margin: 15px 0 5px;
+}
+.waterfall_item strong {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 5px 20px;
+    background: #000;
+    opacity: .5;
+    color: #fff;
+    font-weight: normal;
+    font-size: 16px;
+}
+.waterfall_item {
+    position: relative;
+    padding: 10px;
+    background: #e7e7e7;
+    cursor: pointer;
+}
+
+.footer_logo {
+    float: left;
+    margin-right: 75px;
+}
+.footer {
+    overflow: hidden;
+    height: 110px;
+    padding-top: 30px;
+    background: #e7e7e7;
+}
+.footer_section ul {
+    color: #818181;
+}
+.footer_section strong {
+    display: block;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.alert {
+    display: none;
+}
+.alert_close {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: url(../images/close.png) no-repeat;
+    vertical-align: top;
+}
+.alert_mask table td img {
+    padding: 15px;
+    background: #fff;
+}
+.alert_mask table td,
+.alert_mask table {
+    width: 100%;
+    height:100%;
+}
+.alert_mask {
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0, 0, 0, .6);
+    text-align: center;
+}
+
+.project_tab_titles a:hover, 
+.project_tab_titles .active {
+    border-left: 2px solid #217fc4;
+    background: #fff;
+    color: #217fc4;
+}
+.project_tab_titles a {
+    display: block;
+    padding: 15px;
+    border-left: 2px solid #e7e7e7;
+}
+.project_tab_titles {
+    float: left;
+    width: 265px;
+    padding: 15px 0;
+    background: #e7e7e7;
+    line-height: 18px;
+}
+.project_tab_contents a,
+.project_tab_contents {
+    color: #217fc4;
+}
+.project_tab_contents div.active {
+    display: block;
+}
+.project_tab_contents > div {
+    display: none;
+}
+.project_tab_contents {
+    float: left;
+    margin: 20px 0 0 30px;
+    line-height: 24px;
+}
+.project_tab_contents strong {
+    display: block;
+    margin: 5px 0;
+    font-size: 16px;
+}
+.project {
+    font-size: 14px;
+    padding-bottom: 100px;
+    overflow: hidden;
+}
+
+.about .section {
+    margin-bottom: 40px;
+}
+.about .customer a {
+    display: inline-block;
+    margin: 0 40px 25px 0;
+}
+.about .advantage p {
+    margin-left: 200px;
+    padding-top: 30px;
+}
+.about .advantage img {
+    float: left;
+}
+.about .advantage {
+    overflow: hidden;
+    font-size: 12px;
+}
+.about .advantage .high_light {
+    color: #00a0e9;
+}
+.about .intro {
+    font-size: 14px;
+}
+.about {
+    width: 850px;
+}
+.about h2 {
+    line-height: 60px;
+    font-size: 18px;
+    color: #217fc4;
+    FONT-WEIGHT: NORMAL;
+}
+
+.skill h2 {
+    font-size: 22px;
+    font-weight: normal;
+    color: #fff;
+}
+.skill_item_1 h2 {
+    padding-top: 50px;
+}
+.skill_item_1 {
+    height:  950px;
+    background: url(../images/skill_02.jpg) no-repeat center top;
+}
+.skill_item_2 {
+    height: 645px;
+    background: url(../images/skill_03.jpg) no-repeat center top;
+}
+

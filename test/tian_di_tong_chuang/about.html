@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+   <head>
+       <meta charset="utf-8" />
+       <title></title>
+       <link rel="stylesheet" href="styles/index.css" />
+   </head>
+   <body>
+       <div class="wrap">
+           <div class="header">
+               <h1><a href="#"><img src="images/img_03.jpg" /></a></h1>
+               <div class="header_right">
+                   <div class="header_links">
+                       <a href="#">首页</a>
+                       <a href="#">大事件</a>
+                       <a class="active" href="#">项目</a>
+                       <a href="#">公司介绍</a>
+                       <a href="#">招聘</a>
+                   </div>
+                   <div class="header_search">
+                       <form>
+                           <input type="text" />
+                           <button type="submit"></button>
+                       </form>
+                   </div>
+               </div>
+           </div>
+           
+           <div class="content">
+               <div class="about">
+                   <div class="section intro">
+                       <h2>公司介绍</h2>
+                       <p>天地同创商务咨询（北京）有限公司成立于2007年04月，注册资金360万元，北京市高新技术企业。我们为众多知名品牌汽车厂商提供全面的售后维修资料开发及维修技术信息频台建设、车主用户指南移动端APP开发及增强现实AR manual开发、售后服务活动运营以及品牌活动的运营企划等专业化服务。</p>
+                   </div>
+                   <div class="section advantage">
+                       <h2>我们的资质</h2>
+                       <div class="advantage_content">
+                           <img src="images/about_03.jpg" />
+                           <p>我们拥有核心自主知识产权和成熟的科技成果转换能力<br/>  
+           <span class="high_light">高新技术企业</span><br/>（GR201511004180）</p>
+                       </div>
+                   </div>
+                   <div class="section customer">
+                       <h2>公司介绍</h2>
+                       <div class="customer_content">
+                           <a href="#"><img src="images/about_07.jpg" /></a>
+                           <a href="#"><img src="images/about_09.jpg" /></a>
+                           <a href="#"><img src="images/about_11.jpg" /></a> <br/>
+                           <a href="#"><img src="images/about_17.jpg" /></a>
+                           <a href="#"><img src="images/about_18.jpg" /></a>
+                           <a href="#"><img src="images/about_19.jpg" /></a>
+                       </div>
+                   </div>
+               </div>
+           </div>
+            
+           <div class="footer">
+               <div class="inner">
+                   <div class="footer_logo">
+                       <img src="images/img_10.jpg" />
+                   </div>
+                   <div class="footer_section">
+                       <strong>联系我们</strong>
+                       <ul>
+                           <li>电话：010-65266599 65268011  邮编：100022</li>
+                           <li>地址：北京市朝阳区建外SOHO东区5号楼1005</li>
+                       </ul>
+                   </div>
+               </div>
+           </div>
+           
+       </div>
+       
+       
+       <script src="scripts/jquery.js">
+       </script>
+       <script>
+           $('.project_tab_titles a').click(function () {
+              var currentContent = $('.project_tab_contents > div').eq($(this).index());
+              $(this).add(currentContent).addClass('active').siblings().removeClass('active'); 
+           });
+       </script>
+       
+   </body>
+</html>

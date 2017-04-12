@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+   <head>
+       <meta charset="utf-8" />
+       <title></title>
+       <link rel="stylesheet" href="styles/index.css" />
+       <script type="text/javascript">
+           try {
+               if (/Android|Windows Phone|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)) {
+                   window.location.href = "http://xw.qq.com/index.htm";
+               }
+           } 
+           catch (e) {
+           
+           }
+       </script>
+   </head>
+   <body>
+       <div class="wrap">
+           <div class="header">
+               <h1><a href="#"><img src="images/img_03.jpg" /></a></h1>
+               <div class="header_right">
+                   <div class="header_links">
+                       <a class="active" href="#">首页</a>
+                       <a href="#">项目</a>
+                       <a href="#">核心技术</a>
+                       <a href="#">关于我们</a>
+                       <a href="#">招聘</a>
+                   </div>
+                   <div class="header_search">
+                       <form>
+                           <input type="text" />
+                           <button type="submit"></button>
+                       </form>
+                   </div>
+               </div>
+           </div>
+           
+           <div class="content">
+               <div id="waterfall" class="waterfall">
+               </div>
+           </div>
+            
+           
+           <div class="footer">
+               <div class="inner">
+                   <div class="footer_logo">
+                       <img src="images/img_10.jpg" />
+                   </div>
+                   <div class="footer_section">
+                       <strong>联系我们</strong>
+                       <ul>
+                           <li>电话：010-65266599 65268011  邮编：100022</li>
+                           <li>地址：北京市朝阳区建外SOHO东区5号楼1005</li>
+                       </ul>
+                   </div>
+               </div>
+           </div>
+           
+       </div>
+       
+       <div id="alert" class="alert">
+           <div class="alert_mask">
+               <table>
+                   <tr>
+                       <td>
+                           <span class="alert_content">
+                               <img src="" />
+                           </span>
+                           <a class="alert_close"></a>
+                       </td>
+                   </tr>
+               </table>
+           </div>
+       </div>
+       
+       <script type="text/x-handlebars-template" id="waterfall-tpl">
+           {{#result}}
+           <div class="waterfall_item" data-pic="{{originPic}}">
+               <strong>{{title}}</strong>
+               <img src="{{image}}" width="{{width}}" height="{{height}}" />
+               <p>
+                   <span>项目</span><span>{{project}}</span>
+               </p>
+           </div>
+           {{/result}}
+       </script>
+       <script src="scripts/jquery.js">
+       </script>
+       <script src="scripts/handlebars.js">
+       </script>
+       <script src="scripts/waterfall.js">
+       </script>
+       <script>
+           $('#waterfall').waterfall({
+               itemCls: 'waterfall_item',
+               colWidth: 390,
+               gutterWidth: 10,
+               gutterHeight: 25,
+               minCol: 3,
+               isFadeIn: true,
+               checkImagesLoaded: false,
+               callbacks: {
+                    loadingFinished: function($loading, isBeyondMaxPage) {
+                        if ( !isBeyondMaxPage ) {
+                            $loading.fadeOut();
+                        } else {
+                            $loading.hide();
+                        }
+                    },
+                    renderData: function (data, dataType) {
+                        var tpl,
+                            template,
+                            resultNum = data.result.length;
+            
+                        if ( resultNum < 20) {
+                            $('#waterfall').waterfall('pause', function() {
+                                $('#waterfall-message').html('<p style="color:#666;">没有数据了...</p>')
+                                //alert('no more data');
+                            });
+                        }
+            
+                        if ( dataType === 'json' ||  dataType === 'jsonp'  ) { // json or jsonp format
+                            tpl = $('#waterfall-tpl').html();
+                            template = Handlebars.compile(tpl);
+            
+                            return template(data);
+                        } else { // html format
+                            return data;
+                        }
+                    }
+                },
+               path: function(page){
+                   return 'scripts/data/data1.json?page=' + page;
+               }
+           });
+           
+           function closeOriginPic() {
+                $('body').removeClass('alert_open');
+           }
+           function showOriginPic(){
+               var pic = $(this).attr('data-pic');
+               $('#alert').find('.alert_content img').attr('src', pic);
+               $('body').addClass('alert_open');
+           }
+           $('#waterfall').on('click', '.waterfall_item', showOriginPic);
+           $('.alert_close').on('click', closeOriginPic);
+       </script>
+   </body>
+</html>

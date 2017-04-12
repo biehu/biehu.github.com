@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+   <head>
+       <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+        <script type="text/javascript">
+            function viewport(){ var phoneWidth = parseInt(window.screen.width); var phoneScale = phoneWidth / 640; var ua = navigator.userAgent; if (/Android (\d+\.\d+)/.test(ua)) { var version = parseFloat(RegExp.$1); if (ua.toLowerCase().indexOf("qq") > -1) { document.write('<meta name="viewport" content="width=640, minimum-scale = ' + phoneScale + ', maximum-scale = ' + phoneScale + ', target-densitydpi=320">'); return; } if (version > 2.3) { document.write('<meta name="viewport" content="width=640, minimum-scale = ' + phoneScale + ', maximum-scale = ' + phoneScale + ', target-densitydpi=device-dpi">'); } else { document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">'); } } else { document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">'); } }  viewport();
+        </script>
+       <title></title>
+       <link rel="stylesheet" href="styles/index.css" />
+   </head>
+   <body>
+       <div class="wrap">
+           <div class="header clearfix">
+               <h1><a href="#">天地同创商务咨询(北京)有限公司</a></h1>
+               <div class="header_right">
+                   <a class="search_btn" href="#"></a>
+                   <a class="links_btn" href="#"></a>
+                   <div class="header_links ">
+                       <a href="#">首页</a>
+                       <a href="#">大事件</a>
+                       <a class="active" href="#">项目</a>
+                       <a href="#">公司介绍</a>
+                       <a href="#">招聘</a>
+                   </div>
+                   <div class="header_search ">
+                       <form>
+                           <input type="search" />
+                       </form>
+                   </div>
+               </div>
+           </div>
+           
+           <div class="content">
+               <div class="project">
+                   <div class="project_tab">
+                       <a href="#">车辆售后维修资料和用户手册开发（动态发布或视频APP）及维修信息平台建设</a>
+                       <div>
+                           <strong>车辆售后维修资料 ( 动态发布 )1</strong>
+                           <ul>
+                               <li><a href="#" data-pic="{{originPic}}">一汽奔腾全系车型</a></li>
+                               <li><a href="#">一汽奔腾全系车型</a></li>
+                               <li><a href="#">一汽奔腾全系车型</a></li>
+                           </ul>
+                           <strong>车辆售后维修资料 ( 动态发布 )1</strong>
+                           <ul>
+                               <li><a href="#">一汽奔腾全系车型</a></li>
+                               <li><a href="#">一汽奔腾全系车型</a></li>
+                               <li><a href="#">一汽奔腾全系车型</a></li>
+                           </ul>
+                       </div>
+                   </div>
+                   <div class="project_tab">
+                       <a href="#">AR增强现实应用和开发</a>
+                       <div>
+                           <strong>车辆售后维修资料 ( 动态发布 )2</strong>
+                           <ul>
+                               <li><a href="#">一汽奔腾全系车型</a></li>
+                               <li><a href="#">一汽奔腾全系车型</a></li>
+                               <li><a href="#">一汽奔腾全系车型</a></li>
+                           </ul>
+                       </div>
+                   </div>
+                   <div class="project_tab">
+                       <a href="#">售后服务活动企划和运营</a>
+                       <div>
+                           <strong>车辆售后维修资料 ( 动态发布 )3</strong>
+                           <ul>
+                               <li><a href="#">一汽奔腾全系车型</a></li>
+                               <li><a href="#">一汽奔腾全系车型</a></li>
+                               <li><a href="#">一汽奔腾全系车型</a></li>
+                           </ul>
+                       </div>
+                   </div>
+                   <div class="project_tab">
+                       <a href="#">品牌活动策划及运营</a>
+                       <div>
+                           <strong>车辆售后维修资料 ( 动态发布 )4</strong>
+                           <ul>
+                               <li><a href="#">一汽奔腾全系车型</a></li>
+                               <li><a href="#">一汽奔腾全系车型</a></li>
+                               <li><a href="#">一汽奔腾全系车型</a></li>
+                           </ul>
+                       </div>
+                   </div>
+               </div>
+           </div>
+           
+       </div>
+       
+       <div id="alert" class="alert">
+           <div class="alert_mask">
+               <table>
+                   <tr>
+                       <td>
+                           <a class="alert_close"></a><br/>
+                           <span class="alert_content">
+                               <img src="" />
+                           </span>
+                       </td>
+                   </tr>
+               </table>
+           </div>
+       </div>
+       
+       <script src="scripts/jquery.js">
+       </script>
+        
+       <script>
+           $('.project_tab a').on('click', function () {
+               $(this).parent().toggleClass('active');
+           });
+           
+           function closeOriginPic() {
+                $('body').removeClass('alert_open');
+           }
+           function showOriginPic(){
+               var pic = $(this).attr('data-pic');
+               $('#alert').find('.alert_content img').attr('src', pic);
+               $('body').addClass('alert_open');
+               return false;
+           }
+           $('.project_tab').on('click', 'div a', showOriginPic);
+           $('.alert_close').on('click', closeOriginPic);
+           
+           function showSearch() {
+               $('.header_search').toggleClass('active');
+           }
+           $('.search_btn').on('click', showSearch);
+           
+           function showLinks() {
+               $('.header_links').toggleClass('active');
+           }
+           $('.links_btn').on('click', showLinks);
+       </script>
+       
+   </body>
+</html>

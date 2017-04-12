@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+   <head>
+       <meta charset="utf-8" />
+       <title></title>
+       <link rel="stylesheet" href="styles/index.css" />
+   </head>
+   <body>
+       <div class="wrap">
+           <div class="header">
+               <h1><a href="#"><img src="images/img_03.jpg" /></a></h1>
+               <div class="header_right">
+                   <div class="header_links">
+                       <a href="#">首页</a>
+                       <a href="#">大事件</a>
+                       <a class="active" href="#">项目</a>
+                       <a href="#">公司介绍</a>
+                       <a href="#">招聘</a>
+                   </div>
+                   <div class="header_search">
+                       <form>
+                           <input type="text" />
+                           <button type="submit"></button>
+                       </form>
+                   </div>
+               </div>
+           </div>
+           
+           <div class="content" style="padding-bottom: 0;">
+               <div class="skill">
+                   <div class="skill_item skill_item_1">
+                       <h2 class="inner">增强现实（Augmented Reality）在车辆功能展示中的开发及应用</h2>
+                   </div>
+                    <div class="skill_item  skill_item_2">
+                       <h2 class="inner">基于XML的汽车技术文档开发</h2>
+                   </div>
+               </div>  
+           </div>
+            
+           <div class="footer">
+               <div class="inner">
+                   <div class="footer_logo">
+                       <img src="images/img_10.jpg" />
+                   </div>
+                   <div class="footer_section">
+                       <strong>联系我们</strong>
+                       <ul>
+                           <li>电话：010-65266599 65268011  邮编：100022</li>
+                           <li>地址：北京市朝阳区建外SOHO东区5号楼1005</li>
+                       </ul>
+                   </div>
+               </div>
+           </div>
+           
+       </div>
+       
+       
+       <script src="scripts/jquery.js">
+       </script>
+       <script>
+           $('.project_tab_titles a').click(function () {
+              var currentContent = $('.project_tab_contents > div').eq($(this).index());
+              $(this).add(currentContent).addClass('active').siblings().removeClass('active'); 
+           });
+       </script>
+       
+   </body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+   <head>
+       <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+        <script type="text/javascript">
+            function viewport(){ var phoneWidth = parseInt(window.screen.width); var phoneScale = phoneWidth / 640; var ua = navigator.userAgent; if (/Android (\d+\.\d+)/.test(ua)) { var version = parseFloat(RegExp.$1); if (ua.toLowerCase().indexOf("qq") > -1) { document.write('<meta name="viewport" content="width=640, minimum-scale = ' + phoneScale + ', maximum-scale = ' + phoneScale + ', target-densitydpi=320">'); return; } if (version > 2.3) { document.write('<meta name="viewport" content="width=640, minimum-scale = ' + phoneScale + ', maximum-scale = ' + phoneScale + ', target-densitydpi=device-dpi">'); } else { document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">'); } } else { document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">'); } }  viewport();
+        </script>
+       <title></title>
+       <link rel="stylesheet" href="styles/index.css" />
+   </head>
+   <body>
+       <div class="wrap">
+           <div class="header clearfix">
+               <h1><a href="#"></a></h1>
+               <div class="header_right">
+                   <a class="search_btn" href="#"></a>
+                   <a class="links_btn" href="#"></a>
+                   <div class="header_links ">
+                       <a href="#">首页</a>
+                       <a href="#">大事件</a>
+                       <a class="active" href="#">项目</a>
+                       <a href="#">公司介绍</a>
+                       <a href="#">招聘</a>
+                   </div>
+                   <div class="header_search ">
+                       <form>
+                           <input type="search" />
+                       </form>
+                   </div>
+               </div>
+               <div class="title">核心技术</div>
+           </div>
+           
+           <div class="content">
+               <div class="skill">
+                   <div class="skill_item skill_item_1">
+                       <h2 class="inner">增强现实（Augmented Reality）在车辆功能展示中的开发及应用</h2>
+                       <image src="images/skill_02.jpg" />
+                   </div>
+                    <div class="skill_item  skill_item_2">
+                       <h2 class="inner">基于XML的汽车技术文档开发</h2>
+                       <image src="images/skill_03.jpg" />
+                   </div>
+               </div>  
+           </div>
+           
+       </div>
+       
+       <script src="scripts/jquery.js">
+       </script>
+        
+       <script>
+           $('.project_tab a').on('click', function () {
+               $(this).parent().toggleClass('active');
+           });
+           function showSearch() {
+               $('.header_search').toggleClass('active');
+           }
+           $('.search_btn').on('click', showSearch);
+           
+           function showLinks() {
+               $('.header_links').toggleClass('active');
+           }
+           $('.links_btn').on('click', showLinks);
+       </script>
+       
+   </body>
+</html>

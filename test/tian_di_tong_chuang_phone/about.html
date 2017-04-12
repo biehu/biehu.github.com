@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+   <head>
+       <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+        <script type="text/javascript">
+            function viewport(){ var phoneWidth = parseInt(window.screen.width); var phoneScale = phoneWidth / 640; var ua = navigator.userAgent; if (/Android (\d+\.\d+)/.test(ua)) { var version = parseFloat(RegExp.$1); if (ua.toLowerCase().indexOf("qq") > -1) { document.write('<meta name="viewport" content="width=640, minimum-scale = ' + phoneScale + ', maximum-scale = ' + phoneScale + ', target-densitydpi=320">'); return; } if (version > 2.3) { document.write('<meta name="viewport" content="width=640, minimum-scale = ' + phoneScale + ', maximum-scale = ' + phoneScale + ', target-densitydpi=device-dpi">'); } else { document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">'); } } else { document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">'); } }  viewport();
+        </script>
+       <title></title>
+       <link rel="stylesheet" href="styles/index.css" />
+   </head>
+   <body>
+       <div class="wrap">
+           <div class="header clearfix">
+               <h1><a href="#">天地同创商务咨询(北京)有限公司</a></h1>
+               <div class="header_right">
+                   <a class="search_btn" href="#"></a>
+                   <a class="links_btn" href="#"></a>
+                   <div class="header_links ">
+                       <a href="#">首页</a>
+                       <a href="#">大事件</a>
+                       <a class="active" href="#">项目</a>
+                       <a href="#">公司介绍</a>
+                       <a href="#">招聘</a>
+                   </div>
+                   <div class="header_search ">
+                       <form>
+                           <input type="search" />
+                       </form>
+                   </div>
+               </div>
+           </div>
+           
+           <div class="content">
+               <div class="about">
+                   <div class="section intro">
+                       <h2>公司介绍</h2>
+                       <p>天地同创商务咨询（北京）有限公司成立于2007年04月，注册资金360万元，北京市高新技术企业。我们为众多知名品牌汽车厂商提供全面的<i>售后维修资料开发</i>及<i>维修技术信息频台建设</i>、<i>车主用户指南移动端APP开发</i>及<i>增强现实AR manual开发</i>、<i>售后服务活动运营</i>以及<i>品牌活动的运营企划</i>等专业化服务。</p>
+                   </div>
+                   <div class="section work">
+                       <h2>业务模块</h2>
+                       <p>售后维修资料XML编辑及自动发布</p>
+                       <p>AR增强现实应用开发</p>
+                       <p>售后服务活动企划和运营</p>
+                   </div>
+                   <div class="section advantage">
+                       <h2>我们的资质</h2>
+                       <div class="advantage_content">
+                           <p class="center"><img src="images/about.jpg" /></p>
+                           <p>我们拥有核心自主知识产权和成熟的科技成果转换能力  
+           <span class="high_light">高新技术企业</span>（GR201511004180）</p>
+                       </div>
+                   </div>
+                   <div class="section customer">
+                       <h2>我们的客户</h2>
+                       <div class="customer_content">
+                           <a href="#"><img src="images/friend_03.jpg" /></a>
+                           <a href="#"><img src="images/friend_04.jpg" /></a>
+                           <a href="#"><img src="images/friend_05.jpg" /></a> <br/>
+                           <a href="#"><img src="images/friend_09.jpg" /></a>
+                           <a href="#"><img src="images/friend_10.jpg" /></a>
+                           <a href="#"><img src="images/friend_11.jpg" /></a>
+                       </div>
+                   </div>
+               </div>
+           </div>
+           
+       </div>
+       
+       <script src="scripts/jquery.js">
+       </script>
+        
+       <script>
+           $('.project_tab a').on('click', function () {
+               $(this).parent().toggleClass('active');e
+           });
+           function showSearch() {
+               $('.header_search').toggleClass('active');
+           }
+           $('.search_btn').on('click', showSearch);
+           
+           function showLinks() {
+               $('.header_links').toggleClass('active');
+           }
+           $('.links_btn').on('click', showLinks);
+       </script>
+       
+   </body>
+</html>

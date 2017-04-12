@@ -1,0 +1,337 @@
+a img,body,button,div,fieldset,form,h1,h2,h3,h4,h5,h6,html,img,input,li,menu,ol,p,textarea,ul {
+    padding: 0;
+    margin: 0;
+    border: 0
+}
+
+li,ol,ul {
+    list-style: none
+}
+
+b,em,h1,h2,h3,h4,h5,h6,i {
+    font-size: 1em;
+    font-weight: 400;
+    font-style: normal
+}
+
+body,button,input,select,textarea {
+    -webkit-text-size-adjust: none;
+    font: 400 14px/1.5 helvetica,verdana,san-serif;
+    outline: 0;
+    color: #333
+}
+
+button,input[type=button],input[type=password],input[type=submit],input[type=text],textarea {
+    -webkit-appearance: none
+}
+
+a,a:visited {
+    text-decoration: none;
+    color: #333
+}
+
+.img img,video {
+    vertical-align: middle
+}
+
+.wrap {
+    max-width: 640px;
+    margin: 0 auto;
+    background: #fff
+}
+
+.fl {
+    float: left
+}
+
+.fr {
+    float: right
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    height: 0;
+    line-height: 0;
+    font-size: 0;
+    visibility: hidden;
+    clear: both
+}
+
+.links_btn,
+.search_btn {
+    position: relative;
+    z-index: 10;
+    display: inline-block;
+    width: 84px;
+    height: 84px;
+}
+.links_btn {
+    background: url(../images/index_08.png) no-repeat right center;
+}
+.search_btn {
+    background: url(../images/index_06.png) no-repeat right center;
+}
+.header .title:after {
+    content: ' ';
+    vertical-align: middle;
+    display: inline-block;
+    height: 84px;
+}
+.header .title {
+    width: 100%;
+    font-size: 30px;
+    color: #3f82c8;
+    text-align: center;
+}
+.header .active {
+    display: block;
+}
+.header_search,
+.header_links {
+    display: none;
+}
+.header_right {
+    /* float: right; */
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    text-align: right;
+    padding-right: 20px;
+    box-sizing: border-box;
+}
+.header_links a {
+    display: block;
+    background: url(../images/index_16.png) no-repeat right center;
+    border-bottom: 1px solid #474748;
+    text-align: center;
+    color: #cdcccc;
+    font-size: 20px;
+}
+.header_links {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 96px;
+    width: 100%;
+    line-height: 72px;
+    background: #555454;
+}
+.header_search input {
+    width: 100%;
+    padding: 380px;
+    padding: 0 10px;
+    line-height: 44px;
+    background: #fcfcfc;
+    border: 1px solid #ecf4fa;
+    border-radius: 3px;
+}
+.header_search form {
+    display: block;
+    margin: 0 160px 0 84px;
+}
+.header_search {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 100%;
+}
+.header {
+    position: relative;
+    height: 84px;
+    /* padding: 0 20px; */
+    box-shadow: 0px 0px 4px 0px #000;
+}
+.header h1 {
+    /* float: left; */
+    position: absolute;
+    top: 0;
+    left: 20px;
+    z-index: 1;
+    display: table-row;
+}
+.header h1 a {
+    display: table-cell; 
+    vertical-align: middle;
+    height: 84px;
+    padding-left: 70px;
+    background: url(../images/index_03.png) no-repeat left center; 
+    color: #217fc4;
+    font-size: 16px;
+    font-weight: bold;     
+}
+
+.waterfall {
+    margin: 20px;
+}
+.waterfall_item p {
+    margin-bottom: 5px;
+    background: #217fc4;
+    text-align: center;
+    font-size: 18px;
+    padding: 5px;
+    color: #fff;
+}
+.waterfall_item {
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0px 0px 4px 0px #000;
+}
+.waterfall_item strong {
+    position: absolute;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, .3);
+    text-align: center;
+    font-size: 18px;
+    color: #fff;
+}
+
+.project {
+    margin-top: 5px;
+}
+.project_tab div ul {
+    margin-bottom: 30px;
+}
+.project_tab div strong {
+    font-size: 26px;
+    font-weight: bold;
+}
+.project_tab.active div {
+    display: block;
+}
+.project_tab div {
+    display: none;
+    padding: 20px 50px 20px 50px;
+    color: #217fc4;
+}
+.project_tab div a {
+    color: #217fc4;
+    font-size: 24px;
+}
+.project_tab.active > a {
+    background: #2481c5 url(../images/tab_icon_top.png) no-repeat right center;
+}
+.project_tab > a {
+    display: block;
+    width: 100%;
+    line-height: 26px;
+    font-size: 26px;
+    padding: 20px 50px 20px 50px;
+    background: #2481c5 url(../images/tab_icon.png) no-repeat right center;
+    border-bottom: 1px solid #105f98;
+    color: #fff;
+    box-sizing: border-box;
+}
+
+.alert_open .alert {
+    display: block;
+}
+.alert_open {
+    overflow: hidden!important;
+}
+.alert {
+    display: none;
+}
+.alert_close {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin-bottom: 5px;
+    background: url(../images/close.png) no-repeat;
+    vertical-align: top;
+}
+.alert_mask table td img {
+    width: 100%;
+    padding: 10px;
+    background: #fff;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+.alert_mask table {
+    width: 100%;
+    max-width: 580px;
+    text-align: center;
+    margin: 0 auto;
+}
+.alert_mask table td,
+.alert_mask table {
+    height:100%;
+    text-align: right;
+}
+.alert_mask {
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    bottom: 0;
+    right: 0;
+    background: rgba(0, 0, 0, .6);
+    text-align: center;
+}
+
+.about h2 {
+    margin-bottom: 15px;
+    font-weight: bolder;
+    /* font-size: 26px; */
+}
+.about .section {
+    margin-bottom: 20px;
+}
+.about .advantage p {
+    margin: 0 30px;
+    font-size: 20px;
+}
+.about .advantage img {
+    width: 100%;
+}
+.about .center {
+    text-align: center;
+}
+.about {
+    margin: 44px;
+    font-size: 26px;
+}
+.about .high_light {
+    color: #217fc4;
+}
+.about .work p,
+.about .intro p {
+    color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    background: #217fc4;
+    font-size: 22px;
+}
+.about .work p {
+    padding: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 24px;
+}
+.about .intro i {
+    text-decoration: underline;
+}
+
+.skill_item {
+    position: relative;
+}
+.skill img {
+    width: 100%;
+    vertical-align: bottom;
+}
+.skill h2 {
+    position: absolute;
+    padding: 30px;
+    font-size: 26px;
+    font-weight: normal;
+    color: #fff;
+}
+
+
