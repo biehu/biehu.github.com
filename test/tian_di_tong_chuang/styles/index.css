@@ -26,6 +26,10 @@ a {
     overflow: hidden!important;
 }
 
+body {
+    overflow-y: scroll!important;
+}
+
 .wrap {
     max-width: 1920px;
     margin: 0 auto;
@@ -237,7 +241,7 @@ a {
 }
 .about .advantage {
     overflow: hidden;
-    font-size: 12px;
+    font-size: 14px;
 }
 .about .advantage .high_light {
     color: #00a0e9;
@@ -270,5 +274,13 @@ a {
 .skill_item_2 {
     height: 645px;
     background: url(../images/skill_03.jpg) no-repeat center top;
+}
+
+.modal-scrollbar-measure {
+  position: absolute;
+  top: -9999px;
+  width: 50px;
+  height: 50px;
+  overflow: scroll;
 }
 
