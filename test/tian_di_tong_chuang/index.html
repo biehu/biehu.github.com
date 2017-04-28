@@ -77,7 +77,7 @@
        <script type="text/x-handlebars-template" id="waterfall-tpl">
            {{#result}}
            <div class="waterfall_item" data-pic="{{originPic}}">
-               <strong>{{title}}</strong>
+               <strong><span>{{title}}</span></strong>
                <img src="{{image}}" width="{{width}}" height="{{height}}" />
                <p>
                    <span>项目</span><span>{{project}}</span>
@@ -96,7 +96,7 @@
                itemCls: 'waterfall_item',
                colWidth: 390,
                gutterWidth: 10,
-               gutterHeight: 25,
+               gutterHeight: 10,
                minCol: 3,
                isFadeIn: true,
                checkImagesLoaded: false,

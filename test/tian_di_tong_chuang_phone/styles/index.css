@@ -37,7 +37,7 @@ a,a:visited {
 .wrap {
     max-width: 640px;
     margin: 0 auto;
-    background: #fff
+    background: #fff;
 }
 
 .fl {
@@ -63,20 +63,21 @@ a,a:visited {
     position: relative;
     z-index: 10;
     display: inline-block;
-    width: 84px;
+    width: 54px;
     height: 84px;
+    margin-left: 20px;
 }
 .links_btn {
-    background: url(../images/index_08.png) no-repeat right center;
+    background: url(../images/index_08.png) no-repeat center center;
 }
 .search_btn {
-    background: url(../images/index_06.png) no-repeat right center;
+    background: url(../images/index_06.png) no-repeat center center;
 }
 .header .title:after {
     content: ' ';
     vertical-align: middle;
     display: inline-block;
-    height: 84px;
+    height: 90px;
 }
 .header .title {
     width: 100%;
@@ -107,13 +108,13 @@ a,a:visited {
     border-bottom: 1px solid #474748;
     text-align: center;
     color: #cdcccc;
-    font-size: 20px;
+    font-size: 22px;
 }
 .header_links {
     position: absolute;
     z-index: 1;
     left: 0;
-    top: 96px;
+    top: 89px;
     width: 100%;
     line-height: 72px;
     background: #555454;
@@ -126,6 +127,7 @@ a,a:visited {
     background: #fcfcfc;
     border: 1px solid #ecf4fa;
     border-radius: 3px;
+    -webkit-appearance:none;
 }
 .header_search form {
     display: block;
@@ -135,13 +137,17 @@ a,a:visited {
     position: absolute;
     top: 20px;
     left: 0;
+    z-index: 1;
     width: 100%;
+}
+.header a {
+    outline: none;
 }
 .header {
     position: relative;
     height: 84px;
     /* padding: 0 20px; */
-    box-shadow: 0px 0px 4px 0px #000;
+    box-shadow: 0px 0px 3px 0px #000;
 }
 .header h1 {
     /* float: left; */
@@ -152,32 +158,36 @@ a,a:visited {
     display: table-row;
 }
 .header h1 a {
-    display: table-cell; 
+    display: table-cell;
     vertical-align: middle;
     height: 84px;
-    padding-left: 70px;
-    background: url(../images/index_03.png) no-repeat left center; 
+    padding-left: 65px;
+    background: url(../images/index_03.png) no-repeat left center;
     color: #217fc4;
-    font-size: 16px;
-    font-weight: bold;     
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .waterfall {
     margin: 20px;
 }
+.waterfall_item img {
+    vertical-align: bottom;
+}
 .waterfall_item p {
-    margin-bottom: 5px;
+    margin: 10px 0;
     background: #217fc4;
     text-align: center;
-    font-size: 18px;
+    font-size: 20px;
     padding: 5px;
     color: #fff;
+    line-height: normal;
 }
 .waterfall_item {
     position: relative;
     border-radius: 5px;
     overflow: hidden;
-    box-shadow: 0px 0px 4px 0px #000;
+    box-shadow: 2px 2px 4px 0px #000;
 }
 .waterfall_item strong {
     position: absolute;
@@ -187,7 +197,7 @@ a,a:visited {
     box-sizing: border-box;
     background: rgba(0, 0, 0, .3);
     text-align: center;
-    font-size: 18px;
+    font-size: 22px;
     color: #fff;
 }
 
@@ -195,7 +205,7 @@ a,a:visited {
     margin-top: 5px;
 }
 .project_tab div ul {
-    margin-bottom: 30px;
+    /* margin-bottom: 25px; */
 }
 .project_tab div strong {
     font-size: 26px;
@@ -204,9 +214,15 @@ a,a:visited {
 .project_tab.active div {
     display: block;
 }
+.project_tab div:first-of-type {
+    margin-top: 20px;
+}
+.project_tab div:last-child {
+    margin-bottom: 20px;
+}
 .project_tab div {
     display: none;
-    padding: 20px 50px 20px 50px;
+    padding: 0 50px;
     color: #217fc4;
 }
 .project_tab div a {
@@ -216,6 +232,7 @@ a,a:visited {
 .project_tab.active > a {
     background: #2481c5 url(../images/tab_icon_top.png) no-repeat right center;
 }
+
 .project_tab > a {
     display: block;
     width: 100%;
@@ -226,12 +243,14 @@ a,a:visited {
     border-bottom: 1px solid #105f98;
     color: #fff;
     box-sizing: border-box;
+    /* margin-bottom: 20px; */
 }
 
 .alert_open .alert {
     display: block;
 }
 .alert_open {
+    height:100%;
     overflow: hidden!important;
 }
 .alert {
@@ -239,10 +258,12 @@ a,a:visited {
 }
 .alert_close {
     display: inline-block;
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
+    margin-top: 20px;
     margin-bottom: 5px;
     background: url(../images/close.png) no-repeat;
+    background-size: cover;
     vertical-align: top;
 }
 .alert_mask table td img {
@@ -279,10 +300,11 @@ a,a:visited {
 .about h2 {
     margin-bottom: 15px;
     font-weight: bolder;
-    /* font-size: 26px; */
+    font-size: 28px;
+    line-height: normal;
 }
 .about .section {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 .about .advantage p {
     margin: 0 30px;
@@ -295,7 +317,7 @@ a,a:visited {
     text-align: center;
 }
 .about {
-    margin: 44px;
+    margin: 35px 44px;
     font-size: 26px;
 }
 .about .high_light {
@@ -305,15 +327,16 @@ a,a:visited {
 .about .intro p {
     color: #fff;
     padding: 20px;
-    border-radius: 5px;
+    border-radius: 7px;
     background: #217fc4;
     font-size: 22px;
 }
 .about .work p {
     padding: 15px;
-    margin-bottom: 20px;
+    margin-bottom: 12px;
     text-align: center;
     font-size: 24px;
+    line-height: normal;
 }
 .about .intro i {
     text-decoration: underline;
@@ -332,6 +355,27 @@ a,a:visited {
     font-size: 26px;
     font-weight: normal;
     color: #fff;
+}
+
+.footer span,
+.footer strong {
+    display: inline-block;
+}
+.footer span {
+    padding-left: 5px;
+    margin-left: 5px;
+    border-left: 1px solid #818181;
+    line-height: 24px;
+    vertical-align: top;
+    font-size: 18px;
+}
+.footer strong {
+    font-size: 20px;
+}
+.footer {
+    margin: 30px 0;
+    text-align: center;
+    color: #818181;
 }
 
 

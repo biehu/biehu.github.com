@@ -100,6 +100,7 @@ body {
 .header_search input {
     width: 170px;
     padding: 0 5px;
+    height: 20px;
     line-height: 20px;
 }
 
@@ -110,16 +111,31 @@ body {
     background: #217fc4;
     color: #fff;
 }
+.waterfall_item img {
+    width: 370px;
+}
 .waterfall_item p {
-    margin: 15px 0 5px;
+    margin: 10px 0 0px;
+}
+.waterfall_item strong:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: .4;
+}
+.waterfall_item strong span {
+    position: relative;
+    z-index: 1;
 }
 .waterfall_item strong {
     position: absolute;
     left: 0;
     top: 0;
     padding: 5px 20px;
-    background: #000;
-    opacity: .5;
     color: #fff;
     font-weight: normal;
     font-size: 16px;
@@ -133,13 +149,15 @@ body {
 
 .footer_logo {
     float: left;
-    margin-right: 75px;
 }
 .footer {
     overflow: hidden;
     height: 110px;
     padding-top: 30px;
     background: #e7e7e7;
+}
+.footer_section {
+    margin-left: 330px;
 }
 .footer_section ul {
     color: #818181;
@@ -179,6 +197,7 @@ body {
     right: 0;
     background: rgba(0, 0, 0, .6);
     text-align: center;
+    z-index: 1;
 }
 
 .project_tab_titles a:hover, 

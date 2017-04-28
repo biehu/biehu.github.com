@@ -111,7 +111,8 @@
         
        <script>
            $('.project_tab a').on('click', function () {
-               $(this).parent().toggleClass('active');
+               $(this).parent().addClass('active')
+                    .siblings().removeClass('active');
            });
            
            function closeOriginPic() {
