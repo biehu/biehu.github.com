@@ -106,6 +106,10 @@
             var loaded = function () {
                  $('.all').show();
                  $('.load').hide();
+                 
+                 
+                 makeSnow(canvas);
+                 page();
                 
                  $("#typed").typed({
                     strings: ["尊敬的xxx<br/>过年好!<br/>新的一年，让我们重新认识一下！"],
@@ -151,14 +155,7 @@
 
        <script>
            
-           (function() {
-    function ready(fn) {
-        if (document.readyState != 'loading'){
-            fn();
-        } else {
-            document.addEventListener('DOMContentLoaded', fn);
-        }
-    }
+           var canvas = document.getElementById('snow');
     
     function makeSnow(el) {
         var ctx = el.getContext('2d');
@@ -225,16 +222,11 @@
         updateParticles();
     }
     
-    ready(function() {
-        var canvas = document.getElementById('snow');
-        makeSnow(canvas);
-    });
-})();
        </script>
        
        
        <script>
-	    (function () {
+	    function page() {
             var root = $('.wrap');
             var section = root.find('section');
             var movePrevent = false;
@@ -351,7 +343,7 @@
             pageInit();
     
 
-        })();
+        };
        </script>
    </body>
 </html>
