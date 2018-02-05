@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+   <head>
+       <meta charset="utf-8" />
+       <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+       <title>Untitled Document</title>
+       <style>
+            section {
+                overflow: hidden;
+                position: relative;
+                width: 100%;
+                background: #ec6941;
+            }
+            .snow {
+              position: absolute;
+              top: 0;
+              left: 0;
+              pointer-events: none;
+              z-index: 20;
+            }
+            
+            .load {
+                width: 100%;
+                position:absolute;
+                top: 50%; 
+                text-align: center;
+                font-size: 40px;
+            }
+            
+            #typed {
+                    position: absolute;
+                    top: 195px;
+                    right: 0;
+                    width: 412px;
+                    height: 215px;
+                    background: url(./images/p1_text_bg.png) no-repeat;
+                    background-size: cover;
+                    font-size: 28px;
+                    box-sizing: border-box;
+                    padding: 40px 20px 40px 40px;
+            }
+
+            body {
+                overflow: hidden;
+            }
+            
+            .section2 {
+                background: #13b5b1;
+            }
+            
+            .section3 {
+                background: #e4007f;
+            }
+            
+            .wrap {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                -webkit-transition: all 0.3s linear;
+                -webkit-backface-visibility: hidden;
+            }
+       </style>
+	   <script type="text/javascript">
+            function viewport(){ var phoneWidth = parseInt(window.screen.width); var phoneScale = phoneWidth / 640; var ua = navigator.userAgent; if (/Android (\d+\.\d+)/.test(ua)) { var version = parseFloat(RegExp.$1); if (ua.toLowerCase().indexOf("qq") > -1) { document.write('<meta name="viewport" content="width=640, minimum-scale = ' + phoneScale + ', maximum-scale = ' + phoneScale + ', target-densitydpi=320">'); return; } if (version > 2.3) { document.write('<meta name="viewport" content="width=640, minimum-scale = ' + phoneScale + ', maximum-scale = ' + phoneScale + ', target-densitydpi=device-dpi">'); } else { document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">'); } } else { document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">'); } }  viewport();
+        </script>
+   </head>
+   <body>
+       
+       <div class="load">
+           正在加载中...
+           
+       </div>
+       
+       <div class="all" style="display: none;">
+           <canvas class="snow" id="snow" width="100%" height="100%"></canvas>
+           <div class="wrap">
+               <section class="section1">
+                   <p id="typed"></p>
+                   <img src="./images/p1.jpg"/>
+               </section>
+               <section class="section2"></section>
+               <section class="section3"></section>
+           </div>
+       
+       </div>
+       <script src="scripts/jquery.js"></script>
+        <script src="scripts/typed.js"></script>
+        
+        
+        <script> 
+        (function () {
+            var pics = [
+                "http:/biehu.me/test/images/p1_text_bg.png",
+                "http:/biehu.me/test/images/p1.jpg",
+            ];
+            var index = 0;
+            var len = pics.length;
+            
+            var progress = function (w) {
+                $('.loading').animate({width: w}, 100, 'linear', function () {
+                    $('.loading-text').text(w);
+                });
+            };
+            
+            var loaded = function () {
+                 $('.all').show();
+                 $('.load').hide();
+                
+                 $("#typed").typed({
+                    strings: ["尊敬的xxx<br/>过年好!<br/>新的一年，让我们重新认识一下！"],
+                    typeSpeed: 30,
+                    backDelay: 500,
+                    loop: false,
+                    contentType: 'html', // or text
+                    // defaults to false for infinite loop
+                    loopCount: false,
+                    callback: function(){ foo(); },
+                    resetCallback: function() { newTyped(); }
+                });
+            };
+            
+            var load = function () {
+                var img = new Image();
+                img.src = pics[index];
+                img.onload = function () {
+                    progress(Math.floor((index + 1) / len * 100) + '%');
+                    index += 1;
+                    if (index < len) {
+                        load();
+                    }
+                    else {
+                        loaded();
+                    }
+                };
+            };
+            
+            var init = function () {
+                if (len > 0) {
+                    load();
+                }
+                else {
+                    progress('100%');
+                }
+            };
+            
+            init();
+
+        })();
+       </script>
+
+       <script>
+           
+           (function() {
+    function ready(fn) {
+        if (document.readyState != 'loading'){
+            fn();
+        } else {
+            document.addEventListener('DOMContentLoaded', fn);
+        }
+    }
+    
+    function makeSnow(el) {
+        var ctx = el.getContext('2d');
+        var width = 0;
+        var height = 0;
+        var particles = [];
+        
+        var Particle = function() {
+            this.x = this.y = this.dx = this.dy = 0;
+            this.reset();
+        }
+        
+        Particle.prototype.reset = function() {
+            this.y = Math.random() * height;
+            this.x = Math.random() * width;
+            this.dx = (Math.random() * 1) - 0.5;
+            this.dy = (Math.random() * 0.5) + 0.5;
+        }
+        
+        function createParticles(count) {
+            if (count != particles.length) {
+                particles = [];
+                for (var i = 0; i < count; i++) {
+                    particles.push(new Particle());
+                }
+            }
+        }
+                
+        function onResize() {
+            width = window.innerWidth;
+            height = window.innerHeight;
+            el.width = width;
+            el.height = height;
+            
+            createParticles((width * height) / 10000);
+        }
+        
+        function updateParticles() {
+            ctx.clearRect(0, 0, width, height);
+            ctx.fillStyle = '#f6f9fa';
+            
+            particles.forEach(function(particle) {
+                particle.y += particle.dy;
+                particle.x += particle.dx;
+                
+                if (particle.y > height) {
+                    particle.y = 0;
+                }
+                
+                if (particle.x > width) {
+                    particle.reset();
+                    particle.y = 0;
+                }
+                
+                ctx.beginPath();
+                ctx.arc(particle.x, particle.y, 5, 0, Math.PI * 2, false);
+                ctx.fill();
+            });
+            
+            window.requestAnimationFrame(updateParticles);
+        }
+        
+        onResize();
+        updateParticles();
+    }
+    
+    ready(function() {
+        var canvas = document.getElementById('snow');
+        makeSnow(canvas);
+    });
+})();
+       </script>
+       
+       
+       <script>
+	    (function () {
+            var root = $('.wrap');
+            var section = root.find('section');
+            var movePrevent = false;
+            var touchDown = false;
+            var curPage = 0;
+            var pageHeight, startX, startY, margin;
+            
+            var bind = function () {
+                document.body.addEventListener('touchstart', function (e) {
+                    onStart(e.changedTouches[0]);
+                });
+                
+                document.body.addEventListener('touchmove', function (e) {
+                    e.preventDefault();
+                    onMove(e.changedTouches[0]);
+                });
+                
+                document.body.addEventListener('touchend', function (e) {
+                    onEnd(e.changedTouches[0]);
+                });
+            };
+            
+            var prevPage = function () {
+                animatePage(curPage - 1);
+            };
+            
+            var nextPage = function () {
+                animatePage(curPage + 1);
+            };
+            
+            var setTop = function (pos) {
+                root.css({'-webkit-transform': 'matrix(1, 0, 0, 1, 0,' + pos + ')'});
+            };
+            
+            var onStart = function (e) {
+                if (movePrevent) {
+                    return;
+                }
+                
+                touchDown = true;
+                
+                startX = e.pageX;
+                startY = e.pageY;
+                margin = root.css('-webkit-transform');
+                margin = margin.replace("matrix(", "");
+                margin = margin.replace(")", "");
+                margin = margin.split(",");
+                margin = parseInt(margin[5]);
+            };
+            
+            var onMove = function (e) {
+                if (movePrevent || !touchDown) {
+                    return;
+                }
+                
+                if (e.pageY !== startY) {
+                    setTop(margin + e.pageY - startY);
+                }
+            };
+            
+            var onEnd = function (e) {
+                if (movePrevent) {
+                    return;
+                }
+                
+                var endY = e.pageY;
+                
+                touchDown = false;
+                
+                if (Math.abs(endY - startY) < 50) {
+                    animatePage(curPage);
+                }
+                else if (endY > startY) {
+                    prevPage();
+                }
+                else {
+                    nextPage();
+                }
+                
+            };
+            
+            var animatePage = function (newPage) {
+                var newMarginTop;
+                
+                if (newPage < 0) {
+                    newPage = 0;
+                }
+                if (newPage > section.length - 1) {
+                    newPage = section.length - 1;
+                }
+                
+                curPage = newPage;
+                
+                movePrevent = true;
+                root.one('webkitTransitionEnd', function () {
+                    movePrevent = false;
+                });
+                newMarginTop  = newPage * (-pageHeight);
+                setTop(newMarginTop);
+                
+                section.removeClass('show');
+                section.eq(curPage).addClass('show');
+            };
+            
+            var pageInit = function () {
+                pageHeight = $(window).height();
+                
+                section.height(pageHeight);
+                animatePage(curPage);
+                
+                bind();
+            };
+            
+            pageInit();
+    
+
+        })();
+       </script>
+   </body>
+</html>

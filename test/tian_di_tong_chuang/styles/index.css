@@ -107,9 +107,11 @@ body {
 .waterfall_item p span {
     display: inline-block;
     margin-right: 1px;
-    padding: 3px 15px;
+    padding: 3px 0;
     background: #217fc4;
     color: #fff;
+    width: 160px;
+    text-align: center;
 }
 .waterfall_item img {
     width: 370px;
@@ -139,6 +141,8 @@ body {
     color: #fff;
     font-weight: normal;
     font-size: 16px;
+    right: 0;
+    text-align: center;
 }
 .waterfall_item {
     position: relative;
@@ -150,9 +154,14 @@ body {
 .footer_logo {
     float: left;
 }
+.footer li {
+    float: left;
+    margin-right: 20px;
+    line-height: 20px;
+}
 .footer {
     overflow: hidden;
-    height: 110px;
+    /* height: 110px; */
     padding-top: 30px;
     background: #e7e7e7;
 }
@@ -165,7 +174,9 @@ body {
 .footer_section strong {
     display: block;
     margin-bottom: 20px;
-    font-size: 16px;
+    font-size: 14px;
+    float: left;
+    margin-right: 20px;
 }
 
 .alert {
