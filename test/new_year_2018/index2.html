@@ -75,16 +75,12 @@
             
             .p1-r {
                 position: absolute;
-                left: 0;
-                top: 100%;
+                left: 100%;
+                top: 0;
                 transition: .5s;
             }
-            .p1-b {
-                position: relative;
-                z-index: 1;
-            }
             .show .p1-r {
-                top: 0;
+                left: 0;
             }
             
             /*
@@ -97,12 +93,14 @@
             }
             .section2 .p2-r {
                 position: absolute;
-                left: -100%;
+                left: 0;
                 top: 0;
                 transition: .5s;
+                transition-delay: .5s;
+                opacity: 0;
             }
             .show .p2-r {
-                left: 0;
+                opacity: 1;
             }
             
             /*
@@ -157,7 +155,7 @@
                 left: 0;
                 top: 0;
                 animation: bounce-left 1s linear infinite;
-                transform-origin: 213px 639px;
+                transform-origin: 312px 911px;
             }
             @keyframes bounce-left {
                 25% {transform: rotate(10deg);}
@@ -195,28 +193,27 @@
                <section class="section1">
                    <p class="typed">
                    </p>
-                   <img src="./images/m/p1-top.jpg"/>
-                   <img class="p1-b" src="./images/m/p1-bottom.jpg"/>
-                   <img class="p1-r" src="./images/m/p1-r.png"/>
+                   <img src="./images/w/bg.jpg"/>
+                   <img class="p1-r" src="./images/w/p1.png"/>
                </section>
                <section class="section2">
                    <p class="typed">
                    </p>
-                   <img src="./images/m/p2-bg.jpg"/>
-                   <img class="p2-r" src="./images/m/p2.png"/>
+                   <img src="./images/w/p2-bg.jpg"/>
+                   <img class="p2-r" src="./images/w/p2.png"/>
                </section>
                <section class="section3">
                    <p class="typed typed1">
                    </p>
-                   <img src="./images/m/p3-bg.jpg"/>
+                   <img src="./images/w/p3-bg.jpg"/>
                    <img class="p3-r" src="./images/p3-r.png"/>
                </section>
                <section class="section4">
                    <img class="p4-r" src="" />
                    <p class="typed typed2">
                    </p>
-                   <img src="./images/m/p4.jpg"/>
-                   <img class="p4-h" src="./images/m/p4.png"/>
+                   <img src="./images/w/p4.jpg"/>
+                   <img class="p4-h" src="./images/w/p4.png"/>
                    <a href="">点击右边按钮生成自己的专属拜年贺卡吧</a>
                </section>
            </div>
@@ -230,12 +227,12 @@
         (function () {
             var pics = [
                 "http://biehu.me/test/new_year_2018/images/text_bg.png",
-                "http://biehu.me/test/new_year_2018/images/m/p2-bg.jpg",
-                "http://biehu.me/test/new_year_2018/images/m/p2.png",
-                "http://biehu.me/test/new_year_2018/images/m/p3-bg.jpg",
+                "http://biehu.me/test/new_year_2018/images/w/p2-bg.jpg",
+                "http://biehu.me/test/new_year_2018/images/w/p2.png",
+                "http://biehu.me/test/new_year_2018/images/w/p3-bg.jpg",
                 "http://biehu.me/test/new_year_2018/images/p3-r.png",
-                "http://biehu.me/test/new_year_2018/images/m/p4.png",
-                "http://biehu.me/test/new_year_2018/images/m/p4.jpg",
+                "http://biehu.me/test/new_year_2018/images/w/p4.png",
+                "http://biehu.me/test/new_year_2018/images/w/p4.jpg",
             ];
             var index = 0;
             var len = pics.length;
