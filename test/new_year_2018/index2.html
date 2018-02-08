@@ -117,7 +117,7 @@
                 position: absolute;
                 left: 100%;
                 top: 0;
-                transition: .5s;
+                transition: 1s;
             }
             .show .p1-r {
                 left: 0;
@@ -135,7 +135,7 @@
                 position: absolute;
                 left: 0;
                 top: 0;
-                transition: .5s;
+                transition: 1s;
                 transition-delay: .5s;
                 opacity: 0;
             }
@@ -149,13 +149,13 @@
             
             .section3 .typed1 {
                 top: 50px;
-                width: 524px;
-                height: 297px;
-                padding: 63px;
+                width: 538px;
+                height: 316px;
+                padding: 81px 52px;
             }
             .section3 .p3-r {
                 position: absolute;
-                top: 0;
+                top: -30px;
                 left: 0;
                 animation: bounce-up 1s linear infinite;
             }
@@ -202,16 +202,22 @@
                 50%, 100% {transform: rotate(0);}
                 75% {transform: rotate(-10deg);}
             }
-            .section4 a {
-                color: #5b2705;
+            .section4 .link {
                 position: absolute;
                 width: 100%;
-                line-height: 30px;
-                font-size:24px;
+                line-height: 50px;
+                font-size: 24px;
                 text-align: center;
                 top: 100%;
-                margin-top: -60px;
+                margin-top: -100px;
+                padding: 40px;
+                box-sizing: border-box;
+            }
+            .section4 a {
+                color: #5b2705;
                 text-decoration: none;
+                background: rgba(255, 255, 255, .5);
+                display: block;
             }
             
             
@@ -257,7 +263,9 @@
                    </p>
                    <img src="./images/w/p4.jpg"/>
                    <img class="p4-h" src="./images/w/p4.png"/>
-                   <a href="">点击右边按钮生成自己的专属拜年贺卡吧</a>
+                   <div class="link">
+                       <a href="">点击右边按钮生成自己的专属拜年贺卡吧</a>
+                   </div>
                </section>
            </div>
        
@@ -481,7 +489,7 @@
                 touchDown = false;
                 
                 if (Math.abs(endY - startY) < 50) {
-                    animatePage(curPage);
+//                    animatePage(curPage);
                 }
                 else if (endY > startY) {
                     prevPage();
@@ -562,7 +570,7 @@
            (function () {
                 var isPlay = true;
                 $('#audio_music')[0].play();
-                $("#music").on("click",function(){
+                $("#music").on("click",function(e){
                     var audio = $('#audio_music')[0];
                     var that = $(this);
                     if (isPlay) {
