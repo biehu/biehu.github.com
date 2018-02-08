@@ -24,8 +24,44 @@
                 font-size: 40px;
             }
             
+            .page-btn {
+               position: fixed;
+               width: 100%;
+               z-index: 999;
+               text-align: center;
+           }
+           
+           @-webkit-keyframes arrowUpDown {
+                0% {bottom: 10px;}
+                100% {bottom: 20px;}
+            }
+            
+            .page-btn {
+                -webkit-animation-name: arrowUpDown;
+                -webkit-animation-duration: .4s;
+                -webkit-animation-iteration-count: infinite;
+                -webkit-animation-direction: alternate;
+                -webkit-animation-timing-function: linear;
+            }
+            
+            #music {
+                position: fixed;
+                right: 50px;
+                top: 50px;
+                width: 56px;
+                height: 56px;
+                background: url(images/music_control_1.png) no-repeat 1px 1px;
+                z-index: 99;
+                opacity: 0;
+            }
+    
+            #music.on {
+                background: url(images/music_control_2.png) no-repeat 1px 1px;
+            }
+            
             body {
                 overflow: hidden;
+                color: #333;
             }
             .wrap {
                 position: absolute;
@@ -58,6 +94,10 @@
                 padding: 40px;
                 line-height: 1.5;
                 
+            }
+            .typed img {
+                display: inline;
+                vertical-align: middle;
             }
             .typed1 {
                 width: 465px;
@@ -190,6 +230,9 @@
        </div>
        
        <div class="all" style="display: none;">
+           <div class="page-btn"><img src="images/page-btn.png" /></div>
+           <div id="music" class="on" style="opacity: 1;"></div>
+           <audio id="audio_music" src="images/music.mp3" autoplay loop></audio>
            <canvas class="snow" id="snow" width="100%" height="100%"></canvas>
            <div class="wrap">
                <section class="section1">
@@ -367,9 +410,9 @@
             var pageHeight, startX, startY, margin;
             
             var config = [
-                ' 尊敬的xxx<br/>过年好!<br/>新的一年，让我们重新认识一下！',
-                '曾经，我是那村里的二狗子，每天无所事事，只想吃饭睡觉。直到我遇见您......',
-                '在您如春风般的温暖下，如夏  日般的照耀下，现在，我是团队中的业  务骨干，每每能轻松拿下销冠，  华丽转身，成了城里的Marry，似乎走在了时尚潮流的最前端！',
+                ' 尊敬的xxx<br/>过年好!<br/>新的一年，新时代，让我们重新认识一下吧',
+                '曾经，我是那村里的二狗子，每天无所事事，只想吃饭睡觉。直到我遇见您……',
+                '在您如春风般的温暖下，如夏日般的照耀下，现在，我是团队的顶梁柱，业绩蹭蹭地往上涨，隔壁村的女大学生刘小花也看上了，眼看着就要成为了人生赢家！',
                 'XXX（销售名）在这里给您拜年啦<br/>\
 我的感恩化作深深的祝福：<br/>\
 祝您狗年大吉事事顺，<br/>\
@@ -465,6 +508,12 @@
                     newPage = section.length - 1;
                 }
                 
+                if (newPage === section.length - 1) {
+                    $('.page-btn').hide();
+                } else {
+                    $('.page-btn').show();
+                }
+                
                 curPage = newPage;
                 
                 movePrevent = true;
@@ -484,7 +533,12 @@
                     contentType: 'html', // or text
                     // defaults to false for infinite loop
                     loopCount: false,
-                    callback: function(){ },
+                    callback: function(){ 
+                        if (curPage === 0)
+                        section.eq(curPage)
+                            .find(".typed")
+                            .append('<img src="./images/smile.png"/>');
+                    },
                     resetCallback: function() {  }
                 });
                 
@@ -508,6 +562,26 @@
     
 
         };
+       </script>
+       <script>
+           (function () {
+                var isPlay = true;
+                $('#audio_music')[0].play();
+                $("#music").on("click",function(){
+                    var audio = $('#audio_music')[0];
+                    var that = $(this);
+                    if (isPlay) {
+                        audio.pause();
+                        isPlay = false;
+                        that.removeClass('on');
+                    }
+                    else {
+                        audio.play();
+                        isPlay = true;
+                        that.addClass('on');
+                    }
+                });
+            })();
        </script>
    </body>
 </html>
