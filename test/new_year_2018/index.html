@@ -3,7 +3,7 @@
    <head>
        <meta charset="utf-8" />
        <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
-       <title>Untitled Document</title>
+       <title></title>
        <style>
            * {
                margin: 0;
@@ -183,14 +183,13 @@
             }
             .section4 .typed {
                 background: none;
-                top: 78px;
+                top: 10px;
                 left: 0;
                 right: auto;
                 width: 72%;
                 font-size: 24px;
-                line-height: 1.7;
+                line-height: 2;
                 color: #000;
-                text-align: center;
             }
             .section4 .p4-h {
                 position: absolute;
@@ -215,11 +214,16 @@
                 padding: 40px;
                 box-sizing: border-box;
             }
-            .section4 a {
+            .section4 .link span {
                 color: #5b2705;
                 text-decoration: none;
-                background: rgba(255, 255, 255, .5);
+                background:#fff;
                 display: block;
+                animation: toggle-show 1s infinite ease-in-out; 
+            }
+            @keyframes toggle-show {
+                0% {opacity: 0}
+                100% {opacity: 1}
             }
             .p4-y1 {
                 position: absolute;
@@ -242,6 +246,25 @@
             
             
        </style>
+       <script>
+            function GetQueryString(name) {
+                var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+                var r = decodeURI(window.location.search.substr(1)).match(reg);
+                if (r != null)return unescape(r[2]);
+                return null;
+            }
+            
+            var customer = GetQueryString('customer');
+            var customerJob = GetQueryString('customerJob');
+            var username = GetQueryString('username');
+            
+            var config = [
+                '尊敬的' + customer + customerJob + '<br/>过年好!<br/>新的一年，新时代，让我们重新认识一下吧',
+                '曾经，我是那村里的二狗子，每天无所事事，只想吃饭睡觉。直到我遇见您……',
+                '在您如春风般的温暖下，如夏日般的照耀下，现在，我是团队的顶梁柱，业绩蹭蹭地往上涨，隔壁村的女大学生刘小花也看上了，眼看着就要成为了人生赢家！',
+                username + '在这里给您拜年啦<br/>我的感恩化作深深的祝福：<br/>祝您狗年大吉事事顺，<br/>大展宏图日日新，<br/>全家团圆人人康，<br/>我会继续努力，提供最好的服务，<br/>一定为您的企业创造更高价值！'
+            ];
+       </script>
        <script type="text/javascript">
             function viewport(){ var phoneWidth = parseInt(window.screen.width); var phoneScale = phoneWidth / 640; var ua = navigator.userAgent; if (/Android (\d+\.\d+)/.test(ua)) { var version = parseFloat(RegExp.$1); if (ua.toLowerCase().indexOf("qq") > -1) { document.write('<meta name="viewport" content="width=640, minimum-scale = ' + phoneScale + ', maximum-scale = ' + phoneScale + ', target-densitydpi=320">'); return; } if (version > 2.3) { document.write('<meta name="viewport" content="width=640, minimum-scale = ' + phoneScale + ', maximum-scale = ' + phoneScale + ', target-densitydpi=device-dpi">'); } else { document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">'); } } else { document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">'); } }  viewport();
         </script>
@@ -254,7 +277,7 @@
        </div>
        
        <div class="all" style="display: none;">
-           <div class="page-btn"><img src="images/page-btn.png" /></div>
+           <div class="page-btn"><img style="width: 50px;" src="images/arrow.png" /></div>
            <div id="music" class="on" style="opacity: 1;"></div>
            <audio id="audio_music" src="images/music.mp3" autoplay loop></audio>
            <canvas class="snow" id="snow" width="100%" height="100%"></canvas>
@@ -262,7 +285,7 @@
                <section class="section1">
                    <p class="typed">
                    </p>
-                   <img src="./images/m/p1-top.jpg"/>
+                   <img src="./images/m/p1-top.jpg" style="margin-bottom: -2px;"/>
                    <img class="p1-b" src="./images/m/p1-bottom.jpg"/>
                    <img class="p1-r" src="./images/m/p1-r.png"/>
                </section>
@@ -279,14 +302,13 @@
                    <img class="p3-r" src="./images/p3-r.png"/>
                </section>
                <section class="section4">
-                   <img class="p4-r" src="" />
                    <p class="typed typed2" style="color:#762523">
                    </p>
                    <img src="./images/m/p4.jpg"/>
                    <img class="p4-h" src="./images/m/p4.png"/>
                    <img class="p4-y1" src="./images/p4-y.png"/>
                    <img class="p4-y2" src="./images/p4-y.png"/>
-                   <div class="link"><a href="">点击右边按钮生成自己的专属拜年贺卡吧</a></div>
+                   <div class="link"><span>点击这里生成自己的专属拜年贺卡</span></div>
                </section>
            </div>
        
@@ -298,14 +320,14 @@
         <script> 
         (function () {
             var pics = [
-                "http://biehu.me/test/new_year_2018/images/text-bg.png",
-                "http://biehu.me/test/new_year_2018/images/text-bg2.png",
-                "http://biehu.me/test/new_year_2018/images/m/p2-bg.jpg",
-                "http://biehu.me/test/new_year_2018/images/m/p2.png",
-                "http://biehu.me/test/new_year_2018/images/m/p3-bg.jpg",
-                "http://biehu.me/test/new_year_2018/images/p3-r.png",
-                "http://biehu.me/test/new_year_2018/images/m/p4.png",
-                "http://biehu.me/test/new_year_2018/images/m/p4.jpg",
+                "http://h5.we-going.com/images/text-bg.png",
+                "http://h5.we-going.com/images/text-bg2.png",
+                "http://h5.we-going.com/images/m/p2-bg.jpg",
+                "http://h5.we-going.com/images/m/p2.png",
+                "http://h5.we-going.com/images/m/p3-bg.jpg",
+                "http://h5.we-going.com/images/p3-r.png",
+                "http://h5.we-going.com/images/m/p4.png",
+                "http://h5.we-going.com/images/m/p4.jpg",
             ];
             var index = 0;
             var len = pics.length;
@@ -434,21 +456,6 @@
             var touchDown = false;
             var curPage = 0;
             var pageHeight, startX, startY, margin;
-            
-            var config = [
-                ' 尊敬的xxx<br/>过年好!<br/>新的一年，新时代，让我们重新认识一下吧',
-                '曾经，我是那村里的二狗子，每天无所事事，只想吃饭睡觉。直到我遇见您……',
-                '在您如春风般的温暖下，如夏日般的照耀下，现在，我是团队的顶梁柱，业绩蹭蹭地往上涨，隔壁村的女大学生刘小花也看上了，眼看着就要成为了人生赢家！',
-                'XXX（销售名）在这里给您拜年啦<br/>\
-我的感恩化作深深的祝福：<br/>\
-祝您狗年大吉事事顺，<br/>\
-大展宏图日日新，<br/>\
-全家团圆人人康，<br/>\
-我会继续努力，提供最好的服务，<br/>\
-一定为您的企业创造更高价值！'
-            
-            
-            ];
             
             var bind = function () {
                 document.body.addEventListener('touchstart', function (e) {
@@ -599,7 +606,7 @@
        <script>
            (function () {
                 var isPlay = true;
-                $('#audio_music')[0].play();
+                
                 $("#music").on("click",function(){
                     var audio = $('#audio_music')[0];
                     var that = $(this);
@@ -616,5 +623,72 @@
                 });
             })();
        </script>
+       
+       <script>
+            $('.link').click(function () {
+                if (GetQueryString('from') === 'edit') {
+                    location.href = 'wx.html';
+                } else {
+                    location.href = 'https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzUxMjUwNTE1MQ==&scene=124#wechat_redirect';
+                }
+                
+            });
+       </script>
+	   <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+	   <script>
+			$.post('/Wxchat.php', {
+                url: encodeURIComponent(location.href.split('#')[0])
+            }, function (data) {
+                data = JSON.parse(data);
+                
+				wx.config({
+                    debug: false,
+					appId: data.appId, // 必填，公众号的唯一标识
+					timestamp: data.timestamp, // 必填，生成签名的时间戳
+					nonceStr: data.nonceStr, // 必填，生成签名的随机串
+					signature: data.signature,// 必填，签名
+					jsApiList: [
+						"onMenuShareTimeline",
+						"onMenuShareAppMessage",
+						"onMenuShareQQ",
+						"onMenuShareWeibo",
+						"onMenuShareQZone"
+					] // 必填，需要使用的JS接口列表
+				});
+                
+                
+
+				wx.ready(function(){
+					$('#audio_music')[0].play();
+                    
+                    var customer = GetQueryString('customer');
+                    var username = GetQueryString('username');
+
+					 var config = {
+						title: '尊敬的' + customer + '，' + username + '给您拜年了！',
+						desc: '因为你，我的人生从此不同',
+						link: location.href.replace('edit', ''),
+						imgUrl: 'http://h5.we-going.com/images/p4.jpg',
+						success: function () { 
+						},
+						cancel: function () { 
+						}
+					};/*分享给朋友*/
+					wx.onMenuShareAppMessage(config);
+					
+					/*分享到QQ*/
+					wx.onMenuShareQQ(config);
+					
+					/*分享到腾讯微博*/
+					wx.onMenuShareWeibo(config);
+					
+					/*分享到QQ空间*/
+					wx.onMenuShareQZone(config);
+					
+		　　　　　　  wx.onMenuShareTimeline(config);
+    			});
+			});
+			
+	   </script>
    </body>
 </html>
