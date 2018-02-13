@@ -62,6 +62,7 @@
             body {
                 overflow: hidden;
                 color: #333;
+                background: #e92018;
             }
             .wrap {
                 position: absolute;
@@ -75,8 +76,18 @@
             
             section {
                 overflow: hidden;
-                position: relative;
+                position: absolute;
+                top: 0;
+                left: 0;
                 width: 100%;
+                -webkit-transform: translate(0px, 0px);
+                -webkit-transition: -webkit-transform 0.4s;
+            }
+            .down {
+                -webkit-transform: translate(0px, 100%);
+            }
+            .up {
+                -webkit-transform: translate(0px, -100%);
             }
             section img {
                 display: block;
@@ -184,7 +195,7 @@
                 top: 10px;
                 left: 0;
                 right: auto;
-                width: 72%;
+                width: 100%;
                 font-size: 24px;
                 line-height: 2;
                 color: #000;
@@ -215,18 +226,18 @@
                 50%, 100% {transform: rotate(0);}
                 75% {transform: rotate(-10deg);}
             }
-            .section4 .link {
-                position: absolute;
+            .link {
+                position: fixed;
+                bottom: 90px;
                 width: 100%;
                 line-height: 50px;
                 font-size: 24px;
                 text-align: center;
-                top: 100%;
-                margin-top: -100px;
                 padding: 40px;
                 box-sizing: border-box;
+                z-index: 999;
             }
-            .section4 .link span {
+            .link span {
                 color: #5b2705;
                 text-decoration: none;
                 background:#fff;
@@ -241,6 +252,37 @@
             @keyframes scale {
                 0% {transform: scale(0);}
                 100% {transform: rotate(2);}
+            }
+            
+            .mask img {
+                width: 80%;
+            }
+            .mask {
+                display: none;
+                position: fixed;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                background: rgba(0, 0, 0, .5);
+                z-index: 1111;
+            }
+            .mask div {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width： 100%;
+                height: 100%;
+            }
+            .share div img {
+                width: 50%;
+            }
+            .share div {
+                align-items: flex-start;
+                justify-content: flex-end;
+            }
+            .typed strong {
+                font-size: 26px;
             }
             
             
@@ -259,10 +301,10 @@
             var username = GetQueryString('username');
             
             var config = [
-                '尊敬的' + customer + customerJob + '<br/>过年好!<br/>新的一年，新时代，让我们重新认识一下吧',
+                '尊敬的<strong>' + customer + customerJob + '</strong><br/>过年好!<br/>新的一年，新时代，让我们重新认识一下吧<img src="./images/smile.png"/>',
                 '曾经，我是那村头的丫蛋，每天抱着手机，聊天P图玩游戏。直到我遇见您……',
                 '在您如春风般的温暖下，如夏日般的照耀下，现在，我是团队中的业务骨干，每每能轻松拿下销冠，华丽转身，成了城里的Mary，似乎走在了时尚潮流的最前端！',
-                username + '在这里给您拜年啦<br/>我的感恩化作深深的祝福：<br/>祝您狗年大吉事事顺，<br/>大展宏图日日新，<br/>全家团圆人人康，<br/>我会继续努力，提供最好的服务，<br/>一定为您的企业创造更高价值！'
+                '<strong>' + username + '</strong>在这里给您拜年啦<br/>我的感恩化作深深的祝福：<br/>祝您狗年大吉事事顺，<br/>大展宏图日日新，<br/>全家团圆人人康。<br/><br/>2018, 我会继续努力的！'
             ];
        </script>
        <script type="text/javascript">
@@ -279,43 +321,45 @@
        <div class="all" style="display: none;">
            <div class="page-btn"><img style="width: 50px;" src="images/arrow.png" /></div>
            <div id="music" class="on" style="opacity: 1;"></div>
-           <audio id="audio_music" src="images/music.mp3" autoplay loop></audio>
+           <audio id="audio_music" src="images/music1.mp3" autoplay loop></audio>
            <canvas class="snow" id="snow" width="100%" height="100%"></canvas>
            <div class="wrap">
                <section class="section1">
-                   <p class="typed">
+                   <p class="typed" data-index="0">
                    </p>
                    <img src="./images/w/bg.jpg"/>
                    <img class="p1-r" src="./images/w/p1.png"/>
                </section>
-               <section class="section2">
-                   <p class="typed">
+               <section class="section2 down">
+                   <p class="typed" data-index="1">
                    </p>
                    <img src="./images/w/p2-bg.jpg"/>
                    <img class="p2-r" src="./images/w/p2.png"/>
                </section>
-               <section class="section3">
-                   <p class="typed typed1">
+               <section class="section3 down">
+                   <p class="typed typed1"  data-index="2">
                    </p>
                    <img src="./images/w/p3-bg.jpg"/>
                    <img class="p3-r" src="./images/p3-r.png"/>
                </section>
-               <section class="section4">
-                   <p class="typed typed2">
+               <section class="section4 down">
+                   <p class="typed typed2"  data-index="3">
                    </p>
                    <img src="./images/w/p4.jpg"/>
                    <img class="p4-h" src="./images/w/p4.png"/>
                    <img class="p4-y1" src="./images/p4-yy.png"/>
                    <img class="p4-y2" src="./images/p4-yy.png"/>
-                   <div class="link">
-                       <span>点击这里生成自己的专属拜年贺卡</span>
-                   </div>
                </section>
            </div>
-       
+            <div class="link"><span>点击这里生成自己的专属拜年贺卡</span></div>
+           <div class="mask code">
+               <div><img src="images/code.jpg"/></div>
+           </div>
+           <div class="mask share">
+               <div><img src="images/share1.png"/></div>
+           </div>
        </div>
        <script src="scripts/jquery.js"></script>
-        <script src="scripts/typed.js"></script>
         
         <script> 
         (function () {
@@ -344,7 +388,7 @@
                  
                  
                  makeSnow(canvas);
-                 page();
+                 page1();
             };
             
             var load = function () {
@@ -447,154 +491,128 @@
     
        </script>
        
-       
        <script>
-        function page() {
-            var root = $('.wrap');
-            var section = root.find('section');
-            var movePrevent = false;
-            var touchDown = false;
-            var curPage = 0;
-            var pageHeight, startX, startY, margin;
-            
-            var bind = function () {
-                document.body.addEventListener('touchstart', function (e) {
-                    onStart(e.changedTouches[0]);
-                });
+          
+        var page1 = function () {
+
+           /*
+            * 翻页
+            */
+           var yStart, yEnd;
+           var index = 0;
+           var allNum = $('section').length;
+           var isAnimate = false;
+           var isModal = false;
+           
+           var pageHeight = $(window).height();
+           $('section').height(pageHeight);
+           
+           $(".section1").addClass('show');
+           var typed = $(".typed");
+           typed.typewriter();
+           
+           var setPage = function (dir,page,current) {
+                isAnimate = true;
                 
-                document.body.addEventListener('touchmove', function (e) {
-                    e.preventDefault();
-                    onMove(e.changedTouches[0]);
-                });
+                $('section').removeClass('show');
+                $('.section'+(current+1)).addClass('show');
                 
-                document.body.addEventListener('touchend', function (e) {
-                    onEnd(e.changedTouches[0]);
-                });
-            };
-            
-            var prevPage = function () {
-                animatePage(curPage - 1);
-            };
-            
-            var nextPage = function () {
-                animatePage(curPage + 1);
-            };
-            
-            var setTop = function (pos) {
-                root.css({'-webkit-transform': 'matrix(1, 0, 0, 1, 0,' + pos + ')'});
-            };
-            
-            var onStart = function (e) {
-                if (movePrevent) {
-                    return;
-                }
+                var typed = $(".typed");
+                typed.typewriter();
                 
-                touchDown = true;
-                
-                startX = e.pageX;
-                startY = e.pageY;
-                margin = root.css('-webkit-transform');
-                margin = margin.replace("matrix(", "");
-                margin = margin.replace(")", "");
-                margin = margin.split(",");
-                margin = parseInt(margin[5]);
-            };
-            
-            var onMove = function (e) {
-                if (movePrevent || !touchDown) {
-                    return;
-                }
-                
-                if (e.pageY !== startY) {
-                    setTop(margin + e.pageY - startY);
-                }
-            };
-            
-            var onEnd = function (e) {
-                if (movePrevent) {
-                    return;
-                }
-                
-                var endY = e.pageY;
-                
-                touchDown = false;
-                
-                if (Math.abs(endY - startY) < 50) {
-//                    animatePage(curPage);
-                }
-                else if (endY > startY) {
-                    prevPage();
-                }
-                else {
-                    nextPage();
-                }
-                
-            };
-            
-            var animatePage = function (newPage) {
-                var newMarginTop;
-                
-                if (newPage < 0) {
-                    newPage = 0;
-                }
-                if (newPage > section.length - 1) {
-                    newPage = section.length - 1;
-                }
-                
-                if (newPage === section.length - 1) {
+                if (current === allNum - 1) {
                     $('.page-btn').hide();
                 } else {
                     $('.page-btn').show();
                 }
                 
-                curPage = newPage;
                 
-                movePrevent = true;
-                root.one('webkitTransitionEnd', function () {
-                    movePrevent = false;
-                });
-                newMarginTop  = newPage * (-pageHeight);
-                setTop(newMarginTop);
-                
-                section.removeClass('show');
-                section.eq(curPage).addClass('show');
-                section.eq(curPage).find(".typed").typed({
-                    strings: [config[curPage]],
-                    typeSpeed: 30,
-                    backDelay: 500,
-                    loop: false,
-                    contentType: 'html', // or text
-                    // defaults to false for infinite loop
-                    loopCount: false,
-                    callback: function(){ 
-                        if (curPage === 0)
-                        section.eq(curPage)
-                            .find(".typed")
-                            .append('<img src="./images/smile.png"/>');
-                    
-                    },
-                    resetCallback: function() {  }
-                });
-                
-                if (curPage > 1) {
+                if (current > 1) {
                     $('.snow').hide();
                 } else {
                     $('.snow').show();
                 }
+               
+                
+                if(dir === 1){
+                    $(".section"+(page+1)).removeClass('up');
+                    $(".section"+(page+2)).addClass('down');
+                    
+                }
+                else{
+                    $(".section"+page).addClass('up');
+                    $(".section"+(page+1)).removeClass('down');
+                }
+               
+                // 翻页
+                setTimeout(function(){
+                    if (isAnimate) {
+                        isAnimate = false;
+                    }
+                },750);
             };
             
-            var pageInit = function () {
-                pageHeight = $(window).height();
-                
-                section.height(pageHeight);
-                animatePage(curPage);
-                
-                bind();
-            };
+            var bindTouchPageUp = function(){
             
-            pageInit();
-    
+                $(document).bind("touchstart", function(e){
+                    var touch = e.originalEvent.touches[0];
+                    yStart = touch.pageY;
+                });
+                $(document).bind("touchmove", function(e){
+                    event.preventDefault();
+                    var touch = e.originalEvent.touches[0];
+                    yEnd = touch.pageY;
+                    if (isAnimate || isModal) 
+                        return false;
+                    if (yEnd - 100 > yStart & yEnd > yStart) { //down
+                        if (index === 0)
+                            return false;
+                        setPage(1, --index, index);
+                    }
+                    else 
+                        if (yEnd + 100 < yStart & yEnd < yStart) { //up
+                            if (index === (allNum - 1)) 
+                                return false;
+                            setPage(0, ++index, index);
+                        }
+                });
+            };
 
+           var init = function () {
+               bindTouchPageUp();
+           };
+
+           init();
+        };
+       </script>
+       <script>
+           $.fn.typewriter = function() {
+             
+            this.each(function() {
+                var $ele = $(this);
+                var str = config[$ele.data('index')];
+                
+                $ele.html('');
+                clearInterval($ele.data('timer'));
+                
+                var progress = 0;
+                $ele.data(
+                    'timer',
+                    setInterval(function() {
+                        var current = str.substr(progress, 1);
+                        if (current == '<') {
+                            progress = str.indexOf('>', progress) + 1;
+                        } else {
+                            progress++;
+                        }
+                        $ele.html(str.substring(0, progress) + (progress & 1 ? '' : ''));
+                        if (progress >= str.length) {
+                            clearInterval($ele.data('timer'));
+                        }
+                    }, 75)
+                );
+            });
+            return this;
         };
        </script>
        <script>
@@ -617,13 +635,19 @@
             })();
        </script>
        <script>
+           if (GetQueryString('from') === 'edit') {
+               $('.share').show();
+           }
+           
             $('.link').click(function () {
                 if (GetQueryString('from') === 'edit') {
                     location.href = 'wx.html';
                 } else {
-                    location.href = 'https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzUxMjUwNTE1MQ==&scene=124#wechat_redirect';
+                    $('.code').show();
                 }
-                
+            });
+            $('.mask').click(function () {
+                $(this).hide();
             });
        </script>
        <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
@@ -655,9 +679,10 @@
                     
                     var customer = GetQueryString('customer');
                     var username = GetQueryString('username');
+                    var customerJob = GetQueryString('customerJob');
 
                      var config = {
-                        title: '尊敬的' + customer + '，' + username + '给您拜年了！',
+                        title: '尊敬的' + customer + customerJob + '，' + username + '给您拜年了！',
                         desc: '因为你，我的人生从此不同',
                         link: location.href.replace('edit', ''),
                         imgUrl: 'http://h5.we-going.com/images/p4w.jpg',
