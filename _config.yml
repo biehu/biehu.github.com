@@ -2,3 +2,5 @@ markdown: rdiscount
 pygments: true
 rge_layout: tag     
 tag_page_dir: tags  
+
+theme: jekyll-theme-hacker
