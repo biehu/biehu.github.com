@@ -1,0 +1,180 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <script src="./hacky-file-getter.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <!-- Everything, probably -->
+    <script src="./vm.min.js"></script>
+
+    <script src="./hacky-file-getter.js" charset="utf-8"></script>
+    <script src="./download.js" charset="utf-8"></script>
+
+    
+    <p  style="display: block; position: absolute; left: 0; top: 0; width: 100%; height: 100%;"><label>
+    
+    <span style="position: absolute; display: block; width: 200px; height: 220px; left: 50%; top: 50%; margin: -100px 0 0 -100px">
+    <svg class="icon" viewBox="0 0 1024 1024" version="1" xmlns="http://www.w3.org/2000/svg" width="200" height="200"><defs><style></style></defs><path d="M737 436a174 174 0 0 1 172 172 172 172 0 0 1-172 172c-69 1-69 107 0 106 152-2 276-125 278-278S886 332 737 330c-69-1-69 105 0 106zM285 779a174 174 0 0 1-172-172 172 172 0 0 1 172-172c68-1 69-106 0-106A282 282 0 0 0 7 607a281 281 0 0 0 278 278c69 1 68-105 0-106z" fill="#4A5699"></path><path d="M340 384a174 174 0 0 1 172-172 172 172 0 0 1 172 172c1 68 106 68 106 0a282 282 0 0 0-278-278 281 281 0 0 0-278 278c-1 68 105 68 106 0z" fill="#C45FA0"></path><path d="M545 473c17 17 17 43 0 60L422 656a42 42 0 0 1-60-60l123-123c17-16 43-16 60 0z" fill="#F39A2B"></path><path d="M485 473c17-16 44-16 60 0l123 123a42 42 0 0 1-60 60L485 533a42 42 0 0 1 0-60z" fill="#F39A2B"></path><path d="M514 634c24 0 43 20 43 43v179a43 43 0 0 1-86 0V677c0-23 19-43 43-43z" fill="#E5594F"></path></svg><input type="file" id="file" accept=".sb,.sb2,.sb3" style="visibility: hidden;" >
+    </span>
+    
+    </label></p>
+    
+    <div style="display: none">
+   
+      <p><label for="title">Project title: </label><input type="text" placeholder="Project title" value="Zombie Cube Escape!" id="title" title="Text to display in the page tab"></p>
+      <p><label for="username">Username value: </label><input type="text" placeholder="Username" value="griffpatch" id="username" title="Value that the username block reports"></p>
+      <p><label><input type="checkbox" id="compatibility" checked> Compatibility mode?<sup>2</sup></label></p>
+      <p><label><input type="checkbox" id="turbo"> Turbo mode?</label></p>
+      <p><label><input type="checkbox" id="wider"> 16:9</label></p>
+      <p><label><input type="checkbox" id="progress" checked> Load progress indicator?</label></p>
+    
+    
+    </div>
+    
+    <p style="position: absolute; height: 50px; line-height: 50px; width: 100%; bottom: 50px; text-align: center;">
+      <button id="load-no-minify" style="width: 80%; height: 100%;" disabled>转换</button>
+    </p>
+    
+    <div style="display: none">
+    
+      <textarea id="error" rows="8" cols="40" placeholder="Log" readonly></textarea>
+    
+    </div>
+    <script type="text/javascript">
+function removePercentSection(str, key) {
+  /*
+  performs the following on str:
+  % key %
+  this part (and other parts surrounded in a similar fashion) will be removed
+  % /key %
+  returns str with the parts removed
+  */
+  const startKey = `% ${key} %`;
+  const endKey = `% /${key} %`;
+  while (str.includes(startKey) && str.includes(endKey)) {
+    str = str.slice(0, str.indexOf(startKey))
+      + str.slice(str.indexOf(endKey) + endKey.length);
+  }
+  return str;
+}
+function getDataURL(url) {
+  return fetch(url).then(r => r.blob()).then(blob => new Promise(res => {
+    const reader = new FileReader();
+    reader.onload = e => res(e.target.result);
+    reader.readAsDataURL(blob);
+  }));
+}
+function downloadAsHTML(projectSrc, {
+  title = 'Project',
+  username = 'griffpatch',
+  ratio16to9 = false,
+  progressBar = true,
+  log = console.log
+} = {}) {
+  log('Getting asset URLs...');
+  return Promise.all([
+    // make preface variables
+    projectSrc.id
+      ? runBenchmark(projectSrc.id, ({complete, total}) => log(complete + '/' + total))
+        .then(({assets, projectJSON}) => {
+          log('Getting assets...');
+          return Promise.all([
+            getDataURL(projectJSON).then(data => projectJSON = data),
+            ...Object.keys(assets).map(assetId => getDataURL(assets[assetId]).then(data => assets[assetId] = data))
+          ]).then(() => {
+            return `var SRC = "id", PROJECT_JSON = "${projectJSON}",`
+              + `ASSETS = ${JSON.stringify(assets)},`;
+          });
+        })
+      : Promise.resolve(`var SRC = "file", FILE = "${projectSrc.data}",`),
+
+    // fetch scripts
+    fetch(ratio16to9
+      ? './16-9/vm.min.js'
+      : './vm.min.js')
+      .then(r => r.text())
+      .then(vmCode => {
+        log('Scratch engine obtained...');
+        // remove dumb </ script>s in comments
+        return vmCode.replace('</scr' + 'ipt>', '');
+      }),
+
+    // fetch template
+    fetch('./template.html').then(r => r.text())
+  ]).then(async ([preface, scripts, template]) => {
+    scripts = preface
+      + `DESIRED_USERNAME = ${JSON.stringify(username)},`
+      + `COMPAT = ${compatibility.checked}, TURBO = ${turbo.checked};`
+      + scripts;
+    log('Done!');
+    if (ratio16to9) template = removePercentSection(template, '4-3');
+    else template = removePercentSection(template, '16-9');
+    if (!progressBar) template = removePercentSection(template, 'loading-progress');
+    return template
+      .replace(/% \/?[a-z0-9-]+ %/g, '')
+      .replace(/\s*\r?\n\s*/g, '')
+      .replace('{TITLE}', () => title)
+      .replace('{SCRIPTS}', () => scripts);
+  });
+}
+const loadNoMinifyBtn = document.getElementById('load-no-minify');
+const title = document.getElementById('title');
+const id = document.getElementById('id');
+const username = document.getElementById('username');
+const file = document.getElementById('file');
+const error = document.getElementById('error');
+const compatibility = document.getElementById('compatibility');
+const turbo = document.getElementById('turbo');
+const wider = document.getElementById('wider');
+const progressBar = document.getElementById('progress');
+let fileName  = 'project';
+
+function getProject() {
+//  if (document.querySelector('input[name="upload-mode"]:checked').value === 'file') {
+    if (!file.files || !file.files[0]) return Promise.reject(new Error('No file selected'));
+    return new Promise(res => {
+      const reader = new FileReader();
+      reader.onload = () =>{fileName = file.files[0].name.split('.')[0]; res({data: reader.result});}
+      reader.readAsDataURL(file.files[0]);
+    });
+//  } else {
+//    return Promise.resolve({id: id.value});
+//  }
+}
+function load() {
+  loadNoMinifyBtn.disabled = true;
+  error.value = '';
+  getProject()
+    .then(src => downloadAsHTML(src, {
+      title: title.value,
+      username: username.value,
+      log: output => {
+        error.value += output + '\n';
+        error.scrollTop = error.scrollHeight;
+      },
+      ratio16to9: wider.checked,
+      progressBar: progressBar.checked
+    }))
+    .then(html => {
+      download(html, fileName + '.html', 'text/html');
+      loadNoMinifyBtn.disabled = false;
+    }).catch(err => {
+      console.log(err);
+      error.value = err.message;
+      loadNoMinifyBtn.disabled = false;
+    });
+}
+loadNoMinifyBtn.addEventListener('click', load);
+file.addEventListener('change', e => {
+  if (file.files[0]) {
+    loadNoMinifyBtn.disabled = false;
+//    document.querySelector('input[name="upload-mode"][value="file"]').checked = true;
+  }
+});
+    </script>
+  </body>
+</html>
