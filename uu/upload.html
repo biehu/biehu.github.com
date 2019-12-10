@@ -63,6 +63,7 @@
   }
 
 </style>
+<textarea style="    border: none; position: absolute; left: 5%; top: 10%; " id="error" rows="8" cols="40" placeholder="Log" readonly=""></textarea>
     <span id="fileSpan" class="vm">将文件拖到此处</span>
     
     <span style="position: absolute; display: block; width: 200px; height: 220px; left: 50%; top: 50%; margin: -100px 0 0 -100px">
@@ -73,10 +74,15 @@
     
     
     <script>
+      var fileName = '';
+      
+      
       $(function(){
   
   //元素
   var oFileSpan = $("#fileSpan");         //选择文件框
+  
+  
 
   
   var flieList = [];                //数据，为一个复合数组
@@ -102,6 +108,7 @@
   oFileSpan.on("drop",function(ev){
     var fs = ev.originalEvent.dataTransfer.files;
     console.log(fs[0]);
+    fileName = fs[0].name;
     load(fs[0]);
     $(this).text("将文件拖到此处").css("background","none");
     return false;
@@ -126,7 +133,6 @@
     </p>
     
     </div>
-    <textarea id="error" rows="8" cols="40" placeholder="Log" readonly=""></textarea>
     <h1>Project HTMLifier</h1>
     <h3><em>Convert a Scratch project to HTML</em></h3>
     <p>This packages your Scratch project into a single HTML file that can run on its own in a web browser. The HTML file will be pretty big because it contains the entire Scratch engine and the costume and sound files used in the project.</p>
@@ -302,6 +308,7 @@ function getProject(file) {
 function load(file) {
   loadNoMinifyBtn.disabled = true;
   error.value = '';
+  title.value = fileName;
   getProject(file)
     .then(src => downloadAsHTML(src, {
       title: title.value,
@@ -316,7 +323,7 @@ function load(file) {
       monitorColour: useColour.checked ? monitorColour.value : null
     }))
     .then(html => {
-      download(html, 'project.html', 'text/html');
+      download(html, (fileName || 'project')+'.html', 'text/html');
       loadNoMinifyBtn.disabled = false;
     }).catch(err => {
       console.log(err);
