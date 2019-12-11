@@ -256,8 +256,8 @@ function downloadAsHTML(projectSrc, {
             onDownloadProgress (progress) {
 //              var total = +progress.srcElement.getResponseHeader('content-length');
               var total = 5321020;
-              console.log(progress,progress.loaded, total)
-     console.log(Math.round(progress.loaded / total * 100) + '%');
+//              console.log(progress,progress.loaded, total)
+//     console.log(Math.round(progress.loaded / total * 100) + '%');
      var scale = Math.round(progress.loaded / total * 100) + '%';
      log('Scratch engine obtained...'+scale, true);
    },
