@@ -11,7 +11,9 @@
     -->
     <script src="./234_files/hacky-file-getter.js" charset="utf-8"></script>
     <link rel="stylesheet" href="./234_files/base.css">
-<script src="./234_files/jquery.min.js">
+<script src="./234_files/jquery.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  
     <style media="screen">
       :target {
         animation: flash 3s;
@@ -247,11 +249,23 @@ function downloadAsHTML(projectSrc, {
         })
       : Promise.resolve(`var SRC = "file", FILE = "${projectSrc.data}",`),
 
-    // fetch scripts
-    fetch(ratio16to9
-      ? './234_files/16-9/vm.min.js'
-      : './234_files/vm.min.js')
-      .then(r => r.text())
+    axios({
+            url:'./234_files/vm.min.js',
+            method:'get',
+            onDownloadProgress (progress) {
+     console.log(Math.round(progress.loaded / progress.total * 100) + '%');
+   },
+            onUploadProgress:function(progressEvent){ //原生获取上传进度的事件
+            console.log(11,progressEvent);
+                if(progressEvent.lengthComputable){
+                    //属性lengthComputable主要表明总共需要完成的工作量和已经完成的工作是否可以被测量
+                    //如果lengthComputable为false，就获取不到progressEvent.total和progressEvent.loaded
+                    console.log(progressEvent);
+                }
+            }
+        })
+//      fetch('./234_files/vm.min.js')
+      .then(r => {console.log(r);return r.data})
       .then(vmCode => {
         log('Scratch engine obtained...');
         // remove dumb </ script>s in comments
