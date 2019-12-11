@@ -253,6 +253,7 @@ function downloadAsHTML(projectSrc, {
             url:'./234_files/vm.min.js',
             method:'get',
             onDownloadProgress (progress) {
+              console.log(progress,progress.loaded, progress.total)
      console.log(Math.round(progress.loaded / progress.total * 100) + '%');
    },
             onUploadProgress:function(progressEvent){ //原生获取上传进度的事件
