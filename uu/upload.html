@@ -12,7 +12,7 @@
     <script src="./234_files/hacky-file-getter.js" charset="utf-8"></script>
     <link rel="stylesheet" href="./234_files/base.css">
 <script src="./234_files/jquery.min.js"></script>
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="./234_files/axios.min.js"></script>
   
     <style media="screen">
       :target {
@@ -239,7 +239,7 @@ function downloadAsHTML(projectSrc, {
     projectSrc.id
       ? runBenchmark(projectSrc.id, ({complete, total}) => log(complete + '/' + total))
         .then(({assets, projectJSON}) => {
-          log('Assembling assets...');
+//          log('Assembling assets...');
           return Promise.all([
             getDataURL(projectJSON).then(data => projectJSON = data),
             ...Object.keys(assets).map(assetId => getDataURL(assets[assetId]).then(data => assets[assetId] = data))
@@ -254,9 +254,12 @@ function downloadAsHTML(projectSrc, {
             url:'./234_files/vm.min.js',
             method:'get',
             onDownloadProgress (progress) {
-              var total = +progress.srcElement.getResponseHeader('content-length');
+//              var total = +progress.srcElement.getResponseHeader('content-length');
+              var total = 2772663;
               console.log(progress,progress.loaded, total)
      console.log(Math.round(progress.loaded / total * 100) + '%');
+     var scale = Math.round(progress.loaded / total * 100) + '%';
+     log('Scratch engine obtained...'+scale, true);
    },
             onUploadProgress:function(progressEvent){ //原生获取上传进度的事件
             console.log(11,progressEvent);
@@ -270,7 +273,7 @@ function downloadAsHTML(projectSrc, {
 //      fetch('./234_files/vm.min.js')
       .then(r => {console.log(r);return r.data})
       .then(vmCode => {
-        log('Scratch engine obtained...');
+//        log('Scratch engine obtained...');
         // remove dumb </ script>s in comments
         return vmCode.replace('</scr' + 'ipt>', '');
       }),
@@ -330,7 +333,11 @@ function load(file) {
     .then(src => downloadAsHTML(src, {
       title: title.value,
       username: username.value,
-      log: output => {
+      log: (output,reset) => {
+        if (reset) {
+          error.value = output + '\n';
+          return;
+        }
         error.value += output + '\n';
         error.scrollTop = error.scrollHeight;
       },
