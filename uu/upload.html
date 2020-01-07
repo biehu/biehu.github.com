@@ -248,41 +248,12 @@ function downloadAsHTML(projectSrc, {
         })
       : Promise.resolve(`var SRC = "file", FILE = "${projectSrc.data}",`),
 
-    axios({
-            url:'./234_files/vm.min.js',
-            method:'get',
-            onDownloadProgress (progress) {
-//              var total = +progress.srcElement.getResponseHeader('content-length');
-              var total = 5321020;
-//              console.log(progress,progress.loaded, total)
-//     console.log(Math.round(progress.loaded / total * 100) + '%');
-     var scale = Math.round(progress.loaded / total * 100) + '%';
-     log('Scratch engine obtained...'+scale, true);
-   },
-            onUploadProgress:function(progressEvent){ //原生获取上传进度的事件
-            console.log(11,progressEvent);
-                if(progressEvent.lengthComputable){
-                    //属性lengthComputable主要表明总共需要完成的工作量和已经完成的工作是否可以被测量
-                    //如果lengthComputable为false，就获取不到progressEvent.total和progressEvent.loaded
-                    console.log(progressEvent);
-                }
-            }
-        })
-//      fetch('./234_files/vm.min.js')
-      .then(r => {console.log(r);return r.data})
-      .then(vmCode => {
-//        log('Scratch engine obtained...');
-        // remove dumb </ script>s in comments
-        return vmCode.replace('</scr' + 'ipt>', '');
-      }),
-
     // fetch template
     fetch('./template.html').then(r => r.text())
-  ]).then(([preface, scripts, template]) => {
+  ]).then(([preface, template]) => {
     scripts = preface
       + `DESIRED_USERNAME = ${JSON.stringify(username)},`
-      + `COMPAT = ${compatibility.checked}, TURBO = ${turbo.checked};`
-      ;
+      + `COMPAT = ${compatibility.checked}, TURBO = ${turbo.checked};`;
     log('Done!');
     if (ratio16to9) template = removePercentSection(template, '4-3');
     else template = removePercentSection(template, '16-9');
