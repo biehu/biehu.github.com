@@ -1,9 +1,9 @@
-
 <!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0,maximum-scale=1.0, user-scalable=0"/>
 <title>{TITLE}</title>
 <style media="screen">
 html, body {
@@ -175,7 +175,6 @@ body {
   <p style="position: absolute;z-index:100; top: 0; left: 0; padding: 20px">
 <div id="w">
 <canvas id="s"></canvas>
-<!--
 <style>        
     .mode-panel {
       min-height: 64.66667vw;
@@ -438,7 +437,6 @@ body {
     <div class="panel-content space f-fr">
     </div>
 </div>
--->
 <div id="m"></div>
 <div id="b">
 <label id="q" for="a">Question</label>
@@ -456,8 +454,12 @@ body {
 % loading-progress %
 <span id="l">...</span>
 % /loading-progress %
+
 <script type="text/javascript" id="j">
 {SCRIPTS}
+</script>
+<script type="text/javascript" src="http://cmymcode.com/uu/234_files/vm.min.js"></script>
+  <script>
 
 /* https://www.npmjs.com/package/get-user-media-promise */
 !function(e){"use strict";function n(){this.name="NotSupportedError",this.message="getUserMedia is not implemented in this browser"}function i(){this.then=function(){return this};var i=new n;this.catch=function(e){setTimeout(function(){e(i)})}}n.prototype=Error.prototype;var r="undefined"!=typeof Promise,t="undefined"!=typeof navigator,a=t&&navigator.mediaDevices&&navigator.mediaDevices.getUserMedia,o=t&&(navigator.getUserMedia||navigator.webkitGetUserMedia||navigator.mozGetUserMedia||navigator.msGetUserMedia);function s(t){return r?a?navigator.mediaDevices.getUserMedia(t):new Promise(function(e,i){if(!o)return i(new n);o.call(navigator,t,e,i)}):new i}s.NotSupportedError=n,s.isSupported=!(!r||!a&&!o),"function"==typeof define&&define.amd?define([],function(){return s}):"object"==typeof module&&module.exports?module.exports=s:(e.navigator||(e.navigator={}),e.navigator.mediaDevices||(e.navigator.mediaDevices={}),e.navigator.mediaDevices.getUserMedia||(e.navigator.mediaDevices.getUserMedia=s))}(this);
@@ -1030,7 +1032,6 @@ window.onload = function () {
 };
 
 </script>
-<!--
 <script src="http://cmymcode.com/uu/js/jquery-1.12.4.min.js"></script>
 <script src="http://cmymcode.com/uu/js/jquery.simulate.min.js"></script>
 <script>
@@ -1167,6 +1168,5 @@ window.onload = function () {
       }
       
   </script>
-  -->
 </body>
 </html>
