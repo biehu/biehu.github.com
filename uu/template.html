@@ -17,7 +17,8 @@ body {
   background-color: black;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-#w {
+#w,
+.loading-icon {
   display: block;
   width: 100vw;
   % 4-3 %
@@ -27,6 +28,7 @@ body {
   height: 56.25vw;
   % /16-9 %
   position: relative;
+  background: #171b1f;
 }
 #m {
   position: absolute;
@@ -55,11 +57,7 @@ body {
 }
 % loading-progress %
 #l {
-  color: #0ff;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  font-size: 16px;
+ 
 }
 % /loading-progress %
 .monitor {
@@ -452,7 +450,9 @@ body {
 % /16-9 %
 % /no-vm %
 % loading-progress %
-<span id="l">...</span>
+<div id="l" style="position: fixed; display: flex; align-items: center; justify-content: center;width: 100%; height: 100%;background: #171b1f;text-align: center">
+<img style="width: 200px" src="http://cmymcode.com/uu/img/loading-icon.gif?1"/>
+</div>
 % /loading-progress %
 
 <script type="text/javascript" id="j">
