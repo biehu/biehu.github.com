@@ -1,0 +1,1225 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0,maximum-scale=1.0, user-scalable=0"/>
+<title>{TITLE}</title>
+<style media="screen">
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+body {
+  margin: 0;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  background-color: black;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+#w,
+.loading-icon {
+  display: block;
+  width: 100vw;
+  % 4-3 %
+  height: 75vw;
+  % /4-3 %
+  % 16-9 %
+  height: 56.25vw;
+  % /16-9 %
+  position: relative;
+  background: #171b1f;
+}
+#m {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+% 4-3 %
+@media (min-aspect-ratio: 4/3) {
+  #w {
+    height: 100vh;
+    width: calc(400vh / 3);
+  }
+}
+% /4-3 %
+% 16-9 %
+@media (min-aspect-ratio: 16/9) {
+  #w {
+    height: 100vh;
+    width: calc(1600vh / 9);
+  }
+}
+% /16-9 %
+#s {
+  width: 100%;
+  height: 100%;
+}
+% loading-progress %
+#l {
+ 
+}
+% /loading-progress %
+.monitor {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  overflow: hidden;
+  padding: 3px;
+  color: white;
+  white-space: nowrap;
+}
+.monitor-label {
+  margin: 0 5px;
+  font-weight: bold;
+}
+.monitor-value {
+  display: inline-block;
+  vertical-align: top;
+  min-width: 34px;
+  text-align: center;
+  border-radius: 0.25rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  user-select: text;
+  transform: translateZ(0);
+}
+.default .monitor-value, .slider .monitor-value {
+  background-color: rgba(0, 0, 0, 0.5);
+  margin: 0 5px;
+  padding: 1px 3px;
+}
+.large {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 0.1rem 0.25rem;
+  min-width: 3rem;
+}
+.large .monitor-label {
+  display: none;
+}
+.large .monitor-value {
+  font-size: 1rem;
+  width: 100%;
+}
+.list {
+  padding: 0;
+  overflow: auto;
+}
+.list .monitor-label {
+  text-align: center;
+  padding: 3px;
+  width: 100%;
+  display: block;
+  margin: 0;
+  box-sizing: border-box;
+}
+.list .monitor-value {
+  display: block;
+}
+.row {
+  margin: 2px 5px;
+  transform: translateZ(0);
+  text-align: left;
+  border-radius: 0.25rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  height: 20px;
+  line-height: 20px;
+  padding: 0 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.slider input {
+  display: block;
+  width: 100%;
+  transform: translateZ(0);
+}
+#b {
+  display: none;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.asking #b {
+  display: block;
+}
+#q {
+  display: block;
+  margin: 0 10px;
+  margin-top: 10px;
+  font-size: 12px;
+  color: white;
+}
+#a {
+  border: none;
+  background: none;
+  width: 100%;
+  font: inherit;
+  font-size: 16px;
+  color: white;
+  padding: 10px;
+  box-sizing: border-box;
+}
+#a:focus {
+  outline: none;
+}
+</style>
+</head>
+<body>
+  <p style="position: absolute;z-index:100; top: 0; left: 0; padding: 20px">
+<div id="w">
+<canvas id="s"></canvas>
+<style>        
+    .mode-panel {
+      min-height: 64.66667vw;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      background-color:
+      #323238;
+      position: absolute;
+      width:
+      100%;
+      content:
+      'viewport-units-buggyfill; min-height: 64.66667vw'
+    }
+    
+    .top-bar {
+      height: 10.66667vw;
+      padding:
+      0 4vw;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      content:
+      'viewport-units-buggyfill; height: 10.66667vw; padding: 0 4vw'
+    }
+    
+    .top-bar .operate-intro {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-pack: start;
+      -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+      justify-content: flex-start;
+      font-size: 4vw;
+      color:
+      #FFFFFF;
+      content:
+      'viewport-units-buggyfill; font-size: 4vw'
+    }
+    
+    .top-bar .close {
+      font-size: 4vw;
+      color:
+      #FFFFFF;
+      content:
+      'viewport-units-buggyfill; font-size: 4vw'
+    }
+    
+    .top-bar .preview {
+      font-size: 3.46667vw;
+      color:
+      #90a4ae;
+      line-height:
+      4.66667vw;
+      content:
+      'viewport-units-buggyfill; font-size: 3.46667vw; line-height: 4.66667vw'
+    }
+    
+    .no-mode, .no-support-mode {
+      font-size: 4.8vw;
+      color:
+      #79909C;
+      line-height:
+      6.26667vw;
+      text-align: center;
+      margin-top:
+      18.26667vw;
+      content:
+      'viewport-units-buggyfill; font-size: 4.8vw; line-height: 6.26667vw; margin-top: 18.26667vw'
+    }
+    
+    .no-mode .tip, .no-support-mode .tip {
+      opacity: 0.4;
+      font-size: 3.46667vw;
+      color:
+      #90A4AE;
+      line-height:
+      4.66667vw;
+      margin-top:
+      2.66667vw;
+      content:
+      'viewport-units-buggyfill; font-size: 3.46667vw; line-height: 4.66667vw; margin-top: 2.66667vw'
+    }
+    
+    .panel-container {
+      position: relative;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      min-height: 53.33333vw;
+      content:
+      'viewport-units-buggyfill; min-height: 53.33333vw'
+    }
+    
+    .panel-left {
+      left: 4vw;
+      top:
+      6.93333vw;
+      content:
+      'viewport-units-buggyfill; left: 4vw; top: 6.93333vw'
+    }
+    
+    .panel-left-4 {
+      left: 5.33333vw;
+      top:
+      6.93333vw;
+      content:
+      'viewport-units-buggyfill; left: 5.33333vw; top: 6.93333vw'
+    }
+    
+    .panel-right {
+      right: 4vw;
+      top:
+      6.93333vw;
+      content:
+      'viewport-units-buggyfill; right: 4vw; top: 6.93333vw'
+    }
+    
+    .key-4 {
+      width: 42.93333vw;
+      height:
+      39.46667vw;
+      position: absolute;
+      content:
+      'viewport-units-buggyfill; width: 42.93333vw; height: 39.46667vw'
+    }
+    
+    .key-4 .key {
+      width: 15.73333vw;
+      height:
+      15.73333vw;
+      position: absolute;
+      content:
+      'viewport-units-buggyfill; width: 15.73333vw; height: 15.73333vw'
+    }
+    
+    .key-4 .key-a {
+      background: url(//edu-image.nosdn.127.net/FD6CD1F55E91DC3955FC92275F17339E.png?imageView&quality=100) no-repeat center / contain
+    }
+    
+    .key-4 .key-a.active {
+      background: url(//edu-image.nosdn.127.net/1FF0295AE033F9B657064812CF8A8765.png?imageView&quality=100) no-repeat center / contain
+    }
+    
+    .key-4 .key-s {
+      background: url(//edu-image.nosdn.127.net/948631893AC9D621882A8A2BAC3A793F.png?imageView&quality=100) no-repeat center / contain
+    }
+    
+    .key-4 .key-s.active {
+      background: url(//edu-image.nosdn.127.net/2E73309BF350C0B875F093E72461BCFB.png?imageView&quality=100) no-repeat center / contain
+    }
+    
+    .key-4 .key-d {
+      background: url(//edu-image.nosdn.127.net/1733F556DCED31C8F00480F289B7222C.png?imageView&quality=100) no-repeat center / contain
+    }
+    
+    .key-4 .key-d.active {
+      background: url(//edu-image.nosdn.127.net/C8C06FAD9F3C0C2C3C1C5CB93A072830.png?imageView&quality=100) no-repeat center / contain
+    }
+    
+    .key-4 .key-w {
+      background: url(//edu-image.nosdn.127.net/A07A95E60E6DD2DF54C6C2E96491443D.png?imageView&quality=100) no-repeat center / contain
+    }
+    
+    .key-4 .key-w.active {
+      background: url(//edu-image.nosdn.127.net/C5EDC6E79BAAD8AD5B251B38F0BA64A4.png?imageView&quality=100) no-repeat center / contain
+    }
+    
+    .key-4 .key-h {
+      background: url(//edu-image.nosdn.127.net/EEDF4ED204CC0A3F6334F5261350C2C5.png?imageView&quality=100) no-repeat center / contain
+    }
+    
+    .key-4 .key-h.active {
+      background: url(//edu-image.nosdn.127.net/7F990FE0BB74522055AF32C972C87C75.png?imageView&quality=100) no-repeat center / contain
+    }
+    
+    .key-4 .key-j {
+      background: url(//edu-image.nosdn.127.net/E3C32ED84DEC59FB43B21C2E67B214F8.png?imageView&quality=100) no-repeat center / contain
+    }
+    
+    .key-4 .key-j.active {
+      background: url(//edu-image.nosdn.127.net/AC34249D6CEFD6A00D1D2D726CDDD7C2.png?imageView&quality=100) no-repeat center / contain
+    }
+    
+    .key-4 .key-k {
+      background: url(//edu-image.nosdn.127.net/BBB770CC00E78763F53D3EABB487109E.png?imageView&quality=100) no-repeat center / contain
+    }
+    
+    .key-4 .key-k.active {
+      background: url(//edu-image.nosdn.127.net/CF2CBD7ED008F3410131C24AA61CB083.png?imageView&quality=100) no-repeat center / contain
+    }
+    
+    .key-4 .key-u {
+      background: url(//edu-image.nosdn.127.net/3FCFCA18AEAC9773587E55818065317D.png?imageView&quality=100) no-repeat center / contain
+    }
+    
+    .key-4 .key-u.active {
+      background: url(//edu-image.nosdn.127.net/13B657C9CD9D7D99FE4E22CE2E385201.png?imageView&quality=100) no-repeat center / contain
+    }
+    
+    .key-9 {
+      width: 58.66667vw;
+      height:
+      44vw;
+      position: absolute;
+      left:
+      20.66667vw;
+      top:
+      1.06667vw;
+      content:
+      'viewport-units-buggyfill; width: 58.66667vw; height: 44vw; left: 20.66667vw; top: 1.06667vw'
+    }
+    
+    .key-9 .key {
+      width: 16vw;
+      height:
+      12vw;
+      display: block;
+      float: left;
+      margin-right:
+      4.26667vw;
+      margin-top:
+      2.93333vw;
+      content:
+      'viewport-units-buggyfill; width: 16vw; height: 12vw; margin-right: 4.26667vw; margin-top: 2.93333vw'
+    }
+    
+    .key-9 .key:nth-child(3n) { margin-right: 0 }  .key-9 .key-q,.key-9 .key-w,.key-9 .key-e { margin-top: 0 }  .key-9 .key-q { background: url(//edu-image.nosdn.127.net/D6B7D63A7260618B959E120B21A9A46A.png?imageView&quality=100) no-repeat center/contain }  .key-9 .key-q.active { background: url(//edu-image.nosdn.127.net/6D38C31481B92AB06C6D907DC9B893AF.png?imageView&quality=100) no-repeat center/contain }  .key-9 .key-w { background: url(//edu-image.nosdn.127.net/E681CF5591245F61F72FBD22D5C0CFAE.png?imageView&quality=100) no-repeat center/contain }  .key-9 .key-w.active { background: url(//edu-image.nosdn.127.net/A0D89597458FE4E04C075B33C1B1806C.png?imageView&quality=100) no-repeat center/contain }  .key-9 .key-e { background: url(//edu-image.nosdn.127.net/B7D2A5BEF703BED566BFCF41B8C6D352.png?imageView&quality=100) no-repeat center/contain }  .key-9 .key-e.active { background: url(//edu-image.nosdn.127.net/8DF5AED16E6FF474FF9C8CDC6B1C9970.png?imageView&quality=100) no-repeat center/contain }  .key-9 .key-a { background: url(//edu-image.nosdn.127.net/9EC53E41AF5F4B535CDD36F67F59D16F.png?imageView&quality=100) no-repeat center/contain }  .key-9 .key-a.active { background: url(//edu-image.nosdn.127.net/97BFD269BC3F9EA9E528C54A1F568D40.png?imageView&quality=100) no-repeat center/contain }  .key-9 .key-s { background: url(//edu-image.nosdn.127.net/833A93F0A6AA97A3C71A2B78E03D264D.png?imageView&quality=100) no-repeat center/contain }  .key-9 .key-s.active { background: url(//edu-image.nosdn.127.net/32D65C24012855EA0565F7B442003E39.png?imageView&quality=100) no-repeat center/contain }  .key-9 .key-d { background: url(//edu-image.nosdn.127.net/ADA3D61B2E90D0D6CE15CC940935C433.png?imageView&quality=100) no-repeat center/contain }  .key-9 .key-d.active { background: url(//edu-image.nosdn.127.net/20280250A6B0DB7320FF986139E6A221.png?imageView&quality=100) no-repeat center/contain }  .key-9 .key-z { background: url(//edu-image.nosdn.127.net/C2477CB7FFD4E3107D5B70765EDCB90E.png?imageView&quality=100) no-repeat center/contain }  .key-9 .key-z.active { background: url(//edu-image.nosdn.127.net/3E98112D2863F47B431886C2B4093207.png?imageView&quality=100) no-repeat center/contain }  .key-9 .key-x { background: url(//edu-image.nosdn.127.net/35E034AB6A163786429148CB6CBFDB71.png?imageView&quality=100) no-repeat center/contain }  .key-9 .key-x.active { background: url(//edu-image.nosdn.127.net/D8793ABE3B2E1CAAC71398387195C037.png?imageView&quality=100) no-repeat center/contain }  .key-9 .key-c { background: url(//edu-image.nosdn.127.net/870D448F3929AAEFF8F2D2AE7AAEEA9C.png?imageView&quality=100) no-repeat center/contain }  .key-9 .key-c.active { background: url(//edu-image.nosdn.127.net/C45DFA9B89FBE9E5CEFF6D04DDF0EF70.png?imageView&quality=100) no-repeat center/contain }  .left { left: 0; top: 11.73333vw; content: 'viewport-units-buggyfill; top: 11.73333vw' }  .arrow-left { background: url(http://cmymcode.com/uu/img/left.png?imageView&quality=100) no-repeat center/contain }  .arrow-left:active{ -webkit-filter: drop-shadow(0 0 15px #EEBF23); filter: drop-shadow(0 0 15px #EEBF23); }  .right { right: 0; top: 11.73333vw; content: 'viewport-units-buggyfill; top: 11.73333vw' }  .arrow-right { background: url(http://cmymcode.com/uu/img/right.png?imageView&quality=100) no-repeat center/contain }  .arrow-right:active { -webkit-filter: drop-shadow(0 0 15px #EEBF23); filter: drop-shadow(0 0 15px #EEBF23); }  .up { left: 13.73333vw; top: 0; content: 'viewport-units-buggyfill; left: 13.73333vw' }  .arrow-up { background: url(http://cmymcode.com/uu/img/up.png?imageView&quality=100) no-repeat center/contain }  .arrow-up:active { -webkit-filter: drop-shadow(0 0 15px #EEBF23); filter: drop-shadow(0 0 15px #EEBF23); }  .down { left: 13.73333vw; bottom: 0; content: 'viewport-units-buggyfill; left: 13.73333vw' }  .arrow-down { background: url(http://cmymcode.com/uu/img/bottom.png?imageView&quality=100) no-repeat center/contain }  .arrow-down:active { -webkit-filter: drop-shadow(0 0 15px #EEBF23); filter: drop-shadow(0 0 15px #EEBF23); }  .space { width: 26.66667vw; height: 26.66667vw; position: absolute; right: 5.33333vw; top: 11.73333vw; background: url(http://cmymcode.com/uu/img/space.png) no-repeat center/contain; content: 'viewport-units-buggyfill; width: 26.66667vw; height: 26.66667vw; right: 5.33333vw; top: 11.73333vw' }  .space:active { -webkit-filter: drop-shadow(0 0 15px #EEBF23); filter: drop-shadow(0 0 15px #EEBF23); } 
+                  
+            
+</style>
+
+<div class="panel-container f-cb">
+    <div class="panel-content panel-left-4 key-4 f-fl">
+        <div class="key left arrow-left">
+        </div>
+        <div class="key down arrow-down">
+        </div>
+        <div class="key right arrow-right">
+        </div>
+        <div class="key up arrow-up">
+        </div>
+    </div>
+    <div class="panel-content space f-fr">
+    </div>
+</div>
+<div id="m"></div>
+<div id="b">
+<label id="q" for="a">Question</label>
+<input type="text" id="a">
+</div>
+</div>
+% no-vm %
+% 4-3 %
+<!--<script src="./vm.min.js"></script>-->
+% /4-3 %
+% 16-9 %
+<!--<script src="./16-9/vm.min.js"></script>-->
+% /16-9 %
+% /no-vm %
+% loading-progress %
+<div id="l" style="position: fixed; display: flex; align-items: center; justify-content: center;width: 100%; height: 100%;background: #171b1f;text-align: center">
+<img style="width: 200px" src="http://cmymcode.com/uu/img/loading-icon.gif?1"/>
+</div>
+% /loading-progress %
+
+<script type="text/javascript" id="j">
+{SCRIPTS}
+</script>
+<!--
+<script type="text/javascript" src="http://cmymcode.com/uu/234_files/vm.min.js"></script>
+-->
+  <script>
+
+/* https://www.npmjs.com/package/get-user-media-promise */
+!function(e){"use strict";function n(){this.name="NotSupportedError",this.message="getUserMedia is not implemented in this browser"}function i(){this.then=function(){return this};var i=new n;this.catch=function(e){setTimeout(function(){e(i)})}}n.prototype=Error.prototype;var r="undefined"!=typeof Promise,t="undefined"!=typeof navigator,a=t&&navigator.mediaDevices&&navigator.mediaDevices.getUserMedia,o=t&&(navigator.getUserMedia||navigator.webkitGetUserMedia||navigator.mozGetUserMedia||navigator.msGetUserMedia);function s(t){return r?a?navigator.mediaDevices.getUserMedia(t):new Promise(function(e,i){if(!o)return i(new n);o.call(navigator,t,e,i)}):new i}s.NotSupportedError=n,s.isSupported=!(!r||!a&&!o),"function"==typeof define&&define.amd?define([],function(){return s}):"object"==typeof module&&module.exports?module.exports=s:(e.navigator||(e.navigator={}),e.navigator.mediaDevices||(e.navigator.mediaDevices={}),e.navigator.mediaDevices.getUserMedia||(e.navigator.mediaDevices.getUserMedia=s))}(this);
+
+/* https://github.com/LLK/scratch-gui/blob/7b658c60c7c04055e575601a861195fe6c9933f3/src/lib/video/camera.js */
+const requestStack = [];
+const requestVideoStream = videoDesc => {
+    let streamPromise;
+    if (requestStack.length === 0) {
+        streamPromise = navigator.mediaDevices.getUserMedia({
+            audio: false,
+            video: videoDesc
+        });
+        requestStack.push(streamPromise);
+    } else if (requestStack.length > 0) {
+        streamPromise = requestStack[0];
+        requestStack.push(true);
+    }
+    return streamPromise;
+};
+
+const requestDisableVideo = () => {
+    requestStack.pop();
+    if (requestStack.length > 0) return false;
+    return true;
+};
+
+/* https://github.com/LLK/scratch-gui/blob/7b658c60c7c04055e575601a861195fe6c9933f3/src/lib/video/video-provider.js */
+class VideoProvider {
+    constructor () {
+        this.mirror = true;
+
+        this._frameCacheTimeout = 16;
+
+        this._video = null;
+
+        this._track = null;
+
+        this._workspace = [];
+    }
+
+    static get FORMAT_IMAGE_DATA () {
+        return 'image-data';
+    }
+
+    static get FORMAT_CANVAS () {
+        return 'canvas';
+    }
+
+    static get DIMENSIONS () {
+        return [480, 360];
+    }
+
+    static get ORDER () {
+        return 1;
+    }
+
+    get video () {
+        return this._video;
+    }
+
+    enableVideo () {
+        this.enabled = true;
+        return this._setupVideo();
+    }
+
+    disableVideo () {
+        this.enabled = false;
+        if (this._singleSetup) {
+            this._singleSetup
+                .then(this._teardown.bind(this))
+                .catch(err => this.onError(err));
+        }
+    }
+
+    _teardown () {
+        if (this.enabled === false) {
+            const disableTrack = requestDisableVideo();
+            this._singleSetup = null;
+            this._video = null;
+            if (this._track && disableTrack) {
+                this._track.stop();
+            }
+            this._track = null;
+        }
+    }
+
+    getFrame ({
+        dimensions = VideoProvider.DIMENSIONS,
+        mirror = this.mirror,
+        format = VideoProvider.FORMAT_IMAGE_DATA,
+        cacheTimeout = this._frameCacheTimeout
+    }) {
+        if (!this.videoReady) {
+            return null;
+        }
+        const [width, height] = dimensions;
+        const workspace = this._getWorkspace({dimensions, mirror: Boolean(mirror)});
+        const {videoWidth, videoHeight} = this._video;
+        const {canvas, context, lastUpdate, cacheData} = workspace;
+        const now = Date.now();
+
+        if (lastUpdate + cacheTimeout < now) {
+
+            if (mirror) {
+                context.scale(-1, 1);
+                context.translate(width * -1, 0);
+            }
+
+            context.drawImage(this._video,
+                0, 0, videoWidth, videoHeight,
+                0, 0, width, height
+            );
+
+            context.setTransform(1, 0, 0, 1, 0, 0);
+            workspace.lastUpdate = now;
+        }
+
+        if (!cacheData[format]) {
+            cacheData[format] = {lastUpdate: 0};
+        }
+        const formatCache = cacheData[format];
+
+        if (formatCache.lastUpdate + cacheTimeout < now) {
+            if (format === VideoProvider.FORMAT_IMAGE_DATA) {
+                formatCache.lastData = context.getImageData(0, 0, width, height);
+            } else if (format === VideoProvider.FORMAT_CANVAS) {
+                formatCache.lastUpdate = Infinity;
+                formatCache.lastData = canvas;
+            } else {
+                console.log.error(`video io error - unimplemented format ${format}`);
+                formatCache.lastUpdate = Infinity;
+                formatCache.lastData = null;
+            }
+
+            formatCache.lastUpdate = Math.max(workspace.lastUpdate, formatCache.lastUpdate);
+        }
+
+        return formatCache.lastData;
+    }
+
+    onError (error) {
+        console.log.error('Unhandled video io device error', error);
+    }
+
+    _setupVideo () {
+        if (this._singleSetup) {
+            return this._singleSetup;
+        }
+
+        this._singleSetup = requestVideoStream({
+            width: {min: 480, ideal: 640},
+            height: {min: 360, ideal: 480}
+        })
+            .then(stream => {
+                this._video = document.createElement('video');
+
+                try {
+                    this._video.srcObject = stream;
+                } catch (error) {
+                    this._video.src = window.URL.createObjectURL(stream);
+                }
+                this._video.play();
+                this._track = stream.getTracks()[0];
+                return this;
+            })
+            .catch(error => {
+                this._singleSetup = null;
+                this.onError(error);
+            });
+
+        return this._singleSetup;
+    }
+
+    get videoReady () {
+        if (!this.enabled) {
+            return false;
+        }
+        if (!this._video) {
+            return false;
+        }
+        if (!this._track) {
+            return false;
+        }
+        const {videoWidth, videoHeight} = this._video;
+        if (typeof videoWidth !== 'number' || typeof videoHeight !== 'number') {
+            return false;
+        }
+        if (videoWidth === 0 || videoHeight === 0) {
+            return false;
+        }
+        return true;
+    }
+
+    _getWorkspace ({dimensions, mirror}) {
+        let workspace = this._workspace.find(space => (
+            space.dimensions.join('-') === dimensions.join('-') &&
+            space.mirror === mirror
+        ));
+        if (!workspace) {
+            workspace = {
+                dimensions,
+                mirror,
+                canvas: document.createElement('canvas'),
+                lastUpdate: 0,
+                cacheData: {}
+            };
+            workspace.canvas.width = dimensions[0];
+            workspace.canvas.height = dimensions[1];
+            workspace.context = workspace.canvas.getContext('2d');
+            this._workspace.push(workspace);
+        }
+        return workspace;
+    }
+}
+
+const Scratch = window.Scratch = window.Scratch || {};
+
+const runBenchmark = function () {
+  const vm = new window.NotVirtualMachine();
+  Scratch.vm = vm;
+
+  const storage = new ScratchStorage();
+  const AssetType = storage.AssetType;
+  storage.addWebStore([AssetType.Project], () => PROJECT_JSON);
+  storage.addWebStore([AssetType.ImageVector, AssetType.ImageBitmap, AssetType.Sound], asset => ASSETS[asset.assetId]);
+  vm.attachStorage(storage);
+
+  
+  const progress = document.getElementById('l');
+  const _load = storage.webHelper.load;
+  let total = 0, complete = 0;
+  storage.webHelper.load = function (...args) {
+    const result = _load.call(this, ...args);
+    total += 1;
+    progress.textContent = complete + '/' + total;
+    result.then(() => {
+      complete += 1;
+      progress.textContent = complete + '/' + total;
+    });
+    return result;
+  };
+  
+
+  if (SRC === 'file') {
+    fetch(FILE)
+      .then(r => r.arrayBuffer())
+      .then(b => Scratch.vm.loadProject(b));
+  } else {
+    Scratch.vm.downloadProjectId('');
+  }
+  vm.on('workspaceUpdate', () => {
+    
+    document.body.removeChild(progress);
+    
+
+    const doNothing = () => null;
+    vm.setVideoProvider(new VideoProvider());
+    vm.setCloudProvider({
+      updateVariable(name, value) {
+        try {
+          localStorage.setItem('[s3] ' + name, value);
+        } catch (e) {
+          console.log('Cannot use localStorage?', e);
+        }
+      },
+      createVariable: doNothing,
+      renameVariable: doNothing,
+      deleteVariable: doNothing,
+      requestCloseConnection: doNothing
+    });
+
+    setTimeout(() => {
+      for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        if (key.slice(0, 5) === '[s3] ') {
+          vm.postIOData('cloud', {
+            varUpdate: {
+              name: key.slice(5),
+              value: localStorage.getItem(key)
+            }
+          });
+        }
+      }
+      window.addEventListener('storage', e => {
+        if (e.storageArea === localStorage && e.key.slice(0, 5) === '[s3] ') {
+          vm.postIOData('cloud', {
+            varUpdate: {
+              name: e.key.slice(5),
+              value: e.newValue
+            }
+          });
+        }
+      });
+    });
+
+    vm.setCompatibilityMode(COMPAT);
+    vm.setTurboMode(TURBO);
+    vm.greenFlag();
+
+    document.body.removeChild(document.getElementById('j'));
+  });
+
+  function resize() {
+    const rect = canvas.getBoundingClientRect();
+    renderer.resize(rect.width, rect.height);
+    monitorWrapper.style.transform = `scale(${rect.height / 360})`;
+  }
+  const monitorWrapper = document.getElementById('m');
+  const canvas = document.getElementById('s');
+  
+  const renderer = new window.ScratchRender(canvas);
+  
+  
+  resize();
+  Scratch.renderer = renderer;
+  vm.attachRenderer(renderer);
+  const audioEngine = new window.AudioEngine();
+  vm.attachAudioEngine(audioEngine);
+  vm.attachV2SVGAdapter(new ScratchSVGRenderer.SVGRenderer());
+  vm.attachV2BitmapAdapter(new ScratchSVGRenderer.BitmapAdapter());
+
+  const askBoxWrapper = document.getElementById('b');
+  const question = document.getElementById('q');
+  const askBox = document.getElementById('a');
+
+  /* https://github.com/LLK/scratch-gui/blob/7b658c60c7c04055e575601a861195fe6c9933f3/src/containers/stage.jsx */
+  const getEventXY = e => {
+    if (e.touches && e.touches[0]) {
+      return {x: e.touches[0].clientX, y: e.touches[0].clientY};
+    } else if (e.changedTouches && e.changedTouches[0]) {
+      return {x: e.changedTouches[0].clientX, y: e.changedTouches[0].clientY};
+    }
+    return {x: e.clientX, y: e.clientY};
+  };
+  let mouseDown = false,
+  mouseDownPosition = null,
+  mouseDownTimeoutId = null,
+  isDragging = false,
+  dragId = null,
+  dragOffset = null;
+  function cancelMouseDownTimeout() {
+    if (mouseDownTimeoutId !== null) {
+      clearTimeout(mouseDownTimeoutId);
+    }
+    mouseDownTimeoutId = null;
+  }
+  function onStartDrag() {
+    if (dragId) return;
+    const drawableId = renderer.pick(...mouseDownPosition);
+    if (drawableId === null) return;
+    const targetId = vm.getTargetIdForDrawableId(drawableId);
+    if (targetId === null) return;
+    const target = vm.runtime.getTargetById(targetId);
+    if (!target.draggable) return;
+    target.goToFront();
+    const drawableData = renderer.extractDrawable(drawableId, ...mouseDownPosition);
+    vm.startDrag(targetId);
+    isDragging = true;
+    dragId = targetId;
+    dragOffset = drawableData.scratchOffset;
+  }
+  function getScratchCoords(x, y, rect) {
+    const nativeSize = renderer.getNativeSize();
+    return [
+      (nativeSize[0] / rect.width) * (x - (rect.width / 2)),
+      (nativeSize[1] / rect.height) * (y - (rect.height / 2))
+    ];
+  }
+  function mousemove(e) {
+    const {x, y} = getEventXY(e);
+    const rect = canvas.getBoundingClientRect();
+    const mousePosition = [x - rect.left, y - rect.top];
+    if (mouseDown && !isDragging) {
+      const distanceFromMouseDown = Math.sqrt(
+        Math.pow(mousePosition[0] - mouseDownPosition[0], 2) +
+        Math.pow(mousePosition[1] - mouseDownPosition[1], 2)
+      );
+      if (distanceFromMouseDown > 3) {
+        cancelMouseDownTimeout();
+        onStartDrag();
+      }
+    }
+    if (mouseDown && isDragging) {
+      const spritePosition = getScratchCoords(mousePosition[0], mousePosition[1], rect);
+      vm.postSpriteInfo({
+        x: spritePosition[0] + dragOffset[0],
+        y: -(spritePosition[1] + dragOffset[1]),
+        force: true
+      });
+    }
+    Scratch.vm.postIOData('mouse', {
+      x: mousePosition[0],
+      y: mousePosition[1],
+      canvasWidth: rect.width,
+      canvasHeight: rect.height
+    });
+  }
+  function mousedown(e) {
+    if (askBoxWrapper.contains(e.target)) return;
+    const {x, y} = getEventXY(e);
+    const rect = canvas.getBoundingClientRect();
+    const mousePosition = [x - rect.left, y - rect.top];
+    mouseDown = true;
+    mouseDownPosition = mousePosition;
+    mouseDownTimeoutId = setTimeout(onStartDrag, 400);
+    Scratch.vm.postIOData('mouse', {
+      isDown: true,
+      x: mousePosition[0],
+      y: mousePosition[1],
+      canvasWidth: rect.width,
+      canvasHeight: rect.height
+    });
+    e.preventDefault();
+  }
+  function mouseup(e) {
+    console.log(2222);
+    if (e.target.className.includes('right')) {
+    Scratch.vm.postIOData('keyboard', {
+      keyCode: 39,
+      key: 'ArrowRight',
+      isDown: false
+    });
+    }
+    if (e.target.className.includes('left')) {
+    Scratch.vm.postIOData('keyboard', {
+      keyCode: 37,
+      key: 'ArrowLeft',
+      isDown: false
+    });
+    }
+    if (e.target.className.includes('up')) {
+    Scratch.vm.postIOData('keyboard', {
+      keyCode: 38,
+      key: 'ArrowUp',
+      isDown: false
+    });
+    }
+    if (e.target.className.includes('down')) {
+    Scratch.vm.postIOData('keyboard', {
+      keyCode: 40,
+      key: 'ArrowDown',
+      isDown: false
+    });
+    }
+    if (e.target.className.includes('space')) {
+    Scratch.vm.postIOData('keyboard', {
+      keyCode: 32,
+      key: " ",
+      isDown: false
+    });
+    }
+    e.preventDefault();
+    
+  }
+  document.addEventListener('mousemove', mousemove);
+  canvas.addEventListener('mousedown', mousedown);
+  document.addEventListener('mouseup', mouseup);
+  document.addEventListener('touchmove', mousemove);
+  canvas.addEventListener('touchstart', mousedown, {passive: false});
+  document.addEventListener('touchend', mouseup, {passive: false});
+  canvas.addEventListener('wheel', e => {
+    Scratch.vm.postIOData('mouseWheel', {
+      deltaX: e.deltaX,
+      deltaY: e.deltaY
+    });
+    e.preventDefault();
+  });
+  window.addEventListener('resize', resize);
+
+  document.addEventListener('keydown', e => {
+    console.log(11,e.keyCode, e.key);
+    if (e.target === askBox) return;
+    Scratch.vm.postIOData('keyboard', {
+      keyCode: e.keyCode, 
+      key:e.key,
+      isDown: true
+    });
+//    e.preventDefault();
+  });
+//  document.addEventListener('touchend', e => {
+//    console.log(3333333,e);
+//    if (e.target.className.includes('right')) {
+//      Scratch.vm.postIOData('keyboard', {
+//      keyCode: e.keyCode, 
+//      key:e.key,
+//      isDown: true
+//    });
+//    }
+//    
+//    
+////    e.preventDefault();
+//  });
+  document.addEventListener('keyup', e => {
+    if (e.target === askBox) return;
+    Scratch.vm.postIOData('keyboard', {
+      keyCode: e.keyCode, 
+      key:e.key,
+      isDown: false
+    });
+  });
+  
+//  document.addEventListener('click', e => {
+//    console.log(1);
+//    Scratch.vm.postIOData('keyboard', {
+//      keyCode: 39,
+//      key: 'ArrowRight',
+//      isDown: false
+//    });
+//  });
+
+  Scratch.vm.runtime.addListener('QUESTION', questionData => {
+    /* null means the asking was interrupted by stop script block */
+    if (questionData === null) {
+      document.body.classList.remove('asking');
+    } else {
+      document.body.classList.add('asking');
+      question.textContent = questionData;
+      askBox.value = '';
+      askBox.focus();
+    }
+  });
+  askBox.addEventListener('keydown', e => {
+    if (e.keyCode === 13) {
+      document.body.classList.remove('asking');
+      /* submit answer after because it starts the next question synchronously */
+      Scratch.vm.runtime.emit('ANSWER', askBox.value);
+    }
+  });
+
+  const getVariable = (targetId, variableId) => {
+      const target = targetId ?
+          Scratch.vm.runtime.getTargetById(targetId) :
+          Scratch.vm.runtime.getTargetForStage();
+      return target.variables[variableId];
+  };
+  const monitorStates = {};
+  let once = false;
+  Scratch.vm.runtime.addListener('MONITORS_UPDATE', monitors => {
+    monitors.forEach((record, id) => {
+      if (!monitorStates[id]) {
+        const monitor = document.createElement('div');
+        monitor.className = 'monitor ' + record.mode;
+        monitor.style.left = record.x + 'px';
+        monitor.style.top = record.y + 'px';
+        if (record.mode === 'list') {
+          monitor.style.width = record.width + 'px';
+          monitor.style.height = record.height + 'px';
+        }
+        const label = document.createElement('span');
+        label.className = 'monitor-label';
+        let name = record.params.VARIABLE || record.params.LIST || record.opcode;
+        if (record.spriteName) name = `${record.spriteName}: ${name}`;
+        label.textContent = name;
+        monitor.appendChild(label);
+        const value = document.createElement('span');
+        value.className = 'monitor-value';
+        monitor.appendChild(value);
+        monitorStates[id] = {monitor, value};
+        if (record.mode === 'slider') {
+          const slider = document.createElement('input');
+          slider.type = 'range';
+          slider.min = record.sliderMin;
+          slider.max = record.sliderMax;
+          slider.step = record.isDiscrete ? 1 : 0.01;
+          slider.addEventListener('input', e => {
+            getVariable(record.targetId, id).value = slider.value;
+          });
+          slider.addEventListener('change', e => {
+            getVariable(record.targetId, id).value = slider.value;
+          });
+          monitorStates[id].slider = slider;
+          monitor.appendChild(slider);
+        }
+        monitorWrapper.appendChild(monitor);
+      }
+      monitorStates[id].monitor.style.display = record.visible ? null : 'none';
+      if (record.visible) {
+        let value = record.value;
+        if (typeof value === 'number') {
+          value = Number(value.toFixed(6));
+        }
+        if (typeof value === 'boolean') {
+          value = value.toString();
+        }
+        if (Array.isArray(value)) {
+          if (monitorStates[id].lastValue === JSON.stringify(value)) return;
+          monitorStates[id].value.innerHTML = '';
+          value.forEach(val => {
+            const row = document.createElement('div');
+            row.className = 'row';
+            row.textContent = val;
+            monitorStates[id].value.appendChild(row);
+          });
+        } else {
+          monitorStates[id].value.textContent = value;
+          if (monitorStates[id].slider) monitorStates[id].slider.value = value;
+        }
+      }
+    });
+  });
+
+  Scratch.vm.postIOData('userData', {username: DESIRED_USERNAME});
+
+  vm.start();
+};
+
+window.onload = function () {
+  runBenchmark();
+};
+
+</script>
+
+<script src="https://kw.stu.126.net/wap/lib/phosphorus/jquery-3.1.1.min.js"></script>
+<script src="http://cmymcode.com/uu/js/jquery.simulate.min.js"></script>
+<script>
+    $(function(){
+      //监听键盘按下的事件
+      $(document).on('keydown',function(e){
+        console.log(e)
+//        alert(e.key+'键按下')
+      })
+      //到这里，按下键盘的按键就能看到对应的效果了
+      //接下来初始化按钮事件绑定,就可以通过点击按钮实现模拟按下键盘按键了
+      initKeyBoardEvents();
+    })
+    function initKeyBoardEvents() {
+          var A = this.canvas || document
+              , e = jQuery.simulate.keyCode;
+          function t(e, t, n, r, o) {
+            console.log(5555555);
+              $(e).on(t, function(t) {
+                
+                console.log(66666);
+                  /*"keydown" == n ? $(e).addClass("active") : $(e).removeClass("active");*/
+                  if("keydown" == n){
+                        $(A).simulate(n, {
+                            keyCode: r,
+                            key: o
+                        })
+//                        Scratch.vm.postIOData('keyboard', {
+//            keyCode: r,
+//            key: o,
+//            isDown: true
+//          });
+//          t.preventDefault();
+                  }
+              })
+          }
+          function n(A) {
+              var n = [{
+                  selector: ".left",
+                  code: e.LEFT,
+                  key: "ArrowLeft"
+              }, {
+                  selector: ".right",
+                  code: e.RIGHT,
+                  key: "ArrowRight"
+              }, {
+                  selector: ".up",
+                  code: e.UP,
+                  key: "ArrowUp"
+              }, {
+                  selector: ".down",
+                  code: e.DOWN,
+                  key: "ArrowDown"
+              }, {
+                  selector: ".space",
+                  code: e.SPACE,
+                  key: " "
+              }, {
+                  selector: ".key-q",
+                  code: e.Q,
+                  key: "q"
+              }, {
+                  selector: ".key-w",
+                  code: e.W,
+                  key: "w"
+              }, {
+                  selector: ".key-e",
+                  code: e.E,
+                  key: "e"
+              }, {
+                  selector: ".key-a",
+                  code: e.A,
+                  key: "a"
+              }, {
+                  selector: ".key-s",
+                  code: e.S,
+                  key: "s"
+              }, {
+                  selector: ".key-d",
+                  code: e.D,
+                  key: "d"
+              }, {
+                  selector: ".key-z",
+                  code: e.Z,
+                  key: "z"
+              }, {
+                  selector: ".key-x",
+                  code: e.X,
+                  key: "x"
+              }, {
+                  selector: ".key-c",
+                  code: e.C,
+                  key: "c"
+              }, {
+                  selector: ".key-h",
+                  code: e.H,
+                  key: "h"
+              }, {
+                  selector: ".key-j",
+                  code: e.J,
+                  key: "j"
+              }, {
+                  selector: ".key-k",
+                  code: e.K,
+                  key: "k"
+              }, {
+                  selector: ".key-u",
+                  code: e.U,
+                  key: "u"
+              }];
+              $("body").on("touchmove", function(A) {
+                  A.preventDefault()
+              }, !1);
+              var r = "mouse" == A ? "mousedown" : "touchstart"
+                  , o = "mouse" == A ? "mouseup" : "touchend";
+              n.forEach(function(A) {
+                  t(A.selector, r, "keydown", A.code, A.key),
+                      t(A.selector, o, "keyup", A.code, A.key);
+                  var e = window.document.getElementsByClassName(A.selector.slice(1));
+                  e && e[0] && e[0].addEventListener("contextmenu", function(A) {
+                      A.preventDefault()
+                  })
+              })
+          }
+          e.Q = 81,
+          e.W = 87,
+          e.E = 69,
+          e.A = 65,
+          e.S = 83,
+          e.D = 68,
+          e.Z = 90,
+          e.X = 88,
+          e.C = 67,
+          e.H = 72,
+          e.I = 73,
+          e.J = 74,
+          e.K = 75,
+          e.U = 85,
+          n("ontouchstart"in document ? "touch" : "mouse"),
+          document.oncontextmenu = function(A) {
+              A.preventDefault()
+          }
+      }
+     
+  </script>
+</body>
+</html>
