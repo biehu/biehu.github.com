@@ -260,7 +260,6 @@ function downloadAsHTML(projectSrc, {
     if (!fullscreen) template = removePercentSection(template, 'fullscreen');
     if (monitorColour) template = template.replace('{COLOUR}', () => monitorColour);
     else template = removePercentSection(template, 'monitor-colour');
-    console.log(scripts);
     return template
       .replace(/% \/?[a-z0-9-]+ %/g, '')
       // .replace(/\s*\r?\n\s*/g, '')
