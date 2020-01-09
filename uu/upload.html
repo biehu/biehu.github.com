@@ -108,7 +108,6 @@
   //拖拽外部文件，在目标元素上释放鼠标触发
   oFileSpan.on("drop",function(ev){
     var fs = ev.originalEvent.dataTransfer.files;
-    console.log(fs[0]);
     fileName = fs[0].name;
     load(fs[0]);
     $(this).text("将文件拖到此处").css("background","none");
