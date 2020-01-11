@@ -915,6 +915,26 @@ const runBenchmark = function () {
     }
     e.preventDefault();
     
+    const {x, y} = getEventXY(e);
+    const rect = canvas.getBoundingClientRect();
+    cancelMouseDownTimeout();
+    mouseDown = false;
+    mouseDownPosition = null;
+    if (isDragging) {
+      vm.stopDrag(dragId);
+      isDragging = false;
+      dragOffset = null;
+      dragId = null;
+    }
+    Scratch.vm.postIOData('mouse', {
+      isDown: false,
+      x: x - rect.left,
+      y: y - rect.top,
+      canvasWidth: rect.width,
+      canvasHeight: rect.height
+    });
+    if (!askBoxWrapper.contains(e.target)) e.preventDefault();
+    
   }
   document.addEventListener('mousemove', mousemove);
   canvas.addEventListener('mousedown', mousedown);
